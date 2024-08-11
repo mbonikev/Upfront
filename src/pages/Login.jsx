@@ -29,11 +29,11 @@ function Login() {
           <span className='absolute top-0 left-0 bottom-0 right-0 m-auto w-fit h-fit bg-white text-xs px-3 font-medium text-text-color/70 '>or login with Email</span>
         </h1>
         <form className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
-        <label className='w-full'>
-          <h1>Email</h1>
-          <input type="text" className="w-full h-[40px] ring-1 ring-border-line-color p-3" id="" />
-        </label>
-        </form>        
+          <label className='w-full'>
+            <h1 className='mb-2'>Email</h1>
+            <input type="text" placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-3 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/50 " id="" />
+          </label>
+        </form>
       </div>
     </div>
   )
