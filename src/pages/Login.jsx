@@ -96,7 +96,7 @@ function Login() {
           </label>
           <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
             <h1>Not registered yet? </h1>
-            <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+            <Link target='_blank' to="/auth/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
           </div>
         </form>
       </div>
