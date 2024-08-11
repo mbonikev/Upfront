@@ -91,12 +91,12 @@ function SignUp() {
           </div>
           <label className='w-full mt-1'>
             <button type='submit' title='Login' className='w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition'>
-              Login
+              Sign Up
             </button>
           </label>
           <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
-            <h1>Not registered yet? </h1>
-            <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+            <h1>Allready registered? </h1>
+            <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Login <MdArrowOutward /></Link>
           </div>
         </form>
       </div>
