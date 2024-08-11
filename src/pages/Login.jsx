@@ -1,17 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo-60x60.png'
 import { FcGoogle } from 'react-icons/fc'
 import { Link } from 'react-router-dom'
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
+import axios from 'axios';
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  useEffect(() => {
+    console.log("email: "+email)
+    console.log("password: "+password)
+  },[email, password])
 
   const handleShowPassword = (e) => {
     e.preventDefault()
     setShowPassword(!showPassword)
   }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+        // Sending POST request to the API
+        const response = await axios.post('http://localhost:5000/api/login', { email, password });
+
+        // Log success message or token if available
+        console.log('Success:', response.data); // Log the entire response for debugging
+
+        // Assuming the response contains a token
+        if (response.data.token) {
+            console.log('Token:', response.data.token); // Handle token as needed (e.g., save to localStorage)
+        } else {
+            console.log('Message:', response.data.msg); // Log message if no token is returned
+        }
+    } catch (error) {
+        // Log the error message from the server
+        console.log('Error:', error.response ? error.response.data.msg : error.message);
+    }
+};
 
   return (
     <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -38,15 +68,15 @@ function Login() {
           <hr className='border-border-line-color z-10' />
           <span className='absolute top-0 left-0 bottom-0 right-0 m-auto w-fit h-fit bg-white text-xs px-3 font-medium text-text-color/70 '>or login with Email</span>
         </h1>
-        <form className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
+        <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
           <label className='w-full'>
             <h1 className='mb-2 font-semibold'>Email</h1>
-            <input type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+            <input onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
           </label>
           <label className='w-full'>
             <h1 className='mb-2 font-semibold'>Password</h1>
             <div className="w-full h-fit relative">
-              <input type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
               <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
                 {showPassword ?
                   <IoEyeOutline />
