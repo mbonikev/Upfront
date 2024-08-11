@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/logo-60x60.png'
 import { FcGoogle } from 'react-icons/fc'
+import { Link } from 'react-router-dom'
+import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
+import { MdArrowOutward } from 'react-icons/md'
 
 function Login() {
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleShowPassword = (e) => {
+    e.preventDefault()
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
       {/* topbar */}
@@ -30,9 +40,34 @@ function Login() {
         </h1>
         <form className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
           <label className='w-full'>
-            <h1 className='mb-2'>Email</h1>
-            <input type="text" placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-3 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/50 " id="" />
+            <h1 className='mb-2 font-semibold'>Email</h1>
+            <input type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
           </label>
+          <label className='w-full'>
+            <h1 className='mb-2 font-semibold'>Password</h1>
+            <div className="w-full h-fit relative">
+              <input type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
+                {showPassword ?
+                  <IoEyeOutline />
+                  :
+                  <IoEyeOffOutline />
+                }
+              </div>
+            </div>
+          </label>
+          <div className='flex items-center justify-end w-full py-1'>
+            <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
+          </div>
+          <label className='w-full mt-1'>
+            <button type='submit' title='Login' className='w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition'>
+              Login
+            </button>
+          </label>
+          <div className='flex items-center justify-center w-full py-4 gap-1'>
+            <h1>Not registered yet? </h1>
+            <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+          </div>
         </form>
       </div>
     </div>
