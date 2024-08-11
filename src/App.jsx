@@ -1,8 +1,8 @@
 import React from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Projects from './assets/pages/Projects'
-import Login from './assets/pages/Login'
+import Projects from './pages/Projects'
+import Login from './pages/Login'
 
 function App() {
   return (
