@@ -16,7 +16,7 @@ function Login() {
   return (
     <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
       {/* topbar */}
-      <div className='w-full py-3 px-10 '>
+      <div className='w-full py-4 px-10 max-md:px-4 '>
         <div className='flex items-center gap-1'>
           <div className='min-w-8'>
             <img src={logo} className="h-8" loading='lazy' />
@@ -64,7 +64,7 @@ function Login() {
               Login
             </button>
           </label>
-          <div className='flex items-center justify-center w-full py-4 gap-1'>
+          <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
             <h1>Not registered yet? </h1>
             <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
           </div>
