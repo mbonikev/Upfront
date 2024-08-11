@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
+import { RiLoader5Fill } from 'react-icons/ri'
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false)
@@ -12,11 +13,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [errorEmail, setErrorEmail] = useState('')
   const [errorPassword, setErrorPassword] = useState('')
-
-  useEffect(() => {
-    console.log("email: " + email)
-    console.log("password: " + password)
-  }, [email, password])
+  const [authing, setAuthing] = useState(false)
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -24,18 +21,23 @@ function Login() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); Error
+    e.preventDefault();
+    setAuthing(true)
     try {
       const response = await axios.post('http://localhost:5000/api/login', { email, password });
       setErrorEmail('')
       setErrorPassword('')
+      // setAuthing(false)
 
     } catch (error) {
+      setAuthing(false)
       if (error.response.status === 400) {
         setErrorEmail(error.response.data.msg)
+      setErrorPassword('')
       }
       else if (error.response.status === 401) {
         setErrorPassword(error.response.data.msg)
+        setErrorEmail('')
       }
     }
   };
@@ -91,8 +93,16 @@ function Login() {
             <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
           </div>
           <label className='w-full mt-1'>
-            <button type='submit' title='Login' className='w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition'>
-              Login
+            <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
+              {authing ? (
+                <div className='flex items-center gap-1'>
+                  <RiLoader5Fill className='text-2xl animate-spinLoader' />
+                </div>
+              ) : (
+                <div className='flex items-center gap-1'>
+                  <p>Login</p>
+                </div>
+              )}
             </button>
           </label>
           <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>

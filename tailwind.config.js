@@ -16,7 +16,11 @@ export default {
       },
       fontFamily: {
         'LeagueSpartan' : ['League Spartan', 'sans-serif'],
-      }
+      },
+      animation: {
+        spinLoader: "spin .4s linear infinite",
+        spinSlow: "spin 5s linear infinite",
+      },
 
     },
   },
