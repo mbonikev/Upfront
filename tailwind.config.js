@@ -13,6 +13,10 @@ export default {
         "body-color" : "#fcfdff",
         "container-color" : "#f0f2f7",
       },
+      fontFamily: {
+        'LeagueSpartan' : ['League Spartan', 'sans-serif'],
+      }
+
     },
   },
   plugins: [],
