@@ -10,7 +10,6 @@ function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setErro]
   
   useEffect(() => {
     console.log("email: "+email)

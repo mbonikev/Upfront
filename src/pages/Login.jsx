@@ -10,11 +10,13 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [errorEmail, setErrorEmail] = useState('')
+  const [errorPassword, setErrorPassword] = useState('')
+
   useEffect(() => {
-    console.log("email: "+email)
-    console.log("password: "+password)
-  },[email, password])
+    console.log("email: " + email)
+    console.log("password: " + password)
+  }, [email, password])
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -22,26 +24,22 @@ function Login() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
+    e.preventDefault(); Error
     try {
-        // Sending POST request to the API
-        const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      setErrorEmail('')
+      setErrorPassword('')
 
-        // Log success message or token if available
-        console.log('Success:', response.data); // Log the entire response for debugging
-
-        // Assuming the response contains a token
-        if (response.data.token) {
-            console.log('Token:', response.data.token); // Handle token as needed (e.g., save to localStorage)
-        } else {
-            console.log('Message:', response.data.msg); // Log message if no token is returned
-        }
     } catch (error) {
-        // Log the error message from the server
-        console.log('Error:', error.response ? error.response.data.msg : error.message);
+      if (error.response.status === 400) {
+        setErrorEmail(error.response.data.msg)
+      }
+      else if (error.response.status === 401) {
+        setErrorPassword(error.response.data.msg)
+      }
     }
-};
+  };
+
 
   return (
     <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -73,6 +71,8 @@ function Login() {
             <h1 className='mb-2 font-semibold'>Email</h1>
             <input onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
           </label>
+          {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
+
           <label className='w-full'>
             <h1 className='mb-2 font-semibold'>Password</h1>
             <div className="w-full h-fit relative">
@@ -86,6 +86,7 @@ function Login() {
               </div>
             </div>
           </label>
+          {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
           <div className='flex items-center justify-end w-full py-1'>
             <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
           </div>
