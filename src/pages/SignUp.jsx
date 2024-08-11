@@ -96,7 +96,7 @@ function SignUp() {
           </label>
           <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
             <h1>Allready registered? </h1>
-            <Link to="/" className='text-main-color font-medium w-fit flex items-center gap-1 '>Login <MdArrowOutward /></Link>
+            <Link target='_blank' to="/auth/login" className='text-main-color font-medium w-fit flex items-center gap-1 '>Login <MdArrowOutward /></Link>
           </div>
         </form>
       </div>
