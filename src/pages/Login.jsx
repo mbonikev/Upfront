@@ -60,7 +60,7 @@ function Login() {
           <h1 className='text-2xl font-semibold'>Login</h1>
           <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi, Welcome back!</p>
           <button title='Login with Google' className='w-full h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
-            Login with Google
+          Continue Google
             <FcGoogle className='text-xl' />
           </button>
         </div>
@@ -71,14 +71,14 @@ function Login() {
         <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
           <label className='w-full'>
             <h1 className='mb-2 font-semibold'>Email</h1>
-            <input onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+            <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
           </label>
           {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
 
           <label className='w-full'>
             <h1 className='mb-2 font-semibold'>Password</h1>
             <div className="w-full h-fit relative">
-              <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
               <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
                 {showPassword ?
                   <IoEyeOutline />
