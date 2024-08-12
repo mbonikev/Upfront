@@ -8,6 +8,7 @@ import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
 
 function SignUp() {
+  const apiUrl = process.env.REACT_APP_BACKEND_API;
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('')
@@ -31,7 +32,7 @@ function SignUp() {
     if (password === password2) {
       setErrorPassword('')
       try {
-        const response = await axios.post('http://localhost:5000/api/signup', { userName, email, password, securityQ, securityQAnswer });
+        const response = await axios.post(`${apiUrl}/api/signup`, { userName, email, password, securityQ, securityQAnswer });
         if (response.status === 200) {
           setErrorEmail('')
           localStorage.setItem('upfront_user', email)
