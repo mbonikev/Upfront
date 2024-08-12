@@ -4,7 +4,7 @@ import './App.css'
 import Projects from './pages/Projects'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
-import RedirectIfNeeded from './RedirectIfNeeded'
+import RedirectIfNeeded from './contexts/RedirectIfNeeded'
 
 function App() {
   return (
