@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo-60x60.png'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
@@ -14,6 +14,9 @@ function Login() {
   const [errorEmail, setErrorEmail] = useState('')
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
+  const navigate = useNavigate()
+
+  // check if they are logged in
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -25,15 +28,17 @@ function Login() {
     setAuthing(true)
     try {
       const response = await axios.post('http://localhost:5000/api/login', { email, password });
-      setErrorEmail('')
-      setErrorPassword('')
-      // setAuthing(false)
-      const saveUser = localStorage.setItem('upfront_user', email)
-      if (saveUser) {
+      if (response.status === 200) {
+        setErrorEmail('')
+        setErrorPassword('')
+        // setAuthing(false)
+        localStorage.setItem('upfront_user', email)
         navigate('/')
       }
+
     } catch (error) {
       setAuthing(false)
+      // console.log(error)
       if (error.response.status === 400) {
         setErrorEmail(error.response.data.msg)
         setErrorPassword('')
