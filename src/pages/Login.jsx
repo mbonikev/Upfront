@@ -17,20 +17,8 @@ function Login() {
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
   const navigate = useNavigate()
-  const [loggedIn, setLoggedIn] = useState(true)
 
   const clientId = "133131370921-cjdvj6ssc9iv406g9u0ce5jfhihvikcj.apps.googleusercontent.com"
-
-  // check if they are logged in
-  useEffect(() => {
-    const userEmail = localStorage.getItem('upfront_user')
-    if (userEmail) {
-      navigate('/')
-    }
-    else {
-      setLoggedIn(false)
-    }
-  }, [])
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -67,16 +55,15 @@ function Login() {
 
   return (
     <>
-      {!loggedIn && (
         <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
           {/* topbar */}
           <div className='w-full py-4 px-10 max-md:px-4 '>
-            <div className='flex items-center gap-1'>
+            <Link to={'/'} className='flex items-center gap-1'>
               <div className='min-w-8'>
                 <img src={logo} className="h-8" loading='lazy' />
               </div>
               <h1 className='font-semibold text-xl font-l text-main-color tracking-tight'>Upfront.</h1>
-            </div>
+            </Link>
           </div>
           {/* form */}
           <div className="w-full max-w-[400px] p-5 mx-auto h-full flex-1 flex flex-col items-start justify-center gap-2">
@@ -123,12 +110,11 @@ function Login() {
               </label>
               <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
                 <h1>Not registered yet? </h1>
-                <Link target='_blank' to="/auth/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+                <Link to="/auth/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
               </div>
             </form>
           </div>
         </div>
-      )}
     </>
   )
 }
