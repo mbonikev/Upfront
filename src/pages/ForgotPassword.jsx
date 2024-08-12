@@ -10,6 +10,7 @@ import { RiLoader5Fill } from 'react-icons/ri'
 
 
 function ForgotPassword() {
+    const apiUrl = process.env.REACT_APP_BACKEND_API;
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('');
     const [errorEmail, setErrorEmail] = useState('')
@@ -26,7 +27,7 @@ function ForgotPassword() {
         e.preventDefault();
         setAuthing(true)
         try {
-            const response = await axios.post('http://localhost:5000/api/verifyEmail', { email });
+            const response = await axios.post(`${apiUrl}/api/verifyEmail`, { email });
             if (response.status === 200) {
                 setErrorEmail('')
                 const code = Math.random().toString().slice(2, 22).padEnd(20, '0');
