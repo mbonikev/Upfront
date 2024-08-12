@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo-60x60.png'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
@@ -16,12 +16,7 @@ function SignUp() {
   const [errorEmail, setErrorEmail] = useState('')
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
-
-
-  useEffect(() => {
-    console.log("email: " + email)
-    console.log("password: " + password)
-  }, [email, password])
+  const navigate = useNavigate()
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -36,7 +31,10 @@ function SignUp() {
       try {
         const response = await axios.post('http://localhost:5000/api/signup', { email, password });
         setErrorEmail('')
-
+        const saveUser = localStorage.setItem('upfront_user', email)
+        if(saveUser) {
+          navigate('/')
+        }
       } catch (error) {
         setAuthing(false)
         if (error.response.status === 401) {
