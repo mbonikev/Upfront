@@ -15,8 +15,18 @@ function Login() {
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
   const navigate = useNavigate()
+  const [loggedIn, setLoggedIn] = useState(true)
 
   // check if they are logged in
+  useEffect(() => {
+    const userEmail = localStorage.getItem('upfront_user')
+    if (userEmail) {
+      navigate('/')
+    }
+    else{
+      setLoggedIn(false)
+    }
+  }, [])
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -52,74 +62,78 @@ function Login() {
 
 
   return (
-    <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
-      {/* topbar */}
-      <div className='w-full py-4 px-10 max-md:px-4 '>
-        <div className='flex items-center gap-1'>
-          <div className='min-w-8'>
-            <img src={logo} className="h-8" loading='lazy' />
-          </div>
-          <h1 className='font-semibold text-xl font-l text-main-color tracking-tight'>Upfront.</h1>
-        </div>
-      </div>
-      {/* form */}
-      <div className="w-full max-w-[400px] p-5 mx-auto h-full flex-1 flex flex-col items-start justify-center gap-2">
-        <div className='w-full'>
-          <h1 className='text-2xl font-semibold'>Login</h1>
-          <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi, Welcome back!</p>
-          <button title='Login with Google' className='w-full h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
-            Continue Google
-            <FcGoogle className='text-xl' />
-          </button>
-        </div>
-        <h1 className='relative w-full py-4'>
-          <hr className='border-border-line-color z-10' />
-          <span className='absolute top-0 left-0 bottom-0 right-0 m-auto w-fit h-fit bg-white text-xs px-3 font-medium text-text-color/70 '>or login with Email</span>
-        </h1>
-        <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
-          <label className='w-full'>
-            <h1 className='mb-2 font-semibold'>Email</h1>
-            <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
-          </label>
-          {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
-
-          <label className='w-full'>
-            <h1 className='mb-2 font-semibold'>Password</h1>
-            <div className="w-full h-fit relative">
-              <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
-              <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
-                {showPassword ?
-                  <IoEyeOutline />
-                  :
-                  <IoEyeOffOutline />
-                }
+    <>
+      {!loggedIn && (
+        <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
+          {/* topbar */}
+          <div className='w-full py-4 px-10 max-md:px-4 '>
+            <div className='flex items-center gap-1'>
+              <div className='min-w-8'>
+                <img src={logo} className="h-8" loading='lazy' />
               </div>
+              <h1 className='font-semibold text-xl font-l text-main-color tracking-tight'>Upfront.</h1>
             </div>
-          </label>
-          {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
-          <div className='flex items-center justify-end w-full py-1'>
-            <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
           </div>
-          <label className='w-full mt-1'>
-            <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
-              {authing ? (
-                <div className='flex items-center gap-1'>
-                  <RiLoader5Fill className='text-2xl animate-spinLoader' />
+          {/* form */}
+          <div className="w-full max-w-[400px] p-5 mx-auto h-full flex-1 flex flex-col items-start justify-center gap-2">
+            <div className='w-full'>
+              <h1 className='text-2xl font-semibold'>Login</h1>
+              <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi, Welcome back!</p>
+              <button title='Login with Google' className='w-full h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
+                Continue Google
+                <FcGoogle className='text-xl' />
+              </button>
+            </div>
+            <h1 className='relative w-full py-4'>
+              <hr className='border-border-line-color z-10' />
+              <span className='absolute top-0 left-0 bottom-0 right-0 m-auto w-fit h-fit bg-white text-xs px-3 font-medium text-text-color/70 '>or login with Email</span>
+            </h1>
+            <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
+              <label className='w-full'>
+                <h1 className='mb-2 font-semibold'>Email</h1>
+                <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              </label>
+              {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
+
+              <label className='w-full'>
+                <h1 className='mb-2 font-semibold'>Password</h1>
+                <div className="w-full h-fit relative">
+                  <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+                  <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
+                    {showPassword ?
+                      <IoEyeOutline />
+                      :
+                      <IoEyeOffOutline />
+                    }
+                  </div>
                 </div>
-              ) : (
-                <div className='flex items-center gap-1'>
-                  <p>Login</p>
-                </div>
-              )}
-            </button>
-          </label>
-          <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
-            <h1>Not registered yet? </h1>
-            <Link target='_blank' to="/auth/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+              </label>
+              {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
+              <div className='flex items-center justify-end w-full py-1'>
+                <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
+              </div>
+              <label className='w-full mt-1'>
+                <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
+                  {authing ? (
+                    <div className='flex items-center gap-1'>
+                      <RiLoader5Fill className='text-2xl animate-spinLoader' />
+                    </div>
+                  ) : (
+                    <div className='flex items-center gap-1'>
+                      <p>Login</p>
+                    </div>
+                  )}
+                </button>
+              </label>
+              <div className='flex items-center justify-center w-full py-4 gap-1 max-sm:flex-col'>
+                <h1>Not registered yet? </h1>
+                <Link target='_blank' to="/auth/signup" className='text-main-color font-medium w-fit flex items-center gap-1 '>Create an account <MdArrowOutward /></Link>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   )
 }
 
