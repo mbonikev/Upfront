@@ -10,7 +10,7 @@ const RedirectIfNeeded = () => {
   useEffect(() => {
     const email = localStorage.getItem('upfront_user') || '';
     const verifyUser = async () => {
-      if (email === '' && currentPath !== '#/auth/signup') {
+      if (email === '' || currentPath !== '#/auth/signup') {
         navigate('/auth/login');
       } else if (email !== '') {
         try {
