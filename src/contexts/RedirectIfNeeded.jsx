@@ -9,17 +9,18 @@ const RedirectIfNeeded = () => {
   useEffect(() => {
     const email = localStorage.getItem('upfront_user') || '';
     const verifyUser = async () => {
-      if (email === '' || location.pathname === '/auth/signup') {
+      if (!email || location.pathname !== '#/auth/signup') {
         navigate('/auth/login');
       } else {
         try {
-          const response = await axios.get('http://localhost:5000/api/verify', {
-            params: { email }
-          });
+          const response = await axios.get('http://localhost:5000/api/verify', { email });
           // Handle successful verification if needed
         } catch (error) {
           console.log(error);
-          navigate('/auth/login');
+          if (location.pathname !== '#/auth/signup') {
+            navigate('/auth/login');
+
+          }
         }
       }
     };
