@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RedirectIfNeeded = () => {
   const navigate = useNavigate();
-  const currentPath = location.hash;
-  console.log(currentPath)
+  const location = useLocation();
 
   useEffect(() => {
     const email = localStorage.getItem('upfront_user') || '';
     const verifyUser = async () => {
-      if (email === '' || currentPath !== '#/auth/signup') {
+      if (email === '' || location.pathname === '/auth/signup') {
         navigate('/auth/login');
-      } else if (email !== '') {
+      } else {
         try {
-          const response = await axios.get('http://localhost:5000/api/verify', { email });
+          const response = await axios.get('http://localhost:5000/api/verify', {
+            params: { email }
+          });
+          // Handle successful verification if needed
         } catch (error) {
-          if (currentPath !== '#/auth/signup') {
-            navigate('/auth/login');
-          }
+          console.log(error);
+          navigate('/auth/login');
         }
       }
     };
