@@ -30,9 +30,12 @@ function SignUp() {
       setErrorPassword('')
       try {
         const response = await axios.post('http://localhost:5000/api/signup', { userName, email, password });
-        setErrorEmail('')
-        localStorage.setItem('upfront_user', email)
-        navigate('/')
+        if (response.status === 200) {
+          setErrorEmail('')
+          localStorage.setItem('upfront_user', email)
+          navigate('/')
+        }
+
       } catch (error) {
         setAuthing(false)
         if (error.response.status === 401) {
