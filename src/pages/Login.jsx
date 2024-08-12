@@ -10,8 +10,7 @@ import { RiLoader5Fill } from 'react-icons/ri'
 
 
 function Login() {
-  const apiUrl = {import.meta.env.VITE_REACT_APP_BACKEND_API};
-  console.log(apiUrl)
+  const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
