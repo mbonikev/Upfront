@@ -19,6 +19,7 @@ function SignUp() {
   const navigate = useNavigate()
   const [loggedIn, setLoggedIn] = useState(true)
 
+
   // check if they are logged in
   useEffect(() => {
     const userEmail = localStorage.getItem('upfront_user')
@@ -80,15 +81,7 @@ function SignUp() {
             <div className='w-full'>
               <h1 className='text-2xl font-semibold'>Sign Up</h1>
               <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi there, Excited to have you</p>
-              <button title='Login with Google' className='w-full h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
-                Continue with Google
-                <FcGoogle className='text-xl' />
-              </button>
             </div>
-            <h1 className='relative w-full py-4'>
-              <hr className='border-border-line-color z-10' />
-              <span className='absolute top-0 left-0 bottom-0 right-0 m-auto w-fit h-fit bg-white text-xs px-3 font-medium text-text-color/70 '>or sign up with Email</span>
-            </h1>
             <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
               <label className='w-full'>
                 <h1 className='mb-2 font-semibold'>Username</h1>
