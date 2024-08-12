@@ -12,9 +12,11 @@ function App() {
     <>
       <HashRouter>
         <Routes>
+          {/* Routes */}
           <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Projects />} />
           </Route>
+          {/* Auth */}
           <Route element={<ProtectedAuthRoutes />}>
             <Route path='/auth/login' element={<Login />} />
             <Route path='/auth/signup' element={<SignUp />} />
