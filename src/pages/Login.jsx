@@ -10,6 +10,8 @@ import { RiLoader5Fill } from 'react-icons/ri'
 
 
 function Login() {
+  const apiUrl = {import.meta.env.VITE_REACT_APP_BACKEND_API};
+  console.log(apiUrl)
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,8 +19,6 @@ function Login() {
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
   const navigate = useNavigate()
-
-  const clientId = "133131370921-cjdvj6ssc9iv406g9u0ce5jfhihvikcj.apps.googleusercontent.com"
 
   const handleShowPassword = (e) => {
     e.preventDefault()
@@ -29,7 +29,7 @@ function Login() {
     e.preventDefault();
     setAuthing(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      const response = await axios.post(`${apiUrl}/api/login`, { email, password });
       if (response.status === 200) {
         setErrorEmail('')
         setErrorPassword('')
