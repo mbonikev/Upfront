@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom'
 
 
 function FPQ() {
-    const apiUrl = process.env.REACT_APP_BACKEND_API;
+    const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
     const [answer, setAnswer] = useState('');
     const [password, setPassword] = useState('');
