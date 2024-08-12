@@ -9,7 +9,7 @@ import { RiLoader5Fill } from 'react-icons/ri'
 import { useLocation } from 'react-router-dom'
 
 function CreateNewPassword() {
-    const apiUrl = process.env.REACT_APP_BACKEND_API;
+    const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
