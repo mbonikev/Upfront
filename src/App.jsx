@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <HashRouter>
-        <RedirectIfNeeded />
         <Routes>
           <Route path='/' element={<Projects />} />
           <Route path='/auth/login' element={<Login />} />
