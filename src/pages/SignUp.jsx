@@ -29,12 +29,10 @@ function SignUp() {
     if (password === password2) {
       setErrorPassword('')
       try {
-        const response = await axios.post('http://localhost:5000/api/signup', { email, password });
+        const response = await axios.post('http://localhost:5000/api/signup', { userName, email, password });
         setErrorEmail('')
-        const saveUser = localStorage.setItem('upfront_user', email)
-        if(saveUser) {
-          navigate('/')
-        }
+        localStorage.setItem('upfront_user', email)
+        navigate('/')
       } catch (error) {
         setAuthing(false)
         if (error.response.status === 401) {
