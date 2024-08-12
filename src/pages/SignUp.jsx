@@ -115,7 +115,7 @@ function SignUp() {
             </label>
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Answer</h1>
-              <input required onChange={(e) => setSecurityQAnswer(e.target.value)} type="text" name='answer' placeholder='E.g. jexy' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setSecurityQAnswer(e.target.value)} type="text" autoComplete='off' name='answer' placeholder='E.g. jexy' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
             </label>
             <label className='w-full mt-5'>
               <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
