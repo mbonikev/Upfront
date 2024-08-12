@@ -39,7 +39,7 @@ function Login() {
 
     } catch (error) {
       setAuthing(false)
-      console.log(error)
+      // console.log(error)
       if (error.response.status === 400) {
         setErrorEmail(error.response.data.msg)
         setErrorPassword('')
