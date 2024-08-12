@@ -5,17 +5,20 @@ import Projects from './pages/Projects'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import ProtectedRoutes from './utils/ProtectiveRoutes'
+import ProtectedAuthRoutes from './utils/ProtectedAuthRoutes'
 
 function App() {
   return (
     <>
       <HashRouter>
         <Routes>
-          <Route element={<ProtectedRoutes/>}>
+          <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Projects />} />
           </Route>
-          <Route path='/auth/login' element={<Login />} />
-          <Route path='/auth/signup' element={<SignUp />} />
+          <Route element={<ProtectedAuthRoutes />}>
+            <Route path='/auth/login' element={<Login />} />
+            <Route path='/auth/signup' element={<SignUp />} />
+          </Route>
         </Routes>
       </HashRouter>
     </>
