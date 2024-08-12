@@ -93,7 +93,7 @@ function Login() {
               </label>
               {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
               <div className='flex items-center justify-end w-full py-1'>
-                <Link to="/" className='text-main-color font-medium w-fit '>Forgot password?</Link>
+                <Link to="/forgotPassword" className='text-main-color font-medium w-fit '>Forgot password?</Link>
               </div>
               <label className='w-full mt-1'>
                 <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
