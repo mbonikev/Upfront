@@ -28,12 +28,15 @@ function Login() {
       setErrorEmail('')
       setErrorPassword('')
       // setAuthing(false)
-
+      const saveUser = localStorage.setItem('upfront_user', email)
+      if (saveUser) {
+        navigate('/')
+      }
     } catch (error) {
       setAuthing(false)
       if (error.response.status === 400) {
         setErrorEmail(error.response.data.msg)
-      setErrorPassword('')
+        setErrorPassword('')
       }
       else if (error.response.status === 401) {
         setErrorPassword(error.response.data.msg)
@@ -60,7 +63,7 @@ function Login() {
           <h1 className='text-2xl font-semibold'>Login</h1>
           <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi, Welcome back!</p>
           <button title='Login with Google' className='w-full h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
-          Continue Google
+            Continue Google
             <FcGoogle className='text-xl' />
           </button>
         </div>
