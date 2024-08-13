@@ -25,7 +25,7 @@ function FPQ() {
         e.preventDefault();
         setAuthing(true)
         try {
-            const response = await axios.post(`https://upfront-server.onrender.com/api/verifyAnswer`, { email, answer });
+            const response = await axios.post(`https://upfront-server.onrender.com/api/verifyAnswer`, { email, answer }, { withCredentials: true } );
             if (response.status === 200) {
                 setErrorEmail('')
                 setAuthing(false)
