@@ -12,6 +12,7 @@ import { RiNotification4Fill } from 'react-icons/ri'
 import { RxTimer, RxViewGrid, RxViewHorizontal } from 'react-icons/rx'
 import { TiThList } from 'react-icons/ti'
 import { useOutletContext } from 'react-router-dom'
+import Emojis from '../components/Emojis'
 
 function Projects() {
 
@@ -26,8 +27,9 @@ function Projects() {
     <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
       <div className='w-full h-fit flex items-center justify-between px-10 py-5'>
         <div className='flex items-center justify-start gap-1 '>
-          <div className='h-fit w-fit transition hover:bg-stone-200 select-none flex items-center justify-center p-1 rounded-lg cursor-pointer'>
+          <div className='h-fit w-fit transition hover:bg-stone-200 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
           <p className='text-2xl bgora'>💼</p>
+          <Emojis />
           </div>
           <h1 className='text-3xl font-extrabold tracking-tight'>Projects</h1>
         </div>
