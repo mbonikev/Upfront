@@ -26,37 +26,33 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setAuthing(true)
+    setAuthing(true);
+  
     try {
-      const response = await axios.post(`${apiUrl}/api/login`, { email, password });
-      if (response.status === 200) {
-        setErrorEmail('')
-        setErrorPassword('')
-        // setAuthing(false)
-        localStorage.setItem('upfront_user', email)
-        navigate('/')
+      const { status, data } = await axios.post(`${apiUrl}/api/login`, { email, password });
+      
+      if (status === 200) {
+        setErrorEmail('');
+        setErrorPassword('');
+        // localStorage.setItem('upfront_user', data.luemail);
+        // localStorage.setItem('upfront_user_name', data.luname);
+        // navigate('/');
+        console.log(data)
       }
-
     } catch (error) {
-      setAuthing(false)
-      if (error.response.status) {
-        if (error.response.status === 400) {
-          setErrorEmail(error.response.data.msg)
-          setErrorPassword('')
-        }
-        else if (error.response.status === 401) {
-          setErrorPassword(error.response.data.msg)
-          setErrorEmail('')
-        }
-        else {
-          console.log(error)
-        }
-      }
-      else {
-        console.log(error)
+      setAuthing(false);
+      const msg = error.response?.data?.msg || 'Error';
+      
+      if (error.response?.status === 400) {
+        setErrorEmail(msg);
+      } else if (error.response?.status === 401) {
+        setErrorPassword(msg);
+      } else {
+        console.log(error);
       }
     }
   };
+  
 
 
   return (
