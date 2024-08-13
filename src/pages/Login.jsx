@@ -48,11 +48,13 @@ function Login() {
           setErrorPassword(error.response.data.msg)
           setErrorEmail('')
         }
+        else {
+          console.log(error)
+        }
       }
       else {
         console.log(error)
       }
-
     }
   };
 
