@@ -10,7 +10,7 @@ import { RiLoader5Fill } from 'react-icons/ri'
 
 
 function Login() {
-  const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
+  // const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +28,7 @@ function Login() {
     e.preventDefault();
     setAuthing(true)
     try {
-      const response = await axios.post(`${apiUrl}/api/login`, { email, password });
+      const response = await axios.post(`https://upfront-server.onrender.com/api/login`, { email, password });
       if (response.status === 200) {
         setErrorEmail('')
         setErrorPassword('')
