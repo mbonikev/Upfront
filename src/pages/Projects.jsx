@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BiSolidGridAlt } from 'react-icons/bi'
-import { BsGrid, BsViewStacked } from 'react-icons/bs'
+import { BsGrid, BsLayoutSidebar, BsViewStacked } from 'react-icons/bs'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import { FaPlus, FaRegStar } from 'react-icons/fa'
 import { FiPlus } from 'react-icons/fi'
 import { HiOutlineViewGridAdd, HiViewGrid } from 'react-icons/hi'
 import { IoMdNotificationsOutline } from 'react-icons/io'
-import { IoAdd, IoAddCircle, IoAddOutline, IoSearchOutline, IoStarOutline } from 'react-icons/io5'
+import { IoAdd, IoAddCircle, IoAddOutline, IoChevronDown, IoSearchOutline, IoStarOutline } from 'react-icons/io5'
 import { MdFormatListBulleted, MdNotifications, MdViewStream } from 'react-icons/md'
 import { RiNotification4Fill } from 'react-icons/ri'
 import { RxTimer, RxViewGrid, RxViewHorizontal } from 'react-icons/rx'
@@ -100,8 +100,27 @@ function Projects() {
   };
 
   return (
-    <div className='w-full flex items-start justify-start'>
-      <div className='w-[300px] h-full min-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color'></div>
+    <div className='w-full flex items-start justify-start relative'>
+      <div className='w-[300px] h-full min-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0'>
+        <div className='w-full flex items-center justify-between mb-4'>
+          <button title='' className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
+            <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
+            <p className='truncate font-medium pl-[6px]'>{username}</p>
+            <IoChevronDown className='min-w-[15px] text-text-color/70' />
+          </button>
+          <div className='flex items-center justify-end gap-0'>
+            
+            <button title='Notifications' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color'>
+              <IoMdNotificationsOutline className='text-[22px]' />
+            </button>
+            <button title='Toggle Sidebar' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color '>
+              <BsLayoutSidebar className='text-[18px]' />
+            </button>
+
+          </div>
+        </div>
+        <Link to={'/'}>Home</Link>
+      </div>
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
