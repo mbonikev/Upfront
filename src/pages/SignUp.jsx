@@ -35,8 +35,9 @@ function SignUp() {
         const response = await axios.post(`https://upfront-server.onrender.com/api/signup`, { userName, email, password, securityQ, securityQAnswer });
         if (response.status === 200) {
           setErrorEmail('')
-          localStorage.setItem('upfront_user', email)
-          navigate('/')
+          // localStorage.setItem('upfront_user', email)
+          // navigate('/')
+          console.log(response.data)
         }
 
       } catch (error) {
@@ -74,7 +75,7 @@ function SignUp() {
           <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Username</h1>
-              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='name' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='username' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
             </label>
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Email</h1>
