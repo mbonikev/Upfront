@@ -3,21 +3,13 @@ import { BiSolidGridAlt } from 'react-icons/bi'
 import { BsGrid, BsLayoutSidebar, BsViewStacked } from 'react-icons/bs'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import { FaPlus, FaRegStar } from 'react-icons/fa'
-import { FiPlus } from 'react-icons/fi'
-import { HiOutlineViewGridAdd, HiViewGrid } from 'react-icons/hi'
-import { IoIosAddCircle, IoMdAdd, IoMdNotificationsOutline } from 'react-icons/io'
-import { IoAdd, IoAddCircle, IoAddOutline, IoChevronDown, IoSearchOutline, IoStarOutline } from 'react-icons/io5'
-import { MdFormatListBulleted, MdNotifications, MdViewStream } from 'react-icons/md'
-import { RiNotification4Fill } from 'react-icons/ri'
-import { RxTimer, RxViewGrid, RxViewHorizontal } from 'react-icons/rx'
-import { TiThList } from 'react-icons/ti'
 import { Link, useOutletContext } from 'react-router-dom'
 import Emojis from '../components/Emojis'
 import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
-import { CgSearch } from 'react-icons/cg'
-import { LuCheckCircle, LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuUsers2, LuWorkflow } from 'react-icons/lu'
+import Sidebar from '../components/Sidebar'
+import { LuHash } from 'react-icons/lu'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -103,67 +95,7 @@ function Projects() {
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <div className='w-[300px] h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0 overflow-y-auto'>
-        <div className='w-full flex items-center justify-between mb-4'>
-          <button title='' className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
-            <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
-            <p className='truncate font-medium pl-[6px]'>{username}</p>
-            <IoChevronDown className='min-w-[15px] text-text-color/70' />
-          </button>
-          <div className='flex items-center justify-end gap-0'>
-
-            <button title='Notifications' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color'>
-              <IoMdNotificationsOutline className='text-[22px]' />
-            </button>
-            <button title='Toggle Sidebar' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color '>
-              <BsLayoutSidebar className='text-[18px]' />
-            </button>
-
-          </div>
-        </div>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl' /> Create Project</Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuSearch className='text-xl  min-w-fit' />
-          <p className='line-clamp-1'>Search</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuTimerReset className='text-xl  min-w-fit' />
-          <p className='line-clamp-1'>Dues</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuStar className='text-xl  min-w-fit' />
-          <p className='line-clamp-1'>Stared Projects</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
-          <p className='line-clamp-1'>Completed </p>
-        </Link>
-        <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuHash className='text-xl text-lime-600  min-w-fit' />
-          <p className='line-clamp-1'>Workspace 1</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuHash className='text-xl text-orange-600  min-w-fit' />
-          <p className='line-clamp-1'>Workspace 2</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuHash className='text-xl text-cyan-600  min-w-fit' />
-          <p className='line-clamp-1'>Workspace 3</p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
-        <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuWorkflow className='text-xl text-main-color min-w-fit' />
-          <p className='line-clamp-1'>Gearyo Application </p>
-        </Link>
-        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-          <LuWorkflow className='text-xl text-main-color min-w-fit' />
-          <p className='line-clamp-1'>Project Bika </p>
-        </Link>
-
-
-      </div>
+      <Sidebar username={username} />
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
