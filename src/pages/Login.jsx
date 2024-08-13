@@ -34,14 +34,14 @@ function Login() {
       if (status === 200) {
         setErrorEmail('');
         setErrorPassword('');
-        // localStorage.setItem('upfront_user', data.luemail);
-        // localStorage.setItem('upfront_user_name', data.luname);
+        localStorage.setItem('upfront_user', data.luemail);
+        localStorage.setItem('upfront_user_name', data.luname);
         // navigate('/');
-        console.log(data)
+        // console.log(data)
       }
     } catch (error) {
       setAuthing(false);
-      const msg = error.response?.data?.msg || 'Error';
+      const msg = error.response?.data?.msg || '';
       
       if (error.response?.status === 400) {
         setErrorEmail(msg);
