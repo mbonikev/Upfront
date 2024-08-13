@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom'
 
 
 function FPQ() {
-    // const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
+    const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
     const [answer, setAnswer] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +25,7 @@ function FPQ() {
         e.preventDefault();
         setAuthing(true)
         try {
-            const response = await axios.post(`https://upfront-server.onrender.com/api/verifyAnswer`, { email, answer }, { withCredentials: true } );
+            const response = await axios.post(`${apiUrl}/api/verifyAnswer`, { email, answer });
             if (response.status === 200) {
                 setErrorEmail('')
                 setAuthing(false)
