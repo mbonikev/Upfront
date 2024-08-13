@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BiSolidGridAlt } from 'react-icons/bi'
 import { BsGrid, BsViewStacked } from 'react-icons/bs'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
@@ -18,9 +18,11 @@ import { EmojiArray } from '../content/data'
 function Projects() {
   const { username } = useOutletContext()
   const [pemoji, setPemoji] = useState(null)
+  const [pageTitle, setPageTitle] = useState('Workspace 1')
+
   const projects = [
-    {progress: "25%" ,progressClass: "w-[25%]"},{progress: "64%" ,progressClass: "w-[64%]"},{progress: "34%" ,progressClass: "w-[34%]"},{progress: "58%" ,progressClass: "w-[58%]"},{progress: "19%" ,progressClass: "w-[19%]"},
-    {progress: "81%" ,progressClass: "w-[81%]"},{progress: "92%" ,progressClass: "w-[92%]"},{progress: "44%" ,progressClass: "w-[44%]"},{progress: "8%" ,progressClass: "w-[8%] "},{progress: "69%" ,progressClass: "w-[69%] "},
+    { progress: "25%", progressClass: "w-[25%]" }, { progress: "64%", progressClass: "w-[64%]" }, { progress: "34%", progressClass: "w-[34%]" }, { progress: "58%", progressClass: "w-[58%]" }, { progress: "19%", progressClass: "w-[19%]" },
+    { progress: "81%", progressClass: "w-[81%]" }, { progress: "92%", progressClass: "w-[92%]" }, { progress: "44%", progressClass: "w-[44%]" }, { progress: "8%", progressClass: "w-[8%] " }, { progress: "69%", progressClass: "w-[69%] " },
   ]
 
   const handleLogout = () => {
@@ -59,13 +61,21 @@ function Projects() {
 
   return (
     <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
-      <div className='w-full h-fit flex items-center justify-between px-10 py-5'>
-        <div className='flex items-center justify-start gap-1 '>
-          {/* <div className='group h-fit w-fit transition hover:bg-stone-200 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
+      <div className='w-full h-fit flex items-start justify-between px-10 py-5'>
+        <div className='flex items-start justify-start gap-1 '>
+          <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
             <p className='text-2xl bgora'>{pemoji}</p>
             <Emojis change={ChangeEmoji} />
-          </div> */}
-          <h1 className='text-3xl font-extrabold tracking-tight'>Workspace 1</h1>
+          </div>
+          {/* growing input */}
+          {/* <input type="text" value={pageTitle} onChange={(e) => setPageTitle(e.target.value)} className='text-3xl font-extrabold tracking-tight w-[174px] ' /> */}
+          <span
+            className="input text-3xl font-extrabold tracking-tight bg-transparent hover:ring-2 ring-text-color/10 max-w-[300px]"
+            role="textbox"
+            contentEditable
+          >
+            {pageTitle}
+          </span>
           <span className=' self-end text-xs bg-main-color/5 mb-[4px] ml-1 py-1 px-2 tracking-tight rounded-md'>Free</span>
         </div>
         <div className='flex items-center justify-end gap-2'>
