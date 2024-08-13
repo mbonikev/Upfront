@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiSolidGridAlt } from 'react-icons/bi'
 import { BsGrid, BsViewStacked } from 'react-icons/bs'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
@@ -13,23 +13,53 @@ import { RxTimer, RxViewGrid, RxViewHorizontal } from 'react-icons/rx'
 import { TiThList } from 'react-icons/ti'
 import { useOutletContext } from 'react-router-dom'
 import Emojis from '../components/Emojis'
+import { EmojiArray } from '../content/data'
 
 function Projects() {
-
   const { username } = useOutletContext()
+  const [pemoji, setPemoji] = useState(null)
 
   const handleLogout = () => {
     localStorage.removeItem('upfront_user')
     localStorage.removeItem('upfront_user_name')
     window.location.reload()
   }
+
+  const updateEmoji = () => {
+    const storedEmojiPosition = parseInt(localStorage.getItem('projectsmoji'), 10) || 1;
+    const foundEmoji = EmojiArray.find(e => e.position === storedEmojiPosition);
+    if (foundEmoji) {
+      setPemoji(foundEmoji.emoji);
+    } else {
+      setPemoji(null); // Handle case when emoji is not found
+    }
+  };
+
+  useEffect(() => {
+    // Initial update
+    updateEmoji();
+     
+    // Add event listener for localStorage changes from other tabs
+    window.addEventListener('storage', updateEmoji);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('storage', updateEmoji);
+    };
+  }, []);
+
+  const ChangeEmoji = (position) => {
+    localStorage.setItem('projectsmoji', position)
+    updateEmoji()
+}
+
   return (
     <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
       <div className='w-full h-fit flex items-center justify-between px-10 py-5'>
         <div className='flex items-center justify-start gap-1 '>
-          <div className='h-fit w-fit transition hover:bg-stone-200 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
-          <p className='text-2xl bgora'>💼</p>
-          <Emojis />
+          <div className='group h-fit w-fit transition hover:bg-stone-200 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
+            <p className='text-2xl bgora'>{pemoji}</p>
+            <Emojis change={ChangeEmoji} />
           </div>
           <h1 className='text-3xl font-extrabold tracking-tight'>Projects</h1>
         </div>
