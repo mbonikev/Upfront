@@ -41,8 +41,8 @@ function Projects() {
   }, [pageTitle]);
 
   const projects = [
-    { progress: "25%", progressClass: "w-[25%]" }, { progress: "64%", progressClass: "w-[64%]" }, { progress: "34%", progressClass: "w-[34%]" }, { progress: "58%", progressClass: "w-[58%]" }, { progress: "19%", progressClass: "w-[19%]" },
-    { progress: "81%", progressClass: "w-[81%]" }, { progress: "92%", progressClass: "w-[92%]" }, { progress: "44%", progressClass: "w-[44%]" }, { progress: "8%", progressClass: "w-[8%] " }, { progress: "69%", progressClass: "w-[69%] " },
+    { progress: 26, progressClass: "w-[26%]" }, { progress: 64, progressClass: "w-[64%]" }, { progress: 34, progressClass: "w-[34%]" }, { progress: 58, progressClass: "w-[58%]" }, { progress: 19, progressClass: "w-[19%]" },
+    { progress: 81, progressClass: "w-[81%]" }, { progress: 100, progressClass: "w-[100%]" }, { progress: 44, progressClass: "w-[44%]" }, { progress: 8, progressClass: "w-[8%] " }, { progress: 69, progressClass: "w-[69%] " },
   ]
 
   const handleLogout = () => {
@@ -78,6 +78,24 @@ function Projects() {
     localStorage.setItem('projectsmoji', position)
     updateEmoji()
   }
+
+  const getProgressClasses = (progress) => {
+    let classes = 'flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500';
+
+    if (progress === 100) {
+      classes += ' bg-green-500'; // Green for complete progress
+    } else if (progress > 75) {
+      classes += ' bg-teal-500'; // Teal for progress between 76 and 99
+    } else if (progress > 50) {
+      classes += ' bg-blue-600'; // Blue for progress between 51 and 75
+    } else if (progress > 25) {
+      classes += ' bg-cyan-500'; // Cyan for progress between 26 and 50
+    } else {
+      classes += ' bg-stone-400'; // Light Blue for progress between 1 and 25
+    }
+
+    return classes;
+  };
 
   return (
     <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
@@ -140,9 +158,9 @@ function Projects() {
                 <div className='flex items-center justify-center text-sm px-[2px] font-medium'>+29</div>
               </div>
               <div className='flex items-center gap-3 py-3'>
-                <h1 className='text-sm'>{project.progress}</h1>
+                <h1 className='text-sm'>{project.progress}%</h1>
                 <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                  <div className={`flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500 ${project.progressClass}`}></div>
+                  <div className={`flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
                 </div>
                 <h1 className='text-sm'>100%</h1>
               </div>
