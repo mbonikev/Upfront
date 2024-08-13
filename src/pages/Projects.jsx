@@ -5,7 +5,7 @@ import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import { FaPlus, FaRegStar } from 'react-icons/fa'
 import { FiPlus } from 'react-icons/fi'
 import { HiOutlineViewGridAdd, HiViewGrid } from 'react-icons/hi'
-import { IoMdNotificationsOutline } from 'react-icons/io'
+import { IoIosAddCircle, IoMdAdd, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoAdd, IoAddCircle, IoAddOutline, IoChevronDown, IoSearchOutline, IoStarOutline } from 'react-icons/io5'
 import { MdFormatListBulleted, MdNotifications, MdViewStream } from 'react-icons/md'
 import { RiNotification4Fill } from 'react-icons/ri'
@@ -16,6 +16,8 @@ import Emojis from '../components/Emojis'
 import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
+import { CgSearch } from 'react-icons/cg'
+import { LuHash, LuSearch, LuTimerReset } from 'react-icons/lu'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -119,7 +121,14 @@ function Projects() {
 
           </div>
         </div>
-        <Link to={'/'}>Home</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl'/> Create Project</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuSearch className='text-xl'/> Search</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuTimerReset className='text-xl'/> Dues</Link>
+        <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-lime-600'/> Workspace 1</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-orange-600'/> Workspace 2</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-cyan-600'/> Workspace 3</Link>
+
       </div>
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
@@ -160,7 +169,7 @@ function Projects() {
         </div>
         <div className='w-full h-fit flex items-start justify-between px-16 py-5'>
           <div className='flex items-end justify-start gap-1 '>
-            <h1 className='text-3xl font-extrabold tracking-tight'>Projects</h1>
+            <h1 className='text-3xl font-extrabold tracking-tight'>Workspace 1</h1>
             <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
           </div>
         </div>
