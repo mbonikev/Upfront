@@ -8,7 +8,7 @@ import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
 
 function SignUp() {
-  // const apiUrl = process.env.REACT_APP_BACKEND_API;
+  const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('')
@@ -32,18 +32,23 @@ function SignUp() {
     if (password === password2) {
       setErrorPassword('')
       try {
-        const response = await axios.post(`https://upfront-server.onrender.com/api/signup`, { userName, email, password, securityQ, securityQAnswer });
-        if (response.status === 200) {
-          setErrorEmail('')
-          // localStorage.setItem('upfront_user', email)
-          // navigate('/')
-          console.log(response.data)
+        const { status, data } = await axios.post(`${apiUrl}/api/signup`, { userName, email, password, securityQ, securityQAnswer });
+        if (status === 200) {
+          setErrorEmail('');
+          setErrorPassword('');
+          localStorage.setItem('upfront_user', data.luemail);
+          localStorage.setItem('upfront_user_name', data.luname);
+          // navigate('/');
+          // console.log(data)
         }
-
       } catch (error) {
-        setAuthing(false)
-        if (error.response.status === 401) {
-          setErrorEmail(error.response.data.msg)
+        setAuthing(false);
+        const msg = error.response?.data?.msg || '';
+
+        if (error.response?.status === 401) {
+          setErrorEmail(msg);
+        } else {
+          console.log(error);
         }
       }
     }
@@ -75,7 +80,7 @@ function SignUp() {
           <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Username</h1>
-              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='username' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='name' autoComplete='off' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
             </label>
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Email</h1>
@@ -106,8 +111,8 @@ function SignUp() {
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Security Question</h1>
               <div className="w-full h-fit relative">
-                <select required onChange={(e) => setSecurityQ(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color px-4 pr-9 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" >
-                  <option value="" disabled hidden selected>Select a security question</option>
+                <select required defaultValue={'Selected'} onChange={(e) => setSecurityQ(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color px-4 pr-9 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" >
+                  <option value="Selected" disabled hidden >Select a security question</option>
                   <option value="What is the name of your first pet?">What is the name of your first pet?</option>
                   <option value="What was the name of the street you grew up on?">What was the name of the street you grew up on?</option>
                   <option value="What was your childhood nickname?">What was your childhood nickname?</option>
