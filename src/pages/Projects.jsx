@@ -17,7 +17,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import { CgSearch } from 'react-icons/cg'
-import { LuHash, LuSearch, LuTimerReset } from 'react-icons/lu'
+import { LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuUsers2 } from 'react-icons/lu'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -124,10 +124,16 @@ function Projects() {
         <Link to={'/'} className='flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl'/> Create Project</Link>
         <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuSearch className='text-xl'/> Search</Link>
         <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuTimerReset className='text-xl'/> Dues</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuStar className='text-xl'/> Stared Projects</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuUsers2 className='text-xl'/> Shared with Me</Link>
         <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
         <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-lime-600'/> Workspace 1</Link>
         <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-orange-600'/> Workspace 2</Link>
         <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-cyan-600'/> Workspace 3</Link>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuCrown className='text-xl text-yellow-600'/> More Workspaces</Link>
+        <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
+        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-lime-600'/> Workspace 1</Link>
+        
 
       </div>
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
@@ -168,7 +174,8 @@ function Projects() {
           </div>
         </div>
         <div className='w-full h-fit flex items-start justify-between px-16 py-5'>
-          <div className='flex items-end justify-start gap-1 '>
+          <div className='flex items-center justify-start gap-1 '>
+          <LuHash className='text-3xl text-lime-600'/>
             <h1 className='text-3xl font-extrabold tracking-tight'>Workspace 1</h1>
             <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
           </div>
