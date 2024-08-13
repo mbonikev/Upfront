@@ -27,7 +27,7 @@ function ForgotPassword() {
         e.preventDefault();
         setAuthing(true)
         try {
-            const response = await axios.post(`https://upfront-server.onrender.com/api/verifyEmail`, { email });
+            const response = await axios.post(`https://upfront-server.onrender.com/api/verifyEmail`, { email }, { withCredentials: true } );
             if (response.status === 200) {
                 setErrorEmail('')
                 const code = Math.random().toString().slice(2, 22).padEnd(20, '0');
