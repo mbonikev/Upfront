@@ -31,7 +31,7 @@ function CreateNewPassword() {
         if (password === password2) {
             setErrorPassword('')
             try {
-                const response = await axios.post(`https://upfront-server.onrender.com/api/newPassword`, { email, password });
+                const response = await axios.post(`https://upfront-server.onrender.com/api/newPassword`, { email, password }, { withCredentials: true } );
                 if (response.status === 200) {
                     setErrorPassword('')
                     navigate('/success')
