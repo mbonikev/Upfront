@@ -36,7 +36,7 @@ function Login() {
         setErrorPassword('');
         localStorage.setItem('upfront_user', data.luemail);
         localStorage.setItem('upfront_user_name', data.luname);
-        // navigate('/');
+        navigate('/');
         // console.log(data)
       }
     } catch (error) {
