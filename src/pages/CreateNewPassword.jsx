@@ -9,7 +9,7 @@ import { RiLoader5Fill } from 'react-icons/ri'
 import { useLocation } from 'react-router-dom'
 
 function CreateNewPassword() {
-    const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
+    // const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
@@ -31,7 +31,7 @@ function CreateNewPassword() {
         if (password === password2) {
             setErrorPassword('')
             try {
-                const response = await axios.post(`${apiUrl}/api/newPassword`, { email, password });
+                const response = await axios.post(`https://upfront-server.onrender.com/api/newPassword`, { email, password });
                 if (response.status === 200) {
                     setErrorPassword('')
                     navigate('/success')
