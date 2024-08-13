@@ -116,7 +116,7 @@ function Projects() {
             maxLength={20}
             className='text-3xl font-extrabold tracking-tight hover:ring-2 ring-slate-400/40'
           />
-          <span className=' self-end text-xs bg-main-color/5 mb-[4px] ml-1 py-1 px-2 tracking-tight rounded-md'>Free</span>
+          <span className=' self-end text-xs font-medium bg-teal-600/5 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
         </div>
         <div className='flex items-center justify-end gap-2'>
           <button title='create a new project' className="bg-stone-100 hover:bg-main-color-hover transition hover:text-white text-sm font-semibold py-[8px] px-4 gap-1 rounded-full inline-flex items-center">
@@ -136,7 +136,7 @@ function Projects() {
       {/* Projects section */}
       <div className='w-full h-full flex-1 bg-white px-10 py-6'>
         <div className='w-full h-fit flex items-center justify-between'>
-          <p className='font-medium text-sm text-text-color/60'><span className='text-text-color font-bold'>20</span> Open Projects | <span className='text-text-color font-bold'>20</span>  Closed Projects</p>
+          <p className='font-medium text-sm text-text-color/60'><span className='text-text-color font-bold'>20</span> in Progress | <span className='text-text-color font-bold'>20</span>  Completed</p>
           <div className='flex items-center justify-end gap-0'>
             <button title='search' className='text-xl h-[35px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-transparent hover:bg-stone-200'>
               <IoSearchOutline />
