@@ -58,5 +58,16 @@ export const EmojiArray = [
     { position: 57, emoji: "🍽️" },
     { position: 58, emoji: "🎉" },
     { position: 59, emoji: "🎊" },
-    { position: 60, emoji: "🎂" }
+    { position: 60, emoji: "🎂" },
+    { position: 61, emoji: "🏆" },
+    { position: 62, emoji: "📦" },
+    { position: 63, emoji: "🎁" },
+    { position: 64, emoji: "🚢" },
+    { position: 65, emoji: "🏙️" },
+    { position: 66, emoji: "🚜" },
+    { position: 67, emoji: "🔑" },
+    { position: 68, emoji: "💎" },
+    { position: 69, emoji: "🛡️" },
+    { position: 70, emoji: "🚨" },
+    { position: 71, emoji: "🧸" },
   ];
