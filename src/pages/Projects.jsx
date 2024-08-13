@@ -17,7 +17,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import { CgSearch } from 'react-icons/cg'
-import { LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuUsers2 } from 'react-icons/lu'
+import { LuCheckCircle, LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuUsers2, LuWorkflow } from 'react-icons/lu'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -103,7 +103,7 @@ function Projects() {
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <div className='w-[300px] h-full min-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0'>
+      <div className='w-[300px] h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0 overflow-y-auto'>
         <div className='w-full flex items-center justify-between mb-4'>
           <button title='' className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
             <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
@@ -111,7 +111,7 @@ function Projects() {
             <IoChevronDown className='min-w-[15px] text-text-color/70' />
           </button>
           <div className='flex items-center justify-end gap-0'>
-            
+
             <button title='Notifications' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color'>
               <IoMdNotificationsOutline className='text-[22px]' />
             </button>
@@ -121,26 +121,54 @@ function Projects() {
 
           </div>
         </div>
-        <Link to={'/'} className='flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl'/> Create Project</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuSearch className='text-xl'/> Search</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuTimerReset className='text-xl'/> Dues</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuStar className='text-xl'/> Stared Projects</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuUsers2 className='text-xl'/> Shared with Me</Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl' /> Create Project</Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuSearch className='text-xl  min-w-fit' />
+          <p className='line-clamp-1'>Search</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuTimerReset className='text-xl  min-w-fit' />
+          <p className='line-clamp-1'>Dues</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuStar className='text-xl  min-w-fit' />
+          <p className='line-clamp-1'>Stared Projects</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
+          <p className='line-clamp-1'>Completed </p>
+        </Link>
         <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-lime-600'/> Workspace 1</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-orange-600'/> Workspace 2</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-cyan-600'/> Workspace 3</Link>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuCrown className='text-xl text-yellow-600'/> More Workspaces</Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuHash className='text-xl text-lime-600  min-w-fit' />
+          <p className='line-clamp-1'>Workspace 1</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuHash className='text-xl text-orange-600  min-w-fit' />
+          <p className='line-clamp-1'>Workspace 2</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuHash className='text-xl text-cyan-600  min-w-fit' />
+          <p className='line-clamp-1'>Workspace 3</p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
         <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
-        <Link to={'/'} className='flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuHash className='text-xl text-lime-600'/> Workspace 1</Link>
-        
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuWorkflow className='text-xl text-main-color min-w-fit' />
+          <p className='line-clamp-1'>Gearyo Application </p>
+        </Link>
+        <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+          <LuWorkflow className='text-xl text-main-color min-w-fit' />
+          <p className='line-clamp-1'>Project Bika </p>
+        </Link>
+
 
       </div>
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
             <div className='flex items-center justify-start gap-0 text-sm text-text-color/70'>
-              <BreadCrumb name={'Projects'} status={'off'} link={'/'} /> / 
+              <BreadCrumb name={'Projects'} status={'off'} link={'/'} /> /
             </div>
             {/* <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
               <p className='text-2xl bgora'>{pemoji}</p>
@@ -175,7 +203,7 @@ function Projects() {
         </div>
         <div className='w-full h-fit flex items-start justify-between px-16 py-5'>
           <div className='flex items-center justify-start gap-1 '>
-          <LuHash className='text-3xl text-lime-600'/>
+            <LuHash className='text-3xl text-lime-600' />
             <h1 className='text-3xl font-extrabold tracking-tight'>Workspace 1</h1>
             <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
           </div>
@@ -185,16 +213,9 @@ function Projects() {
         <div className='w-full h-full flex-1 bg-white px-16 pb-10'>
           <div className='w-full h-fit flex items-end justify-between'>
             <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>20</span> in Progress | <span className='text-text-color font-medium'>20</span>  Completed</p>
-            <div className='flex items-center justify-end gap-0'>
-              <button title='search' className='text-xl h-[35px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-transparent hover:bg-stone-200'>
-                <IoSearchOutline />
-              </button>
-              <button title='search' className='text-xl h-[35px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-transparent hover:bg-stone-200'>
-                <IoStarOutline />
-              </button>
-            </div>
+
           </div>
-          <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span>
+          {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
               <Link key={index} to={'/'} className='w-full max-w-[350px] max-md:max-w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
@@ -218,7 +239,7 @@ function Projects() {
                     <TbStack className='text-xl' />
                     {project.progress} Boards
                   </p>
-                  <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>May 11, 2023</p>
+                  <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>9 days left</p>
                 </div>
               </Link>
             ))}
