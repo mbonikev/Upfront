@@ -23,3 +23,32 @@ select {
   background-position-x: 98%;
   background-position-y: 50%;
 }
+
+
+.custom-scrollbar{
+  overscroll-behavior: contain;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+width: 16px;
+height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+background-color: #88888881;
+border: 5px solid white;
+border-radius: 30px;
+cursor: default;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+background-color: #3a3a3a81;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+background-color: transparent;
+}
