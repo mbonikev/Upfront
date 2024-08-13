@@ -15,6 +15,7 @@ import { Link, useOutletContext } from 'react-router-dom'
 import Emojis from '../components/Emojis'
 import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
+import BreadCrumb from '../components/BreadCrumb'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -104,7 +105,9 @@ function Projects() {
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
-            
+            <div className='flex items-center justify-start gap-0 text-sm text-text-color/70'>
+              <BreadCrumb name={'Projects'} status={'off'} link={'/'} /> / 
+            </div>
             {/* <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
               <p className='text-2xl bgora'>{pemoji}</p>
               <Emojis change={ChangeEmoji} />
