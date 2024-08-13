@@ -19,6 +19,26 @@ function Projects() {
   const { username } = useOutletContext()
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const input = inputRef.current;
+    if (input) {
+      // Create a temporary span to measure the text width
+      const tempSpan = document.createElement('span');
+      tempSpan.style.visibility = 'hidden';
+      tempSpan.style.position = 'absolute';
+      tempSpan.style.whiteSpace = 'pre';
+      tempSpan.style.fontSize = getComputedStyle(input).fontSize;
+      tempSpan.textContent = pageTitle || input.placeholder;
+
+      document.body.appendChild(tempSpan);
+      const width = tempSpan.offsetWidth + 10; // Add extra padding
+      document.body.removeChild(tempSpan);
+
+      input.style.width = `${width}px`;
+    }
+  }, [pageTitle]);
 
   const projects = [
     { progress: "25%", progressClass: "w-[25%]" }, { progress: "64%", progressClass: "w-[64%]" }, { progress: "34%", progressClass: "w-[34%]" }, { progress: "58%", progressClass: "w-[58%]" }, { progress: "19%", progressClass: "w-[19%]" },
@@ -62,20 +82,21 @@ function Projects() {
   return (
     <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
       <div className='w-full h-fit flex items-start justify-between px-10 py-5'>
-        <div className='flex items-start justify-start gap-1 '>
-          <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 rounded-lg cursor-pointer'>
+        <div className='flex items-end justify-start gap-0 '>
+          <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
             <p className='text-2xl bgora'>{pemoji}</p>
             <Emojis change={ChangeEmoji} />
           </div>
           {/* growing input */}
-          {/* <input type="text" value={pageTitle} onChange={(e) => setPageTitle(e.target.value)} className='text-3xl font-extrabold tracking-tight w-[174px] ' /> */}
-          <span
-            className="input text-3xl font-extrabold tracking-tight bg-transparent hover:ring-2 ring-text-color/10 max-w-[300px]"
-            role="textbox"
-            contentEditable
-          >
-            {pageTitle}
-          </span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={pageTitle}
+            onChange={(e) => setPageTitle(e.target.value)}
+            placeholder="Type here.."
+            maxLength={20}
+            className='text-3xl font-extrabold tracking-tight hover:ring-2 ring-slate-400/40'
+          />
           <span className=' self-end text-xs bg-main-color/5 mb-[4px] ml-1 py-1 px-2 tracking-tight rounded-md'>Free</span>
         </div>
         <div className='flex items-center justify-end gap-2'>
