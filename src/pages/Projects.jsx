@@ -14,6 +14,7 @@ import { TiThList } from 'react-icons/ti'
 import { Link, useOutletContext } from 'react-router-dom'
 import Emojis from '../components/Emojis'
 import { EmojiArray } from '../content/data'
+import { TbStack } from 'react-icons/tb'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -155,7 +156,7 @@ function Projects() {
                 <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
                 <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
                 <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
-                <div className='flex items-center justify-center text-sm px-[2px] font-medium'>+29</div>
+                <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
               </div>
               <div className='flex items-center gap-3 py-3'>
                 <h1 className='text-sm'>{project.progress}%</h1>
@@ -164,7 +165,13 @@ function Projects() {
                 </div>
                 <h1 className='text-sm'>100%</h1>
               </div>
-              <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>May 11, 2023</p>
+              <div className='w-full flex items-center justify-between'>
+                <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
+                  <TbStack className='text-xl' />
+                  {project.progress} Boards
+                </p>
+                <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>May 11, 2023</p>
+              </div>
             </Link>
           ))}
         </div>
