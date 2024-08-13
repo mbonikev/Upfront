@@ -114,9 +114,9 @@ function Projects() {
             onChange={(e) => setPageTitle(e.target.value)}
             placeholder="Type here.."
             maxLength={20}
-            className='text-3xl font-extrabold tracking-tight hover:ring-2 ring-slate-400/40'
+            className='text-3xl font-extrabold tracking-tight hover:ring-2 ring-slate-400/40 rounded-md'
           />
-          <span className=' self-end text-xs font-medium bg-teal-600/5 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
+          <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
         </div>
         <div className='flex items-center justify-end gap-2'>
           <button title='create a new project' className="bg-stone-100 hover:bg-main-color-hover transition hover:text-white text-sm font-semibold py-[8px] px-4 gap-1 rounded-full inline-flex items-center">
