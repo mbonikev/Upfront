@@ -53,7 +53,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
         try {
             const response = await axios.patch(`${apiUrl}/api/updateWorkspace2`, { w2, userEmail });
             // console.log('Response data:', response.data);
-            localStorage.setItem('upfront_user_name_w1', response.data.workspace2)
+            localStorage.setItem('upfront_user_name_w2', response.data.workspace2)
             setOriginalW2(response.data.workspace2)
             setMoreOpt2(false)
             setSaveOpt2(false)
@@ -71,7 +71,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
         try {
             const response = await axios.patch(`${apiUrl}/api/updateWorkspace1`, { w3, userEmail });
             // console.log('Response data:', response.data);
-            localStorage.setItem('upfront_user_name_w1', response.data.workspace3)
+            localStorage.setItem('upfront_user_name_w3', response.data.workspace3)
             setOriginalW2(response.data.workspace3)
             setMoreOpt3(false)
             setSaveOpt3(false)
@@ -277,16 +277,16 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
                             </>}
 
                         </Link>
-                        <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity' : 'opacity-0 group-hover:opacity-100'}`}>
+                        <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </div>
                         {moreOpt1 && <>
                             <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                                <div onClick={renameW1} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <div onClick={renameW1} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
                                     <LuPencilLine className='text-lg  min-w-fit' />
                                     <p className='line-clamp-1'>Rename</p>
                                 </div>
-                                <Link to={'/'} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <Link to={'/'} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
                                     <LuTrash2 className='text-lg  min-w-fit text-red-500' />
                                     <p className='line-clamp-1 text-red-500'>Clear</p>
                                 </Link>
@@ -294,7 +294,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
                         </>}
                         {saveOpt1 && <>
                             <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                                <button type='submit' className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <button type='submit' className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
                                     {authing ? <>
                                         <RiLoader5Fill className='text-xl animate-spinLoader  min-w-fit' />
                                         <p className='line-clamp-1'>Saving...</p>
@@ -303,7 +303,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
                                         <p className='line-clamp-1'>Save Changes</p>
                                     </>}
                                 </button>
-                                <div onClick={handleCancel} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <div onClick={handleCancel} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
                                     <LuX className='text-lg  min-w-fit text-red-500' />
                                     <p className='line-clamp-1 text-red-500'>Cancel</p>
                                 </div>
