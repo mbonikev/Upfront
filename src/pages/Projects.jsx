@@ -84,11 +84,11 @@ function Projects() {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
 
     if (progress == 100) {
-      classes += ' bg-green-500'; // Green for complete progress
+      classes += ' bg-main-color-hover'; // Green for complete progress
     } else if (progress < 100 && progress > 75) {
-      classes += ' bg-teal-500'; // Teal for progress between 76 and 99
+      classes += ' bg-blue-400'; // Teal for progress between 76 and 99
     } else if (progress < 75 && progress > 50) {
-      classes += ' bg-blue-500'; // Blue for progress between 51 and 75
+      classes += ' bg-teal-500'; // Blue for progress between 51 and 75
     } else if (progress < 50) {
       classes += ' bg-red-400'; // Cyan for progress between 26 and 50
     }
