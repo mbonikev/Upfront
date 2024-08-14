@@ -158,7 +158,7 @@ function Projects() {
             {/* <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span> */}
           </div>
           <div className='flex items-center justify-end gap-2'>
-            <button title='create a new project' className="bg-main-color hover:bg-main-color-hover transition text-white text-xs font-semibold py-[9px] px-5 gap-1 rounded-lg inline-flex items-center">
+            <button title='create a new project' className="bg-gradient-to-br from-main-color/60 to-main-color-hover hover:bg-main-color-hover transition text-white text-xs font-semibold py-[9px] px-5 gap-1 rounded-lg inline-flex items-center">
               <FaPlus />
               <span className='text-xs font-bold'>Create</span>
             </button>
