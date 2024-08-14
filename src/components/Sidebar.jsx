@@ -22,8 +22,10 @@ function Sidebar({ username }) {
                         <div className='p-2'>
                             <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] text-sm font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                                 <LuSearch className='text-xl  min-w-fit' />
-                                <div className='w-full'></div>
+                                <div className='w-full h-fit flex-col'>
                                 <p className='line-clamp-1'>Search</p>
+                                <p className='line-clamp-1'>Search</p>
+                                </div>
                             </Link>
                         </div>
                     </div>
