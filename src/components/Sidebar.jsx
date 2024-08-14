@@ -3,13 +3,14 @@ import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
 import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Helmet } from 'react-helmet';
 
 function Sidebar({ username }) {
     const [profileMenu, setProfileMenu] = useState(false)
     const [logoutAnimate, setLogoutAnimate] = useState(false)
+    const location = useLocation()
 
     const showPMenu = () => {
         setProfileMenu(true)
@@ -87,7 +88,7 @@ function Sidebar({ username }) {
                         </div>
                     </div>
                 )}
-                <div className='w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm overflow-y-auto'>
+                <div className='w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto'>
                     <div className='w-full flex items-center justify-between mb-4'>
                         <button onClick={showPMenu} className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
                             <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
@@ -123,15 +124,15 @@ function Sidebar({ username }) {
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
                         <LuHash className='text-xl text-lime-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 1</p>
                     </Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
                         <LuHash className='text-xl text-orange-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 2</p>
                     </Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
                         <LuHash className='text-xl text-cyan-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 3</p>
                     </Link>
