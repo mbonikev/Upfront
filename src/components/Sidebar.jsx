@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
-import { LuCheckCircle, LuCog, LuCrown, LuHash, LuLogOut, LuSearch, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
+import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import { RiLoader5Fill } from 'react-icons/ri'
 
 function Sidebar({ username }) {
     const [profileMenu, setProfileMenu] = useState(false)
+    const [logoutAnimate, setLogoutAnimate] = useState(false)
 
     const showPMenu = () => {
         setProfileMenu(true)
     }
+
+    const handleLogout = () => {
+        localStorage.removeItem('upfront_user')
+        localStorage.removeItem('upfront_user_name')
+        setLogoutAnimate(true)
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000);
+    }
+
     return (
         <div className='w-[256px] min-w-[256px] sticky top-0'>
             <div className=' relative w-full h-full'>
@@ -30,20 +42,41 @@ function Sidebar({ username }) {
                         </div>
                         <div className='w-full h-[1px] bg-border-line-color/70'></div>
                         <div className='p-2 flex flex-col'>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuCog className='text-xl text-text-color/50  min-w-fit' />
+                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                <LuSettings className='text-xl text-text-color/50  min-w-fit' />
                                 <p className='line-clamp-1'>Settings</p>
                             </Link>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuCog className='text-xl text-text-color/50  min-w-fit' />
-                                <p className='line-clamp-1'>Settings</p>
+                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                <LuActivity className='text-xl text-text-color/50  min-w-fit' />
+                                <p className='line-clamp-1'>Activity log</p>
+                            </Link>
+                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                <LuInfo className='text-xl text-text-color/50  min-w-fit' />
+                                <p className='line-clamp-1'>About Upfront.</p>
                             </Link>
                         </div>
                         <div className='w-full h-[1px] bg-border-line-color/70'></div>
                         <div className='p-2 flex flex-col'>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuLogOut className='text-xl text-text-color/50  min-w-fit' />
-                                <p className='line-clamp-1'>Log out</p>
+                            <button onClick={handleLogout} className={`min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 ${logoutAnimate ? 'pointer-events-none' : ''}`}>
+                                {logoutAnimate ? <>
+                                    <RiLoader5Fill className='text-xl animate-spinLoader text-red-500  min-w-fit' />
+                                    <p className='line-clamp-1'>Logging out..</p>
+                                </> : <>
+                                    <LuLogOut className='text-xl text-red-500  min-w-fit' />
+                                    <p className='line-clamp-1'>Log out</p>
+                                </>}
+                            </button>
+                        </div>
+                        <div className='w-full h-[1px] bg-border-line-color/70'></div>
+                        <div className='p-2 flex items-center justify-start gap-2'>
+                            <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                {/* <LuLogOut className='text-xl text-text-color/50  min-w-fit' /> */}
+                                <p className='line-clamp-1'>What's new? </p>
+                            </Link>
+                            <span className='text-sm opacity w-[1px] h-[20px] bg-border-line-color flex'></span>
+                            <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                {/* <LuLogOut className='text-xl text-text-color/50  min-w-fit' /> */}
+                                <p className='line-clamp-1'>Terms of use </p>
                             </Link>
                         </div>
                     </div>
