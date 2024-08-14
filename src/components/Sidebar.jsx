@@ -30,9 +30,9 @@ function Sidebar({ username }) {
 
     // getting space names
     useEffect(() => {
-        const luw1 = localStorage.getItem('upfront_user_name_w1')
-        const luw2 = localStorage.getItem('upfront_user_name_w2')
-        const luw3 = localStorage.getItem('upfront_user_name_w3')
+        const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
+        const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
+        const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
         setW1(luw1)
         setW2(luw2)
         setW3(luw3)
