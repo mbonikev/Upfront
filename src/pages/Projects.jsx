@@ -44,7 +44,7 @@ function Projects() {
     { progress: 58, progressClass: "w-[58%]" },
     { progress: 19, progressClass: "w-[19%]" },
     { progress: 81, progressClass: "w-[81%]" },
-    { progress: 100, progressClass: "w-[100%]" },
+    { progress: 98, progressClass: "w-[98%]" },
     { progress: 44, progressClass: "w-[44%]" },
     { progress: 8, progressClass: "w-[8%] " },
     { progress: 69, progressClass: "w-[69%] " },
@@ -83,12 +83,12 @@ function Projects() {
   const getProgressClasses = (progress) => {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
 
-    if (progress == 100) {
-      classes += ' bg-main-color-hover'; // Green for complete progress
-    } else if (progress < 100 && progress > 75) {
-      classes += ' bg-blue-400'; // Teal for progress between 76 and 99
+    if (progress <= 100 && progress > 75) {
+      classes += ' bg-green-500'; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
-      classes += ' bg-teal-500'; // Blue for progress between 51 and 75
+      classes += ' bg-teal-500'; // Teal for progress between 76 and 99
+    } else if (progress < 50 && progress > 25) {
+      classes += ' bg-blue-400'; // Blue for progress between 51 and 75
     } else if (progress < 50) {
       classes += ' bg-red-400'; // Cyan for progress between 26 and 50
     }
