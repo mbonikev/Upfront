@@ -13,7 +13,7 @@ export default {
         "body-color" : "#fcfdff",
         "container-color" : "#f0f2f7",
         "border-line-color" : "#d1d6e3",
-        "sidebar-color": "#f7f5eb",
+        "sidebar-color": "#f9fafc",
       },
       fontFamily: {
         'LeagueSpartan' : ['League Spartan', 'sans-serif'],
