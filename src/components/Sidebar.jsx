@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
 import { LuActivity, LuBadgeX, LuCheck, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuPen, LuPencilLine, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUser2, LuWorkflow, LuX } from 'react-icons/lu'
@@ -10,6 +10,10 @@ function Sidebar({ username }) {
     const [profileMenu, setProfileMenu] = useState(false)
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const location = useLocation()
+    // spaces
+    const [w1, setW1] = useState(null)
+    const [w2, setW2] = useState(null)
+    const [w3, setW3] = useState(null)
 
     const showPMenu = () => {
         setProfileMenu(true)
@@ -22,6 +26,21 @@ function Sidebar({ username }) {
         setTimeout(() => {
             window.location.reload()
         }, 1000);
+    }
+
+    // getting space names
+    useEffect(() => {
+        const luw1 = localStorage.getItem('upfront_user_name_w1')
+        const luw2 = localStorage.getItem('upfront_user_name_w2')
+        const luw3 = localStorage.getItem('upfront_user_name_w3')
+        setW1(luw1)
+        setW2(luw2)
+        setW3(luw3)
+    },[])
+
+    // show more
+    const showMoreMenuw1 = () => {
+
     }
 
     const linkStyle = 'min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative'
@@ -123,12 +142,12 @@ function Sidebar({ username }) {
                     <div className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
-                            <p className='line-clamp-1'>Workspace 1</p>
+                            <p className='line-clamp-1'>{w1}</p>
                             {/* <form className='w-[75%] h-[60%] absolute left-2'>
                                 <input type="text" className=" h-full w-full bg-white ring-2 ring-main-color rounded-sm px-1" />
                             </form> */}
                         </Link>
-                        <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                        <button onClick={showMoreMenuw1} className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </button>
                         {/* <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
@@ -155,7 +174,7 @@ function Sidebar({ username }) {
                     <div className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-orange-600  min-w-fit' />
-                            <p className='line-clamp-1'>Workspace 2</p>
+                            <p className='line-clamp-1'>{w2}</p>
                         </Link>
                         <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/workspace/2' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
@@ -164,7 +183,7 @@ function Sidebar({ username }) {
                     <div className='relative group '>
                         <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-cyan-600  min-w-fit' />
-                            <p className='line-clamp-1'>Workspace 3</p>
+                            <p className='line-clamp-1'>{w3}</p>
                         </Link>
                         <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/workspace/3' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
