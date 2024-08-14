@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
-import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
+import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
@@ -24,7 +24,7 @@ function Sidebar({ username }) {
         }, 1000);
     }
 
-    const linkStyle = 'min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1'
+    const linkStyle = 'min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative'
 
     return (
         <div className='w-[256px] min-w-[256px] sticky top-0'>
@@ -103,19 +103,19 @@ function Sidebar({ username }) {
                         </div>
                     </div>
                     <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl' /> Create Project</Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuSearch className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Search</p>
                     </Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuTimerReset className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Dues</p>
                     </Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuStar className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Stared Projects</p>
                     </Link>
-                    <Link to={'/'} className={linkStyle}>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
@@ -128,11 +128,16 @@ function Sidebar({ username }) {
                         <LuHash className='text-xl text-orange-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 2</p>
                     </Link>
-                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
-                        <LuHash className='text-xl text-cyan-600  min-w-fit' />
-                        <p className='line-clamp-1'>Workspace 3</p>
-                    </Link>
-                    <Link to={'/'} className={linkStyle}><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
+                    <div className='relative group '>
+                        <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
+                            <LuHash className='text-xl text-cyan-600  min-w-fit' />
+                            <p className='line-clamp-1'>Workspace 3</p>
+                        </Link>
+                        <button className='absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full'>
+                            <LuMoreHorizontal className='text-xl' />
+                        </button>
+                    </div>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
                     <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                         <LuWorkflow className='text-xl text-main-color min-w-fit' />
