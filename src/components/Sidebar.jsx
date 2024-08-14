@@ -33,7 +33,7 @@ function Sidebar({ username }) {
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
                 {/* dropdown */}
                 {profileMenu && (
-                    <div className='w-[290px] h-fit max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0'>
+                    <div className='w-[290px] h-fit max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto'>
                         <div className='p-2'>
                             <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                                 <LuTrophy className='text-xl text-text-color/50 min-w-fit' />
