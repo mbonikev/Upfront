@@ -277,7 +277,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
                             </>}
 
                         </Link>
-                        <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100`}>
+                        <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 ${moreOpt1 && 'opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </div>
                         {moreOpt1 && <>
