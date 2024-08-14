@@ -19,6 +19,7 @@ function Projects() {
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
   const inputRef = useRef(null);
+  const [mleft, setMleft] = useState(true)
   // spaces
   const [w1, setW1] = useState(null)
   const [w2, setW2] = useState(null)
@@ -48,12 +49,12 @@ function Projects() {
     { progress: 64, progressClass: "w-[64%]" },
     { progress: 34, progressClass: "w-[34%]" },
     { progress: 58, progressClass: "w-[58%]" },
-    { progress: 19, progressClass: "w-[19%]" },
-    { progress: 81, progressClass: "w-[81%]" },
-    { progress: 100, progressClass: "w-[100%]" },
-    { progress: 44, progressClass: "w-[44%]" },
-    { progress: 8, progressClass: "w-[8%] " },
-    { progress: 69, progressClass: "w-[69%] " },
+    // { progress: 19, progressClass: "w-[19%]" },
+    // { progress: 81, progressClass: "w-[81%]" },
+    // { progress: 100, progressClass: "w-[100%]" },
+    // { progress: 44, progressClass: "w-[44%]" },
+    // { progress: 8, progressClass: "w-[8%] " },
+    // { progress: 69, progressClass: "w-[69%] " },
   ]
   const count100Percent = projects.filter(project => project.progress === 100).length;
 
@@ -106,17 +107,17 @@ function Projects() {
   useEffect(() => {
     const fetchAllWorkShops = async () => {
       try {
-          const response = await axios.get(`${apiUrl}/api/workspaces`,{ params: { userEmail }});
-          // console.log('Response data:', response);
-          localStorage.setItem('upfront_user_name_w1', response.data.dbw1)
-          localStorage.setItem('upfront_user_name_w2', response.data.dbw2)
-          localStorage.setItem('upfront_user_name_w3', response.data.dbw3)
+        const response = await axios.get(`${apiUrl}/api/workspaces`, { params: { userEmail } });
+        // console.log('Response data:', response);
+        localStorage.setItem('upfront_user_name_w1', response.data.dbw1)
+        localStorage.setItem('upfront_user_name_w2', response.data.dbw2)
+        localStorage.setItem('upfront_user_name_w3', response.data.dbw3)
       } catch (err) {
-          console.error('Error updating data:', err);
+        console.error('Error updating data:', err);
       }
-  };
-  
-  fetchAllWorkShops()
+    };
+
+    fetchAllWorkShops()
   }, []);
 
   // getting space names + naming the page
@@ -127,15 +128,25 @@ function Projects() {
     setW1(luw1)
     setW2(luw2)
     setW3(luw3)
-    document.title = luw1+" - Upfront";
+    document.title = luw1 + " - Upfront";
   }, [])
+
+  // handle sidebar
+  const handleSidebarToggle = () => {
+    setMleft(!mleft)
+  }
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
-      <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
-        <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
-          <div className='flex items-end justify-start gap-0 '>
+      <Sidebar username={username} mleft={mleft} handleSidebarToggle={handleSidebarToggle} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
+      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col z-10 bg-white transition-all duration-500 ease-in-out ${mleft ? '' : ''}`}>
+        <div className='w-full h-fit flex items-start justify-between px-5 pt-3'>
+          <div className=' min-h-[35px] flex items-center justify-start gap-0 '>
+            {!mleft && <>
+              <button onClick={handleSidebarToggle} title='Toggle Sidebar' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color '>
+                <BsLayoutSidebar className='text-[18px]' />
+              </button>
+              </>}
             <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>
               <BreadCrumb name={'Workspaces'} status={'off'} link={'/'} /> /
               <BreadCrumb name={w1} status={'on'} link={'/'} />
@@ -171,7 +182,7 @@ function Projects() {
             {/* <button title={username} className='h-[35px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-lg font-semibold text-white'>{username.charAt(0)}</button> */}
           </div>
         </div>
-        <div className='w-full h-fit flex items-start justify-between px-16 py-5'>
+        <div className='w-full h-fit flex items-start justify-between px-16 py-5 max-w-[1500px] mx-auto'>
           <div className='flex items-center justify-start gap-1 '>
             <LuHash className='text-3xl text-lime-600' />
             <h1 className='text-3xl font-extrabold tracking-tight max-w-[300px] break-words'>{w1}</h1>
@@ -180,7 +191,7 @@ function Projects() {
         </div>
 
         {/* Projects section */}
-        <div className='w-full h-full flex-1 bg-white px-16 pb-10'>
+        <div className='w-full h-full flex-1 bg-white px-16 pb-10 max-w-[1500px] mx-auto'>
           <div className='w-full h-fit flex items-end justify-between'>
             <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{projects.length}</span> in Progress | <span className='text-text-color font-medium'>{count100Percent}</span>  Completed</p>
 
@@ -188,9 +199,9 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
-              <Link key={index} to={'/'} className='w-full max-w-[350px] max-md:max-w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
-                <h1 className='font-normal text-sm leading-7'> Gerayo Application</h1>
-                <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70'>Online Bus tracking and Ticketing system</p>
+              <Link key={index} to={'/'} className='w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
+                <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
+                <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
                 <div className='flex items-center justify-start mt-3'>
                   <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
                   <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
