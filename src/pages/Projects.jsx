@@ -10,6 +10,7 @@ import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
 import { LuHash } from 'react-icons/lu'
+import { Helmet } from 'react-helmet'
 
 function Projects() {
   const { username } = useOutletContext()
@@ -37,15 +38,15 @@ function Projects() {
   }, [pageTitle]);
 
   const projects = [
-    { progress: 26, progressClass: "w-[26%]" }, 
-    { progress: 64, progressClass: "w-[64%]" }, 
-    { progress: 34, progressClass: "w-[34%]" }, 
-    { progress: 58, progressClass: "w-[58%]" }, 
+    { progress: 26, progressClass: "w-[26%]" },
+    { progress: 64, progressClass: "w-[64%]" },
+    { progress: 34, progressClass: "w-[34%]" },
+    { progress: 58, progressClass: "w-[58%]" },
     { progress: 19, progressClass: "w-[19%]" },
-    { progress: 81, progressClass: "w-[81%]" }, 
-    { progress: 100, progressClass: "w-[100%]" }, 
-    { progress: 44, progressClass: "w-[44%]" }, 
-    { progress: 8, progressClass: "w-[8%] " }, 
+    { progress: 81, progressClass: "w-[81%]" },
+    { progress: 100, progressClass: "w-[100%]" },
+    { progress: 44, progressClass: "w-[44%]" },
+    { progress: 8, progressClass: "w-[8%] " },
     { progress: 69, progressClass: "w-[69%] " },
   ]
   const count100Percent = projects.filter(project => project.progress === 100).length;
@@ -84,16 +85,21 @@ function Projects() {
 
     if (progress == 100) {
       classes += ' bg-green-500'; // Green for complete progress
-    } else if (progress < 100 &&  progress > 75) {
+    } else if (progress < 100 && progress > 75) {
       classes += ' bg-teal-500'; // Teal for progress between 76 and 99
-    } else if (progress < 75 &&  progress > 50) {
+    } else if (progress < 75 && progress > 50) {
       classes += ' bg-blue-500'; // Blue for progress between 51 and 75
-    } else if (progress < 50 ) {
+    } else if (progress < 50) {
       classes += ' bg-red-400'; // Cyan for progress between 26 and 50
-    } 
+    }
 
     return classes;
   };
+
+  // page title
+  useEffect(() => {
+    document.title = 'Workspace 1';
+  }, []);
 
   return (
     <div className='w-full flex items-start justify-start relative'>
@@ -101,8 +107,9 @@ function Projects() {
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
-            <div className='flex items-center justify-start gap-0 text-sm text-text-color/70'>
-              <BreadCrumb name={'Projects'} status={'off'} link={'/'} /> /
+            <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>
+              <BreadCrumb name={'Workspaces'} status={'off'} link={'/'} /> /
+              <BreadCrumb name={'Workspace 1'} status={'on'} link={'/'} />
             </div>
             {/* <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
               <p className='text-2xl bgora'>{pemoji}</p>
