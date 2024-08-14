@@ -78,17 +78,15 @@ function Projects() {
   const getProgressClasses = (progress) => {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500';
 
-    if (progress > 98) {
+    if (progress == 100) {
       classes += ' bg-green-600'; // Green for complete progress
-    } else if (progress > 75) {
+    } else if (progress < 100 &&  progress > 75) {
       classes += ' bg-teal-500'; // Teal for progress between 76 and 99
-    } else if (progress > 50) {
-      classes += ' bg-blue-600'; // Blue for progress between 51 and 75
-    } else if (progress > 25) {
-      classes += ' bg-cyan-500'; // Cyan for progress between 26 and 50
-    }  else {
-      classes += ' bg-stone-400'; // Light Blue for progress between 1 and 25
-    }
+    } else if (progress < 75 &&  progress > 50) {
+      classes += ' bg-blue-500'; // Blue for progress between 51 and 75
+    } else if (progress < 50 ) {
+      classes += ' bg-red-400'; // Cyan for progress between 26 and 50
+    } 
 
     return classes;
   };
