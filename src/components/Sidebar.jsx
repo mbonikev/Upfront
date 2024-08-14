@@ -5,6 +5,7 @@ import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight,
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
+import { Helmet } from 'react-helmet';
 
 function Sidebar({ username }) {
     const [profileMenu, setProfileMenu] = useState(false)
@@ -23,8 +24,13 @@ function Sidebar({ username }) {
         }, 1000);
     }
 
+    const linkStyle = 'min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1'
+
     return (
         <div className='w-[256px] min-w-[256px] sticky top-0'>
+            <Helmet>
+                <title>Workspace 1</title>
+            </Helmet>
             <div className=' relative w-full h-full'>
                 {/* overlay */}
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
@@ -100,42 +106,42 @@ function Sidebar({ username }) {
                         </div>
                     </div>
                     <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl' /> Create Project</Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuSearch className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Search</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuTimerReset className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Dues</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuStar className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Stared Projects</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuHash className='text-xl text-lime-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 1</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuHash className='text-xl text-orange-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 2</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className={linkStyle}>
                         <LuHash className='text-xl text-cyan-600  min-w-fit' />
                         <p className='line-clamp-1'>Workspace 3</p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50'><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
+                    <Link to={'/'} className={linkStyle}><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                         <LuWorkflow className='text-xl text-main-color min-w-fit' />
                         <p className='line-clamp-1'>Gearyo Application </p>
                     </Link>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                         <LuWorkflow className='text-xl text-main-color min-w-fit' />
                         <p className='line-clamp-1'>Project Bika </p>
                     </Link>
