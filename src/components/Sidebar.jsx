@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
-import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
+import { LuActivity, LuBadgeX, LuCheck, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuPen, LuPencilLine, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUser2, LuWorkflow, LuX } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
@@ -121,16 +121,39 @@ function Sidebar({ username }) {
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
                     <div className='relative group '>
-                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
                             <p className='line-clamp-1'>Workspace 1</p>
+                            {/* <form className='w-[75%] h-[60%] absolute left-2'>
+                                <input type="text" className=" h-full w-full bg-white ring-2 ring-main-color rounded-sm px-1" />
+                            </form> */}
                         </Link>
                         <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </button>
+                        {/* <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <LuPencilLine className='text-lg  min-w-fit' />
+                                <p className='line-clamp-1'>Rename</p>
+                            </Link>
+                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <LuTrash2 className='text-lg  min-w-fit text-red-500' />
+                                <p className='line-clamp-1 text-red-500'>Clear</p>
+                            </Link>
+                        </div>
+                        <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <LuCheck className='text-lg  min-w-fit' />
+                                <p className='line-clamp-1'>Save Changes</p>
+                            </Link>
+                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                <LuX className='text-lg  min-w-fit text-red-500' />
+                                <p className='line-clamp-1 text-red-500'>Cancel</p>
+                            </Link>
+                        </div> */}
                     </div>
                     <div className='relative group '>
-                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-orange-600  min-w-fit' />
                             <p className='line-clamp-1'>Workspace 2</p>
                         </Link>
@@ -139,7 +162,7 @@ function Sidebar({ username }) {
                         </button>
                     </div>
                     <div className='relative group '>
-                        <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                        <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-cyan-600  min-w-fit' />
                             <p className='line-clamp-1'>Workspace 3</p>
                         </Link>
