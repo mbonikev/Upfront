@@ -78,15 +78,15 @@ function Projects() {
   const getProgressClasses = (progress) => {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500';
 
-    if (progress === 100) {
-      classes += ' bg-green-500'; // Green for complete progress
+    if (progress > 98) {
+      classes += ' bg-green-600'; // Green for complete progress
     } else if (progress > 75) {
       classes += ' bg-teal-500'; // Teal for progress between 76 and 99
     } else if (progress > 50) {
       classes += ' bg-blue-600'; // Blue for progress between 51 and 75
     } else if (progress > 25) {
       classes += ' bg-cyan-500'; // Cyan for progress between 26 and 50
-    } else {
+    }  else {
       classes += ' bg-stone-400'; // Light Blue for progress between 1 and 25
     }
 
@@ -171,7 +171,7 @@ function Projects() {
                     <TbStack className='text-xl' />
                     {project.progress} Boards
                   </p>
-                  <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>9 days left</p>
+                  <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
                 </div>
               </Link>
             ))}
