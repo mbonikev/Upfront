@@ -13,7 +13,7 @@ import { LuHash } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 
 function Projects() {
-  const { username } = useOutletContext()
+  const { username, userEmail } = useOutletContext()
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
   const inputRef = useRef(null);
@@ -112,18 +112,18 @@ function Projects() {
 
   // page title
   useEffect(() => {
-    document.title = 'Workspace 1';
+    document.title = w1;
   }, []);
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <Sidebar username={username} w1={w1} setW1={setW1} w2={w2} w3={w3} />
+      <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} w3={w3} />
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
             <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>
               <BreadCrumb name={'Workspaces'} status={'off'} link={'/'} /> /
-              <BreadCrumb name={'Workspace 1'} status={'on'} link={'/'} />
+              <BreadCrumb name={w1} status={'on'} link={'/'} />
             </div>
             {/* <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
               <p className='text-2xl bgora'>{pemoji}</p>
@@ -159,7 +159,7 @@ function Projects() {
         <div className='w-full h-fit flex items-start justify-between px-16 py-5'>
           <div className='flex items-center justify-start gap-1 '>
             <LuHash className='text-3xl text-lime-600' />
-            <h1 className='text-3xl font-extrabold tracking-tight'>Workspace 1</h1>
+            <h1 className='text-3xl font-extrabold tracking-tight max-w-[300px] break-words'>{w1}</h1>
             <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
           </div>
         </div>
