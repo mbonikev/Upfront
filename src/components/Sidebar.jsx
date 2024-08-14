@@ -120,21 +120,31 @@ function Sidebar({ username }) {
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
-                        <LuHash className='text-xl text-lime-600  min-w-fit' />
-                        <p className='line-clamp-1'>Workspace 1</p>
-                    </Link>
-                    <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
-                        <LuHash className='text-xl text-orange-600  min-w-fit' />
-                        <p className='line-clamp-1'>Workspace 2</p>
-                    </Link>
                     <div className='relative group '>
-                        <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : ''}`}>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                            <LuHash className='text-xl text-lime-600  min-w-fit' />
+                            <p className='line-clamp-1'>Workspace 1</p>
+                        </Link>
+                        <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                            <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
+                        </button>
+                    </div>
+                    <div className='relative group '>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                            <LuHash className='text-xl text-orange-600  min-w-fit' />
+                            <p className='line-clamp-1'>Workspace 2</p>
+                        </Link>
+                        <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/workspace/2' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                            <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
+                        </button>
+                    </div>
+                    <div className='relative group '>
+                        <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 pointer-events-none' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-cyan-600  min-w-fit' />
                             <p className='line-clamp-1'>Workspace 3</p>
                         </Link>
-                        <button className='absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full'>
-                            <LuMoreHorizontal className='text-xl' />
+                        <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/workspace/3' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                            <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </button>
                     </div>
                     <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
