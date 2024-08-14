@@ -231,18 +231,15 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                 )}
                 <div className='w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto'>
                     <div className='w-full flex items-center justify-between mb-4'>
-                        <button onClick={showPMenu} className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
+                        <button onClick={showPMenu} className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200 transition p-1 rounded-lg'>
                             <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
                             <p className='truncate font-medium pl-[6px]'>{username}</p>
                             <IoChevronDown className='min-w-[15px] text-text-color/70' />
                         </button>
                         <div className='flex items-center justify-end gap-0'>
 
-                            <button title='Notifications' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color'>
+                            <button title='Notifications' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200 hover:text-text-color'>
                                 <IoMdNotificationsOutline className='text-[22px]' />
-                            </button>
-                            <button onClick={handleSidebarToggle} title='Toggle Sidebar' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color '>
-                                <BsLayoutSidebar className='text-[18px]' />
                             </button>
 
                         </div>
