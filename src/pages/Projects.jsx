@@ -127,12 +127,12 @@ function Projects() {
     setW1(luw1)
     setW2(luw2)
     setW3(luw3)
-    document.title = luw1;
+    document.title = luw1+" - Upfront";
   }, [])
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} w3={w3} />
+      <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
