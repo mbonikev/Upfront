@@ -48,8 +48,10 @@ function Login() {
       
       if (error.response?.status === 400) {
         setErrorEmail(msg);
+        setErrorPassword('');
       } else if (error.response?.status === 401) {
         setErrorPassword(msg);
+        setErrorEmail('');
       } else {
         console.log(error);
       }
