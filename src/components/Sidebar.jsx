@@ -7,12 +7,14 @@ import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
 import axios from 'axios'
 
-function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
+function Sidebar({ username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [profileMenu, setProfileMenu] = useState(false)
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const location = useLocation()
     const [authing, setAuthing] = useState(false)
+    const [authing2, setAuthing2] = useState(false)
+    const [authing3, setAuthing3] = useState(false)
     const [moreOpt1, setMoreOpt1] = useState(false)
     const [saveOpt1, setSaveOpt1] = useState(false)
     const [moreOpt2, setMoreOpt2] = useState(false)
@@ -26,6 +28,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
     const [spaceNumber, setSpaceNumber] = useState('')
     const formRef = useRef(null);
 
+    // workspace1
     const handleSubmit1 = async (e) => {
         e.preventDefault()
         setAuthing(true)
@@ -40,6 +43,42 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
         } catch (err) {
             console.error('Error updating data:', err);
             setAuthing(false)
+        }
+    };
+
+    // workspace2
+    const handleSubmit2 = async (e) => {
+        e.preventDefault()
+        setAuthing2(true)
+        try {
+            const response = await axios.patch(`${apiUrl}/api/updateWorkspace2`, { w2, userEmail });
+            // console.log('Response data:', response.data);
+            localStorage.setItem('upfront_user_name_w1', response.data.workspace2)
+            setOriginalW2(response.data.workspace2)
+            setMoreOpt2(false)
+            setSaveOpt2(false)
+            setAuthing2(false)
+        } catch (err) {
+            console.error('Error updating data:', err);
+            setAuthing2(false)
+        }
+    };
+
+    // workspace3
+    const handleSubmit3 = async (e) => {
+        e.preventDefault()
+        setAuthing3(true)
+        try {
+            const response = await axios.patch(`${apiUrl}/api/updateWorkspace1`, { w3, userEmail });
+            // console.log('Response data:', response.data);
+            localStorage.setItem('upfront_user_name_w1', response.data.workspace3)
+            setOriginalW2(response.data.workspace3)
+            setMoreOpt3(false)
+            setSaveOpt3(false)
+            setAuthing3(false)
+        } catch (err) {
+            console.error('Error updating data:', err);
+            setAuthing3(false)
         }
     };
 
@@ -71,13 +110,21 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
 
     const handleCancel = () => {
         setW1(originalW1);
-        // setW2(originalW2);
-        // setW3(originalW3);
         setMoreOpt1(false)
         setSaveOpt1(false)
     };
 
+    const handleCancel2 = () => {
+        setW2(originalW2);
+        setMoreOpt2(false)
+        setSaveOpt2(false)
+    };
 
+    const handleCancel3 = () => {
+        setW3(originalW3);
+        setMoreOpt3(false)
+        setSaveOpt3(false)
+    };
 
     // show more
     const showMoreMenuw1 = () => {
@@ -85,6 +132,26 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
     }
     // rename workspace 1
     const renameW1 = () => {
+        setMoreOpt1(false)
+        setSaveOpt1(true)
+    }
+
+    // show more
+    const showMoreMenuw2 = () => {
+        setMoreOpt2(true)
+    }
+    // rename workspace 1
+    const renameW2 = () => {
+        setMoreOpt2(false)
+        setSaveOpt2(true)
+    }
+
+    // show more
+    const showMoreMenuw3 = () => {
+        setMoreOpt1(true)
+    }
+    // rename workspace 1
+    const renameW3 = () => {
         setMoreOpt1(false)
         setSaveOpt1(true)
     }
@@ -100,6 +167,15 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
                 <div onClick={handleCancel} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? 'fixed' : 'hidden'}`}></div>
                 {/* overlay more menu save */}
                 <div onClick={handleCancel} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu */}
+                <div onClick={handleCancel2} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt2 ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu save */}
+                <div onClick={handleCancel2} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt2 ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu */}
+                <div onClick={handleCancel3} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt3 ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu save */}
+                <div onClick={handleCancel3} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt3 ? 'fixed' : 'hidden'}`}></div>
+                
                 {/* dropdown */}
                 {profileMenu && (
                     <div className='w-[290px] h-fit max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto'>
@@ -189,6 +265,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
+                    {/* Workspace 1 */}
                     <form onSubmit={handleSubmit1} className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
@@ -220,7 +297,7 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
                                 <button type='submit' className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
                                     {authing ? <>
                                         <RiLoader5Fill className='text-xl animate-spinLoader  min-w-fit' />
-                                        <p className='line-clamp-1'>Saving .</p>
+                                        <p className='line-clamp-1'>Saving...</p>
                                     </> : <>
                                         <LuCheck className='text-lg  min-w-fit' />
                                         <p className='line-clamp-1'>Save Changes</p>
@@ -233,15 +310,51 @@ function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
                             </div>
                         </>}
                     </form>
-                    <div className='relative group '>
+                    {/* Workspace 2 */}
+                    <form onSubmit={handleSubmit2} className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-orange-600  min-w-fit' />
                             <p className='line-clamp-1'>{w2}</p>
+                            {saveOpt2 && <>
+                                <div className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                    <input type="text" name='workspace2' autoComplete='off' value={w2} onChange={(e) => setW2(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                                </div>
+                            </>}
+
                         </Link>
-                        <button className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/workspace/2' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                        <div onClick={showMoreMenuw2} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
-                        </button>
-                    </div>
+                        </div>
+                        {moreOpt2 && <>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <div onClick={renameW2} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
+                                    <LuPencilLine className='text-lg  min-w-fit' />
+                                    <p className='line-clamp-1'>Rename</p>
+                                </div>
+                                <Link to={'/'} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
+                                    <LuTrash2 className='text-lg  min-w-fit text-red-500' />
+                                    <p className='line-clamp-1 text-red-500'>Clear</p>
+                                </Link>
+                            </div>
+                        </>}
+                        {saveOpt2 && <>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <button type='submit' className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
+                                    {authing2 ? <>
+                                        <RiLoader5Fill className='text-xl animate-spinLoader  min-w-fit' />
+                                        <p className='line-clamp-1'>Saving...</p>
+                                    </> : <>
+                                        <LuCheck className='text-lg  min-w-fit' />
+                                        <p className='line-clamp-1'>Save Changes</p>
+                                    </>}
+                                </button>
+                                <div onClick={handleCancel2} className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}>
+                                    <LuX className='text-lg  min-w-fit text-red-500' />
+                                    <p className='line-clamp-1 text-red-500'>Cancel</p>
+                                </div>
+                            </div>
+                        </>}
+                    </form>
                     <div className='relative group '>
                         <Link to={'/work'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-cyan-600  min-w-fit' />
