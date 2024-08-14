@@ -5,7 +5,6 @@ import { LuActivity, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight,
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
-import { Helmet } from 'react-helmet';
 
 function Sidebar({ username }) {
     const [profileMenu, setProfileMenu] = useState(false)
@@ -29,9 +28,6 @@ function Sidebar({ username }) {
 
     return (
         <div className='w-[256px] min-w-[256px] sticky top-0'>
-            <Helmet>
-                <title>Workspace 1</title>
-            </Helmet>
             <div className=' relative w-full h-full'>
                 {/* overlay */}
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
