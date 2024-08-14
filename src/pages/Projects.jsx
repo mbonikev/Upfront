@@ -37,15 +37,19 @@ function Projects() {
   }, [pageTitle]);
 
   const projects = [
-    { progress: 26, progressClass: "w-[26%]" }, { progress: 64, progressClass: "w-[64%]" }, { progress: 34, progressClass: "w-[34%]" }, { progress: 58, progressClass: "w-[58%]" }, { progress: 19, progressClass: "w-[19%]" },
-    { progress: 81, progressClass: "w-[81%]" }, { progress: 100, progressClass: "w-[100%]" }, { progress: 44, progressClass: "w-[44%]" }, { progress: 8, progressClass: "w-[8%] " }, { progress: 69, progressClass: "w-[69%] " },
+    { progress: 26, progressClass: "w-[26%]" }, 
+    { progress: 64, progressClass: "w-[64%]" }, 
+    { progress: 34, progressClass: "w-[34%]" }, 
+    { progress: 58, progressClass: "w-[58%]" }, 
+    { progress: 19, progressClass: "w-[19%]" },
+    { progress: 81, progressClass: "w-[81%]" }, 
+    { progress: 100, progressClass: "w-[100%]" }, 
+    { progress: 44, progressClass: "w-[44%]" }, 
+    { progress: 8, progressClass: "w-[8%] " }, 
+    { progress: 69, progressClass: "w-[69%] " },
   ]
+  const count100Percent = projects.filter(project => project.progress === 100).length;
 
-  const handleLogout = () => {
-    localStorage.removeItem('upfront_user')
-    localStorage.removeItem('upfront_user_name')
-    window.location.reload()
-  }
 
   const updateEmoji = () => {
     const storedEmojiPosition = parseInt(localStorage.getItem('projectsmoji'), 10) || 1;
@@ -142,7 +146,7 @@ function Projects() {
         {/* Projects section */}
         <div className='w-full h-full flex-1 bg-white px-16 pb-10'>
           <div className='w-full h-fit flex items-end justify-between'>
-            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>20</span> in Progress | <span className='text-text-color font-medium'>20</span>  Completed</p>
+            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{projects.length}</span> in Progress | <span className='text-text-color font-medium'>{count100Percent}</span>  Completed</p>
 
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
