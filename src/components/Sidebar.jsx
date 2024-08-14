@@ -1,22 +1,47 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
 import { LuActivity, LuBadgeX, LuCheck, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuPen, LuPencilLine, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUser2, LuWorkflow, LuX } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
+import axios from 'axios'
 
-function Sidebar({ username, w1, setW1, w2, w3 }) {
+function Sidebar({ username, userEmail, w1, setW1, w2, w3 }) {
+    const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [profileMenu, setProfileMenu] = useState(false)
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const location = useLocation()
+    const [authing, setAuthing] = useState(false)
     const [moreOpt1, setMoreOpt1] = useState(false)
     const [saveOpt1, setSaveOpt1] = useState(false)
     const [moreOpt2, setMoreOpt2] = useState(false)
     const [saveOpt2, setSaveOpt2] = useState(false)
     const [moreOpt3, setMoreOpt3] = useState(false)
     const [saveOpt3, setSaveOpt3] = useState(false)
+    const [originalW1, setOriginalW1] = useState(null);
+    const [originalW2, setOriginalW2] = useState(null);
+    const [originalW3, setOriginalW3] = useState(null);
+    const [spaceName, setSpaceName] = useState('');
+    const [spaceNumber, setSpaceNumber] = useState('')
+    const formRef = useRef(null);
 
+    const handleSubmit1 = async (e) => {
+        e.preventDefault()
+        setAuthing(true)
+        try {
+            const response = await axios.patch(`${apiUrl}/api/updateWorkspace1`, { w1, userEmail });
+            // console.log('Response data:', response.data);
+            localStorage.setItem('upfront_user_name_w1', response.data.workspace1)
+            setOriginalW1(response.data.workspace1)
+            setMoreOpt1(false)
+            setSaveOpt1(false)
+            setAuthing(false)
+        } catch (err) {
+            console.error('Error updating data:', err);
+            setAuthing(false)
+        }
+    };
 
     const showPMenu = () => {
         setProfileMenu(true)
@@ -25,11 +50,32 @@ function Sidebar({ username, w1, setW1, w2, w3 }) {
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
         localStorage.removeItem('upfront_user_name')
+        localStorage.removeItem('upfront_user_name_w1') 
+        localStorage.removeItem('upfront_user_name_w2') 
+        localStorage.removeItem('upfront_user_name_w3') 
         setLogoutAnimate(true)
         setTimeout(() => {
             window.location.reload()
         }, 1000);
     }
+
+    // getting space names
+    useEffect(() => {
+        const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
+        const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
+        const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
+        setOriginalW1(luw1)
+        setOriginalW2(luw2)
+        setOriginalW3(luw3)
+    }, [])
+
+    const handleCancel = () => {
+        setW1(originalW1);
+        // setW2(originalW2);
+        // setW3(originalW3);
+        setMoreOpt1(false)
+        setSaveOpt1(false)
+    };
 
 
 
@@ -51,9 +97,9 @@ function Sidebar({ username, w1, setW1, w2, w3 }) {
                 {/* overlay */}
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
                 {/* overlay more menu */}
-                <div onClick={() => setMoreOpt1(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? 'fixed' : 'hidden'}`}></div>
+                <div onClick={handleCancel} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? 'fixed' : 'hidden'}`}></div>
                 {/* overlay more menu save */}
-                <div onClick={() => setSaveOpt1(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? 'fixed' : 'hidden'}`}></div>
+                <div onClick={handleCancel} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? 'fixed' : 'hidden'}`}></div>
                 {/* dropdown */}
                 {profileMenu && (
                     <div className='w-[290px] h-fit max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto'>
@@ -143,45 +189,50 @@ function Sidebar({ username, w1, setW1, w2, w3 }) {
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
-                    <div className='relative group '>
+                    <form onSubmit={handleSubmit1} className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
                             <p className='line-clamp-1'>{w1}</p>
                             {saveOpt1 && <>
-                                <form className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
-                                    <input type="text" value={w1} onChange={(e) => setW1(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
-                                </form>
+                                <div className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                    <input type="text" name='workspace1' autoComplete='off' value={w1} onChange={(e) => setW1(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                                </div>
                             </>}
 
                         </Link>
-                        <button onClick={showMoreMenuw1} className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                        <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
-                        </button>
+                        </div>
                         {moreOpt1 && <>
-                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                                <button onClick={renameW1} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <div onClick={renameW1} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
                                     <LuPencilLine className='text-lg  min-w-fit' />
                                     <p className='line-clamp-1'>Rename</p>
-                                </button>
-                                <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                </div>
+                                <Link to={'/'} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
                                     <LuTrash2 className='text-lg  min-w-fit text-red-500' />
                                     <p className='line-clamp-1 text-red-500'>Clear</p>
                                 </Link>
                             </div>
                         </>}
                         {saveOpt1 && <>
-                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                                <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
-                                    <LuCheck className='text-lg  min-w-fit' />
-                                    <p className='line-clamp-1'>Save Changes</p>
-                                </Link>
-                                <button onClick={() => setSaveOpt1(false)} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <button type='submit' className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                    {authing ? <>
+                                        <RiLoader5Fill className='text-xl animate-spinLoader  min-w-fit' />
+                                        <p className='line-clamp-1'>Saving .</p>
+                                    </> : <>
+                                        <LuCheck className='text-lg  min-w-fit' />
+                                        <p className='line-clamp-1'>Save Changes</p>
+                                    </>}
+                                </button>
+                                <div onClick={handleCancel} className={`${linkStyle} cursor-pointer ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
                                     <LuX className='text-lg  min-w-fit text-red-500' />
                                     <p className='line-clamp-1 text-red-500'>Cancel</p>
-                                </button>
+                                </div>
                             </div>
                         </>}
-                    </div>
+                    </form>
                     <div className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-orange-600  min-w-fit' />
