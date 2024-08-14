@@ -6,14 +6,17 @@ import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
 
-function Sidebar({ username }) {
+function Sidebar({ username, w1, setW1, w2, w3 }) {
     const [profileMenu, setProfileMenu] = useState(false)
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const location = useLocation()
-    // spaces
-    const [w1, setW1] = useState(null)
-    const [w2, setW2] = useState(null)
-    const [w3, setW3] = useState(null)
+    const [moreOpt1, setMoreOpt1] = useState(false)
+    const [saveOpt1, setSaveOpt1] = useState(false)
+    const [moreOpt2, setMoreOpt2] = useState(false)
+    const [saveOpt2, setSaveOpt2] = useState(false)
+    const [moreOpt3, setMoreOpt3] = useState(false)
+    const [saveOpt3, setSaveOpt3] = useState(false)
+
 
     const showPMenu = () => {
         setProfileMenu(true)
@@ -28,19 +31,16 @@ function Sidebar({ username }) {
         }, 1000);
     }
 
-    // getting space names
-    useEffect(() => {
-        const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
-        const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
-        const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
-        setW1(luw1)
-        setW2(luw2)
-        setW3(luw3)
-    },[])
+
 
     // show more
     const showMoreMenuw1 = () => {
-
+        setMoreOpt1(true)
+    }
+    // rename workspace 1
+    const renameW1 = () => {
+        setMoreOpt1(false)
+        setSaveOpt1(true)
     }
 
     const linkStyle = 'min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative'
@@ -50,6 +50,10 @@ function Sidebar({ username }) {
             <div className=' relative w-full h-full'>
                 {/* overlay */}
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu */}
+                <div onClick={() => setMoreOpt1(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? 'fixed' : 'hidden'}`}></div>
+                {/* overlay more menu save */}
+                <div onClick={() => setSaveOpt1(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? 'fixed' : 'hidden'}`}></div>
                 {/* dropdown */}
                 {profileMenu && (
                     <div className='w-[290px] h-fit max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto'>
@@ -143,33 +147,40 @@ function Sidebar({ username }) {
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
                             <p className='line-clamp-1'>{w1}</p>
-                            {/* <form className='w-[75%] h-[60%] absolute left-2'>
-                                <input type="text" className=" h-full w-full bg-white ring-2 ring-main-color rounded-sm px-1" />
-                            </form> */}
+                            {saveOpt1 && <>
+                                <form className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                    <input type="text" value={w1} onChange={(e) => setW1(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                                </form>
+                            </>}
+
                         </Link>
                         <button onClick={showMoreMenuw1} className={`absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full ${location.pathname === '/' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </button>
-                        {/* <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
-                                <LuPencilLine className='text-lg  min-w-fit' />
-                                <p className='line-clamp-1'>Rename</p>
-                            </Link>
-                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
-                                <LuTrash2 className='text-lg  min-w-fit text-red-500' />
-                                <p className='line-clamp-1 text-red-500'>Clear</p>
-                            </Link>
-                        </div>
-                        <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
-                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
-                                <LuCheck className='text-lg  min-w-fit' />
-                                <p className='line-clamp-1'>Save Changes</p>
-                            </Link>
-                            <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
-                                <LuX className='text-lg  min-w-fit text-red-500' />
-                                <p className='line-clamp-1 text-red-500'>Cancel</p>
-                            </Link>
-                        </div> */}
+                        {moreOpt1 && <>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <button onClick={renameW1} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                    <LuPencilLine className='text-lg  min-w-fit' />
+                                    <p className='line-clamp-1'>Rename</p>
+                                </button>
+                                <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                    <LuTrash2 className='text-lg  min-w-fit text-red-500' />
+                                    <p className='line-clamp-1 text-red-500'>Clear</p>
+                                </Link>
+                            </div>
+                        </>}
+                        {saveOpt1 && <>
+                            <div className='absolute right-0 top-[100%] bg-white rounded-xl w-fit max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2'>
+                                <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                    <LuCheck className='text-lg  min-w-fit' />
+                                    <p className='line-clamp-1'>Save Changes</p>
+                                </Link>
+                                <button onClick={() => setSaveOpt1(false)} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50'}`}>
+                                    <LuX className='text-lg  min-w-fit text-red-500' />
+                                    <p className='line-clamp-1 text-red-500'>Cancel</p>
+                                </button>
+                            </div>
+                        </>}
                     </div>
                     <div className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/5 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>

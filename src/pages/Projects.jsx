@@ -17,6 +17,20 @@ function Projects() {
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
   const inputRef = useRef(null);
+  // spaces
+  const [w1, setW1] = useState(null)
+  const [w2, setW2] = useState(null)
+  const [w3, setW3] = useState(null)
+
+  // getting space names
+  useEffect(() => {
+    const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
+    const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
+    const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
+    setW1(luw1)
+    setW2(luw2)
+    setW3(luw3)
+  }, [])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -103,7 +117,7 @@ function Projects() {
 
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <Sidebar username={username} />
+      <Sidebar username={username} w1={w1} setW1={setW1} w2={w2} w3={w3} />
       <div className='w-full h-full min-h-svh text-text-color flex flex-col'>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-5'>
           <div className='flex items-end justify-start gap-0 '>
