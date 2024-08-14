@@ -50,7 +50,7 @@ function Projects() {
     { progress: 58, progressClass: "w-[58%]" },
     { progress: 19, progressClass: "w-[19%]" },
     { progress: 81, progressClass: "w-[81%]" },
-    { progress: 98, progressClass: "w-[98%]" },
+    { progress: 100, progressClass: "w-[100%]" },
     { progress: 44, progressClass: "w-[44%]" },
     { progress: 8, progressClass: "w-[8%] " },
     { progress: 69, progressClass: "w-[69%] " },
@@ -90,7 +90,7 @@ function Projects() {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
 
     if (progress <= 100 && progress > 75) {
-      classes += ' bg-green-500'; // Green for complete progress
+      classes += ' bg-lime-600'; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
       classes += ' bg-teal-500'; // Teal for progress between 76 and 99
     } else if (progress < 50 && progress > 25) {
@@ -199,8 +199,8 @@ function Projects() {
                 </div>
                 <div className='flex items-center gap-3 py-3'>
                   <h1 className='text-sm'>{project.progress}%</h1>
-                  <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                    <div className={`flex flex-col justify-center rounded-full overflow-hidden bg-main-color/70 text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                  <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
                   </div>
                   <h1 className='text-sm'>100%</h1>
                 </div>
