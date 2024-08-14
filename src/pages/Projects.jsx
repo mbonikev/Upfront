@@ -19,7 +19,6 @@ function Projects() {
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
   const inputRef = useRef(null);
-  const [mleft, setMleft] = useState(true)
   // spaces
   const [w1, setW1] = useState(null)
   const [w2, setW2] = useState(null)
@@ -131,22 +130,12 @@ function Projects() {
     document.title = luw1 + " - Upfront";
   }, [])
 
-  // handle sidebar
-  const handleSidebarToggle = () => {
-    setMleft(!mleft)
-  }
-
   return (
     <div className='w-full flex items-start justify-start relative'>
-      <Sidebar username={username} mleft={mleft} handleSidebarToggle={handleSidebarToggle} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
-      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col z-10 bg-white transition-all duration-500 ease-in-out ${mleft ? '' : ''}`}>
+      <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
+      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out `}>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-3'>
           <div className=' min-h-[35px] flex items-center justify-start gap-0 '>
-            {!mleft && <>
-              <button onClick={handleSidebarToggle} title='Toggle Sidebar' className=' h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200/50 hover:text-text-color '>
-                <BsLayoutSidebar className='text-[18px]' />
-              </button>
-              </>}
             <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>
               <BreadCrumb name={'Workspaces'} status={'off'} link={'/'} /> /
               <BreadCrumb name={w1} status={'on'} link={'/'} />
