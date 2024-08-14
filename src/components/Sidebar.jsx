@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
-import { IoChevronDown,  } from 'react-icons/io5'
+import { IoChevronDown, } from 'react-icons/io5'
 import { LuCheckCircle, LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuWorkflow } from 'react-icons/lu'
-import { BsLayoutSidebar} from 'react-icons/bs'
+import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 function Sidebar({ username }) {
+    const [profileMenu, setProfileMenu] = useState(false)
+
+    const showPMenu = () => {
+        setProfileMenu(true)
+    }
     return (
-        <>
-            <div className='w-[300px] h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0 overflow-y-auto'>
+        <div className='w-[256px] min-w-[256px] relative'>
+            {/* overlay */}
+            <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
+            {/* dropdown */}
+            {profileMenu && (
+                        <div className='w-[290px] h-[400px] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/50'></div>
+                        )}
+            <div className='w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col p-3 text-sm sticky top-0 overflow-y-auto'>
                 <div className='w-full flex items-center justify-between mb-4'>
-                    <button title='' className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
+                    <button onClick={showPMenu} className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-200/50 transition p-1 rounded-lg'>
                         <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white'>{username.charAt(0)}</p>
                         <p className='truncate font-medium pl-[6px]'>{username}</p>
                         <IoChevronDown className='min-w-[15px] text-text-color/70' />
@@ -69,7 +80,7 @@ function Sidebar({ username }) {
 
 
             </div>
-        </>
+        </div>
     )
 }
 
