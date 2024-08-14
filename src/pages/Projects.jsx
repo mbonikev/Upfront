@@ -11,8 +11,10 @@ import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
 import { LuHash } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
+import axios from 'axios'
 
 function Projects() {
+  const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext()
   const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
@@ -21,16 +23,6 @@ function Projects() {
   const [w1, setW1] = useState(null)
   const [w2, setW2] = useState(null)
   const [w3, setW3] = useState(null)
-
-  // getting space names
-  useEffect(() => {
-    const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
-    const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
-    const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
-    setW1(luw1)
-    setW2(luw2)
-    setW3(luw3)
-  }, [])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -112,8 +104,31 @@ function Projects() {
 
   // page title
   useEffect(() => {
-    document.title = w1;
+    const fetchAllWorkShops = async () => {
+      try {
+          const response = await axios.get(`${apiUrl}/api/workspaces`,{ params: { userEmail }});
+          // console.log('Response data:', response);
+          localStorage.setItem('upfront_user_name_w1', response.data.dbw1)
+          localStorage.setItem('upfront_user_name_w2', response.data.dbw2)
+          localStorage.setItem('upfront_user_name_w3', response.data.dbw3)
+      } catch (err) {
+          console.error('Error updating data:', err);
+      }
+  };
+  
+  fetchAllWorkShops()
   }, []);
+
+  // getting space names + naming the page
+  useEffect(() => {
+    const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
+    const luw2 = localStorage.getItem('upfront_user_name_w2') || 'Workspace 2'
+    const luw3 = localStorage.getItem('upfront_user_name_w3') || 'Workspace 3'
+    setW1(luw1)
+    setW2(luw2)
+    setW3(luw3)
+    document.title = luw1;
+  }, [])
 
   return (
     <div className='w-full flex items-start justify-start relative'>
