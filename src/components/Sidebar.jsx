@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
-import { LuCheckCircle, LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuWorkflow } from 'react-icons/lu'
+import { LuCheckCircle, LuCog, LuCrown, LuHash, LuSearch, LuStar, LuTimerReset, LuTrophy, LuUser2, LuWorkflow } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
@@ -20,12 +20,19 @@ function Sidebar({ username }) {
                 {profileMenu && (
                     <div className='w-[290px] h-[400px] max-h-[80vh] bg-white z-30 absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0'>
                         <div className='p-2'>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] text-sm font-medium text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuSearch className='text-xl  min-w-fit' />
+                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                <LuTrophy className='text-xl text-text-color/50 min-w-fit' />
                                 <div className='w-full h-fit flex-col'>
-                                <p className='line-clamp-1'>Search</p>
-                                <p className='line-clamp-1'>Search</p>
+                                    <p className='line-clamp-1 text-base font-medium text-text-color'>{username}</p>
+                                    <p className='line-clamp-1 text-text-color/70 text-xs'>242 Completed </p>
                                 </div>
+                            </Link>
+                        </div>
+                        <div className='w-full h-[1px] bg-border-line-color/70'></div>
+                        <div className='p-2'>
+                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-medium text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                                <LuCog className='text-xl text-text-color/50  min-w-fit' />
+                                <p className='line-clamp-1'>Settings</p>
                             </Link>
                         </div>
                     </div>
