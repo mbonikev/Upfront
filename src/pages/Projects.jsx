@@ -44,16 +44,16 @@ function Projects() {
   }, [pageTitle]);
 
   const projects = [
-    // { progress: 26, progressClass: "w-[26%]" },
-    // { progress: 64, progressClass: "w-[64%]" },
-    // { progress: 34, progressClass: "w-[34%]" },
-    { progress: 58, progressClass: "w-[58%]" },
-    // { progress: 19, progressClass: "w-[19%]" },
-    // { progress: 81, progressClass: "w-[81%]" },
-    // { progress: 100, progressClass: "w-[100%]" },
-    // { progress: 44, progressClass: "w-[44%]" },
-    // { progress: 8, progressClass: "w-[8%] " },
-    // { progress: 69, progressClass: "w-[69%] " },
+    { id: "FN30498FHFF-032", progress: 26, progressClass: "w-[26%]" },
+    { id: "FDINFE08434-952", progress: 64, progressClass: "w-[64%]" },
+    { id: "0FINERW9F8H-349", progress: 34, progressClass: "w-[34%]" },
+    { id: "ODIENF9IH49-345", progress: 58, progressClass: "w-[58%]" },
+    { id: "PFONEFPIN04-3RE", progress: 19, progressClass: "w-[19%]" },
+    { id: "NMY944IGNRE-969", progress: 81, progressClass: "w-[81%]" },
+    { id: "FPEIR85342J-509-", progress: 100, progressClass: "w-[100%]" },
+    { id: "2OINFOI3F93-490", progress: 44, progressClass: "w-[44%]" },
+    { id: "OIFNEFOEIBN-113", progress: 8, progressClass: "w-[8%] " },
+    { id: "0PFJEIRFE03-222", progress: 69, progressClass: "w-[69%] " },
   ]
   const count100Percent = projects.filter(project => project.progress === 100).length;
 
@@ -188,7 +188,7 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
-              <Link key={index} to={`/project/${'1'}`} className='w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
+              <Link key={index} to={`/project/${'1'}`} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
                 <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
                 <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
                 <div className='flex items-center justify-start mt-3'>
