@@ -6,6 +6,7 @@ import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
 import axios from 'axios'
+import ProfileDropdownButtons from './ProfileDropdownButtons'
 
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW2, w3, setW3 }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -179,54 +180,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                 {/* dropdown */}
                 {profileMenu && (
                     <div className='w-[290px] h-fit max-h-[80vh] bg-white absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30'>
-                        <div className='p-2'>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuTrophy className='text-xl text-text-color/50 min-w-fit' />
-                                <div className='w-full h-fit flex-col'>
-                                    <p className='line-clamp-1 text-sm font-medium text-text-color'>{username}</p>
-                                    <p className='line-clamp-1 text-text-color/70 text-xs'>242 Completed </p>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className='w-full h-[1px] bg-border-line-color/70'></div>
-                        <div className='p-2 flex flex-col'>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuSettings className='text-xl text-text-color/50  min-w-fit' />
-                                <p className='line-clamp-1'>Settings</p>
-                            </Link>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuActivity className='text-xl text-text-color/50  min-w-fit' />
-                                <p className='line-clamp-1'>Activity log</p>
-                            </Link>
-                            <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                <LuInfo className='text-xl text-text-color/50  min-w-fit' />
-                                <p className='line-clamp-1'>About Upfront.</p>
-                            </Link>
-                        </div>
-                        <div className='w-full h-[1px] bg-border-line-color/70'></div>
-                        <div className='p-2 flex flex-col'>
-                            <button onClick={handleLogout} className={`min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 ${logoutAnimate ? 'pointer-events-none' : ''}`}>
-                                {logoutAnimate ? <>
-                                    <RiLoader5Fill className='text-xl animate-spinLoader text-red-500  min-w-fit' />
-                                    <p className='line-clamp-1'>Logging out..</p>
-                                </> : <>
-                                    <LuLogOut className='text-xl text-red-500  min-w-fit' />
-                                    <p className='line-clamp-1'>Log out</p>
-                                </>}
-                            </button>
-                        </div>
-                        <div className='w-full h-[1px] bg-border-line-color/70'></div>
-                        <div className='p-2 flex items-center justify-start gap-2'>
-                            <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                {/* <LuLogOut className='text-xl text-text-color/50  min-w-fit' /> */}
-                                <p className='line-clamp-1'>What's new? </p>
-                            </Link>
-                            <span className='text-sm opacity w-[1px] h-[20px] bg-border-line-color flex'></span>
-                            <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                                {/* <LuLogOut className='text-xl text-text-color/50  min-w-fit' /> */}
-                                <p className='line-clamp-1'>Terms of use </p>
-                            </Link>
-                        </div>
+                        <ProfileDropdownButtons username={username} />
                     </div>
                 )}
                 <div className='w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto'>
