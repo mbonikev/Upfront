@@ -394,7 +394,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                             </div>
                         </>}
                     </form>
-                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}><LuCrown className='text-xl text-yellow-600' /> More Workspaces</Link>
+                    <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}>
+                        <LuCrown className='text-xl text-yellow-500' />
+                        <h1 className='flex flex-col'>
+                            <span>Unlock More Workspaces</span>
+                            <span className='text-[11px] text-text-color/70 font-medium '>$12 / Month - $39.99 / Year</span>
+                        </h1>
+                    </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
                     <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                         <LuWorkflow className='text-xl text-main-color min-w-fit' />
