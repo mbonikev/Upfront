@@ -9,7 +9,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuHash, LuTrash2 } from 'react-icons/lu'
+import { LuArchive, LuArchiveRestore, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 
@@ -141,11 +141,19 @@ function Projects() {
               <BreadCrumb name={w1} status={'on'} link={'/'} />
             </div>
           </div>
-          <div className='flex items-center justify-end gap-2'>
-            <button title='create a new project' className="bg-gradient-to-br from-main-color/60 to-main-color-hover hover:bg-main-color-hover transition text-white text-xs font-semibold py-[9px] px-5 gap-1 rounded-lg inline-flex items-center">
-              <FaPlus />
-              <span className='text-xs font-bold'>Create</span>
+          <div className='flex items-center justify-end gap-0'>
+            <button title='Archived' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 text-text-color/70 hover:text-text-color rounded-lg inline-flex items-center">
+              <LuArchive className='text-base' />
+              <span className='text-xs font-medium tracking-tight'>Archived</span>
             </button>
+            <button title='Trash' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 text-text-color/70 hover:text-text-color rounded-lg inline-flex items-center">
+              <LuTrash2 className='text-base' />
+              <span className='text-xs font-medium tracking-tight'>Trash</span>
+            </button>
+            {/* <button title='create a new project' className="bg-gradient-to-tr from-main-color/60 to-main-color-hover hover:bg-main-color-hover transition text-white text-xs font-semibold py-2 px-4 gap-1 rounded-lg inline-flex items-center">
+              <FaPlus />
+              <span className='text-xs font-medium'>New project</span>
+            </button> */}
             {/* <button title='Deadlines' className='text-xl h-[35px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200'>
               <RxTimer />
             </button> */}
@@ -173,14 +181,16 @@ function Projects() {
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
               <div className='group relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
-                <div className='absolute z-20 top-1 right-1 h-[36px] w-[36px] min-w-[36px] rounded-full flex items-center justify-center bg-white p-1 opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition'>
-                  <button title='Delete Project' className={`h-full w-full flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 tracking-tight rounded-full line-clamp-1 relative cursor-pointer bg-white hover:bg-stone-100 `}>
-                    <LuTrash2 className='text-base  min-w-fit ' />
-                    {/* <p className='line-clamp-1'>Move to trash</p> */}
+                <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
+                  <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                    <LuArchive className='text-xl  min-w-fit ' />
+                  </button>
+                  <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                    <LuTrash2 className='text-xl  min-w-fit ' />
                   </button>
                 </div>
-                <Link key={index} to={`/project/${'1'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
-                  <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
+                <Link key={index} to={`/project/${'1'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                  <h1 className='font-normal text-sm leading-7 line-clamp-1'> Gerayo Application Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus facilis explicabo blanditiis, fuga quia tenetur tempore. Officiis soluta suscipit sit ipsum mollitia sed reiciendis perferendis et vero asperiores. Dolorum, cupiditate!</h1>
                   <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
                   <div className='flex items-center justify-start mt-3'>
                     <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
