@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { LuActivity, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy } from 'react-icons/lu'
+import { LuActivity, LuArchive, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
@@ -38,6 +38,10 @@ function ProfileDropdownButtons({ username }) {
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuActivity className='text-xl text-text-color/50  min-w-fit' />
                     <p className='line-clamp-1'>Activity log</p>
+                </Link>
+                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                    <LuArchive className='text-xl text-text-color/50  min-w-fit' />
+                    <p className='line-clamp-1'>Archived Projects</p>
                 </Link>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuTrash2 className='text-xl text-text-color/50  min-w-fit' />
