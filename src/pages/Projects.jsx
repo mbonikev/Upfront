@@ -9,7 +9,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuHash } from 'react-icons/lu'
+import { LuHash, LuTrash2 } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 
@@ -172,30 +172,38 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
-              <Link key={index} to={`/project/${'1'}`} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
-                <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
-                <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
-                <div className='flex items-center justify-start mt-3'>
-                  <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
-                  <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
-                  <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
-                  <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
+              <div className='group relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
+                <div className='absolute z-20 top-1 right-1 h-[36px] w-[36px] min-w-[36px] rounded-full flex items-center justify-center bg-white p-1 opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition'>
+                  <button title='Delete Project' className={`h-full w-full flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 tracking-tight rounded-full line-clamp-1 relative cursor-pointer bg-white hover:bg-stone-100 `}>
+                    <LuTrash2 className='text-base  min-w-fit ' />
+                    {/* <p className='line-clamp-1'>Move to trash</p> */}
+                  </button>
                 </div>
-                <div className='flex items-center gap-3 py-3'>
-                  <h1 className='text-sm'>{project.progress}%</h1>
-                  <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                    <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                <Link key={index} to={`/project/${'1'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                  <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
+                  <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
+                  <div className='flex items-center justify-start mt-3'>
+                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
+                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
+                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
+                    <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
                   </div>
-                  <h1 className='text-sm'>100%</h1>
-                </div>
-                <div className='w-full flex items-center justify-between'>
-                  <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
-                    <TbStack className='text-xl' />
-                    {project.progress} Boards
-                  </p>
-                  <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
-                </div>
-              </Link>
+                  <div className='flex items-center gap-3 py-3'>
+                    <h1 className='text-sm'>{project.progress}%</h1>
+                    <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                    </div>
+                    <h1 className='text-sm'>100%</h1>
+                  </div>
+                  <div className='w-full flex items-center justify-between'>
+                    <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
+                      <TbStack className='text-xl' />
+                      {project.progress} Boards
+                    </p>
+                    <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
