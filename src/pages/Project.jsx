@@ -9,7 +9,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuActivity, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLogOut, LuSettings, LuTrophy } from 'react-icons/lu'
+import { LuActivity, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLock, LuLogOut, LuSettings, LuShare2, LuStar, LuTimerReset, LuTrophy } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { RxTimer } from 'react-icons/rx'
@@ -17,6 +17,7 @@ import { IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown } from 'react-icons/io5'
 import { RiLoader5Fill } from 'react-icons/ri'
 import ProfileDropdownButtons from '../components/ProfileDropdownButtons'
+import { GiPadlock } from 'react-icons/gi'
 
 function Project() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -141,11 +142,11 @@ function Project() {
       <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out `}>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-3'>
           <div className=' min-h-[35px] flex items-center justify-start gap-0 '>
-            <div className='flex items-center justify-start gap-3 text-sm text-text-color/70 mr-2'>
+            <div className='flex items-center justify-start gap-3 text-sm mr-2'>
               <button title='Deadlines' className='text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200'>
                 <LuArrowLeft />
               </button>
-              <button title='Deadlines' className='text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200'>
+              <button title='Deadlines' className='opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200'>
                 <LuArrowRight />
               </button>
             </div>
@@ -156,17 +157,21 @@ function Project() {
             </div>
           </div>
           <div className='flex items-center justify-end gap-0'>
-            <button title='Deadlines' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
-              <RxTimer />
+          <button title='Add collaborators' className="bg-stone-100 hover:text-main-color transition mr-2 text-xs font-semibold py-2 px-3 gap-1 rounded-lg inline-flex items-center">
+              <LuShare2 className='text-lg' />
+              <span className='text-xs font-semibold'>Share</span>
             </button>
-            <button title='Notifications' className='text-2xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
-              <IoMdNotificationsOutline />
+            <button title='Mark as favorite' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
+              <LuStar />
+            </button>
+            <button title='Dues' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
+              <LuTimerReset />
             </button>
             <span className='w-[2px]'></span>
-            <button onClick={showPMenu} className=' max-w-[105px] flex items-center justify-start gap-[2px] hover:bg-stone-100 transition p-1 rounded-lg'>
+            <button onClick={showPMenu} className=' max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100 transition p-1 rounded-lg'>
               <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-sm font-semibold text-white'>{username.charAt(0)}</p>
-              <p className='truncate font-medium pl-[3px] text-sm text-text-color/70'>{username}</p>
-              <IoChevronDown className='min-w-[15px] text-text-color/70 text-sm' />
+              <p className='truncate font-medium pl-[3px] text-xs'>{username}</p>
+              <IoChevronDown className='min-w-[15px] text-xs' />
             </button>
           </div>
         </div>
@@ -183,7 +188,7 @@ function Project() {
               value={pageTitle}
               onChange={(e) => setPageTitle(e.target.value)}
               placeholder="Project Title "
-              className='text-3xl font-extrabold tracking-tight hover:ring-0 ring-slate-400/40 rounded-md truncate'
+              className='text-3xl font-extrabold tracking-tight hover:ring-0 ring-slate-400/40 truncate'
             />
           </div>
           <input
@@ -192,7 +197,7 @@ function Project() {
             value={pageDesc}
             onChange={(e) => setPageDesc(e.target.value)}
             placeholder="Project Description"
-            className='text-base font-normal tracking-tight hover:ring-0 text-text-color/70 ring-slate-400/40 rounded-md max-w-[800px] truncate resize-none'
+            className='text-base font-normal tracking-tight hover:ring-0 text-text-color/70 ring-slate-400/40 max-w-[800px] truncate resize-none'
           />
         </div>
 
