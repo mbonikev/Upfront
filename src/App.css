@@ -31,12 +31,11 @@ select {
 }
 
 .gridRespo {
-  /* max-width: 1300px; */
   width: 100%;
   margin: auto;
   display: grid;
   gap:15px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 @media only screen and (max-width: 800px) {
