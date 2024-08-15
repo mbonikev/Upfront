@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GoShieldCheck } from 'react-icons/go'
 import { IoShieldCheckmarkOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 
 function PasswordChangedSuccessfully() {
     localStorage.removeItem('fpq-key-code-random')
+    useEffect(() => {
+        document.title = "Successfully Updated Password - Upfront";
+      }, [])
     return (
         <div className='w-full h-full min-h-svh flex flex-col items-center justify-center'>
             <GoShieldCheck className='text-main-color text-[60px]' />
