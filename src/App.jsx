@@ -11,7 +11,7 @@ import FPQ from './pages/FPQ'
 import CreateNewPassword from './pages/CreateNewPassword'
 import PasswordChangedSuccessfully from './pages/PasswordChangedSuccessfully'
 import ProtectedFP from './utils/ProtectedFP'
-import Project from './pages/Project'
+import SingleProject from './pages/SingleProject'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           {/* Routes */}
           <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Projects />} />
-            <Route path='/project/:id' element={<Project />} />
+            <Route path='/project/:id' element={<SingleProject />} />
           </Route>
           {/* Auth */}
           <Route element={<ProtectedAuthRoutes />}>
