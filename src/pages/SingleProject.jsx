@@ -25,14 +25,12 @@ function SingleProject() {
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
   const [pemoji, setPemoji] = useState(null);
-  const [pageTitle, setPageTitle] = useState("");
-  const [pageDesc, setPageDesc] = useState("");
   const inputRef = useRef(null);
   const inputRef2 = useRef(null);
   // spaces
-  const [w1, setW1] = useState(null);
-  const [w2, setW2] = useState(null);
-  const [w3, setW3] = useState(null);
+  const [projectEmoji, setProjectEmoji] = useState(null);
+  const [projectTitle, setProjectTitle] = useState(null);
+  const [projectDesc, setProjectDesc] = useState(null);
   const { id } = useParams();
   // dragabble
   const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
@@ -49,7 +47,7 @@ function SingleProject() {
       tempSpan.style.position = "absolute";
       tempSpan.style.whiteSpace = "pre";
       tempSpan.style.fontSize = getComputedStyle(input).fontSize;
-      tempSpan.textContent = pageTitle || input.placeholder;
+      tempSpan.textContent = projectTitle || input.placeholder;
 
       document.body.appendChild(tempSpan);
       const width = tempSpan.offsetWidth + 100; // Add extra padding
@@ -57,7 +55,7 @@ function SingleProject() {
 
       input.style.width = `${width}px`;
     }
-  }, [pageTitle]);
+  }, [projectTitle]);
 
   useEffect(() => {
     const input2 = inputRef2.current;
@@ -68,7 +66,7 @@ function SingleProject() {
       tempSpan.style.position = "absolute";
       tempSpan.style.whiteSpace = "pre";
       tempSpan.style.fontSize = getComputedStyle(input2).fontSize;
-      tempSpan.textContent = pageDesc || input2.placeholder;
+      tempSpan.textContent = projectDesc || input2.placeholder;
 
       document.body.appendChild(tempSpan);
       const width = tempSpan.offsetWidth + 0; // Add extra padding
@@ -76,7 +74,7 @@ function SingleProject() {
 
       input2.style.width = `${width}px`;
     }
-  }, [pageDesc]);
+  }, [projectDesc]);
 
   const updateEmoji = () => {
     const storedEmojiPosition =
@@ -122,7 +120,10 @@ function SingleProject() {
     const getProject = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
-        console.log(response.data)
+        setProjectEmoji(response.data.emoji)
+        setProjectTitle(response.data.name)
+        setProjectDesc(response.data.desc)
+        console.log(projectTitle)
       }
       catch (error) {
         console.log(error)
@@ -236,20 +237,19 @@ function SingleProject() {
               <input
                 ref={inputRef}
                 type="text"
-                value={pageTitle}
-                onChange={(e) => setPageTitle(e.target.value)}
+                value={projectTitle}
+                onChange={(e) => setProjectTitle(e.target.value)}
                 placeholder="Project Title "
                 className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
               />
             </div>
-            <input
-              ref={inputRef2}
+            <textarea
               type="text"
-              value={pageDesc}
-              onChange={(e) => setPageDesc(e.target.value)}
+              value={projectDesc}
+              onChange={(e) => setProjectDesc(e.target.value)}
               placeholder="a short description"
-              className="text-base font-normal tracking-tight max-w-[800px] truncaten placeholder:text-text-color/70 resize-none"
-            />
+              className="text-sm font-normal tracking-tight w-full max-w-[900px] truncaten placeholder:text-text-color/70 text-text-color resize-none"
+            ></textarea>
             <div className="w-full h-[1px] bg-border-line-color/50 my-5"></div>
           </div>
         </div>
