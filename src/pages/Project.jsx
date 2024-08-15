@@ -9,7 +9,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuActivity, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLock, LuLogOut, LuSettings, LuShare2, LuStar, LuTimerReset, LuTrophy } from 'react-icons/lu'
+import { LuActivity, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLock, LuLogOut, LuSettings, LuShare2, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUsers2 } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { RxTimer } from 'react-icons/rx'
@@ -24,8 +24,8 @@ function Project() {
   const { username, userEmail } = useOutletContext()
   const [profileMenu, setProfileMenu] = useState(false)
   const [pemoji, setPemoji] = useState(null)
-  const [pageTitle, setPageTitle] = useState('Gerayo Application')
-  const [pageDesc, setPageDesc] = useState('Online Bus tracking and Ticketing system')
+  const [pageTitle, setPageTitle] = useState('')
+  const [pageDesc, setPageDesc] = useState('')
   const inputRef = useRef(null);
   const inputRef2 = useRef(null);
   // spaces
@@ -157,19 +157,21 @@ function Project() {
             </div>
           </div>
           <div className='flex items-center justify-end gap-0'>
-          <button title='Add collaborators' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 rounded-lg inline-flex items-center">
-              <LuShare2 className='text-lg' />
-              <span className='text-xs font-semibold'>Share</span>
+            <button title='Move to trash' className='text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 '>
+              <LuTrash2 />
             </button>
-            <button title='Mark as favorite' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
+            <button title='Manage Collaborators' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color '>
+              <LuUsers2 />
+            </button>
+            <button title='Mark as favorite' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color '>
               <LuStar />
             </button>
-            <button title='Dues' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100'>
+            <button title='Dues' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color '>
               <LuTimerReset />
             </button>
             <span className='w-[2px]'></span>
-            <button onClick={showPMenu} className=' max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100 transition p-1 rounded-lg'>
-              <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-sm font-semibold text-white'>{username.charAt(0)}</p>
+            <button onClick={showPMenu} className=' max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color transition p-1 rounded-lg'>
+              <p className='h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white'>{username.charAt(0)}</p>
               <p className='truncate font-medium pl-[3px] text-xs'>{username}</p>
               <IoChevronDown className='min-w-[15px] text-xs' />
             </button>
@@ -196,7 +198,7 @@ function Project() {
             type="text"
             value={pageDesc}
             onChange={(e) => setPageDesc(e.target.value)}
-            placeholder="Project Description"
+            placeholder="a short description"
             className='text-base font-normal tracking-tight hover:ring-0 text-text-color/70 ring-slate-400/40 max-w-[800px] truncate resize-none'
           />
         </div>
