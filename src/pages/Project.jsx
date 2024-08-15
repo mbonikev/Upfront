@@ -118,9 +118,8 @@ function Project() {
     fetchAllWorkShops()
   }, []);
 
-  // getting space names + naming the page
   useEffect(() => {
-
+    document.title = "New Project - Upfront";
   }, [])
 
   const showPMenu = () => {
