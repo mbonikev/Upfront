@@ -51,6 +51,10 @@ function CreateNewPassword() {
 
     };
 
+    useEffect(() => {
+        document.title = "Create new passwor - Upfront";
+      }, [])
+
     return (
         <>
             <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
