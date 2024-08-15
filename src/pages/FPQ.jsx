@@ -41,6 +41,10 @@ function FPQ() {
         }
     };
 
+    useEffect(() => {
+        document.title = "Security Question - Upfront";
+      }, [])
+
 
     return (
         <>
