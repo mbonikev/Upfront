@@ -9,7 +9,7 @@ import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuActivity, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLock, LuLogOut, LuSettings, LuShare2, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUsers2 } from 'react-icons/lu'
+import { LuActivity, LuArchive, LuArrowLeft, LuArrowRight, LuHash, LuInfo, LuLock, LuLogOut, LuSettings, LuShare2, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUsers2 } from 'react-icons/lu'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { RxTimer } from 'react-icons/rx'
@@ -156,6 +156,9 @@ function Project() {
             </div>
           </div>
           <div className='flex items-center justify-end gap-0'>
+            <button title='Archive Project' className='text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color '>
+              <LuArchive />
+            </button>
             <button title='Move to trash' className='text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 '>
               <LuTrash2 />
             </button>
