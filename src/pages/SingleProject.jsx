@@ -117,6 +117,21 @@ function SingleProject() {
     setProfileMenu(true);
   };
 
+  // get project details
+  useEffect(() => {
+    const getProject = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
+        console.log(response.data)
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
+    getProject()
+  }, [])
+
   return (
     <>
       {/* overlay */}
