@@ -157,7 +157,7 @@ function Project() {
             </div>
           </div>
           <div className='flex items-center justify-end gap-0'>
-          <button title='Add collaborators' className="bg-stone-100 hover:text-main-color transition mr-2 text-xs font-semibold py-2 px-3 gap-1 rounded-lg inline-flex items-center">
+          <button title='Add collaborators' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 rounded-lg inline-flex items-center">
               <LuShare2 className='text-lg' />
               <span className='text-xs font-semibold'>Share</span>
             </button>
