@@ -133,7 +133,7 @@ function Projects() {
   return (
     <div className='w-full flex items-start justify-start relative'>
       <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
-      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out `}>
+      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out z-10 `}>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-3'>
           <div className=' min-h-[35px] flex items-center justify-start gap-0 '>
             <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>
@@ -180,7 +180,7 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
-              <div className='group relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
+              <div className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
                 <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
                   <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
                     <LuArchive className='text-xl  min-w-fit ' />
