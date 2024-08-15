@@ -398,7 +398,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                         <LuCrown className='text-xl text-yellow-500' />
                         <h1 className='flex flex-col'>
                             <span>Unlock More Workspaces</span>
-                            <span className='text-[11px] text-text-color/70 font-medium '>$12 / Month - $39.99 / Year</span>
+                            <span className='text-[11px] text-text-color/70 font-medium '>$5.99 / Month - $49.99 / Year</span>
                         </h1>
                     </Link>
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Collaborations</p>
