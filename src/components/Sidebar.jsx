@@ -198,7 +198,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
 
                         </div>
                     </div>
-                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'><IoIosAddCircle className='text-2xl' /> Create Project</Link>
+                    <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50'>
+                        <IoIosAddCircle className='text-2xl' />
+                        <p className='line-clamp-1'>New Project</p>
+                    </Link>
                     <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuSearch className='text-xl  min-w-fit' />
                         <p className='line-clamp-1'>Search</p>
