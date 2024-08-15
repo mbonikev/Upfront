@@ -90,7 +90,7 @@ function Projects() {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
 
     if (progress <= 100 && progress > 75) {
-      classes += ' bg-lime-600'; // Green for complete progress
+      classes += ' bg-green-500'; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
       classes += ' bg-teal-500'; // Teal for progress between 76 and 99
     } else if (progress < 50 && progress > 25) {
@@ -140,22 +140,6 @@ function Projects() {
               <BreadCrumb name={'Workspaces'} status={'off'} link={'/'} /> /
               <BreadCrumb name={w1} status={'on'} link={'/'} />
             </div>
-            {/* <div className='group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer'>
-              <p className='text-2xl bgora'>{pemoji}</p>
-              <Emojis change={ChangeEmoji} />
-            </div> */}
-            {/* growing input */}
-            {/* <input
-              ref={inputRef}
-              type="text"
-              value={pageTitle}
-              onChange={(e) => setPageTitle(e.target.value)}
-              placeholder="Type here.."
-              maxLength={20}
-              className='text-3xl font-extrabold tracking-tight hover:ring-2 ring-slate-400/40 rounded-md'
-            /> */}
-            {/* <h1 className='text-3xl font-extrabold tracking-tight'>Projects</h1> */}
-            {/* <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span> */}
           </div>
           <div className='flex items-center justify-end gap-2'>
             <button title='create a new project' className="bg-gradient-to-br from-main-color/60 to-main-color-hover hover:bg-main-color-hover transition text-white text-xs font-semibold py-[9px] px-5 gap-1 rounded-lg inline-flex items-center">
