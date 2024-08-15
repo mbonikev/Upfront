@@ -267,13 +267,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-lime-600  min-w-fit' />
                             <p className='line-clamp-1'>{w1}</p>
-                            {saveOpt1 && <>
-                                <div className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
-                                    <input type="text" autoFocus name='workspace1' autoComplete='off' value={w1} onChange={(e) => setW1(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
-                                </div>
-                            </>}
-
                         </Link>
+                        {saveOpt1 && <>
+                            <div className='w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                <input type="text" autoFocus name='workspace1' autoComplete='off' value={w1} onChange={(e) => setW1(e.target.value)} className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                            </div>
+                        </>}
                         <div onClick={showMoreMenuw1} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 ${moreOpt1 && 'opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </div>
@@ -309,17 +308,16 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                     </form>
                     {/* Workspace 2 */}
                     <form onSubmit={handleSubmit2} className='relative group '>
-                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/2' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'} ${moreOpt2 && 'bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-orange-600  min-w-fit' />
                             <p className='line-clamp-1'>{w2}</p>
-                            {saveOpt2 && <>
-                                <div className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
-                                    <input type="text" autoFocus name='workspace2' autoComplete='off' value={w2} onChange={(e) => setW2(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
-                                </div>
-                            </>}
-
                         </Link>
-                        <div onClick={showMoreMenuw2} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100`}>
+                        {saveOpt2 && <>
+                            <div className='w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                <input type="text" autoFocus name='workspace2' autoComplete='off' value={w2} onChange={(e) => setW2(e.target.value)} className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                            </div>
+                        </>}
+                        <div onClick={showMoreMenuw2} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 ${moreOpt2 && 'opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </div>
                         {moreOpt2 && <>
@@ -354,17 +352,16 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                     </form>
                     {/* Workspace 3 */}
                     <form onSubmit={handleSubmit3} className='relative group '>
-                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
+                        <Link to={'/'} className={`${linkStyle} ${location.pathname === '/workspace/3' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}  ${moreOpt3 && 'bg-stone-200/50'}`}>
                             <LuHash className='text-xl text-violet-600 -500  min-w-fit' />
                             <p className='line-clamp-1'>{w3}</p>
-                            {saveOpt3 && <>
-                                <div className='w-[100%] h-[100%] absolute left-0 z-30 bg-white flex items-center justify-center p-1'>
-                                    <input type="text" autoFocus name='workspace3' autoComplete='off' value={w3} onChange={(e) => setW3(e.target.value)} className=" h-full w-full bg-white ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
-                                </div>
-                            </>}
-
                         </Link>
-                        <div onClick={showMoreMenuw3} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100`}>
+                        {saveOpt3 && <>
+                            <div className='w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white flex items-center justify-center p-1'>
+                                <input type="text" autoFocus name='workspace3' autoComplete='off' value={w3} onChange={(e) => setW3(e.target.value)} className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden" />
+                            </div>
+                        </>}
+                        <div onClick={showMoreMenuw3} className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100  ${moreOpt3 && 'opacity-100'}`}>
                             <LuMoreHorizontal className='text-xl text-text-color/70 hover:text-text-color' />
                         </div>
                         {moreOpt3 && <>
