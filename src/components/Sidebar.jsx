@@ -209,7 +209,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                     </Link>
                     <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuStar className='text-xl  min-w-fit' />
-                        <p className='line-clamp-1'>Stared Projects</p>
+                        <p className='line-clamp-1'>Favorites</p>
                     </Link>
                     <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
