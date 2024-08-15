@@ -71,3 +71,5 @@ export const EmojiArray = [
     { position: 70, emoji: "🚨" },
     { position: 71, emoji: "🧸" },
   ];
+
+// export const  
