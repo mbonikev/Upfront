@@ -215,6 +215,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                         <LuCheckCircle className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Completed </p>
                     </Link>
+                    {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
+                        <LuTrash2 className='text-lg px-[1px] min-w-fit' />
+                        <p className='line-clamp-1'>Trash </p>
+                    </Link> */}
                     <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
                     {/* Workspace 1 */}
                     <form onSubmit={handleSubmit1} className='relative group '>
