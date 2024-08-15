@@ -106,7 +106,7 @@ function Projects() {
   useEffect(() => {
     const fetchAllWorkShops = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/workspaces`, { params: { userEmail } });
+        const response = await axios.get(`${apiUrl}/api/getProject`, { params: { userEmail } });
         // console.log('Response data:', response);
         localStorage.setItem('upfront_user_name_w1', response.data.dbw1)
         localStorage.setItem('upfront_user_name_w2', response.data.dbw2)
