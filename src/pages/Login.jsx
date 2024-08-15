@@ -58,6 +58,9 @@ function Login() {
     }
   };
   
+  useEffect(() => {
+    document.title = "Login - Upfront";
+  }, [])
 
 
   return (
