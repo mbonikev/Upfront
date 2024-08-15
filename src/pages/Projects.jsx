@@ -188,7 +188,7 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {projects.map((project, index) => (
-              <Link key={index} to={'/'} className='w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
+              <Link key={index} to={`/project/${'1'}`} className='w-full h-fit p-4 rounded-xl shadow-sm bg-white transition hover:ring-2 hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col'>
                 <h1 className='font-normal text-sm leading-7 '> Gerayo Application</h1>
                 <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
                 <div className='flex items-center justify-start mt-3'>
