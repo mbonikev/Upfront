@@ -44,6 +44,10 @@ function ForgotPassword() {
         }
     };
 
+    useEffect(() => {
+        document.title = "Forgot Password - Upfront";
+    }, [])
+
 
     return (
         <>
