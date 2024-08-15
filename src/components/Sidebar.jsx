@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoIosAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { IoChevronDown, } from 'react-icons/io5'
-import { LuActivity, LuBadgeX, LuCheck, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuPen, LuPencilLine, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUser2, LuWorkflow, LuX } from 'react-icons/lu'
+import { LuActivity, LuBadgeX, LuCheck, LuCheckCircle, LuCog, LuCrown, LuFlag, LuFlagTriangleRight, LuHash, LuInfo, LuLogOut, LuMoreHorizontal, LuPen, LuPencilLine, LuPlus, LuSearch, LuSettings, LuStar, LuTimerReset, LuTrash2, LuTrophy, LuUser2, LuWorkflow, LuX } from 'react-icons/lu'
 import { BsLayoutSidebar } from 'react-icons/bs'
 import { Link, useLocation } from 'react-router-dom'
 import { RiLoader5Fill } from 'react-icons/ri'
@@ -160,7 +160,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
     const linkStyle = 'min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative'
 
     return (
-        <div className='w-[256px] min-w-[256px] sticky top-0'>
+        <div className='w-[256px] min-w-[256px] sticky top-0 z-20'>
             <div className=' relative w-full h-full'>
                 {/* overlay */}
                 <div onClick={() => setProfileMenu(false)} className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? 'fixed' : 'hidden'}`}></div>
@@ -219,7 +219,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1, w2, setW
                         <LuTrash2 className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Trash </p>
                     </Link> */}
-                    <p className='flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>Workspaces</p>
+                    <p className='flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight'>
+                        <span>Workspaces</span>
+                        <Link to={'/'} title='Add Worksspace'>
+                            <LuPlus className='text-lg cursor-pointer hover:text-text-color' />
+                        </Link>
+                    </p>
                     {/* Workspace 1 */}
                     <form onSubmit={handleSubmit1} className='relative group '>
                         <Link to={'/'} className={`${linkStyle} ${location.pathname === '/' ? 'bg-main-color/10 ' : 'hover:bg-stone-200/50 group-hover:bg-stone-200/50'}`}>
