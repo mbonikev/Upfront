@@ -44,9 +44,9 @@ function Projects() {
   }, [pageTitle]);
 
   const projects = [
-    { progress: 26, progressClass: "w-[26%]" },
-    { progress: 64, progressClass: "w-[64%]" },
-    { progress: 34, progressClass: "w-[34%]" },
+    // { progress: 26, progressClass: "w-[26%]" },
+    // { progress: 64, progressClass: "w-[64%]" },
+    // { progress: 34, progressClass: "w-[34%]" },
     { progress: 58, progressClass: "w-[58%]" },
     // { progress: 19, progressClass: "w-[19%]" },
     // { progress: 81, progressClass: "w-[81%]" },
