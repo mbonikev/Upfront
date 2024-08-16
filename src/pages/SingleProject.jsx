@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useOutletContext, useParams } from "react-router-dom";
-import Emojis from "../components/Emojis";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import {
@@ -23,8 +22,7 @@ function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
-  const inputRef = useRef(null);
-  const inputRef2 = useRef(null);
+  const inputRef = useRef('title');
   // spaces
   const [projectTitle, setProjectTitle] = useState(null);
   const [projectDesc, setProjectDesc] = useState(null);
@@ -53,25 +51,6 @@ function SingleProject() {
       input.style.width = `${width}px`;
     }
   }, [projectTitle]);
-
-  useEffect(() => {
-    const input2 = inputRef2.current;
-    if (input2) {
-      // Create a temporary span to measure the text width
-      const tempSpan = document.createElement("span");
-      tempSpan.style.visibility = "hidden";
-      tempSpan.style.position = "absolute";
-      tempSpan.style.whiteSpace = "pre";
-      tempSpan.style.fontSize = getComputedStyle(input2).fontSize;
-      tempSpan.textContent = projectDesc || input2.placeholder;
-
-      document.body.appendChild(tempSpan);
-      const width = tempSpan.offsetWidth + 0; // Add extra padding
-      document.body.removeChild(tempSpan);
-
-      input2.style.width = `${width}px`;
-    }
-  }, [projectDesc]);
 
   useEffect(() => {
     document.title = "New Project - Upfront";
