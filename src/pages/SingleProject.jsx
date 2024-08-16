@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate, useOutletContext, useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState, useTransition } from "react";
+import { Link, useFetcher, useLocation, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import {
@@ -20,6 +20,7 @@ import { IoChevronDown } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
 import { useDraggable } from "react-use-draggable-scroll";
 import logo60 from '../assets/logo-60x60.png'
+import { GiConsoleController } from "react-icons/gi";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -37,24 +38,16 @@ function SingleProject() {
   // board
   const [addBoard, setAddBoard] = useState(false)
   const [fetching, setFetching] = useState(true)
-  const [fromSpace, setFromSpace] = useState('workspace')
+  const [fromSpace, setFromSpace] = useState('')
   const location = useLocation()
   const { workspace } = location.state || {}
-  
+  // console.log(workspace)
+
   useEffect(() => {
-    if(workspace === 'w1'){
-      const getWorkspaceName = localStorage.getItem('upfront_user_name_w1')
-      setFromSpace(getWorkspaceName)
+    if(workspace !== ''){
+      setFromSpace(workspace)
     }
-    else if(workspace === 'w2'){
-      const getWorkspaceName = localStorage.getItem('upfront_user_name_w2')
-      setFromSpace(getWorkspaceName)
-    }
-    else if(workspace === 'w3'){
-      const getWorkspaceName = localStorage.getItem('upfront_user_name_w3')
-      setFromSpace(getWorkspaceName)
-    }
-  },[workspace])
+  },[])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -88,10 +81,10 @@ function SingleProject() {
     const getProject = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
-        // setProjectTitle(response.data.name)
-        // setProjectDesc(response.data.desc)
+        setProjectTitle(response.data.name)
+        setProjectDesc(response.data.desc)
         setFetching(false)
-        console.log(response)
+        // console.log(response)
       }
       catch (error) {
         // console.log(error)
@@ -210,7 +203,7 @@ function SingleProject() {
           {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
             <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
             <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
-          </div> }
+          </div>}
 
           <div className="w-full h-fit pt-8 pb-3">
             <div className="w-full h-fit flex items-center justify-start mb-1 gap-1">
@@ -221,7 +214,7 @@ function SingleProject() {
                 type="text"
                 value={projectTitle}
                 onChange={(e) => setProjectTitle(e.target.value)}
-                placeholder="Project Title "
+                placeholder="Project Name "
                 className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
               />
             </div>
@@ -237,7 +230,7 @@ function SingleProject() {
           <div className="w-full h-full max-h-full flex-1 pb-10 flex items-start justify-start overflow-auto scrollable-container relative "
             {...events}
             ref={dragref}
-            >
+          >
             {addBoard && (
               <div className="w-[300px] h-fit min-h-[100px] rounded-xl bg-stone-100 flex items-start justify-start p-3">
                 <form className="w-full h-full flex flex-col">
