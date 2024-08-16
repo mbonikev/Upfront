@@ -65,6 +65,17 @@ function Projects() {
     return classes;
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('upfront_user')
+    localStorage.removeItem('upfront_user_name')
+    localStorage.removeItem('upfront_user_name_w1')
+    localStorage.removeItem('upfront_user_name_w2')
+    localStorage.removeItem('upfront_user_name_w3')
+    setTimeout(() => {
+      window.location.reload()
+    }, 1000);
+  }
+
   // page title
   useEffect(() => {
     const fetchAllWorkShops = async () => {
@@ -72,8 +83,6 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/workspaces`, { params: { userEmail } });
         // console.log('Response data:', response);
         localStorage.setItem('upfront_user_name_w1', response.data.dbw1)
-        localStorage.setItem('upfront_user_name_w2', response.data.dbw2)
-        localStorage.setItem('upfront_user_name_w3', response.data.dbw3)
       } catch (err) {
         console.error('Error updating data:', err);
       }
@@ -81,6 +90,22 @@ function Projects() {
 
     fetchAllWorkShops()
   }, []);
+
+  // create new project
+  useEffect(() => {
+    const getme = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getme`, { params: { email: userEmail } });
+        // console.log(response)
+      } catch (error) {
+        // console.log(error)
+        if (error.response.status == 401) {
+          handleLogout()
+        }
+      }
+    };
+    getme()
+  }, [])
 
   // getting space names + naming the page
   useEffect(() => {
