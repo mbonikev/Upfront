@@ -69,8 +69,8 @@ function Sidebar({
                 userEmail,
             });
             // console.log('Response data:', response.data);
-            localStorage.setItem("upfront_user_name_w1", response.data.workspace1.name);
-            setOriginalW1(response.data.workspace1.name);
+            localStorage.setItem("upfront_user_name_w1", response.data.workspace1);
+            setOriginalW1(response.data.workspace1);
             setMoreOpt1(false);
             setSaveOpt1(false);
             setAuthing(false);
@@ -124,7 +124,7 @@ function Sidebar({
         try {
             const Imat = 'w1'
             const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat });
-            navigate(`/project/${response.data.id}`, {state: { workspace: response.data.workspace.name}})
+            navigate(`/project/${response.data.id}`, { state: { workspace: response.data.workspace } })
         } catch (error) {
             setCreateNew(false);
             console.log(error.response)
