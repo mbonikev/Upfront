@@ -123,7 +123,7 @@ function Sidebar({
         setCreateNew(true);
         try {
             const Imat = 'w1'
-            const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat });
+            const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat, collaborations: userEmail });
             navigate(`/project/${response.data.id}`, { state: { workspace: response.data.workspace } })
         } catch (error) {
             setCreateNew(false);
