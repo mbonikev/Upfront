@@ -5,6 +5,7 @@ import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
 import { LuArchive, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import axios from 'axios'
+import { format } from 'date-fns';
 
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -213,7 +214,9 @@ function Projects() {
                       <TbStack className='text-xl' />
                       {project.progress} Boards
                     </p>
-                    <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
+                    <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
+                    {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
+                    </p>
                   </div>
                 </Link>
               </div>
