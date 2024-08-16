@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
@@ -16,6 +16,7 @@ function Projects() {
   const [w2, setW2] = useState(null)
   const [w3, setW3] = useState(null)
   const [myProjects, setMyProjects] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const input = inputRef.current;
@@ -104,7 +105,7 @@ function Projects() {
     const getmyProjects = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, { params: { email: userEmail } });
-        // console.log(response.data.projects)
+        console.log(response.data.projects)
         setMyProjects(response.data.projects)
       } catch (error) {
         console.log(error)
@@ -119,6 +120,11 @@ function Projects() {
     fetchAllWorkShops()
     getme()
   }, [])
+
+  const openProject = (linkid, linkworkspace) => {
+    navigate(`/project/${linkid}`, { state: { workspace: linkworkspace } });
+  };
+  
 
   // getting space names + naming the page
   useEffect(() => {
@@ -190,7 +196,7 @@ function Projects() {
                     <LuTrash2 className='text-xl  min-w-fit ' />
                   </button>
                 </div>
-                <Link key={index} to={`/project/${'38bfeubfiu7fh'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                <div key={project._id} onClick={() => openProject(project._id, project.workspace)} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
                   <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                   <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
                   <div className='flex items-center justify-start mt-3'>
@@ -213,7 +219,7 @@ function Projects() {
                     </p>
                     <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
                   </div>
-                </Link>
+                </div>
               </div>
             ))}
           </div>
