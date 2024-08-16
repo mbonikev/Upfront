@@ -19,6 +19,7 @@ import axios from "axios";
 import { IoChevronDown } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
 import { useDraggable } from "react-use-draggable-scroll";
+import logo60 from '../assets/logo-60x60.png'
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
