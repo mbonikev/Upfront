@@ -6,6 +6,8 @@ import {
   LuArchive,
   LuArrowLeft,
   LuArrowRight,
+  LuChevronsRight,
+  LuHash,
   LuPlus,
   LuScissors,
   LuStar,
@@ -22,10 +24,10 @@ function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
-  const inputRef = useRef('title');
+  const inputRef = useRef();
   // spaces
-  const [projectTitle, setProjectTitle] = useState(null);
-  const [projectDesc, setProjectDesc] = useState(null);
+  const [projectTitle, setProjectTitle] = useState("");
+  const [projectDesc, setProjectDesc] = useState("");
   const { id } = useParams();
   // dragabble
   const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
@@ -172,8 +174,8 @@ function SingleProject() {
             </div>
           </div>
           <div className="w-full h-full px-16 pt-8 pb-3 max-w-[1500px] mx-auto">
-            <div className="w-full h-fit flex items-start justify-start mb-1">
-
+            <div className="w-full h-fit flex items-center justify-start mb-1 gap-1">
+              <LuChevronsRight className='text-3xl text-lime-600' />
               {/* growing input */}
               <input
                 ref={inputRef}
