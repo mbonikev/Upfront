@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useOutletContext, useParams } from "react-router-dom";
 import Emojis from "../components/Emojis";
-import { EmojiArray } from "../content/data";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import {
@@ -24,11 +23,9 @@ function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
-  const [pemoji, setPemoji] = useState(null);
   const inputRef = useRef(null);
   const inputRef2 = useRef(null);
   // spaces
-  const [projectEmoji, setProjectEmoji] = useState(null);
   const [projectTitle, setProjectTitle] = useState(null);
   const [projectDesc, setProjectDesc] = useState(null);
   const { id } = useParams();
@@ -76,37 +73,6 @@ function SingleProject() {
     }
   }, [projectDesc]);
 
-  const updateEmoji = () => {
-    const storedEmojiPosition =
-      parseInt(localStorage.getItem("projectsmoji"), 10) || 1;
-    const foundEmoji = EmojiArray.find(
-      (e) => e.position === storedEmojiPosition
-    );
-    if (foundEmoji) {
-      setPemoji(foundEmoji.emoji);
-    } else {
-      setPemoji(null); // Handle case when emoji is not found
-    }
-  };
-
-  useEffect(() => {
-    // Initial update
-    updateEmoji();
-
-    // Add event listener for localStorage changes from other tabs
-    window.addEventListener("storage", updateEmoji);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("storage", updateEmoji);
-    };
-  }, []);
-
-  const ChangeEmoji = (position) => {
-    localStorage.setItem("projectsmoji", position);
-    updateEmoji();
-  };
-
   useEffect(() => {
     document.title = "New Project - Upfront";
   }, []);
@@ -120,7 +86,6 @@ function SingleProject() {
     const getProject = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
-        setProjectEmoji(response.data.emoji)
         setProjectTitle(response.data.name)
         setProjectDesc(response.data.desc)
         console.log(projectTitle)
@@ -229,10 +194,7 @@ function SingleProject() {
           </div>
           <div className="w-full h-full px-16 pt-8 pb-3 max-w-[1500px] mx-auto">
             <div className="w-full h-fit flex items-start justify-start mb-1">
-              <div className="group h-fit w-fit transition hover:bg-stone-100 select-none relative flex items-center justify-center p-1 mr-1 rounded-lg cursor-pointer">
-                <p className="text-2xl bgora">{pemoji}</p>
-                <Emojis change={ChangeEmoji} />
-              </div>
+
               {/* growing input */}
               <input
                 ref={inputRef}
@@ -248,9 +210,9 @@ function SingleProject() {
               value={projectDesc}
               onChange={(e) => setProjectDesc(e.target.value)}
               placeholder="a short description"
-              className="text-sm font-normal tracking-tight w-full max-w-[900px] truncaten placeholder:text-text-color/70 text-text-color resize-none"
+              className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-y"
             ></textarea>
-            <div className="w-full h-[1px] bg-border-line-color/50 my-5"></div>
+            <div className="w-full h-[1px] bg-border-line-color/50 mb-5"></div>
           </div>
         </div>
         {/* Project section */}
