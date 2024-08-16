@@ -120,10 +120,6 @@ function Projects() {
     fetchAllWorkShops()
     getme()
   }, [])
-
-  const openProject = (linkid, linkworkspace) => {
-    navigate(`/project/${linkid}`, { state: { workspace: linkworkspace } });
-  };
   
 
   // getting space names + naming the page
@@ -196,7 +192,7 @@ function Projects() {
                     <LuTrash2 className='text-xl  min-w-fit ' />
                   </button>
                 </div>
-                <div key={project._id} onClick={() => openProject(project._id, project.workspace)} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
                   <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                   <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
                   <div className='flex items-center justify-start mt-3'>
@@ -219,7 +215,7 @@ function Projects() {
                     </p>
                     <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>{project.progress === 100 ? 'Completed' : '9 days left'}</p>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
