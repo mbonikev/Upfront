@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useOutletContext, useParams } from "react-router-dom";
+import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import {
@@ -25,6 +25,7 @@ function SingleProject() {
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
   const inputRef = useRef();
+  const navigate = useNavigate()
   // spaces
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
@@ -34,6 +35,7 @@ function SingleProject() {
   const { events } = useDraggable(dragref); // Now we pass the reference to the useDraggable hook:
   // board
   const [addBoard, setAddBoard] = useState(false)
+  const [fetching, setFetching] = useState(true)
 
   useEffect(() => {
     const input = inputRef.current;
@@ -69,10 +71,17 @@ function SingleProject() {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
         setProjectTitle(response.data.name)
         setProjectDesc(response.data.desc)
-        console.log(projectTitle)
+        setFetching(false)
+        // console.log(response)
       }
       catch (error) {
-        console.log(error)
+        // console.log(error)
+        if (error.response.status === 401) {
+          // navigate('/')
+        }
+        if (error.response.status === 400) {
+          // navigate('/')
+        }
       }
     }
 
@@ -98,7 +107,7 @@ function SingleProject() {
       <div
         className={`w-full h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out overflow-hidden `}
       >
-        <div className="w-full h-fit flex flex-col justify-start items-start">
+        <div className="w-full h-fit flex flex-col justify-start items-start z-20 bg-white">
           <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
             <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
               <div className="flex items-center justify-start gap-3 text-sm mr-2">
@@ -173,7 +182,17 @@ function SingleProject() {
               </button>
             </div>
           </div>
-          <div className="w-full h-full px-16 pt-8 pb-3 max-w-[1500px] mx-auto">
+        </div>
+
+
+        {/* Project section */}
+        <div className="w-full max-w-[1500px] h-full px-16 pt-8 pb-3 mx relative">
+          {/* loader on fetch */}
+          {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center">
+            <img src="" alt="" />
+          </div> }
+
+          <div className="w-full h-fit pt-8 pb-3">
             <div className="w-full h-fit flex items-center justify-start mb-1 gap-1">
               <LuChevronsRight className='text-3xl text-lime-600' />
               {/* growing input */}
@@ -193,40 +212,39 @@ function SingleProject() {
               placeholder="a short description"
               className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-y"
             ></textarea>
-            <div className="w-full h-[1px] bg-border-line-color/50 mb-5"></div>
+            <div className="w-full h-[1px] bg-border-line-color/50 mb-3"></div>
           </div>
-        </div>
-        {/* Project section */}
-        <div
-          {...events}
-          ref={dragref}
-          className="w-full h-full max-h-full flex-1 px-16 pb-10 max-w-[1500px] mx-auto flex items-start justify-start overflow-auto scrollable-container relative "
-        >
-          {addBoard && (
-            <div className="w-[300px] h-fit min-h-[100px] rounded-xl bg-stone-100 flex items-start justify-start p-3">
-              <form className="w-full h-full flex flex-col">
-                <input type="text" className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
-                <textarea type="text" className="w-full text-sm font-normal tracking-tight bg-transparent text-text-color/70 min-h-[60px] resize-none text-ellipsis" placeholder="Description" autoFocus name="New board title" />
-                <button
-                  type="submit"
-                  title="Create a new board"
-                  className=" bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                >
-                  <span className="text-sm tracking-tight">Create</span>
-                </button>
-              </form>
-            </div>
-          )}
-          {!addBoard && (
-            <button
-              onClick={() => setAddBoard(true)}
-              title="Create a new board"
-              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 inline-flex items-start justify-start w-full max-w-[300px] min-w-[300px] h-[100px] border-l-2 border-transparent hover:border-main-color/70"
+          <div className="w-full h-full max-h-full flex-1 pb-10 flex items-start justify-start overflow-auto scrollable-container relative "
+            {...events}
+            ref={dragref}
             >
-              <LuPlus className="text-lg" />
-              <span className="text-sm tracking-tight">Add board</span>
-            </button>
-          )}
+            {addBoard && (
+              <div className="w-[300px] h-fit min-h-[100px] rounded-xl bg-stone-100 flex items-start justify-start p-3">
+                <form className="w-full h-full flex flex-col">
+                  <input type="text" className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
+                  <textarea type="text" className="w-full text-sm font-normal tracking-tight bg-transparent text-text-color/70 min-h-[60px] resize-none text-ellipsis" placeholder="Description" autoFocus name="New board title" />
+                  <button
+                    type="submit"
+                    title="Create a new board"
+                    className=" bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    <span className="text-sm tracking-tight">Create</span>
+                  </button>
+                </form>
+              </div>
+            )}
+            {!addBoard && (
+              <button
+                onClick={() => setAddBoard(true)}
+                title="Create a new board"
+                className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 inline-flex items-start justify-start w-full max-w-[300px] min-w-[300px] h-[100px] border-l-2 border-transparent hover:border-main-color/70"
+              >
+                <LuPlus className="text-lg" />
+                <span className="text-sm tracking-tight">Add board</span>
+              </button>
+            )}
+          </div>
+
         </div>
       </div>
     </>
