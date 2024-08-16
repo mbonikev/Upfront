@@ -152,7 +152,7 @@ function Projects() {
                     <LuTrash2 className='text-xl  min-w-fit ' />
                   </button>
                 </div>
-                <Link key={index} to={`/project/${'1'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                <Link key={index} to={`/project/${'38bfeubfiu7fh'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
                   <h1 className='font-normal text-sm leading-7 line-clamp-1'> Gerayo Application Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus facilis explicabo blanditiis, fuga quia tenetur tempore. Officiis soluta suscipit sit ipsum mollitia sed reiciendis perferendis et vero asperiores. Dolorum, cupiditate!</h1>
                   <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
                   <div className='flex items-center justify-start mt-3'>
