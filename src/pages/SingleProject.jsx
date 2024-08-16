@@ -43,11 +43,6 @@ function SingleProject() {
   const { workspace } = location.state || {}
   // console.log(workspace)
 
-  useEffect(() => {
-    if(workspace !== ''){
-      setFromSpace(workspace)
-    }
-  },[])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -84,7 +79,7 @@ function SingleProject() {
         setProjectTitle(response.data.name)
         setProjectDesc(response.data.desc)
         setFetching(false)
-        // console.log(response)
+        setFromSpace(response.data.workspace)
       }
       catch (error) {
         // console.log(error)
@@ -232,17 +227,26 @@ function SingleProject() {
             ref={dragref}
           >
             {addBoard && (
-              <div className="w-[300px] h-fit min-h-[100px] rounded-xl bg-stone-100 flex items-start justify-start p-3">
-                <form className="w-full h-full flex flex-col">
+              <div className="w-[300px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
+                <form className="w-full h-full flex flex-col justify-between">
                   <input type="text" className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
                   <textarea type="text" className="w-full text-sm font-normal tracking-tight bg-transparent text-text-color/70 min-h-[60px] resize-none text-ellipsis" placeholder="Description" autoFocus name="New board title" />
+                  <div className="flex items-center justify-end gap-1 ">
+                  <div
+                  onClick={() => setAddBoard(false)}
+                    title="Create a new board"
+                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    <span className="text-sm tracking-tight">Cancel</span>
+                  </div>
                   <button
                     type="submit"
                     title="Create a new board"
-                    className=" bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
-                    <span className="text-sm tracking-tight">Create</span>
+                    <span className="text-sm tracking-tight">Add</span>
                   </button>
+                  </div>
                 </form>
               </div>
             )}
