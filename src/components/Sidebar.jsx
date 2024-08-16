@@ -206,7 +206,7 @@ function Sidebar({
     // create new project
     const handleCreate = async () => {
         setCreateNew(true);
-        const dummyEmoji = 1
+        const dummyEmoji = 42
         const dummyTitle = 'Scissors'
         const dummyDescription = 'Scissors are hand-operated shearing tools. A pair of scissors consists of a pair of blades pivoted so that the sharpened edges slide against each other.'
         try {
