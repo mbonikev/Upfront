@@ -9,7 +9,6 @@ import axios from 'axios'
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext()
-  const [pemoji, setPemoji] = useState(null)
   const [pageTitle, setPageTitle] = useState('Workspace 1')
   const inputRef = useRef(null);
   // spaces
@@ -49,35 +48,6 @@ function Projects() {
     { id: "0PFJEIRFE03-222", progress: 69, progressClass: "w-[69%] " },
   ]
   const count100Percent = projects.filter(project => project.progress === 100).length;
-
-
-  const updateEmoji = () => {
-    const storedEmojiPosition = parseInt(localStorage.getItem('projectsmoji'), 10) || 1;
-    const foundEmoji = EmojiArray.find(e => e.position === storedEmojiPosition);
-    if (foundEmoji) {
-      setPemoji(foundEmoji.emoji);
-    } else {
-      setPemoji(null); // Handle case when emoji is not found
-    }
-  };
-
-  useEffect(() => {
-    // Initial update
-    updateEmoji();
-
-    // Add event listener for localStorage changes from other tabs
-    window.addEventListener('storage', updateEmoji);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('storage', updateEmoji);
-    };
-  }, []);
-
-  const ChangeEmoji = (position) => {
-    localStorage.setItem('projectsmoji', position)
-    updateEmoji()
-  }
 
   const getProgressClasses = (progress) => {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
