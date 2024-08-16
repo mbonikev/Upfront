@@ -26,6 +26,7 @@ function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
+  const [userMenu, setUserMenu] = useState(false);
   const inputRef = useRef();
   const navigate = useNavigate()
   // spaces
@@ -71,6 +72,10 @@ function SingleProject() {
     setProfileMenu(true);
   };
 
+  const showUserMenu = () => {
+    setUserMenu(true)
+  }
+
   // get project details
   useEffect(() => {
     const getProject = async () => {
@@ -97,17 +102,30 @@ function SingleProject() {
 
   return (
     <>
-      {/* overlay */}
+      {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
-        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? "fixed" : "hidden"
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed" : "hidden"
+          }`}
+      ></div>
+
+      {/* overlay */}
+      <div
+        onClick={() => setUserMenu(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
           }`}
       ></div>
 
       {/* dropdown */}
       {profileMenu && (
-        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
+        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
           <ProfileDropdownButtons username={username} />
+        </div>
+      )}
+
+      {userMenu && (
+        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
+          {/* <ProfileDropdownButtons username={username} /> */}
         </div>
       )}
 
@@ -157,11 +175,13 @@ function SingleProject() {
                 <LuTrash2 />
               </button>
               <button
+                onClick={showUserMenu}
                 title="Manage Collaborators"
                 className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
               >
                 <LuUsers2 />
               </button>
+
               <button
                 title="Mark as favorite"
                 className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
@@ -232,20 +252,20 @@ function SingleProject() {
                   <input type="text" className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
                   <textarea type="text" className="w-full text-sm font-normal tracking-tight bg-transparent text-text-color/70 min-h-[60px] resize-none text-ellipsis" placeholder="Description" autoFocus name="New board title" />
                   <div className="flex items-center justify-end gap-1 ">
-                  <div
-                  onClick={() => setAddBoard(false)}
-                    title="Create a new board"
-                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                  >
-                    <span className="text-sm tracking-tight">Cancel</span>
-                  </div>
-                  <button
-                    type="submit"
-                    title="Create a new board"
-                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                  >
-                    <span className="text-sm tracking-tight">Add</span>
-                  </button>
+                    <div
+                      onClick={() => setAddBoard(false)}
+                      title="Create a new board"
+                      className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      <span className="text-sm tracking-tight">Cancel</span>
+                    </div>
+                    <button
+                      type="submit"
+                      title="Create a new board"
+                      className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      <span className="text-sm tracking-tight">Add</span>
+                    </button>
                   </div>
                 </form>
               </div>
