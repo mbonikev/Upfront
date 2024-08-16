@@ -1,16 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { BiSolidGridAlt } from 'react-icons/bi'
-import { BsGrid, BsLayoutSidebar, BsViewStacked } from 'react-icons/bs'
-import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
-import { FaPlus, FaRegStar } from 'react-icons/fa'
 import { Link, useOutletContext } from 'react-router-dom'
-import Emojis from '../components/Emojis'
-import { EmojiArray } from '../content/data'
 import { TbStack } from 'react-icons/tb'
 import BreadCrumb from '../components/BreadCrumb'
 import Sidebar from '../components/Sidebar'
-import { LuArchive, LuArchiveRestore, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
-import { Helmet } from 'react-helmet'
+import { LuArchive, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import axios from 'axios'
 
 function Projects() {
