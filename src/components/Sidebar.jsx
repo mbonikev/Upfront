@@ -50,17 +50,10 @@ function Sidebar({
     const location = useLocation();
     const navigate = useNavigate();
     const [authing, setAuthing] = useState(false);
-    const [authing2, setAuthing2] = useState(false);
-    const [authing3, setAuthing3] = useState(false);
     const [moreOpt1, setMoreOpt1] = useState(false);
     const [saveOpt1, setSaveOpt1] = useState(false);
-    const [moreOpt2, setMoreOpt2] = useState(false);
-    const [saveOpt2, setSaveOpt2] = useState(false);
-    const [moreOpt3, setMoreOpt3] = useState(false);
     const [saveOpt3, setSaveOpt3] = useState(false);
     const [originalW1, setOriginalW1] = useState(null);
-    const [originalW2, setOriginalW2] = useState(null);
-    const [originalW3, setOriginalW3] = useState(null);
     const [spaceName, setSpaceName] = useState("");
     const [spaceNumber, setSpaceNumber] = useState("");
     const formRef = useRef(null);
@@ -76,56 +69,14 @@ function Sidebar({
                 userEmail,
             });
             // console.log('Response data:', response.data);
-            localStorage.setItem("upfront_user_name_w1", response.data.workspace1);
-            setOriginalW1(response.data.workspace1);
+            localStorage.setItem("upfront_user_name_w1", response.data.workspace1.name);
+            setOriginalW1(response.data.workspace1.name);
             setMoreOpt1(false);
             setSaveOpt1(false);
             setAuthing(false);
         } catch (err) {
             console.error("Error updating data:", err);
             setAuthing(false);
-        }
-    };
-
-    // workspace2
-    const handleSubmit2 = async (e) => {
-        e.preventDefault();
-        setAuthing2(true);
-        try {
-            const response = await axios.patch(`${apiUrl}/api/updateWorkspace2`, {
-                w2,
-                userEmail,
-            });
-            // console.log('Response data:', response.data);
-            localStorage.setItem("upfront_user_name_w2", response.data.workspace2);
-            setOriginalW2(response.data.workspace2);
-            setMoreOpt2(false);
-            setSaveOpt2(false);
-            setAuthing2(false);
-        } catch (err) {
-            console.error("Error updating data:", err);
-            setAuthing2(false);
-        }
-    };
-
-    // workspace3
-    const handleSubmit3 = async (e) => {
-        e.preventDefault();
-        setAuthing3(true);
-        try {
-            const response = await axios.patch(`${apiUrl}/api/updateWorkspace3`, {
-                w3,
-                userEmail,
-            });
-            // console.log('Response data:', response.data);
-            localStorage.setItem("upfront_user_name_w3", response.data.workspace3);
-            setOriginalW2(response.data.workspace3);
-            setMoreOpt3(false);
-            setSaveOpt3(false);
-            setAuthing3(false);
-        } catch (err) {
-            console.error("Error updating data:", err);
-            setAuthing3(false);
         }
     };
 
@@ -148,29 +99,13 @@ function Sidebar({
     // getting space names
     useEffect(() => {
         const luw1 = localStorage.getItem("upfront_user_name_w1") || "Workspace 1";
-        const luw2 = localStorage.getItem("upfront_user_name_w2") || "Workspace 2";
-        const luw3 = localStorage.getItem("upfront_user_name_w3") || "Workspace 3";
         setOriginalW1(luw1);
-        setOriginalW2(luw2);
-        setOriginalW3(luw3);
     }, []);
 
     const handleCancel = () => {
         setW1(originalW1);
         setMoreOpt1(false);
         setSaveOpt1(false);
-    };
-
-    const handleCancel2 = () => {
-        setW2(originalW2);
-        setMoreOpt2(false);
-        setSaveOpt2(false);
-    };
-
-    const handleCancel3 = () => {
-        setW3(originalW3);
-        setMoreOpt3(false);
-        setSaveOpt3(false);
     };
 
     // show more
@@ -183,32 +118,13 @@ function Sidebar({
         setSaveOpt1(true);
     };
 
-    // show more
-    const showMoreMenuw2 = () => {
-        setMoreOpt2(true);
-    };
-    // rename workspace 1
-    const renameW2 = () => {
-        setMoreOpt2(false);
-        setSaveOpt2(true);
-    };
-
-    // show more
-    const showMoreMenuw3 = () => {
-        setMoreOpt3(true);
-    };
-    // rename workspace 1
-    const renameW3 = () => {
-        setMoreOpt3(false);
-        setSaveOpt3(true);
-    };
-
     // create new project
     const handleCreate = async () => {
         setCreateNew(true);
         try {
-            const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail });
-            navigate(`/project/${response.data.id}`)
+            const Imat = 'w1'
+            const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat });
+            navigate(`/project/${response.data.id}`, {state: { workspace: response.data.workspace.name}})
         } catch (error) {
             setCreateNew(false);
             console.log(error.response)
@@ -237,30 +153,6 @@ function Sidebar({
                 <div
                     onClick={handleCancel}
                     className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? "fixed" : "hidden"
-                        }`}
-                ></div>
-                {/* overlay more menu */}
-                <div
-                    onClick={handleCancel2}
-                    className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt2 ? "fixed" : "hidden"
-                        }`}
-                ></div>
-                {/* overlay more menu save */}
-                <div
-                    onClick={handleCancel2}
-                    className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt2 ? "fixed" : "hidden"
-                        }`}
-                ></div>
-                {/* overlay more menu */}
-                <div
-                    onClick={handleCancel3}
-                    className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt3 ? "fixed" : "hidden"
-                        }`}
-                ></div>
-                {/* overlay more menu save */}
-                <div
-                    onClick={handleCancel3}
-                    className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt3 ? "fixed" : "hidden"
                         }`}
                 ></div>
 
@@ -422,174 +314,6 @@ function Sidebar({
                                     </button>
                                     <div
                                         onClick={handleCancel}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuX className="text-lg  min-w-fit text-red-500" />
-                                        <p className="line-clamp-1 text-red-500">Cancel</p>
-                                    </div>
-                                </div>
-                            </>
-                        )}
-                    </form>
-                    {/* Workspace 2 */}
-                    <form onSubmit={handleSubmit2} className="relative group ">
-                        <Link
-                            to={"/"}
-                            className={`${linkStyle} ${location.pathname === "/workspace/2"
-                                ? "bg-main-color/10 "
-                                : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
-                                } ${moreOpt2 && "bg-stone-200/50"}`}
-                        >
-                            <LuHash className="text-xl text-orange-600  min-w-fit" />
-                            <p className="line-clamp-1">{w2}</p>
-                        </Link>
-                        {saveOpt2 && (
-                            <>
-                                <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white flex items-center justify-center p-1">
-                                    <input
-                                        type="text"
-                                        autoFocus
-                                        name="workspace2"
-                                        autoComplete="off"
-                                        value={w2}
-                                        onChange={(e) => setW2(e.target.value)}
-                                        className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
-                                    />
-                                </div>
-                            </>
-                        )}
-                        <div
-                            onClick={showMoreMenuw2}
-                            className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 ${moreOpt2 && "opacity-100"
-                                }`}
-                        >
-                            <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
-                        </div>
-                        {moreOpt2 && (
-                            <>
-                                <div className="absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
-                                    <div
-                                        onClick={renameW2}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuPencilLine className="text-lg  min-w-fit" />
-                                        <p className="line-clamp-1">Rename</p>
-                                    </div>
-                                    <Link
-                                        to={"/"}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                                        <p className="line-clamp-1 text-red-500">Clear</p>
-                                    </Link>
-                                </div>
-                            </>
-                        )}
-                        {saveOpt2 && (
-                            <>
-                                <div className="absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
-                                    <button
-                                        type="submit"
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        {authing2 ? (
-                                            <>
-                                                <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                                                <p className="line-clamp-1">Saving...</p>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <LuCheck className="text-lg  min-w-fit" />
-                                                <p className="line-clamp-1">Save Changes</p>
-                                            </>
-                                        )}
-                                    </button>
-                                    <div
-                                        onClick={handleCancel2}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuX className="text-lg  min-w-fit text-red-500" />
-                                        <p className="line-clamp-1 text-red-500">Cancel</p>
-                                    </div>
-                                </div>
-                            </>
-                        )}
-                    </form>
-                    {/* Workspace 3 */}
-                    <form onSubmit={handleSubmit3} className="relative group ">
-                        <Link
-                            to={"/"}
-                            className={`${linkStyle} ${location.pathname === "/workspace/3"
-                                ? "bg-main-color/10 "
-                                : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
-                                }  ${moreOpt3 && "bg-stone-200/50"}`}
-                        >
-                            <LuHash className="text-xl text-violet-600 -500  min-w-fit" />
-                            <p className="line-clamp-1">{w3}</p>
-                        </Link>
-                        {saveOpt3 && (
-                            <>
-                                <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white flex items-center justify-center p-1">
-                                    <input
-                                        type="text"
-                                        autoFocus
-                                        name="workspace3"
-                                        autoComplete="off"
-                                        value={w3}
-                                        onChange={(e) => setW3(e.target.value)}
-                                        className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
-                                    />
-                                </div>
-                            </>
-                        )}
-                        <div
-                            onClick={showMoreMenuw3}
-                            className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100  ${moreOpt3 && "opacity-100"
-                                }`}
-                        >
-                            <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
-                        </div>
-                        {moreOpt3 && (
-                            <>
-                                <div className="absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
-                                    <div
-                                        onClick={renameW3}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuPencilLine className="text-lg  min-w-fit" />
-                                        <p className="line-clamp-1">Rename</p>
-                                    </div>
-                                    <Link
-                                        to={"/"}
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                                        <p className="line-clamp-1 text-red-500">Clear</p>
-                                    </Link>
-                                </div>
-                            </>
-                        )}
-                        {saveOpt3 && (
-                            <>
-                                <div className="absolute right-0 top-[100%] bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
-                                    <button
-                                        type="submit"
-                                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
-                                    >
-                                        {authing3 ? (
-                                            <>
-                                                <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                                                <p className="line-clamp-1">Saving...</p>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <LuCheck className="text-lg  min-w-fit" />
-                                                <p className="line-clamp-1">Save Changes</p>
-                                            </>
-                                        )}
-                                    </button>
-                                    <div
-                                        onClick={handleCancel3}
                                         className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
                                     >
                                         <LuX className="text-lg  min-w-fit text-red-500" />
