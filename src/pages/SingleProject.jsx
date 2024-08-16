@@ -78,10 +78,10 @@ function SingleProject() {
       catch (error) {
         // console.log(error)
         if (error.response.status === 401) {
-          // navigate('/')
+          navigate('/')
         }
         if (error.response.status === 400) {
-          // navigate('/')
+          navigate('/')
         }
       }
     }
