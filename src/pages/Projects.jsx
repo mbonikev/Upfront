@@ -15,6 +15,7 @@ function Projects() {
   const [w1, setW1] = useState(null)
   const [w2, setW2] = useState(null)
   const [w3, setW3] = useState(null)
+  const [myProjects, setMyProjects] = useState([])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -88,11 +89,6 @@ function Projects() {
       }
     };
 
-    fetchAllWorkShops()
-  }, []);
-
-  // create new project
-  useEffect(() => {
     const getme = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getme`, { params: { email: userEmail } });
@@ -104,6 +100,23 @@ function Projects() {
         }
       }
     };
+
+    const getmyProjects = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getmyprojects`, { params: { email: userEmail } });
+        // console.log(response.data.projects)
+        setMyProjects(response.data.projects)
+      } catch (error) {
+        console.log(error)
+        if (error.response.status == 401) {
+          // handleLogout()
+        }
+      }
+    };
+
+
+    getmyProjects()
+    fetchAllWorkShops()
     getme()
   }, [])
 
@@ -151,7 +164,7 @@ function Projects() {
             {/* <button title={username} className='h-[35px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-lg font-semibold text-white'>{username.charAt(0)}</button> */}
           </div>
         </div>
-        <div className='w-full h-fit flex items-start justify-between px-16 py-5 max-w-[1500px] mx-auto'>
+        <div className='w-full h-fit flex items-start justify-between px-10 py-5 max-w-[1500px] mx-auto'>
           <div className='flex items-center justify-start gap-1 '>
             <LuHash className='text-3xl text-lime-600' />
             <h1 className='text-3xl font-extrabold tracking-tight max-w-[300px] break-words'>{w1}</h1>
@@ -160,14 +173,14 @@ function Projects() {
         </div>
 
         {/* Projects section */}
-        <div className='w-full h-full flex-1 bg-white px-16 pb-10 max-w-[1500px] mx-auto'>
+        <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto'>
           <div className='w-full h-fit flex items-end justify-between'>
             <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{projects.length}</span> in Progress | <span className='text-text-color font-medium'>{count100Percent}</span>  Completed</p>
 
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
-            {projects.map((project, index) => (
+            {myProjects.map((project, index) => (
               <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
                 <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
                   <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
@@ -178,8 +191,8 @@ function Projects() {
                   </button>
                 </div>
                 <Link key={index} to={`/project/${'38bfeubfiu7fh'}`} className='group w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
-                  <h1 className='font-normal text-sm leading-7 line-clamp-1'> Gerayo Application Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus facilis explicabo blanditiis, fuga quia tenetur tempore. Officiis soluta suscipit sit ipsum mollitia sed reiciendis perferendis et vero asperiores. Dolorum, cupiditate!</h1>
-                  <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>Online Bus tracking and Ticketing system</p>
+                  <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
+                  <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
                   <div className='flex items-center justify-start mt-3'>
                     <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
                     <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
