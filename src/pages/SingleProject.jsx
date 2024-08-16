@@ -21,6 +21,7 @@ import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
 import { useDraggable } from "react-use-draggable-scroll";
 import logo60 from '../assets/logo-60x60.png'
 import { GiConsoleController } from "react-icons/gi";
+import AddCollaborators from "../components/AddCollaborators";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -125,7 +126,7 @@ function SingleProject() {
 
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <ProfileDropdownButtons username={username} />
+          <AddCollaborators username={username} />
         </div>
       )}
 
