@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import {
@@ -37,6 +37,24 @@ function SingleProject() {
   // board
   const [addBoard, setAddBoard] = useState(false)
   const [fetching, setFetching] = useState(true)
+  const [fromSpace, setFromSpace] = useState('workspace')
+  const location = useLocation()
+  const { workspace } = location.state || {}
+  
+  useEffect(() => {
+    if(workspace === 'w1'){
+      const getWorkspaceName = localStorage.getItem('upfront_user_name_w1')
+      setFromSpace(getWorkspaceName)
+    }
+    else if(workspace === 'w2'){
+      const getWorkspaceName = localStorage.getItem('upfront_user_name_w2')
+      setFromSpace(getWorkspaceName)
+    }
+    else if(workspace === 'w3'){
+      const getWorkspaceName = localStorage.getItem('upfront_user_name_w3')
+      setFromSpace(getWorkspaceName)
+    }
+  },[workspace])
 
   useEffect(() => {
     const input = inputRef.current;
@@ -70,10 +88,10 @@ function SingleProject() {
     const getProject = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
-        setProjectTitle(response.data.name)
-        setProjectDesc(response.data.desc)
+        // setProjectTitle(response.data.name)
+        // setProjectDesc(response.data.desc)
         setFetching(false)
-        // console.log(response)
+        console.log(response)
       }
       catch (error) {
         // console.log(error)
@@ -127,7 +145,7 @@ function SingleProject() {
               </div>
               <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
                 <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-                <BreadCrumb name={"Workspace 1"} status={"on"} link={"/"} /> /
+                <BreadCrumb name={fromSpace} status={"on"} link={"/"} /> /
                 <BreadCrumb name={"project name"} status={"on"} link={"/"} />
               </div>
             </div>
