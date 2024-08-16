@@ -38,6 +38,7 @@ function SignUp() {
           setErrorPassword('');
           localStorage.setItem('upfront_user', data.luemail);
           localStorage.setItem('upfront_user_name', data.luname);
+          localStorage.setItem('upfront_user_name_w1', data.luw1);
           navigate('/');
           // console.log(data)
         }
