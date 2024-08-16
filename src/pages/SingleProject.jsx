@@ -189,8 +189,9 @@ function SingleProject() {
         {/* Project section */}
         <div className="w-full max-w-[1500px] h-full px-16 pt-8 pb-3 mx relative">
           {/* loader on fetch */}
-          {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center">
-            <img src="" alt="" />
+          {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
+            <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
+            <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
           </div> }
 
           <div className="w-full h-fit pt-8 pb-3">
