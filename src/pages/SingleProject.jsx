@@ -123,12 +123,12 @@ function SingleProject() {
           <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
             <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
               <div className="flex items-center justify-start gap-3 text-sm mr-2">
-                <button
+                <Link to={`/`}
                   title="Deadlines"
                   className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
                 >
                   <LuArrowLeft />
-                </button>
+                </Link>
                 <button
                   title="Deadlines"
                   className="opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
