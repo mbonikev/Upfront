@@ -3,7 +3,7 @@ import { LuActivity, LuArchive, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ username }) {
+function AddCollaborators({ username, userEmail }) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
 
 
@@ -37,23 +37,16 @@ function AddCollaborators({ username }) {
                 </button>
             </form>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
-            <div className='p-2 flex flex-col w-full'>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuSettings className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Settings</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuActivity className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Activity log</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuArchive className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Archived Projects</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuTrash2 className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Trash</p>
-                </Link>
+            <div className='p-2 flex flex-col w-full min-h-[140px]'>
+                <div className='min-h-[34px] flex items-center gap-2 px-2 py-0 font-normal text-text-color text-sm tracking-tight rounded-md '>
+                    <div className=' flex items-center justify-center gap-2'>
+                    <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
+                        {username.charAt(0)}
+                    </p>
+                    <p className='line-clamp-1'>{userEmail} </p>
+                    </div>
+                    
+                </div>
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full'>
