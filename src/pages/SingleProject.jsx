@@ -27,6 +27,8 @@ import logo60 from '../assets/logo-60x60.png'
 import { GiConsoleController } from "react-icons/gi";
 import AddCollaborators from "../components/AddCollaborators";
 import debounce from 'lodash/debounce';
+import { RiLoader5Fill } from "react-icons/ri";
+import DeleteContent from "../components/DeleteContent";
 
 
 function SingleProject() {
@@ -162,9 +164,18 @@ function SingleProject() {
     debouncedSaveInputs(projectTitle, newInput2);
   };
 
-  const handleTrashProject = (id) => {
+  const handleTrashProject = async () => {
     setDeleting(true)
-    
+    try {
+      const response = await axios.post(`${apiUrl}/api/movetotrash`, {
+        projectId: id,
+        userEmail
+      });
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+      setDeleting(false)
+    }
   }
 
   return (
@@ -207,11 +218,19 @@ function SingleProject() {
       {/* Delete Dropdown */}
       {deleteMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[200px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white">
-          <p className="text-sm text-text-color px-2 pt-2 pb-4"> Deleting this project will remove it from your workspace and move it to trash. Collaborations will be stashed for possible future restoration</p>
+          <p className="text-sm text-text-color/70 px-2 pt-2 pb-4"><span className="font-medium text-text-color">Warning! </span> Deleting this project will remove it from your workspace and move it to trash. Collaborations will be stashed for possible future restoration</p>
+          <p className="text-sm text-text-color/70 px-2 pt-2 pb-4"> Some fields, like <span className="font-medium text-text-color">'createdAt'</span> will reset during restore.</p>
           <div className="flex items-center justify-end">
-            <button onClick={() => handleTrashProject(id)} title='Trash' className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold py-2 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center">
-              <LuTrash2 className='text-lg' />
-              <span className='text-sm font-medium tracking-tight'>Move to Trash</span>
+            <button onClick={handleTrashProject} title='Trash' className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center">
+              {deleting ?
+                <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                :
+                <>
+                  <LuTrash2 className='text-lg' />
+                  <span className='text-sm font-medium tracking-tight'>Move to Trash</span>
+                </>
+              }
+
             </button>
           </div>
         </div>
