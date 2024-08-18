@@ -4,13 +4,14 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ users, username, userEmail, collaborations, projectId, refreshCollaborators }) {
+function AddCollaborators({ users, username, userEmail, collaborations, projectId, setCollaborations }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
     const [searchValue, setSearchvalue] = useState('')
     const [errorEmail, setErrorEmail] = useState(false)
     const [authing, setAuthing] = useState(false)
+    const [authingDelete, setAuthingDelete] = useState('')
 
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
@@ -30,7 +31,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
         setAuthing(true)
         try {
             const response = await axios.post(`${apiUrl}/api/addcollaborator`, { projectId, email });
-            refreshCollaborators()
+            setCollaborations(response.data.newCollaborators)
             setAuthing(false)
             setSearchvalue('')
             setErrorEmail(false)
@@ -70,6 +71,12 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
             setSearchvalue('')
         }
     }
+
+    const handleRemoveCollaborator = (email) => {
+        setAuthingDelete(email)
+
+    }
+
     return (
         <div className='w-full flex flex-col justify-start items-start bg-white'>
             <div className='pt-2 px-2 w-full'>
@@ -84,7 +91,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
             <form className='p-2 w-full'>
                 <div className='flex items-center justify-start gap-2 relative'>
                     <div className='text-text-color/50 pl-2'>
-                        {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />): (<LuAtSign className='text-xl' />)}
+                        {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />) : (<LuAtSign className='text-xl' />)}
                     </div>
                     <div className='relative'>
                         <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
@@ -117,7 +124,16 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
                             </p>
                             <p className='line-clamp-1'>{collab}</p>
                         </div>
-                        {collab === userEmail ? <span className='bg-stone-100 text-text-color/70 text-xs py-1 px-2 rounded-md'>Owner</span> : ''}
+                        {collab === userEmail ?
+                            <span className='bg-stone-100 text-text-color/70 text-xs py-1 px-2 rounded-md'>Owner</span>
+                            :
+                            <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
+                                {authingDelete === collab ?
+                                    <RiLoader5Fill className='animate-spinLoader text-lg text-red-500' />
+                                    :
+                                    <LuTrash2 />
+                                }
+                            </button>}
                     </div>
                 ))}
             </div>
