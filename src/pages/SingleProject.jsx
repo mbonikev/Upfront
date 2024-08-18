@@ -87,6 +87,10 @@ function SingleProject() {
     setUserMenu(true)
   }
 
+  const showDeleteMenu = () => {
+    setDeleteMenu(true)
+  }
+
   // get project details
   useEffect(() => {
     const getProject = async () => {
@@ -174,13 +178,21 @@ function SingleProject() {
           }`}
       ></div>
 
-      {/* dropdown */}
+      {/* delete Menu overlay */}
+      <div
+        onClick={() => setUserMenu(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
+          }`}
+      ></div>
+
+      {/* profile dropdown */}
       {profileMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
           <ProfileDropdownButtons username={username} />
         </div>
       )}
 
+      {/* Menu dropdown */}
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
           <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} id={id} setCollaborations={setCollaborations} />
@@ -243,6 +255,7 @@ function SingleProject() {
                 <LuArchive />
               </button>
               <button
+                onClick={showDeleteMenu}
                 title="Move to trash"
                 className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 "
               >
