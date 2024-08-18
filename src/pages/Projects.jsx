@@ -20,7 +20,6 @@ function Projects() {
   const [myProjects, setMyProjects] = useState([])
   const [fetchingProjects, setFetchingProjects] = useState(true)
   const dummyProjectNumber = ["", "", ""]
-  const [users, setUsers] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
