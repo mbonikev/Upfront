@@ -187,11 +187,11 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
             {fetchingProjects ? <>
-            {dummyProjectNumber.map((dummy, index) => (
-              <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100/50 ring-1 ring-border-line-color/25 rounded-xl flex items-center justify-center'>
-                <RiLoader5Fill className="text-3xl text-text-color/30 animate-spinLoader" />
-              </div>
-            ))}
+              {dummyProjectNumber.map((dummy, index) => (
+                <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100/50 ring-1 ring-border-line-color/25 rounded-xl flex items-center justify-center'>
+                  <RiLoader5Fill className="text-3xl text-text-color/30 animate-spinLoader" />
+                </div>
+              ))}
             </> : <>
               {myProjects.map((project, index) => (
                 <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
@@ -207,10 +207,13 @@ function Projects() {
                     <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                     <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
                     <div className='flex items-center justify-start mt-3'>
-                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
-                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
-                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
-                      <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
+                      <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
+                      {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
+                        <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
+                      ))}
+                      {project.collaborations.length > 3 &&
+                        <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length-3}</div>
+                      }
                     </div>
                     <div className='flex items-center gap-3 py-3'>
                       <h1 className='text-sm'>{project.progress}%</h1>
