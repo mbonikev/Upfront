@@ -214,7 +214,7 @@ function SingleProject() {
                 onClick={showPMenu}
                 className=" max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color transition p-1 rounded-lg"
               >
-                <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
+                <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                   {username.charAt(0)}
                 </p>
                 <p className="truncate font-medium pl-[3px] text-xs">
