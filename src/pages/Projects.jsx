@@ -78,8 +78,7 @@ function Projects() {
     localStorage.removeItem('upfront_user')
     localStorage.removeItem('upfront_user_name')
     localStorage.removeItem('upfront_user_name_w1')
-    localStorage.removeItem('upfront_user_name_w2')
-    localStorage.removeItem('upfront_user_name_w3')
+    localStorage.removeItem('mycollaborations')
     setTimeout(() => {
       window.location.reload()
     }, 1000);
