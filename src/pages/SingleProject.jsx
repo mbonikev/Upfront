@@ -41,7 +41,7 @@ function SingleProject() {
   const [addBoard, setAddBoard] = useState(false)
   const [fetching, setFetching] = useState(true)
   const [fromSpace, setFromSpace] = useState('')
-  const [collaborations, setCollaborations ] = useState([])
+  const [collaborations, setCollaborations] = useState([])
   const location = useLocation()
   const { workspace } = location.state || {}
   const [users, setUsers] = useState('')
@@ -114,6 +114,7 @@ function SingleProject() {
     getusers()
     getProject()
   }, [])
+
 
   return (
     <>
