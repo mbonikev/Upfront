@@ -341,10 +341,13 @@ function Sidebar({
                             </span>
                         </h1>
                     </Link>
-                    <p className="flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight">
-                        Collaborations
+                    <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium text-text-color/70 tracking-tight w-full justify-between">
+                        <span>Collaborations</span>
+                        <span>
+                        <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium text-text-color/70 w-full text-center hover:bg-stone-200/50 rounded-lg ">View all</p> 
+                        </span>
                     </p>
-                    {retrieveArray.map((collab, index) => (
+                    {retrieveArray.slice(0, 3).map((collab, index) => (
                         <Link
                             key={index}
                             to={"/"}
@@ -352,11 +355,14 @@ function Sidebar({
                         >
                             <LuWorkflow className="text-xl text-main-color min-w-fit" />
                             <div className="flex flex-col justify-start items-start">
-                            <p className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</p>
-                            <p className="line-clamp-1 text-xs font-normal text-text-color/70">{collab.user_email} added you</p>
+                                <p className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</p>
+                                <p className="line-clamp-1 text-xs font-normal text-text-color/70">{collab.user_email} added you</p>
                             </div>
                         </Link>
                     ))}
+                    {retrieveArray.length === 0 &&
+                                <p className="line-clamp-1 text-xs px-9 font-normal text-text-color/70">No contributions yet</p>
+                    }
                 </div>
             </div>
         </div>
