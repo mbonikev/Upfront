@@ -7,7 +7,7 @@ import { LuArchive, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import axios from 'axios'
 import { format } from 'date-fns';
 import { RiLoader5Fill } from 'react-icons/ri'
-import { setArray } from '../utils/hashUtils' 
+import { setArray } from '../utils/hashUtils'
 
 
 function Projects() {
@@ -194,62 +194,63 @@ function Projects() {
         </div>
 
         {/* Projects section */}
-        <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto'>
+        <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto flex flex-col'>
           <div className='w-full h-fit flex items-end justify-between'>
             <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{projects.length}</span> in Progress | <span className='text-text-color font-medium'>{count100Percent}</span>  Completed</p>
 
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
-          <div className='gridRespo pt-4'>
-            {fetchingProjects ? <>
-              {dummyProjectNumber.map((dummy, index) => (
-                <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100/50 ring-1 ring-border-line-color/25 rounded-xl flex items-center justify-center'>
-                  <RiLoader5Fill className="text-3xl text-text-color/30 animate-spinLoader" />
-                </div>
-              ))}
-            </> : <>
-              {myProjects.map((project, index) => (
-                <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
-                  <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
-                    <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                      <LuArchive className='text-xl  min-w-fit ' />
-                    </button>
-                    <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                      <LuTrash2 className='text-xl  min-w-fit ' />
-                    </button>
-                  </div>
-                  <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
-                    <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
-                    <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
-                    <div className='flex items-center justify-start mt-3'>
-                      <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
-                      {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
-                        <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
-                      ))}
-                      {project.collaborations.length > 3 &&
-                        <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length - 3}</div>
-                      }
+          {fetchingProjects ?
+            <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center'>
+              <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" />
+            </div>
+            :
+            <>
+              <div className='gridRespo pt-4'>
+                {myProjects.map((project, index) => (
+                  <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
+                    <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
+                      <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                        <LuArchive className='text-xl  min-w-fit ' />
+                      </button>
+                      <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                        <LuTrash2 className='text-xl  min-w-fit ' />
+                      </button>
                     </div>
-                    <div className='flex items-center gap-3 py-3'>
-                      <h1 className='text-sm'>{project.progress}%</h1>
-                      <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                        <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                    <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                      <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
+                      <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
+                      <div className='flex items-center justify-start mt-3'>
+                        <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
+                        {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
+                          <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
+                        ))}
+                        {project.collaborations.length > 3 &&
+                          <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length - 3}</div>
+                        }
                       </div>
-                      <h1 className='text-sm'>100%</h1>
-                    </div>
-                    <div className='w-full flex items-center justify-between'>
-                      <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
-                        <TbStack className='text-xl' />
-                        {project.progress} Boards
-                      </p>
-                      <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
-                        {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              ))}</>}
-          </div>
+                      <div className='flex items-center gap-3 py-3'>
+                        <h1 className='text-sm'>{project.progress}%</h1>
+                        <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                          <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                        </div>
+                        <h1 className='text-sm'>100%</h1>
+                      </div>
+                      <div className='w-full flex items-center justify-between'>
+                        <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
+                          <TbStack className='text-xl' />
+                          {project.progress} Boards
+                        </p>
+                        <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
+                          {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </>
+          }
         </div>
 
         {/* <button onClick={handleLogout} title='Login with Google' className='w-[200px] h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
