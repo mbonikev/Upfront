@@ -44,6 +44,7 @@ function SingleProject() {
   const [collaborations, setCollaborations ] = useState([])
   const location = useLocation()
   const { workspace } = location.state || {}
+  const [users, setUsers] = useState('')
   // console.log(workspace)
 
 
