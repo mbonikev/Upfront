@@ -199,6 +199,7 @@ function SingleProject() {
         </div>
       )}
 
+      {/* Delete Dropdown */}
       {deleteMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
         
