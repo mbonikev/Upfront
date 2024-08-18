@@ -168,7 +168,7 @@ function Sidebar({
                             onClick={showPMenu}
                             className="text-text-color max-w-[150px] flex items-center justify-start gap-[2px] hover:bg-stone-200 transition p-1 rounded-lg"
                         >
-                            <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white">
+                            <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white uppercase">
                                 {username.charAt(0)}
                             </p>
                             <p className="truncate font-medium text-sm tracking-tight pl-[6px]">
