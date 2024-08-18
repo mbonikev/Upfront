@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar'
 import { LuArchive, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import axios from 'axios'
 import { format } from 'date-fns';
+import { RiLoader5Fill } from 'react-icons/ri'
 
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -18,7 +19,7 @@ function Projects() {
   const [w3, setW3] = useState(null)
   const [myProjects, setMyProjects] = useState([])
   const [fetchingProjects, setFetchingProjects] = useState(true)
-  const dummyProjectNumber = ["", "","", "", "", "","", "", ""]
+  const dummyProjectNumber = ["", "", ""]
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -188,7 +189,9 @@ function Projects() {
           <div className='gridRespo pt-4'>
             {fetchingProjects ? <>
             {dummyProjectNumber.map((dummy, index) => (
-              <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100 rounded-xl animate-pulse flex items-center justify-center'></div>
+              <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100/50 ring-1 ring-border-line-color/25 rounded-xl flex items-center justify-center'>
+                <RiLoader5Fill className="text-3xl text-text-color/30 animate-spinLoader" />
+              </div>
             ))}
             </> : <>
               {myProjects.map((project, index) => (
