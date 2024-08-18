@@ -34,6 +34,7 @@ function SingleProject() {
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
+  const [deleteMenu, setDeleteMenu] = useState(false)
   const inputRef = useRef();
   const navigate = useNavigate()
   // spaces
@@ -166,7 +167,7 @@ function SingleProject() {
           }`}
       ></div>
 
-      {/* overlay */}
+      {/* User Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
@@ -183,6 +184,12 @@ function SingleProject() {
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
           <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} id={id} setCollaborations={setCollaborations} />
+        </div>
+      )}
+
+      {deleteMenu && (
+        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
+        
         </div>
       )}
 
