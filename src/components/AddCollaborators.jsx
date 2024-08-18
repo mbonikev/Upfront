@@ -4,7 +4,7 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ users, username, userEmail, collaborations, projectId }) {
+function AddCollaborators({ users, username, userEmail, collaborations, projectId, refreshCollaborators }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
@@ -30,9 +30,10 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
         setAuthing(true)
         try {
             const response = await axios.post(`${apiUrl}/api/addcollaborator`, { projectId, email });
-            // console.log(response.data)
+            refreshCollaborators()
             setAuthing(false)
             setSearchvalue('')
+            setErrorEmail(false)
         } catch (error) {
             setErrorEmail(error.response.data.msg)
             setAuthing(false)
@@ -83,7 +84,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
             <form className='p-2 w-full'>
                 <div className='flex items-center justify-start gap-2 relative'>
                     <div className='text-text-color/50 pl-2'>
-                        {authing ? (<LuAtSign className='text-xl' />): (<LuAtSign className='text-xl' />)}
+                        {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />): (<LuAtSign className='text-xl' />)}
                     </div>
                     <div className='relative'>
                         <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
