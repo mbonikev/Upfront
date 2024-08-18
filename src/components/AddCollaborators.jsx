@@ -96,7 +96,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                     </div>
                 </div>
             </div>
-            <form className='p-2 w-full'>
+            <div className='p-2 w-full'>
                 <div className='flex items-center justify-start gap-2 relative'>
                     <div className='text-text-color/50 pl-2'>
                         {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />) : (<LuAtSign className='text-xl' />)}
@@ -120,7 +120,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                 </div>
                 {errorEmail !== '' && <p className='text-xs text-red-600 w-full text-right pt-1 px-2'>{errorEmail}</p>}
 
-            </form>
+            </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
                 <p className='line-clamp-1 text-sm font-medium text-text-color pt-1 pb-2'>People with access</p>
