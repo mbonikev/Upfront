@@ -3,8 +3,9 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ username, userEmail, collaborations }) {
+function AddCollaborators({ users, username, userEmail, collaborations }) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
+    const [searchingUser, setSearchingUser] = useState(false)
 
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
@@ -16,6 +17,16 @@ function AddCollaborators({ username, userEmail, collaborations }) {
         setTimeout(() => {
             window.location.reload()
         }, 1000);
+    }
+
+    const handleSearchUser = (e) => {
+        const value = e.target.value
+        if(value !== ''){
+            setSearchingUser(true)
+        }
+        else{
+            setSearchingUser(false)
+        }
     }
     return (
         <div className='w-full flex flex-col justify-start items-start bg-white'>
@@ -29,11 +40,26 @@ function AddCollaborators({ username, userEmail, collaborations }) {
                 </div>
             </div>
             <form className='p-2 w-full'>
-                <div className='flex items-center justify-start gap-2'>
+                <div className='flex items-center justify-start gap-2 relative'>
                     <div className='text-text-color/50 pl-2'><LuAtSign className='text-xl' /></div>
-                  <input type='text' placeholder={`user's unique ID`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
+                    <div className='relative'>
+                        <input type='text' onChange={handleSearchUser} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
+                        {/* users */}
+                        {searchingUser &&
+                            <div className='absolute top-[110%] left-0 bg-white w-full h-fit overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start gap-2 p-2'>
+                                {users.map((user, index) => (
+                                    <div key={index} className='font-normal text-text-color text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
+                                        <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
+                                            {user.email.charAt(0)}
+                                        </p>
+                                        <p className='line-clamp-1'>{user.email}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        }
+                    </div>
                 </div>
-               
+
             </form>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
