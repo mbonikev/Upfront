@@ -125,7 +125,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
                 <p className='line-clamp-1 text-sm font-medium text-text-color pt-1 pb-2'>People with access</p>
                 {collaborations.map((collab, index) => (
-                    <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-2 py-1 font-normal text-text-color text-sm tracking-tight rounded-md '>
+                    <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-1 py-1 font-normal text-text-color text-sm tracking-tight rounded-md '>
                         <div className=' flex items-center justify-center gap-2'>
                             <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                 {collab.charAt(0)}
@@ -149,7 +149,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
             <div className='p-2 flex flex-col w-full'>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuInfo className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>How to Locate the Unique ID</p>
+                    <p className='line-clamp-1'>Access Permissions</p>
                 </Link>
             </div>
 
