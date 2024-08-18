@@ -53,7 +53,7 @@ function SingleProject() {
   const { workspace } = location.state || {}
   const [users, setUsers] = useState('')
   const [saving, setSaving] = useState(false)
-  // console.log(workspace)
+  const [deleting, setDeleting] = useState(false)
 
 
   useEffect(() => {
@@ -163,6 +163,7 @@ function SingleProject() {
   };
 
   const handleTrashProject = (id) => {
+    setDeleting(true)
     
   }
 
