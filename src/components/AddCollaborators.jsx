@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 function AddCollaborators({ username, userEmail, collaborations }) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
 
-
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
         localStorage.removeItem('upfront_user_name')
@@ -25,7 +24,7 @@ function AddCollaborators({ username, userEmail, collaborations }) {
                     <LuUsers2 className='text-xl text-text-color/50 min-w-fit' />
                     <div className='w-full h-fit flex-col'>
                         <p className='line-clamp-1 text-sm font-medium text-text-color'>Add Collaborators</p>
-                        <p className='line-clamp-1 text-text-color/70 text-xs'>1 have access</p>
+                        <p className='line-clamp-1 text-text-color/70 text-xs'>{collaborations.length} have access</p>
                     </div>
                 </div>
             </div>
@@ -45,9 +44,9 @@ function AddCollaborators({ username, userEmail, collaborations }) {
                             <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
                                 {collab.charAt(0)}
                             </p>
-                            <p className='line-clamp-1'>{collab} </p>
+                            <p className='line-clamp-1'>{collab}</p>
                         </div>
-                        {collab === userEmail ? <span className='bg-stone-100 text-text-color/60 text-xs py-1 px-2 rounded-md'>Owner</span> : ''}
+                        {collab === userEmail ? <span className='bg-stone-100 text-text-color/70 text-xs py-1 px-2 rounded-md'>Owner</span> : ''}
                     </div>
                 ))}
             </div>
