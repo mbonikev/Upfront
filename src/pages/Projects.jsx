@@ -18,7 +18,7 @@ function Projects() {
   const [w3, setW3] = useState(null)
   const [myProjects, setMyProjects] = useState([])
   const [fetchingProjects, setFetchingProjects] = useState(true)
-  const dummyProjectNumber = 3
+  const dummyProjectNumber = ["", "","", "", "", "","", "", ""]
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -188,7 +188,7 @@ function Projects() {
           <div className='gridRespo pt-4'>
             {fetchingProjects ? <>
             {dummyProjectNumber.map((dummy, index) => (
-              <div key={index} className=''></div>
+              <div key={index} className='w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-[180px] bg-stone-100 rounded-xl animate-pulse flex items-center justify-center'></div>
             ))}
             </> : <>
               {myProjects.map((project, index) => (
