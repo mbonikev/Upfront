@@ -32,6 +32,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RiLoader5Fill } from "react-icons/ri";
 import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
+import { getArray } from "../utils/hashUtils";
 
 function Sidebar({
     handleSidebarToggle,
@@ -58,6 +59,8 @@ function Sidebar({
     const [spaceNumber, setSpaceNumber] = useState("");
     const formRef = useRef(null);
     const [createNew, setCreateNew] = useState(false);
+    const [myCollaborations, setMyCollatorations] = useState([])
+
 
     // workspace1
     const handleSubmit1 = async (e) => {
@@ -128,6 +131,10 @@ function Sidebar({
             console.log(error.response)
         }
     };
+
+    // get collabs
+    const retrieveArray = getArray('mycollaborations') ?? []
+
 
     const linkStyle =
         "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
@@ -336,20 +343,15 @@ function Sidebar({
                     <p className="flex items-center gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight">
                         Collaborations
                     </p>
-                    <Link
-                        to={"/"}
-                        className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
-                    >
-                        <LuWorkflow className="text-xl text-main-color min-w-fit" />
-                        <p className="line-clamp-1">Gearyo Application </p>
-                    </Link>
-                    <Link
-                        to={"/"}
-                        className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
-                    >
-                        <LuWorkflow className="text-xl text-main-color min-w-fit" />
-                        <p className="line-clamp-1">Project Bika </p>
-                    </Link>
+                    {retrieveArray.map((collab, index) => (
+                        <Link
+                            to={"/"}
+                            className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
+                        >
+                            <LuWorkflow className="text-xl text-main-color min-w-fit" />
+                            <p className="line-clamp-1">{collab.name === '' ? 'Untitled' : collab.name}</p>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>
