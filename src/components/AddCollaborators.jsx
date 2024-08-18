@@ -4,7 +4,7 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ users, username, userEmail, collaborations, projectId, setCollaborations }) {
+function AddCollaborators({ users, username, userEmail, collaborations, id, setCollaborations }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
@@ -29,7 +29,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
         setSearchvalue(email)
         setAuthing(true)
         try {
-            const response = await axios.post(`${apiUrl}/api/addcollaborator`, { projectId, email });
+            const response = await axios.post(`${apiUrl}/api/addcollaborator`, { id, email });
             setCollaborations(response.data.newCollaborators)
             setAuthing(false)
             setSearchvalue('')
@@ -74,7 +74,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
     const handleRemoveCollaborator = async (email) => {
         setAuthingDelete(email)
         try {
-            const response = await axios.post(`${apiUrl}/api/removecollaborator`, { projectId, email });
+            const response = await axios.post(`${apiUrl}/api/removecollaborator`, { id, email });
             setCollaborations(response.data.newCollaborators)
             setAuthingDelete('')
             setSearchvalue('')
