@@ -7,6 +7,8 @@ import { LuArchive, LuHash, LuShare2, LuTrash2 } from 'react-icons/lu'
 import axios from 'axios'
 import { format } from 'date-fns';
 import { RiLoader5Fill } from 'react-icons/ri'
+import { setArray } from '../utils/hashUtils' 
+
 
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -125,7 +127,8 @@ function Projects() {
       try {
         const response = await axios.get(`${apiUrl}/api/getcollaborations`, { params: { email: userEmail } });
         setMyCollatorations(response.data.projects)
-        localStorage.setItem('mycollaborations', JSON.stringify(response.data.projects))
+        setArray('mycollaborations', response.data.projects);
+        // const isArrayValid = verifyHashedArray('mycollaborations', JSON.stringify(response.data.projects));
       } catch (error) {
         console.log(error)
       }
@@ -225,7 +228,7 @@ function Projects() {
                         <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
                       ))}
                       {project.collaborations.length > 3 &&
-                        <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length-3}</div>
+                        <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length - 3}</div>
                       }
                     </div>
                     <div className='flex items-center gap-3 py-3'>
