@@ -3,7 +3,7 @@ import { LuActivity, LuArchive, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ username, userEmail }) {
+function AddCollaborators({ username, userEmail, collaborations }) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
 
 
@@ -38,15 +38,18 @@ function AddCollaborators({ username, userEmail }) {
             </form>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
-                <div className='min-h-[34px] flex items-center gap-2 px-2 py-0 font-normal text-text-color text-sm tracking-tight rounded-md '>
-                    <div className=' flex items-center justify-center gap-2'>
-                    <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
-                        {username.charAt(0)}
-                    </p>
-                    <p className='line-clamp-1'>{userEmail} </p>
+                <p className='line-clamp-1 text-sm font-medium text-text-color pt-1 pb-2'>People with access</p>
+                {collaborations.map((collab, index) => (
+                    <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-2 py-1 font-normal text-text-color text-sm tracking-tight rounded-md '>
+                        <div className=' flex items-center justify-center gap-2'>
+                            <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white">
+                                {collab.charAt(0)}
+                            </p>
+                            <p className='line-clamp-1'>{collab} </p>
+                        </div>
+                        {collab === userEmail ? <span className='bg-stone-100 text-text-color/60 text-xs py-1 px-2 rounded-md'>Owner</span> : ''}
                     </div>
-                    
-                </div>
+                ))}
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full'>
