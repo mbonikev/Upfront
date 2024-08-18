@@ -20,6 +20,7 @@ function Projects() {
   const [myProjects, setMyProjects] = useState([])
   const [fetchingProjects, setFetchingProjects] = useState(true)
   const dummyProjectNumber = ["", "", ""]
+  const [myCollaborations, setMyCollatorations] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -120,6 +121,18 @@ function Projects() {
       }
     };
 
+    const getCollaborations = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getcollaborations`, { params: { email: userEmail } });
+        setMyCollatorations(response.data.projects)
+        localStorage.setItem('mycollaborations', JSON.stringify(response.data.projects))
+      } catch (error) {
+        console.log(error)
+      }
+    };
+
+
+    getCollaborations()
     getmyProjects()
     fetchAllWorkShops()
     getme()
