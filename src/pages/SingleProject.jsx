@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useTransition } from "react";
+import React, { useCallback, useEffect, useRef, useState, useTransition } from "react";
 import { Link, useFetcher, useLocation, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
@@ -22,6 +22,8 @@ import { useDraggable } from "react-use-draggable-scroll";
 import logo60 from '../assets/logo-60x60.png'
 import { GiConsoleController } from "react-icons/gi";
 import AddCollaborators from "../components/AddCollaborators";
+import debounce from 'lodash/debounce';
+
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -42,7 +44,6 @@ function SingleProject() {
   const [fetching, setFetching] = useState(true)
   const [fromSpace, setFromSpace] = useState('')
   const [collaborations, setCollaborations] = useState([])
-  const [projectId, setProjectId] = useState('')
   const location = useLocation()
   const { workspace } = location.state || {}
   const [users, setUsers] = useState('')
@@ -90,7 +91,6 @@ function SingleProject() {
         setFetching(false)
         setFromSpace(response.data.workspace)
         setCollaborations(response.data.collaborations)
-        setProjectId(response.data._id)
       }
       catch (error) {
         // console.log(error)
@@ -117,6 +117,38 @@ function SingleProject() {
     getProject()
   }, [])
 
+  const saveInputs = async (newInput1, newInput2) => {
+    try {
+      // console.log(newInput1, newInput2, id, userEmail)
+      const response = await axios.patch(`${apiUrl}/api/updateprojectdetails`, {
+        newTitle: newInput1,
+        newDesc: newInput2,
+        projectid: id,
+        userEmail
+      });
+      console.log(response.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Debounce the save function
+  const debouncedSaveInputs = useCallback(debounce((newInput1, newInput2) => {
+    saveInputs(newInput1, newInput2);
+  }, 800), []);
+
+  const handleInput1Change = (e) => {
+    const newInput1 = e.target.value;
+    setProjectTitle(newInput1);
+    debouncedSaveInputs(newInput1, projectDesc);
+  };
+
+  const handleInput2Change = (e) => {
+    const newInput2 = e.target.value;
+    setProjectDesc(newInput2);
+    debouncedSaveInputs(projectTitle, newInput2);
+  };
+
   return (
     <>
       {/* profile menu overlay */}
@@ -142,7 +174,7 @@ function SingleProject() {
 
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} projectId={projectId} setCollaborations={setCollaborations} />
+          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} id={id} setCollaborations={setCollaborations} />
         </div>
       )}
 
@@ -245,7 +277,7 @@ function SingleProject() {
                 ref={inputRef}
                 type="text"
                 value={projectTitle}
-                onChange={(e) => setProjectTitle(e.target.value)}
+                onChange={handleInput1Change}
                 placeholder="Project Name "
                 className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
               />
@@ -253,7 +285,7 @@ function SingleProject() {
             <textarea
               type="text"
               value={projectDesc}
-              onChange={(e) => setProjectDesc(e.target.value)}
+              onChange={handleInput2Change}
               placeholder="a short description"
               className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-y"
             ></textarea>
