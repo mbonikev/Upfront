@@ -6,9 +6,13 @@ import {
   LuArchive,
   LuArrowLeft,
   LuArrowRight,
+  LuCheck,
+  LuCheckCircle,
   LuChevronsRight,
   LuHash,
   LuPlus,
+  LuRefreshCcw,
+  LuRefreshCw,
   LuScissors,
   LuStar,
   LuTimerReset,
@@ -47,6 +51,7 @@ function SingleProject() {
   const location = useLocation()
   const { workspace } = location.state || {}
   const [users, setUsers] = useState('')
+  const [saving, setSaving] = useState(false)
   // console.log(workspace)
 
 
@@ -126,9 +131,10 @@ function SingleProject() {
         projectid: id,
         userEmail
       });
-      console.log(response.data);
+      setSaving(false)
     } catch (err) {
       console.error(err);
+      setSaving(false)
     }
   };
 
@@ -138,12 +144,14 @@ function SingleProject() {
   }, 800), []);
 
   const handleInput1Change = (e) => {
+    setSaving(true)
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
   };
 
   const handleInput2Change = (e) => {
+    setSaving(true)
     const newInput2 = e.target.value;
     setProjectDesc(newInput2);
     debouncedSaveInputs(projectTitle, newInput2);
@@ -205,6 +213,16 @@ function SingleProject() {
               </div>
             </div>
             <div className="flex items-center justify-end gap-0">
+              <button
+                title="File update status"
+                className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              >
+                {saving ?
+                  <LuRefreshCw className="text-lg animate-spinSlow"/>
+                  :
+                  <LuCheck className="text-xl" />
+                }
+              </button>
               <button
                 title="Move"
                 className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
