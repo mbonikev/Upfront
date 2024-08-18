@@ -72,9 +72,18 @@ function AddCollaborators({ users, username, userEmail, collaborations, projectI
         }
     }
 
-    const handleRemoveCollaborator = (email) => {
+    const handleRemoveCollaborator = async (email) => {
         setAuthingDelete(email)
-
+        try {
+            const response = await axios.post(`${apiUrl}/api/removecollaborator`, { projectId, email });
+            setCollaborations(response.data.newCollaborators)
+            setAuthingDelete('')
+            setSearchvalue('')
+            setErrorEmail(false)
+        } catch (error) {
+            setErrorEmail(error.response.data.msg)
+            setAuthingDelete('')
+        }
     }
 
     return (
