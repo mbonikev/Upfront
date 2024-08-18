@@ -117,6 +117,26 @@ function SingleProject() {
     getProject()
   }, [])
 
+  const refreshCollaborators = async () => {
+    try {
+      const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
+      setProjectTitle(response.data.name)
+      setProjectDesc(response.data.desc)
+      setFetching(false)
+      setFromSpace(response.data.workspace)
+      setCollaborations(response.data.collaborations)
+      setProjectId(response.data._id)
+    }
+    catch (error) {
+      // console.log(error)
+      if (error.response.status === 401) {
+        navigate('/')
+      }
+      if (error.response.status === 400) {
+        navigate('/')
+      }
+    }
+  }
 
   return (
     <>
@@ -143,7 +163,7 @@ function SingleProject() {
 
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} projectId={projectId} />
+          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} projectId={projectId} refreshCollaborators={refreshCollaborators} />
         </div>
       )}
 
