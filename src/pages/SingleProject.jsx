@@ -42,6 +42,7 @@ function SingleProject() {
   const [fetching, setFetching] = useState(true)
   const [fromSpace, setFromSpace] = useState('')
   const [collaborations, setCollaborations] = useState([])
+  const [projectId, setProjectId] = useState('')
   const location = useLocation()
   const { workspace } = location.state || {}
   const [users, setUsers] = useState('')
@@ -89,6 +90,7 @@ function SingleProject() {
         setFetching(false)
         setFromSpace(response.data.workspace)
         setCollaborations(response.data.collaborations)
+        setProjectId(response.data._id)
       }
       catch (error) {
         // console.log(error)
@@ -141,7 +143,7 @@ function SingleProject() {
 
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} />
+          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} projectId={projectId} />
         </div>
       )}
 
