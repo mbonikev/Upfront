@@ -20,6 +20,7 @@ function Projects() {
   const [myProjects, setMyProjects] = useState([])
   const [fetchingProjects, setFetchingProjects] = useState(true)
   const dummyProjectNumber = ["", "", ""]
+  const [users, setUsers] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -109,17 +110,16 @@ function Projects() {
     const getmyProjects = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, { params: { email: userEmail } });
-        console.log(response.data.projects)
+        // console.log(response.data.projects)
         setMyProjects(response.data.projects)
         setFetchingProjects(false)
       } catch (error) {
-        console.log(error)
+        // console.log(error)
         if (error.response.status == 401) {
           handleLogout()
         }
       }
     };
-
 
     getmyProjects()
     fetchAllWorkShops()
