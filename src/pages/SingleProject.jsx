@@ -100,6 +100,17 @@ function SingleProject() {
       }
     }
 
+
+    const getusers = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getusers`);
+        setUsers(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    };
+
+    getusers()
     getProject()
   }, [])
 
