@@ -3,9 +3,10 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ users, username, userEmail, collaborations }) {
+function AddCollaborators({ users, username, userEmail, collaborations,}) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
+    const [searchValue, setSearchvalue] = useState('')
 
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
@@ -19,13 +20,43 @@ function AddCollaborators({ users, username, userEmail, collaborations }) {
         }, 1000);
     }
 
+    const handleInvite = async (email) => {
+        try {
+          const response = await axios.post(`${apiUrl}/api/addcollaborator`, {email});
+          console.log(response.data)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+    // Convert searchValue into a set of characters
+    const searchChars = new Set(searchValue.toLowerCase().replace(/[^a-z0-9]/g, ''));
+
+    // Function to check if all characters in searchChars are in the email
+    const containsAllChars = (email, searchChars) => {
+        const emailChars = new Set(email.toLowerCase().replace(/[^a-z0-9]/g, ''));
+        for (let char of searchChars) {
+            if (!emailChars.has(char)) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    // Filter users based on whether their email contains all characters from searchValue
+    const filteredUsers = users.filter(user =>
+        containsAllChars(user.email, searchChars)
+    );
+
     const handleSearchUser = (e) => {
         const value = e.target.value
-        if(value !== ''){
+        if (value !== '') {
             setSearchingUser(true)
+            setSearchvalue(value)
         }
-        else{
+        else {
             setSearchingUser(false)
+            setSearchvalue('')
         }
     }
     return (
@@ -46,9 +77,9 @@ function AddCollaborators({ users, username, userEmail, collaborations }) {
                         <input type='text' onChange={handleSearchUser} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
                         {/* users */}
                         {searchingUser &&
-                            <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2'>
-                                {users.map((user, index) => (
-                                    <div key={index} className='font-normal text-text-color text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
+                            <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2 shadow-lg'>
+                                {filteredUsers.map((user, index) => (
+                                    <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
                                         <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                             {user.email.charAt(0)}
                                         </p>
