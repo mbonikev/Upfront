@@ -4,11 +4,13 @@ import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-function AddCollaborators({ users, username, userEmail, collaborations,}) {
+function AddCollaborators({ users, username, userEmail, collaborations, projectId }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
     const [searchValue, setSearchvalue] = useState('')
+    const [errorEmail, setErrorEmail] = useState(false)
+    const [authing, setAuthing] = useState(false)
 
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
@@ -23,13 +25,19 @@ function AddCollaborators({ users, username, userEmail, collaborations,}) {
     }
 
     const handleInvite = async (email) => {
+        setSearchingUser(false)
+        setSearchvalue(email)
+        setAuthing(true)
         try {
-          const response = await axios.post(`${apiUrl}/api/addcollaborator`, {email});
-          console.log(response.data)
+            const response = await axios.post(`${apiUrl}/api/addcollaborator`, { projectId, email });
+            // console.log(response.data)
+            setAuthing(false)
+            setSearchvalue('')
         } catch (error) {
-          console.log(error)
+            setErrorEmail(error.response.data.msg)
+            setAuthing(false)
         }
-      }
+    }
 
     // Convert searchValue into a set of characters
     const searchChars = new Set(searchValue.toLowerCase().replace(/[^a-z0-9]/g, ''));
@@ -74,9 +82,11 @@ function AddCollaborators({ users, username, userEmail, collaborations,}) {
             </div>
             <form className='p-2 w-full'>
                 <div className='flex items-center justify-start gap-2 relative'>
-                    <div className='text-text-color/50 pl-2'><LuAtSign className='text-xl' /></div>
+                    <div className='text-text-color/50 pl-2'>
+                        {authing ? (<LuAtSign className='text-xl' />): (<LuAtSign className='text-xl' />)}
+                    </div>
                     <div className='relative'>
-                        <input type='text' onChange={handleSearchUser} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
+                        <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
                         {/* users */}
                         {searchingUser &&
                             <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2 shadow-lg'>
@@ -92,6 +102,7 @@ function AddCollaborators({ users, username, userEmail, collaborations,}) {
                         }
                     </div>
                 </div>
+                {errorEmail !== '' && <p className='text-xs text-red-600 w-full text-right pt-1 px-2'>{errorEmail}</p>}
 
             </form>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
