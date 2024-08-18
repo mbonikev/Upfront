@@ -91,6 +91,7 @@ function Sidebar({
         localStorage.removeItem("upfront_user");
         localStorage.removeItem("upfront_user_name");
         localStorage.removeItem("upfront_user_name_w1");
+        localStorage.removeItem("mycollaborations");
         setLogoutAnimate(true);
         setTimeout(() => {
             window.location.reload();
@@ -345,11 +346,15 @@ function Sidebar({
                     </p>
                     {retrieveArray.map((collab, index) => (
                         <Link
+                            key={index}
                             to={"/"}
-                            className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
+                            className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
                         >
                             <LuWorkflow className="text-xl text-main-color min-w-fit" />
-                            <p className="line-clamp-1">{collab.name === '' ? 'Untitled' : collab.name}</p>
+                            <div className="flex flex-col justify-start items-start">
+                            <p className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</p>
+                            <p className="line-clamp-1 text-xs font-normal text-text-color/70">{collab.user_email} added you</p>
+                            </div>
                         </Link>
                     ))}
                 </div>
