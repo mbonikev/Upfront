@@ -1,9 +1,11 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy, LuUsers2, LuWorkflow } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
 function AddCollaborators({ users, username, userEmail, collaborations,}) {
+    const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
     const [searchingUser, setSearchingUser] = useState(false)
     const [searchValue, setSearchvalue] = useState('')
