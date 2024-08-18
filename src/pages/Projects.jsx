@@ -17,6 +17,8 @@ function Projects() {
   const [w2, setW2] = useState(null)
   const [w3, setW3] = useState(null)
   const [myProjects, setMyProjects] = useState([])
+  const [fetchingProjects, setFetchingProjects] = useState(true)
+  const dummyProjectNumber = 3
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -108,10 +110,11 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, { params: { email: userEmail } });
         console.log(response.data.projects)
         setMyProjects(response.data.projects)
+        setFetchingProjects(false)
       } catch (error) {
         console.log(error)
         if (error.response.status == 401) {
-          // handleLogout()
+          handleLogout()
         }
       }
     };
@@ -121,7 +124,7 @@ function Projects() {
     fetchAllWorkShops()
     getme()
   }, [])
-  
+
 
   // getting space names + naming the page
   useEffect(() => {
@@ -183,44 +186,49 @@ function Projects() {
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           <div className='gridRespo pt-4'>
-            {myProjects.map((project, index) => (
-              <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
-                <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
-                  <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                    <LuArchive className='text-xl  min-w-fit ' />
-                  </button>
-                  <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                    <LuTrash2 className='text-xl  min-w-fit ' />
-                  </button>
-                </div>
-                <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
-                  <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
-                  <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
-                  <div className='flex items-center justify-start mt-3'>
-                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
-                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
-                    <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
-                    <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
-                  </div>
-                  <div className='flex items-center gap-3 py-3'>
-                    <h1 className='text-sm'>{project.progress}%</h1>
-                    <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                      <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
-                    </div>
-                    <h1 className='text-sm'>100%</h1>
-                  </div>
-                  <div className='w-full flex items-center justify-between'>
-                    <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
-                      <TbStack className='text-xl' />
-                      {project.progress} Boards
-                    </p>
-                    <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
-                    {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
-                    </p>
-                  </div>
-                </Link>
-              </div>
+            {fetchingProjects ? <>
+            {dummyProjectNumber.map((dummy, index) => (
+              <div key={index} className=''></div>
             ))}
+            </> : <>
+              {myProjects.map((project, index) => (
+                <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
+                  <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
+                    <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                      <LuArchive className='text-xl  min-w-fit ' />
+                    </button>
+                    <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                      <LuTrash2 className='text-xl  min-w-fit ' />
+                    </button>
+                  </div>
+                  <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                    <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
+                    <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.name}</p>
+                    <div className='flex items-center justify-start mt-3'>
+                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-orange-600 text-white text-base font-semibold border-[3px] border-white'>J</div>
+                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-teal-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>E</div>
+                      <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white'>I</div>
+                      <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+2</div>
+                    </div>
+                    <div className='flex items-center gap-3 py-3'>
+                      <h1 className='text-sm'>{project.progress}%</h1>
+                      <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                      </div>
+                      <h1 className='text-sm'>100%</h1>
+                    </div>
+                    <div className='w-full flex items-center justify-between'>
+                      <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
+                        <TbStack className='text-xl' />
+                        {project.progress} Boards
+                      </p>
+                      <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
+                        {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              ))}</>}
           </div>
         </div>
 
