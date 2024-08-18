@@ -162,6 +162,10 @@ function SingleProject() {
     debouncedSaveInputs(projectTitle, newInput2);
   };
 
+  const handleTrashProject = (id) => {
+    
+  }
+
   return (
     <>
       {/* profile menu overlay */}
@@ -180,8 +184,8 @@ function SingleProject() {
 
       {/* delete Menu overlay */}
       <div
-        onClick={() => setUserMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
+        onClick={() => setDeleteMenu(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed" : "hidden"
           }`}
       ></div>
 
@@ -201,8 +205,14 @@ function SingleProject() {
 
       {/* Delete Dropdown */}
       {deleteMenu && (
-        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[170px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-        
+        <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[200px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white">
+          <p className="text-sm text-text-color px-2 pt-2 pb-4"> Deleting this project will remove it from your workspace and move it to trash. Collaborations will be stashed for possible future restoration</p>
+          <div className="flex items-center justify-end">
+            <button onClick={() => handleTrashProject(id)} title='Trash' className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold py-2 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center">
+              <LuTrash2 className='text-lg' />
+              <span className='text-sm font-medium tracking-tight'>Move to Trash</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -238,7 +248,7 @@ function SingleProject() {
                 className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
               >
                 {saving ?
-                  <LuRefreshCw className="text-lg animate-spinSlow"/>
+                  <LuRefreshCw className="text-lg animate-spinSlow" />
                   :
                   <LuCheck className="text-xl" />
                 }
