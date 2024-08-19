@@ -238,13 +238,15 @@ function Projects() {
             :
             <>
               {myProjects.length < 1 ?
-                <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col gap-3 p-5 pb-20 max-md:pb-5'>
+                <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col p-5 pb-20 max-md:pb-5'>
                   {/* <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" /> */}
-                  <AddNotes width={'w-[130px]'} />
+                  <div className="w-[160px] aspect-square flex items-center justify-center p-2">
+                    <AddNotes width={'w-[130px]'} />
+                  </div>
                   <p className='font-normal text-sm text-text-color/70'>Let's create your first project</p>
                   <button
                     onClick={handleCreate}
-                    className={`min-h-[34px] flex items-center gap-2 px-3 py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50 ${createNew && 'pointer-events-none select-none'}`}
+                    className={`min-h-[34px] flex mt-2 items-center gap-2 px-3 py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50 ${createNew && 'pointer-events-none select-none'}`}
                   >
                     {createNew ? (
                       <div className="flex items-center gap-1">
