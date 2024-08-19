@@ -11,9 +11,11 @@ import {
   LuChevronsRight,
   LuHash,
   LuPlus,
+  LuPrinter,
   LuRefreshCcw,
   LuRefreshCw,
   LuScissors,
+  LuSendToBack,
   LuStar,
   LuTimerReset,
   LuTrash2,
@@ -270,7 +272,7 @@ function SingleProject() {
               <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
                 <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
                 <BreadCrumb name={fromSpace} status={"on"} link={"/"} /> /
-                <BreadCrumb name={"project name"} status={"on"} link={"/"} />
+                <BreadCrumb name={projectTitle === '' ? 'Project name' : projectTitle} status={"off"} link={"/"} />
               </div>
             </div>
             <div className="flex items-center justify-end gap-0">
@@ -285,10 +287,10 @@ function SingleProject() {
                 }
               </button>
               <button
-                title="Move"
+                title="Print view"
                 className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
               >
-                <LuScissors />
+                <LuPrinter />
               </button>
               <button
                 onClick={showDeleteMenu}
@@ -336,14 +338,14 @@ function SingleProject() {
 
 
         {/* Project section */}
-        <div className="w-full max-w-[1500px] h-full px-16 pt-8 pb-3 mx-auto relative">
+        <div className="w-full max-w-[1500px] h-full px-8 pt-8 pb-3 mx-auto relative">
           {/* loader on fetch */}
           {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
             <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
             <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
           </div>}
 
-          <div className="w-full h-fit pt-8 pb-3">
+          <div className="w-full h-fit pt-8 pb-0">
             <div className="w-full h-fit flex items-start justify-start mb-1 gap-1">
               <LuChevronsRight className='text-3xl text-lime-600 mt-1' />
               <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
@@ -366,7 +368,7 @@ function SingleProject() {
                   placeholder="a short description"
                   className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-none overflow-hidden"
                 ></textarea>
-                <div className="w-full h-[1px] bg-border-line-color/50 mb-3"></div>
+                <div className="w-full h-[1px] bg-transparent mb-5"></div>
               </div>
 
             </div>
