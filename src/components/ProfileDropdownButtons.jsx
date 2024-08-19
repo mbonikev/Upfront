@@ -39,20 +39,12 @@ function ProfileDropdownButtons({ username }) {
                     <p className='line-clamp-1'>Activity log</p>
                 </Link>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuArchive className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Archived projects</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuTrash2 className='text-xl text-text-color/50  min-w-fit' />
                     <p className='line-clamp-1'>Trash</p>
                 </Link>
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full'>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuAtSign className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>My Unique ID</p>
-                </Link>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuInfo className='text-xl text-text-color/50  min-w-fit' />
                     <p className='line-clamp-1'>About Upfront</p>
