@@ -226,7 +226,7 @@ function Projects() {
             :
             <>
               {myProjects.length < 1 ?
-                <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col gap-3'>
+                <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col gap-3 p-5 pb-20 max-md:pb-5'>
                   {/* <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" /> */}
                   <AddNotes width={'w-[130px]'} />
                   <p className='font-normal text-sm text-text-color/70'>Let's create your first project</p>
