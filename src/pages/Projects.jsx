@@ -168,10 +168,6 @@ function Projects() {
     document.title = luw1 + " - Upfront";
   }, [])
 
-  const showDeleteMenu = (id) => {
-    setDeleteMenu(id)
-  }
-
   const handleTrashProject = async (id) => {
     setDeleting(id)
     try {
@@ -179,10 +175,14 @@ function Projects() {
         projectId: id,
         userEmail
       });
-      window.location.reload()
+      // window.location.reload()
+      setMyProjects((prevProjects) =>
+        prevProjects.filter((project) => project._id !== id)
+      );
+      setDeleting('')
     } catch (err) {
       console.log(err)
-      setDeleting(false)
+      setDeleting('')
     }
   }
 
