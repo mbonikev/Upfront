@@ -44,7 +44,7 @@ function SingleProject() {
   // spaces
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
-  const { id } = useParams();
+  const { workspacename, id } = useParams();
   // dragabble
   const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
   const { events } = useDraggable(dragref); // Now we pass the reference to the useDraggable hook:
@@ -271,8 +271,8 @@ function SingleProject() {
               </div>
               <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
                 <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-                <BreadCrumb name={fromSpace === '' ? 'wrokspace name' : fromSpace} status={"on"} link={"/"} /> /
-                <BreadCrumb name={projectTitle === '' ? 'project name' : projectTitle} status={"off"} link={"/"} />
+                <BreadCrumb name={workspacename} status={"on"} link={"/"} /> /
+                <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
               </div>
             </div>
             <div className="flex items-center justify-end gap-0">
