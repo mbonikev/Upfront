@@ -56,6 +56,7 @@ function SingleProject() {
   const [users, setUsers] = useState('')
   const [saving, setSaving] = useState(false)
   const [deleting, setDeleting] = useState(false)
+  const textareaRef = useRef(null);
 
 
   useEffect(() => {
@@ -162,7 +163,17 @@ function SingleProject() {
     const newInput2 = e.target.value;
     setProjectDesc(newInput2);
     debouncedSaveInputs(projectTitle, newInput2);
+    textareaRef.current.style.height = 'auto';
+    textareaRef.current.style.height = `${e.target.scrollHeight}px`;
   };
+
+  useEffect(() => {
+    // Adjust the height of the textarea when the component mounts or the text changes
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [projectDesc]);
 
   const handleTrashProject = async () => {
     setDeleting(true)
@@ -339,26 +350,33 @@ function SingleProject() {
           </div>}
 
           <div className="w-full h-fit pt-8 pb-3">
-            <div className="w-full h-fit flex items-center justify-start mb-1 gap-1">
-              <LuChevronsRight className='text-3xl text-lime-600' />
-              {/* growing input */}
-              <input
-                ref={inputRef}
-                type="text"
-                value={projectTitle}
-                onChange={handleInput1Change}
-                placeholder="Project Name "
-                className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
-              />
+            <div className="w-full h-fit flex items-start justify-start mb-1 gap-1">
+              <LuChevronsRight className='text-3xl text-lime-600 mt-1' />
+              <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
+                {/* growing input */}
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={projectTitle}
+                  onChange={handleInput1Change}
+                  placeholder="Project Name "
+                  className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
+                />
+                {/* desc input */}
+                <textarea
+                  type="text"
+                  value={projectDesc}
+                  ref={textareaRef}
+                  onChange={handleInput2Change}
+                  rows="1" // Start with a single row
+                  placeholder="a short description"
+                  className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-none overflow-hidden"
+                ></textarea>
+                <div className="w-full h-[1px] bg-border-line-color/50 mb-3"></div>
+              </div>
+
             </div>
-            <textarea
-              type="text"
-              value={projectDesc}
-              onChange={handleInput2Change}
-              placeholder="a short description"
-              className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-y"
-            ></textarea>
-            <div className="w-full h-[1px] bg-border-line-color/50 mb-3"></div>
+
           </div>
           <div className="w-full h-full max-h-full flex-1 pb-10 flex items-start justify-start overflow-auto scrollable-container relative "
             {...events}
