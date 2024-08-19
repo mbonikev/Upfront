@@ -153,7 +153,7 @@ function Projects() {
     try {
       const Imat = 'w1'
       const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat, collaborations: userEmail });
-      navigate(`/project/${response.data.id}`, { state: { workspace: response.data.workspace } })
+      navigate(`/project/${w1}/${response.data.id}`, { state: { workspace: response.data.workspace } })
     } catch (error) {
       setCreateNew(false);
       console.log(error.response)
@@ -276,7 +276,7 @@ function Projects() {
                         </button>
                       </div>
 
-                      <Link key={project._id} to={`/project/${project._id}`} className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative ${deleteMenu === project._id && 'ring-2 ring-main-color/60'}`}>
+                      <Link key={project._id} to={`/project/${w1}/${project._id}`} className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative ${deleteMenu === project._id && 'ring-2 ring-main-color/60'}`}>
                         <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                         <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 min-h-[15px]'>{project.desc === '' ? 'no description' : project.desc}</p>
                         <div className='flex items-center justify-start mt-3'>
