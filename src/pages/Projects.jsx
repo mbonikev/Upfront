@@ -8,6 +8,8 @@ import axios from 'axios'
 import { format } from 'date-fns';
 import { RiLoader5Fill } from 'react-icons/ri'
 import { setArray } from '../utils/hashUtils'
+import AddNotes from '../components/AddNotes'
+import { IoIosAddCircle } from 'react-icons/io'
 
 
 function Projects() {
@@ -24,6 +26,8 @@ function Projects() {
   const dummyProjectNumber = ["", "", ""]
   const [myCollaborations, setMyCollatorations] = useState([])
   const navigate = useNavigate()
+  const [createNew, setCreateNew] = useState(false);
+
 
   useEffect(() => {
     const input = inputRef.current;
@@ -140,6 +144,19 @@ function Projects() {
     getme()
   }, [])
 
+  // create new project
+  const handleCreate = async () => {
+    setCreateNew(true);
+    try {
+      const Imat = 'w1'
+      const response = await axios.post(`${apiUrl}/api/createProject`, { name: '', desc: '', userEmail: userEmail, workspace: Imat, collaborations: userEmail });
+      navigate(`/project/${response.data.id}`, { state: { workspace: response.data.workspace } })
+    } catch (error) {
+      setCreateNew(false);
+      console.log(error.response)
+    }
+  };
+
 
   // getting space names + naming the page
   useEffect(() => {
@@ -201,54 +218,81 @@ function Projects() {
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           {fetchingProjects ?
-            <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center'>
-              <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" />
-            </div>
+            <>
+              <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col gap-3'>
+                <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" />
+              </div>
+            </>
             :
-            <div className='gridRespo pt-4 flex-1'>
-              {myProjects.map((project, index) => (
-                <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
-                  <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
-                    <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                      <LuArchive className='text-xl  min-w-fit ' />
-                    </button>
-                    <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-                      <LuTrash2 className='text-xl  min-w-fit ' />
-                    </button>
-                  </div>
-                  <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
-                    <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
-                    <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
-                    <div className='flex items-center justify-start mt-3'>
-                      <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
-                      {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
-                        <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
-                      ))}
-                      {project.collaborations.length > 3 &&
-                        <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length - 3}</div>
-                      }
-                    </div>
-                    <div className='flex items-center gap-3 py-3'>
-                      <h1 className='text-sm'>{project.progress}%</h1>
-                      <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                        <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+            <>
+              {myProjects.length < 1 ?
+                <div className='w-full h-full flex-1 bg-transparent flex items-center justify-center flex-col gap-3'>
+                  {/* <RiLoader5Fill className="text-3xl text-text-color/70 animate-spinLoader mb-10" /> */}
+                  <AddNotes width={'w-[130px]'} />
+                  <p className='font-normal text-sm text-text-color/70'>Let's create your first project</p>
+                  <button
+                    onClick={handleCreate}
+                    className={`min-h-[34px] flex items-center gap-2 px-3 py-[5px] font-medium text-main-color tracking-tight rounded-md hover:bg-stone-200/50 ${createNew && 'pointer-events-none select-none'}`}
+                  >
+                    {createNew ? (
+                      <div className="flex items-center gap-1">
+                        <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                        <p className="line-clamp-1">Setting up your project... </p>
                       </div>
-                      <h1 className='text-sm'>100%</h1>
-                    </div>
-                    <div className='w-full flex items-center justify-between'>
-                      <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
-                        <TbStack className='text-xl' />
-                        {project.progress} Boards
-                      </p>
-                      <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
-                        {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
-                      </p>
-                    </div>
-                  </Link>
+                    ) : (
+                      <div className="flex items-center gap-1">
+                        <IoIosAddCircle className="text-2xl" />
+                        <p className="line-clamp-1">New Project</p>
+                      </div>
+                    )}
+                  </button>
                 </div>
-              ))}
-            </div>
-          }
+                :
+                <div className='gridRespo pt-4 flex-1'>
+                  {myProjects.map((project, index) => (
+                    <div key={index} className='group z-10 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
+                      <div className='absolute z-20 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
+                        <button title='Archive Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-text-color tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                          <LuArchive className='text-xl  min-w-fit ' />
+                        </button>
+                        <button title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
+                          <LuTrash2 className='text-xl  min-w-fit ' />
+                        </button>
+                      </div>
+                      <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                        <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
+                        <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
+                        <div className='flex items-center justify-start mt-3'>
+                          <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
+                          {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
+                            <div key={index} title={collab} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{collab.charAt(0)}</div>
+                          ))}
+                          {project.collaborations.length > 3 &&
+                            <div className='flex items-center justify-center text-xs text-text-color/70 px-[2px] font-medium'>+{project.collaborations.length - 3}</div>
+                          }
+                        </div>
+                        <div className='flex items-center gap-3 py-3'>
+                          <h1 className='text-sm'>{project.progress}%</h1>
+                          <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(project.progress)} ${project.progressClass}`}></div>
+                          </div>
+                          <h1 className='text-sm'>100%</h1>
+                        </div>
+                        <div className='w-full flex items-center justify-between'>
+                          <p className='w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70'>
+                            <TbStack className='text-xl' />
+                            {project.progress} Boards
+                          </p>
+                          <p className='w-full flex items-start justify-end text-xs font-medium text-text-color/70'>
+                            {project.progress === 100 ? 'Completed' : format(new Date(project.createdAt), 'MMM dd, y')}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              }
+            </>}
         </div>
 
         {/* <button onClick={handleLogout} title='Login with Google' className='w-[200px] h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
