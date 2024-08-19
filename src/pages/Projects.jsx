@@ -181,10 +181,6 @@ function Projects() {
             </div>
           </div>
           <div className='flex items-center justify-end gap-0'>
-            <button title='Archived' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 text-text-color/70 hover:text-text-color rounded-lg inline-flex items-center">
-              <LuArchive className='text-base' />
-              <span className='text-xs font-medium tracking-tight'>Archived</span>
-            </button>
             <button title='Trash' className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-2 gap-1 text-text-color/70 hover:text-text-color rounded-lg inline-flex items-center">
               <LuTrash2 className='text-base' />
               <span className='text-xs font-medium tracking-tight'>Trash</span>
