@@ -213,7 +213,7 @@ function Projects() {
         {/* Projects section */}
         <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto flex flex-col'>
           <div className='w-full h-fit flex items-end justify-between'>
-            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{projects.length}</span> in Progress | <span className='text-text-color font-medium'>{count100Percent}</span>  Completed</p>
+            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{myProjects.length}</span> in Progress | <span className='text-text-color font-medium'>{myProjects.length}</span>  Completed</p>
 
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
