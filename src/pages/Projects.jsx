@@ -226,7 +226,7 @@ function Projects() {
         {/* Projects section */}
         <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto flex flex-col'>
           <div className='w-full h-fit flex items-end justify-between'>
-            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{myProjects.length}</span> in Progress | <span className='text-text-color font-medium'>{myProjects.length}</span>  Completed</p>
+            <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{myProjects.length}</span> in Progress | <span className='text-text-color font-medium'>0</span>  Completed</p>
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           {fetchingProjects ?
@@ -278,7 +278,7 @@ function Projects() {
 
                       <Link key={project._id} to={`/project/${project._id}`} className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative ${deleteMenu === project._id && 'ring-2 ring-main-color/60'}`}>
                         <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
-                        <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
+                        <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 min-h-[15px]'>{project.desc === '' ? 'no description' : project.desc}</p>
                         <div className='flex items-center justify-start mt-3'>
                           <div title={userEmail} className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
                           {project.collaborations.filter(em => em !== userEmail).slice(0, 2).map((collab, index) => (
