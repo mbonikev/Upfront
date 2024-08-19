@@ -34,7 +34,7 @@ select {
   width: 100%;
   margin: auto;
   display: grid;
-  gap:15px;
+  gap: 5px 15px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
