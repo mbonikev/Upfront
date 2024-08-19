@@ -271,8 +271,8 @@ function SingleProject() {
               </div>
               <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
                 <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-                <BreadCrumb name={fromSpace} status={"on"} link={"/"} /> /
-                <BreadCrumb name={projectTitle === '' ? 'Project name' : projectTitle} status={"off"} link={"/"} />
+                <BreadCrumb name={fromSpace === '' ? 'wrokspace name' : fromSpace} status={"on"} link={"/"} /> /
+                <BreadCrumb name={projectTitle === '' ? 'project name' : projectTitle} status={"off"} link={"/"} />
               </div>
             </div>
             <div className="flex items-center justify-end gap-0">
