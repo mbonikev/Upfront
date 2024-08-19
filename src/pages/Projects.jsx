@@ -225,9 +225,14 @@ function Projects() {
 
         {/* Projects section */}
         <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto flex flex-col'>
+          {/* delete Menu overlay */}
+          <div
+            onClick={() => setDeleteMenu(false)}
+            className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "absolute" : "hidden"
+              }`}
+          ></div>
           <div className='w-full h-fit flex items-end justify-between'>
             <p className='font-normal text-[13px] text-text-color/70'><span className='text-text-color font-medium'>{myProjects.length}</span> in Progress | <span className='text-text-color font-medium'>{myProjects.length}</span>  Completed</p>
-
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           {fetchingProjects ?
@@ -262,15 +267,9 @@ function Projects() {
                 </div>
                 :
                 <div className='gridRespo pt-4 flex-1 relative'>
-                  {/* delete Menu overlay */}
-                  <div
-                    onClick={() => setDeleteMenu(false)}
-                    className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "absolute" : "hidden"
-                      }`}
-                  ></div>
                   {myProjects.map((project, index) => (
                     <div key={index} className='group z-30 relative w-full lg:max-w-full xl:max-w-[500px] 2xl:max-w-[750px] h-fit'>
-                      <div className='absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0'>
+                      <div className={`absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 ${deleteMenu === project._id && 'opacity-100'}`}>
                         <button onClick={() => showDeleteMenu(project._id)} title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
                           <LuTrash2 className='text-xl  min-w-fit ' />
                         </button>
@@ -295,7 +294,7 @@ function Projects() {
                           </div>
                         </div>
                       )}
-                      <Link key={project._id} to={`/project/${project._id}`} className='group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative'>
+                      <Link key={project._id} to={`/project/${project._id}`} className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative ${deleteMenu === project._id && 'ring-2 ring-main-color/60'}`}>
                         <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                         <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 '>{project.name === '' ? 'no description' : project.desc}</p>
                         <div className='flex items-center justify-start mt-3'>
