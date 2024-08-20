@@ -453,39 +453,8 @@ function SingleProject() {
                 </h1>
                 {/* tasks */}
                 <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
-                  {/* text */}
-                  <p className="text-sm px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
-                  {/* Comments & collaborations */}
-                  <div className="px-3 flex items-center justify-between pt-2">
-                    <div>
-                      <div className="flex items-center gap-[2px] text-text-color/70">
-                        <LuMessageCircle className="text-lg" />
-                        <span className="font-medium text-sm">3</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-end gap-1">
-                      <div className="flex items-center justify-center">
-                        <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p>
-                        {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p>
-                        <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p> */}
-                      </div>
-                    </div>
-                  </div>
-                  {/* Due */}
-                  <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                  <span>Jun 30</span>
-                  <span><LuArrowRight /></span>
-                  <span>Aug 12</span>
-                  </p>
-                </div>
-                {/* tasks */}
-                <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  {/* priority */}
+                  <p className={`ml-3 font-semibold text-xs mb-2 bg-green-600/10 text-green-700 w-fit px-2 py-[2px] rounded-md`}>Medium</p>
                   {/* text */}
                   <p className="text-sm px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
                   {/* Comments & collaborations */}
