@@ -85,7 +85,7 @@ function SingleProject() {
   const textareaRefTask = useRef(null);
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDue, setNewTaskDue] = useState("");
-  const [newTaskPriority, setNewTaskPriority] = useState("");
+  const [newTaskPriority, setNewTaskPriority] = useState("Medium");
   const [newBoardValue, setNewBoardValue] = useState("");
   const [boards, setBoards] = useState([]);
   const [placement, SetPlacement] = useState('bottomLeft');
@@ -595,7 +595,7 @@ function SingleProject() {
                       <div className="flex flex-col min-w-[100px]">
                         <p className="text-xs text-text-color/70 pb-1">Priority</p>
                         <Select
-                          // defaultValue="Medium"
+                          defaultValue="Medium"
                           placeholder="Set priority"
                           placement={placement}
                           style={{
