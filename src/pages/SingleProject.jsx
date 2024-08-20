@@ -279,11 +279,11 @@ function SingleProject() {
   };
 
   useEffect(() => {
-    console.log("Due: "+newTaskDue)
-    console.log("Priority: "+newTaskPriority)
-  },[newTaskDue, newTaskPriority])
+    console.log("Due: " + newTaskDue)
+    console.log("Priority: " + newTaskPriority)
+  }, [newTaskDue, newTaskPriority])
 
-  
+
 
   return (
     <>
@@ -581,7 +581,7 @@ function SingleProject() {
                       <p className="text-xs text-text-color/70 pb-1">Due</p>
                       <DatePicker
                         size="medium"
-                        style={{ 
+                        style={{
                           color: "#2e394a",
                           width: "100%",
                         }}
@@ -618,38 +618,40 @@ function SingleProject() {
                     </div>
                   </div>
                   <div className="flex items-center justify-end gap-1 ">
-                  <div
-                    onClick={() => setCreateNewTask(false)}
-                    title="Cancel"
-                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                  >
-                    <span className="text-sm tracking-tight">Cancel</span>
+                    <div
+                      onClick={() => setCreateNewTask(false)}
+                      title="Cancel"
+                      className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      <span className="text-sm tracking-tight">Cancel</span>
+                    </div>
+                    <button
+                      type="submit"
+                      title="Create a new Task"
+                      className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      {addingBoard ? (
+                        <RiLoader5Fill className="text-xl animate-spinLoader" />
+                      ) : (
+                        <>
+                          <span className="text-sm tracking-tight">Add</span>
+                        </>
+                      )}
+                    </button>
                   </div>
-                  <button
-                    type="submit"
-                    title="Create a new Task"
-                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                  >
-                    {addingBoard ? (
-                      <RiLoader5Fill className="text-xl animate-spinLoader" />
-                    ) : (
-                      <>
-                        <span className="text-sm tracking-tight">Add</span>
-                      </>
-                    )}
-                  </button>
-                </div>
                 </form>
-                <button
-                onClick={() => setCreateNewTask(true)}
-                  title="Create a new board"
-                  className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
-                >
-                  <LuPlus className="text-lg" />
-                  <span className="text-sm tracking-tight font-medium">
-                    New
-                  </span>
-                </button>
+                {!createNewTask && (
+                  <button
+                    onClick={() => setCreateNewTask(true)}
+                    title="Create a new board"
+                    className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
+                  >
+                    <LuPlus className="text-lg" />
+                    <span className="text-sm tracking-tight font-medium">
+                      New
+                    </span>
+                  </button>
+                )}
               </div>
             ))}
 
