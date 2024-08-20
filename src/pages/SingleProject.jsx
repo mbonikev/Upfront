@@ -62,7 +62,7 @@ function SingleProject() {
   const [addingBoard, setAddingBoard] = useState(false)
   const textareaRef = useRef(null);
   const [newBoardValue, setNewBoardValue] = useState('')
-  const [boards, setBoards] = useState([""])
+  const [boards, setBoards] = useState([])
 
 
   useEffect(() => {
@@ -122,6 +122,17 @@ function SingleProject() {
       }
     }
 
+    const getBoards = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getboards`, { params: { projectId: id, email: userEmail } })
+        // console.log(response.data)
+        setBoards(response.data)
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
 
     const getusers = async () => {
       try {
@@ -132,6 +143,7 @@ function SingleProject() {
       }
     };
 
+    getBoards()
     getusers()
     getProject()
   }, [])
