@@ -701,10 +701,12 @@ function SingleProject() {
             <button
               onClick={() => setAddBoard(true)}
               title="Create a new board"
-              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-2 mt-2 inline-flex items-start justify-start w-full max-w-[230px] min-w-[230px] h-[100px] border-l-2 border-stone-200 hover:border-main-color/70"
+              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center hover:bg-stone-100/80 rounded-lg w-full max-w-[280px]"
             >
               <LuPlus className="text-lg" />
-              <span className="text-sm tracking-tight">New</span>
+              <span className="text-sm tracking-tight font-medium">
+                New
+              </span>
             </button>
           )}
         </div>
