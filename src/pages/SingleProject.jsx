@@ -238,22 +238,25 @@ function SingleProject() {
       {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          profileMenu ? "fixed" : "hidden"
+        }`}
       ></div>
 
       {/* User Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          userMenu ? "fixed" : "hidden"
+        }`}
       ></div>
 
       {/* delete Menu overlay */}
       <div
         onClick={() => setDeleteMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          deleteMenu ? "fixed" : "hidden"
+        }`}
       ></div>
 
       {/* profile dropdown */}
@@ -266,26 +269,50 @@ function SingleProject() {
       {/* Menu dropdown */}
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <AddCollaborators users={users} username={username} collaborations={collaborations} userEmail={userEmail} id={id} setCollaborations={setCollaborations} />
+          <AddCollaborators
+            users={users}
+            username={username}
+            collaborations={collaborations}
+            userEmail={userEmail}
+            id={id}
+            setCollaborations={setCollaborations}
+          />
         </div>
       )}
 
       {/* Delete Dropdown */}
       {deleteMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white">
-          <p className="text-sm text-text-color/70 px-2 pt-2 pb-4"><span className="font-medium text-text-color">Warning! </span> Deleting this project will remove it from your workspace and move it to trash. Collaborations will be stashed for possible future restoration</p>
-          <p className="text-sm text-text-color/70 px-2 pb-4"> Some fields, like <span className="font-medium text-text-color">'createdAt'</span> will reset during restore.</p>
+          <p className="text-sm text-text-color/70 px-2 pt-2 pb-4">
+            <span className="font-medium text-text-color">Warning! </span>{" "}
+            Deleting this project will remove it from your workspace and move it
+            to trash. Collaborations will be stashed for possible future
+            restoration
+          </p>
+          <p className="text-sm text-text-color/70 px-2 pb-4">
+            {" "}
+            Some fields, like{" "}
+            <span className="font-medium text-text-color">
+              'createdAt'
+            </span>{" "}
+            will reset during restore.
+          </p>
           <div className="flex items-center justify-end">
-            <button onClick={handleTrashProject} title='Trash' className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center">
-              {deleting ?
+            <button
+              onClick={handleTrashProject}
+              title="Trash"
+              className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center"
+            >
+              {deleting ? (
                 <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                :
+              ) : (
                 <>
-                  <LuTrash2 className='text-lg' />
-                  <span className='text-sm font-medium tracking-tight'>Move to Trash</span>
+                  <LuTrash2 className="text-lg" />
+                  <span className="text-sm font-medium tracking-tight">
+                    Move to Trash
+                  </span>
                 </>
-              }
-
+              )}
             </button>
           </div>
         </div>
@@ -298,7 +325,8 @@ function SingleProject() {
           <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
             <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
               <div className="flex items-center justify-start gap-3 text-sm mr-2">
-                <Link to={`/`}
+                <Link
+                  to={`/`}
                   title="Deadlines"
                   className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
                 >
@@ -322,11 +350,11 @@ function SingleProject() {
                 title="File update status"
                 className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
               >
-                {saving ?
+                {saving ? (
                   <LuRefreshCw className="text-lg animate-spinSlow" />
-                  :
+                ) : (
                   <LuCheck className="text-xl" />
-                }
+                )}
               </button>
               <button
                 title="Print view"
@@ -378,18 +406,40 @@ function SingleProject() {
           </div>
         </div>
 
-
         {/* Project section */}
 
         {/* loader on fetch */}
-        {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
-          <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
-          <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
-        </div>}
+        {fetching && (
+          <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
+            {/* <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" /> */}
+            {/* <RiLoader5Fill className="text-[60px] animate-spin text-main-color" /> */}
+            {/* <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p> */}
+            <svg class="container" viewBox="0 0 40 40" height="40" width="40">
+              <circle
+                class="track"
+                cx="20"
+                cy="20"
+                r="17.5"
+                pathlength="100"
+                stroke-width="5px"
+                fill="none"
+              />
+              <circle
+                class="car"
+                cx="20"
+                cy="20"
+                r="17.5"
+                pathlength="100"
+                stroke-width="5px"
+                fill="none"
+              />
+            </svg>
+          </div>
+        )}
 
         <div className="w-full h-fit pb-0 max-w-[1500px] mx-auto relative pl-10 pr-16 pt-10">
           <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
-            <LuHash className='text-3xl text-lime-600 mt-1' />
+            <LuHash className="text-3xl text-lime-600 mt-1" />
             <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
               <input
                 ref={inputRef}
@@ -410,17 +460,15 @@ function SingleProject() {
               ></textarea>
               {/* <div className="w-full h-[1px] bg-stone-200"></div> */}
             </div>
-
           </div>
-
         </div>
 
-        <div className="w-full flex-1 max-h-full flex items-start justify-start gap-2 overflow-x-auto scrollable-container relative pl-12 pr-0 pt-5"
+        <div
+          className="w-full flex-1 max-h-full flex items-start justify-start gap-2 overflow-x-auto scrollable-container relative pl-12 pr-0 pt-5"
           {...events}
           ref={dragref}
         >
-
-          {boards.length > 0 && (
+          {boards.length > 0 &&
             boards.map((board, index) => (
               <div className="min-h-[300px] w-[230px] min-w-[230px] bg-stone-200/50 select-none flex flex-col px-3 rounded-xl text-text-color">
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
@@ -431,13 +479,23 @@ function SingleProject() {
                 <div className="w-full h-fit"></div>
               </div>
               // <></>
-            ))
-          )}
+            ))}
 
           {addBoard && (
             <div className="w-[230px] min-w-[230px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
-              <form onSubmit={handleNewBoard} className="w-full h-full flex flex-col justify-between">
-                <input type="text" value={newBoardValue} onChange={(e) => setNewBoardValue(e.target.value)} className="w-full text-xs uppercase font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
+              <form
+                onSubmit={handleNewBoard}
+                className="w-full h-full flex flex-col justify-between"
+              >
+                <input
+                  type="text"
+                  value={newBoardValue}
+                  onChange={(e) => setNewBoardValue(e.target.value)}
+                  className="w-full text-xs uppercase font-semibold tracking-tight bg-transparent text-text-color/90"
+                  placeholder="Board title"
+                  autoFocus
+                  name="New board title"
+                />
                 <div className="flex items-center justify-end gap-1 ">
                   <div
                     onClick={() => setAddBoard(false)}
@@ -451,13 +509,13 @@ function SingleProject() {
                     title="Create a new board"
                     className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
-                    {addingBoard ?
+                    {addingBoard ? (
                       <RiLoader5Fill className="text-xl animate-spinLoader" />
-                      :
+                    ) : (
                       <>
                         <span className="text-sm tracking-tight">Add</span>
                       </>
-                    }
+                    )}
                   </button>
                 </div>
               </form>
