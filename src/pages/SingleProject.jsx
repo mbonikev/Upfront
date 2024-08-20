@@ -485,11 +485,19 @@ function SingleProject() {
                   </div>
                   {/* Due */}
                   <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                  <span>Jun 30</span>
-                  <span><LuArrowRight /></span>
-                  <span>Aug 12</span>
+                    <span>Jun 30</span>
+                    <span><LuArrowRight /></span>
+                    <span>Aug 12</span>
                   </p>
                 </div>
+                <button
+                  onClick={() => setAddBoard(true)}
+                  title="Create a new board"
+                  className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
+                >
+                  <LuPlus className="text-lg" />
+                  <span className="text-sm tracking-tight font-medium">New</span>
+                </button>
               </div>
               // <></>
             ))}
