@@ -460,7 +460,7 @@ function SingleProject() {
                     <span>{board.name}</span>
                     <span className="pl-2">3</span>
                   </h1>
-                  {/* tasks */}
+                  {/* task */}
                   <button
                     draggable
                     className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 transition ring-border-line-color/20 ">
@@ -500,6 +500,17 @@ function SingleProject() {
                       <span>Aug 12</span>
                     </p>
                   </button>
+
+                  {/* add new task */}
+                  <form className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  <input
+                    type="text"
+                    className="w-full text-xs font-medium tracking-tight bg-transparent text-text-color/90"
+                    placeholder="Task name"
+                    autoFocus
+                    name="New board title"
+                  />
+                 </form>
                   <button
                     title="Create a new board"
                     className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
