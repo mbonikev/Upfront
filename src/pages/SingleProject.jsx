@@ -218,6 +218,7 @@ function SingleProject() {
       });
       setAddBoard(false)
       setAddingBoard(false)
+      setNewBoardValue('')
       // console.log(response)
       setBoards(prevBoards => [...prevBoards, { id: response.data.id, name: response.data.name }])
     }
@@ -429,7 +430,7 @@ function SingleProject() {
           {addBoard && (
             <div className="w-[230px] min-w-[230px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
               <form onSubmit={handleNewBoard} className="w-full h-full flex flex-col justify-between">
-                <input type="text" value={newBoardValue} onChange={(e) => setNewBoardValue(e.target.value)} className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
+                <input type="text" value={newBoardValue} onChange={(e) => setNewBoardValue(e.target.value)} className="w-full text-xs uppercase font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
                 <div className="flex items-center justify-end gap-1 ">
                   <div
                     onClick={() => setAddBoard(false)}
