@@ -418,11 +418,12 @@ function SingleProject() {
           {boards.length > 0 && (
             boards.map((board, index) => (
               <div className="min-h-[300px] w-[230px] min-w-[230px] bg-stone-200/50 select-none flex flex-col px-3 rounded-xl text-text-color">
-                <h1 className="text-xs font-semibold line-clamp-1 uppercase">
+                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
                   <span>{board.name}</span>
                   <span className="pl-2">3</span>
                 </h1>
-
+                {/* tasks */}
+                
               </div>
               // <></>
             ))
