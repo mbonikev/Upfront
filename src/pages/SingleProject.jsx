@@ -9,6 +9,7 @@ import {
   LuCheck,
   LuCheckCircle,
   LuChevronsRight,
+  LuChevronsUp,
   LuClipboard,
   LuFlag,
   LuHash,
@@ -454,7 +455,10 @@ function SingleProject() {
                 {/* tasks */}
                 <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
                   {/* priority */}
-                  <p className={`ml-3 font-semibold text-xs mb-2 bg-green-600/10 text-green-700 w-fit px-2 py-[2px] rounded-md`}>Medium</p>
+                  <p className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}>
+                    <LuChevronsUp className="text-xl" />
+                    <span className="text-xs font-semibold">Low</span>
+                  </p>
                   {/* text */}
                   <p className="text-sm px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
                   {/* Comments & collaborations */}
