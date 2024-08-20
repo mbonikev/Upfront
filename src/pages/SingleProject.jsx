@@ -271,12 +271,18 @@ function SingleProject() {
 
   // new task
   const onRangeChange = (date, dateString) => {
-    console.log(dateString);
+    setNewTaskDue(dateString);
+  };
+  const handlePriorityChange = (value) => {
+    setNewTaskPriority(value);
   };
 
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
+  useEffect(() => {
+    console.log("Due: "+newTaskDue)
+    console.log("Priority: "+newTaskPriority)
+  },[newTaskDue, newTaskPriority])
+
+  
 
   return (
     <>
@@ -567,6 +573,7 @@ function SingleProject() {
                       fontWeight: 500,
                     }}
                     autoSize
+                    required
                   />
                   <div className="flex mt-1 w-full gap-2">
                     <div className="flex flex-col">
@@ -577,6 +584,7 @@ function SingleProject() {
                           color: "#2e394a",
                           width: "100%",
                         }}
+                        required
                         onChange={onRangeChange}
                         placeholder={["Start date", "End date"]}
                         placement={placement}
@@ -585,13 +593,15 @@ function SingleProject() {
                     <div className="flex flex-col min-w-[100px]">
                       <p className="text-xs text-text-color/70 pb-1">Priority</p>
                       <Select
-                        defaultValue="Medium"
+                        // defaultValue="Medium"
+                        placeholder="Set priority"
                         placement={placement}
                         style={{
                           width: "100%",
                           color: "#2e394a",
                         }}
-                        onChange={handleChange}
+                        required
+                        onChange={handlePriorityChange}
                         options={[
                           {
                             value: "High", label: "High",
@@ -602,13 +612,32 @@ function SingleProject() {
                           {
                             value: "Low", label: "Low",
                           },
-                          // {
-                          //   value: "disabled", label: "Disabled", disabled: true,
-                          // },
                         ]}
                       />
                     </div>
                   </div>
+                  <div className="flex items-center justify-end gap-1 ">
+                  <div
+                    onClick={() => setAddBoard(false)}
+                    title="Create a new board"
+                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    <span className="text-sm tracking-tight">Cancel</span>
+                  </div>
+                  <button
+                    type="submit"
+                    title="Create a new board"
+                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    {addingBoard ? (
+                      <RiLoader5Fill className="text-xl animate-spinLoader" />
+                    ) : (
+                      <>
+                        <span className="text-sm tracking-tight">Add</span>
+                      </>
+                    )}
+                  </button>
+                </div>
                 </form>
                 <button
                   title="Create a new board"
