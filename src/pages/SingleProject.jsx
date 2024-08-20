@@ -453,7 +453,7 @@ function SingleProject() {
                   <span className="pl-2">3</span>
                 </h1>
                 {/* tasks */}
-                <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                <button className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:ring-2 transition hover:ring-main-color/60 ring-border-line-color/20 ">
                   {/* priority */}
                   <p className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}>
                     <LuChevronsUp className="text-xl" />
@@ -489,9 +489,8 @@ function SingleProject() {
                     <span><LuArrowRight /></span>
                     <span>Aug 12</span>
                   </p>
-                </div>
+                </button>
                 <button
-                  onClick={() => setAddBoard(true)}
                   title="Create a new board"
                   className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
                 >
