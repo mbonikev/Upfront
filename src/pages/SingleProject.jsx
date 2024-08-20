@@ -86,10 +86,6 @@ function SingleProject() {
     }
   }, [projectTitle]);
 
-  useEffect(() => {
-    document.title = "New Project - Upfront";
-  }, []);
-
   const showPMenu = () => {
     setProfileMenu(true);
   };
@@ -109,6 +105,7 @@ function SingleProject() {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
         setProjectTitle(response.data.name)
         setProjectDesc(response.data.desc)
+        document.title = response.data.name + " - Upfront";
         // setFetching(false)
         setFromSpace(response.data.workspace)
         setCollaborations(response.data.collaborations)
