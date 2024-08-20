@@ -619,15 +619,15 @@ function SingleProject() {
                   </div>
                   <div className="flex items-center justify-end gap-1 ">
                   <div
-                    onClick={() => setAddBoard(false)}
-                    title="Create a new board"
+                    onClick={() => setCreateNewTask(false)}
+                    title="Cancel"
                     className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     <span className="text-sm tracking-tight">Cancel</span>
                   </div>
                   <button
                     type="submit"
-                    title="Create a new board"
+                    title="Create a new Task"
                     className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     {addingBoard ? (
@@ -671,7 +671,7 @@ function SingleProject() {
                 <div className="flex items-center justify-end gap-1 ">
                   <div
                     onClick={() => setAddBoard(false)}
-                    title="Create a new board"
+                    title="Cancel"
                     className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     <span className="text-sm tracking-tight">Cancel</span>
