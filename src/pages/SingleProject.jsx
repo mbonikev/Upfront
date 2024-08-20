@@ -10,6 +10,7 @@ import {
   LuCheckCircle,
   LuChevronsRight,
   LuClipboard,
+  LuFlag,
   LuHash,
   LuPlus,
   LuPrinter,
@@ -32,6 +33,7 @@ import AddCollaborators from "../components/AddCollaborators";
 import debounce from 'lodash/debounce';
 import { RiLoader5Fill } from "react-icons/ri";
 import DeleteContent from "../components/DeleteContent";
+import { HiMiniBars2, HiMiniBars3, HiMiniMinus } from "react-icons/hi2";
 
 
 function SingleProject() {
@@ -238,25 +240,22 @@ function SingleProject() {
       {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
-          profileMenu ? "fixed" : "hidden"
-        }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed" : "hidden"
+          }`}
       ></div>
 
       {/* User Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
-          userMenu ? "fixed" : "hidden"
-        }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
+          }`}
       ></div>
 
       {/* delete Menu overlay */}
       <div
         onClick={() => setDeleteMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
-          deleteMenu ? "fixed" : "hidden"
-        }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed" : "hidden"
+          }`}
       ></div>
 
       {/* profile dropdown */}
@@ -476,7 +475,21 @@ function SingleProject() {
                   <span className="pl-2">3</span>
                 </h1>
                 {/* tasks */}
-                <div className="w-full h-fit"></div>
+                <div className="w-full h-fit bg-white p-3 rounded-lg shadow-md">
+                  <p className="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dolore quod debitis repellat vero iusto voluptate nulla officia, molestias cumque, perspiciatis nam pariatur enim quis tenetur sint rem culpa illum.</p>
+                  <div className="pt-2 flex items-center justify-between">
+                    <div></div>
+                    <div className="flex items-center justify-end gap-1">
+                      <button className="flex items-center text-sm gap-1 px-2 py-[3px] bg-stone-200 rounded-md">
+                      <LuFlag className="" />
+                      <span className="text-xs font-medium text-text-color">NU</span>
+                      </button>
+                      <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                        {userEmail.charAt(0)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               // <></>
             ))}
