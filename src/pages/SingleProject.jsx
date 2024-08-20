@@ -107,7 +107,7 @@ function SingleProject() {
         const response = await axios.get(`${apiUrl}/api/getproject`, { params: { id, userEmail } })
         setProjectTitle(response.data.name)
         setProjectDesc(response.data.desc)
-        setFetching(false)
+        // setFetching(false)
         setFromSpace(response.data.workspace)
         setCollaborations(response.data.collaborations)
       }
@@ -133,6 +133,10 @@ function SingleProject() {
       }
     }
 
+    const fetchData = async () => {
+      await Promise.all([getProject(), getBoards()]);
+      setFetching(false);
+    };
 
     const getusers = async () => {
       try {
@@ -143,6 +147,7 @@ function SingleProject() {
       }
     };
 
+    fetchData()
     getBoards()
     getusers()
     getProject()
@@ -375,7 +380,7 @@ function SingleProject() {
 
 
         {/* Project section */}
-        
+
         {/* loader on fetch */}
         {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
           <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
@@ -414,7 +419,7 @@ function SingleProject() {
           {...events}
           ref={dragref}
         >
-          
+
           {boards.length > 0 && (
             boards.map((board, index) => (
               <div className="min-h-[300px] w-[230px] min-w-[230px] bg-stone-200/50 select-none flex flex-col px-3 rounded-xl text-text-color">
@@ -423,7 +428,7 @@ function SingleProject() {
                   <span className="pl-2">3</span>
                 </h1>
                 {/* tasks */}
-                
+                <div className="w-full h-fit"></div>
               </div>
               // <></>
             ))
