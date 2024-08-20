@@ -641,6 +641,7 @@ function SingleProject() {
                 </div>
                 </form>
                 <button
+                onClick={() => setCreateNewTask(true)}
                   title="Create a new board"
                   className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
                 >
