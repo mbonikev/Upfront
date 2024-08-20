@@ -658,7 +658,7 @@ function SingleProject() {
             ))}
 
           {addBoard && (
-            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
+            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-3">
               <form
                 onSubmit={handleNewBoard}
                 className="w-full h-full flex flex-col justify-between"
