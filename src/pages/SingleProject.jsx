@@ -9,6 +9,7 @@ import {
   LuCheck,
   LuCheckCircle,
   LuChevronsRight,
+  LuClipboard,
   LuHash,
   LuPlus,
   LuPrinter,
@@ -61,7 +62,7 @@ function SingleProject() {
   const [addingBoard, setAddingBoard] = useState(false)
   const textareaRef = useRef(null);
   const [newBoardValue, setNewBoardValue] = useState('')
-  const [boards, setBoards] = useState([])
+  const [boards, setBoards] = useState([""])
 
 
   useEffect(() => {
@@ -273,9 +274,9 @@ function SingleProject() {
       )}
 
       <div
-        className={`w-full h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out overflow-hidden `}
+        className={`w-full h-svh text-text-color flex flex-col bg-white overflow-hidden relative `}
       >
-        <div className="w-full h-fit flex flex-col justify-start items-start z-20 bg-white">
+        <div className="w-full h-fit flex flex-col justify-center items-start z-20 bg-white">
           <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
             <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
               <div className="flex items-center justify-start gap-3 text-sm mr-2">
@@ -361,88 +362,95 @@ function SingleProject() {
 
 
         {/* Project section */}
-        <div className="w-full max-w-[1500px] h-full pl-10 pr-20 pt-8 pb-3 mx-auto relative">
-          {/* loader on fetch */}
-          {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
-            <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
-            <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
-          </div>}
+        {/* <div className="w-fit h-full flex-1  bg-red-500  pt-0 pb-3 "> */}
+        {/* loader on fetch */}
+        {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
+          <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
+          <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p>
+        </div>}
 
-          <div className="w-full h-fit pb-8">
-            <div className="w-full h-fit flex items-start justify-start mb-1 gap-1">
-              <LuChevronsRight className='text-3xl text-lime-600 mt-1' />
-              <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
-                {/* growing input */}
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={projectTitle}
-                  onChange={handleInput1Change}
-                  placeholder="Project Name "
-                  className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
-                />
-                {/* desc input */}
-                <textarea
-                  type="text"
-                  value={projectDesc}
-                  ref={textareaRef}
-                  onChange={handleInput2Change}
-                  rows="1" // Start with a single row
-                  placeholder="a short description"
-                  className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-none overflow-hidden"
-                ></textarea>
-                <div className="w-full h-[1px] bg-stone-200"></div>
-              </div>
-
+        <div className="w-full h-fit pb-0 max-w-[1500px] mx-auto relative pl-10 pr-16 pt-10">
+          <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
+            <LuHash className='text-3xl text-lime-600 mt-1' />
+            <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
+              <input
+                ref={inputRef}
+                type="text"
+                value={projectTitle}
+                onChange={handleInput1Change}
+                placeholder="Project Name "
+                className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
+              />
+              <textarea
+                type="text"
+                value={projectDesc}
+                ref={textareaRef}
+                onChange={handleInput2Change}
+                rows="1"
+                placeholder="a short description"
+                className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-none overflow-hidden"
+              ></textarea>
+              {/* <div className="w-full h-[1px] bg-stone-200"></div> */}
             </div>
 
           </div>
-          <div className="w-full h-full max-h-full flex-1 px-9 py-0 flex items-start justify-start overflow-auto scrollable-container relative "
-            {...events}
-            ref={dragref}
-          >
-            {addBoard && (
-              <div className="w-[300px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
-                <form onSubmit={handleNewBoard} className="w-full h-full flex flex-col justify-between">
-                  <input type="text" value={newBoardValue} onChange={(e) => setNewBoardValue(e.target.value)} className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
-                  <div className="flex items-center justify-end gap-1 ">
-                    <div
-                      onClick={() => setAddBoard(false)}
-                      title="Create a new board"
-                      className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                    >
-                      <span className="text-sm tracking-tight">Cancel</span>
-                    </div>
-                    <button
-                      type="submit"
-                      title="Create a new board"
-                      className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                    >
-                      {addingBoard ?
-                        <RiLoader5Fill className="text-xl animate-spinLoader" />
-                        :
-                        <>
-                          <span className="text-sm tracking-tight">Add</span>
-                        </>
-                      }
-                    </button>
-                  </div>
-                </form>
-              </div>
-            )}
-            {!addBoard && (
-              <button
-                onClick={() => setAddBoard(true)}
-                title="Create a new board"
-                className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 inline-flex items-start justify-start w-full max-w-[300px] min-w-[300px] h-[100px] border-l-2 border-stone-200 hover:border-main-color/70"
-              >
-                <LuPlus className="text-lg" />
-                <span className="text-sm tracking-tight">Add board</span>
-              </button>
-            )}
-          </div>
 
         </div>
+
+        <div className="w-full flex-1 max-h-full flex items-start justify-start gap-2 overflow-x-auto scrollable-container relative max-w-[1500px] mx-auto pl-10 pr-28 pt-5"
+          {...events}
+          ref={dragref}
+        >
+          
+          {boards.length > 0 && (
+            boards.map((board, index) => (
+              <div className="min-h-[300px] w-[230px] min-w-[230px] bg-stone-200 select-none flex flex-col p-3 rounded-xl">hh</div>
+              // <></>
+            ))
+          )}
+
+          {addBoard && (
+            <div className="w-[230px] min-w-[230px] h-fit rounded-xl bg-white border flex items-start justify-start p-3">
+              <form onSubmit={handleNewBoard} className="w-full h-full flex flex-col justify-between">
+                <input type="text" value={newBoardValue} onChange={(e) => setNewBoardValue(e.target.value)} className="w-full text-base font-semibold tracking-tight bg-transparent text-text-color/90" placeholder="Board title" autoFocus name="New board title" />
+                <div className="flex items-center justify-end gap-1 ">
+                  <div
+                    onClick={() => setAddBoard(false)}
+                    title="Create a new board"
+                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    <span className="text-sm tracking-tight">Cancel</span>
+                  </div>
+                  <button
+                    type="submit"
+                    title="Create a new board"
+                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                  >
+                    {addingBoard ?
+                      <RiLoader5Fill className="text-xl animate-spinLoader" />
+                      :
+                      <>
+                        <span className="text-sm tracking-tight">Add</span>
+                      </>
+                    }
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+          {!addBoard && (
+            <button
+              onClick={() => setAddBoard(true)}
+              title="Create a new board"
+              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-2 mt-2 inline-flex items-start justify-start w-full max-w-[230px] min-w-[230px] h-[100px] border-l-2 border-stone-200 hover:border-main-color/70"
+            >
+              <LuPlus className="text-lg" />
+              <span className="text-sm tracking-tight">Add board</span>
+            </button>
+          )}
+        </div>
+
+        {/* </div> */}
       </div>
     </>
   );
