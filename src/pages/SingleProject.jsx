@@ -89,6 +89,7 @@ function SingleProject() {
   const [newBoardValue, setNewBoardValue] = useState("");
   const [boards, setBoards] = useState([]);
   const [placement, SetPlacement] = useState('bottomLeft');
+  const [createNewTask, setCreateNewTask] = useState('')
 
   useEffect(() => {
     const input = inputRef.current;
