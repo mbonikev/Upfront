@@ -16,6 +16,20 @@ input{
   font-size: 14px;
 }
 
+
+
+.ant-select-selector .ant-select-selection-placeholder {
+  color: red; /* Placeholder text color */
+}
+
+.ant-picker-input > input::placeholder {
+  color: green; /* Placeholder text color */
+}
+
+.ant-picker-range .ant-picker-input > input::placeholder {
+  color: yellow; /* Placeholder text color */
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
