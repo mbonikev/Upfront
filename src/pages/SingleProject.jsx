@@ -375,7 +375,7 @@ function SingleProject() {
 
 
         {/* Project section */}
-        {/* <div className="w-fit h-full flex-1  bg-red-500  pt-0 pb-3 "> */}
+        
         {/* loader on fetch */}
         {fetching && <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
           <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
