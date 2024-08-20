@@ -16,18 +16,24 @@ input{
   font-size: 14px;
 }
 
+/* ANT DESIGN */
 
+/* Text color for TextArea */
+.ant-input-textarea, .ant-input {
+  color: #000000 !important;
+}
 
+/* Text color for DatePicker input */
+.ant-picker-input > input {
+  color: #000000 !important;  
+}
+/* Change the text color of the select input */
+.ant-select-selector .ant-select-selection-item,
 .ant-select-selector .ant-select-selection-placeholder {
-  color: red; /* Placeholder text color */
+  color: #000000 !important;
 }
-
-.ant-picker-input > input::placeholder {
-  color: green; /* Placeholder text color */
-}
-
-.ant-picker-range .ant-picker-input > input::placeholder {
-  color: yellow; /* Placeholder text color */
+.ant-picker-input input::placeholder {
+  color: #000000 !important;
 }
 
 select {
