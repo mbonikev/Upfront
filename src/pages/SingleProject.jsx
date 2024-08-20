@@ -12,6 +12,7 @@ import {
   LuClipboard,
   LuFlag,
   LuHash,
+  LuMessageCircle,
   LuPlus,
   LuPrinter,
   LuRefreshCcw,
@@ -445,34 +446,76 @@ function SingleProject() {
         >
           {boards.length > 0 &&
             boards.map((board, index) => (
-              <div className="min-h-[400px] w-[230px] min-w-[230px] bg-stone-200/50 select-none flex flex-col px-3 rounded-xl text-text-color">
+              <div className="min-h-[400px] w-[230px] min-w-[230px] bg-stone-200/40 select-none flex flex-col px-2 rounded-xl text-text-color">
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
                   <span>{board.name}</span>
                   <span className="pl-2">3</span>
                 </h1>
                 {/* tasks */}
-                <div className="w-full py-2 h-fit bg-white rounded-lg shadow-md ">
-                  <p className="text-xs px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
-                  {/* separator */}
-                  <div className="w-full h-[1px] bg-stone-200 my-2"></div>
-                  <div className="px-3 flex items-center justify-between">
-                  <div>
-                    <button className="flex items-center"></button>
-                  </div>
+                <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  {/* text */}
+                  <p className="text-sm px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
+                  {/* Comments & collaborations */}
+                  <div className="px-3 flex items-center justify-between pt-2">
+                    <div>
+                      <div className="flex items-center gap-[2px] text-text-color/70">
+                        <LuMessageCircle className="text-lg" />
+                        <span className="font-medium text-sm">3</span>
+                      </div>
+                    </div>
                     <div className="flex items-center justify-end gap-1">
                       <div className="flex items-center justify-center">
                         <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
-                        <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                        {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
                         <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   </div>
+                  {/* Due */}
+                  <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
+                  <span>Jun 30</span>
+                  <span><LuArrowRight /></span>
+                  <span>Aug 12</span>
+                  </p>
+                </div>
+                {/* tasks */}
+                <div className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  {/* text */}
+                  <p className="text-sm px-3">Lorem ipsum dolor sit amet  tenetur sint rem culpa illum.</p>
+                  {/* Comments & collaborations */}
+                  <div className="px-3 flex items-center justify-between pt-2">
+                    <div>
+                      <div className="flex items-center gap-[2px] text-text-color/70">
+                        <LuMessageCircle className="text-lg" />
+                        <span className="font-medium text-sm">3</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-end gap-1">
+                      <div className="flex items-center justify-center">
+                        <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                          {userEmail.charAt(0)}
+                        </p>
+                        {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                          {userEmail.charAt(0)}
+                        </p>
+                        <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                          {userEmail.charAt(0)}
+                        </p> */}
+                      </div>
+                    </div>
+                  </div>
+                  {/* Due */}
+                  <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
+                  <span>Jun 30</span>
+                  <span><LuArrowRight /></span>
+                  <span>Aug 12</span>
+                  </p>
                 </div>
               </div>
               // <></>
