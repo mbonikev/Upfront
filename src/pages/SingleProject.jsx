@@ -561,85 +561,87 @@ function SingleProject() {
                 </button>
 
                 {/* add new task */}
-                <form className="w-full p-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
-                  <TextArea
-                    placeholder="Task name"
-                    style={{
-                      borderColor: "transparent",
-                      padding: 0,
-                      boxShadow: "none",
-                      borderRadius: 0,
-                      fontSize: "14px",
-                      color: "#2e394a",
-                      fontWeight: 500,
-                    }}
-                    autoSize
-                    required
-                  />
-                  <div className="flex mt-1 w-full gap-2">
-                    <div className="flex flex-col">
-                      <p className="text-xs text-text-color/70 pb-1">Due</p>
-                      <DatePicker
-                        size="medium"
-                        style={{
-                          color: "#2e394a",
-                          width: "100%",
-                        }}
-                        required
-                        onChange={onRangeChange}
-                        placeholder={"Due Date"}
-                        placement={placement}
-                      />
+                {createNewTask && (
+                  <form className="w-full p-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                    <TextArea
+                      placeholder="Task name"
+                      style={{
+                        borderColor: "transparent",
+                        padding: 0,
+                        boxShadow: "none",
+                        borderRadius: 0,
+                        fontSize: "14px",
+                        color: "#2e394a",
+                        fontWeight: 500,
+                      }}
+                      autoSize
+                      required
+                    />
+                    <div className="flex mt-1 w-full gap-2">
+                      <div className="flex flex-col">
+                        <p className="text-xs text-text-color/70 pb-1">Due</p>
+                        <DatePicker
+                          size="medium"
+                          style={{
+                            color: "#2e394a",
+                            width: "100%",
+                          }}
+                          required
+                          onChange={onRangeChange}
+                          placeholder={"Due Date"}
+                          placement={placement}
+                        />
+                      </div>
+                      <div className="flex flex-col min-w-[100px]">
+                        <p className="text-xs text-text-color/70 pb-1">Priority</p>
+                        <Select
+                          // defaultValue="Medium"
+                          placeholder="Set priority"
+                          placement={placement}
+                          style={{
+                            width: "100%",
+                            color: "#2e394a",
+                          }}
+                          required
+                          onChange={handlePriorityChange}
+                          options={[
+                            {
+                              value: "High", label: "High",
+                            },
+                            {
+                              value: "Medium", label: "Medium",
+                            },
+                            {
+                              value: "Low", label: "Low",
+                            },
+                          ]}
+                        />
+                      </div>
                     </div>
-                    <div className="flex flex-col min-w-[100px]">
-                      <p className="text-xs text-text-color/70 pb-1">Priority</p>
-                      <Select
-                        // defaultValue="Medium"
-                        placeholder="Set priority"
-                        placement={placement}
-                        style={{
-                          width: "100%",
-                          color: "#2e394a",
-                        }}
-                        required
-                        onChange={handlePriorityChange}
-                        options={[
-                          {
-                            value: "High", label: "High",
-                          },
-                          {
-                            value: "Medium", label: "Medium",
-                          },
-                          {
-                            value: "Low", label: "Low",
-                          },
-                        ]}
-                      />
+                    <div className="flex items-center justify-end gap-1 ">
+                      <div
+                        onClick={() => setCreateNewTask(false)}
+                        title="Cancel"
+                        className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                      >
+                        <span className="text-sm tracking-tight">Cancel</span>
+                      </div>
+                      <button
+                        type="submit"
+                        title="Create a new Task"
+                        className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                      >
+                        {addingBoard ? (
+                          <RiLoader5Fill className="text-xl animate-spinLoader" />
+                        ) : (
+                          <>
+                            <span className="text-sm tracking-tight">Add</span>
+                          </>
+                        )}
+                      </button>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-end gap-1 ">
-                    <div
-                      onClick={() => setCreateNewTask(false)}
-                      title="Cancel"
-                      className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                    >
-                      <span className="text-sm tracking-tight">Cancel</span>
-                    </div>
-                    <button
-                      type="submit"
-                      title="Create a new Task"
-                      className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
-                    >
-                      {addingBoard ? (
-                        <RiLoader5Fill className="text-xl animate-spinLoader" />
-                      ) : (
-                        <>
-                          <span className="text-sm tracking-tight">Add</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </form>
+                  </form>
+                )}
                 {!createNewTask && (
                   <button
                     onClick={() => setCreateNewTask(true)}
