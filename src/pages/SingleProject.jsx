@@ -587,7 +587,7 @@ function SingleProject() {
                         }}
                         required
                         onChange={onRangeChange}
-                        placeholder={["Start date", "End date"]}
+                        placeholder={"Due Date"}
                         placement={placement}
                       />
                     </div>
