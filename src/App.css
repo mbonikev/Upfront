@@ -8,7 +8,7 @@
 
 *{
   /* font-family: 'SF Pro Display' ,'Inter' ,sans-serif; */
-  font-family: 'Inter' ,'SF Pro Display', sans-serif;
+  font-family: 'Inter'pfonerfpeornferp ,'SF Pro Display', sans-serif;
   outline: none;
 }
 
@@ -18,22 +18,16 @@ input{
 
 /* ANT DESIGN */
 
-/* Text color for TextArea */
-.ant-input-textarea, .ant-input {
-  color: #000000 !important;
-}
-
-/* Text color for DatePicker input */
-.ant-picker-input > input {
-  color: #000000 !important;  
-}
 /* Change the text color of the select input */
-.ant-select-selector .ant-select-selection-item,
-.ant-select-selector .ant-select-selection-placeholder {
-  color: #000000 !important;
+.ant-select-selection-placeholder {
+  color: #9ca3af !important;
 }
 .ant-picker-input input::placeholder {
-  color: #000000 !important;
+  color: #9ca3af !important;
+}
+
+.ant-input::placeholder {
+  color: #9ca3af !important;
 }
 
 select {
