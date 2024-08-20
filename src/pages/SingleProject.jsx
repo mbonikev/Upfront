@@ -410,7 +410,7 @@ function SingleProject() {
 
         </div>
 
-        <div className="w-full flex-1 max-h-full flex items-start justify-start gap-2 overflow-x-auto scrollable-container relative max-w-[1500px] mx-auto pl-10 pr-28 pt-5"
+        <div className="w-full flex-1 max-h-full flex items-start justify-start gap-2 overflow-x-auto scrollable-container relative pl-12 pr-0 pt-5"
           {...events}
           ref={dragref}
         >
