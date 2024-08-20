@@ -164,6 +164,7 @@ function Sidebar({
                         <ProfileDropdownButtons username={username} />
                     </div>
                 )}
+
                 <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
                     <div className="w-full flex items-center justify-between mb-4">
                         <button
@@ -340,7 +341,7 @@ function Sidebar({
                     <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium text-text-color/70 tracking-tight w-full justify-between">
                         <span>Collaborations</span>
                         <span>
-                        <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium text-text-color/70 w-full text-center hover:bg-stone-200/50 rounded-lg ">View all</p> 
+                            <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium text-text-color/70 w-full text-center hover:bg-stone-200/50 rounded-lg ">View all</p>
                         </span>
                     </p>
                     {retrieveArray.slice(0, 3).map((collab, index) => (
@@ -357,7 +358,7 @@ function Sidebar({
                         </Link>
                     ))}
                     {retrieveArray.length === 0 &&
-                                <p className="line-clamp-1 text-xs px-9 font-normal text-text-color/70">No contributions yet</p>
+                        <p className="line-clamp-1 text-xs px-9 font-normal text-text-color/70">No contributions yet</p>
                     }
                 </div>
             </div>
