@@ -410,29 +410,8 @@ function SingleProject() {
         {/* loader on fetch */}
         {fetching && (
           <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
-            {/* <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" /> */}
-            {/* <RiLoader5Fill className="text-[60px] animate-spin text-main-color" /> */}
-            {/* <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>loading..</p> */}
-            <svg class="container" viewBox="0 0 40 40" height="40" width="40">
-              <circle
-                class="track"
-                cx="20"
-                cy="20"
-                r="17.5"
-                pathlength="100"
-                stroke-width="5px"
-                fill="none"
-              />
-              <circle
-                class="car"
-                cx="20"
-                cy="20"
-                r="17.5"
-                pathlength="100"
-                stroke-width="5px"
-                fill="none"
-              />
-            </svg>
+            <img src={logo60} loading="lazy" className="animate-bounce h-12 saturate-100 aspect-square" />
+            <p className='py-0 text-sm font-medium text-text-color/70 cursor-default'>Loading Project..</p>
           </div>
         )}
 
