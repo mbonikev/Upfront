@@ -88,8 +88,10 @@ function SingleProject() {
   const [newTaskPriority, setNewTaskPriority] = useState("Medium");
   const [newBoardValue, setNewBoardValue] = useState("");
   const [boards, setBoards] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [placement, SetPlacement] = useState('bottomLeft');
   const [createNewTask, setCreateNewTask] = useState('')
+
 
   useEffect(() => {
     const input = inputRef.current;
@@ -273,20 +275,30 @@ function SingleProject() {
   const handlePriorityChange = (value) => {
     setNewTaskPriority(value);
   };
+  const getCurrentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  };
 
   const handleCreateTask = async (e) => {
     e.preventDefault()
-    console.log(newTaskName, newTaskDue, newTaskPriority, createNewTask)
+    console.log(newTaskName, newTaskDue, newTaskPriority, createNewTask, getCurrentDate())
     try {
-      const response = await axios.post(`${apiUrl}/api/newTask`, {
+      const response = await axios.post(`${apiUrl}/api/newtask`, {
         newTaskName,
         newTaskDue,
+        startingOn: getCurrentDate(),
         newTaskPriority,
         assignedTo: userEmail,
         boardId: createNewTask,
         projectId: id,
         userEmail,
       });
+      console.log(response.data)
     }
     catch (err) {
       console.log(err)
