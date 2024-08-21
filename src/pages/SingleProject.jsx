@@ -314,13 +314,15 @@ function SingleProject() {
       // console.log(response.data)
       setTasks((prevTasks) => [
         ...prevTasks,
-        { 
-          id: response.data.id, 
-          name: response.data.name, 
+        {
+          id: response.data.id,
+          name: response.data.name,
           priority: response.data.priority,
           assignedTo: response.data.assignedTo,
           startingOn: response.data.startingOn,
-          due: response.data.due, },
+          due: response.data.due,
+          boardId: response.data.boardId,
+        },
       ]);
     }
     catch (err) {
