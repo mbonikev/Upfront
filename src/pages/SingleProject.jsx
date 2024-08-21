@@ -43,7 +43,6 @@ import {
 import axios from "axios";
 import { IoChevronDown } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
-import { useDraggable } from "react-use-draggable-scroll";
 import logo60 from "../assets/logo-60x60.png";
 import { GiConsoleController } from "react-icons/gi";
 import AddCollaborators from "../components/AddCollaborators";
@@ -70,9 +69,6 @@ function SingleProject() {
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
   const { workspacename, id } = useParams();
-  // dragabble
-  const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
-  const { events } = useDraggable(dragref); // Now we pass the reference to the useDraggable hook:
   // board
   const [addBoard, setAddBoard] = useState(false);
   const [fetching, setFetching] = useState(true);
@@ -95,6 +91,38 @@ function SingleProject() {
   const [tasks, setTasks] = useState([]);
   const [placement, SetPlacement] = useState('bottomLeft');
   const [createNewTask, setCreateNewTask] = useState('')
+  // Scolling horizonaly
+  const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const onMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+  const onMouseMove = (e) => {
+    if (!isDragging) return;
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Adjust the scroll speed
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+  const onMouseUp = () => {
+    setIsDragging(false);
+  };
+  useEffect(() => {
+    const container = containerRef.current;
+    container.addEventListener('mousedown', onMouseDown);
+    container.addEventListener('mousemove', onMouseMove);
+    container.addEventListener('mouseup', onMouseUp);
+    container.addEventListener('mouseleave', onMouseUp);
+    return () => {
+      container.removeEventListener('mousedown', onMouseDown);
+      container.removeEventListener('mousemove', onMouseMove);
+      container.removeEventListener('mouseup', onMouseUp);
+      container.removeEventListener('mouseleave', onMouseUp);
+    };
+  }, [isDragging, startX, scrollLeft]);
 
 
   useEffect(() => {
@@ -552,9 +580,8 @@ function SingleProject() {
         </div>
 
         <div
-          className="w-full flex-1 h-fit flex items-start justify-start gap-2 overflow-x-auto hidden-scrollbar scroll-smooth overflow-y-hidden scrollable-container relative pl-12 pr-5 pt-5 pb-20"
-          {...events}
-          ref={dragref}
+          className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 pt-5 pb-20"
+          ref={containerRef}
         >
           {boards.length > 0 &&
             boards.map((board, index) => (
