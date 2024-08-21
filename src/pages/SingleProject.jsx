@@ -324,6 +324,9 @@ function SingleProject() {
           boardId: response.data.boardId,
         },
       ]);
+
+      setCreateNewTask('')
+
     }
     catch (err) {
       console.log(err)
@@ -551,63 +554,58 @@ function SingleProject() {
             boards.map((board, index) => (
               <div
                 key={index}
-                className="min-h-[200px] w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color"
+                className=" w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color"
               >
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
                   <span>{board.name}</span>
                   <span className="pl-2">3</span>
                 </h1>
-                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
-                  <span>{board.id}</span>
-                </h1>
                 {/* task */}
-                <button
-                  draggable
-                  className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 transition ring-border-line-color/20 "
-                >
-                  {/* priority */}
-                  <p
-                    className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}
-                  >
-                    <LuChevronsUp className="text-xl" />
-                    <span className="text-xs font-semibold">Low</span>
-                  </p>
-                  {/* text */}
-                  <p className="text-sm px-3 text-start">
-                    Lorem ipsum dolor sit amet tenetur sint rem culpa illum.
-                  </p>
-                  {/* Comments & collaborations */}
-                  <div className="px-3 flex items-center justify-between pt-2">
-                    <div>
-                      <div className="flex items-center gap-[2px] text-text-color/70">
-                        <LuMessageCircle className="text-lg" />
-                        <span className="font-medium text-sm">3</span>
+                {tasks.filter(task => task.boardId === board.id).map((task) => (
+                  <button key={task.id} draggable className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 transition ring-border-line-color/20 ">
+                    {/* priority */}
+                    <p
+                      className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}
+                    >
+                      <LuChevronsUp className="text-xl" />
+                      <span className="text-xs font-semibold">Low</span>
+                    </p>
+                    {/* text */}
+                    <p className="text-sm px-3 text-start">
+                      Lorem ipsum dolor sit amet tenetur sint rem culpa illum.
+                    </p>
+                    {/* Comments & collaborations */}
+                    <div className="px-3 flex items-center justify-between pt-2">
+                      <div>
+                        <div className="flex items-center gap-[2px] text-text-color/70">
+                          <LuMessageCircle className="text-lg" />
+                          <span className="font-medium text-sm">3</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center justify-end gap-1">
-                      <div className="flex items-center justify-center">
-                        <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p>
-                        {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                      <div className="flex items-center justify-end gap-1">
+                        <div className="flex items-center justify-center">
+                          <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                            {userEmail.charAt(0)}
+                          </p>
+                          {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
                         <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p> */}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Due */}
-                  <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                    <span>Jun 30</span>
-                    <span>
-                      <LuArrowRight />
-                    </span>
-                    <span>Aug 12</span>
-                  </p>
-                </button>
-
+                    {/* Due */}
+                    <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
+                      <span>Jun 30</span>
+                      <span>
+                        <LuArrowRight />
+                      </span>
+                      <span>Aug 12</span>
+                    </p>
+                  </button>
+                ))}
                 {/* add new task */}
                 {createNewTask === board.id ? (
                   <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
