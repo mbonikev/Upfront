@@ -97,20 +97,26 @@ function SingleProject() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const onMouseDown = (e) => {
+    // Check if the left mouse button is clicked
+    if (e.button !== 0) return;
+
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
     setScrollLeft(containerRef.current.scrollLeft);
-  };
-  const onMouseMove = (e) => {
+};
+
+const onMouseMove = (e) => {
     if (!isDragging) return;
     const x = e.pageX - containerRef.current.offsetLeft;
     const walk = (x - startX) * 1.5; // Adjust the scroll speed
     containerRef.current.scrollLeft = scrollLeft - walk;
-  };
-  const onMouseUp = () => {
+};
+
+const onMouseUp = () => {
     setIsDragging(false);
-  };
-  useEffect(() => {
+};
+
+useEffect(() => {
     const container = containerRef.current;
     container.addEventListener('mousedown', onMouseDown);
     container.addEventListener('mousemove', onMouseMove);
@@ -122,7 +128,8 @@ function SingleProject() {
       container.removeEventListener('mouseup', onMouseUp);
       container.removeEventListener('mouseleave', onMouseUp);
     };
-  }, [isDragging, startX, scrollLeft]);
+}, [isDragging, startX, scrollLeft]);
+
 
 
   useEffect(() => {
@@ -450,8 +457,8 @@ function SingleProject() {
       )}
 
       {/* Menu */}
-      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-stone-300">
-        <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
+      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-white">
+        <div className="w-full h-fit flex items-start justify-between px-5 py-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-3 text-sm mr-2">
               <Link
@@ -582,7 +589,7 @@ function SingleProject() {
         </div>
 
         <div
-          className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 pt-5 pb-20"
+          className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 py-10"
           ref={containerRef}
         >
           {boards.length > 0 &&
