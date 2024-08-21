@@ -271,14 +271,15 @@ function SingleProject() {
     setNewTaskPriority(value);
   };
 
-  useEffect(() => {
-    console.log("Due: " + newTaskDue)
-    console.log("Priority: " + newTaskPriority)
-  }, [newTaskDue, newTaskPriority])
+  const handleCreateTask = async (e) => {
+    e.preventDefault()
+    try {
 
-  useEffect(() => {
-    console.log(createNewTask)
-  },[createNewTask])
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <>
@@ -557,7 +558,7 @@ function SingleProject() {
 
                 {/* add new task */}
                 {createNewTask === board.id ? (
-                  <form className="w-full p-3 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
                     <TextArea
                       placeholder="Task name"
                       style={{
