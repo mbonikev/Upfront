@@ -449,94 +449,96 @@ function SingleProject() {
         </div>
       )}
 
+      {/* Menu */}
+      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-stone-300">
+        <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
+          <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
+            <div className="flex items-center justify-start gap-3 text-sm mr-2">
+              <Link
+                to={`/`}
+                title="Deadlines"
+                className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
+              >
+                <LuArrowLeft />
+              </Link>
+              <button
+                title="Deadlines"
+                className="opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
+              >
+                <LuArrowRight />
+              </button>
+            </div>
+            <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
+              <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
+              <BreadCrumb name={workspacename} status={"on"} link={"/"} /> /
+              <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
+            </div>
+          </div>
+          <div className="flex items-center justify-end gap-0">
+            <button
+              title="File update status"
+              className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+            >
+              {saving ? (
+                <LuRefreshCw className="text-lg animate-spinSlow" />
+              ) : (
+                <LuCheck className="text-xl" />
+              )}
+            </button>
+            <button
+              title="Print view"
+              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+            >
+              <LuPrinter />
+            </button>
+            <button
+              onClick={showDeleteMenu}
+              title="Move to trash"
+              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 "
+            >
+              <LuTrash2 />
+            </button>
+            <button
+              onClick={showUserMenu}
+              title="Manage Collaborators"
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+            >
+              <LuUsers2 />
+            </button>
+
+            <button
+              title="Mark as favorite"
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+            >
+              <LuStar />
+            </button>
+            <button
+              title="Dues"
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+            >
+              <LuTimerReset />
+            </button>
+            <span className="w-[2px]"></span>
+            <button
+              onClick={showPMenu}
+              className=" max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color transition p-1 rounded-lg"
+            >
+              <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
+                {username.charAt(0)}
+              </p>
+              <p className="truncate font-medium pl-[3px] text-xs">
+                {username}
+              </p>
+              <IoChevronDown className="min-w-[15px] text-xs" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+
       <div
         className={`w-full min-h-svh text-text-color flex flex-col bg-white overflow-y-auto relative `}
       >
-        <div className="w-full h-fit flex flex-col justify-center items-start z-20 bg-white">
-          <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
-            <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
-              <div className="flex items-center justify-start gap-3 text-sm mr-2">
-                <Link
-                  to={`/`}
-                  title="Deadlines"
-                  className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
-                >
-                  <LuArrowLeft />
-                </Link>
-                <button
-                  title="Deadlines"
-                  className="opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
-                >
-                  <LuArrowRight />
-                </button>
-              </div>
-              <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
-                <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-                <BreadCrumb name={workspacename} status={"on"} link={"/"} /> /
-                <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
-              </div>
-            </div>
-            <div className="flex items-center justify-end gap-0">
-              <button
-                title="File update status"
-                className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
-              >
-                {saving ? (
-                  <LuRefreshCw className="text-lg animate-spinSlow" />
-                ) : (
-                  <LuCheck className="text-xl" />
-                )}
-              </button>
-              <button
-                title="Print view"
-                className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
-              >
-                <LuPrinter />
-              </button>
-              <button
-                onClick={showDeleteMenu}
-                title="Move to trash"
-                className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 "
-              >
-                <LuTrash2 />
-              </button>
-              <button
-                onClick={showUserMenu}
-                title="Manage Collaborators"
-                className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
-              >
-                <LuUsers2 />
-              </button>
-
-              <button
-                title="Mark as favorite"
-                className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
-              >
-                <LuStar />
-              </button>
-              <button
-                title="Dues"
-                className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
-              >
-                <LuTimerReset />
-              </button>
-              <span className="w-[2px]"></span>
-              <button
-                onClick={showPMenu}
-                className=" max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color transition p-1 rounded-lg"
-              >
-                <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
-                  {username.charAt(0)}
-                </p>
-                <p className="truncate font-medium pl-[3px] text-xs">
-                  {username}
-                </p>
-                <IoChevronDown className="min-w-[15px] text-xs" />
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Project section */}
 
         {/* loader on fetch */}
