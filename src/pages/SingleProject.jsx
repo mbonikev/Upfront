@@ -549,8 +549,8 @@ function SingleProject() {
 
         <div
           className="w-full flex-1 h-fit flex items-start justify-start gap-2 overflow-x-auto overflow-y-hidden scrollable-container relative pl-12 pr-0 pt-5 pb-20"
-        {...events}
-        ref={dragref}
+          {...events}
+          ref={dragref}
         >
           {boards.length > 0 &&
             boards.map((board, index) => (
