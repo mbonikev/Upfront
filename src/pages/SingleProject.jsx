@@ -718,7 +718,7 @@ function SingleProject() {
                         />
                       </div>
                     </div>
-                    <div className="flex items-center justify-end gap-1 ">
+                    <div className="select-none flex items-center justify-end gap-1 ">
                       <div
                         onClick={() => setCreateNewTask(false)}
                         title="Cancel"
@@ -745,7 +745,7 @@ function SingleProject() {
                   <button
                     onClick={() => setCreateNewTask(board.id)}
                     title="Create a new board"
-                    className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
+                    className="select-none font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
                   >
                     <LuPlus className="text-lg" />
                     <span className="text-sm tracking-tight font-medium">
@@ -771,7 +771,7 @@ function SingleProject() {
                   autoFocus
                   name="New board title"
                 />
-                <div className="flex items-center justify-end gap-1 ">
+                <div className="flex items-center justify-end gap-1 select-none">
                   <div
                     onClick={() => setAddBoard(false)}
                     title="Cancel"
