@@ -54,6 +54,7 @@ const { RangePicker } = DatePicker;
 import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
+import { format } from 'date-fns';
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -598,11 +599,13 @@ function SingleProject() {
                     </div>
                     {/* Due */}
                     <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                      <span>{task.startingOn}</span>
+                      
+                      
+                      <span>{format(new Date(task.startingOn), 'MMM dd')}</span>
                       <span>
                         <LuArrowRight />
                       </span>
-                      <span>{task.due}</span>
+                      <span>{format(new Date(task.due), 'MMM dd')}</span>
                     </p>
                   </button>
                 ))}
