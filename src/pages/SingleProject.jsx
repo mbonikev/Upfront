@@ -312,7 +312,16 @@ function SingleProject() {
         userEmail,
       });
       // console.log(response.data)
-      setTasks(response.data)
+      setTasks((prevTasks) => [
+        ...prevTasks,
+        { 
+          id: response.data.id, 
+          name: response.data.name, 
+          priority: response.data.priority,
+          assignedTo: response.data.assignedTo,
+          startingOn: response.data.startingOn,
+          due: response.data.due, },
+      ]);
     }
     catch (err) {
       console.log(err)
