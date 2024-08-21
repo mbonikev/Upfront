@@ -599,13 +599,15 @@ function SingleProject() {
                     </div>
                     {/* Due */}
                     <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                      
-                      
-                      <span>{format(new Date(task.startingOn), 'MMM dd')}</span>
-                      <span>
-                        <LuArrowRight />
-                      </span>
-                      <span>{format(new Date(task.due), 'MMM dd')}</span>
+                      {task.startingOn === task.due ? (<>
+                        <span>{format(new Date(task.due), 'MMM dd')}</span>
+                      </>) : (<>
+                        <span>{format(new Date(task.startingOn), 'MMM dd')}</span>
+                        <span>
+                          <LuArrowRight />
+                        </span>
+                        <span>{format(new Date(task.due), 'MMM dd')}</span>
+                      </>)}
                     </p>
                   </button>
                 ))}
