@@ -218,13 +218,6 @@ function SingleProject() {
     textareaRef.current.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const handleNewTaskNameChange = (e) => {
-    const newTask = e.target.value;
-    setNewTaskName(newTask);
-    textareaRefTask.current.style.height = "auto";
-    textareaRefTask.current.style.height = `${e.target.scrollHeight}px`;
-  };
-
   useEffect(() => {
     // Adjust the height of the textarea when the component mounts or the text changes
     if (textareaRef.current) {
@@ -283,7 +276,9 @@ function SingleProject() {
     console.log("Priority: " + newTaskPriority)
   }, [newTaskDue, newTaskPriority])
 
-
+  useEffect(() => {
+    console.log(createNewTask)
+  },[createNewTask])
 
   return (
     <>
@@ -506,7 +501,7 @@ function SingleProject() {
             boards.map((board, index) => (
               <div
                 key={index}
-                className="min-h-[200px] w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-3 rounded-xl text-text-color"
+                className="min-h-[200px] w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color"
               >
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
                   <span>{board.name}</span>
@@ -561,8 +556,8 @@ function SingleProject() {
                 </button>
 
                 {/* add new task */}
-                {createNewTask && (
-                  <form className="w-full p-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                {createNewTask === board.id ? (
+                  <form className="w-full p-3 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
                     <TextArea
                       placeholder="Task name"
                       style={{
@@ -641,10 +636,9 @@ function SingleProject() {
                       </button>
                     </div>
                   </form>
-                )}
-                {!createNewTask && (
+                ) : (
                   <button
-                    onClick={() => setCreateNewTask(true)}
+                    onClick={() => setCreateNewTask(board.id)}
                     title="Create a new board"
                     className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
                   >
