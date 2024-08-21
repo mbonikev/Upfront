@@ -283,6 +283,7 @@ function SingleProject() {
         newTaskDue,
         newTaskPriority,
         assignedTo: userEmail,
+        boardId: createNewTask,
         projectId: id,
         userEmail,
       });
