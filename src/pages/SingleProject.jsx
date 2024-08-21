@@ -21,6 +21,7 @@ import {
   LuArrowRight,
   LuCheck,
   LuCheckCircle,
+  LuChevronsDown,
   LuChevronsRight,
   LuChevronsUp,
   LuClipboard,
@@ -575,14 +576,14 @@ function SingleProject() {
                         </span>
                       </>)}
                       {task.priority === 'Medium' && (<>
-                        <LuChevronsUp className="text-xl" />
-                        <span className="text-xs font-semibold">
+                        <LuChevronsUp className="text-xl text-amber-500" />
+                        <span className="text-xs font-semibold text-amber-500">
                           {task.priority}
                         </span>
                       </>)}
                       {task.priority === 'Low' && (<>
-                        <LuChevronsUp className="text-xl" />
-                        <span className="text-xs font-semibold">
+                        <LuChevronsDown className="text-xl text-[#36b37e]" />
+                        <span className="text-xs font-semibold text-[#36b37e]">
                           {task.priority}
                         </span>
                       </>)}
