@@ -264,6 +264,9 @@ function SingleProject() {
   };
 
   // new task
+  const handleNameChange = (event) => {
+    setNewTaskName(event.target.value)
+  }
   const onRangeChange = (date, dateString) => {
     setNewTaskDue(dateString);
   };
@@ -273,8 +276,16 @@ function SingleProject() {
 
   const handleCreateTask = async (e) => {
     e.preventDefault()
+    console.log(newTaskName, newTaskDue, newTaskPriority, createNewTask)
     try {
-
+      const response = await axios.post(`${apiUrl}/api/newTask`, {
+        newTaskName,
+        newTaskDue,
+        newTaskPriority,
+        assignedTo: userEmail,
+        projectId: id,
+        userEmail,
+      });
     }
     catch (err) {
       console.log(err)
@@ -508,6 +519,9 @@ function SingleProject() {
                   <span>{board.name}</span>
                   <span className="pl-2">3</span>
                 </h1>
+                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
+                  <span>{board.id}</span>
+                </h1>
                 {/* task */}
                 <button
                   draggable
@@ -570,6 +584,7 @@ function SingleProject() {
                         color: "#2e394a",
                         fontWeight: 500,
                       }}
+                      onChange={handleNameChange}
                       autoSize
                       required
                     />
