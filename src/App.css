@@ -1,18 +1,17 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   /* font-family: 'SF Pro Display' ,'Inter' ,sans-serif; */
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   outline: none;
 }
 
-input{
+input {
   font-size: 14px;
 }
 
@@ -66,7 +65,7 @@ select {
 .container {
   --uib-size: 40px;
   --uib-color: #0066ff;
-  --uib-speed: .6s;
+  --uib-speed: 0.6s;
   --uib-bg-opacity: 0.2;
   height: var(--uib-size);
   width: var(--uib-size);
@@ -98,31 +97,35 @@ select {
   }
 }
 
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
 
-.custom-scrollbar{
+.custom-scrollbar {
   overscroll-behavior: contain;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-width: 16px;
-height: 8px;
+  width: 16px;
+  height: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-background-color: #88888881;
-border: 5px solid white;
-border-radius: 30px;
-cursor: default;
+  background-color: #88888881;
+  border: 5px solid white;
+  border-radius: 30px;
+  cursor: default;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-background-color: #3a3a3a81;
+  background-color: #3a3a3a81;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-background-color: transparent;
+  background-color: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-corner {
-background-color: transparent;
+  background-color: transparent;
 }
