@@ -576,14 +576,14 @@ function SingleProject() {
                         </span>
                       </>)}
                       {task.priority === 'Medium' && (<>
-                        <LuChevronsUp className="text-xl text-amber-500" />
-                        <span className="text-xs font-semibold text-amber-500">
+                        <LuChevronsUp className="text-xl text-[#2684ff]" />
+                        <span className="text-xs font-semibold text-[#2684ff]">
                           {task.priority}
                         </span>
                       </>)}
                       {task.priority === 'Low' && (<>
-                        <LuChevronsDown className="text-xl text-[#36b37e]" />
-                        <span className="text-xs font-semibold text-[#36b37e]">
+                        <LuChevronsDown className="text-xl text-[#12c97d]" />
+                        <span className="text-xs font-semibold text-[#12c97d]">
                           {task.priority}
                         </span>
                       </>)}
