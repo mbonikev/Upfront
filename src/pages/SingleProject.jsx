@@ -160,8 +160,20 @@ function SingleProject() {
       }
     };
 
+    const getTasks = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/gettasks`, {
+          params: { projectId: id, email: userEmail },
+        });
+        // console.log(response.data)
+        setTasks(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     const fetchData = async () => {
-      await Promise.all([getProject(), getBoards()]);
+      await Promise.all([getProject(), getBoards(), getTasks()]);
       setFetching(false);
     };
 
@@ -175,6 +187,7 @@ function SingleProject() {
     };
 
     fetchData();
+    getTasks()
     getBoards();
     getusers();
     getProject();
@@ -298,7 +311,8 @@ function SingleProject() {
         projectId: id,
         userEmail,
       });
-      console.log(response.data)
+      // console.log(response.data)
+      setTasks(response.data)
     }
     catch (err) {
       console.log(err)
