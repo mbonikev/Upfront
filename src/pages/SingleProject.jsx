@@ -566,10 +566,27 @@ function SingleProject() {
                   <button key={task.id} draggable className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 transition ring-border-line-color/20 ">
                     {/* priority */}
                     <p
-                      className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}
+                      className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
                     >
-                      <LuChevronsUp className="text-xl" />
-                      <span className="text-xs font-semibold">{task.priority}</span>
+                      {task.priority === 'High' && (<>
+                        <LuChevronsUp className="text-xl text-[#ff5630]" />
+                        <span className="text-xs font-semibold text-[#ff5630]">
+                          {task.priority}
+                        </span>
+                      </>)}
+                      {task.priority === 'Medium' && (<>
+                        <LuChevronsUp className="text-xl" />
+                        <span className="text-xs font-semibold">
+                          {task.priority}
+                        </span>
+                      </>)}
+                      {task.priority === 'Low' && (<>
+                        <LuChevronsUp className="text-xl" />
+                        <span className="text-xs font-semibold">
+                          {task.priority}
+                        </span>
+                      </>)}
+
                     </p>
                     {/* text */}
                     <p className="text-sm px-3 text-start">
