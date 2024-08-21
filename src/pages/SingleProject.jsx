@@ -564,7 +564,7 @@ function SingleProject() {
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
-                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 hover:shadow-lg transition ring-border-line-color/20 ">
+                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 hover:ring-2 hover:ring-main-color/60 ">
                     {/* priority */}
                     <p
                       className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
