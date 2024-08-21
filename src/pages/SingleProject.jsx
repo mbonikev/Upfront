@@ -24,6 +24,7 @@ import {
   LuChevronsDown,
   LuChevronsRight,
   LuChevronsUp,
+  LuChevronsUpDown,
   LuClipboard,
   LuFlag,
   LuHash,
@@ -83,6 +84,7 @@ function SingleProject() {
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [addingBoard, setAddingBoard] = useState(false);
+  const [addingTask, setAddingTask] = useState(false);
   const textareaRef = useRef(null);
   const textareaRefTask = useRef(null);
   const [newTaskName, setNewTaskName] = useState("");
@@ -300,6 +302,7 @@ function SingleProject() {
   };
 
   const handleCreateTask = async (e) => {
+    setAddingTask(true)
     e.preventDefault()
     console.log(newTaskName, newTaskDue, newTaskPriority, createNewTask, getCurrentDate())
     try {
@@ -328,10 +331,11 @@ function SingleProject() {
       ]);
 
       setCreateNewTask('')
-
+      setAddingTask(false)
     }
     catch (err) {
       console.log(err)
+      setAddingTask(false)
     }
   }
 
@@ -548,7 +552,7 @@ function SingleProject() {
         </div>
 
         <div
-          className="w-full flex-1 h-fit flex items-start justify-start gap-2 overflow-x-auto hidden-scrollbar scroll-smooth overflow-y-hidden scrollable-container relative pl-12 pr-0 pt-5 pb-20"
+          className="w-full flex-1 h-fit flex items-start justify-start gap-2 overflow-x-auto hidden-scrollbar scroll-smooth overflow-y-hidden scrollable-container relative pl-12 pr-5 pt-5 pb-20"
           {...events}
           ref={dragref}
         >
@@ -576,7 +580,7 @@ function SingleProject() {
                         </span>
                       </>)}
                       {task.priority === 'Medium' && (<>
-                        <LuChevronsUp className="text-xl text-[#2684ff]" />
+                        <LuChevronsUpDown className="text-xl text-[#2684ff]" />
                         <span className="text-xs font-semibold text-[#2684ff]">
                           {task.priority}
                         </span>
@@ -700,7 +704,7 @@ function SingleProject() {
                         title="Create a new Task"
                         className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                       >
-                        {addingBoard ? (
+                        {addingTask ? (
                           <RiLoader5Fill className="text-xl animate-spinLoader" />
                         ) : (
                           <>
