@@ -558,7 +558,7 @@ function SingleProject() {
               >
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
                   <span>{board.name}</span>
-                  <span className="pl-2">3</span>
+                  <span className="pl-2">{tasks.filter(task => task.boardId === board.id).length}</span>
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
@@ -568,18 +568,18 @@ function SingleProject() {
                       className={`ml-2 mb-2 text-[#ff5630] w-full rounded-md flex items-center justify-start`}
                     >
                       <LuChevronsUp className="text-xl" />
-                      <span className="text-xs font-semibold">Low</span>
+                      <span className="text-xs font-semibold">{task.priority}</span>
                     </p>
                     {/* text */}
                     <p className="text-sm px-3 text-start">
-                      Lorem ipsum dolor sit amet tenetur sint rem culpa illum.
+                      {task.name}
                     </p>
                     {/* Comments & collaborations */}
                     <div className="px-3 flex items-center justify-between pt-2">
                       <div>
                         <div className="flex items-center gap-[2px] text-text-color/70">
                           <LuMessageCircle className="text-lg" />
-                          <span className="font-medium text-sm">3</span>
+                          <span className="font-medium text-sm">0</span>
                         </div>
                       </div>
                       <div className="flex items-center justify-end gap-1">
@@ -598,11 +598,11 @@ function SingleProject() {
                     </div>
                     {/* Due */}
                     <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
-                      <span>Jun 30</span>
+                      <span>{task.startingOn}</span>
                       <span>
                         <LuArrowRight />
                       </span>
-                      <span>Aug 12</span>
+                      <span>{task.due}</span>
                     </p>
                   </button>
                 ))}
