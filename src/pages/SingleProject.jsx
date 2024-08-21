@@ -70,8 +70,8 @@ function SingleProject() {
   const [projectDesc, setProjectDesc] = useState("");
   const { workspacename, id } = useParams();
   // dragabble
-  // const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
-  // const { events } = useDraggable(dragref); // Now we pass the reference to the useDraggable hook:
+  const dragref = useRef(); // We will use React useRef hook to reference the wrapping div:
+  const { events } = useDraggable(dragref); // Now we pass the reference to the useDraggable hook:
   // board
   const [addBoard, setAddBoard] = useState(false);
   const [fetching, setFetching] = useState(true);
@@ -549,8 +549,8 @@ function SingleProject() {
 
         <div
           className="w-full flex-1 h-fit flex items-start justify-start gap-2 overflow-x-auto overflow-y-hidden scrollable-container relative pl-12 pr-0 pt-5 pb-20"
-        // {...events}
-        // ref={dragref}
+        {...events}
+        ref={dragref}
         >
           {boards.length > 0 &&
             boards.map((board, index) => (
@@ -564,7 +564,7 @@ function SingleProject() {
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
-                  <button key={task.id} draggable className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 transition ring-border-line-color/20 ">
+                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 hover:scale-105 hover:rotate-1 hover:shadow-lg transition ring-border-line-color/20 ">
                     {/* priority */}
                     <p
                       className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
@@ -603,9 +603,8 @@ function SingleProject() {
                       </div>
                       <div className="flex items-center justify-end gap-1">
                         <div className="flex items-center justify-center">
-                          <p className="h-[22px] w-auto aspect-square rounded-full bg-main-color ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                            {userEmail.charAt(0)}
-                          </p>
+                          <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
+
                           {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
@@ -726,7 +725,7 @@ function SingleProject() {
               </div>
             ))}
 
-          {addBoard && (
+          {addBoard ? (
             <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-3">
               <form
                 onSubmit={handleNewBoard}
@@ -765,12 +764,11 @@ function SingleProject() {
                 </div>
               </form>
             </div>
-          )}
-          {!addBoard && (
+          ) : (
             <button
               onClick={() => setAddBoard(true)}
               title="Create a new board"
-              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center hover:bg-stone-100/80 rounded-lg w-full max-w-[280px]"
+              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center hover:bg-stone-100/80 rounded-lg w-full min-w-[280px] max-w-[280px]"
             >
               <LuPlus className="text-lg" />
               <span className="text-sm tracking-tight font-medium">
