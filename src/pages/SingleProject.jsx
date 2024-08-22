@@ -678,7 +678,7 @@ function SingleProject() {
                 </form>
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
                   <span>{board.name}</span>
-                  <span className="pl-2">{tasks.filter(task => task.boardId === board.id).length}</span>
+                  <span className="pl-2 text-text-color/40">{tasks.filter(task => task.boardId === board.id).length}</span>
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
