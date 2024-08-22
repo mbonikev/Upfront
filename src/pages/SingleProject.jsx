@@ -33,6 +33,7 @@ import {
   LuPencilLine,
   LuPlus,
   LuPrinter,
+  LuRecycle,
   LuRefreshCcw,
   LuRefreshCw,
   LuScissors,
@@ -406,8 +407,7 @@ function SingleProject() {
   const handleCancel = () => {
     setMoreOpt1("")
   }
-  const linkStyle =
-    "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
+  const linkStyle = "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
 
 
   return (
@@ -648,23 +648,30 @@ function SingleProject() {
                     onClick={() => showMoreMenuw1(board.id)}
                     className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
                   >
-                    <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
+                    <LuMoreHorizontal className={`text-xl  ${moreOpt1 === board.id ? 'text-text-color/100' : 'text-text-color/30 hover:text-text-color'}`} />
                   </div>
                   {moreOpt1 === board.id && (
                     <>
                       <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 p-2">
                         <div
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
                         >
                           <LuPencilLine className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Rename</p>
                         </div>
                         <Link
                           to={"/"}
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
+                        >
+                          <LuRecycle className="text-base  min-w-fit" />
+                          <p className="line-clamp-1 text-sm">Clear Board</p>
+                        </Link>
+                        <Link
+                          to={"/"}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
                         >
                           <LuTrash2 className="text-base  min-w-fit text-red-500" />
-                          <p className="line-clamp-1 text-sm text-red-500">Clear</p>
+                          <p className="line-clamp-1 text-sm text-red-500">Delete Board</p>
                         </Link>
                       </div>
                     </>
