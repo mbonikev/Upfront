@@ -96,6 +96,8 @@ function SingleProject() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  
+  // Swoll with click
   const onMouseDown = (e) => {
     // Check if the left mouse button is clicked
     if (e.button !== 0) return;
@@ -694,6 +696,7 @@ function SingleProject() {
                       autoSize
                       required
                       autoFocus
+                      name="task name"
                     />
                     <div className="flex mt-1 w-full gap-2">
                       <div className="flex flex-col">
