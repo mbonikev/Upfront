@@ -402,6 +402,10 @@ function SingleProject() {
   const showMoreMenuw1 = () => {
     setMoreOpt1(!moreOpt1);
   };
+
+  const handleCancel = () => {
+    setMoreOpt1(false)
+  }
   const linkStyle =
     "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
 
@@ -426,6 +430,13 @@ function SingleProject() {
       <div
         onClick={() => setDeleteMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed" : "hidden"
+          }`}
+      ></div>
+
+      {/* more options board menu */}
+      <div
+        onClick={handleCancel}
+        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? "fixed" : "hidden"
           }`}
       ></div>
 
