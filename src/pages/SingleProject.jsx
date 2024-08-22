@@ -29,6 +29,8 @@ import {
   LuFlag,
   LuHash,
   LuMessageCircle,
+  LuMoreHorizontal,
+  LuPencilLine,
   LuPlus,
   LuPrinter,
   LuRefreshCcw,
@@ -65,6 +67,7 @@ function SingleProject() {
   const [deleteMenu, setDeleteMenu] = useState(false);
   const inputRef = useRef();
   const navigate = useNavigate();
+  const location = useLocation();
   // spaces
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
@@ -74,7 +77,6 @@ function SingleProject() {
   const [fetching, setFetching] = useState(true);
   const [fromSpace, setFromSpace] = useState("");
   const [collaborations, setCollaborations] = useState([]);
-  const location = useLocation();
   const { workspace } = location.state || {};
   const [users, setUsers] = useState("");
   const [saving, setSaving] = useState(false);
@@ -96,7 +98,8 @@ function SingleProject() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  
+  const [moreOpt1, setMoreOpt1] = useState(false);
+
   // Swoll with click
   const onMouseDown = (e) => {
     // Check if the left mouse button is clicked
@@ -383,6 +386,26 @@ function SingleProject() {
     }
   }
 
+
+
+  // Delete Board
+  const handleDeleteBoard = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.patch(`${apiUrl}/api/`, {});
+      console.log('Response data:', response.data);
+    } catch (err) {
+      console.error("Error updating data:", err);
+    }
+  };
+  // show more
+  const showMoreMenuw1 = () => {
+    setMoreOpt1(!moreOpt1);
+  };
+  const linkStyle =
+    "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
+
+
   return (
     <>
       {/* profile menu overlay */}
@@ -606,9 +629,37 @@ function SingleProject() {
             boards.map((board, index) => (
               <div
                 key={index}
-                className=" w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color"
+                className=" w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color relative "
               >
-                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase">
+                {/* ------------------------------ */}
+                <form onSubmit={handleDeleteBoard} className=" group ">
+                  <div
+                    onClick={showMoreMenuw1}
+                    className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
+                  >
+                    <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
+                  </div>
+                  {moreOpt1 && (
+                    <>
+                      <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
+                        <div
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
+                        >
+                          <LuPencilLine className="text-base  min-w-fit" />
+                          <p className="line-clamp-1 text-sm">Rename</p>
+                        </div>
+                        <Link
+                          to={"/"}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
+                        >
+                          <LuTrash2 className="text-base  min-w-fit text-red-500" />
+                          <p className="line-clamp-1 text-sm text-red-500">Clear</p>
+                        </Link>
+                      </div>
+                    </>
+                  )}
+                </form>
+                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
                   <span>{board.name}</span>
                   <span className="pl-2">{tasks.filter(task => task.boardId === board.id).length}</span>
                 </h1>
