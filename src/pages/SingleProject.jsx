@@ -103,20 +103,20 @@ function SingleProject() {
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
     setScrollLeft(containerRef.current.scrollLeft);
-};
+  };
 
-const onMouseMove = (e) => {
+  const onMouseMove = (e) => {
     if (!isDragging) return;
     const x = e.pageX - containerRef.current.offsetLeft;
     const walk = (x - startX) * 1.5; // Adjust the scroll speed
     containerRef.current.scrollLeft = scrollLeft - walk;
-};
+  };
 
-const onMouseUp = () => {
+  const onMouseUp = () => {
     setIsDragging(false);
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     const container = containerRef.current;
     container.addEventListener('mousedown', onMouseDown);
     container.addEventListener('mousemove', onMouseMove);
@@ -128,7 +128,7 @@ useEffect(() => {
       container.removeEventListener('mouseup', onMouseUp);
       container.removeEventListener('mouseleave', onMouseUp);
     };
-}, [isDragging, startX, scrollLeft]);
+  }, [isDragging, startX, scrollLeft]);
 
 
 
@@ -398,14 +398,9 @@ useEffect(() => {
           }`}
       ></div>
 
-      {/* profile dropdown */}
-      {profileMenu && (
-        <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
-          <ProfileDropdownButtons username={username} />
-        </div>
-      )}
 
-      {/* Menu dropdown */}
+
+      {/* Collab dropdown */}
       {userMenu && (
         <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
           <AddCollaborators
@@ -458,7 +453,15 @@ useEffect(() => {
       )}
 
       {/* Menu */}
-      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-white">
+      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-white relative">
+
+        {/* profile dropdown */}
+        {profileMenu && (
+          <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
+            <ProfileDropdownButtons username={username} />
+          </div>
+        )}
+
         <div className="w-full h-fit flex items-start justify-between px-5 py-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-3 text-sm mr-2">
