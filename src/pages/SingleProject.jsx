@@ -98,7 +98,7 @@ function SingleProject() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [moreOpt1, setMoreOpt1] = useState(false);
+  const [moreOpt1, setMoreOpt1] = useState("");
 
   // Swoll with click
   const onMouseDown = (e) => {
@@ -399,12 +399,12 @@ function SingleProject() {
     }
   };
   // show more
-  const showMoreMenuw1 = () => {
-    setMoreOpt1(!moreOpt1);
+  const showMoreMenuw1 = (id) => {
+    setMoreOpt1(id);
   };
 
   const handleCancel = () => {
-    setMoreOpt1(false)
+    setMoreOpt1("")
   }
   const linkStyle =
     "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
@@ -415,28 +415,28 @@ function SingleProject() {
       {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed" : "hidden"
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
 
       {/* collab Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
 
       {/* delete Menu overlay */}
       <div
         onClick={() => setDeleteMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed" : "hidden"
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
 
       {/* more options board menu */}
       <div
         onClick={handleCancel}
-        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? "fixed" : "hidden"
+        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
 
@@ -645,12 +645,12 @@ function SingleProject() {
                 {/* ------------------------------ */}
                 <form onSubmit={handleDeleteBoard} className=" group ">
                   <div
-                    onClick={showMoreMenuw1}
+                    onClick={() => showMoreMenuw1(board.id)}
                     className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
                   >
                     <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
                   </div>
-                  {moreOpt1 && (
+                  {moreOpt1 === board.id && (
                     <>
                       <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
                         <div
