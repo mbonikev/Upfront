@@ -606,7 +606,7 @@ function SingleProject() {
           </div>
         )}
 
-        <div className="w-full h-fit pb-0 max-w-[1500px] mx-auto relative pl-10 pr-16 pt-10">
+        <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
           <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
             <LuHash className="text-3xl text-lime-600 mt-1" />
             <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
@@ -659,13 +659,12 @@ function SingleProject() {
                           <LuPencilLine className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Rename</p>
                         </div>
-                        <Link
-                          to={"/"}
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
+                        <div
+                          className={`${linkStyle} ${tasks.filter(task => task.boardId === board.id).length < 1 ? 'pointer-events-none opacity-40' : 'hover:bg-stone-200/70 cursor-pointer'}`}
                         >
                           <LuRecycle className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Clear Board</p>
-                        </Link>
+                        </div>
                         <Link
                           to={"/"}
                           className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
