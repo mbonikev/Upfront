@@ -652,7 +652,7 @@ function SingleProject() {
                   </div>
                   {moreOpt1 === board.id && (
                     <>
-                      <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 p-2">
+                      <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 p-2">
                         <div
                           className={`${linkStyle} cursor-pointer hover:bg-stone-200/50`}
                         >
@@ -676,7 +676,7 @@ function SingleProject() {
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
-                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 hover:ring-2 hover:ring-main-color/60 ">
+                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-xl ring-1 ring-border-line-color/20 hover:ring-2 hover:ring-main-color/60 ">
                     {/* priority */}
                     <p
                       className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
@@ -742,7 +742,7 @@ function SingleProject() {
                 ))}
                 {/* add new task */}
                 {createNewTask === board.id ? (
-                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white rounded-lg ring-1 ring-border-line-color/20 ">
+                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white rounded-xl ring-1 ring-border-line-color/20 ">
                     <TextArea
                       placeholder="Task name"
                       style={{
