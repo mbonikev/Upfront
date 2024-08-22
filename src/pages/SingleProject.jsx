@@ -152,19 +152,19 @@ function SingleProject() {
   }, [projectTitle]);
 
   const showPMenu = () => {
-    setProfileMenu(true)
+    setProfileMenu(!profileMenu)
     setUserMenu(false)
     setDeleteMenu(false)
   };
 
   const showUserMenu = () => {
-    setUserMenu(true)
+    setUserMenu(!userMenu)
     setProfileMenu(false)
     setDeleteMenu(false)
   };
 
   const showDeleteMenu = () => {
-    setDeleteMenu(true)
+    setDeleteMenu(!deleteMenu)
     setUserMenu(false)
     setProfileMenu(false)
   };
@@ -693,6 +693,7 @@ function SingleProject() {
                       onChange={handleNameChange}
                       autoSize
                       required
+                      autoFocus
                     />
                     <div className="flex mt-1 w-full gap-2">
                       <div className="flex flex-col">
