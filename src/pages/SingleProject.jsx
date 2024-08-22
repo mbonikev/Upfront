@@ -152,15 +152,21 @@ function SingleProject() {
   }, [projectTitle]);
 
   const showPMenu = () => {
-    setProfileMenu(true);
+    setProfileMenu(true)
+    setUserMenu(false)
+    setDeleteMenu(false)
   };
 
   const showUserMenu = () => {
-    setUserMenu(true);
+    setUserMenu(true)
+    setProfileMenu(false)
+    setDeleteMenu(false)
   };
 
   const showDeleteMenu = () => {
-    setDeleteMenu(true);
+    setDeleteMenu(true)
+    setUserMenu(false)
+    setProfileMenu(false)
   };
 
   // get project details
@@ -384,7 +390,7 @@ function SingleProject() {
           }`}
       ></div>
 
-      {/* User Menu overlay */}
+      {/* collab Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed" : "hidden"
@@ -399,7 +405,7 @@ function SingleProject() {
       ></div>
 
       {/* Menu */}
-      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-20 bg-white relative">
+      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-30 bg-white">
 
         {/* profile dropdown */}
         {profileMenu && (
@@ -407,7 +413,7 @@ function SingleProject() {
             <ProfileDropdownButtons username={username} />
           </div>
         )}
-        
+
         {/* Collab dropdown */}
         {userMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
