@@ -242,7 +242,7 @@ useEffect(() => {
         userEmail,
       });
       setSaving(false);
-      document.title = response.data.name + " - Upfront";
+      document.title = response.data.namew + " - Upfront";
     } catch (err) {
       console.error(err);
       setSaving(false);
