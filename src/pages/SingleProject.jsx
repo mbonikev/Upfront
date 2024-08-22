@@ -774,7 +774,7 @@ function SingleProject() {
             ))}
 
           {addBoard ? (
-            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-3">
+            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-2">
               <form
                 onSubmit={handleNewBoard}
                 className="w-full h-full flex flex-col justify-between"
@@ -792,14 +792,14 @@ function SingleProject() {
                   <div
                     onClick={() => setAddBoard(false)}
                     title="Cancel"
-                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-3 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     <span className="text-sm tracking-tight">Cancel</span>
                   </div>
                   <button
                     type="submit"
                     title="Create a new board"
-                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-3 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     {addingBoard ? (
                       <RiLoader5Fill className="text-xl animate-spinLoader" />
