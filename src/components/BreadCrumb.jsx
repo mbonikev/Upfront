@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 function BreadCrumb({name ,link ,status}) {
   return (
     <>
@@ -12,5 +11,4 @@ function BreadCrumb({name ,link ,status}) {
     </>
   )
 }
-
 export default BreadCrumb
