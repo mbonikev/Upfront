@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
-
 function ProfileDropdownButtons({ username }) {
     const [logoutAnimate, setLogoutAnimate] = useState(false)
-
-
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
         localStorage.removeItem('upfront_user_name')
@@ -77,5 +74,4 @@ function ProfileDropdownButtons({ username }) {
         </div>
     )
 }
-
 export default ProfileDropdownButtons
