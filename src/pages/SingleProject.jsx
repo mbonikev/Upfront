@@ -59,7 +59,6 @@ import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from 'date-fns';
-
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -100,28 +99,23 @@ function SingleProject() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [moreOpt1, setMoreOpt1] = useState("");
-
   // Swoll with click
   const onMouseDown = (e) => {
     // Check if the left mouse button is clicked
     if (e.button !== 0) return;
-
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
     setScrollLeft(containerRef.current.scrollLeft);
   };
-
   const onMouseMove = (e) => {
     if (!isDragging) return;
     const x = e.pageX - containerRef.current.offsetLeft;
     const walk = (x - startX) * 1.5; // Adjust the scroll speed
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
-
   const onMouseUp = () => {
     setIsDragging(false);
   };
-
   useEffect(() => {
     const container = containerRef.current;
     container.addEventListener('mousedown', onMouseDown);
@@ -135,9 +129,6 @@ function SingleProject() {
       container.removeEventListener('mouseleave', onMouseUp);
     };
   }, [isDragging, startX, scrollLeft]);
-
-
-
   useEffect(() => {
     const input = inputRef.current;
     if (input) {
@@ -148,33 +139,27 @@ function SingleProject() {
       tempSpan.style.whiteSpace = "pre";
       tempSpan.style.fontSize = getComputedStyle(input).fontSize;
       tempSpan.textContent = projectTitle || input.placeholder;
-
       document.body.appendChild(tempSpan);
       const width = tempSpan.offsetWidth + 100; // Add extra padding
       document.body.removeChild(tempSpan);
-
       input.style.width = `${width}px`;
     }
   }, [projectTitle]);
-
   const showPMenu = () => {
     setProfileMenu(!profileMenu)
     setUserMenu(false)
     setDeleteMenu(false)
   };
-
   const showUserMenu = () => {
     setUserMenu(!userMenu)
     setProfileMenu(false)
     setDeleteMenu(false)
   };
-
   const showDeleteMenu = () => {
     setDeleteMenu(!deleteMenu)
     setUserMenu(false)
     setProfileMenu(false)
   };
-
   // get project details
   useEffect(() => {
     const getProject = async () => {
@@ -198,7 +183,6 @@ function SingleProject() {
         }
       }
     };
-
     const getBoards = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getboards`, {
@@ -210,7 +194,6 @@ function SingleProject() {
         console.log(error);
       }
     };
-
     const getTasks = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/gettasks`, {
@@ -222,12 +205,10 @@ function SingleProject() {
         console.log(error);
       }
     };
-
     const fetchData = async () => {
       await Promise.all([getProject(), getBoards(), getTasks()]);
       setFetching(false);
     };
-
     const getusers = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getusers`);
@@ -236,14 +217,12 @@ function SingleProject() {
         console.log(error);
       }
     };
-
     fetchData();
     getTasks()
     getBoards();
     getusers();
     getProject();
   }, []);
-
   const saveInputs = async (newInput1, newInput2) => {
     try {
       // console.log(newInput1, newInput2, id, userEmail)
@@ -260,7 +239,6 @@ function SingleProject() {
       setSaving(false);
     }
   };
-
   // Debounce the save function
   const debouncedSaveInputs = useCallback(
     debounce((newInput1, newInput2) => {
@@ -268,14 +246,12 @@ function SingleProject() {
     }, 800),
     []
   );
-
   const handleInput1Change = (e) => {
     setSaving(true);
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
   };
-
   const handleInput2Change = (e) => {
     setSaving(true);
     const newInput2 = e.target.value;
@@ -284,7 +260,6 @@ function SingleProject() {
     textareaRef.current.style.height = "auto";
     textareaRef.current.style.height = `${e.target.scrollHeight}px`;
   };
-
   useEffect(() => {
     // Adjust the height of the textarea when the component mounts or the text changes
     if (textareaRef.current) {
@@ -292,7 +267,6 @@ function SingleProject() {
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   }, [projectDesc]);
-
   const handleTrashProject = async () => {
     setDeleting(true);
     try {
@@ -306,7 +280,6 @@ function SingleProject() {
       setDeleting(false);
     }
   };
-
   const handleNewBoard = async (e) => {
     e.preventDefault();
     setAddingBoard(true);
@@ -329,7 +302,6 @@ function SingleProject() {
       setAddingBoard(false);
     }
   };
-
   // new task
   const handleNameChange = (event) => {
     setNewTaskName(event.target.value)
@@ -345,10 +317,8 @@ function SingleProject() {
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
     const day = String(today.getDate()).padStart(2, '0');
-
     return `${year}-${month}-${day}`;
   };
-
   const handleCreateTask = async (e) => {
     setAddingTask(true)
     e.preventDefault()
@@ -377,7 +347,6 @@ function SingleProject() {
           boardId: response.data.boardId,
         },
       ]);
-
       setCreateNewTask('')
       setAddingTask(false)
     }
@@ -386,9 +355,6 @@ function SingleProject() {
       setAddingTask(false)
     }
   }
-
-
-
   // Delete Board
   const handleDeleteBoard = async (e) => {
     e.preventDefault();
@@ -403,13 +369,10 @@ function SingleProject() {
   const showMoreMenuw1 = (id) => {
     setMoreOpt1(id);
   };
-
   const handleCancel = () => {
     setMoreOpt1("")
   }
   const linkStyle = "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
-
-
   return (
     <>
       {/* profile menu overlay */}
@@ -418,38 +381,32 @@ function SingleProject() {
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
-
       {/* collab Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
-
       {/* delete Menu overlay */}
       <div
         onClick={() => setDeleteMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
-
       {/* more options board menu */}
       <div
         onClick={handleCancel}
         className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? "fixed cursor-default" : "hidden"
           }`}
       ></div>
-
       {/* Menu */}
       <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-30 bg-white">
-
         {/* profile dropdown */}
         {profileMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
             <ProfileDropdownButtons username={username} />
           </div>
         )}
-
         {/* Collab dropdown */}
         {userMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
@@ -463,7 +420,6 @@ function SingleProject() {
             />
           </div>
         )}
-
         {/* Delete Dropdown */}
         {deleteMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white">
@@ -501,7 +457,6 @@ function SingleProject() {
             </div>
           </div>
         )}
-
         <div className="w-full h-fit flex items-start justify-between px-5 py-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-3 text-sm mr-2">
@@ -556,7 +511,6 @@ function SingleProject() {
             >
               <LuUsers2 />
             </button>
-
             <button
               title="Mark as favorite"
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
@@ -585,13 +539,10 @@ function SingleProject() {
           </div>
         </div>
       </div>
-
-
       <div
         className={`w-full min-h-svh text-text-color flex flex-col bg-white overflow-y-auto relative `}
       >
         {/* Project section */}
-
         {/* loader on fetch */}
         {fetching && (
           <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
@@ -605,7 +556,6 @@ function SingleProject() {
             </p>
           </div>
         )}
-
         <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
           <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
             <LuHash className="text-3xl text-lime-600 mt-1" />
@@ -631,7 +581,6 @@ function SingleProject() {
             </div>
           </div>
         </div>
-
         <div
           className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 py-10"
           ref={containerRef}
@@ -705,7 +654,6 @@ function SingleProject() {
                           {task.priority}
                         </span>
                       </>)}
-
                     </p>
                     {/* text */}
                     <p className="text-sm px-3 text-start">
@@ -722,7 +670,6 @@ function SingleProject() {
                       <div className="flex items-center justify-end gap-1">
                         <div className="flex items-center justify-center">
                           <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
-
                           {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
@@ -844,7 +791,6 @@ function SingleProject() {
                 )}
               </div>
             ))}
-
           {addBoard ? (
             <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-2">
               <form
@@ -897,11 +843,9 @@ function SingleProject() {
             </button>
           )}
         </div>
-
         {/* </div> */}
       </div>
     </>
   );
 }
-
 export default SingleProject;
