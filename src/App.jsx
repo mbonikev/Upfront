@@ -12,7 +12,6 @@ import CreateNewPassword from './pages/CreateNewPassword'
 import PasswordChangedSuccessfully from './pages/PasswordChangedSuccessfully'
 import ProtectedFP from './utils/ProtectedFP'
 import SingleProject from './pages/SingleProject'
-
 function App() {
   return (
     <>
@@ -40,5 +39,4 @@ function App() {
     </>
   )
 }
-
 export default App
