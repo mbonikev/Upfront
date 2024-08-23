@@ -33,7 +33,6 @@ import { RiLoader5Fill } from "react-icons/ri";
 import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
-
 function Sidebar({
     handleSidebarToggle,
     username,
@@ -56,8 +55,6 @@ function Sidebar({
     const formRef = useRef(null);
     const [createNew, setCreateNew] = useState(false);
     const [myCollaborations, setMyCollatorations] = useState([])
-
-
     // workspace1
     const handleSubmit1 = async (e) => {
         e.preventDefault();
@@ -78,11 +75,9 @@ function Sidebar({
             setAuthing(false);
         }
     };
-
     const showPMenu = () => {
         setProfileMenu(true);
     };
-
     const handleLogout = () => {
         localStorage.removeItem("upfront_user");
         localStorage.removeItem("upfront_user_name");
@@ -93,19 +88,16 @@ function Sidebar({
             window.location.reload();
         }, 1000);
     };
-
     // getting space names
     useEffect(() => {
         const luw1 = localStorage.getItem("upfront_user_name_w1") || "Workspace 1";
         setOriginalW1(luw1);
     }, []);
-
     const handleCancel = () => {
         setW1(originalW1);
         setMoreOpt1(false);
         setSaveOpt1(false);
     };
-
     // show more
     const showMoreMenuw1 = () => {
         setMoreOpt1(true);
@@ -115,7 +107,6 @@ function Sidebar({
         setMoreOpt1(false);
         setSaveOpt1(true);
     };
-
     // create new project
     const handleCreate = async () => {
         setCreateNew(true);
@@ -128,14 +119,10 @@ function Sidebar({
             console.log(error.response)
         }
     };
-
     // get collabs
     const retrieveArray = getArray('mycollaborations') ?? []
-
-
     const linkStyle =
         "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
-
     return (
         <div className="w-[256px] min-w-[256px] sticky top-0 z-20">
             <div className=" relative w-full h-full">
@@ -157,14 +144,12 @@ function Sidebar({
                     className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? "fixed" : "hidden"
                         }`}
                 ></div>
-
                 {/* dropdown */}
                 {profileMenu && (
                     <div className="w-[290px] h-fit max-h-[80vh] bg-white absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
                         <ProfileDropdownButtons username={username} />
                     </div>
                 )}
-
                 <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
                     <div className="w-full flex items-center justify-between mb-4">
                         <button
@@ -365,5 +350,4 @@ function Sidebar({
         </div>
     );
 }
-
 export default Sidebar;
