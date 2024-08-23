@@ -1,21 +1,17 @@
 import sha256 from 'js-sha256';
-
 // Function to hash array data
 function hashArray(array) {
   const jsonString = JSON.stringify(array);
   return sha256(jsonString);
 }
-
 // Function to encode data to Base64
 function encodeBase64(data) {
   return btoa(data);
 }
-
 // Function to decode Base64 data
 function decodeBase64(data) {
   return atob(data);
 }
-
 // Function to store an array along with its hash
 export function setArray(key, array) {
   try {
@@ -30,7 +26,6 @@ export function setArray(key, array) {
     console.error('Store error:', error);
   }
 }
-
 // Function to retrieve and verify an array
 export function getArray(key) {
   try {
