@@ -6,9 +6,6 @@ import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
-
-
-
 function Login() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [showPassword, setShowPassword] = useState(false)
@@ -18,19 +15,15 @@ function Login() {
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
   const navigate = useNavigate()
-
   const handleShowPassword = (e) => {
     e.preventDefault()
     setShowPassword(!showPassword)
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setAuthing(true);
-  
     try {
       const { status, data } = await axios.post(`${apiUrl}/api/login`, { email, password });
-      
       if (status === 200) {
         setErrorEmail('');
         setErrorPassword('');
@@ -43,7 +36,6 @@ function Login() {
     } catch (error) {
       setAuthing(false);
       const msg = error.response?.data?.msg || '';
-      
       if (error.response?.status === 400) {
         setErrorEmail(msg);
         setErrorPassword('');
@@ -55,12 +47,9 @@ function Login() {
       }
     }
   };
-  
   useEffect(() => {
     document.title = "Login - Upfront";
   }, [])
-
-
   return (
     <>
       <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -85,7 +74,6 @@ function Login() {
               <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
             </label>
             {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
-
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Password</h1>
               <div className="w-full h-fit relative">
@@ -126,5 +114,4 @@ function Login() {
     </>
   )
 }
-
 export default Login
