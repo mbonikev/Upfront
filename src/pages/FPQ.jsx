@@ -7,9 +7,6 @@ import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
 import { useLocation } from 'react-router-dom'
-
-
-
 function FPQ() {
     const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
@@ -20,7 +17,6 @@ function FPQ() {
     const navigate = useNavigate()
     const location = useLocation()
     const { email, question } = location.state || {};
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setAuthing(true)
@@ -31,7 +27,6 @@ function FPQ() {
                 setAuthing(false)
                 navigate('/newPassword', { state: { email }})
             }
-
         } catch (error) {
             setAuthing(false)
             console.log(error)
@@ -40,12 +35,9 @@ function FPQ() {
             }
         }
     };
-
     useEffect(() => {
         document.title = "Security Question - Upfront";
       }, [])
-
-
     return (
         <>
             <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -66,15 +58,12 @@ function FPQ() {
                     </div>
                     <h1 className=' font-semibold'>Question:</h1>
                     <h1 className='mb-2 font-medium text-text-color/70'>1. {question}?</h1>
-
                     <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
                         <label className='w-full'>
                             <h1 className='mb-2 font-semibold'>Answer</h1>
                             <input required onChange={(e) => setAnswer(e.target.value)} type="text" name='answer' autoComplete='off' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
                         </label>
                         {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
-
-
                         <label className='w-full mt-3'>
                             <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
                                 {authing ? (
@@ -98,5 +87,4 @@ function FPQ() {
         </>
     )
 }
-
 export default FPQ
