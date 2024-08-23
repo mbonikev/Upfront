@@ -10,8 +10,6 @@ import { RiLoader5Fill } from 'react-icons/ri'
 import { setArray } from '../utils/hashUtils'
 import AddNotes from '../components/AddNotes'
 import { IoIosAddCircle } from 'react-icons/io'
-
-
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext()
@@ -29,9 +27,6 @@ function Projects() {
   const [createNew, setCreateNew] = useState(false);
   const [deleteMenu, setDeleteMenu] = useState('')
   const [deleting, setDeleting] = useState('')
-
-
-
   useEffect(() => {
     const input = inputRef.current;
     if (input) {
@@ -42,15 +37,12 @@ function Projects() {
       tempSpan.style.whiteSpace = 'pre';
       tempSpan.style.fontSize = getComputedStyle(input).fontSize;
       tempSpan.textContent = pageTitle || input.placeholder;
-
       document.body.appendChild(tempSpan);
       const width = tempSpan.offsetWidth + 10; // Add extra padding
       document.body.removeChild(tempSpan);
-
       input.style.width = `${width}px`;
     }
   }, [pageTitle]);
-
   const projects = [
     { id: "FN30498FHFF-032", progress: 26, progressClass: "w-[26%]" },
     { id: "FDINFE08434-952", progress: 64, progressClass: "w-[64%]" },
@@ -64,10 +56,8 @@ function Projects() {
     { id: "0PFJEIRFE03-222", progress: 69, progressClass: "w-[69%] " },
   ]
   const count100Percent = projects.filter(project => project.progress === 100).length;
-
   const getProgressClasses = (progress) => {
     let classes = 'flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500';
-
     if (progress <= 100 && progress > 75) {
       classes += ' bg-green-500'; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
@@ -77,10 +67,8 @@ function Projects() {
     } else if (progress < 50) {
       classes += ' bg-red-400'; // Cyan for progress between 26 and 50
     }
-
     return classes;
   };
-
   const handleLogout = () => {
     localStorage.removeItem('upfront_user')
     localStorage.removeItem('upfront_user_name')
@@ -90,7 +78,6 @@ function Projects() {
       window.location.reload()
     }, 1000);
   }
-
   // page title
   useEffect(() => {
     const fetchAllWorkShops = async () => {
@@ -102,7 +89,6 @@ function Projects() {
         console.error('Error updating data:', err);
       }
     };
-
     const getme = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getme`, { params: { email: userEmail } });
@@ -114,7 +100,6 @@ function Projects() {
         }
       }
     };
-
     const getmyProjects = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, { params: { email: userEmail } });
@@ -128,7 +113,6 @@ function Projects() {
         }
       }
     };
-
     const getCollaborations = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getcollaborations`, { params: { email: userEmail } });
@@ -139,14 +123,11 @@ function Projects() {
         console.log(error)
       }
     };
-
-
     getCollaborations()
     getmyProjects()
     fetchAllWorkShops()
     getme()
   }, [])
-
   // create new project
   const handleCreate = async () => {
     setCreateNew(true);
@@ -159,15 +140,12 @@ function Projects() {
       console.log(error.response)
     }
   };
-
-
   // getting space names + naming the page
   useEffect(() => {
     const luw1 = localStorage.getItem('upfront_user_name_w1') || 'Workspace 1'
     setW1(luw1)
     document.title = luw1 + " - Upfront";
   }, [])
-
   const handleTrashProject = async (id) => {
     setDeleting(id)
     try {
@@ -185,7 +163,6 @@ function Projects() {
       setDeleting('')
     }
   }
-
   return (
     <div className='w-full flex items-start justify-start relative'>
       <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
@@ -222,7 +199,6 @@ function Projects() {
             <span className=' self-end text-xs font-medium bg-teal-600/10 mb-[4px] ml-1 py-[3px] px-2 tracking-tight rounded-md'>Free</span>
           </div>
         </div>
-
         {/* Projects section */}
         <div className='w-full h-full flex-1 bg-white px-10 pb-10 max-w-[1500px] mx-auto flex flex-col'>
           <div className='w-full h-fit flex items-end justify-between'>
@@ -267,7 +243,6 @@ function Projects() {
                     <div key={index} className='group z-10 relative w-full h-fit'>
                       <div className={`absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white p-1 opacity-0 group-hover:opacity-100 ${deleteMenu === project._id && 'opacity-100'}`}>
                         <button onClick={() => handleTrashProject(project._id)} title='Delete Project' className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 hover:text-red-500 tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 `}>
-
                           {deleting === project._id ?
                             <RiLoader5Fill className="text-2xl animate-spinLoader" />
                             :
@@ -275,7 +250,6 @@ function Projects() {
                           }
                         </button>
                       </div>
-
                       <Link key={project._id} to={`/project/${w1}/${project._id}`} className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white group-hover:ring-2 group-hover:ring-main-color/60 ring-1 ring-border-line-color/50 flex flex-col relative ${deleteMenu === project._id && 'ring-2 ring-main-color/60'}`}>
                         <h1 className='font-normal text-base leading-7 line-clamp-1'>{project.name === '' ? 'Untitled' : project.name}</h1>
                         <p className='line-clamp-1 leading-4 text-sm font-normal text-text-color/70 min-h-[15px]'>{project.desc === '' ? 'no description' : project.desc}</p>
@@ -311,7 +285,6 @@ function Projects() {
               }
             </>}
         </div>
-
         {/* <button onClick={handleLogout} title='Login with Google' className='w-[200px] h-[40px] ring-1 ring-border-line-color rounded-md font-semibold flex items-center justify-center gap-1 transition hover:opacity-80'>
         Logout
       </button> */}
@@ -319,5 +292,4 @@ function Projects() {
     </div>
   )
 }
-
 export default Projects
