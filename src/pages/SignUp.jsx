@@ -6,7 +6,6 @@ import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
-
 function SignUp() {
   const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
   const [showPassword, setShowPassword] = useState(false)
@@ -20,12 +19,10 @@ function SignUp() {
   const [errorPassword, setErrorPassword] = useState('')
   const [authing, setAuthing] = useState(false)
   const navigate = useNavigate()
-
   const handleShowPassword = (e) => {
     e.preventDefault()
     setShowPassword(!showPassword)
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setAuthing(true)
@@ -45,7 +42,6 @@ function SignUp() {
       } catch (error) {
         setAuthing(false);
         const msg = error.response?.data?.msg || '';
-
         if (error.response?.status === 401) {
           setErrorEmail(msg);
         } else {
@@ -57,9 +53,7 @@ function SignUp() {
       setAuthing(false)
       setErrorPassword("Password doesn't match")
     }
-
   };
-
   return (
     <>
       <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -148,5 +142,4 @@ function SignUp() {
     </>
   )
 }
-
 export default SignUp
