@@ -7,7 +7,6 @@ import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
 import { useLocation } from 'react-router-dom'
-
 function CreateNewPassword() {
     const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
@@ -17,14 +16,11 @@ function CreateNewPassword() {
     const [authing, setAuthing] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
-
     const { email } = location.state || {}
-
     const handleShowPassword = (e) => {
         e.preventDefault()
         setShowPassword(!showPassword)
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setAuthing(true)
@@ -36,7 +32,6 @@ function CreateNewPassword() {
                     setErrorPassword('')
                     navigate('/success')
                 }
-
             } catch (error) {
                 setAuthing(false)
                 if (error.response.status === 401) {
@@ -48,13 +43,10 @@ function CreateNewPassword() {
             setAuthing(false)
             setErrorPassword("Password doesn't match")
         }
-
     };
-
     useEffect(() => {
         document.title = "Create new passwor - Upfront";
       }, [])
-
     return (
         <>
             <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -118,5 +110,4 @@ function CreateNewPassword() {
         </>
     )
 }
-
 export default CreateNewPassword
