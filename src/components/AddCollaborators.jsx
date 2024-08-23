@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy, LuUsers2, LuWorkflow } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
-
 function AddCollaborators({ users, username, userEmail, collaborations, id, setCollaborations }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
@@ -12,7 +11,6 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
     const [errorEmail, setErrorEmail] = useState(false)
     const [authing, setAuthing] = useState(false)
     const [authingDelete, setAuthingDelete] = useState('')
-
     const handleLogout = () => {
         localStorage.removeItem('upfront_user')
         localStorage.removeItem('upfront_user_name')
@@ -23,7 +21,6 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             window.location.reload()
         }, 1000);
     }
-
     const handleInvite = async (email) => {
         setSearchingUser(false)
         setSearchvalue(email)
@@ -39,10 +36,8 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setAuthing(false)
         }
     }
-
     // Convert searchValue into a set of characters
     const searchChars = new Set(searchValue.toLowerCase().replace(/[^a-z0-9]/g, ''));
-
     // Function to check if all characters in searchChars are in the email
     const containsAllChars = (email, searchChars) => {
         const emailChars = new Set(email.toLowerCase().replace(/[^a-z0-9]/g, ''));
@@ -53,12 +48,10 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
         }
         return true;
     };
-
     // Filter users based on whether their email contains all characters from searchValue
     const filteredUsers = users.filter(user =>
         containsAllChars(user.email, searchChars)
     );
-
     const handleSearchUser = (e) => {
         const value = e.target.value
         if (value !== '') {
@@ -70,7 +63,6 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setSearchvalue('')
         }
     }
-
     const handleRemoveCollaborator = async (email) => {
         setAuthingDelete(email)
         try {
@@ -84,7 +76,6 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setAuthingDelete('')
         }
     }
-
     return (
         <div className='w-full flex flex-col justify-start items-start bg-white'>
             <div className='pt-2 px-2 w-full'>
@@ -119,7 +110,6 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                     </div>
                 </div>
                 {errorEmail !== '' && <p className='text-xs text-red-600 w-full text-right pt-1 px-2'>{errorEmail}</p>}
-
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
@@ -152,9 +142,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                     <p className='line-clamp-1'>Access Permissions</p>
                 </Link>
             </div>
-
         </div>
     )
 }
-
 export default AddCollaborators
