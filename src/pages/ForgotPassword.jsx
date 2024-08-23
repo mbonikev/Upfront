@@ -6,9 +6,6 @@ import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5'
 import { MdArrowOutward } from 'react-icons/md'
 import axios from 'axios';
 import { RiLoader5Fill } from 'react-icons/ri'
-
-
-
 function ForgotPassword() {
     const apiUrl = (import.meta.env.VITE_REACT_APP_BACKEND_API);
     const [showPassword, setShowPassword] = useState(false)
@@ -16,13 +13,10 @@ function ForgotPassword() {
     const [errorEmail, setErrorEmail] = useState('')
     const [authing, setAuthing] = useState(false)
     const navigate = useNavigate()
-
-
     const handleShowPassword = (e) => {
         e.preventDefault()
         setShowPassword(!showPassword)
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setAuthing(true)
@@ -34,7 +28,6 @@ function ForgotPassword() {
                 localStorage.setItem('fpq-key-code-random', code)
                 navigate(`/fpq`, { state: { email, question: response.data.question } })
             }
-
         } catch (error) {
             setAuthing(false)
             console.log(error)
@@ -43,12 +36,9 @@ function ForgotPassword() {
             }
         }
     };
-
     useEffect(() => {
         document.title = "Forgot Password - Upfront";
     }, [])
-
-
     return (
         <>
             <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
@@ -73,8 +63,6 @@ function ForgotPassword() {
                             <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
                         </label>
                         {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
-
-
                         <label className='w-full mt-3'>
                             <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>
                                 {authing ? (
@@ -98,5 +86,4 @@ function ForgotPassword() {
         </>
     )
 }
-
 export default ForgotPassword
