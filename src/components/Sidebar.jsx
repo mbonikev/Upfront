@@ -144,6 +144,14 @@ function Sidebar({
                     className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? "fixed" : "hidden"
                         }`}
                 ></div>
+                {/* Achievements overlay */}
+                <div
+                    onClick={() => setProfileMenu(false)}
+                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 flex items-center justify-center ${!profileMenu ? "fixed" : "hidden"
+                        }`}
+                >
+                    <div className="w-[480px] h-[480px] bg-white rounded-xl shadow-xl p-2"></div>
+                </div>
                 {/* dropdown */}
                 {profileMenu && (
                     <div className="w-[290px] h-fit max-h-[80vh] bg-white absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
