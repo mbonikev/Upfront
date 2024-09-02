@@ -116,11 +116,11 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                 <p className='line-clamp-1 text-sm font-medium text-text-color pt-1 pb-2'>People with access</p>
                 {collaborations.map((collab, index) => (
                     <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-1 py-1 font-normal text-text-color text-sm tracking-tight rounded-md '>
-                        <div className=' flex items-center justify-center gap-2'>
+                        <div className=' flex items-center justify-start gap-2'>
                             <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                 {collab.charAt(0)}
                             </p>
-                            <p className='line-clamp-1'>{collab}</p>
+                            <p className='truncate max-w-[160px]'>{collab}</p>
                         </div>
                         {collab === userEmail ?
                             <span className='bg-stone-100 text-text-color/70 text-xs py-1 px-2 rounded-md'>Owner</span>
