@@ -474,7 +474,7 @@ function SingleProject() {
                 <LuArrowRight />
               </button>
             </div>
-            <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70">
+            <div className="flex items-center justify-start gap-[2px] max-md:hidden text-sm text-text-color/70">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
               <BreadCrumb name={workspacename} status={"on"} link={"/"} /> /
               <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
