@@ -148,15 +148,17 @@ function Sidebar({
                 ></div>
                 {/* Achievements overlay */}
                 <div
-                    onClick={() => setAchievments(false)}
-                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 flex items-center justify-center ${!achievments ? "fixed" : "hidden"
+                    onClick={() => setAchievments(true)}
+                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${!achievments ? "fixed" : "hidden"
                         }`}
                 >
                 </div>
                 {/* achiements component */}
-                <div className="w-[480px] h-[480px] bg-white rounded-xl shadow-xl p-2 absolute top-[52px] left-3 shadow-custom ring-1 ring-border-line-color/0 z-30">
-                    <Achievements username={username} />
-                </div>
+                {!achievments && (
+                    <div className="w-fit h-fit bg-white rounded-xl fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
+                        <Achievements username={username} handleClose={() => setAchievments(true)} />
+                    </div>
+                )}
 
                 {/* dropdown */}
                 {profileMenu && (
