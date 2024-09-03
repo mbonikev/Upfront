@@ -33,6 +33,7 @@ import { RiLoader5Fill } from "react-icons/ri";
 import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
+import Achievements from "./Archievements";
 function Sidebar({
     handleSidebarToggle,
     username,
@@ -55,6 +56,7 @@ function Sidebar({
     const formRef = useRef(null);
     const [createNew, setCreateNew] = useState(false);
     const [myCollaborations, setMyCollatorations] = useState([])
+    const [achievments, setAchievments] = useState(false)
     // workspace1
     const handleSubmit1 = async (e) => {
         e.preventDefault();
@@ -146,12 +148,16 @@ function Sidebar({
                 ></div>
                 {/* Achievements overlay */}
                 <div
-                    onClick={() => setProfileMenu(false)}
-                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 flex items-center justify-center ${!profileMenu ? "fixed" : "hidden"
+                    onClick={() => setAchievments(false)}
+                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 flex items-center justify-center ${!achievments ? "fixed" : "hidden"
                         }`}
                 >
-                    <div className="w-[480px] h-[480px] bg-white rounded-xl shadow-xl p-2"></div>
                 </div>
+                {/* achiements component */}
+                <div className="w-[480px] h-[480px] bg-white rounded-xl shadow-xl p-2 absolute top-[52px] left-3 shadow-custom ring-1 ring-border-line-color/0 z-30">
+                    <Achievements username={username} />
+                </div>
+
                 {/* dropdown */}
                 {profileMenu && (
                     <div className="w-[290px] h-fit max-h-[80vh] bg-white absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
