@@ -163,7 +163,7 @@ function Sidebar({
                 {/* dropdown */}
                 {profileMenu && (
                     <div className="w-[290px] h-fit max-h-[80vh] bg-white absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
-                        <ProfileDropdownButtons username={username} />
+                        <ProfileDropdownButtons username={username}  />
                     </div>
                 )}
                 <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
