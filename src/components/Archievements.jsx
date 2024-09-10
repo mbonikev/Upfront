@@ -15,7 +15,7 @@ function Achievements({ username, handleClose }) {
         }, 1000);
     }
     return (
-        <div className='w-[480px] h-[480px] flex flex-col justify-start items-start'>
+        <div className='w-[480px] h-[480px] max-h-[480px] overflow-hidden flex flex-col justify-start items-start'>
             <div className='p-2 w-full'>
                 <div className='min-h-[34px] w-full flex items-center justify-between gap-2 px-2 py-[3px] text-sm font-normal tracking-tight line-clamp-1 '>
                     <p className='line-clamp-1 text-base font-bold text-text-color'>Achievements</p>
@@ -24,20 +24,17 @@ function Achievements({ username, handleClose }) {
                     </button>
                 </div>
             </div>
-            <div className='w-full h-[1px] bg-border-line-color/70'></div>
-            <div className='p-2 flex flex-col w-full'>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuSettings className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Settings</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
-                    <LuActivity className='text-xl text-text-color/50  min-w-fit' />
-                    <p className='line-clamp-1'>Activity log</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+            <div className='p-2 flex flex-col w-full h-full overflow-y-auto text-text-color border-t-[1px] border-border-line-color/70'>
+                {/* <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuTrash2 className='text-xl text-text-color/50  min-w-fit' />
                     <p className='line-clamp-1'>Trash</p>
-                </Link>
+                </Link> */}
+                    f
+                    dweidnwe
+                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
+                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
+                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
+                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
             </div>
 
         </div>
