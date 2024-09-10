@@ -17,13 +17,13 @@ function ProfileDropdownButtons({ username }) {
     return (
         <div className='w-full flex flex-col justify-start items-start bg-white'>
             <div className='p-2 w-full'>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                <button to={'/'} className='w-full min-h-[34px] flex items-center justify-start gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuTrophy className='text-xl text-text-color/50 min-w-fit' />
-                    <div className='w-full h-fit flex-col'>
+                    <div className='w-full h-fit flex flex-col justify-center items-start'>
                         <p className='line-clamp-1 text-sm font-medium text-text-color'>{username}</p>
                         <p className='line-clamp-1 text-text-color/70 text-xs'>242 Completed </p>
                     </div>
-                </Link>
+                </button>
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full'>
