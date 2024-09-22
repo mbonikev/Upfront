@@ -29,13 +29,7 @@ function Achievements({ username, handleClose }) {
                     <LuTrash2 className='text-xl text-text-color/50  min-w-fit' />
                     <p className='line-clamp-1'>Trash</p>
                 </Link> */}
-                    f
-                    dweidnwe
-                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
-                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
-                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
-                    diwe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, nesciunt voluptates impedit quibusdam esse quia est, porro deserunt doloremque illum vitae reiciendis omnis. Atque sunt soluta nostrum praesentium! Cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione nulla, sed consequuntur hic eveniet commodi, ut nesciunt nam ad in. Aperiam, aliquid possimus! Vel ipsum aperiam placeat quas odit.
-            </div>
+                </div>
 
         </div>
     )

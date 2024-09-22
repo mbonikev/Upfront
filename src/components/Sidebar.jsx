@@ -149,12 +149,12 @@ function Sidebar({
                 {/* Achievements overlay */}
                 <div
                     onClick={() => setAchievments(true)}
-                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${!achievments ? "fixed" : "hidden"
+                    className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${achievments ? "fixed" : "hidden"
                         }`}
                 >
                 </div>
                 {/* achiements component */}
-                {!achievments && (
+                {achievments && (
                     <div className="w-fit h-fit bg-white rounded-xl fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
                         <Achievements username={username} handleClose={() => setAchievments(true)} />
                     </div>
