@@ -56,7 +56,7 @@ function SignUp() {
   };
   return (
     <>
-      <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
+      <div className='dark:bg-dark-body dark:text-[#f1f1f1] w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
         {/* topbar */}
         <div className='w-full py-4 px-10 max-md:px-4 '>
           <Link to={'/'} className='flex items-center gap-1'>
@@ -70,23 +70,23 @@ function SignUp() {
         <div className="w-full max-w-[400px] p-5 mx-auto h-full flex-1 flex flex-col items-start justify-center gap-2">
           <div className='w-full'>
             <h1 className='text-2xl font-semibold'>Sign Up</h1>
-            <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi there, Excited to have you</p>
+            <p className='font-medium opacity-70 pb-4 text-sm'>Hi there, Excited to have you</p>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Username</h1>
-              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='name' autoComplete='off' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setUserName(e.target.value)} type="text" name='name' autoComplete='off' placeholder='E.g. johndoe' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
             </label>
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Email</h1>
-              <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
             </label>
             {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Password</h1>
               <div className="w-full h-fit relative">
-                <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
-                <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
+                <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
+                <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 opacity-70 cursor-pointer select-none'>
                   {showPassword ?
                     <IoEyeOutline />
                     :
@@ -99,14 +99,14 @@ function SignUp() {
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Comfirm Password</h1>
               <div className="w-full h-fit relative">
-                <input required onChange={(e) => setPassword2(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+                <input required onChange={(e) => setPassword2(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
               </div>
             </label>
             {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Security Question</h1>
               <div className="w-full h-fit relative">
-                <select required defaultValue={'Selected'} onChange={(e) => setSecurityQ(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color px-4 pr-9 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" >
+                <select required defaultValue={'Selected'} onChange={(e) => setSecurityQ(e.target.value)} type={showPassword ? 'text' : 'password'} name='password' placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color px-4 pr-9 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" >
                   <option value="Selected" disabled hidden >Select a security question</option>
                   <option value="What is the name of your first pet?">What is the name of your first pet?</option>
                   <option value="What was the name of the street you grew up on?">What was the name of the street you grew up on?</option>
@@ -117,7 +117,7 @@ function SignUp() {
             </label>
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Answer</h1>
-              <input required onChange={(e) => setSecurityQAnswer(e.target.value)} type="text" autoComplete='off' name='answer' placeholder='E.g. jexy' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setSecurityQAnswer(e.target.value)} type="text" autoComplete='off' name='answer' placeholder='E.g. jexy' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 bg-white focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
             </label>
             <label className='w-full mt-5'>
               <button type='submit' title='Login' className={`w-full h-[40px] bg-main-color hover:bg-main-color-hover text-white rounded-md font-semibold flex items-center justify-center gap-1 transition select-none ${authing ? 'pointer-events-none opacity-75' : ''}`}>

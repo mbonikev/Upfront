@@ -124,7 +124,7 @@ function Sidebar({
     // get collabs
     const retrieveArray = getArray('mycollaborations') ?? []
     const linkStyle =
-        "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
+        "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#f1f1f1] text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
     return (
         <div className="w-[256px] min-w-[256px] sticky top-0 z-20">
             <div className=" relative w-full h-full">
@@ -166,11 +166,11 @@ function Sidebar({
                         <ProfileDropdownButtons username={username}  />
                     </div>
                 )}
-                <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 bg-sidebar-color flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
+                <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131] bg-sidebar-color dark:bg-[#202020] dark:text-[#f1f1f1] flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
                     <div className="w-full flex items-center justify-between mb-4">
                         <button
                             onClick={showPMenu}
-                            className="text-text-color max-w-[150px] flex items-center justify-start gap-[2px] hover:bg-stone-200 transition p-1 rounded-lg"
+                            className="dark:text-[#f1f1f1] text-text-color max-w-[150px] flex items-center justify-start gap-[2px] hover:bg-stone-200 transition p-1 rounded-lg"
                         >
                             <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white uppercase">
                                 {username.charAt(0)}
@@ -183,7 +183,7 @@ function Sidebar({
                         <div className="flex items-center justify-end gap-0">
                             <button
                                 title="Notifications"
-                                className=" h-[33px] text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200 hover:text-text-color"
+                                className=" h-[33px] dark:text-[#f1f1f1]/70 text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200 dark:hover:text-[#f1f1f1]/20 text-text-color"
                             >
                                 <IoMdNotificationsOutline className="text-[22px]" />
                             </button>
@@ -237,10 +237,10 @@ function Sidebar({
                         <LuTrash2 className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Trash </p>
                     </Link> */}
-                    <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium text-text-color/70 tracking-tight">
+                    <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
                         <span>Workspaces</span>
                         <Link to={"/"} title="Add Worksspace">
-                            <LuPlus className="text-lg cursor-pointer hover:text-text-color" />
+                            <LuPlus className="text-lg cursor-pointer dark:hover:text-[#f1f1f1]/20 text-text-color" />
                         </Link>
                     </p>
                     {/* Workspace 1 */}
@@ -265,7 +265,7 @@ function Sidebar({
                                         autoComplete="off"
                                         value={w1}
                                         onChange={(e) => setW1(e.target.value)}
-                                        className=" h-full w-full bg-white text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
+                                        className=" h-full w-full bg-white dark:text-[#f1f1f1] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
                                     />
                                 </div>
                             </>
@@ -275,7 +275,7 @@ function Sidebar({
                             className={` cursor-pointer absolute right-3 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 ${moreOpt1 && "opacity-100"
                                 }`}
                         >
-                            <LuMoreHorizontal className="text-xl text-text-color/70 hover:text-text-color" />
+                            <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-[#f1f1f1]/20 text-text-color" />
                         </div>
                         {moreOpt1 && (
                             <>
@@ -334,32 +334,32 @@ function Sidebar({
                         <LuCrown className="text-xl text-yellow-500" />
                         <h1 className="flex flex-col">
                             <span>Unlock More Workspaces</span>
-                            <span className="text-[11px] text-text-color/70 font-medium ">
+                            <span className="text-[11px] dark:text-[#f1f1f1]/70 text-text-color/70 font-medium ">
                                 $5.99 / Month - $49.99 / Year
                             </span>
                         </h1>
                     </Link>
-                    <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium text-text-color/70 tracking-tight w-full justify-between">
+                    <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
                         <span>Collaborations</span>
                         <span>
-                            <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium text-text-color/70 w-full text-center hover:bg-stone-200/50 rounded-lg ">View all</p>
+                            <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 rounded-lg ">View all</p>
                         </span>
                     </p>
                     {retrieveArray.slice(0, 3).map((collab, index) => (
                         <Link
                             key={index}
                             to={"/"}
-                            className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
+                            className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] dark:text-[#f1f1f1] text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 "
                         >
                             <LuWorkflow className="text-xl text-main-color min-w-fit" />
                             <div className="flex flex-col justify-start items-start">
                                 <p className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</p>
-                                <p className="line-clamp-1 text-xs font-normal text-text-color/70">{collab.user_email} added you</p>
+                                <p className="line-clamp-1 text-xs font-normal dark:text-[#f1f1f1]/70 text-text-color/70">{collab.user_email} added you</p>
                             </div>
                         </Link>
                     ))}
                     {retrieveArray.length === 0 &&
-                        <p className="line-clamp-1 text-xs px-9 font-normal text-text-color/70">No contributions yet</p>
+                        <p className="line-clamp-1 text-xs px-9 font-normal dark:text-[#f1f1f1]/70 text-text-color/70">No contributions yet</p>
                     }
                 </div>
             </div>

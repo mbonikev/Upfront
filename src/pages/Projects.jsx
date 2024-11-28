@@ -164,9 +164,9 @@ function Projects() {
     }
   }
   return (
-    <div className='w-full flex items-start justify-start relative'>
+    <div className='w-full dark:bg-dark-body dark:text-[#f1f1f1] flex items-start justify-start relative'>
       <Sidebar username={username} userEmail={userEmail} w1={w1} setW1={setW1} w2={w2} setW2={setW2} w3={w3} setW3={setW3} />
-      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white transition-all duration-500 ease-in-out z-10 `}>
+      <div className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-white dark:bg-dark-body dark:text-[#f1f1f1] transition-all duration-500 ease-in-out z-10 `}>
         <div className='w-full h-fit flex items-start justify-between px-5 pt-3'>
           <div className=' min-h-[35px] flex items-center justify-start gap-0 '>
             <div className='flex items-center justify-start gap-[2px] text-sm text-text-color/70'>

@@ -52,33 +52,33 @@ function Login() {
   }, [])
   return (
     <>
-      <div className='w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
+      <div className='dark:bg-dark-body dark:text-[#f1f1f1] w-full h-fit min-h-svh flex flex-col text-sm text-text-color'>
         {/* topbar */}
         <div className='w-full py-4 px-10 max-md:px-4 '>
           <Link to={'/'} className='flex items-center gap-1'>
             <div className='min-w-8'>
               <img src={logo} className="h-8" loading='lazy' />
             </div>
-            <h1 className='font-semibold text-xl font-l text-main-color tracking-tight'>Upfront.</h1>
+            <h1 className='font-semibold text-xl text-main-color dark:text-[#f1f1f1] tracking-tight'>Upfront.</h1>
           </Link>
         </div>
         {/* form */}
         <div className="w-full max-w-[400px] p-5 mx-auto h-full flex-1 flex flex-col items-start justify-center gap-2">
           <div className='w-full'>
             <h1 className='text-2xl font-semibold'>Login</h1>
-            <p className='font-medium text-text-color/70 pb-4 text-xs'>Hi, Welcome back!</p>
+            <p className='font-medium opacity-70 pb-4 text-sm'>Hi, Welcome back!</p>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col items-start justify-start gap-2 w-full h-fit ">
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Email</h1>
-              <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
+              <input required onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder='E.g. johndoe@gmail.com' className="w-full h-[40px] ring-1 ring-border-line-color p-4 focus:ring-2 focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
             </label>
-            {errorEmail !== '' && <p className='text-xs text-red-600'>{errorEmail}</p>}
+            {errorEmail !== '' && <p className='text-xs text-red-600 dark:text-red-400'>{errorEmail}</p>}
             <label className='w-full'>
               <h1 className='mb-2 font-semibold'>Password</h1>
               <div className="w-full h-fit relative">
-                <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 " id="" />
-                <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 text-text-color/70 cursor-pointer select-none'>
+                <input required onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder='Enter your password' className="w-full h-[40px] ring-1 ring-border-line-color p-4 pr-12 focus:ring-2  focus:ring-main-color rounded-md placeholder:text-text-color/40 dark:bg-[#2f2f2f] dark:ring-transparent dark:placeholder:text-[#5f5f5f] dark:text-[#f1f1f1] " id="" />
+                <div onClick={handleShowPassword} className=' absolute top-0 bottom-0 right-3 m-auto text-xl w-fit h-fit p-1 opacity-70 cursor-pointer select-none'>
                   {showPassword ?
                     <IoEyeOutline />
                     :
@@ -87,7 +87,7 @@ function Login() {
                 </div>
               </div>
             </label>
-            {errorPassword !== '' && <p className='text-xs text-red-600'>{errorPassword}</p>}
+            {errorPassword !== '' && <p className='text-xs text-red-600 dark:text-red-400'>{errorPassword}</p>}
             <div className='flex items-center justify-end w-full py-1'>
               <Link to="/forgotPassword" className='text-main-color font-medium w-fit '>Forgot password?</Link>
             </div>
