@@ -84,6 +84,8 @@ function SingleProject() {
   const [addingBoard, setAddingBoard] = useState(false);
   const [addingTask, setAddingTask] = useState(false);
   const textareaRef = useRef(null);
+  const textareaRef2 = useRef(null);
+  const textareaRef3 = useRef(null)
   const textareaRefTask = useRef(null);
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDue, setNewTaskDue] = useState("");
@@ -251,6 +253,8 @@ function SingleProject() {
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
+    textareaRef2.current.style.height = "auto";
+    textareaRef2.current.style.height = `${e.target.scrollHeight}px`;
   };
   const handleInput2Change = (e) => {
     setSaving(true);
@@ -266,7 +270,15 @@ function SingleProject() {
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
-  }, [projectDesc]);
+    if (textareaRef2.current) {
+      textareaRef2.current.style.height = "auto";
+      textareaRef2.current.style.height = `${textareaRef2.current.scrollHeight}px`;
+    }
+    if (textareaRef3.current) {
+      textareaRef3.current.style.height = "auto";
+      textareaRef3.current.style.height = `${textareaRef3.current.scrollHeight}px`;
+    }
+  }, [projectDesc, projectTitle, newTaskName]);
   const handleTrashProject = async () => {
     setDeleting(true);
     try {
@@ -305,6 +317,8 @@ function SingleProject() {
   // new task
   const handleNameChange = (event) => {
     setNewTaskName(event.target.value)
+    textareaRef3.current.style.height = "auto";
+    textareaRef3.current.style.height = `${e.target.scrollHeight}px`;
   }
   const onRangeChange = (date, dateString) => {
     setNewTaskDue(dateString);
@@ -372,7 +386,7 @@ function SingleProject() {
   const handleCancel = () => {
     setMoreOpt1("")
   }
-  const linkStyle = "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 tracking-tight rounded-md line-clamp-1 relative";
+  const linkStyle = "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
   return (
     <>
       {/* profile menu overlay */}
@@ -457,24 +471,24 @@ function SingleProject() {
             </div>
           </div>
         )}
-        <div className="w-full h-fit flex items-start justify-between px-5 py-3">
+        <div className="w-full h-fit flex items-start justify-between px-5 py-3 bg-white dark:bg-dark-body">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-3 text-sm mr-2">
               <Link
                 to={`/`}
                 title="Deadlines"
-                className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
+                className="text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200 dark:text-[#b8b8b8] dark:bg-transparent dark:hover:bg-[#2c2c2c]"
               >
                 <LuArrowLeft />
               </Link>
               <button
                 title="Deadlines"
-                className="opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200"
+                className="opacity-40 pointer-events-none text-xl h-[25px] w-auto aspect-square flex items-center justify-center rounded-full transition bg-stone-100 hover:bg-stone-200 dark:text-[#b8b8b8] dark:bg-transparent dark:hover:bg-[#2c2c2c]"
               >
                 <LuArrowRight />
               </button>
             </div>
-            <div className="flex items-center justify-start gap-[2px] max-md:hidden text-sm text-text-color/70">
+            <div className="flex items-center justify-start gap-[2px] max-md:hidden text-sm text-text-color/70 dark:text-[#b8b8b8]">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
               <BreadCrumb name={workspacename} status={"on"} link={"/"} /> /
               <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
@@ -483,7 +497,7 @@ function SingleProject() {
           <div className="flex items-center justify-end gap-0">
             <button
               title="File update status"
-              className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               {saving ? (
                 <LuRefreshCw className="text-lg animate-spinSlow" />
@@ -493,40 +507,40 @@ function SingleProject() {
             </button>
             <button
               title="Print view"
-              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               <LuPrinter />
             </button>
             <button
               onClick={showDeleteMenu}
               title="Move to trash"
-              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 "
+              className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] "
             >
               <LuTrash2 />
             </button>
             <button
               onClick={showUserMenu}
               title="Manage Collaborators"
-              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               <LuUsers2 />
             </button>
             <button
               title="Mark as favorite"
-              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               <LuStar />
             </button>
             <button
               title="Dues"
-              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color "
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               <LuTimerReset />
             </button>
             <span className="w-[2px]"></span>
             <button
               onClick={showPMenu}
-              className=" max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color transition p-1 rounded-lg"
+              className=" max-w-[120px] flex items-center justify-start gap-[2px] hover:bg-stone-100  text-text-color/70 hover:text-text-color dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] transition p-1 rounded-lg"
             >
               <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                 {username.charAt(0)}
@@ -540,18 +554,18 @@ function SingleProject() {
         </div>
       </div>
       <div
-        className={`w-full min-h-svh text-text-color flex flex-col bg-white overflow-y-auto relative `}
+        className={`w-full min-h-svh text-text-color flex flex-col bg-white dark:bg-dark-body overflow-y-auto relative `}
       >
         {/* Project section */}
         {/* loader on fetch */}
         {fetching && (
-          <div className="fixed top-0 z-10 left-0 w-full h-full bg-white flex items-center justify-center flex-col">
+          <div className="fixed top-0 z-10 left-0 w-full h-full bg-white dark:bg-dark-body flex items-center justify-center flex-col">
             <img
               src={logo60}
               loading="lazy"
               className="animate-bounce h-12 saturate-100 aspect-square"
             />
-            <p className="py-0 text-sm font-medium text-text-color/70 cursor-default">
+            <p className="py-0 text-sm font-medium text-text-color/70 dark:text-[#b8b8b8]/70 cursor-default">
               Loading Project..
             </p>
           </div>
@@ -559,14 +573,15 @@ function SingleProject() {
         <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
           <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
             <LuHash className="text-3xl text-lime-600 mt-1" />
-            <div className="flex-1 flex flex-col items-start justify-start gap-2 w-full h-fit">
-              <input
-                ref={inputRef}
+            <div className="flex-1 flex flex-col items-start max-w-[1200px] justify-start gap-2 w-full h-fit">
+              <textarea
+                ref={textareaRef2}
                 type="text"
+                rows="1"
                 value={projectTitle}
                 onChange={handleInput1Change}
                 placeholder="Project Name "
-                className="text-3xl font-extrabold tracking-tight truncaten placeholder:text-text-color/70"
+                className="text-3xl font-extrabold w-full placeholder:text-text-color/70 resize-none bg-white dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
               />
               <textarea
                 type="text"
@@ -575,7 +590,7 @@ function SingleProject() {
                 onChange={handleInput2Change}
                 rows="1"
                 placeholder="a short description"
-                className="text-sm font-normal tracking-tight w-full truncaten placeholder:text-text-color/70 text-text-color resize-none overflow-hidden"
+                className="text-base font-normal tracking-tight w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
               ></textarea>
               {/* <div className="w-full h-[1px] bg-stone-200"></div> */}
             </div>
@@ -589,7 +604,7 @@ function SingleProject() {
             boards.map((board, index) => (
               <div
                 key={index}
-                className=" w-[280px] min-w-[280px] bg-stone-200/40 select-none flex flex-col px-2 pb-2 rounded-xl text-text-color relative "
+                className=" w-[280px] min-w-[280px] bg-stone-200/40 dark:bg-[#202020] select-none flex flex-col px-2 pb-2 rounded-xl text-text-color dark:text-[#b8b8b8] relative "
               >
                 {/* ------------------------------ */}
                 <form onSubmit={handleDeleteBoard} className=" group ">
@@ -597,29 +612,29 @@ function SingleProject() {
                     onClick={() => showMoreMenuw1(board.id)}
                     className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
                   >
-                    <LuMoreHorizontal className={`text-xl  ${moreOpt1 === board.id ? 'text-text-color/100' : 'text-text-color/30 hover:text-text-color'}`} />
+                    <LuMoreHorizontal className={`text-xl  ${moreOpt1 === board.id ? 'text-text-color/100 dark:text-[#b8b8b8]' : 'text-text-color/30 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8]'}`} />
                   </div>
                   {moreOpt1 === board.id && (
                     <>
-                      <div className="absolute right-2 top-8 bg-white rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 p-2">
+                      <div className="absolute right-2 top-8 bg-white dark:bg-[#2c2c2c] rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 dark:ring-transparent dark:shadow-custom2 p-2">
                         <div
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#383838]`}
                         >
                           <LuPencilLine className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Rename</p>
                         </div>
                         <div
-                          className={`${linkStyle} ${tasks.filter(task => task.boardId === board.id).length < 1 ? 'pointer-events-none opacity-40' : 'hover:bg-stone-200/70 cursor-pointer'}`}
+                          className={`${linkStyle} ${tasks.filter(task => task.boardId === board.id).length < 1 ? 'pointer-events-none opacity-40' : 'hover:bg-stone-200/70 dark:hover:bg-[#484848] cursor-pointer'}`}
                         >
                           <LuRecycle className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Clear Board</p>
                         </div>
                         <Link
                           to={"/"}
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70`}
+                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#484848]`}
                         >
-                          <LuTrash2 className="text-base  min-w-fit text-red-500" />
-                          <p className="line-clamp-1 text-sm text-red-500">Delete Board</p>
+                          <LuTrash2 className="text-base  min-w-fit text-red-500 dark:text-red-400" />
+                          <p className="line-clamp-1 text-sm text-red-500 dark:text-red-400">Delete Board</p>
                         </Link>
                       </div>
                     </>
@@ -631,7 +646,7 @@ function SingleProject() {
                 </h1>
                 {/* task */}
                 {tasks.filter(task => task.boardId === board.id).map((task) => (
-                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white rounded-xl ring-1 ring-border-line-color/20 hover:ring-2 hover:ring-main-color/60 ">
+                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 ">
                     {/* priority */}
                     <p
                       className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
@@ -662,14 +677,14 @@ function SingleProject() {
                     {/* Comments & collaborations */}
                     <div className="px-3 flex items-center justify-between pt-2">
                       <div>
-                        <div className="flex items-center gap-[2px] text-text-color/70">
+                        <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
                           <LuMessageCircle className="text-lg" />
                           <span className="font-medium text-sm">0</span>
                         </div>
                       </div>
                       <div className="flex items-center justify-end gap-1">
                         <div className="flex items-center justify-center">
-                          <div className='h-8 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-9px] border-[3px] border-white uppercase'>{userEmail.charAt(0)}</div>
+                          <div className='h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase'>{userEmail.charAt(0)}</div>
                           {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
@@ -680,7 +695,7 @@ function SingleProject() {
                       </div>
                     </div>
                     {/* Due */}
-                    <p className="text-xs px-3 text-text-color/70 flex items-center gap-1 pt-2 font-medium">
+                    <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
                       {task.startingOn === task.due ? (<>
                         <span>{format(new Date(task.due), 'MMM dd')}</span>
                       </>) : (<>
@@ -695,41 +710,36 @@ function SingleProject() {
                 ))}
                 {/* add new task */}
                 {createNewTask === board.id ? (
-                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white rounded-xl ring-1 ring-border-line-color/20 ">
-                    <TextArea
+                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent ">
+                    <textarea
                       placeholder="Task name"
-                      style={{
-                        borderColor: "transparent",
-                        padding: 0,
-                        boxShadow: "none",
-                        borderRadius: 0,
-                        fontSize: "14px",
-                        color: "#2e394a",
-                        fontWeight: 500,
-                      }}
                       onChange={handleNameChange}
-                      autoSize
+                      rows="1"
+                      ref={textareaRef3}
                       required
                       autoFocus
                       name="task name"
+                      className="text-sm font-normal tracking-tight w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-[#2c2c2c] dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
                     />
                     <div className="flex mt-1 w-full gap-2">
                       <div className="flex flex-col">
-                        <p className="text-xs text-text-color/70 pb-1">Due</p>
+                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">Due</p>
+                        
                         <DatePicker
                           size="medium"
-                          style={{
-                            color: "#2e394a",
-                            width: "100%",
-                          }}
+                          // style={{
+                          //   color: "#2e394a",
+                          //   width: "100%",
+                          // }}
                           required
                           onChange={onRangeChange}
                           placeholder={"Due Date"}
                           placement={placement}
+                          className="w-full text-sm text-text-color dark:text-red-500 border-none shadow-none bg-[#383838] hover:bg-[#383838] focus:bg-transparent"
                         />
                       </div>
                       <div className="flex flex-col min-w-[100px]">
-                        <p className="text-xs text-text-color/70 pb-1">Priority</p>
+                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">Priority</p>
                         <Select
                           defaultValue="Medium"
                           placeholder="Set priority"
@@ -781,7 +791,7 @@ function SingleProject() {
                   <button
                     onClick={() => setCreateNewTask(board.id)}
                     title="Create a new board"
-                    className="select-none font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center bg-stone-200/80 rounded-lg w-full"
+                    className="select-none font-normal gap-1 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8] px-2 py-[5px] flex items-center bg-transparent hover:bg-stone-200/80 dark:hover:bg-[#2c2c2c] rounded-lg w-full"
                   >
                     <LuPlus className="text-lg" />
                     <span className="text-sm tracking-tight font-medium">
@@ -792,7 +802,7 @@ function SingleProject() {
               </div>
             ))}
           {addBoard ? (
-            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white border-[2px] border-dashed border-border-line-color/50 flex items-start justify-start p-2">
+            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white dark:bg-[#2c2c2c94] border-[2px] border-dashed border-border-line-color/50 dark:border-[#454545] flex items-start justify-start p-2">
               <form
                 onSubmit={handleNewBoard}
                 className="w-full h-full flex flex-col justify-between"
@@ -801,7 +811,7 @@ function SingleProject() {
                   type="text"
                   value={newBoardValue}
                   onChange={(e) => setNewBoardValue(e.target.value)}
-                  className="w-full text-xs uppercase font-semibold tracking-tight bg-transparent text-text-color/90"
+                  className="w-full text-xs uppercase font-semibold tracking-tight bg-transparent text-text-color/90 dark:text-[#b8b8b8]/90"
                   placeholder="Board title"
                   autoFocus
                   name="New board title"
@@ -834,7 +844,7 @@ function SingleProject() {
             <button
               onClick={() => setAddBoard(true)}
               title="Create a new board"
-              className=" font-normal gap-1 text-text-color/70 hover:text-main-color px-2 py-[5px] flex items-center hover:bg-stone-100/80 rounded-lg w-full min-w-[280px] max-w-[280px]"
+              className=" font-normal gap-1 text-text-color/70 dark:text-[#b8b8b8]/70 hover:text-text-color dark:hover:text-[#b8b8b8] px-2 py-[5px] flex items-center hover:bg-stone-100/80 dark:hover:bg-[#2c2c2c] rounded-lg w-full min-w-[280px] max-w-[280px]"
             >
               <LuPlus className="text-lg" />
               <span className="text-sm tracking-tight font-medium">
