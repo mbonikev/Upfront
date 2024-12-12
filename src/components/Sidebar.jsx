@@ -342,7 +342,7 @@ function Sidebar({
                     <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
                         <span>Collaborations</span>
                         <span>
-                            <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] rounded-lg ">View all</p>
+                            <span className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] rounded-lg ">View all</span>
                         </span>
                     </p>
                     {retrieveArray.slice(0, 3).map((collab, index) => (
