@@ -430,7 +430,7 @@ function Projects() {
                             <div
                               className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(
                                 project.progress
-                              )} ${project.progressClass}`}
+                              )} 33`}
                             ></div>
                           </div>
                           <h1 className="text-sm">100%</h1>
