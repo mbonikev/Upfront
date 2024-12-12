@@ -64,7 +64,7 @@ function Projects() {
   
   const getProgressClasses = (progress) => {
     let classes =
-      "flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500";
+      "flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 bg-red-300";
     if (progress <= 100 && progress > 75) {
       classes += " bg-green-500"; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
