@@ -61,6 +61,7 @@ function Projects() {
   const count100Percent = projects.filter(
     (project) => project.progress === 100
   ).length;
+  
   const getProgressClasses = (progress) => {
     let classes =
       "flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500";
