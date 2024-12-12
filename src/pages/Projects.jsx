@@ -443,17 +443,7 @@ function Projects() {
                                 )
                               )}`}
                               style={{
-                                width: `${Math.round(
-                                  (allTasks.filter(
-                                    (task) =>
-                                      task.projectId === project._id &&
-                                      task.curentStatus === "completed"
-                                  ).length /
-                                    allTasks.filter(
-                                      (task) => task.projectId === project._id
-                                    ).length) *
-                                    100
-                                )}%`,
+                                width: `64%`,
                               }}
                             ></div>
                           </div>
