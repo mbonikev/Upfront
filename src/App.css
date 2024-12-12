@@ -23,6 +23,10 @@ input {
 .ant-input::placeholder {
   color: #9ca3af !important;
 }
+.ant-select-item-option-selected{
+  color: white !important;
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;

@@ -53,12 +53,12 @@ import debounce from "lodash/debounce";
 import { RiLoader5Fill } from "react-icons/ri";
 import DeleteContent from "../components/DeleteContent";
 import { HiMiniBars2, HiMiniBars3, HiMiniMinus } from "react-icons/hi2";
-import { DatePicker } from "antd";
+import { ConfigProvider, theme, DatePicker } from "antd";
 const { RangePicker } = DatePicker;
 import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -85,7 +85,7 @@ function SingleProject() {
   const [addingTask, setAddingTask] = useState(false);
   const textareaRef = useRef(null);
   const textareaRef2 = useRef(null);
-  const textareaRef3 = useRef(null)
+  const textareaRef3 = useRef(null);
   const textareaRefTask = useRef(null);
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDue, setNewTaskDue] = useState("");
@@ -93,14 +93,33 @@ function SingleProject() {
   const [newBoardValue, setNewBoardValue] = useState("");
   const [boards, setBoards] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [placement, SetPlacement] = useState('bottomLeft');
-  const [createNewTask, setCreateNewTask] = useState('')
+  const [placement, SetPlacement] = useState("bottomLeft");
+  const [createNewTask, setCreateNewTask] = useState("");
   // Scolling horizonaly
   const containerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [moreOpt1, setMoreOpt1] = useState("");
+  const { defaultAlgorithm, darkAlgorithm } = theme;
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (event) => {
+      setIsDarkMode(event.matches);
+    };
+
+    // Listen for changes in the dark mode preference
+    mediaQuery.addEventListener("change", handleChange);
+
+    // Cleanup listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   // Swoll with click
   const onMouseDown = (e) => {
     // Check if the left mouse button is clicked
@@ -120,15 +139,15 @@ function SingleProject() {
   };
   useEffect(() => {
     const container = containerRef.current;
-    container.addEventListener('mousedown', onMouseDown);
-    container.addEventListener('mousemove', onMouseMove);
-    container.addEventListener('mouseup', onMouseUp);
-    container.addEventListener('mouseleave', onMouseUp);
+    container.addEventListener("mousedown", onMouseDown);
+    container.addEventListener("mousemove", onMouseMove);
+    container.addEventListener("mouseup", onMouseUp);
+    container.addEventListener("mouseleave", onMouseUp);
     return () => {
-      container.removeEventListener('mousedown', onMouseDown);
-      container.removeEventListener('mousemove', onMouseMove);
-      container.removeEventListener('mouseup', onMouseUp);
-      container.removeEventListener('mouseleave', onMouseUp);
+      container.removeEventListener("mousedown", onMouseDown);
+      container.removeEventListener("mousemove", onMouseMove);
+      container.removeEventListener("mouseup", onMouseUp);
+      container.removeEventListener("mouseleave", onMouseUp);
     };
   }, [isDragging, startX, scrollLeft]);
   useEffect(() => {
@@ -148,19 +167,19 @@ function SingleProject() {
     }
   }, [projectTitle]);
   const showPMenu = () => {
-    setProfileMenu(!profileMenu)
-    setUserMenu(false)
-    setDeleteMenu(false)
+    setProfileMenu(!profileMenu);
+    setUserMenu(false);
+    setDeleteMenu(false);
   };
   const showUserMenu = () => {
-    setUserMenu(!userMenu)
-    setProfileMenu(false)
-    setDeleteMenu(false)
+    setUserMenu(!userMenu);
+    setProfileMenu(false);
+    setDeleteMenu(false);
   };
   const showDeleteMenu = () => {
-    setDeleteMenu(!deleteMenu)
-    setUserMenu(false)
-    setProfileMenu(false)
+    setDeleteMenu(!deleteMenu);
+    setUserMenu(false);
+    setProfileMenu(false);
   };
   // get project details
   useEffect(() => {
@@ -220,7 +239,7 @@ function SingleProject() {
       }
     };
     fetchData();
-    getTasks()
+    getTasks();
     getBoards();
     getusers();
     getProject();
@@ -316,10 +335,10 @@ function SingleProject() {
   };
   // new task
   const handleNameChange = (event) => {
-    setNewTaskName(event.target.value)
+    setNewTaskName(event.target.value);
     textareaRef3.current.style.height = "auto";
     textareaRef3.current.style.height = `${e.target.scrollHeight}px`;
-  }
+  };
   const onRangeChange = (date, dateString) => {
     setNewTaskDue(dateString);
   };
@@ -329,14 +348,20 @@ function SingleProject() {
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+    const day = String(today.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
   const handleCreateTask = async (e) => {
-    setAddingTask(true)
-    e.preventDefault()
-    console.log(newTaskName, newTaskDue, newTaskPriority, createNewTask, getCurrentDate())
+    setAddingTask(true);
+    e.preventDefault();
+    console.log(
+      newTaskName,
+      newTaskDue,
+      newTaskPriority,
+      createNewTask,
+      getCurrentDate()
+    );
     try {
       const response = await axios.post(`${apiUrl}/api/newtask`, {
         newTaskName,
@@ -361,20 +386,19 @@ function SingleProject() {
           boardId: response.data.boardId,
         },
       ]);
-      setCreateNewTask('')
-      setAddingTask(false)
+      setCreateNewTask("");
+      setAddingTask(false);
+    } catch (err) {
+      console.log(err);
+      setAddingTask(false);
     }
-    catch (err) {
-      console.log(err)
-      setAddingTask(false)
-    }
-  }
+  };
   // Delete Board
   const handleDeleteBoard = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.patch(`${apiUrl}/api/`, {});
-      console.log('Response data:', response.data);
+      console.log("Response data:", response.data);
     } catch (err) {
       console.error("Error updating data:", err);
     }
@@ -384,34 +408,39 @@ function SingleProject() {
     setMoreOpt1(id);
   };
   const handleCancel = () => {
-    setMoreOpt1("")
-  }
-  const linkStyle = "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
+    setMoreOpt1("");
+  };
+  const linkStyle =
+    "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
   return (
     <>
       {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${profileMenu ? "fixed cursor-default" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          profileMenu ? "fixed cursor-default" : "hidden"
+        }`}
       ></div>
       {/* collab Menu overlay */}
       <div
         onClick={() => setUserMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${userMenu ? "fixed cursor-default" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          userMenu ? "fixed cursor-default" : "hidden"
+        }`}
       ></div>
       {/* delete Menu overlay */}
       <div
         onClick={() => setDeleteMenu(false)}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${deleteMenu ? "fixed cursor-default" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          deleteMenu ? "fixed cursor-default" : "hidden"
+        }`}
       ></div>
       {/* more options board menu */}
       <div
         onClick={handleCancel}
-        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 ? "fixed cursor-default" : "hidden"
-          }`}
+        className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
+          moreOpt1 ? "fixed cursor-default" : "hidden"
+        }`}
       ></div>
       {/* Menu */}
       <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-30 bg-white">
@@ -439,8 +468,8 @@ function SingleProject() {
           <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white">
             <p className="text-sm text-text-color/70 px-2 pt-2 pb-4">
               <span className="font-medium text-text-color">Warning! </span>{" "}
-              Deleting this project will remove it from your workspace and move it
-              to trash. Collaborations will be stashed for possible future
+              Deleting this project will remove it from your workspace and move
+              it to trash. Collaborations will be stashed for possible future
               restoration
             </p>
             <p className="text-sm text-text-color/70 px-2 pb-4">
@@ -612,7 +641,13 @@ function SingleProject() {
                     onClick={() => showMoreMenuw1(board.id)}
                     className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
                   >
-                    <LuMoreHorizontal className={`text-xl  ${moreOpt1 === board.id ? 'text-text-color/100 dark:text-[#b8b8b8]' : 'text-text-color/30 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8]'}`} />
+                    <LuMoreHorizontal
+                      className={`text-xl  ${
+                        moreOpt1 === board.id
+                          ? "text-text-color/100 dark:text-[#b8b8b8]"
+                          : "text-text-color/30 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8]"
+                      }`}
+                    />
                   </div>
                   {moreOpt1 === board.id && (
                     <>
@@ -624,7 +659,12 @@ function SingleProject() {
                           <p className="line-clamp-1 text-sm">Rename</p>
                         </div>
                         <div
-                          className={`${linkStyle} ${tasks.filter(task => task.boardId === board.id).length < 1 ? 'pointer-events-none opacity-40' : 'hover:bg-stone-200/70 dark:hover:bg-[#484848] cursor-pointer'}`}
+                          className={`${linkStyle} ${
+                            tasks.filter((task) => task.boardId === board.id)
+                              .length < 1
+                              ? "pointer-events-none opacity-40"
+                              : "hover:bg-stone-200/70 dark:hover:bg-[#484848] cursor-pointer"
+                          }`}
                         >
                           <LuRecycle className="text-base  min-w-fit" />
                           <p className="line-clamp-1 text-sm">Clear Board</p>
@@ -634,7 +674,9 @@ function SingleProject() {
                           className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#484848]`}
                         >
                           <LuTrash2 className="text-base  min-w-fit text-red-500 dark:text-red-400" />
-                          <p className="line-clamp-1 text-sm text-red-500 dark:text-red-400">Delete Board</p>
+                          <p className="line-clamp-1 text-sm text-red-500 dark:text-red-400">
+                            Delete Board
+                          </p>
                         </Link>
                       </div>
                     </>
@@ -642,75 +684,97 @@ function SingleProject() {
                 </form>
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
                   <span>{board.name}</span>
-                  <span className="pl-2 text-text-color/40">{tasks.filter(task => task.boardId === board.id).length}</span>
+                  <span className="pl-2 text-text-color/40">
+                    {tasks.filter((task) => task.boardId === board.id).length}
+                  </span>
                 </h1>
                 {/* task */}
-                {tasks.filter(task => task.boardId === board.id).map((task) => (
-                  <button key={task.id} className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 ">
-                    {/* priority */}
-                    <p
-                      className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
+                {tasks
+                  .filter((task) => task.boardId === board.id)
+                  .map((task) => (
+                    <button
+                      key={task.id}
+                      className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
                     >
-                      {task.priority === 'High' && (<>
-                        <LuChevronsUp className="text-xl text-[#ff5630]" />
-                        <span className="text-xs font-semibold text-[#ff5630]">
-                          {task.priority}
-                        </span>
-                      </>)}
-                      {task.priority === 'Medium' && (<>
-                        <LuChevronsUpDown className="text-xl text-[#2684ff]" />
-                        <span className="text-xs font-semibold text-[#2684ff]">
-                          {task.priority}
-                        </span>
-                      </>)}
-                      {task.priority === 'Low' && (<>
-                        <LuChevronsDown className="text-xl text-[#12c97d]" />
-                        <span className="text-xs font-semibold text-[#12c97d]">
-                          {task.priority}
-                        </span>
-                      </>)}
-                    </p>
-                    {/* text */}
-                    <p className="text-sm px-3 text-start">
-                      {task.name}
-                    </p>
-                    {/* Comments & collaborations */}
-                    <div className="px-3 flex items-center justify-between pt-2">
-                      <div>
-                        <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
-                          <LuMessageCircle className="text-lg" />
-                          <span className="font-medium text-sm">0</span>
+                      {/* priority */}
+                      <p
+                        className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
+                      >
+                        {task.priority === "High" && (
+                          <>
+                            <LuChevronsUp className="text-xl text-[#ff5630]" />
+                            <span className="text-xs font-semibold text-[#ff5630]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                        {task.priority === "Medium" && (
+                          <>
+                            <LuChevronsUpDown className="text-xl text-[#2684ff]" />
+                            <span className="text-xs font-semibold text-[#2684ff]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                        {task.priority === "Low" && (
+                          <>
+                            <LuChevronsDown className="text-xl text-[#12c97d]" />
+                            <span className="text-xs font-semibold text-[#12c97d]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                      </p>
+                      {/* text */}
+                      <p className="text-sm px-3 text-start">{task.name}</p>
+                      {/* Comments & collaborations */}
+                      <div className="px-3 flex items-center justify-between pt-2">
+                        <div>
+                          <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
+                            <LuMessageCircle className="text-lg" />
+                            <span className="font-medium text-sm">0</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex items-center justify-end gap-1">
-                        <div className="flex items-center justify-center">
-                          <div className='h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase'>{userEmail.charAt(0)}</div>
-                          {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                        <div className="flex items-center justify-end gap-1">
+                          <div className="flex items-center justify-center">
+                            <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase">
+                              {userEmail.charAt(0)}
+                            </div>
+                            {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
                         <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p> */}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {/* Due */}
-                    <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
-                      {task.startingOn === task.due ? (<>
-                        <span>{format(new Date(task.due), 'MMM dd')}</span>
-                      </>) : (<>
-                        <span>{format(new Date(task.startingOn), 'MMM dd')}</span>
-                        <span>
-                          <LuArrowRight />
-                        </span>
-                        <span>{format(new Date(task.due), 'MMM dd')}</span>
-                      </>)}
-                    </p>
-                  </button>
-                ))}
+                      {/* Due */}
+                      <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
+                        {task.startingOn === task.due ? (
+                          <>
+                            <span>{format(new Date(task.due), "MMM dd")}</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>
+                              {format(new Date(task.startingOn), "MMM dd")}
+                            </span>
+                            <span>
+                              <LuArrowRight />
+                            </span>
+                            <span>{format(new Date(task.due), "MMM dd")}</span>
+                          </>
+                        )}
+                      </p>
+                    </button>
+                  ))}
                 {/* add new task */}
                 {createNewTask === board.id ? (
-                  <form onSubmit={handleCreateTask} className="w-full p-3 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent ">
+                  <form
+                    onSubmit={handleCreateTask}
+                    className="w-full p-3 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent "
+                  >
                     <textarea
                       placeholder="Task name"
                       onChange={handleNameChange}
@@ -723,52 +787,90 @@ function SingleProject() {
                     />
                     <div className="flex mt-1 w-full gap-2">
                       <div className="flex flex-col">
-                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">Due</p>
-                        
-                        <DatePicker
-                          size="medium"
-                          // style={{
-                          //   color: "#2e394a",
-                          //   width: "100%",
-                          // }}
-                          required
-                          onChange={onRangeChange}
-                          placeholder={"Due Date"}
-                          placement={placement}
-                          className="w-full text-sm text-text-color dark:text-red-500 border-none shadow-none bg-[#383838] hover:bg-[#383838] focus:bg-transparent"
-                        />
+                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
+                          Due
+                        </p>
+                        <ConfigProvider
+                          theme={{
+                            algorithm: isDarkMode
+                              ? darkAlgorithm
+                              : defaultAlgorithm,
+                            token: {
+                              colorPrimary: "#404040", // Makes the input shadow transparent
+                              colorErrorOutline: "transparent",
+                              colorBgContainer: "transparent",
+                            },
+                          }}
+                        >
+                          <DatePicker
+                            size="medium"
+                            // style={{
+                            //   color: "#2e394a",
+                            //   width: "100%",
+                            // }}
+                            required
+                            onChange={onRangeChange}
+                            placeholder={"Due Date"}
+                            placement={placement}
+                            className="w-full text-sm border text-dark-body dark:text-white"
+                          />
+                        </ConfigProvider>
                       </div>
                       <div className="flex flex-col min-w-[100px]">
-                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">Priority</p>
-                        <Select
-                          defaultValue="Medium"
-                          placeholder="Set priority"
-                          placement={placement}
-                          style={{
-                            width: "100%",
-                            color: "#2e394a",
+                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
+                          Priority
+                        </p>
+                        <ConfigProvider
+                          theme={{
+                            algorithm: isDarkMode
+                              ? darkAlgorithm
+                              : defaultAlgorithm,
+                            token: {
+                              colorPrimary: "#404040", // Makes the input shadow transparent
+                              colorErrorOutline: "transparent",
+                              colorBgContainer: "transparent",
+                            },
+                            components: {
+                              Select: {
+                                controlItemBgActive: "#343434", // Background color for selected item
+                                controlItemBgHover: "#40404040", // Optional: Background color on hover
+                              },
+                            },
                           }}
-                          required
-                          onChange={handlePriorityChange}
-                          options={[
-                            {
-                              value: "High", label: "High",
-                            },
-                            {
-                              value: "Medium", label: "Medium",
-                            },
-                            {
-                              value: "Low", label: "Low",
-                            },
-                          ]}
-                        />
+                        >
+                          <Select
+                            defaultValue="Medium"
+                            placeholder="Set priority"
+                            placement={placement}
+                            style={{
+                              width: "100%",
+                              color: "#2e394a",
+                            }}
+                            required
+                            onChange={handlePriorityChange}
+                            options={[
+                              {
+                                value: "High",
+                                label: "High",
+                              },
+                              {
+                                value: "Medium",
+                                label: "Medium",
+                              },
+                              {
+                                value: "Low",
+                                label: "Low",
+                              },
+                            ]}
+                          />
+                        </ConfigProvider>
                       </div>
                     </div>
                     <div className="select-none flex items-center justify-end gap-1 ">
                       <div
                         onClick={() => setCreateNewTask(false)}
                         title="Cancel"
-                        className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                        className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
                       >
                         <span className="text-sm tracking-tight">Cancel</span>
                       </div>
@@ -802,7 +904,7 @@ function SingleProject() {
               </div>
             ))}
           {addBoard ? (
-            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white dark:bg-[#2c2c2c94] border-[2px] border-dashed border-border-line-color/50 dark:border-[#454545] flex items-start justify-start p-2">
+            <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white dark:bg-[#2c2c2c94] border-[2px] border-dashed border-border-line-color/50 dark:border-[#2c2b2b] flex items-start justify-start p-2">
               <form
                 onSubmit={handleNewBoard}
                 className="w-full h-full flex flex-col justify-between"
@@ -820,7 +922,7 @@ function SingleProject() {
                   <div
                     onClick={() => setAddBoard(false)}
                     title="Cancel"
-                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color font-semibold px-3 rounded-md mt-3 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md mt-3 inline-flex items-center justify-center py-1 w-fit h-fit"
                   >
                     <span className="text-sm tracking-tight">Cancel</span>
                   </div>
@@ -847,9 +949,7 @@ function SingleProject() {
               className=" font-normal gap-1 text-text-color/70 dark:text-[#b8b8b8]/70 hover:text-text-color dark:hover:text-[#b8b8b8] px-2 py-[5px] flex items-center hover:bg-stone-100/80 dark:hover:bg-[#2c2c2c] rounded-lg w-full min-w-[280px] max-w-[280px]"
             >
               <LuPlus className="text-lg" />
-              <span className="text-sm tracking-tight font-medium">
-                New
-              </span>
+              <span className="text-sm tracking-tight font-medium">New</span>
             </button>
           )}
         </div>
