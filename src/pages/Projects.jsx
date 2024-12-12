@@ -329,7 +329,10 @@ function Projects() {
                 </div>
               ) : (
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
-                  {myProjects.map((project, index) => (
+                  {myProjects.map((project, index) => {
+                    const boardCount = projectBoards.filter((board) => board.belongsTo === project.projectId).length;
+
+                    return (
                     <div
                       key={index}
                       className="group z-10 relative w-full h-fit"
@@ -425,7 +428,8 @@ function Projects() {
                         </div>
                       </Link>
                     </div>
-                  ))}
+                  ),
+                  })}
                 </div>
               )}
             </>
