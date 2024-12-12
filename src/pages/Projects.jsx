@@ -406,7 +406,7 @@ function Projects() {
                           )}
                         </div>
                         <div className="flex items-center gap-3 py-3">
-                          <h1 className="text-sm">{allTasks.filter((task) => task.projectId === project._id).length}%</h1>
+                          <h1 className="text-sm">{allTasks.filter((task) => task.projectId === project._id)}%</h1>
                           <div
                             className="flex w-full h-1.5 bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
                             role="progressbar"
