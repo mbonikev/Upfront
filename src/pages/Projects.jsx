@@ -132,7 +132,7 @@ function Projects() {
         setProjectBoards(response.data);
       } catch (error) {
         if (error.response.status == 401) {
-          console.log('no project yet')
+          console.log("no project yet");
         }
       }
     };
@@ -145,7 +145,7 @@ function Projects() {
         setAllTasks(response.data);
       } catch (error) {
         if (error.response.status == 401) {
-          console.log('no project yet')
+          console.log("no project yet");
         }
       }
     };
@@ -163,8 +163,8 @@ function Projects() {
     };
     getCollaborations();
     getmyProjects();
-    getmyBoards()
-    getmyTasks()
+    getmyBoards();
+    getmyTasks();
     fetchAllWorkShops();
     getme();
   }, []);
@@ -406,7 +406,20 @@ function Projects() {
                           )}
                         </div>
                         <div className="flex items-center gap-3 py-3">
-                          <h1 className="text-sm">{allTasks.filter((task) => task.projectId === project._id).filter((task) => task.curentStatus === 'completed')}%</h1>
+                          <h1 className="text-sm">
+                            {Math.round(
+                              (allTasks.filter(
+                                (task) =>
+                                  task.projectId === project._id &&
+                                  task.curentStatus === "completed"
+                              ).length /
+                                allTasks.filter(
+                                  (task) => task.projectId === project._id
+                                ).length) *
+                                100
+                            )}
+                            %
+                          </h1>
                           <div
                             className="flex w-full h-1.5 bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
                             role="progressbar"
@@ -425,7 +438,12 @@ function Projects() {
                         <div className="w-full flex items-center justify-between">
                           <p className="w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             <TbStack className="text-xl" />
-                            {projectBoards.filter((board) => board.belongsTo === project._id).length} Boards
+                            {
+                              projectBoards.filter(
+                                (board) => board.belongsTo === project._id
+                              ).length
+                            }{" "}
+                            Boards
                           </p>
                           <p className="w-full flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             {project.progress === 100
