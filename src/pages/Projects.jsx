@@ -22,6 +22,7 @@ function Projects() {
   const [w3, setW3] = useState(null);
   const [myProjects, setMyProjects] = useState([]);
   const [projectBoards, setProjectBoards] = useState([]);
+  const [allTasks, setAllTasks] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const dummyProjectNumber = ["", "", ""];
   const [myCollaborations, setMyCollatorations] = useState([]);
@@ -140,7 +141,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getalltasks`, {
           params: { email: userEmail },
         });
-        setProjectBoards(response.data);
+        setAllTasks(response.data);
       } catch (error) {
         if (error.response.status == 401) {
           console.log('no project yet')
