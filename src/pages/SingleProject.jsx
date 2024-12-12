@@ -355,13 +355,13 @@ function SingleProject() {
   const handleCreateTask = async (e) => {
     setAddingTask(true);
     e.preventDefault();
-    console.log(
-      newTaskName,
-      newTaskDue,
-      newTaskPriority,
-      createNewTask,
-      getCurrentDate()
-    );
+    // console.log(
+    //   newTaskName,
+    //   newTaskDue,
+    //   newTaskPriority,
+    //   createNewTask,
+    //   getCurrentDate()
+    // );
     try {
       const response = await axios.post(`${apiUrl}/api/newtask`, {
         newTaskName,
