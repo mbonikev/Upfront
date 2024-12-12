@@ -44,7 +44,7 @@ import {
   LuUsers2,
 } from "react-icons/lu";
 import axios from "axios";
-import { IoChevronDown } from "react-icons/io5";
+import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
 import logo60 from "../assets/logo-60x60.png";
 import { GiConsoleController } from "react-icons/gi";
@@ -601,7 +601,7 @@ function SingleProject() {
         )}
         <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
           <div className="w-full h-fit flex items-start justify-start mb-1 gap-3">
-            <IoFolderOpen className="text-3xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
+            <LuHash className="text-3xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
             <div className="flex-1 flex flex-col items-start max-w-[1200px] justify-start gap-2 w-full h-fit">
               <textarea
                 ref={textareaRef2}
