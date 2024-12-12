@@ -237,7 +237,7 @@ function Projects() {
           </div>
         </div>
         {/* Projects section */}
-        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[21 00px] flex flex-col">
+        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[1500px] flex flex-col">
           <div className="w-full h-fit flex items-end justify-between">
             <p className="font-normal text-[13px] text-text-color/70 dark:text-[#b8b8b8]">
               <span className="text-text-color dark:text-[#b8b8b8] font-medium">
