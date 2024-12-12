@@ -313,7 +313,7 @@ function Projects() {
                   </button>
                 </div>
               ) : (
-                <div className="grid 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-2 pt-4 relative">
+                <div className="grid 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   {myProjects.map((project, index) => (
                     <div
                       key={index}
