@@ -133,7 +133,7 @@ function Projects() {
         setProjectBoards(response.data.MyBoards);
       } catch (error) {
         if (error.response.status == 401) {
-          handleLogout();
+          console.log('no project yet')
         }
       }
     };
