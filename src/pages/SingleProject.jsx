@@ -777,7 +777,7 @@ function SingleProject() {
                   >
                     <textarea
                       placeholder="Task name"
-                      onChange={handleNameChange}
+                      onChange={(e) => handleNameChange(e)}
                       rows="1"
                       ref={textareaRef3}
                       required
