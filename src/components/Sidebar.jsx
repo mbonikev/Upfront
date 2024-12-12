@@ -331,7 +331,7 @@ function Sidebar({
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}
                     >
-                        <LuCrown className="text-xl text-yellow-500" />
+                        <LuCrown className="text-xl text-text-color/50 dark:text-[#858585]" />
                         <h1 className="flex flex-col">
                             <span>Unlock More Workspaces</span>
                             <span className="text-[11px] dark:text-[#f1f1f1]/70 text-text-color/70 font-medium ">
