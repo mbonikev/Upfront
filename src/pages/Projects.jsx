@@ -53,11 +53,11 @@ function Projects() {
     if (progress <= 100 && progress > 75) {
       classes += " bg-lime-600 dark:bg-lime-600/70"; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
-      classes += " bg-teal-500"; // Teal for progress between 76 and 99
+      classes += " bg-teal-500 dark:bg-teal-500/70"; // Teal for progress between 76 and 99
     } else if (progress < 50 && progress > 25) {
-      classes += " bg-blue-400"; // Blue for progress between 51 and 75
+      classes += " bg-blue-400 dark:bg-blue-400/70"; // Blue for progress between 51 and 75
     } else if (progress < 50) {
-      classes += " bg-red-400"; // Cyan for progress between 26 and 50
+      classes += " bg-red-400 dark:bg-red-400/70"; // Cyan for progress between 26 and 50
     }
     return classes;
   };
