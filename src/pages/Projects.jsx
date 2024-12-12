@@ -21,6 +21,7 @@ function Projects() {
   const [w2, setW2] = useState(null);
   const [w3, setW3] = useState(null);
   const [myProjects, setMyProjects] = useState([]);
+  const [projectBoards, setProjectBoards] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const dummyProjectNumber = ["", "", ""];
   const [myCollaborations, setMyCollatorations] = useState([]);
@@ -123,6 +124,9 @@ function Projects() {
         }
       }
     };
+    const getmyBoards = async () => {
+      
+    }
     const getCollaborations = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getcollaborations`, {
