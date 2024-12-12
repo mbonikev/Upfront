@@ -430,7 +430,10 @@ function Projects() {
                           >
                             <div
                               className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(
-                                Math.round(
+                                33
+                              )}`}
+                              style={{
+                                width: `${Math.round(
                                   (allTasks.filter(
                                     (task) =>
                                       task.projectId === project._id &&
@@ -440,10 +443,7 @@ function Projects() {
                                       (task) => task.projectId === project._id
                                     ).length) *
                                     100
-                                )
-                              )}`}
-                              style={{
-                                width: `64%`,
+                                )}%`,
                               }}
                             ></div>
                           </div>
