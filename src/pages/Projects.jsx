@@ -244,9 +244,9 @@ function Projects() {
             <IoFolderOpen className="text-3xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
             <h1 className="text-3xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
               {w1}
-              <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-[#b8b8b8] dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
+              {/* <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-[#b8b8b8] dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
                 Free
-              </span>
+              </span> */}
             </h1>
           </div>
         </div>
@@ -267,7 +267,7 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           {fetchingProjects ? (
             <>
-              <div className="grid 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
+              <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                 {[...Array(3)].map((_, index) => (
                   <div
                     key={index}

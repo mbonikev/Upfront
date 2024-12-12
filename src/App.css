@@ -91,12 +91,12 @@ select {
   }
 }
 ::-webkit-scrollbar {
-  width: 13px;
-  height: 13px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #88888869;
-  border: 3px solid white;
+  background-color: #9292924b;
+  border: 3px solid transparent;
   border-radius: 30px;
   cursor: default;
 }
