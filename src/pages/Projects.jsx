@@ -114,7 +114,6 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, {
           params: { email: userEmail },
         });
-        console.log(response.data.projects)
         setMyProjects(response.data.projects);
         setFetchingProjects(false);
       } catch (error) {
@@ -129,7 +128,18 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getnumberofboards`, {
           params: { email: userEmail },
         });
-        console.log(response.data)
+        setProjectBoards(response.data);
+      } catch (error) {
+        if (error.response.status == 401) {
+          console.log('no project yet')
+        }
+      }
+    };
+    const getmyTasks = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/getalltasks`, {
+          params: { email: userEmail },
+        });
         setProjectBoards(response.data);
       } catch (error) {
         if (error.response.status == 401) {
