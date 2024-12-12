@@ -127,10 +127,10 @@ function Projects() {
     const getmyBoards = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getnumberofboards`, {
-          params: { projectId: "", email: userEmail },
+          params: { email: userEmail },
         });
-        // console.log(response.data.boardData)
-        setProjectBoards(response.data.boardData);
+        // console.log(response.data.MyBoards)
+        setProjectBoards(response.data.MyBoards);
       } catch (error) {
         if (error.response.status == 401) {
           handleLogout();
