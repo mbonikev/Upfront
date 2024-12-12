@@ -142,7 +142,6 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getalltasks`, {
           params: { email: userEmail },
         });
-        console.log(response.data);
         setAllTasks(response.data);
       } catch (error) {
         if (error.response.status == 401) {
