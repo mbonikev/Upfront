@@ -10,6 +10,7 @@ import { RiLoader5Fill } from "react-icons/ri";
 import { setArray } from "../utils/hashUtils";
 import AddNotes from "../components/AddNotes";
 import { IoIosAddCircle } from "react-icons/io";
+import { IoFolderOpen } from "react-icons/io5";
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -227,7 +228,7 @@ function Projects() {
         </div>
         <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           <div className="flex items-start justify-start gap-2 ">
-            <LuHash className="text-3xl mt-[3px] text-lime-600" />
+            <IoFolderOpen className="text-3xl mt-[3px] text-lime-600" />
             <h1 className="text-3xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
               {w1}
               <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-[#b8b8b8] dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
