@@ -337,7 +337,7 @@ function SingleProject() {
   const handleNameChange = (event) => {
     setNewTaskName(event.target.value);
     textareaRef3.current.style.height = "auto";
-    textareaRef3.current.style.height = `${e.target.scrollHeight}px`;
+    textareaRef3.current.style.height = `${event.target.scrollHeight}px`;
   };
   const onRangeChange = (date, dateString) => {
     setNewTaskDue(dateString);
@@ -777,7 +777,7 @@ function SingleProject() {
                   >
                     <textarea
                       placeholder="Task name"
-                      onChange={(e) => handleNameChange(e)}
+                      onChange={handleNameChange}
                       rows="1"
                       ref={textareaRef3}
                       required
