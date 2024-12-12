@@ -127,7 +127,7 @@ function Projects() {
     const getmyBoards = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getboards`, {
-          params: { email: userEmail },
+          params: { projectId: "", email: userEmail },
         });
         // console.log(response.data.boardData)
         setProjectBoards(response.data.boardData);
