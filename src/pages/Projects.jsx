@@ -129,7 +129,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getnumberofboards`, {
           params: { email: userEmail },
         });
-        // console.log(response.data)
+        console.log(response.data)
         setProjectBoards(response.data);
       } catch (error) {
         if (error.response.status == 401) {
@@ -412,7 +412,7 @@ function Projects() {
                         <div className="w-full flex items-center justify-between">
                           <p className="w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             <TbStack className="text-xl" />
-                            {} Boards
+                            {/* {projectBoards.find((board) => board.)} Boards */}
                           </p>
                           <p className="w-full flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             {project.progress === 100
