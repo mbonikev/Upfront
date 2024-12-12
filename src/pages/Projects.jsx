@@ -254,7 +254,7 @@ function Projects() {
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
           {fetchingProjects ? (
             <>
-              <div className="grid 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-2 pt-4 relative">
+              <div className="grid 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                 {[...Array(3)].map((_, index) => (
                   <div
                     key={index}
