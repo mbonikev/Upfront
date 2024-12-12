@@ -66,7 +66,7 @@ function Projects() {
     let classes =
       "flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500";
     if (progress <= 100 && progress > 75) {
-      classes += " bg-lime-600"; // Green for complete progress
+      classes += " bg-lime-600 dark:bg-lime-600/70"; // Green for complete progress
     } else if (progress < 75 && progress > 50) {
       classes += " bg-teal-500"; // Teal for progress between 76 and 99
     } else if (progress < 50 && progress > 25) {
@@ -430,7 +430,6 @@ function Projects() {
                           >
                             <div
                               className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(
-                                
                                 Math.round(
                                   (allTasks.filter(
                                     (task) =>
@@ -442,7 +441,6 @@ function Projects() {
                                     ).length) *
                                     100
                                 )
-
                               )}`}
                               style={{
                                 width: `${Math.round(
