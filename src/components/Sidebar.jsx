@@ -172,12 +172,12 @@ function Sidebar({
                             onClick={showPMenu}
                             className="dark:text-[#b8b8b8] text-text-color max-w-[150px] flex items-center justify-start gap-[2px] hover:bg-stone-200 dark:hover:bg-[#2c2c2c] transition p-1 rounded-lg"
                         >
-                            <span className="h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white uppercase">
+                            <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-base font-semibold text-white uppercase">
                                 {username.charAt(0)}
-                            </span>
-                            <span className="truncate font-medium text-sm tracking-tight pl-[6px]">
+                            </p>
+                            <p className="truncate font-medium text-sm tracking-tight pl-[6px]">
                                 {username}
-                            </span>
+                            </p>
                             <IoChevronDown className="min-w-[15px] " />
                         </button>
                         <div className="flex items-center justify-end gap-0">
@@ -196,12 +196,12 @@ function Sidebar({
                         {createNew ? (
                             <div className="flex items-center gap-2">
                                 <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                                <span className="line-clamp-1 ">Setting up your project... </span>
+                                <p className="line-clamp-1 ">Setting up your project... </p>
                             </div>
                         ) : (
                             <div className="flex items-center gap-2">
                                 <IoIosAddCircle className="text-2xl" />
-                                <span className="line-clamp-1 ">New Project</span>
+                                <p className="line-clamp-1 ">New Project</p>
                             </div>
                         )}
                     </button>
@@ -210,39 +210,39 @@ function Sidebar({
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-                        <span className="line-clamp-1">Search</span>
+                        <p className="line-clamp-1">Search</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-                        <span className="line-clamp-1">Dues</span>
+                        <p className="line-clamp-1">Dues</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <LuStar className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-                        <span className="line-clamp-1">Favorites</span>
+                        <p className="line-clamp-1">Favorites</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <LuCheckCircle className="text-text-color/50 dark:text-[#858585] text-lg px-[1px] min-w-fit" />
-                        <span className="line-clamp-1">Completed </span>
+                        <p className="line-clamp-1">Completed </p>
                     </Link>
                     {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuTrash2 className='text-lg px-[1px] min-w-fit' />
-                        <span className='line-clamp-1'>Trash </span>
+                        <p className='line-clamp-1'>Trash </p>
                     </Link> */}
-                    <span className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
+                    <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
                         <span>Workspaces</span>
                         <Link to={"/"} title="Add Worksspace">
                             <LuPlus className="text-lg cursor-pointer text-text-color dark:text-[#b8b8b8] hover:text-white" />
                         </Link>
-                    </span>
+                    </p>
                     {/* Workspace 1 */}
                     <form onSubmit={handleSubmit1} className="relative group ">
                         <Link
@@ -253,7 +253,7 @@ function Sidebar({
                                 }`}
                         >
                             <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-                            <span className="line-clamp-1">{w1}</span>
+                            <p className="line-clamp-1">{w1}</p>
                         </Link>
                         {saveOpt1 && (
                             <>
@@ -285,14 +285,14 @@ function Sidebar({
                                         className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                                     >
                                         <LuPencilLine className="text-lg  min-w-fit" />
-                                        <span className="line-clamp-1">Rename</span>
+                                        <p className="line-clamp-1">Rename</p>
                                     </div>
                                     <Link
                                         to={"/"}
                                         className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                                     >
                                         <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                                        <span className="line-clamp-1 text-red-500">Clear</span>
+                                        <p className="line-clamp-1 text-red-500">Clear</p>
                                     </Link>
                                 </div>
                             </>
@@ -307,12 +307,12 @@ function Sidebar({
                                         {authing ? (
                                             <>
                                                 <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                                                <span className="line-clamp-1">Saving...</span>
+                                                <p className="line-clamp-1">Saving...</p>
                                             </>
                                         ) : (
                                             <>
                                                 <LuCheck className="text-lg  min-w-fit" />
-                                                <span className="line-clamp-1">Save Changes</span>
+                                                <p className="line-clamp-1">Save Changes</p>
                                             </>
                                         )}
                                     </button>
@@ -321,7 +321,7 @@ function Sidebar({
                                         className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                                     >
                                         <LuX className="text-lg  min-w-fit text-red-500" />
-                                        <span className="line-clamp-1 text-red-500">Cancel</span>
+                                        <p className="line-clamp-1 text-red-500">Cancel</p>
                                     </div>
                                 </div>
                             </>
@@ -339,12 +339,12 @@ function Sidebar({
                             </span>
                         </h1>
                     </Link>
-                    <span className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
+                    <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
                         <span>Collaborations</span>
                         <span>
-                            <span className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] rounded-lg ">View all</span>
+                            <p className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] rounded-lg ">View all</p>
                         </span>
-                    </span>
+                    </p>
                     {retrieveArray.slice(0, 3).map((collab, index) => (
                         <Link
                             key={index}
@@ -353,13 +353,13 @@ function Sidebar({
                         >
                             <LuWorkflow className="text-xl text-main-color min-w-fit" />
                             <div className="flex flex-col justify-start items-start">
-                                <span className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</span>
-                                <span className="line-clamp-1 text-xs font-normal dark:text-[#f1f1f1]/70 text-text-color/70">{collab.user_email} added you</span>
+                                <p className="line-clamp-1 font-medium">{collab.name === '' ? 'Untitled' : collab.name}</p>
+                                <p className="line-clamp-1 text-xs font-normal dark:text-[#f1f1f1]/70 text-text-color/70">{collab.user_email} added you</p>
                             </div>
                         </Link>
                     ))}
                     {retrieveArray.length === 0 &&
-                        <span className="line-clamp-1 text-xs px-9 font-normal dark:text-[#f1f1f1]/70 text-text-color/70">No contributions yet</span>
+                        <p className="line-clamp-1 text-xs px-9 font-normal dark:text-[#f1f1f1]/70 text-text-color/70">No contributions yet</p>
                     }
                 </div>
             </div>
