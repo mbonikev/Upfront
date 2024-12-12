@@ -151,6 +151,7 @@ function Projects() {
     };
     getCollaborations();
     getmyProjects();
+    getmyBoards()
     fetchAllWorkShops();
     getme();
   }, []);
