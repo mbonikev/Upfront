@@ -125,8 +125,18 @@ function Projects() {
       }
     };
     const getmyBoards = async () => {
-      
-    }
+      try {
+        const response = await axios.get(`${apiUrl}/api/getboards`, {
+          params: { email: userEmail },
+        });
+        // console.log(response.data.boardData)
+        setProjectBoards(response.data.boardData);
+      } catch (error) {
+        if (error.response.status == 401) {
+          handleLogout();
+        }
+      }
+    };
     const getCollaborations = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getcollaborations`, {
