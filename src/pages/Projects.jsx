@@ -371,7 +371,7 @@ function Projects() {
                               </div>
                             ))}
                           {project.collaborations.length > 3 && (
-                            <div className="flex mr-2 items-center justify-center text-xs text-text-color/70 px-[2px] font-medium">
+                            <div className="flex ml-1 items-center justify-center text-sm text-text-color/70 dark:text-[#b8b8b8] px-[2px] font-medium">
                               +{project.collaborations.length - 3}
                             </div>
                           )}
