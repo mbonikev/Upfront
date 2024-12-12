@@ -46,21 +46,6 @@ function Projects() {
       input.style.width = `${width}px`;
     }
   }, [pageTitle]);
-  const projects = [
-    { id: "FN30498FHFF-032", progress: 26, progressClass: "w-[26%]" },
-    { id: "FDINFE08434-952", progress: 64, progressClass: "w-[64%]" },
-    { id: "0FINERW9F8H-349", progress: 34, progressClass: "w-[34%]" },
-    { id: "ODIENF9IH49-345", progress: 58, progressClass: "w-[58%]" },
-    { id: "PFONEFPIN04-3RE", progress: 19, progressClass: "w-[19%]" },
-    { id: "NMY944IGNRE-969", progress: 81, progressClass: "w-[81%]" },
-    { id: "FPEIR85342J-509-", progress: 100, progressClass: "w-[100%]" },
-    { id: "2OINFOI3F93-490", progress: 44, progressClass: "w-[44%]" },
-    { id: "OIFNEFOEIBN-113", progress: 8, progressClass: "w-[8%] " },
-    { id: "0PFJEIRFE03-222", progress: 69, progressClass: "w-[69%] " },
-  ];
-  const count100Percent = projects.filter(
-    (project) => project.progress === 100
-  ).length;
 
   const getProgressClasses = (progress) => {
     let classes =
