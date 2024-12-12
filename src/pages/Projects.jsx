@@ -430,7 +430,17 @@ function Projects() {
                           >
                             <div
                               className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(
-                                33
+                                Math.round(
+                                  (allTasks.filter(
+                                    (task) =>
+                                      task.projectId === project._id &&
+                                      task.curentStatus === "completed"
+                                  ).length /
+                                    allTasks.filter(
+                                      (task) => task.projectId === project._id
+                                    ).length) *
+                                    100
+                                )
                               )}`}
                               style={{
                                 width: `${Math.round(
