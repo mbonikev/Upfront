@@ -225,7 +225,7 @@ function Projects() {
             {/* <button title={username} className='h-[35px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-lg font-semibold text-white'>{username.charAt(0)}</button> */}
           </div>
         </div>
-        <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[1500px] mx-auto">
+        <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           <div className="flex items-start justify-start gap-2 ">
             <LuHash className="text-3xl mt-[3px] text-lime-600" />
             <h1 className="text-3xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
@@ -237,7 +237,7 @@ function Projects() {
           </div>
         </div>
         {/* Projects section */}
-        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[1500px] flex flex-col">
+        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col">
           <div className="w-full h-fit flex items-end justify-between">
             <p className="font-normal text-[13px] text-text-color/70 dark:text-[#b8b8b8]">
               <span className="text-text-color dark:text-[#b8b8b8] font-medium">
