@@ -61,7 +61,7 @@ function Projects() {
   const count100Percent = projects.filter(
     (project) => project.progress === 100
   ).length;
-  
+
   const getProgressClasses = (progress) => {
     let classes =
       "flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500";
@@ -429,7 +429,22 @@ function Projects() {
                             aria-valuemax="100"
                           >
                             <div
-                              className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(33)} w-[${33}%]`}
+                              className={`flex flex-col justify-center rounded-full overflow-hidden text-xs text-white text-center whitespace-nowrap transition duration-500 ${getProgressClasses(
+                                33
+                              )}`}
+                              style={{
+                                width: `${Math.round(
+                                  (allTasks.filter(
+                                    (task) =>
+                                      task.projectId === project._id &&
+                                      task.curentStatus === "completed"
+                                  ).length /
+                                    allTasks.filter(
+                                      (task) => task.projectId === project._id
+                                    ).length) *
+                                    100
+                                )}%`,
+                              }}
                             ></div>
                           </div>
                           <h1 className="text-sm">100%</h1>
