@@ -129,8 +129,8 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getnumberofboards`, {
           params: { email: userEmail },
         });
-        console.log(response.data.MyBoards)
-        setProjectBoards(response.data.MyBoards);
+        // console.log(response.data)
+        setProjectBoards(response.data);
       } catch (error) {
         if (error.response.status == 401) {
           console.log('no project yet')
