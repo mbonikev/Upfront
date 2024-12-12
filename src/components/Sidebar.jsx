@@ -209,28 +209,28 @@ function Sidebar({
                         to={"/d"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuSearch className="dark:opacity-60 text-xl  min-w-fit" />
+                        <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
                         <p className="line-clamp-1">Search</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuTimerReset className="dark:opacity-60 text-xl  min-w-fit" />
+                        <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
                         <p className="line-clamp-1">Dues</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuStar className="dark:opacity-60 text-xl  min-w-fit" />
+                        <LuStar className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
                         <p className="line-clamp-1">Favorites</p>
                     </Link>
                     <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuCheckCircle className="dark:opacity-60 text-lg px-[1px] min-w-fit" />
+                        <LuCheckCircle className="text-text-color/50 dark:text-[#858585] text-lg px-[1px] min-w-fit" />
                         <p className="line-clamp-1">Completed </p>
                     </Link>
                     {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
