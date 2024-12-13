@@ -98,7 +98,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                         {searchingUser &&
                             <div className='absolute top-[110%] left-0 bg-white dark:bg-[#383838] w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 dark:ring-[#373737] flex items-start justify-start flex-col p-2 shadow-lg dark:shadow-xl'>
                                 {filteredUsers.map((user, index) => (
-                                    <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color dark:text-white   text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
+                                    <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color dark:text-white   text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 dark:hover:bg-[#494949] rounded-lg w-full cursor-pointer'>
                                         <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                             {user.email.charAt(0)}
                                         </p>
