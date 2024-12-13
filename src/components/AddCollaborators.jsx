@@ -123,7 +123,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                             <p className='truncate max-w-[160px]'>{collab}</p>
                         </div>
                         {collab === userEmail ?
-                            <span className='bg-stone-100 text-text-color/70 dark:text-[#b8b8b8] text-xs py-1 px-2 rounded-md'>Owner</span>
+                            <span className='bg-stone-100 dark:bg-[#383838] text-text-color/70 dark:text-[#b8b8b8] text-xs py-1 px-2 rounded-md'>Owner</span>
                             :
                             <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 dark:text-[#b8b8b8] hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
                                 {authingDelete === collab ?
