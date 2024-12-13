@@ -410,6 +410,11 @@ function SingleProject() {
   const handleCancel = () => {
     setMoreOpt1("");
   };
+
+  // handle print
+  const handlePrint = () => {
+    window.print()
+  }
   const linkStyle =
     "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
   return (
