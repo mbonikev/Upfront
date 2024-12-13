@@ -93,7 +93,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                         {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />) : (<LuAtSign className='text-xl' />)}
                     </div>
                     <div className='relative'>
-                        <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color dark:text-white   gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
+                        <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color dark:text-white gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 dark:bg-[#383838] line-clamp-1 ' />
                         {/* users */}
                         {searchingUser &&
                             <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2 shadow-lg'>
