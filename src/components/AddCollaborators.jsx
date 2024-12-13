@@ -109,7 +109,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                         }
                     </div>
                 </div>
-                {errorEmail !== '' && <p className='text-xs text-red-600 w-full text-right pt-1 px-2'>{errorEmail}</p>}
+                {errorEmail !== '' && <p className='text-xs text-red-600 dark:text-red-400 w-full text-right pt-1 px-2'>{errorEmail}</p>}
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#404040]'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
