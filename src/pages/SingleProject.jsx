@@ -484,7 +484,7 @@ function SingleProject() {
               <button
                 onClick={handleTrashProject}
                 title="Trash"
-                className="bg-stone-100 hover:bg-red-500 hover:text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 text-text-color/70 rounded-lg inline-flex items-center justify-center"
+                className="bg-red-500 text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 shadow-md rounded-lg inline-flex items-center justify-center"
               >
                 {deleting ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
