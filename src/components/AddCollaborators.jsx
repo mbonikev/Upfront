@@ -82,8 +82,8 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                 <div className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight line-clamp-1 '>
                     <LuUsers2 className='text-xl text-text-color/50 dark:text-[#b8b8b8] min-w-fit' />
                     <div className='w-full h-fit flex-col'>
-                        <p className='line-clamp-1 text-sm font-medium text-text-color'>Add Collaborators</p>
-                        <p className='line-clamp-1 text-text-color/70 text-xs'>{collaborations.length} have access</p>
+                        <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white'>Add Collaborators</p>
+                        <p className='line-clamp-1 text-text-color/70 dark:text-[#b8b8b8] text-xs'>{collaborations.length} have access</p>
                     </div>
                 </div>
             </div>
@@ -93,12 +93,12 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                         {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />) : (<LuAtSign className='text-xl' />)}
                     </div>
                     <div className='relative'>
-                        <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
+                        <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color dark:text-white gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 line-clamp-1 ' />
                         {/* users */}
                         {searchingUser &&
                             <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2 shadow-lg'>
                                 {filteredUsers.map((user, index) => (
-                                    <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
+                                    <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color dark:text-white text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
                                         <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                             {user.email.charAt(0)}
                                         </p>
@@ -113,9 +113,9 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
-                <p className='line-clamp-1 text-sm font-medium text-text-color pt-1 pb-2'>People with access</p>
+                <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white pt-1 pb-2'>People with access</p>
                 {collaborations.map((collab, index) => (
-                    <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-1 py-1 font-normal text-text-color text-sm tracking-tight rounded-md '>
+                    <div key={index} className='min-h-[34px] flex items-center justify-between gap-2 px-1 py-1 font-normal text-text-color dark:text-white text-sm tracking-tight rounded-md '>
                         <div className=' flex items-center justify-start gap-2'>
                             <p className="h-[26px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                                 {collab.charAt(0)}
@@ -123,9 +123,9 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                             <p className='truncate max-w-[160px]'>{collab}</p>
                         </div>
                         {collab === userEmail ?
-                            <span className='bg-stone-100 text-text-color/70 text-xs py-1 px-2 rounded-md'>Owner</span>
+                            <span className='bg-stone-100 text-text-color/70 dark:text-[#b8b8b8] text-xs py-1 px-2 rounded-md'>Owner</span>
                             :
-                            <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
+                            <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 dark:text-[#b8b8b8] hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
                                 {authingDelete === collab ?
                                     <RiLoader5Fill className='animate-spinLoader text-lg text-red-500' />
                                     :
@@ -137,7 +137,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             </div>
             <div className='w-full h-[1px] bg-border-line-color/70'></div>
             <div className='p-2 flex flex-col w-full'>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
+                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-white text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuInfo className='text-xl text-text-color/50 dark:text-[#b8b8b8]  min-w-fit' />
                     <p className='line-clamp-1'>Access Permissions</p>
                 </Link>
