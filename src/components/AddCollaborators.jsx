@@ -96,7 +96,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                         <input type='text' onChange={handleSearchUser} value={searchValue} placeholder={`user's email address`} className='min-h-[34px] w-full flex items-center text-text-color dark:text-white gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md bg-stone-200/50 dark:bg-[#383838] dark:placeholder:text-[#8d8d8d] line-clamp-1 ' />
                         {/* users */}
                         {searchingUser &&
-                            <div className='absolute top-[110%] left-0 bg-white w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 flex items-start justify-start flex-col p-2 shadow-lg'>
+                            <div className='absolute top-[110%] left-0 bg-white dark:bg-[#383838] w-full h-fit max-h-[170px] overflow-y-auto rounded-md ring-1 ring-border-line-color/70 dark:ring-[#565656] flex items-start justify-start flex-col p-2 shadow-lg'>
                                 {filteredUsers.map((user, index) => (
                                     <div key={index} onClick={() => handleInvite(user.email)} className='font-normal text-text-color dark:text-white   text-sm tracking-tight py-[7px] px-2 flex items-center justify-start gap-2 hover:bg-stone-100 rounded-lg w-full cursor-pointer'>
                                         <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color/90 transition flex items-center justify-center text-sm font-semibold text-white uppercase">
