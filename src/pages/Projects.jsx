@@ -402,7 +402,7 @@ function Projects() {
                                   (task) => task.projectId === project._id
                                 ).length) *
                                 100
-                            )}
+                            ) || 0}
                             %
                           </h1>
                           <div
@@ -451,7 +451,14 @@ function Projects() {
                                 (board) => board.belongsTo === project._id
                               ).length
                             }{" "}
-                            Boards
+                            {projectBoards.filter(
+                              (board) => board.belongsTo === project._id
+                            ).length > 1 ||
+                            projectBoards.filter(
+                              (board) => board.belongsTo === project._id
+                            ).length === 0
+                              ? "Boards"
+                              : "Board"}
                           </p>
                           <p className="w-full flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             {project.progress === 100
