@@ -83,7 +83,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                     <LuUsers2 className='text-xl text-text-color/50 dark:text-[#b8b8b8] min-w-fit' />
                     <div className='w-full h-fit flex-col'>
                         <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white  '>Add Collaborators</p>
-                        <p className='line-clamp-1 text-text-color/70 dark:text-[#b8b8b8] text-xs'>{collaborations.length} have access</p>
+                        <p className='line-clamp-1 text-text-color/70 dark:text-[#b8b8b8] text-xs'>{collaborations.length} has access</p>
                     </div>
                 </div>
             </div>
