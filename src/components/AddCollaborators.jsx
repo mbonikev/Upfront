@@ -77,7 +77,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
         }
     }
     return (
-        <div className='w-full flex flex-col justify-start items-start bg-white'>
+        <div className='w-full flex flex-col justify-start items-start bg-white dark:bg-[#242424]'>
             <div className='pt-2 px-2 w-full'>
                 <div className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight line-clamp-1 '>
                     <LuUsers2 className='text-xl text-text-color/50 min-w-fit' />
