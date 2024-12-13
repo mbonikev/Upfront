@@ -472,10 +472,10 @@ function SingleProject() {
               it to trash. Collaborations will be stashed for possible future
               restoration
             </p>
-            <p className="text-sm text-text-color/70 px-2 pb-4">
+            <p className="text-sm text-opacity-70 px-2 pb-4">
               {" "}
               Some fields, like{" "}
-              <span className="font-medium text-text-color">
+              <span className="font-medium ">
                 'createdAt'
               </span>{" "}
               will reset during restore.
