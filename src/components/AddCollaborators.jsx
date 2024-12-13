@@ -111,7 +111,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                 </div>
                 {errorEmail !== '' && <p className='text-xs text-red-600 w-full text-right pt-1 px-2'>{errorEmail}</p>}
             </div>
-            <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#383838]'></div>
+            <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#404040]'></div>
             <div className='p-2 flex flex-col w-full min-h-[140px]'>
                 <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white   pt-1 pb-2'>People with access</p>
                 {collaborations.map((collab, index) => (
@@ -135,7 +135,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                     </div>
                 ))}
             </div>
-            <div className='w-full h-[1px] bg-border-line-color/70'></div>
+            <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#404040]'></div>
             <div className='p-2 flex flex-col w-full'>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-white   text-sm tracking-tight rounded-md hover:bg-stone-200/50 line-clamp-1 '>
                     <LuInfo className='text-xl text-text-color/50 dark:text-[#b8b8b8]  min-w-fit' />
