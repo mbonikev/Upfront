@@ -425,13 +425,13 @@ function SingleProject() {
 
   const customAnimation = keyframes`
     from {
-      opacity: 0;
-      // transform: translateY(0px);
+      // opacity: 0;
+      transform: translateY(0px);
     }
   
     to {
-      opacity: 1;
-      // transform: translateY(0);
+      // opacity: 1;
+      transform: translateY(0);
     }
   `;
 
