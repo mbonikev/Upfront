@@ -469,7 +469,7 @@ function SingleProject() {
             <h1 className="text-sm font-semibold px-2">Create with AI</h1>
             <button
               onClick={handleHideAi}
-              className="group overflow-clip w-[32px] h-[32px] flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition hover:bg-stone-100 dark:hover:bg-[#242424] "
+              className="group overflow-clip w-[32px] h-[32px] flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition hover:bg-stone-100 dark:hover:bg-[#303030] "
             >
               <LuX className="text-lg min-w-fit transition-all duration-200" />
             </button>
