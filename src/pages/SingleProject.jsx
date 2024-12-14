@@ -436,6 +436,12 @@ function SingleProject() {
           showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
+      <div
+        onClick={() => setShowAi(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          showAi ? "fixed cursor-default" : "hidden"
+        }`}
+      ></div>
 
       {/* profile menu overlay */}
       <div
