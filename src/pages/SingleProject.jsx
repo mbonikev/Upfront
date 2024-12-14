@@ -458,14 +458,14 @@ function SingleProject() {
       {/* Ai Modal */}
       {showAi && (
         <div
-          className={`w-[330px] h-[400px] max-h-[400px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 text-dark-body dark:text-white overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
+          className={`w-[330px] h-[400px] max-h-[400px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
             ${
               animateShowAi
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-full"
             } `}
         >
-          <div className="flex items-center justify-between border-b p-2">
+          <div className="flex items-center justify-between border-b p-2 text-dark-body dark:text-white">
             <h1 className="text-sm font-semibold px-2">Create with AI</h1>
             <button
               onClick={handleHideAi}
