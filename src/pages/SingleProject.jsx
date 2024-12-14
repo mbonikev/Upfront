@@ -568,11 +568,19 @@ function SingleProject() {
                 </label>
               ))}
               <label
-                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-10 "
+                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
                `}
               >
                 <div className="flex items-center justify-start gap-1 text-sm">
-                  <h1>jhh </h1>
+                  <h1>Tasks Only </h1>
+                </div>
+              </label>
+              <label
+                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
+               `}
+              >
+                <div className="flex items-center justify-start gap-1 text-sm">
+                  <h1>Boards Only </h1>
                 </div>
               </label>
             </div>
