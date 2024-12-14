@@ -477,7 +477,7 @@ function SingleProject() {
           <div className="flex-1 px-2 py-4 flex flex-col gap-2">
             <h1 className="text-sm font-normal">Project description</h1>
             <textarea
-              className="w-full bg-stone-100 dark:bg-[#383838] h-[130px] resize-none rounded-xl leading-5 p-3 text-sm placeholder:text-dark-body/40 dark:text-white/30"
+              className="w-full bg-stone-100 dark:bg-[#353535] h-[130px] resize-none rounded-xl leading-5 p-3 text-sm placeholder:text-dark-body/40 dark:placeholder:text-white/40 font-medium"
               placeholder="e.g. Design a landing page for my coffee shop "
             ></textarea>
           </div>
