@@ -60,7 +60,7 @@ import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from "date-fns";
-import Reveal from "react-awesome-reveal";
+import Reveal, { Slide } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
 function SingleProject() {
@@ -425,12 +425,12 @@ function SingleProject() {
 
   const customAnimation = keyframes`
     from {
-      // opacity: 0;
+      opacity: 0;
       transform: translateY(0px);
     }
   
     to {
-      // opacity: 1;
+      opacity: 1;
       transform: translateY(0);
     }
   `;
@@ -456,9 +456,9 @@ function SingleProject() {
         }`}
       ></div>
       
-        <Reveal keyframes={customAnimation} triggerOnce>
-          <div className="w-[290px] h-fit max-h-[300px] p-2 fixed bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
-        </Reveal>
+        <Slide triggerOnce>
+          <div className="w-[290px] h-fit max-h-[300px] p-2 bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
+        </Slide>
 
 
       {/* profile menu overlay */}
