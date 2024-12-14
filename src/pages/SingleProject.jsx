@@ -458,7 +458,7 @@ function SingleProject() {
       {/* Ai Modal */}
       {showAi && (
         <div
-          className={`w-[350px] h-[400px] max-h-[400px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
+          className={`w-[330px] h-[400px] max-h-[400px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
             ${
               animateShowAi
                 ? "opacity-100 translate-y-0"
@@ -476,7 +476,7 @@ function SingleProject() {
           </div>
           <div className="flex-1 px-2 py-4 flex flex-col gap-2">
             <h1 className="text-sm font-normal">Project description</h1>
-            <textarea className="w-full bg-stone-100 h-[130px] resize-none rounded-xl p-3 text-sm" placeholder="e.g. Design a landing page for my coffee shop "></textarea>
+            <textarea className="w-full bg-stone-100 h-[130px] resize-none rounded-xl leading-5 p-3 text-sm" placeholder="e.g. Design a landing page for my coffee shop "></textarea>
           </div>
         </div>
       )}
