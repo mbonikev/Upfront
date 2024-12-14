@@ -103,7 +103,7 @@ function SingleProject() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [moreOpt1, setMoreOpt1] = useState("");
   const [showAi, setShowAi] = useState(false);
-  const [animateShowAi, setAnimateShowAi] = useState(false);
+  const [animateShowAi, setAnimateShowAi] = useState(true);
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -420,12 +420,15 @@ function SingleProject() {
   };
   const linkStyle =
     "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
-  
-    const handleShowAi = () => {
 
-    }
+  const handleShowAi = () => {
+    animateShowAi(true);
+    setTimeout(() => {
+      setAnimateShowAi(false);
+    }, 1000);
+  };
 
-    return (
+  return (
     <>
       {/* create with AI button */}
       <button
