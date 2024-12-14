@@ -420,7 +420,10 @@ function SingleProject() {
   return (
     <>
       {/* create with AI button */}
-      <button className="flex items-center justify-center gap-1 text-sm font-medium px-5 py-2.5"></button>
+      <button className="flex items-center justify-center gap-1 text-sm font-medium px-5 py-2.5 rounded-2xl bg-red-400 text-dark-body">
+        
+        Create with AI
+      </button>
 
       {/* profile menu overlay */}
       <div
