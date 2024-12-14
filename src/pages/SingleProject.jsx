@@ -439,7 +439,7 @@ function SingleProject() {
     <>
       {/* create with AI button */}
       <button
-        onClick={() => setShowAi(true)}
+        onClick={handleShowAi}
         className="group overflow-clip w-[40px] h-[40px] hover:w-[150px] fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 bg-white dark:bg-[#242424] text-dark-body dark:text-white ring-1 ring-stone-200 dark:ring-stone-300/10 active:bg-stone-100 dark:active:bg-[#313131] active:scale-[.99] shadow-lg"
       >
         <LuSparkles className="text-lg min-w-fit ml-[4px] group-hover:ml-0 transition-all duration-200" />
@@ -450,7 +450,7 @@ function SingleProject() {
 
       {/* Ai modal */}
       <div
-        onClick={handleShowAi}
+        onClick={handleHideAi}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
           showAi ? "fixed cursor-default" : "hidden"
         }`}
