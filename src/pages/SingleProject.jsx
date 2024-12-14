@@ -421,9 +421,9 @@ function SingleProject() {
   return (
     <>
       {/* create with AI button */}
-      <button className="group overflow-clip w-[40px] h-[40px] hover:w-[100px] fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-200 hover:scale-105 bg-white text-dark-body/50 hover:text-dark-body ring-1 ring-stone-200 shadow-lg">
+      <button className="group overflow-clip w-[40px] h-[40px] hover:w-[100px] fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-200 hover:scale-105 bg-white text-dark-body ring-1 ring-stone-200 shadow-lg">
         <LuSparkles className="text-lg min-w-fit ml-[4px] group-hover:ml-0" />
-        <span className="whitespace-nowrap transition-all w-0 bg-red-300 group-hover:w-[190px] overflow-hidden">Create with AI</span>
+        <span className="whitespace-nowrap transition-all w-0 group-hover:w-[190px] overflow-hidden">Create with AI</span>
       </button>
 
       {/* profile menu overlay */}
