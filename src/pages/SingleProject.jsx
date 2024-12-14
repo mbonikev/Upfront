@@ -451,7 +451,7 @@ function SingleProject() {
       {/* Ai modal */}
       <div
         onClick={handleHideAi}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+        className={` top-0 left-0 w-full h-full z-30 bg-red-300 ${
           showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
