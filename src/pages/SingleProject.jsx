@@ -425,7 +425,7 @@ function SingleProject() {
     setShowAi(true);
     setTimeout(() => {
       setAnimateShowAi(true);
-    }, 200);
+    }, 100);
   };
   const handleHideAi = () => {
     setAnimateShowAi(false);
