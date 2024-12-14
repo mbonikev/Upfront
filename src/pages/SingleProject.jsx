@@ -431,9 +431,9 @@ function SingleProject() {
 
       {/* Ai modal */}
       <div
-        // onClick={() => setProfileMenu(false)}
+        onClick={() => setShowAi(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
-          profileMenu ? "fixed cursor-default" : "hidden"
+          showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
 
