@@ -61,6 +61,8 @@ const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from "date-fns";
 import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -420,6 +422,19 @@ function SingleProject() {
   };
   const linkStyle =
     "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
+
+  const customAnimation = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(-200px, -100px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  `;
+
   return (
     <>
       {/* create with AI button */}
@@ -441,7 +456,7 @@ function SingleProject() {
         }`}
       ></div>
       {showAi && (
-        <Reveal>
+        <Reveal keyframes={customAnimation} triggerOnce>
           <div className="w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
         </Reveal>
       )}
