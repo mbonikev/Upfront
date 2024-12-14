@@ -429,7 +429,12 @@ function SingleProject() {
       </button>
 
       {/* Ai modal */}
-      
+      <div
+        onClick={() => setProfileMenu(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          profileMenu ? "fixed cursor-default" : "hidden"
+        }`}
+      ></div>
 
       {/* profile menu overlay */}
       <div
