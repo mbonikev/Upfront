@@ -464,7 +464,8 @@ function SingleProject() {
                 : "opacity-0 translate-y-full"
             } `}
         >
-          
+          <div className=""></div>
+          <div className="flex-1"></div>
         </div>
       )}
 
