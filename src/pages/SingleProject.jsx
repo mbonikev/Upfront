@@ -422,10 +422,10 @@ function SingleProject() {
     "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
 
   const handleShowAi = () => {
+    setShowAi(true);
     animateShowAi(true);
     setTimeout(() => {
       setAnimateShowAi(false);
-      setsh
     }, 1000);
   };
 
@@ -450,7 +450,9 @@ function SingleProject() {
         }`}
       ></div>
       {showAi && (
-        <div className="w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
+        <div
+          className={`w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] `}
+        ></div>
       )}
 
       {/* profile menu overlay */}
