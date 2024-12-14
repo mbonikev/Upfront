@@ -450,7 +450,7 @@ function SingleProject() {
       {/* Ai overlay */}
       <div
         onClick={handleHideAi}
-        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+        className={` top-0 left-0 w-full h-full z-30 bg-[#0000000b] ${
           showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
