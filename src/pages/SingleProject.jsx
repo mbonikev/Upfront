@@ -426,7 +426,7 @@ function SingleProject() {
   const customAnimation = keyframes`
     from {
       opacity: 0;
-      transform: translateY(100px);
+      transform: translateY(0px);
     }
   
     to {
@@ -455,11 +455,11 @@ function SingleProject() {
           showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
-      {showAi && (
+      
         <Reveal keyframes={customAnimation} triggerOnce>
           <div className="w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
         </Reveal>
-      )}
+
 
       {/* profile menu overlay */}
       <div
