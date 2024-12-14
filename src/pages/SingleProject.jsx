@@ -421,7 +421,7 @@ function SingleProject() {
   return (
     <>
       {/* create with AI button */}
-      <button className="fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl bg-white text-dark-body ring-1 ring-stone-200 shadow-lg">
+      <button className="fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl bg-white text-dark-body/50 hover:text-dark-body ring-1 ring-stone-200 shadow-lg">
         <LuSparkles className="text-lg " />
         Create with AI
       </button>
