@@ -428,6 +428,12 @@ function SingleProject() {
       setAnimateShowAi(false);
     }, 1000);
   };
+  const handleHideAi = () => {
+    animateShowAi(false);
+    setTimeout(() => {
+      setShowAi(true);
+    }, 1000);
+  };
 
   return (
     <>
