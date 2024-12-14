@@ -429,7 +429,7 @@ function SingleProject() {
     }, 1000);
   };
   const handleHideAi = () => {
-    animateShowAi(false);
+    // animateShowAi(false);
     setTimeout(() => {
       setShowAi(false);
     }, 1000);
@@ -449,12 +449,12 @@ function SingleProject() {
       </button>
 
       {/* Ai overlay */}
-      <div
-        onClick={handleHideAi}
-        className={` top-0 left-0 w-full h-full z-30 bg-red-300 hover:bg-green-300 ${
-          showAi ? "fixed cursor-default" : "hidden"
-        }`}
-      ></div>
+      {showAi && (
+        <div
+          onClick={handleHideAi}
+          className={` top-0 left-0 w-full h-full z-30 bg-red-300 hover:bg-green-300 fixed cursor-default`}
+        ></div>
+      )}
       {/* Ai Modal */}
       {showAi && (
         <div
