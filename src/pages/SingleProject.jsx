@@ -429,10 +429,10 @@ function SingleProject() {
     }, 400);
   };
   const handleHideAi = () => {
-    animateShowAi(false);
-    // setTimeout(() => {
+    setAnimateShowAi(false);
+    setTimeout(() => {
       setShowAi(false);
-    // }, 400);
+    }, 400);
   };
 
   return (
