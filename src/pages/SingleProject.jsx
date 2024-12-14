@@ -469,7 +469,7 @@ function SingleProject() {
             <h1 className="text-sm font-semibold">Create with AI</h1>
             <button
         onClick={handleShowAi}
-        className="group overflow-clip w-[32px] h-[32px] hover:w-[150px] z-10 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 bg-white dark:bg-[#242424] text-dark-body dark:text-white ring-1 ring-stone-200 dark:ring-stone-300/10 active:bg-stone-100 dark:active:bg-[#313131] active:scale-[.99] shadow-lg"
+        className="group overflow-clip w-[32px] h-[32px] hover:w-[150px] z-10 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 "
       >
         <LuX className="text-lg min-w-fit transition-all duration-200" />
       </button>
