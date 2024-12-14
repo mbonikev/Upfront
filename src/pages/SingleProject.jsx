@@ -60,6 +60,7 @@ import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from "date-fns";
+import Reveal from "react-awesome-reveal";
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -440,8 +441,9 @@ function SingleProject() {
         }`}
       ></div>
       {showAi && (
-        
-        <div className="w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
+        <Reveal>
+          <div className="w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] "></div>
+        </Reveal>
       )}
 
       {/* profile menu overlay */}
