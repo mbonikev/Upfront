@@ -431,7 +431,7 @@ function SingleProject() {
   const handleHideAi = () => {
     animateShowAi(false);
     setTimeout(() => {
-      setShowAi(true);
+      setShowAi(false);
     }, 1000);
   };
 
@@ -458,7 +458,7 @@ function SingleProject() {
       {showAi && (
         <div
           className={`w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424]
-            ${animateShowAi ? 'opacity-100' : 'opacity-0'} `}
+            ${animateShowAi ? "opacity-100" : "opacity-0"} `}
         ></div>
       )}
 
