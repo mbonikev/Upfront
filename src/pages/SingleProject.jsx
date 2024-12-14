@@ -28,6 +28,7 @@ import {
   LuClipboard,
   LuFlag,
   LuHash,
+  LuLoader2,
   LuMessageCircle,
   LuMoreHorizontal,
   LuPencilLine,
@@ -61,6 +62,7 @@ import { Input } from "antd";
 const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from "date-fns";
+import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -109,6 +111,41 @@ function SingleProject() {
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
+  const [generateType, setGenerateType] = useState("Boards & Tasks");
+  const [projectDescription, setProjectDescription] = useState("");
+  const [Aiboards, setAiBoards] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const generateBoards = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/generateBoards",
+        {
+          projectDescription,
+          userEmail,
+          projectId: id,
+        }
+      );
+      console.log(response.data);
+
+      setAiBoards(response.data.boards);
+
+      setBoards((prevBoards) => [
+        ...prevBoards,
+        ...response.data.boards.map((board, index) => ({
+          id: prevBoards.length + index,
+          name: board.name.replace(/\*\*/g, "").trim(),
+        })),
+      ]);
+    } catch (error) {
+      console.error("Error generating boards:", error);
+      alert("Failed to generate boards. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -213,7 +250,7 @@ function SingleProject() {
         const response = await axios.get(`${apiUrl}/api/getboards`, {
           params: { projectId: id, email: userEmail },
         });
-        // console.log(response.data)
+        console.log(response.data);
         setBoards(response.data);
       } catch (error) {
         console.log(error);
@@ -435,12 +472,24 @@ function SingleProject() {
     }, 200);
   };
 
+  const handleChooseGenerateType = (e) => {
+    const value = e.target.value;
+
+    setGenerateType(value);
+  };
+
+  useEffect(() => {
+    console.log(generateType);
+  }, [generateType]);
+
+  const PromptTypes = ["Boards & Tasks"];
+
   return (
     <>
       {/* create with AI button */}
       <button
         onClick={handleShowAi}
-        className="group overflow-clip w-[40px] h-[40px] hover:w-[150px] fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 bg-white dark:bg-[#242424] text-dark-body dark:text-white ring-1 ring-stone-200 dark:ring-stone-300/10 active:bg-stone-100 dark:active:bg-[#313131] active:scale-[.99] shadow-lg"
+        className="group overflow-clip w-[40px] h-[40px] hover:w-[150px] fixed z-10 bottom-5 right-5 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 bg-white dark:bg-[#242424] text-text-color dark:text-white ring-1 ring-stone-200 dark:ring-stone-300/10 active:bg-stone-100 dark:active:bg-[#313131] active:scale-[.99] shadow-lg"
       >
         <LuSparkles className="text-lg min-w-fit ml-[4px] group-hover:ml-0 transition-all duration-200" />
         <span className="whitespace-nowrap transition-all w-0 group-hover:w-[95px] overflow-hidden">
@@ -458,14 +507,14 @@ function SingleProject() {
       {/* Ai Modal */}
       {showAi && (
         <div
-          className={`w-[330px] h-[400px] max-h-[400px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
+          className={`w-[330px] h-fit max-h-[370px] fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/30 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300 flex flex-col
             ${
               animateShowAi
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-full"
             } `}
         >
-          <div className="flex items-center justify-between border-b dark:border-stone-500/30 p-2 text-dark-body dark:text-white">
+          <div className="flex items-center justify-between border-b dark:border-stone-600/30 p-2 text-text-color dark:text-white">
             <h1 className="text-sm font-semibold px-1">Create with AI</h1>
             <button
               onClick={handleHideAi}
@@ -474,13 +523,77 @@ function SingleProject() {
               <LuX className="text-lg min-w-fit transition-all duration-200" />
             </button>
           </div>
-          <div className="flex-1 px-3 py-4 flex flex-col gap-2">
-            <h1 className="text-sm font-normal text-dark-body dark:text-white">Project description</h1>
+          <form
+            onSubmit={generateBoards}
+            className="flex-1 px-3 py-4 flex flex-col gap-2"
+          >
+            {/* <h1 className="text-sm font-normal text-text-color dark:text-white">Project description</h1> */}
             <textarea
-              className="w-full bg-stone-100 dark:bg-[#353535] h-[130px] resize-none rounded-xl leading-5 p-3 text-sm placeholder:text-dark-body/40 dark:placeholder:text-white/40 font-medium"
-              placeholder="e.g. Design a landing page for my coffee shop "
+              autoFocus={true}
+              className="w-full bg-stone-200/40 dark:bg-[#353535] h-[120px] resize-none rounded-xl leading-5 p-3 text-sm placeholder:text-text-color/50 dark:placeholder:text-white/40 font-medium text-text-color dark:text-white"
+              value={projectDescription}
+              onChange={(e) => setProjectDescription(e.target.value)}
+              placeholder="Describe your project..."
+              required={true}
             ></textarea>
-          </div>
+            <h1 className="text-sm font-normal text-text-color dark:text-white">
+              Generate:
+            </h1>
+            <div className="flex items-center justify-start gap-2 flex-wrap">
+              {PromptTypes.map((type, index) => (
+                <label
+                  key={index}
+                  className={`w-fit h-[32px] flex items-center px-3 cursor-pointer ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none
+               ${
+                 generateType === type
+                   ? "b-white text-main-color dark:text-white dark:bg-[#383838] ring-main-color"
+                   : "hover:bg-stone-100 dark:hover:bg-[#303030] text-text-color dark:text-[#b8b8b8]"
+               }`}
+                >
+                  <div className="flex items-center justify-start gap-1 text-sm">
+                    <input
+                      type="checkbox"
+                      onChange={handleChooseGenerateType}
+                      name="generateType"
+                      className="peer hidden"
+                      value={type}
+                    />
+                    {generateType === type ? (
+                      <LuCheck className="text-lg" />
+                    ) : (
+                      ""
+                    )}
+                    <h1>{type}</h1>
+                  </div>
+                </label>
+              ))}
+              <label
+                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8]"
+               `}
+              >
+                <div className="flex items-center justify-start gap-1 text-sm">
+                  <h1>jhh </h1>
+                </div>
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="group overflow-clip w-full h-[38px] mt-2 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-300 bg-main-color text-white active:opacity-90 shadow-lg select-none"
+            >
+              {loading ? (
+                <>
+                  <LuLoader2 className="text-2xl min-w-fit transition-all duration-200 animate-spinLoader" />
+                </>
+              ) : (
+                <>
+                  <LuSparkles className="text-lg min-w-fit transition-all duration-200" />
+                  <span className="whitespace-nowrap transition-all overflow-hidden">
+                    Generate
+                  </span>
+                </>
+              )}
+            </button>
+          </form>
         </div>
       )}
 
@@ -757,7 +870,7 @@ function SingleProject() {
                 </form>
                 <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
                   <span>{board.name}</span>
-                  <span className="pl-2 text-text-color/40">
+                  <span className="pl-2 opacity-40">
                     {tasks.filter((task) => task.boardId === board.id).length}
                   </span>
                 </h1>
@@ -885,7 +998,7 @@ function SingleProject() {
                             onChange={onRangeChange}
                             placeholder={"Due Date"}
                             placement={placement}
-                            className="w-full text-sm border text-dark-body dark:text-white"
+                            className="w-full text-sm border text-text-color dark:text-white"
                           />
                         </ConfigProvider>
                       </div>
