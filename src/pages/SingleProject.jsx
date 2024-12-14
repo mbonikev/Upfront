@@ -466,17 +466,15 @@ function SingleProject() {
             } `}
         >
           <div className="flex items-center justify-between">
-            <h1 className="text-sm font-semibold">Create with AI</h1>
+            <h1 className="text-sm font-semibold px-2">Create with AI</h1>
             <button
-        onClick={handleShowAi}
-        className="group overflow-clip w-[32px] h-[32px] flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition hover:bg-stone-100 "
-      >
-        <LuX className="text-lg min-w-fit transition-all duration-200" />
-      </button>
+              onClick={handleShowAi}
+              className="group overflow-clip w-[32px] h-[32px] flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition hover:bg-stone-100 dark:hover:bg-[#242424] "
+            >
+              <LuX className="text-lg min-w-fit transition-all duration-200" />
+            </button>
           </div>
-          <div className="flex-1">
-
-          </div>
+          <div className="flex-1"></div>
         </div>
       )}
 
