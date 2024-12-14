@@ -465,7 +465,7 @@ function SingleProject() {
                 : "opacity-0 translate-y-full"
             } `}
         >
-          <div className="flex items-center justify-between border-b">
+          <div className="flex items-center justify-between border-b p-2">
             <h1 className="text-sm font-semibold px-2">Create with AI</h1>
             <button
               onClick={handleShowAi}
