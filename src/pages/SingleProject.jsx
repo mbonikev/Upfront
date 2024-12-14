@@ -430,9 +430,9 @@ function SingleProject() {
   };
   const handleHideAi = () => {
     animateShowAi(false);
-    setTimeout(() => {
+    // setTimeout(() => {
       setShowAi(false);
-    }, 400);
+    // }, 400);
   };
 
   return (
