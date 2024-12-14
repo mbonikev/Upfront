@@ -474,8 +474,8 @@ function SingleProject() {
               <LuX className="text-lg min-w-fit transition-all duration-200" />
             </button>
           </div>
-          <div className="flex-1 p-2">
-            <h1 className="text-sm font-normal px-2"></h1>
+          <div className="flex-1 px-2 py-4">
+            <h1 className="text-sm font-normal px-2">1. Project description</h1>
           </div>
         </div>
       )}
