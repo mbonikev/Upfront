@@ -465,8 +465,8 @@ function SingleProject() {
                 : "opacity-0 translate-y-full"
             } `}
         >
-          <div className="flex items-center justify-between border-b p-2">
-            <h1 className="text-sm font-semibold px-2">Create with AI</h1>
+          <div className="flex items-center justify-end p-2">
+            {/* <h1 className="text-sm font-semibold px-2">Create with AI</h1> */}
             <button
               onClick={handleHideAi}
               className="group overflow-clip w-[32px] h-[32px] flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-full transition hover:bg-stone-100 dark:hover:bg-[#242424] "
@@ -475,7 +475,7 @@ function SingleProject() {
             </button>
           </div>
           <div className="flex-1 p-2">
-            
+          <h1 className="text-sm font-semibold px-2">Create with AI</h1>
           </div>
         </div>
       )}
