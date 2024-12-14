@@ -448,13 +448,14 @@ function SingleProject() {
         </span>
       </button>
 
-      {/* Ai modal */}
+      {/* Ai overlay */}
       <div
         onClick={handleHideAi}
         className={` top-0 left-0 w-full h-full z-30 bg-red-300 ${
           showAi ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
+      {/* Ai Modal */}
       {showAi && (
         <div
           className={`w-[290px] h-fit max-h-[300px] p-2 absolute bottom-4 right-4 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424]
