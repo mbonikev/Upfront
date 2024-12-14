@@ -36,8 +36,7 @@ select {
   background-position-y: 50%;
 }
 .shadow-custom {
-  box-shadow: 0px 0px 15px 0px #00000028;
-  color: #f9fafc;
+  box-shadow: 0px 0px 15px 0px #00000018;
 }
 .shadow-custom2{
   box-shadow: 0px 4px 20px 4px #131313a8;
