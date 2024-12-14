@@ -423,7 +423,7 @@ function SingleProject() {
 
   const handleShowAi = () => {
     setShowAi(true);
-    animateShowAi(true);
+    setAnimateShowAi(true);
     setTimeout(() => {
       setAnimateShowAi(false);
     }, 200);
