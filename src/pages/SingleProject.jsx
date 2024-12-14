@@ -476,7 +476,7 @@ function SingleProject() {
           </div>
           <div className="flex-1 px-2 py-4 flex flex-col gap-2">
             <h1 className="text-sm font-normal">Project description</h1>
-            <textarea className="w-full bg-stone-100 h-[130px] resize-none rounded-xl p-3"></textarea>
+            <textarea className="w-full bg-stone-100 h-[130px] resize-none rounded-xl p-3 text-sm"></textarea>
           </div>
         </div>
       )}
