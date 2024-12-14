@@ -474,7 +474,9 @@ function SingleProject() {
               <LuX className="text-lg min-w-fit transition-all duration-200" />
             </button>
           </div>
-          <div className="flex-1"></div>
+          <div className="flex-1 p-2">
+            
+          </div>
         </div>
       )}
 
