@@ -102,6 +102,7 @@ function SingleProject() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [moreOpt1, setMoreOpt1] = useState("");
+  const [showAi, setShowAi] = useState(false)
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -430,7 +431,7 @@ function SingleProject() {
 
       {/* Ai modal */}
       <div
-        onClick={() => setProfileMenu(false)}
+        // onClick={() => setProfileMenu(false)}
         className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
           profileMenu ? "fixed cursor-default" : "hidden"
         }`}
