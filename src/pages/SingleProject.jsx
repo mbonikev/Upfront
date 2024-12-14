@@ -426,13 +426,13 @@ function SingleProject() {
     animateShowAi(true);
     setTimeout(() => {
       setAnimateShowAi(false);
-    }, 400);
+    }, 200);
   };
   const handleHideAi = () => {
     setAnimateShowAi(false);
     setTimeout(() => {
       setShowAi(false);
-    }, 400);
+    }, 200);
   };
 
   return (
