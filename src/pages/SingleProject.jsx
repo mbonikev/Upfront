@@ -434,27 +434,27 @@ function SingleProject() {
     }, 200);
   };
 
-  const [isDragging, setIsDragging] = useState(false);
+  const [isDragging2, setIsDragging2] = useState(false);
   const [modalPosition, setModalPosition] = useState(0); // Start from bottom
   const modalRef = useRef(null);
   const dragStartY = useRef(0);
 
   // Handler when drag starts
   const handleMouseDown = (e) => {
-    setIsDragging(true);
+    setIsDragging2(true);
     dragStartY.current = e.clientY; // Save the starting point of the drag
   };
 
   // Handler for dragging (move)
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging2) return;
     const deltaY = e.clientY - dragStartY.current;
     setModalPosition(Math.max(0, deltaY)); // Prevent dragging beyond the bottom of the screen
   };
 
   // Handler for when drag ends
   const handleMouseUp = () => {
-    setIsDragging(false);
+    setIsDragging2(false);
 
     // Close or minimize modal if dragged below a certain threshold (e.g., 100px)
     if (modalPosition > 100) {
@@ -473,7 +473,7 @@ function SingleProject() {
     background: "white",
     padding: "20px",
     boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.1)",
-    cursor: isDragging ? "grabbing" : "grab",
+    cursor: isDragging2 ? "grabbing" : "grab",
     transition: "bottom 0.2s ease", // Optional smooth transition
   };
 
