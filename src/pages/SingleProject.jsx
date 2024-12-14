@@ -103,7 +103,7 @@ function SingleProject() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [moreOpt1, setMoreOpt1] = useState("");
   const [showAi, setShowAi] = useState(false);
-  const [animateShowAi, setAnimateShowAi] = useState(true);
+  const [animateShowAi, setAnimateShowAi] = useState(false);
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -425,6 +425,7 @@ function SingleProject() {
     animateShowAi(true);
     setTimeout(() => {
       setAnimateShowAi(false);
+      setsh
     }, 1000);
   };
 
