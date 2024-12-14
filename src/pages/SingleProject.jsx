@@ -568,7 +568,7 @@ function SingleProject() {
                 </label>
               ))}
               <label
-                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
+                className={`w-fit h-[32px] flex items-center px-3 cursor-not-allowed  ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
                `}
               >
                 <div className="flex items-center justify-start gap-1 text-sm">
@@ -576,7 +576,7 @@ function SingleProject() {
                 </div>
               </label>
               <label
-                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
+                className={`w-fit h-[32px] flex items-center px-3 cursor-not-allowed  ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
                `}
               >
                 <div className="flex items-center justify-start gap-1 text-sm">
@@ -584,7 +584,7 @@ function SingleProject() {
                 </div>
               </label>
               <label
-                className={`w-fit h-[32px] flex items-center px-3 cursor-default ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
+                className={`w-fit h-[32px] flex items-center px-3 cursor-not-allowed  ring-1 ring-stone-200 dark:ring-stone-500/20 rounded-full select-none text-text-color dark:text-[#b8b8b8] opacity-50 "
                `}
               >
                 <div className="flex items-center justify-start gap-1 text-sm">
