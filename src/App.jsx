@@ -12,6 +12,7 @@ import CreateNewPassword from './pages/CreateNewPassword'
 import PasswordChangedSuccessfully from './pages/PasswordChangedSuccessfully'
 import ProtectedFP from './utils/ProtectedFP'
 import SingleProject from './pages/SingleProject'
+import Testai from './pages/Testai'
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Projects />} />
             <Route path='/project/:workspacename/:id' element={<SingleProject />} />
+            <Route path='/test' element={<Testai />} />
           </Route>
           {/* Auth */}
           <Route element={<ProtectedAuthRoutes />}>

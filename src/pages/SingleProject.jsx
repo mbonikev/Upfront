@@ -413,12 +413,15 @@ function SingleProject() {
 
   // handle print
   const handlePrint = () => {
-    window.print()
-  }
+    window.print();
+  };
   const linkStyle =
     "min-h-[30px] w-full flex items-center gap-2 px-2 py-[3px] font-normal text-text-color/90 dark:text-[#b8b8b8] tracking-tight rounded-md line-clamp-1 relative";
   return (
     <>
+      {/* create with AI button */}
+      <button className="flex items-center justify-center gap-1 text-sm font-medium px-5 py-2.5"></button>
+
       {/* profile menu overlay */}
       <div
         onClick={() => setProfileMenu(false)}
@@ -472,7 +475,9 @@ function SingleProject() {
         {deleteMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
             <p className="text-sm text-text-color/70 dark:text-[#b8b8b8] px-2 pt-2 pb-4">
-              <span className="font-medium text-text-color dark:text-white">Warning! </span>{" "}
+              <span className="font-medium text-text-color dark:text-white">
+                Warning!{" "}
+              </span>{" "}
               Deleting this project will remove it from your workspace and move
               it to trash. Collaborations will be stashed for possible future
               restoration
@@ -540,7 +545,7 @@ function SingleProject() {
               )}
             </button>
             <button
-            onClick={handlePrint}
+              onClick={handlePrint}
               title="Print view"
               className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
