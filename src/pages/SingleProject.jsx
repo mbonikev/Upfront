@@ -434,6 +434,49 @@ function SingleProject() {
     }, 200);
   };
 
+  const [isDragging, setIsDragging] = useState(false);
+  const [modalPosition, setModalPosition] = useState(0); // Start from bottom
+  const modalRef = useRef(null);
+  const dragStartY = useRef(0);
+
+  // Handler when drag starts
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    dragStartY.current = e.clientY; // Save the starting point of the drag
+  };
+
+  // Handler for dragging (move)
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const deltaY = e.clientY - dragStartY.current;
+    setModalPosition(Math.max(0, deltaY)); // Prevent dragging beyond the bottom of the screen
+  };
+
+  // Handler for when drag ends
+  const handleMouseUp = () => {
+    setIsDragging(false);
+
+    // Close or minimize modal if dragged below a certain threshold (e.g., 100px)
+    if (modalPosition > 100) {
+      // Close the modal or handle minimizing logic here
+      alert("Modal closed!");
+      setModalPosition(0); // Optionally reset the position or hide the modal
+    }
+  };
+
+  // Modal styles
+  const modalStyles = {
+    position: "fixed",
+    bottom: `${modalPosition}px`, // Modal moves upwards as drag progresses
+    left: "0",
+    right: "0",
+    background: "white",
+    padding: "20px",
+    boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.1)",
+    cursor: isDragging ? "grabbing" : "grab",
+    transition: "bottom 0.2s ease", // Optional smooth transition
+  };
+
   return (
     <>
       {/* create with AI button */}
@@ -458,9 +501,23 @@ function SingleProject() {
       {showAi && (
         <div
           className={`w-[350px] h-[400px] max-h-[400px] p-2 fixed bottom-4 right-4 rounded-xl shadow-lg ring-1 ring-border-line-color/30 dark:ring-stone-600/40 overflow-y-auto z-50 bg-white dark:bg-[#242424] transition-all duration-300
-            ${animateShowAi ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"} `}
+            ${
+              animateShowAi
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-full"
+            } `}
         >
-          
+          <div
+            ref={modalRef}
+            style={modalStyles}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+          >
+            <h2>Draggable Modal</h2>
+            <p>Drag me down to close or minimize!</p>
+          </div>
         </div>
       )}
 
