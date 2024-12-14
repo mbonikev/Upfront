@@ -38,6 +38,7 @@ import {
   LuRefreshCw,
   LuScissors,
   LuSendToBack,
+  LuSparkles,
   LuStar,
   LuTimerReset,
   LuTrash2,
@@ -421,7 +422,7 @@ function SingleProject() {
     <>
       {/* create with AI button */}
       <button className="flex items-center justify-center gap-1 text-sm font-medium px-5 py-2.5 rounded-2xl bg-red-400 text-dark-body">
-        
+        <LuSparkles className="text-lg " />
         Create with AI
       </button>
 
