@@ -191,7 +191,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <p className="truncate flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
                 {username}
               </p>
-              <LuChevronsUpDown className="min-w-[15px] mx-[5px] " />
+              <LuChevronsUpDown className="text-base mx-[5px] " />
             </button>
           </div>
           {/* 2 */}
