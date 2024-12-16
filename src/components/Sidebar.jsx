@@ -4,6 +4,7 @@ import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
 import {
   LuActivity,
   LuBadgeX,
+  LuBell,
   LuCheck,
   LuCheckCircle,
   LuChevronsUpDown,
@@ -358,7 +359,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             to={"/d"}
             className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
-            <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+            <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
             <p className="line-clamp-1">Notifications</p>
           </Link>
         </div>
