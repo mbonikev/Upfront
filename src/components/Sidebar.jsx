@@ -252,7 +252,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 <div className="h-[4px] w-[2px] min-w-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] absolute top-[-2px] right-[2px]"></div>
               </div>
               <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
-                16
+                {Today}
               </div>
             </div>
             <p className="line-clamp-1">Today</p>
