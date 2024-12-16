@@ -192,14 +192,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </p>
               <IoChevronDown className="min-w-[15px] " />
             </button>
-            <div className="flex items-center justify-end gap-0">
-              <button
-                title="Notifications"
-                className=" h-[33px] dark:text-[#f1f1f1]/70 text-text-color/70 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-200 dark:hover:bg-[#2c2c2c] text-text-color"
-              >
-                <IoMdNotificationsOutline className="text-[22px]" />
-              </button>
-            </div>
           </div>
           {/* 2 */}
           <div className="flex-1 flex flex-col gap-[3px]">
