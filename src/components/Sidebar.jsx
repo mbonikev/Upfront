@@ -357,37 +357,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </>
             )}
           </form>
-          <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
-            <span>Collaborations</span>
-            <span>
-              <span className="line-clamp-1 text-xs py-1 px-2 cursor-pointer font-medium dark:text-[#f1f1f1]/70 text-text-color/70 w-full text-center hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] rounded-lg ">
-                View all
-              </span>
-            </span>
-          </p>
-          {retrieveArray.slice(0, 3).map((collab, index) => (
-            <Link
-              key={index}
-              to={"/"}
-              className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] dark:text-[#b8b8b8] text-text-color/90 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] line-clamp-1 "
-            >
-              <LuWorkflow className="text-xl text-main-color min-w-fit" />
-              <div className="flex flex-col justify-start items-start">
-                <p className="line-clamp-1 font-medium">
-                  {collab.name === "" ? "Untitled" : collab.name}
-                </p>
-                <p className="line-clamp-1 text-xs font-normal dark:text-[#f1f1f1]/70 text-text-color/70">
-                  {collab.user_email} added you
-                </p>
-              </div>
-            </Link>
-          ))}
-          {retrieveArray.length === 0 && (
-            <p className="line-clamp-1 text-xs px-9 font-normal dark:text-[#f1f1f1]/70 text-text-color/70">
-              No contributions yet
-            </p>
-          )}
-        </div>
+          </div>
+      
       </div>
     </div>
   );
