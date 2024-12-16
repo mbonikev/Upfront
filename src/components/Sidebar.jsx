@@ -257,17 +257,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               <p className="line-clamp-1">Today</p>
             </Link>
-            <Link
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-            >
-              <LuCheckCircle className="text-text-color/50 dark:text-[#858585] text-lg px-[1px] min-w-fit" />
-              <p className="line-clamp-1">Completed </p>
-            </Link>
-            {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
-                        <LuTrash2 className='text-lg px-[1px] min-w-fit' />
-                        <p className='line-clamp-1'>Trash </p>
-                    </Link> */}
             <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
               <span>Workspaces</span>
               <Link to={"/"} title="Add Worksspace">
