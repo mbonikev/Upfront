@@ -234,7 +234,7 @@ function Sidebar({
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <div className="text-text-color/50 dark:text-[#858585] text-xl w-[20px] min-w-[20px] h-[20px] relative" >
-                            <div className="border-[2px] h-full w-full border-text-color/50 dark:border-[#858585] rounded-[5px] flex flex-col p-[2px]">
+                            <div className="border-[1px] h-full w-full border-text-color/50 dark:border-[#858585] rounded-[5px] flex flex-col p-[2px]">
                                 <div className="w-full h-[3px] min-h-[1px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10"></div>
                                 <div className="w-full flex-1 text-text-color/50 dark:text-[#858585] text-[11px] leading-none z-10">15</div>
                             </div>
