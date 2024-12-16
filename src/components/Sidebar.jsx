@@ -357,14 +357,14 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           {/* 3 */}
           <div className="w-full h-fit flex flex-col items-center justify-between">
             <Link
-              to={"/d"}
+              to={"/"}
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
                 <span>Notifications</span>
                 <span className="px-[5px] opacity-50 text-sm font-medium">
-                  0
+                  99+
                 </span>
               </p>
             </Link>
