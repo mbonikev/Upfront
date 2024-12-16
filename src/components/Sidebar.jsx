@@ -357,18 +357,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </>
             )}
           </form>
-          <Link
-                        to={"/"}
-                        className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}
-                    >
-                        <LuCrown className="text-xl text-text-color/50 dark:text-[#858585]" />
-                        <h1 className="flex flex-col">
-                            <span>Unlock More Workspaces</span>
-                            <span className="text-[11px] dark:text-[#f1f1f1]/70 text-text-color/70 font-medium ">
-                                $5.99 / Month - $49.99 / Year
-                            </span>
-                        </h1>
-                    </Link>
           <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
             <span>Collaborations</span>
             <span>
