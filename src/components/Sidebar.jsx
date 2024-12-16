@@ -353,7 +353,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           {/* 3 */}
           <Link
             to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}
+            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start min-h-fit`}
           >
             <LuCrown className="text-xl text-text-color/50 dark:text-[#858585]" />
             <h1 className="flex flex-col">
