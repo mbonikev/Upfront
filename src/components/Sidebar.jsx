@@ -244,7 +244,7 @@ function Sidebar({
                         </Link>
                     </p>
                     {/* Workspace 1 */}
-                    <form onSubmit={handleSubmit1} className="relative group ">
+                    <form onSubmit={handleSubmit1} className="relative group mb-10 ">
                         <Link
                             to={"/"}
                             className={`${linkStyle} ${location.pathname === "/"
