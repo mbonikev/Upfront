@@ -127,6 +127,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const retrieveArray = getArray("mycollaborations") ?? [];
   const linkStyle =
     "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative";
+
+    const getDate = new Date()
+    const Today = getDate.getDay()
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20">
       <div className=" relative w-full h-full">
