@@ -360,7 +360,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
             <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-            <p className="line-clamp-1">Notifications</p>
+            <p className="line-clamp-1 w-full flex items-center justify-between">
+              <span>Notifications</span>
+              <span className="px-[5px] opacity-50 text-sm font-medium">0</span>
+            </p>
           </Link>
         </div>
       </div>
