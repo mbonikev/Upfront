@@ -178,6 +178,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
         )}
         <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-3 text-sm overflow-y-auto">
+          {/* 1 */}
           <div className="w-full flex items-center justify-between mb-4">
             <button
               onClick={showPMenu}
@@ -200,7 +201,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </button>
             </div>
           </div>
-          <div className="flex flex-col gap-[3px]">
+          {/* 2 */}
+          <div className="flex-1 flex flex-col gap-[3px]">
             <button
               onClick={handleCreate}
               className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
@@ -359,6 +361,19 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               )}
             </form>
           </div>
+          {/* 3 */}
+          <Link
+            to={"/"}
+            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}
+          >
+            <LuCrown className="text-xl text-text-color/50 dark:text-[#858585]" />
+            <h1 className="flex flex-col">
+              <span>Unlock More Workspaces</span>
+              <span className="text-[11px] dark:text-[#f1f1f1]/70 text-text-color/70 font-medium ">
+                $5.99 / Month - $49.99 / Year
+              </span>
+            </h1>
+          </Link>
         </div>
       </div>
     </div>
