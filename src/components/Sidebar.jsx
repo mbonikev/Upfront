@@ -128,8 +128,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const linkStyle =
     "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative";
 
-    const getDate = new Date()
-    const Today = getDate.getDate()
+  const getDate = new Date();
+  const Today = getDate.getDate();
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20">
       <div className=" relative w-full h-full">
@@ -247,10 +247,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
             <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[0px] flex flex-col items-center justify-center gap-[2px]">
-              <div className="w-[16px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative">
-                <div className="h-[4px] w-[2px] min-w-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] absolute top-[-2px] left-[2px]"></div>
-                <div className="h-[4px] w-[2px] min-w-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] absolute top-[-2px] right-[2px]"></div>
-              </div>
+              <div className="w-[16px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
               <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
                 {Today}
               </div>
