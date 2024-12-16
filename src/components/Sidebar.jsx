@@ -187,7 +187,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                 {username.charAt(0)}
               </p>
-              <p className="truncate font-medium text-sm tracking-tight pl-[6px]">
+              <p className="truncate flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
                 {username}
               </p>
               <IoChevronDown className="min-w-[15px] " />
