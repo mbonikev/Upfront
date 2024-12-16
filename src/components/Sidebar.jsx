@@ -233,7 +233,9 @@ function Sidebar({
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuStar className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                        <div className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" >
+                        
+                        </div>
                         <p className="line-clamp-1">Today</p>
                     </Link>
                     <Link
