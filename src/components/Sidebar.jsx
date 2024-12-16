@@ -234,7 +234,7 @@ function Sidebar({
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
                         <LuStar className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-                        <p className="line-clamp-1">Favorites</p>
+                        <p className="line-clamp-1">Today</p>
                     </Link>
                     <Link
                         to={"/"}
