@@ -243,9 +243,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             to={"/"}
             className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
-            <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200 w-[20px] min-w-[20px] h-[20px] relative px-[2px] flex flex-col items-center justify-center gap-[2px]">
+            <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative px-[2px] flex flex-col items-center justify-center gap-[2px]">
               <div className="w-full h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10"></div>
-              <div className="w-fit flex-1 text-text-color/50 dark:text-[#858585] text-[14px] font-semibold leading-none z-10">
+              <div className="w-fit h-fit flex-1 text-text-color/50 dark:text-[#858585] text-[14px] font-semibold leading-none z-10">
                 15
               </div>
             </div>
