@@ -243,7 +243,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1">Dues</p>
+              <p className="line-clamp-1 w-full flex items-center justify-between">
+                <span>Dues</span>
+                <span className="px-[5px] opacity-50 text-sm font-medium">
+                  0
+                </span>
+              </p>
             </Link>
             <Link
               to={"/"}
@@ -257,7 +262,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               <p className="line-clamp-1 w-full flex items-center justify-between">
                 <span>Today</span>
-                <span className="px-[5px] opacity-50 text-sm font-medium">0</span>
+                <span className="px-[5px] opacity-50 text-sm font-medium">
+                  0
+                </span>
               </p>
             </Link>
             <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
