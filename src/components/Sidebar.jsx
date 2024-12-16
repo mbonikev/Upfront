@@ -355,16 +355,11 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
           {/* 3 */}
           <Link
-            to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start min-h-fit`}
+            to={"/d"}
+            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
-            <LuCrown className="text-xl text-text-color/50 dark:text-[#858585]" />
-            <h1 className="flex flex-col">
-              <span>Unlock More Workspaces</span>
-              <span className="text-[11px] dark:text-[#f1f1f1]/70 text-text-color/70 font-medium ">
-                $5.99 / Month - $49.99 / Year
-              </span>
-            </h1>
+            <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+            <p className="line-clamp-1">Notifications</p>
           </Link>
         </div>
       </div>
