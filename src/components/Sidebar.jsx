@@ -233,8 +233,8 @@ function Sidebar({
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <div className="text-text-color/50 dark:text-[#858585] text-xl min-w-fit w-[20px] min-w-[20px] h-[20px] bg-red-500 relative overflow-clip" >
-
+                        <div className="text-text-color/50 dark:text-[#858585] text-xl w-[20px] min-w-[20px] h-[20px] bg-red-500 relative overflow-clip" >
+                            <div className=""></div>
                         </div>
                         <p className="line-clamp-1">Today</p>
                     </Link>
