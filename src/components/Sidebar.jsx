@@ -235,6 +235,7 @@ function Sidebar({
                     >
                         <div className="text-text-color/50 dark:text-[#858585] text-xl w-[20px] min-w-[20px] h-[20px] relative overflow-clip" >
                             <div className="border-[2px] h-full w-full border-text-color/50 dark:border-[#858585] rounded-[5px] flex flex-col p-[2px]">
+                                <div className="w-full h-[3px] bg-text-color/50 dark:bg-[#858585]"></div>
                             </div>
                         </div>
                         <p className="line-clamp-1">Today</p>
