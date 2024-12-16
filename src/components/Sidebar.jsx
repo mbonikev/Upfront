@@ -29,7 +29,7 @@ import {
 } from "react-icons/lu";
 import { BsLayoutSidebar } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { RiLoader5Fill } from "react-icons/ri";
+import { RiLoader5Fill, RiUserSharedLine } from "react-icons/ri";
 import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
@@ -216,7 +216,7 @@ function Sidebar({
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
                     >
-                        <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                        <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
                         <p className="line-clamp-1">Shared with me</p>
                     </Link>
                     <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
