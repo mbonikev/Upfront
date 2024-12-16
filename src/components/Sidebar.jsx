@@ -13,7 +13,6 @@ import {
   LuHash,
   LuInfo,
   LuLogOut,
-  LuMinus,
   LuMoreHorizontal,
   LuPen,
   LuPencilLine,
@@ -247,8 +246,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             to={"/"}
             className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
           >
-            <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[0px] flex flex-col items-center justify-center gap-[2px]">
-              <LuMinus className="text-text-color/50 dark:text-[#858585] text-[15px] w-full h-[2px] bg-red-500 leading-none" />
+            <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[0px] flex flex-col items-center justify-center gap-[3px]">
+              <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
               <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
                 {Today}
               </div>
