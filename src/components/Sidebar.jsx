@@ -13,6 +13,7 @@ import {
   LuHash,
   LuInfo,
   LuLogOut,
+  LuMinus,
   LuMoreHorizontal,
   LuPen,
   LuPencilLine,
@@ -248,6 +249,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           >
             <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[0px] flex flex-col items-center justify-center gap-[2px]">
               <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
+              <LuMinus />
               <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
                 {Today}
               </div>
