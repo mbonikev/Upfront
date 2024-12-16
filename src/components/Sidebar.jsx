@@ -327,7 +327,7 @@ function Sidebar({
                             </>
                         )}
                     </form>
-                    <Link
+                    {/* <Link
                         to={"/"}
                         className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 flex justify-start`}
                     >
@@ -338,7 +338,7 @@ function Sidebar({
                                 $5.99 / Month - $49.99 / Year
                             </span>
                         </h1>
-                    </Link>
+                    </Link> */}
                     <p className="flex items-center gap-2 pt-[13px] pb-[7px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight w-full justify-between">
                         <span>Collaborations</span>
                         <span>
