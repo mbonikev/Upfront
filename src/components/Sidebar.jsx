@@ -200,165 +200,166 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </button>
             </div>
           </div>
-          <button
-            onClick={handleCreate}
-            className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
-              createNew && "pointer-events-none select-none"
-            }`}
-          >
-            {createNew ? (
-              <div className="flex items-center gap-2">
-                <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                <p className="line-clamp-1 ">Setting up your project... </p>
+          <div className="flex flex-col gap-[3px]">
+            <button
+              onClick={handleCreate}
+              className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
+                createNew && "pointer-events-none select-none"
+              }`}
+            >
+              {createNew ? (
+                <div className="flex items-center gap-2">
+                  <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                  <p className="line-clamp-1 ">Setting up your project... </p>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <IoIosAddCircle className="text-2xl" />
+                  <p className="line-clamp-1 ">New Project</p>
+                </div>
+              )}
+            </button>
+            <Link
+              to={"/d"}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            >
+              <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <p className="line-clamp-1">Search</p>
+            </Link>
+            <Link
+              to={"/"}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            >
+              <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <p className="line-clamp-1">Shared with me</p>
+            </Link>
+            <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
+              Calendar
+            </p>
+            <Link
+              to={"/"}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            >
+              <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <p className="line-clamp-1">Dues</p>
+            </Link>
+            <Link
+              to={"/"}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            >
+              <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
+                <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
+                <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
+                  {Today}
+                </div>
               </div>
-            ) : (
-              <div className="flex items-center gap-2">
-                <IoIosAddCircle className="text-2xl" />
-                <p className="line-clamp-1 ">New Project</p>
-              </div>
-            )}
-          </button>
-          <Link
-            to={"/d"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-          >
-            <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-            <p className="line-clamp-1">Search</p>
-          </Link>
-          <Link
-            to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-          >
-            <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-            <p className="line-clamp-1">Shared with me</p>
-          </Link>
-          <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-            Calendar
-          </p>
-          <Link
-            to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-          >
-            <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-            <p className="line-clamp-1">Dues</p>
-          </Link>
-          <Link
-            to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-          >
-            <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
-              <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
-              <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
-                {Today}
-              </div>
-            </div>
-            <p className="line-clamp-1">Today</p>
-          </Link>
-          <Link
-            to={"/"}
-            className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-          >
-            <LuCheckCircle className="text-text-color/50 dark:text-[#858585] text-lg px-[1px] min-w-fit" />
-            <p className="line-clamp-1">Completed </p>
-          </Link>
-          {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
+              <p className="line-clamp-1">Today</p>
+            </Link>
+            <Link
+              to={"/"}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            >
+              <LuCheckCircle className="text-text-color/50 dark:text-[#858585] text-lg px-[1px] min-w-fit" />
+              <p className="line-clamp-1">Completed </p>
+            </Link>
+            {/* <Link to={'/'} className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}>
                         <LuTrash2 className='text-lg px-[1px] min-w-fit' />
                         <p className='line-clamp-1'>Trash </p>
                     </Link> */}
-          <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-            <span>Workspaces</span>
-            <Link to={"/"} title="Add Worksspace">
-              <LuPlus className="text-lg cursor-pointer text-text-color dark:text-[#b8b8b8] hover:text-white" />
-            </Link>
-          </p>
-          {/* Workspace 1 */}
-          <form onSubmit={handleSubmit1} className="relative group mb-10 ">
-            <Link
-              to={"/"}
-              className={`${linkStyle} ${
-                location.pathname === "/"
-                  ? "bg-main-color/10 dark:bg-[#2c2c2c]"
-                  : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
-              }`}
-            >
-              <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-              <p className="line-clamp-1">{w1}</p>
-            </Link>
-            {saveOpt1 && (
-              <>
-                <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white dark:bg-[#202020] flex items-center justify-center p-1">
-                  <input
-                    type="text"
-                    autoFocus
-                    name="workspace1"
-                    autoComplete="off"
-                    value={w1}
-                    onChange={(e) => setW1(e.target.value)}
-                    className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
-                  />
-                </div>
-              </>
-            )}
-            <div
-              onClick={showMoreMenuw1}
-              className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 dark:bg-[#2c2c2c] px-2 ${
-                moreOpt1 && "opacity-100"
-              }`}
-            >
-              <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
-            </div>
-            {moreOpt1 && (
-              <>
-                <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
-                  <div
-                    onClick={renameW1}
-                    className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                  >
-                    <LuPencilLine className="text-lg  min-w-fit" />
-                    <p className="line-clamp-1">Rename</p>
+            <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
+              <span>Workspaces</span>
+              <Link to={"/"} title="Add Worksspace">
+                <LuPlus className="text-lg cursor-pointer text-text-color dark:text-[#b8b8b8] hover:text-white" />
+              </Link>
+            </p>
+            {/* Workspace 1 */}
+            <form onSubmit={handleSubmit1} className="relative group mb-10 ">
+              <Link
+                to={"/"}
+                className={`${linkStyle} ${
+                  location.pathname === "/"
+                    ? "bg-main-color/10 dark:bg-[#2c2c2c]"
+                    : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
+                }`}
+              >
+                <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                <p className="line-clamp-1">{w1}</p>
+              </Link>
+              {saveOpt1 && (
+                <>
+                  <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white dark:bg-[#202020] flex items-center justify-center p-1">
+                    <input
+                      type="text"
+                      autoFocus
+                      name="workspace1"
+                      autoComplete="off"
+                      value={w1}
+                      onChange={(e) => setW1(e.target.value)}
+                      className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
+                    />
                   </div>
-                  <Link
-                    to={"/"}
-                    className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                  >
-                    <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                    <p className="line-clamp-1 text-red-500">Clear</p>
-                  </Link>
-                </div>
-              </>
-            )}
-            {saveOpt1 && (
-              <>
-                <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
-                  <button
-                    type="submit"
-                    className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                  >
-                    {authing ? (
-                      <>
-                        <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                        <p className="line-clamp-1">Saving...</p>
-                      </>
-                    ) : (
-                      <>
-                        <LuCheck className="text-lg  min-w-fit" />
-                        <p className="line-clamp-1">Save Changes</p>
-                      </>
-                    )}
-                  </button>
-                  <div
-                    onClick={handleCancel}
-                    className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                  >
-                    <LuX className="text-lg  min-w-fit text-red-500" />
-                    <p className="line-clamp-1 text-red-500">Cancel</p>
+                </>
+              )}
+              <div
+                onClick={showMoreMenuw1}
+                className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 dark:bg-[#2c2c2c] px-2 ${
+                  moreOpt1 && "opacity-100"
+                }`}
+              >
+                <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
+              </div>
+              {moreOpt1 && (
+                <>
+                  <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
+                    <div
+                      onClick={renameW1}
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                    >
+                      <LuPencilLine className="text-lg  min-w-fit" />
+                      <p className="line-clamp-1">Rename</p>
+                    </div>
+                    <Link
+                      to={"/"}
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                    >
+                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
+                      <p className="line-clamp-1 text-red-500">Clear</p>
+                    </Link>
                   </div>
-                </div>
-              </>
-            )}
-          </form>
+                </>
+              )}
+              {saveOpt1 && (
+                <>
+                  <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
+                    <button
+                      type="submit"
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                    >
+                      {authing ? (
+                        <>
+                          <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
+                          <p className="line-clamp-1">Saving...</p>
+                        </>
+                      ) : (
+                        <>
+                          <LuCheck className="text-lg  min-w-fit" />
+                          <p className="line-clamp-1">Save Changes</p>
+                        </>
+                      )}
+                    </button>
+                    <div
+                      onClick={handleCancel}
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                    >
+                      <LuX className="text-lg  min-w-fit text-red-500" />
+                      <p className="line-clamp-1 text-red-500">Cancel</p>
+                    </div>
+                  </div>
+                </>
+              )}
+            </form>
           </div>
-      
+        </div>
       </div>
     </div>
   );
