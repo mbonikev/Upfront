@@ -247,7 +247,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <div className="border-[2px] h-full w-full border-text-color/50 dark:border-[#858585] rounded-[5px] bg-yellow-400 flex flex-col p-[2px]">
                 <div className="w-full h-[3px] min-h-[3px] rounded-[5px] bg-text-color/50 dark:bg-red-500 z-10"></div>
                 <div className="w-full flex-1 text-text-color/50 dark:text-red-500">
-                  <p className="text-[10px] font-semibold">12</p>
+                  <p className="text-[10px] font-semibold leading-none">12</p>
                 </div>
               </div>
             </div>
