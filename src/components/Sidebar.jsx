@@ -257,7 +257,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               <p className="line-clamp-1 w-full flex items-center justify-between">
                 <span>Today</span>
-                <span className="px-[5px] opacity-70 text-xs font-bold">0</span>
+                <span className="px-[5px] opacity-50 text-sm font-semibold">0</span>
               </p>
             </Link>
             <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
