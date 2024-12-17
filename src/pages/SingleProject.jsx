@@ -737,7 +737,7 @@ function SingleProject() {
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
-                    <LuTrash2 className="text-lg" />
+                    <PiBroom className="text-lg" />
                     <span className="text-sm font-medium tracking-tight">
                       Move to Trash
                     </span>
