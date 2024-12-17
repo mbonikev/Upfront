@@ -378,11 +378,11 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <p className="line-clamp-1 w-full flex items-center justify-between">
                 <span>Updates</span>
                 <span className="px-[5px] opacity-50 text-sm font-medium">
-                  
+                  1
                 </span>
               </p>
             </Link>
-            
+
           </div>
         </div>
       </div>
