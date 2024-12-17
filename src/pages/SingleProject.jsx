@@ -223,6 +223,9 @@ function SingleProject() {
     setUserMenu(false);
     setProfileMenu(false);
   };
+  const showWipeMenu = () => {
+    
+  }
   // get project details
   useEffect(() => {
     const getProject = async () => {
@@ -744,6 +747,7 @@ function SingleProject() {
               <LuPrinter />
             </button>
             <button
+            onClick={showWipeMenu}
               title="Wipe"
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
