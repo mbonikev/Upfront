@@ -364,6 +364,9 @@ function SingleProject() {
       setDeleting(false);
     }
   };
+  const handleWipe = async () => {
+    
+  } 
   const handleNewBoard = async (e) => {
     e.preventDefault();
     setAddingBoard(true);
