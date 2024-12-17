@@ -326,9 +326,9 @@ function Projects() {
                   </button>
                 </div>
               ) : (
-                <div className="h-[400px] grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
+                <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
-                    className="group z-10 relative w-full h-fit rounded-2xl animate-smooth-pulse bg-stone-100 dark:bg-[#242424] flex flex-col gap-4 p-4"
+                    className="h-full z-10 relative w-full rounded-2xl animate-smooth-pulse bg-stone-100 dark:bg-[#242424] flex flex-col gap-4 p-4"
                   ></div>
                   {myProjects.map((project, index) => (
                     <div
