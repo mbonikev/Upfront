@@ -379,9 +379,12 @@ function SingleProject() {
         setProjectTitle(response.data.result.name);
         setProjectDesc(response.data.result.desc);
       }
-      if (choice === "1") {
+      if (choice === "1" || choice === "3") {
         setBoards([])
         setTasks([])
+      }
+      if(choice === "2"){
+        
       }
     } catch (error) {}
   };
