@@ -368,6 +368,7 @@ function SingleProject() {
     const choice = e
     try {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
+        projectId: id,
         choice
       });
       setWipeMenu(false)
