@@ -669,7 +669,7 @@ function SingleProject() {
         )}
         {/* Collab dropdown */}
         {userMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
+          <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[190px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
             <AddCollaborators
               users={users}
               username={username}
@@ -682,7 +682,7 @@ function SingleProject() {
         )}
         {/* Delete Dropdown */}
         {deleteMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
+          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
             <p className="text-sm text-text-color/70 dark:text-[#b8b8b8] px-2 pt-2 pb-4">
               <span className="font-medium text-text-color dark:text-white">
                 Warning!{" "}
@@ -760,7 +760,13 @@ function SingleProject() {
             >
               <LuPrinter />
             </button>
-            
+            <button
+            onClick={showWipeMenu}
+              title="Wipe"
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
+            >
+              <PiBroom />
+            </button>
             <button
               onClick={showDeleteMenu}
               title="Move to trash"
@@ -774,13 +780,6 @@ function SingleProject() {
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               <LuUsers2 />
-            </button>
-            <button
-            onClick={showWipeMenu}
-              title="Wipe"
-              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
-            >
-              <PiBroom />
             </button>
             <button
               title="Dues"
