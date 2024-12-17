@@ -366,7 +366,7 @@ function SingleProject() {
   };
   const handleWipe = async (e) => {
     const choice = e;
-    setWiping(true);
+    setWiping(choice);
     try {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
         projectId: id,
@@ -386,6 +386,7 @@ function SingleProject() {
       if(choice === "2"){
         setTasks([])
       }
+      setWiping(false)
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
@@ -754,7 +755,7 @@ function SingleProject() {
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {wiping ? (
+                {wiping === "1" ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
@@ -770,7 +771,7 @@ function SingleProject() {
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {wiping ? (
+                {wiping === "2" ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
@@ -786,7 +787,7 @@ function SingleProject() {
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {wiping ? (
+                {wiping === "3" ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
