@@ -737,7 +737,7 @@ function SingleProject() {
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
-                    <PiBroom className="text-lg" />
+                    <PiBroom className="text-lg opacity-80" />
                     <span className="text-sm font-medium tracking-tight">
                       Boards & Tasks
                     </span>
@@ -753,7 +753,7 @@ function SingleProject() {
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
-                    <PiBroom className="text-lg" />
+                    <PiBroom className="text-lg opacity-80" />
                     <span className="text-sm font-medium tracking-tight">
                       Tasks
                     </span>
@@ -769,7 +769,7 @@ function SingleProject() {
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
-                    <PiBroom className="text-lg" />
+                    <PiBroom className="text-lg opacity-80" />
                     <span className="text-sm font-medium tracking-tight">
                       Everything
                     </span>
