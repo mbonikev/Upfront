@@ -380,13 +380,13 @@ function SingleProject() {
         setProjectDesc(response.data.result.desc);
       }
       if (choice === "1" || choice === "3") {
-        setBoards([])
-        setTasks([])
+        setBoards([]);
+        setTasks([]);
       }
-      if(choice === "2"){
-        setTasks([])
+      if (choice === "2") {
+        setTasks([]);
       }
-      setWiping(false)
+      setWiping(false);
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
@@ -991,87 +991,6 @@ function SingleProject() {
                     {tasks.filter((task) => task.boardId === board.id).length}
                   </span>
                 </h1>
-                {/* task */}
-                {tasks
-                  .filter((task) => task.boardId === board.id)
-                  .map((task) => (
-                    <button
-                      key={task.id}
-                      className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
-                    >
-                      {/* priority */}
-                      <p
-                        className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
-                      >
-                        {task.priority === "High" && (
-                          <>
-                            <LuChevronsUp className="text-xl text-[#ff5630]" />
-                            <span className="text-xs font-semibold text-[#ff5630]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
-                        {task.priority === "Medium" && (
-                          <>
-                            <LuChevronsUpDown className="text-xl text-[#2684ff]" />
-                            <span className="text-xs font-semibold text-[#2684ff]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
-                        {task.priority === "Low" && (
-                          <>
-                            <LuChevronsDown className="text-xl text-[#12c97d]" />
-                            <span className="text-xs font-semibold text-[#12c97d]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
-                      </p>
-                      {/* text */}
-                      <p className="text-sm px-3 text-start">{task.name}</p>
-                      {/* Comments & collaborations */}
-                      <div className="px-3 flex items-center justify-between pt-2">
-                        <div>
-                          <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
-                            <LuMessageCircle className="text-lg" />
-                            <span className="font-medium text-sm">0</span>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-end gap-1">
-                          <div className="flex items-center justify-center">
-                            <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase">
-                              {userEmail.charAt(0)}
-                            </div>
-                            {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p>
-                        <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
-                          {userEmail.charAt(0)}
-                        </p> */}
-                          </div>
-                        </div>
-                      </div>
-                      {/* Due */}
-                      <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
-                        {task.startingOn === task.due ? (
-                          <>
-                            <span>{format(new Date(task.due), "MMM dd")}</span>
-                          </>
-                        ) : (
-                          <>
-                            <span>
-                              {format(new Date(task.startingOn), "MMM dd")}
-                            </span>
-                            <span>
-                              <LuArrowRight />
-                            </span>
-                            <span>{format(new Date(task.due), "MMM dd")}</span>
-                          </>
-                        )}
-                      </p>
-                    </button>
-                  ))}
                 {/* add new task */}
                 {createNewTask === board.id ? (
                   <form
@@ -1204,6 +1123,87 @@ function SingleProject() {
                     </span>
                   </button>
                 )}
+                {/* task */}
+                {tasks
+                  .filter((task) => task.boardId === board.id)
+                  .map((task) => (
+                    <button
+                      key={task.id}
+                      className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
+                    >
+                      {/* priority */}
+                      <p
+                        className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
+                      >
+                        {task.priority === "High" && (
+                          <>
+                            <LuChevronsUp className="text-xl text-[#ff5630]" />
+                            <span className="text-xs font-semibold text-[#ff5630]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                        {task.priority === "Medium" && (
+                          <>
+                            <LuChevronsUpDown className="text-xl text-[#2684ff]" />
+                            <span className="text-xs font-semibold text-[#2684ff]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                        {task.priority === "Low" && (
+                          <>
+                            <LuChevronsDown className="text-xl text-[#12c97d]" />
+                            <span className="text-xs font-semibold text-[#12c97d]">
+                              {task.priority}
+                            </span>
+                          </>
+                        )}
+                      </p>
+                      {/* text */}
+                      <p className="text-sm px-3 text-start">{task.name}</p>
+                      {/* Comments & collaborations */}
+                      <div className="px-3 flex items-center justify-between pt-2">
+                        <div>
+                          <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
+                            <LuMessageCircle className="text-lg" />
+                            <span className="font-medium text-sm">0</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-end gap-1">
+                          <div className="flex items-center justify-center">
+                            <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase">
+                              {userEmail.charAt(0)}
+                            </div>
+                            {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                          {userEmail.charAt(0)}
+                        </p>
+                        <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                          {userEmail.charAt(0)}
+                        </p> */}
+                          </div>
+                        </div>
+                      </div>
+                      {/* Due */}
+                      <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
+                        {task.startingOn === task.due ? (
+                          <>
+                            <span>{format(new Date(task.due), "MMM dd")}</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>
+                              {format(new Date(task.startingOn), "MMM dd")}
+                            </span>
+                            <span>
+                              <LuArrowRight />
+                            </span>
+                            <span>{format(new Date(task.due), "MMM dd")}</span>
+                          </>
+                        )}
+                      </p>
+                    </button>
+                  ))}
               </div>
             ))}
           {addBoard ? (
