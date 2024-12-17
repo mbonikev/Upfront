@@ -721,7 +721,7 @@ function SingleProject() {
         )}
         {/* Wiper Dropdown */}
         {wipeMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
+          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
             <p className="text-sm text-text-color/70 dark:text-[#b8b8b8] px-2 pt-2 pb-4">
               <span className="font-medium text-text-color dark:text-white">
                 Warning!{" "}
@@ -740,7 +740,7 @@ function SingleProject() {
             </p>
             <div className="flex items-center justify-end">
               <button
-                onClick={handleTrashProject}
+                // onClick={handleTrashProject}
                 title="Trash"
                 className="bg-red-500 text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 shadow-md rounded-lg inline-flex items-center justify-center"
               >
