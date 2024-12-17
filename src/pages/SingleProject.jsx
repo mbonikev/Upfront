@@ -366,6 +366,7 @@ function SingleProject() {
   };
   const handleWipe = async (e) => {
     const choice = e
+    setWiping(true)
     try {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
         projectId: id,
