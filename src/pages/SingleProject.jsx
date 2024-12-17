@@ -63,6 +63,7 @@ const { TextArea } = Input;
 import { Select, Space } from "antd";
 import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
+import { PiBroom } from "react-icons/pi";
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -746,7 +747,7 @@ function SingleProject() {
               title="Dues"
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
-              <LuTimerReset />
+              <PiBroom />
             </button>
             <button
               onClick={showDeleteMenu}
