@@ -367,7 +367,7 @@ function SingleProject() {
   const handleWipe = async (e) => {
     const choice = e
     try {
-
+      console.log(choice)
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
