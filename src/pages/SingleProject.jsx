@@ -380,7 +380,8 @@ function SingleProject() {
         setProjectDesc(response.data.result.desc);
       }
       if (choice === "1") {
-        
+        setBoards([])
+        setTasks([])
       }
     } catch (error) {}
   };
