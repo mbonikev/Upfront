@@ -496,9 +496,6 @@ function SingleProject() {
     setGenerateType(value);
   };
 
-  useEffect(() => {
-    console.log(generateType);
-  }, [generateType]);
 
   const PromptTypes = ["Boards Only"];
 
