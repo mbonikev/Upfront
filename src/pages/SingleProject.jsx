@@ -373,7 +373,7 @@ function SingleProject() {
         userEmail,
         choice,
       });
-      console.log(response);
+      // console.log(response);
       setWipeMenu(false);
       if (response.data.result !== null) {
         setProjectTitle(response.data.result.name);
@@ -384,7 +384,7 @@ function SingleProject() {
         setTasks([])
       }
       if(choice === "2"){
-        
+        setTasks([])
       }
     } catch (error) {}
   };
