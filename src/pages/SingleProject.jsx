@@ -367,6 +367,9 @@ function SingleProject() {
   const handleWipe = async (e) => {
     const choice = e
     try {
+      const response = await axios.post(`${apiUrl}/api/wipe`, {
+        choice
+      });
       
     } catch (error) {}
   };
