@@ -36,6 +36,7 @@ import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
 import Achievements from "./Archievements";
+import { HiOutlineSpeakerphone } from "react-icons/hi";
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
@@ -374,7 +375,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               to={"/"}
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
-              <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <HiOutlineSpeakerphone className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
                 <span>Updates</span>
                 <span className="px-[5px] opacity-50 text-sm font-medium">
