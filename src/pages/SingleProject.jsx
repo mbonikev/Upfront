@@ -730,7 +730,7 @@ function SingleProject() {
             </p>
             <div className="flex items-center justify-end flex-col gap-0">
               <button
-                // onClick={handleTrashProject}
+                onClick={handleWipe}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -746,7 +746,7 @@ function SingleProject() {
                 )}
               </button>
               <button
-                // onClick={handleTrashProject}
+                onClick={handleWipe}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -762,11 +762,11 @@ function SingleProject() {
                 )}
               </button>
               <button
-                // onClick={handleTrashProject}
+                onClick={handleWipe}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {deleting ? (
+                {wiping ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
