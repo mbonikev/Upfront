@@ -213,19 +213,25 @@ function SingleProject() {
     setProfileMenu(!profileMenu);
     setUserMenu(false);
     setDeleteMenu(false);
+    setWipeMenu(false)
   };
   const showUserMenu = () => {
     setUserMenu(!userMenu);
     setProfileMenu(false);
     setDeleteMenu(false);
+    setWipeMenu(false)
   };
   const showDeleteMenu = () => {
     setDeleteMenu(!deleteMenu);
     setUserMenu(false);
     setProfileMenu(false);
+    setWipeMenu(false)
   };
   const showWipeMenu = () => {
     setWipeMenu(!wipeMenu)
+    setUserMenu(false);
+    setProfileMenu(false);
+    setDeleteMenu(false);
   }
   // get project details
   useEffect(() => {
