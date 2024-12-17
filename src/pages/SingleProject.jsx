@@ -755,7 +755,7 @@ function SingleProject() {
                   <>
                     <PiBroom className="text-lg" />
                     <span className="text-sm font-medium tracking-tight">
-                      Boards & Tasks
+                      Tasks
                     </span>
                   </>
                 )}
@@ -771,7 +771,7 @@ function SingleProject() {
                   <>
                     <PiBroom className="text-lg" />
                     <span className="text-sm font-medium tracking-tight">
-                      Boards & Tasks
+                      Everything
                     </span>
                   </>
                 )}
