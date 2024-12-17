@@ -111,7 +111,7 @@ function SingleProject() {
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
-  const [generateType, setGenerateType] = useState("Boards & Tasks");
+  const [generateType, setGenerateType] = useState("Boards Only");
   const [projectDescription, setProjectDescription] = useState("");
   const [Aiboards, setAiBoards] = useState([]);
   const [loading, setLoading] = useState(false);
