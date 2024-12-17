@@ -331,7 +331,7 @@ function Projects() {
                   <div
                     className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] text-text-color dark:text-[#303030] transition border-dashed flex flex-col items-center justify-center gap-2"
                   >
-                    <IoIosAddCircle className="text-5xl" />  
+                    <IoIosAddCircle className="text-5xl max-2xl:text-4xl" />  
                   </div>                  
                   {myProjects.map((project, index) => (
                     <div
