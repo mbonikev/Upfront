@@ -373,6 +373,7 @@ function SingleProject() {
         choice
       });
       setWipeMenu(false)
+      console.log(response)
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
