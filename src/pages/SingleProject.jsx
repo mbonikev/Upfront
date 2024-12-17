@@ -364,7 +364,8 @@ function SingleProject() {
       setDeleting(false);
     }
   };
-  const handleWipe = async () => {
+  const handleWipe = async (e) => {
+    const choice = e
     try {
 
     } catch (error) {}
