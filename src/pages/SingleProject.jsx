@@ -743,6 +743,12 @@ function SingleProject() {
               <LuPrinter />
             </button>
             <button
+              title="Dues"
+              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
+            >
+              <LuTimerReset />
+            </button>
+            <button
               onClick={showDeleteMenu}
               title="Move to trash"
               className="text-lg h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-red-500 dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] "
