@@ -366,6 +366,7 @@ function SingleProject() {
   };
   const handleWipe = async () => {
     try {
+
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
@@ -734,7 +735,7 @@ function SingleProject() {
             </p>
             <div className="flex items-center justify-end flex-col gap-0">
               <button
-                onClick={handleWipe}
+                onClick={() => handleWipe('Boards & Tasks')}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -750,7 +751,7 @@ function SingleProject() {
                 )}
               </button>
               <button
-                onClick={handleWipe}
+                onClick={() => handleWipe('Tasks')}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -766,7 +767,7 @@ function SingleProject() {
                 )}
               </button>
               <button
-                onClick={handleWipe}
+                onClick={() => handleWipe('Everything')}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
