@@ -370,7 +370,7 @@ function SingleProject() {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
         choice
       });
-      
+      setWipeMenu(false)
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
