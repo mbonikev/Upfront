@@ -482,7 +482,7 @@ function SingleProject() {
     console.log(generateType);
   }, [generateType]);
 
-  const PromptTypes = ["Boards & Tasks"];
+  const PromptTypes = ["Boards Only"];
 
   return (
     <>
@@ -580,7 +580,7 @@ function SingleProject() {
                `}
               >
                 <div className="flex items-center justify-start gap-1 text-sm">
-                  <h1>Boards Only </h1>
+                  <h1>Boards & Tasks </h1>
                 </div>
               </label>
               <label
