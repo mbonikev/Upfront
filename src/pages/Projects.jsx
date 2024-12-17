@@ -328,7 +328,7 @@ function Projects() {
               ) : (
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
-                    className="h-full z-10 relative w-full rounded-2xl animate-smooth-pulse bg-stone-100 dark:bg-[#242424] flex flex-col gap-4 p-4"
+                    className="h-full relative w-full rounded-2xl bg-stone-100 dark:bg-[#242424] flex flex-col gap-4 p-4"
                   ></div>
                   {myProjects.map((project, index) => (
                     <div
