@@ -682,7 +682,7 @@ function SingleProject() {
         }`}
       ></div>
       {/* Menu */}
-      <div className="w-full h-fit flex flex-col justify-center sticky top-0 items-start z-30 bg-white fixed">
+      <div className="w-full h-fit flex flex-col justify-center top-0 items-start z-30 bg-white fixed">
         {/* profile dropdown */}
         {profileMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
@@ -886,7 +886,7 @@ function SingleProject() {
         </div>
       </div>
       <div
-        className={`w-full min-h-svh text-text-color flex flex-col bg-white dark:bg-dark-body overflow-y-auto relative `}
+        className={`w-full min-h-svh pt-[300px] text-text-color flex flex-col bg-white dark:bg-dark-body overflow-y-auto relative `}
       >
         {/* Project section */}
         {/* loader on fetch */}
