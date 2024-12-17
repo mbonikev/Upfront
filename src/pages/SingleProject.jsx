@@ -365,19 +365,22 @@ function SingleProject() {
     }
   };
   const handleWipe = async (e) => {
-    const choice = e
-    setWiping(true)
+    const choice = e;
+    setWiping(true);
     try {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
         projectId: id,
         userEmail,
-        choice
+        choice,
       });
-      console.log(response)
-      setWipeMenu(false)
-      if(response.data.result !== null){
-        setProjectTitle(response.data.result.name)
-        setProjectDesc(response.data.result.desc)
+      console.log(response);
+      setWipeMenu(false);
+      if (response.data.result !== null) {
+        setProjectTitle(response.data.result.name);
+        setProjectDesc(response.data.result.desc);
+      }
+      if (choice === "1") {
+        
       }
     } catch (error) {}
   };
@@ -506,7 +509,6 @@ function SingleProject() {
 
     setGenerateType(value);
   };
-
 
   const PromptTypes = ["Boards Only"];
 
@@ -744,7 +746,7 @@ function SingleProject() {
             </p>
             <div className="flex items-center justify-end flex-col gap-0">
               <button
-                onClick={() => handleWipe('1')}
+                onClick={() => handleWipe("1")}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -760,7 +762,7 @@ function SingleProject() {
                 )}
               </button>
               <button
-                onClick={() => handleWipe('2')}
+                onClick={() => handleWipe("2")}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
@@ -776,7 +778,7 @@ function SingleProject() {
                 )}
               </button>
               <button
-                onClick={() => handleWipe('3')}
+                onClick={() => handleWipe("3")}
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
