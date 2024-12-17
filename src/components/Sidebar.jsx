@@ -129,7 +129,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
   const linkStyle =
-    "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative";
+    "min-h-[34px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative select-none";
 
   const getDate = new Date();
   const Today = getDate.getDate();
@@ -358,9 +358,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           {/* 3 */}
           <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
             
-            <Link
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+            <button
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
             >
               <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
@@ -369,11 +368,11 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   99+
                 </span>
               </p>
-            </Link>
+            </button>
 
-            <Link
+            <button
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
             >
               <HiOutlineSpeakerphone className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
@@ -382,7 +381,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   1
                 </span>
               </p>
-            </Link>
+            </button>
 
           </div>
         </div>
