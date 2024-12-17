@@ -373,9 +373,10 @@ function SingleProject() {
         userEmail,
         choice
       });
+      console.log(response)
       setWipeMenu(false)
       if(response.data.result !== null){
-        
+        // set
       }
     } catch (error) {}
   };
