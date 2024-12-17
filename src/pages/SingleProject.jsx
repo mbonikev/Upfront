@@ -886,7 +886,7 @@ function SingleProject() {
         </div>
       </div>
       <div
-        className={`w-full min-h-svh pt-[300px] text-text-color flex flex-col bg-white dark:bg-dark-body overflow-y-auto relative `}
+        className={`w-full min-h-svh pt-[40px] text-text-color flex flex-col bg-white dark:bg-dark-body overflow-y-auto relative `}
       >
         {/* Project section */}
         {/* loader on fetch */}
