@@ -369,7 +369,7 @@ function SingleProject() {
     try {
       const response = await axios.post(`${apiUrl}/api/wipe`, {
         projectId: id,
-        userEmail
+        userEmail,
         choice
       });
       setWipeMenu(false)
