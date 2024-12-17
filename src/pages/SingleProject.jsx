@@ -70,6 +70,7 @@ function SingleProject() {
   const [profileMenu, setProfileMenu] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
   const [deleteMenu, setDeleteMenu] = useState(false);
+  const [wipeMenu, setWipeMenu] = useState(false);
   const inputRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
@@ -224,7 +225,7 @@ function SingleProject() {
     setProfileMenu(false);
   };
   const showWipeMenu = () => {
-    
+
   }
   // get project details
   useEffect(() => {
