@@ -225,7 +225,7 @@ function SingleProject() {
     setProfileMenu(false);
   };
   const showWipeMenu = () => {
-
+    setWipeMenu(!wipeMenu)
   }
   // get project details
   useEffect(() => {
