@@ -727,7 +727,7 @@ function SingleProject() {
                 Wipe Out
               </span>
             </p>
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end flex-col gap-1">
               <button
                 // onClick={handleTrashProject}
                 title="Remove Boards & Tasks"
