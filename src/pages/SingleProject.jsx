@@ -1129,7 +1129,7 @@ function SingleProject() {
                   .map((task) => (
                     <button
                       key={task.id}
-                      className="w-full py-3 mb-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
+                      className="w-full py-3 mt-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
                     >
                       {/* priority */}
                       <p
