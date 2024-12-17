@@ -731,7 +731,7 @@ function SingleProject() {
               <button
                 // onClick={handleTrashProject}
                 title="Trash"
-                className="bg-red-500 text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 shadow-md rounded-lg inline-flex items-center justify-start"
+                className="bg-stone-200 text-white transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 rounded-lg inline-flex items-center justify-start"
               >
                 {deleting ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
