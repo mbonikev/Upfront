@@ -329,7 +329,7 @@ function Projects() {
               ) : (
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
-                    className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] text-text-color dark:text-[#303030] transition border-dashed flex flex-col items-center justify-center gap-2"
+                    className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] border-text-color/20 text-text-color/20 dark:text-[#303030] hover:text-main-color transition border-dashed flex flex-col items-center justify-center gap-2"
                   >
                     <IoIosAddCircle className="text-5xl max-2xl:text-4xl" />  
                   </div>                  
