@@ -376,6 +376,7 @@ function SingleProject() {
       console.log(response)
       setWipeMenu(false)
       if(response.data.result !== null){
+        setProjectTitle(response.data.result.name)
         setProjectDesc(response.data.result.desc)
       }
     } catch (error) {}
