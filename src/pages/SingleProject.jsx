@@ -365,8 +365,9 @@ function SingleProject() {
     }
   };
   const handleWipe = async () => {
-    
-  } 
+    try {
+    } catch (error) {}
+  };
   const handleNewBoard = async (e) => {
     e.preventDefault();
     setAddingBoard(true);
