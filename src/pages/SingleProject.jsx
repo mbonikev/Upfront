@@ -87,6 +87,7 @@ function SingleProject() {
   const [users, setUsers] = useState("");
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [wiping, setWiping] = useState(false);
   const [addingBoard, setAddingBoard] = useState(false);
   const [addingTask, setAddingTask] = useState(false);
   const textareaRef = useRef(null);
@@ -733,7 +734,7 @@ function SingleProject() {
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {deleting ? (
+                {wiping ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
@@ -749,7 +750,7 @@ function SingleProject() {
                 title="Remove Boards & Tasks"
                 className="hover:bg-stone-200/50 dark:hover:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-2 rounded-lg inline-flex items-center justify-start"
               >
-                {deleting ? (
+                {wiping ? (
                   <RiLoader5Fill className="text-2xl animate-spinLoader" />
                 ) : (
                   <>
