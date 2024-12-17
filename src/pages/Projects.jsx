@@ -329,9 +329,9 @@ function Projects() {
               ) : (
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
-                    className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] text-text-color dark:text-[#303030] transition border-dashed flex flex-col gap-4 p-4"
+                    className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] text-text-color dark:text-[#303030] transition border-dashed flex flex-col items-center justify-center gap-2"
                   >
-                    <FaPlusCircle className="" />  
+                    <FaPlusCircle className="text-3xl" />  
                   </div>                  
                   {myProjects.map((project, index) => (
                     <div
