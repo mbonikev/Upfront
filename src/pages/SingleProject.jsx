@@ -213,26 +213,26 @@ function SingleProject() {
     setProfileMenu(!profileMenu);
     setUserMenu(false);
     setDeleteMenu(false);
-    setWipeMenu(false)
+    setWipeMenu(false);
   };
   const showUserMenu = () => {
     setUserMenu(!userMenu);
     setProfileMenu(false);
     setDeleteMenu(false);
-    setWipeMenu(false)
+    setWipeMenu(false);
   };
   const showDeleteMenu = () => {
     setDeleteMenu(!deleteMenu);
     setUserMenu(false);
     setProfileMenu(false);
-    setWipeMenu(false)
+    setWipeMenu(false);
   };
   const showWipeMenu = () => {
-    setWipeMenu(!wipeMenu)
+    setWipeMenu(!wipeMenu);
     setUserMenu(false);
     setProfileMenu(false);
     setDeleteMenu(false);
-  }
+  };
   // get project details
   useEffect(() => {
     const getProject = async () => {
@@ -730,7 +730,7 @@ function SingleProject() {
             <div className="flex items-center justify-end">
               <button
                 // onClick={handleTrashProject}
-                title="Boards & Tasks"
+                title="Remove Boards & Tasks"
                 className="bg-stone-200/50 dark:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 rounded-lg inline-flex items-center justify-start"
               >
                 {deleting ? (
@@ -739,7 +739,39 @@ function SingleProject() {
                   <>
                     <PiBroom className="text-lg" />
                     <span className="text-sm font-medium tracking-tight">
-                      Move to Trash
+                      Boards & Tasks
+                    </span>
+                  </>
+                )}
+              </button>
+              <button
+                // onClick={handleTrashProject}
+                title="Remove Boards & Tasks"
+                className="bg-stone-200/50 dark:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 rounded-lg inline-flex items-center justify-start"
+              >
+                {deleting ? (
+                  <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                ) : (
+                  <>
+                    <PiBroom className="text-lg" />
+                    <span className="text-sm font-medium tracking-tight">
+                      Boards & Tasks
+                    </span>
+                  </>
+                )}
+              </button>
+              <button
+                // onClick={handleTrashProject}
+                title="Remove Boards & Tasks"
+                className="bg-stone-200/50 dark:bg-[#303030] text-text-color  dark:text-[#b8b8b8] transition text-xs font-semibold h-[35px] py-0 px-3 w-full gap-1 rounded-lg inline-flex items-center justify-start"
+              >
+                {deleting ? (
+                  <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                ) : (
+                  <>
+                    <PiBroom className="text-lg" />
+                    <span className="text-sm font-medium tracking-tight">
+                      Boards & Tasks
                     </span>
                   </>
                 )}
@@ -789,7 +821,7 @@ function SingleProject() {
               <LuPrinter />
             </button>
             <button
-            onClick={showWipeMenu}
+              onClick={showWipeMenu}
               title="Wipe"
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
