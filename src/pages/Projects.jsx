@@ -11,6 +11,7 @@ import { setArray } from "../utils/hashUtils";
 import AddNotes from "../components/AddNotes";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoFolderOpen } from "react-icons/io5";
+import { FaPlusCircle } from "react-icons/fa";
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -329,7 +330,9 @@ function Projects() {
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
                     className="h-full relative w-full rounded-2xl bg-transparent border-[3px] dark:border-[#303030] transition border-dashed flex flex-col gap-4 p-4"
-                  ></div>
+                  >
+                    <FaPlusCircle />  
+                  </div>                  
                   {myProjects.map((project, index) => (
                     <div
                       key={index}
