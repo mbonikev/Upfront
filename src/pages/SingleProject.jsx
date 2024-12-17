@@ -374,7 +374,9 @@ function SingleProject() {
         choice
       });
       setWipeMenu(false)
-      console.log(response)
+      if(response.data.result !== null){
+        
+      }
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
