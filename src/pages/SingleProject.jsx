@@ -645,6 +645,13 @@ function SingleProject() {
           deleteMenu ? "fixed cursor-default" : "hidden"
         }`}
       ></div>
+      {/* Wipe Menu overlay */}
+      <div
+        onClick={() => setWipeMenu(false)}
+        className={` top-0 left-0 w-full h-full z-30 bg-transparent ${
+          wipeMenu ? "fixed cursor-default" : "hidden"
+        }`}
+      ></div>
       {/* more options board menu */}
       <div
         onClick={handleCancel}
