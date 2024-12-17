@@ -376,7 +376,7 @@ function SingleProject() {
       console.log(response)
       setWipeMenu(false)
       if(response.data.result !== null){
-        // set
+        setProjectDesc(response.data.result.desc)
       }
     } catch (error) {}
   };
