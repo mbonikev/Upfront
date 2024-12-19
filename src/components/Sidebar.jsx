@@ -187,7 +187,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           }`}
         ></div>
         {/* search modal */}
-        <div>
+        <div className="z-50">
           <SearchModal />
         </div>
         {/* dropdown */}
