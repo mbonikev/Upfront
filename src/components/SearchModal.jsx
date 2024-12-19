@@ -1,4 +1,5 @@
 import React from "react";
+import { FiCheckCircle } from "react-icons/fi";
 import { IoFolderOpen } from "react-icons/io5";
 import { LuSearch } from "react-icons/lu";
 
@@ -23,7 +24,7 @@ function SearchModal() {
             <span className="text-white tracking-tight">Projects</span>
           </button>
           <button className="outline-none flex items-center justify-start bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
-            <IoFolderOpen className="text-xl" />
+            <FiCheckCircle className="text-xl" />
             <span className="text-white tracking-tight">Tasks</span>
           </button>
           <button className="outline-none flex items-center justify-start bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
