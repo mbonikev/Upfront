@@ -8,7 +8,7 @@ function SearchModal() {
         <div>
           <LuSearch className="text-2xl" />
         </div>
-        <input type="text" className="bg-transparent" placeholder="" />
+        <input type="text" className="bg-transparent" placeholder="Project name, Task name, Template name or Keywords..." />
       </div>
     </div>
   );
