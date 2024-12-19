@@ -7,6 +7,7 @@ import {
   LuBell,
   LuCheck,
   LuCheckCircle,
+  LuChevronDown,
   LuChevronsUpDown,
   LuCog,
   LuCrown,
@@ -265,7 +266,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
               <span>Workspaces</span>
               <Link to={"/"} title="Add Worksspace">
-                <LuPlus className="text-lg cursor-pointer text-text-color dark:text-[#b8b8b8] hover:text-white" />
+                <LuChevronDown className="text-lg cursor-pointer text-text-color dark:text-[#f1f1f1] hover:text-white" />
               </Link>
             </p>
             {/* Workspace 1 */}
