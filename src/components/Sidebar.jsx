@@ -262,8 +262,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </span>
               </p>
             </Link>
-            <p className="flex items-center justify-start gap-[7px] mt-[6px] rounded-lg py-[7px] pr-[16px] pl-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight select-none cursor-pointer w-fit">
-              <LuChevronDown className="p-[2px] hover:bg-main-color/10 dark:hover:bg-[#2c2c2c] rounded-md h-[40px] w-auto aspect-square" />
+            <p className="flex items-center justify-start gap-[7px] mt-[6px] rounded-lg py-[7px] pr-[16px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight select-none cursor-pointer w-fit">
+              <LuChevronDown className="p-[2px] hover:bg-main-color/10 dark:hover:bg-[#2c2c2c] rounded-md h-[20px] w-auto aspect-square" />
               <span>Workspaces</span>
             </p>
             {/* Workspace 1 */}
@@ -276,7 +276,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
                 }`}
               >
-                <IoFolderOpen className="text-xl ml-[3px] text-text-color/50 dark:text-[#858585]" />
+                <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
                 <p className="line-clamp-1 max-w-[70%]">{w1}</p>
               </Link>
               {saveOpt1 && (
