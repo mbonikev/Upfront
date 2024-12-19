@@ -262,11 +262,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </span>
               </p>
             </Link>
-            <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-             
-              <Link to={"/"} title="Add Worksspace">
-                <LuChevronDown className="text-lg cursor-pointer text-text-color dark:text-[#f1f1f1]/70 hover:text-white" />
-              </Link>
+            <p className="flex items-center justify-start gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
+              <LuChevronDown className="text-lg cursor-pointer text-text-color dark:text-[#f1f1f1]/70 hover:text-white" />
               <span>Workspaces</span>
             </p>
             {/* Workspace 1 */}
@@ -358,7 +355,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
           {/* 3 */}
           <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
-            
             <button
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
             >
@@ -383,7 +379,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </span>
               </p>
             </button>
-
           </div>
         </div>
       </div>
