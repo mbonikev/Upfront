@@ -202,9 +202,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         {showSearchModal && (
           <div
             className={`w-fit h-full max-h-[63%] bg-[#161616ce] dark:bg-[#29292995] backdrop-blur-[20px] rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30
-              ${
-                
-              }`}
+              ${AnimateShowSearchModal ? "opacity-100" : "opacity-0"}
+              `}
           >
             <SearchModal />
           </div>
