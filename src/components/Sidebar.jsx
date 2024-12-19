@@ -38,6 +38,7 @@ import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
 import Achievements from "./Archievements";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
+import SearchModal from "./SearchModal";
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
@@ -180,11 +181,15 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         )}
         {/* search overlay */}
         <div
-          onClick={() => setShowSearchModal(false)}
+          // onClick={() => setShowSearchModal(false)}
           className={` top-0 left-0 w-full h-full z-20 backdrop-blur-[3px]  ${
             showSearchModal ? "fixed" : "hidden"
           }`}
         ></div>
+        {/* search modal */}
+        <div>
+          <SearchModal />
+        </div>
         {/* dropdown */}
         {profileMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
