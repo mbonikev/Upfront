@@ -218,6 +218,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               )}
             </button>
             <button
+              onClick={handleShowSearch}
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
