@@ -299,7 +299,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               )}
               <div
                 onClick={showMoreMenuw1}
-                className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 dark:bg-[#2c2c2c] px-2 ${
+                className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
                   moreOpt1 && "opacity-100"
                 }`}
               >
