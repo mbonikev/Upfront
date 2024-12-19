@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosAddCircle, IoMdNotificationsOutline } from "react-icons/io";
-import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
+import { IoChevronDown, IoFolderOpen, IoFolderOpenOutline } from "react-icons/io5";
 import {
   LuActivity,
   LuBadgeX,
@@ -276,7 +276,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
                 }`}
               >
-                <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                <IoFolderOpenOutline className="text-xl text-text-color/50 dark:text-[#858585]" />
                 <p className="line-clamp-1 max-w-[70%]">{w1}</p>
               </Link>
               {saveOpt1 && (
