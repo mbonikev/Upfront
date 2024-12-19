@@ -11,7 +11,8 @@ function SearchModal() {
         <input type="text" autoFocus={true} className="tracking-tight bg-transparent w-full text-lg text-white placeholder:text-[#a1a1a1]" placeholder="Project name, Task name, Template name or Keywords..." />
       </div>
       <div className="w-full flex-1 mt-5 flex items-start justify-start">
-        <div className=""></div>
+        <div className="w-1/3 bg-green-500"></div>
+        <div className="w-2/3 bg-green-500"></div>
       </div>
     </div>
   );
