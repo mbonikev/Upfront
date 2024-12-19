@@ -24,6 +24,10 @@ function SearchModal() {
           </button>
           <button className="outline-none flex items-center justify-start bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
             <IoFolderOpen className="text-xl" />
+            <span className="text-white tracking-tight">Tasks</span>
+          </button>
+          <button className="outline-none flex items-center justify-start bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
+            <IoFolderOpen className="text-xl" />
             <span className="text-white tracking-tight">Projects</span>
           </button>
         </div>
