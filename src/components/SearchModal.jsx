@@ -20,7 +20,7 @@ function SearchModal() {
       </div>
       <div className="w-full flex-1 mt-6 flex items-start justify-start gap-5">
         <div className="w-1/3 h-full flex items-start justify-start flex-col gap-0.5">
-          <button className="outline-none flex items-center justify-start hover:bg-[#4b4b4b] dark:bg-[#383838] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
+          <button className="outline-none flex items-center justify-start bg-[#4b4b4b] dark:bg-[#383838] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
             <LuFiles className="text-xl" />
             <span className="text-[#f0f0f0] tracking-tight">Projects</span>
           </button>
