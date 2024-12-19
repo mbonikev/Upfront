@@ -2,7 +2,7 @@ import React from 'react'
 
 function SearchModal() {
   return (
-    <div className='z-40 bg-red-400'>SearchModal</div>
+    <div className=''>SearchModal</div>
   )
 }
 
