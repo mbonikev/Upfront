@@ -12,9 +12,10 @@ function SearchModal() {
         <input type="text" autoFocus={true} className="tracking-tight bg-transparent w-full text-lg text-white placeholder:text-[#a1a1a1]" placeholder="Project name, Task name, Template name or Keywords..." />
       </div>
       <div className="w-full flex-1 mt-5 flex items-start justify-start gap-5">
-        <div className="w-1/3 h-full flex items-start justify-start bg-blue-100">
-            <button className="outline-none flex items-center justify-start gap-2 ">
+        <div className="w-1/3 h-full flex items-start justify-start">
+            <button className="outline-none flex items-center justify-start gap-2 text-[#b8b8b8] ">
                 <IoFolderOpen />
+                <span>Projects</span>
             </button>
         </div>
         <div className="w-2/3 h-full bg-green-500"></div>
