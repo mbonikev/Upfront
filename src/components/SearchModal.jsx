@@ -6,7 +6,7 @@ import { PiPersonSimpleRunBold } from "react-icons/pi";
 
 function SearchModal() {
   return (
-    <div className="w-[810px] h-full px-5 py-3 flex flex-col">
+    <div className="w-[810px] h-full px-5 py-[15px] flex flex-col">
       <div className="flex items-center justify-start gap-3 h-[35px] px-1 text-[#a1a1a1]">
         <div>
           <LuSearch className="text-xl text-white" />
