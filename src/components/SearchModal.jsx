@@ -22,15 +22,15 @@ function SearchModal() {
         <div className="w-1/3 h-full flex items-start justify-start flex-col gap-0.5">
           <button className="outline-none flex items-center justify-start bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
             <IoFolderOpen className="text-xl" />
-            <span className="text-white tracking-tight">Projects</span>
+            <span className="text-[#f0f0f0] tracking-tight">Projects</span>
           </button>
           <button className="outline-none flex items-center justify-start hover:bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
             <FiCheckCircle className="text-xl" />
-            <span className="text-white tracking-tight">Tasks</span>
+            <span className="text-[#f0f0f0] tracking-tight">Tasks</span>
           </button>
           <button className="outline-none flex items-center justify-start hover:bg-[#4b4b4b] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
             <PiPersonSimpleRunBold className="text-xl" />
-            <span className="text-white tracking-tight">Templates</span>
+            <span className="text-[#f0f0f0] tracking-tight">Templates</span>
           </button>
         </div>
         <div className="w-2/3 h-full bg-green-500"></div>
