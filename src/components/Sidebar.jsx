@@ -187,7 +187,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           }`}
         ></div>
         {/* search modal */}
-        <div className="w-fit h-fit bg-[#242424] rounded-xl fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
+        <div className="w-fit h-fit bg-[#242424] rounded-[40px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
           <SearchModal />
         </div>
         {/* dropdown */}
