@@ -276,7 +276,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
                 }`}
               >
-                <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                <IoFolderOpen className="text-xl ml-[3px] text-text-color/50 dark:text-[#858585]" />
                 <p className="line-clamp-1 max-w-[70%]">{w1}</p>
               </Link>
               {saveOpt1 && (
