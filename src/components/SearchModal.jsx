@@ -1,4 +1,5 @@
 import React from "react";
+import { IoFolderOpen } from "react-icons/io5";
 import { LuSearch } from "react-icons/lu";
 
 function SearchModal() {
@@ -13,7 +14,7 @@ function SearchModal() {
       <div className="w-full flex-1 mt-5 flex items-start justify-start gap-5">
         <div className="w-1/3 h-full flex">
             <button className="outline-none flex items-center justify-start gap-2 ">
-                
+                <IoFolderOpen />
             </button>
         </div>
         <div className="w-2/3 h-full bg-green-500"></div>
