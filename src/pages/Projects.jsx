@@ -328,7 +328,7 @@ function Projects() {
                 </div>
               ) : (
                 <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
-                  <div onClick={handleCreate} className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] xl:border-[3px] dark:border-[#303030] border-text-color/20 text-text-color/20 dark:text-[#303030] hover:text-main-color hover:border-main-color cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2">
+                  <div onClick={handleCreate} className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[0px] xl:border-[3px] dark:border-[#303030] border-text-color/20 text-text-color/20 dark:text-[#303030] hover:text-main-color hover:border-main-color cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2">
                     {createNew ? (
                       <div className="flex items-center gap-1 text-main-color">
                         <RiLoader5Fill className="text-2xl animate-spinLoader" />
