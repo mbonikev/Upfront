@@ -192,12 +192,14 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
         )}
         {/* search overlay */}
-        <div
-          onClick={handleHideSearch}
-          className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px]  ${
-            showSearchModal ? "fixed" : "hidden"
-          }`}
-        ></div>
+        {showSearchModal && (
+          <div
+            onClick={handleHideSearch}
+            className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px]  ${
+              AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
+            }`}
+          ></div>
+        )}
         {/* search modal */}
         {showSearchModal && (
           <div
