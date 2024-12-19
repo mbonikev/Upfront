@@ -139,7 +139,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const Today = getDate.getDate();
 
   const handleShowSearch = () => {
-    
+    setShowSearchModal(true);
+    setTimeout(() => {
+      setAnimateShowSearchModal(true)
+    }, 300);
   };
 
   return (
