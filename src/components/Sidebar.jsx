@@ -135,10 +135,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const getDate = new Date();
   const Today = getDate.getDate();
 
-
-  const handleShowSearch = () => {
-    
-  }
+  const handleShowSearch = () => {};
 
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20 ">
@@ -180,7 +177,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             />
           </div>
         )}
-
+        {/* search overlay */}
+        <div
+          onClick={() => setAchievments(true)}
+          className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${
+            achievments ? "fixed" : "hidden"
+          }`}
+        ></div>
         {/* dropdown */}
         {profileMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
