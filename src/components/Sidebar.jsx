@@ -57,7 +57,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [achievments, setAchievments] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(true);
-  const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(true);
+  const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   // workspace1
   const handleSubmit1 = async (e) => {
     e.preventDefault();
