@@ -141,13 +141,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const handleShowSearch = () => {
     setShowSearchModal(true);
     setTimeout(() => {
-      setAnimateShowSearchModal(true)
+      setAnimateShowSearchModal(true);
     }, 300);
   };
   const handleHideSearch = () => {
-    setShowSearchModal(true);
+    setAnimateShowSearchModal(false);
     setTimeout(() => {
-      setAnimateShowSearchModal(true)
+      setShowSearchModal(false);
     }, 300);
   };
 
