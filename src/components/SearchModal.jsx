@@ -13,7 +13,7 @@ function SearchModal() {
       </div>
       <div className="w-full flex-1 mt-5 flex items-start justify-start gap-5">
         <div className="w-1/3 h-full flex items-start justify-start">
-            <button className="outline-none flex items-center bg-red-500 w-full p-[5px] px-3 justify-start gap-2 text-[#a1a1a1] text-lg font-medium ">
+            <button className="outline-none flex items-center bg-red-500 w-full p-[7px] px-3 rounded-xl justify-start gap-2 text-[#a1a1a1] text-lg font-medium ">
                 <IoFolderOpen className="text-xl" />
                 <span>Projects</span>
             </button>
