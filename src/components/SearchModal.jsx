@@ -33,7 +33,9 @@ function SearchModal() {
             <span className="text-[#f0f0f0] tracking-tight">Templates</span>
           </button>
         </div>
-        <div className="w-2/3 h-full bg-green-500"></div>
+        <div className="w-2/3 h-full flex flex-col">
+            <link rel="stylesheet" href="" />
+        </div>
       </div>
     </div>
   );
