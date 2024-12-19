@@ -55,6 +55,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [createNew, setCreateNew] = useState(false);
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [achievments, setAchievments] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false)
   // workspace1
   const handleSubmit1 = async (e) => {
     e.preventDefault();
@@ -179,7 +180,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         )}
         {/* search overlay */}
         <div
-          onClick={() => setAchievments(true)}
+          onClick={() => setShowSearchModal(false)}
           className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${
             achievments ? "fixed" : "hidden"
           }`}
