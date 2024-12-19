@@ -34,7 +34,9 @@ function SearchModal() {
           </button>
         </div>
         <div className="w-2/3 h-full flex flex-col">
-            <link rel="stylesheet" href="" />
+            <div className="flex items-center justify-between px-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
+                
+            </div>
         </div>
       </div>
     </div>
