@@ -12,7 +12,9 @@ function SearchModal() {
       </div>
       <div className="w-full flex-1 mt-5 flex items-start justify-start gap-5">
         <div className="w-1/3 h-full flex">
-            <button className="outline-none flex items-center justify-start "></button>
+            <button className="outline-none flex items-center justify-start gap-2 ">
+                
+            </button>
         </div>
         <div className="w-2/3 h-full bg-green-500"></div>
       </div>
