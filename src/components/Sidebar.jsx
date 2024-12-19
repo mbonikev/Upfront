@@ -57,6 +57,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [achievments, setAchievments] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(true);
+  const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(true);
   // workspace1
   const handleSubmit1 = async (e) => {
     e.preventDefault();
@@ -137,7 +138,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const getDate = new Date();
   const Today = getDate.getDate();
 
-  const handleShowSearch = () => {};
+  const handleShowSearch = () => {
+    
+  };
 
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20 ">
