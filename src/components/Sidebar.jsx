@@ -134,6 +134,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   const getDate = new Date();
   const Today = getDate.getDate();
+
+
+  const handleShowSearch = () => {
+    
+  }
+
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20 ">
       <div className=" relative w-full h-full">
