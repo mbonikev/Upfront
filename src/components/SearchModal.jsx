@@ -34,9 +34,9 @@ function SearchModal() {
           </button>
         </div>
         <div className="w-2/3 h-full flex flex-col pr-4">
-            <div className="flex items-center justify-between cursor-pointer pl-3 pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
-                <span className="text-[#f0f0f0] font-medium">The Green Project</span>
-                <span>21</span>
+            <div className="text-[#f0f0f0] flex items-center justify-between cursor-pointer pl-3 pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
+                <span className=" font-medium">The Green Project</span>
+                <span className="opacity-15 ">21</span>
             </div>
         </div>
       </div>
