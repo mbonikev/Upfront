@@ -182,12 +182,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         {/* search overlay */}
         <div
           // onClick={() => setShowSearchModal(false)}
-          className={` top-0 left-0 w-full h-full z-20 bg-black/40 backdrop-blur-[3px]  ${
+          className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px]  ${
             showSearchModal ? "fixed" : "hidden"
           }`}
         ></div>
         {/* search modal */}
-        <div className="w-fit h-fit bg-[#242424]/50 backdrop-blur-xl rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
+        <div className="w-fit h-fit bg-[#242424]/80 backdrop-blur-2xl rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
           <SearchModal />
         </div>
         {/* dropdown */}
