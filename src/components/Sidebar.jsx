@@ -263,7 +263,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </p>
             </Link>
             <p className="flex items-center justify-start gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-              <LuChevronDown className="text-lg cursor-pointer text-text-color dark:text-[#f1f1f1]/70 hover:text-white" />
+              <LuChevronDown className="text-lg" />
               <span>Workspaces</span>
             </p>
             {/* Workspace 1 */}
