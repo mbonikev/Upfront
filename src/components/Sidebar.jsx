@@ -144,6 +144,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       setAnimateShowSearchModal(true)
     }, 300);
   };
+  const handleHideSearch = () => {
+    setShowSearchModal(true);
+    setTimeout(() => {
+      setAnimateShowSearchModal(true)
+    }, 300);
+  };
 
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20 ">
