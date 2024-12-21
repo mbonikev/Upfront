@@ -26,14 +26,15 @@ function ProfileDropdownButtons({ username, setAchievments, setProfileMenu }) {
   };
 
   const handleAch = () => {
-    setProfileMenu(false)
-  }
+    setProfileMenu(false);
+    setAchievments(true);
+  };
 
   return (
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
       <div className="p-2 w-full">
         <button
-          onClick={() => setAchievments(true)}
+          onClick={handleAch}
           className="w-full min-h-[34px] flex items-center justify-start gap-2 px-2 py-[3px] text-sm font-normal tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 "
         >
           <LuTrophy className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50 min-w-fit" />
