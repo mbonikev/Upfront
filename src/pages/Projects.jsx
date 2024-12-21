@@ -12,6 +12,9 @@ import AddNotes from "../components/AddNotes";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoFolderOpen } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
+
+
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
