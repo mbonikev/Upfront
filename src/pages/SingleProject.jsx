@@ -529,7 +529,7 @@ function SingleProject() {
     setGenerateType(value);
   };
 
-  const PromptTypes = ["Boards Only"];
+  const PromptTypes = ["Boards Only", "Boards & Tasks"];
 
   return (
     <>
