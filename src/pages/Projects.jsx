@@ -182,7 +182,7 @@ function Projects() {
     setW1(luw1);
     document.title = luw1 + " - Upfront";
   }, []);
-  const handleTrashProject = async (id) => {
+  const handleTrashProject = async (id, name) => {
     setDeleting(id);
     try {
       const response = await axios.post(`${apiUrl}/api/movetotrash`, {
@@ -395,7 +395,7 @@ function Projects() {
                         }`}
                       >
                         <button
-                          onClick={() => handleTrashProject(project._id)}
+                          onClick={() => handleTrashProject(project._id, project.name)}
                           title="Move to Trash"
                           className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 dark:text-[#858585] tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 dark:hover:bg-[#2c2c2c] `}
                         >
