@@ -265,9 +265,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <LuChevronsUpDown className="text-base mx-[5px] " />
             </button>
           </div>
-          <div className="w-full flex flex-col items-start justify-between">
+          <div className="w-full flex-1 flex flex-col items-start justify-between">
             {/* 2 */}
-            <div className="flex-1 flex flex-col gap-[3px]">
+            <div className="w-full flex flex-col gap-[3px]">
               <button
                 onClick={handleCreate}
                 className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
