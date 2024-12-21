@@ -406,7 +406,7 @@ function SingleProject() {
       if (choice === 3) {
         setBoards([]);
         setTasks([]);
-        toast.success("cleared.");
+        toast.success("All Clear.");
       }
       setWiping(false);
     } catch (error) {}
