@@ -379,10 +379,10 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div className="h-[50px] text-2xl w-[50px] bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full mb-4 flex items-center justify-center">
+                        <div className="h-[50px] text-2xl w-[50px] bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full mb-2 flex items-center justify-center">
                           <LuHash />
                         </div>
-                        <h1 className="font-normal text-base leading-7 line-clamp-1">
+                        <h1 className="font-medium text-base leading-7 line-clamp-1">
                           {project.name === "" ? "Untitled" : project.name}
                         </h1>
                         <p className="line-clamp-1 leading-4 text-sm font-normal text-text-color/70 dark:text-[#b8b8b8]/70 min-h-[15px]">
