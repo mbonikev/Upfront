@@ -536,7 +536,18 @@ function SingleProject() {
 
   return (
     <>
-      <Toaster position="bottom-center" />
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+        }}
+      />
       {/* create with AI button */}
       <button
         onClick={handleShowAi}
