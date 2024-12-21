@@ -74,6 +74,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setAuthingDelete('')
             setSearchvalue('')
             setErrorEmail(false)
+            toast.apply("hello")
         } catch (error) {
             setErrorEmail(error.response.data.msg)
             setAuthingDelete('')
