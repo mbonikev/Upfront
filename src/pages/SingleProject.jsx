@@ -821,7 +821,7 @@ function SingleProject() {
                   </>
                 ) : (
                   <>
-                    <PiBroom className="text-lg opacity-80" />
+                    <PiBroom className="text-xl opacity-80" />
                     <span className="text-sm font-medium tracking-tight">
                       Tasks Only
                     </span>
