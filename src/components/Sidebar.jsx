@@ -101,6 +101,18 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        handleClose(); // Replace this with the function you want to trigger on Esc
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   // show more
   const showMoreMenuw1 = () => {
     setMoreOpt1(true);
