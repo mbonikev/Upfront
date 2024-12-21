@@ -64,17 +64,9 @@ import { Select, Space } from "antd";
 import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { PiBroom } from "react-icons/pi";
-import Toast from "../components/Toast";
+
 
 function SingleProject() {
-  // toast
-  const [toast, setToast] = useState(null);
-
-  const showToast = (message, icon = null, duration = 3000) => {
-    setToast({ message, icon });
-    setTimeout(() => setToast(null), duration);
-  };
-
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
@@ -543,14 +535,6 @@ function SingleProject() {
 
   return (
     <>
-      {/* toast */}
-      {toast && (
-        <Toast
-          message={toast.message}
-          icon={toast.icon}
-          onClose={() => setToast(null)}
-        />
-      )}
       {/* create with AI button */}
       <button
         onClick={handleShowAi}
