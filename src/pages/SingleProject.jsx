@@ -129,20 +129,22 @@ function SingleProject() {
           projectDescription,
           userEmail,
           projectId: id,
-          generateType
+          generateType,
         }
       );
       console.log(response.data);
 
-      // setAiBoards(response.data.boards);
-      
-      // setBoards((prevBoards) => [
-      //   ...prevBoards,
-      //   ...response.data.boards.map((board, index) => ({
-      //     id: prevBoards.length + index,
-      //     name: board.name.replace(/\*\*/g, "").trim(),
-      //   })),
-      // ]);
+      // boards only
+      if (generateType === "Boards Only") {
+        setAiBoards(response.data.boards);
+        setBoards((prevBoards) => [
+          ...prevBoards,
+          ...response.data.boards.map((board, index) => ({
+            id: prevBoards.length + index,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
+      }
     } catch (error) {
       console.error("Error generating boards:", error);
       alert("Failed to generate boards. Please try again.");
@@ -323,7 +325,7 @@ function SingleProject() {
     []
   );
   const handleInput1Change = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
@@ -341,8 +343,8 @@ function SingleProject() {
     const handleKeyDown = (event) => {
       if (event.key === "s" && event.ctrlKey) {
         event.preventDefault();
-        const currentTitle = document.getElementById("ProjectTitle")
-        const currentDesc = document.getElementById("ProjectDesc")
+        const currentTitle = document.getElementById("ProjectTitle");
+        const currentDesc = document.getElementById("ProjectDesc");
         saveInputs(currentTitle.value, currentDesc.value);
       }
     };
@@ -833,7 +835,7 @@ function SingleProject() {
           </div>
           <div className="flex items-center justify-end gap-0">
             <button
-              title={saving? "Saving Changes" : "Changes saved"}
+              title={saving ? "Saving Changes" : "Changes saved"}
               className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               {saving ? (
