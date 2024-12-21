@@ -551,7 +551,7 @@ function SingleProject() {
           },
           success: {
             style: {
-              padding: '10px',
+              padding: '7px 7px 7px 12px',
             },
           },
         }}
