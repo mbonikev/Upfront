@@ -487,9 +487,7 @@ function Projects() {
                               ))}
                             {project.collaborations.length > 3 && (
                               <div
-                                key={index}
-                                title={collab}
-                                className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-[#424242] text-white text-base font-semibold ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase"
+                                className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-[#424242] text-white text-sm font-normal ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase"
                               >
                                 {project.collaborations.length - 3}
                               </div>
