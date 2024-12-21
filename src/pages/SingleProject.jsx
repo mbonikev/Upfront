@@ -311,6 +311,7 @@ function SingleProject() {
         userEmail,
       });
       setSaving(false);
+      toast('Here is your toast.')
       document.title = response.data.namew + " - Upfront";
     } catch (err) {
       console.error(err);
@@ -325,7 +326,6 @@ function SingleProject() {
     []
   );
   const handleInput1Change = (e) => {
-    console.log(e.target.value);
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
