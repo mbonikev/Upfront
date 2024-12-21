@@ -170,6 +170,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       if (event.key === "Escape") {
         event.preventDefault();
         handleCancel();
+        setProfileMenu(false)
       }
     };
     window.addEventListener("keydown", handleKeyDown);
