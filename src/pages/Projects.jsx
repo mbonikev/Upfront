@@ -342,7 +342,9 @@ function Projects() {
                     ) : (
                       <div className="flex items-center justify-center flex-col gap-1">
                         <IoIosAddCircle className="text-5xl max-2xl:text-4xl text-text-color/70 dark:text-[#484848]" />
-                        <p className="text-text-color/70 dark:text-[#b2b2b2] text-sm">Create new project</p>
+                        <p className="text-text-color/70 dark:text-[#b2b2b2] text-sm">
+                          Create new project
+                        </p>
                       </div>
                     )}
                   </div>
@@ -437,31 +439,58 @@ function Projects() {
                           </div>
                           <h1 className="text-sm">100%</h1>
                         </div>
-                        <div className="w-full flex items-start justify-start flex-col gap-2">
-                          <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]/70">
-                            <TbStack className="text-xl" />
-                            {
+                        <div className="w-full flex items-end justify-between">
+                          <div className="w-full flex items-start justify-start flex-col gap-2">
+                            <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]/70">
+                              <TbStack className="text-xl" />
+                              {
+                                projectBoards.filter(
+                                  (board) => board.belongsTo === project._id
+                                ).length
+                              }{" "}
+                              {projectBoards.filter(
+                                (board) => board.belongsTo === project._id
+                              ).length > 1 ||
                               projectBoards.filter(
                                 (board) => board.belongsTo === project._id
-                              ).length
-                            }{" "}
-                            {projectBoards.filter(
-                              (board) => board.belongsTo === project._id
-                            ).length > 1 ||
-                            projectBoards.filter(
-                              (board) => board.belongsTo === project._id
-                            ).length === 0
-                              ? "Boards"
-                              : "Board"}
-                          </p>
-                          <p className="w-fit flex items-start justify-end text-xs font-medium px-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
-                            {project.progress === 100
-                              ? "Completed"
-                              : format(
-                                  new Date(project.createdAt),
-                                  "MMM dd, y"
-                                )}
-                          </p>
+                              ).length === 0
+                                ? "Boards"
+                                : "Board"}
+                            </p>
+                            <p className="w-fit flex items-start justify-end text-xs font-medium px-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
+                              {project.progress === 100
+                                ? "Completed"
+                                : format(
+                                    new Date(project.createdAt),
+                                    "MMM dd, y"
+                                  )}
+                            </p>
+                          </div>
+                          {/* <div className="flex items-center justify-start mt-3">
+                          <div
+                            title={userEmail}
+                            className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ring-[3px] ring-white dark:ring-[#242424] uppercase"
+                          >
+                            {userEmail.charAt(0)}
+                          </div>
+                          {project.collaborations
+                            .filter((em) => em !== userEmail)
+                            .slice(0, 2)
+                            .map((collab, index) => (
+                              <div
+                                key={index}
+                                title={collab}
+                                className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-purple-600 text-white text-base font-semibold ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase"
+                              >
+                                {collab.charAt(0)}
+                              </div>
+                            ))}
+                          {project.collaborations.length > 3 && (
+                            <div className="flex ml-1 items-center justify-center text-sm text-text-color/70 dark:text-[#b8b8b8] px-[2px] font-medium">
+                              +{project.collaborations.length - 3}
+                            </div>
+                          )}
+                        </div> */}
                         </div>
                       </Link>
                     </div>
