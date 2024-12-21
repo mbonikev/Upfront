@@ -541,7 +541,7 @@ function SingleProject() {
         toastOptions={{
           // Define default options
           className: "bg-red-500",
-          duration: 5000,
+          duration: 3000,
         }}
       />
       {/* create with AI button */}
