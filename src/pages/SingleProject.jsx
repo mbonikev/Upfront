@@ -553,6 +553,10 @@ function SingleProject() {
             style: {
               padding: '7px 7px 7px 12px',
             },
+            iconTheme: {
+              primary: '#d4d4d4',
+              secondary: 'black',
+            },
           },
         }}
       />
