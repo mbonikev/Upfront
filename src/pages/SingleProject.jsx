@@ -545,6 +545,7 @@ function SingleProject() {
           style: {
             background: '#252525da',
             color: '#d4d4d4',
+            fontSize: "14px",
           },
         }}
       />
