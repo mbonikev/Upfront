@@ -536,6 +536,7 @@ function SingleProject() {
 
   return (
     <>
+      <Toaster />
       {/* create with AI button */}
       <button
         onClick={handleShowAi}
