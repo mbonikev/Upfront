@@ -228,7 +228,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         {/* dropdown */}
         {profileMenu && (
           <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
-            <ProfileDropdownButtons username={username} />
+            <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
         <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-y-auto overscroll-contain">
