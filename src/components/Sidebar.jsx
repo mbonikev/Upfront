@@ -105,7 +105,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        handleClose(); // Replace this with the function you want to trigger on Esc
+        handleCancel();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
