@@ -327,7 +327,7 @@ function Projects() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
+                <div className="grid grid-cols-4 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
                     onClick={handleCreate}
                     className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] 2xl:border-[3px] dark:border-[#2b2b2b] border-text-color/10 text-text-color/20 dark:text-[#303030] dark:hover:border-[#484848] hover:border-text-color/30 cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2"
@@ -379,7 +379,7 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div className="h-[50px] text-2xl w-[50px] bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full my-3 flex items-center justify-center">
+                        <div className="h-[50px] text-2xl w-[50px] bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full mb-2 flex items-center justify-center">
                           <LuHash />
                         </div>
                         <h1 className="font-normal text-base leading-7 line-clamp-1">
