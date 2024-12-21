@@ -18,6 +18,7 @@ import {
   LuLogOut,
   LuMoreHorizontal,
   LuPen,
+  LuPencil,
   LuPencilLine,
   LuPlus,
   LuSearch,
@@ -400,37 +401,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                     >
-                      <LuPencilLine className="text-lg  min-w-fit" />
+                      <LuPencil className="text-base  min-w-fit" />
                       <p className="line-clamp-1">Rename</p>
                     </div>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                      <p className="line-clamp-1 text-red-500">Clear</p>
-                    </Link>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                      <p className="line-clamp-1 text-red-500">Clear</p>
-                    </Link>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                      <p className="line-clamp-1 text-red-500">Clear</p>
-                    </Link>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                      <p className="line-clamp-1 text-red-500">Clear</p>
-                    </Link>
                     <Link
                       to={"/"}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
