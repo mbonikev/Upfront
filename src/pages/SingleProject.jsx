@@ -549,6 +549,11 @@ function SingleProject() {
             padding: "7px",
             borderRadius: "12px",
           },
+          success: {
+            style: {
+              background: 'red',
+            },
+          },
         }}
       />
       {/* create with AI button */}
