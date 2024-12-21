@@ -194,7 +194,11 @@ function Projects() {
         prevProjects.filter((project) => project._id !== id)
       );
       setDeleting("");
-      toast.success(<span className="max-w-[40px] truncate">{name}</span> + " Moved to trash");
+      toast.success(
+        <>
+          <span className="max-w-[40px] truncate">{name}</span> Moved to trash
+        </>
+      );
     } catch (err) {
       console.log(err);
       setDeleting("");
@@ -395,7 +399,9 @@ function Projects() {
                         }`}
                       >
                         <button
-                          onClick={() => handleTrashProject(project._id, project.name)}
+                          onClick={() =>
+                            handleTrashProject(project._id, project.name)
+                          }
                           title="Move to Trash"
                           className={`h-[35px] w-auto aspect-square min-w-fit flex items-center justify-center gap-1 font-medium text-xs text-text-color/70 dark:text-[#858585] tracking-tight rounded-full line-clamp-1 relative cursor-pointer hover:bg-stone-200/60 dark:hover:bg-[#2c2c2c] `}
                         >
