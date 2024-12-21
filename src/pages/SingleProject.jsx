@@ -793,14 +793,14 @@ function SingleProject() {
               >
                 {wiping === "1" ? (
                   <>
-                    <RiLoader5Fill className="text-lg animate-spinLoader" />
+                    <RiLoader5Fill className="text-xl animate-spinLoader" />
                     <span className="text-sm font-medium tracking-tight">
                       Boards & Tasks
                     </span>
                   </>
                 ) : (
                   <>
-                    <PiBroom className="text-lg opacity-80" />
+                    <PiBroom className="text-xl opacity-80" />
                     <span className="text-sm font-medium tracking-tight">
                       Boards & Tasks
                     </span>
