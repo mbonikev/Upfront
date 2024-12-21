@@ -206,7 +206,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         ></div>
         {/* Achievements overlay */}
         <div
-          onClick={() => setAchievments(true)}
+          onClick={() => setAchievments(false)}
           className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${
             achievments ? "fixed" : "hidden"
           }`}
