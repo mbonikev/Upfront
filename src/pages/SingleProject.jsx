@@ -543,6 +543,14 @@ function SingleProject() {
 
   return (
     <>
+      {/* toast */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          icon={toast.icon}
+          onClose={() => setToast(null)}
+        />
+      )}
       {/* create with AI button */}
       <button
         onClick={handleShowAi}
