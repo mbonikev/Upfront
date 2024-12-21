@@ -537,15 +537,15 @@ function SingleProject() {
   return (
     <>
       <Toaster
-        position="top-center"
+        position="bottom-left"
         toastOptions={{
           // Define default options
           className: "",
-          duration: 1400,
+          duration: 2300,
           style: {
             background: '#252525da',
             color: '#d4d4d4',
-            fontSize: "13px",
+            fontSize: "14px",
             fontWeight: "600",
             padding: "7px",
             borderRadius: "12px",
