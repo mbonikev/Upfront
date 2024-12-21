@@ -538,10 +538,13 @@ function SingleProject() {
     <>
       <Toaster
         position="bottom-center"
+        containerStyle={{
+          className: "bg-slate-200",
+        }}
         toastOptions={{
           // Define default options
-          className: "bg-red-500",
-          duration: 3000,
+          className: "dark",
+          duration: 5000,
         }}
       />
       {/* create with AI button */}
