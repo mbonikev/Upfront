@@ -394,7 +394,7 @@ function SingleProject() {
         setProjectTitle(response.data.result.name);
         setProjectDesc(response.data.result.desc);
       }
-      if (choice === "1" || choice === "3") {
+      if (choice === "1") {
         setBoards([]);
         setTasks([]);
         toast.success("Boards Cleared");
