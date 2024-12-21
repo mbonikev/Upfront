@@ -59,18 +59,6 @@ function ProfileDropdownButtons({ username }) {
                     </>}
                 </button>
             </div>
-            <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#383838]'></div>
-            <div className='p-2 flex items-center justify-start gap-2 w-full'>
-                <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 '>
-                    {/* <LuLogOut className='text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit' /> */}
-                    <p className='line-clamp-1'>What's new? </p>
-                </Link>
-                <span className='text-sm opacity w-[1px] h-[20px] bg-border-line-color flex'></span>
-                <Link to={'/'} className='min-h-[28px] w-full flex items-center justify-center gap-2 px-2 py-[6px] font-normal  text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 '>
-                    {/* <LuLogOut className='text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit' /> */}
-                    <p className='line-clamp-1'>Terms of use </p>
-                </Link>
-            </div>
         </div>
     )
 }
