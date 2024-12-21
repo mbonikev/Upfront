@@ -462,8 +462,8 @@ function Projects() {
                           </div>
                           <h1 className="text-sm">100%</h1>
                         </div>
-                        <div className="w-full flex items-center justify-between">
-                          <p className="w-full flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
+                        <div className="w-full flex items-start justify-start flex-col gap-2">
+                          <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             <TbStack className="text-xl" />
                             {
                               projectBoards.filter(
@@ -479,7 +479,7 @@ function Projects() {
                               ? "Boards"
                               : "Board"}
                           </p>
-                          <p className="w-full flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
+                          <p className="w-fit flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             {project.progress === 100
                               ? "Completed"
                               : format(
