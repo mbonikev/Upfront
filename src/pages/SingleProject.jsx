@@ -554,7 +554,7 @@ function SingleProject() {
               padding: '7px 7px 7px 12px',
             },
             iconTheme: {
-              primary: '#007c00',
+              primary: '#255527',
               secondary: '#fff',
             },
           },
