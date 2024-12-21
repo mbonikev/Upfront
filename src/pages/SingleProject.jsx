@@ -340,7 +340,8 @@ function SingleProject() {
     const handleKeyDown = (event) => {
       if (event.key === "s" && event.ctrlKey) {
         event.preventDefault();
-        saveInputs(projectTitle, projectDesc);
+        const currentTitle = document.getElementById("ProjectTitle") 
+        saveInputs(currentTitle.target.value, projectDesc);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
