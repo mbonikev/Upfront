@@ -322,6 +322,7 @@ function SingleProject() {
     []
   );
   const handleInput1Change = (e) => {
+    console.log(e)
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
