@@ -541,7 +541,7 @@ function SingleProject() {
         toastOptions={{
           // Define default options
           className: "",
-          duration: 1200,
+          duration: 1400,
           style: {
             background: '#252525da',
             color: '#d4d4d4',
