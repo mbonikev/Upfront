@@ -239,7 +239,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           <div className="w-full h-fit mb-4">
             <button
               onClick={showPMenu}
-              className="dark:text-[#b8b8b8] text-text-color w-full flex items-center justify-start gap-[2px] hover:bg-stone-200 dark:hover:bg-[#2c2c2c] transition px-1.5 rounded-lg"
+              className="dark:text-[#b8b8b8] text-text-color w-full flex items-center justify-start gap-[2px] hover:bg-stone-200 dark:hover:bg-[#2c2c2c] transition px-1.5 py-1.5 rounded-lg"
             >
               <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-sm font-semibold text-white uppercase">
                 {username.charAt(0)}
