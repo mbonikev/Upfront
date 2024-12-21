@@ -564,6 +564,11 @@ function SingleProject() {
               secondary: "#fff",
             },
           },
+          error: {
+            style: {
+              padding: "7px 7px 7px 12px",
+            },
+          },
         }}
       />
       {/* create with AI button */}
