@@ -24,6 +24,11 @@ function ProfileDropdownButtons({ username, setAchievments, setProfileMenu }) {
       window.location.reload();
     }, 1000);
   };
+
+  const handleAch = () => {
+    setProfileMenu(false)
+  }
+
   return (
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
       <div className="p-2 w-full">
