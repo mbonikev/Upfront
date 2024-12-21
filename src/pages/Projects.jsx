@@ -194,9 +194,11 @@ function Projects() {
         prevProjects.filter((project) => project._id !== id)
       );
       setDeleting("");
+      toast.success("Project Moved to trash");
     } catch (err) {
       console.log(err);
       setDeleting("");
+      toast.error("Delete Failed!");
     }
   };
   return (
