@@ -134,15 +134,15 @@ function SingleProject() {
       );
       console.log(response.data);
 
-      setAiBoards(response.data.boards);
-
-      setBoards((prevBoards) => [
-        ...prevBoards,
-        ...response.data.boards.map((board, index) => ({
-          id: prevBoards.length + index,
-          name: board.name.replace(/\*\*/g, "").trim(),
-        })),
-      ]);
+      // setAiBoards(response.data.boards);
+      
+      // setBoards((prevBoards) => [
+      //   ...prevBoards,
+      //   ...response.data.boards.map((board, index) => ({
+      //     id: prevBoards.length + index,
+      //     name: board.name.replace(/\*\*/g, "").trim(),
+      //   })),
+      // ]);
     } catch (error) {
       console.error("Error generating boards:", error);
       alert("Failed to generate boards. Please try again.");
