@@ -542,6 +542,10 @@ function SingleProject() {
           // Define default options
           className: "",
           duration: 5000,
+          style: {
+            background: 'red',
+            color: '#fff',
+          },
         }}
       />
       {/* create with AI button */}
