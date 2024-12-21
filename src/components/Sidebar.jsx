@@ -364,6 +364,17 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               {saveOpt1 && (
                 <>
                   <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white dark:bg-[#202020] flex items-center justify-center p-1">
+                    {authing ? (
+                      <>
+                        <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
+                        <p className="line-clamp-1">Saving...</p>
+                      </>
+                    ) : (
+                      <>
+                        <LuCheck className="text-lg  min-w-fit" />
+                        <p className="line-clamp-1">Save Changes</p>
+                      </>
+                    )}
                     <input
                       type="text"
                       autoFocus
