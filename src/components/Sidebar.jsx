@@ -232,7 +232,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
-        <div className="w-full h-fit min-h-svh max-h-svh border-r-[2px] border-stone-200 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-y-auto overscroll-contain">
+        <div className="w-full h-fit min-h-svh max-h-svh border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-y-auto overscroll-contain">
           {/* 1 */}
           <div className="w-full h-fit mb-4">
             <button
