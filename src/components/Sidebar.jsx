@@ -252,7 +252,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           <div className="flex-1 flex flex-col gap-[3px]">
             <button
               onClick={handleCreate}
-              className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
+              className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
                 createNew && "pointer-events-none select-none"
               }`}
             >
@@ -270,7 +270,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </button>
             <button
               onClick={handleShowSearch}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <div className="w-full flex items-center justify-between gap-2">
                 <div className="flex items-center justify-start gap-2">
@@ -291,7 +291,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </button>
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Shared with me</p>
@@ -301,7 +301,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </p>
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
@@ -313,7 +313,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </Link>
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
                 <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
@@ -339,7 +339,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 className={`${linkStyle} ${
                   location.pathname === "/"
                     ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                    : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
+                    : "hover:bg-stone-100 group-hover:bg-stone-100"
                 }`}
               >
                 <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
@@ -402,7 +402,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
                     <button
                       type="submit"
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       {authing ? (
                         <>
@@ -418,7 +418,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     </button>
                     <div
                       onClick={handleCancel}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       <LuX className="text-lg  min-w-fit text-red-500" />
                       <p className="line-clamp-1 text-red-500">Cancel</p>
@@ -431,7 +431,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           {/* 3 */}
           <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
             <button
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 outline-none`}
             >
               <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
@@ -444,7 +444,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
             <button
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 outline-none`}
             >
               <HiOutlineSpeakerphone className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
