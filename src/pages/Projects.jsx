@@ -481,7 +481,7 @@ function Projects() {
                               : "Board"}
                           </p>
                           <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
-                            <SiReaddotcv className="text-base stroke-[1px]" />
+                            <SiReaddotcv className="text-base stroke-[1px] ml-[3px] mr-[1px]" />
                             {project.progress === 100
                               ? "Completed"
                               : format(
