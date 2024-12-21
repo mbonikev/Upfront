@@ -252,10 +252,7 @@ function SingleProject() {
         setCollaborations(response.data.collaborations);
       } catch (error) {
         // console.log(error)
-        if (error.response.status === 401) {
-          navigate("/");
-        }
-        if (error.response.status === 400) {
+        if (error.response.status === 400 || error.response.status === 401) {
           navigate("/");
         }
       }
