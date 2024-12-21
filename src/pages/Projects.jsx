@@ -368,7 +368,7 @@ function Projects() {
                     onClick={handleCreate}
                     className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] 2xl:border-[3px] dark:border-[#2b2b2b] border-text-color/10 text-text-color/20 dark:text-[#303030] dark:hover:border-[#484848] hover:border-text-color/30 cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2"
                   >
-                    {!createNew ? (
+                    {createNew ? (
                       <div className="flex items-center justify-center flex-col text-center gap-1 text-text-color/70 dark:text-[#484848]">
                         <RiLoader5Fill className="text-2xl animate-spinLoader" />
                         <p className="line-clamp-2 max-w-[190px]">
@@ -377,7 +377,7 @@ function Projects() {
                       </div>
                     ) : (
                       <div className="flex items-center justify-center flex-col gap-1">
-                        <IoIosAddCircle className="text-5xl max-2xl:text-4xl text-text-color/70 dark:text-[#484848]" />
+                        <IoIosAddCircle className="text-2xl max-2xl:text-4xl text-text-color/70 dark:text-[#484848]" />
                         <p className="text-text-color/70 dark:text-[#b2b2b2] text-sm">
                           Create new project
                         </p>
