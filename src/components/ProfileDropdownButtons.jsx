@@ -29,7 +29,7 @@ function ProfileDropdownButtons({ username, userEmail }) {
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
       <div className="p-2 w-full cursor-default">
         <div className="w-full min-h-[34px] flex items-center justify-start gap-2 px-2 py-[3px] text-sm font-normal">
-          <p className="h-[35px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-lg font-semibold uppercase">
+          <p className="h-[35px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-lg font-bold uppercase">
             {username.charAt(0)}
           </p>
           <div className="w-full h-fit flex flex-col justify-center items-start">
