@@ -150,8 +150,9 @@ function SingleProject() {
       setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
+      console.log(error)
       setGenerating(true);
-      toast.error(error);
+      toast.error("");
     } finally {
       setGenerating(false);
     }
