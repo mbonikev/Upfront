@@ -101,18 +101,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        handleCancel();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
   // show more
   const showMoreMenuw1 = () => {
     setMoreOpt1(true);
@@ -169,6 +157,20 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       if (event.key.toLowerCase() === "s" && event.altKey) {
         event.preventDefault();
         handleShowSearch();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  // close on esc
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        handleCancel();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
