@@ -194,7 +194,7 @@ function Projects() {
         prevProjects.filter((project) => project._id !== id)
       );
       setDeleting("");
-      toast.success(<span>hehehe</span> + " Moved to trash");
+      toast.success(<span className="max-w-[40px] truncate">{name}</span> + " Moved to trash");
     } catch (err) {
       console.log(err);
       setDeleting("");
