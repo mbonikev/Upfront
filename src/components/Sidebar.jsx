@@ -370,7 +370,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       </>
                     ) : (
                       <>
-                        <IoFolderOpen className="text-lg  min-w-fit" />
+                        <IoFolderOpen className="text-xl  min-w-fit" />
                       </>
                     )}
                     <input
