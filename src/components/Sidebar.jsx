@@ -389,7 +389,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     </div>
                     <Link
                       to={"/"}
-                      className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       <LuTrash2 className="text-lg  min-w-fit" />
                       <p className="line-clamp-1">Clear</p>
