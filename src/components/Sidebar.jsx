@@ -406,10 +406,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     </div>
                     <Link
                       to={"/"}
-                      className={`${linkStyle} group cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                     >
-                      <LuTrash2 className="text-lg  min-w-fit group-hover:text-red-500" />
-                      <p className="line-clamp-1 group-hover:text-red-500">Clear</p>
+                      <LuTrash2 className="text-lg  min-w-fit" />
+                      <p className="line-clamp-1">Clear</p>
                     </Link>
                   </div>
                 </>
