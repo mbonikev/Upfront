@@ -249,7 +249,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
         )}
         {/* sidebar actual content */}
-        <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm">
+        <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-x-clip">
           {/* 1 */}
           <div className="w-full h-fit mb-4">
             <button
@@ -396,7 +396,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               {moreOpt1 && (
                 <>
-                  <div className="fixed right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
+                  <div className="absolute right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
