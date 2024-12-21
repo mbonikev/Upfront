@@ -354,7 +354,7 @@ function Projects() {
                       className="group z-10 relative w-full h-fit"
                     >
                       <div
-                        className={`absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white dark:bg-[#242424] p-1 opacity-0 group-hover:opacity-100 ${
+                        className={`absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white dark:bg-[#242424] p-1 ${
                           deleteMenu === project._id && "opacity-100"
                         }`}
                       >
