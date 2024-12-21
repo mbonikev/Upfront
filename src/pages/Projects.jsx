@@ -196,7 +196,7 @@ function Projects() {
       setDeleting("");
       toast.success(
         <>
-          <span className="max-w-[40px] truncate">{name === "" ? "" : ""}</span> Moved to trash
+          <span className="max-w-[40px] truncate">"{name === "" ? "Untitled" : name}"</span> Moved to trash
         </>
       );
     } catch (err) {
