@@ -408,7 +408,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       to={"/"}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
                     >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
+                      <LuTrash2 className="text-lg" />
                       <p className="line-clamp-1 text-red-500">Clear</p>
                     </Link>
                   </div>
