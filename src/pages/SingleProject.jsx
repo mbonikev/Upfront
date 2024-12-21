@@ -401,6 +401,7 @@ function SingleProject() {
       if (choice === "2") {
         setTasks([]);
       }
+      toast.success("Boards Cleared");
       setWiping(false);
     } catch (error) {}
   };
