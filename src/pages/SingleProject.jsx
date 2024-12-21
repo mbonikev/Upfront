@@ -546,7 +546,7 @@ function SingleProject() {
             background: '#252525da',
             color: '#d4d4d4',
             fontSize: "14px",
-            fontWeight: "600",
+            fontWeight: "500",
             padding: "7px",
             borderRadius: "12px",
             backdropFilter: "blur(5px)",
