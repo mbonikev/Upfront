@@ -342,7 +342,6 @@ function SingleProject() {
         event.preventDefault();
         const currentTitle = document.getElementById("ProjectTitle")
         const currentDesc = document.getElementById("ProjectDesc")
-        console.log({title: currentTitle.value, Desc: currentDesc.value})
         saveInputs(currentTitle.value, currentDesc.value);
       }
     };
