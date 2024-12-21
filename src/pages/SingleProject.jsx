@@ -555,7 +555,7 @@ function SingleProject() {
             },
             iconTheme: {
               primary: 'skyblue',
-              secondary: 'black',
+              secondary: '#252525',
             },
           },
         }}
