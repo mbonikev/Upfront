@@ -147,6 +147,7 @@ function SingleProject() {
           })),
         ]);
       }
+      toast.success("Generated successfully.")
     } catch (error) {
       console.error("Error generating boards:", error);
       alert("Failed to generate boards. Please try again.");
