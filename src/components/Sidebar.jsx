@@ -265,157 +265,159 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <LuChevronsUpDown className="text-base mx-[5px] " />
             </button>
           </div>
-          <div className="w-full flex flex-col"></div>
-          {/* 2 */}
-          <div className="flex-1 flex flex-col gap-[3px]">
-            <button
-              onClick={handleCreate}
-              className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
-                createNew && "pointer-events-none select-none"
-              }`}
-            >
-              {createNew ? (
-                <div className="flex items-center gap-2">
-                  <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                  <p className="line-clamp-1 ">Setting up your project... </p>
+          <div className="w-full flex flex-col items-start justify-between">
+            {/* 2 */}
+            <div className="flex-1 flex flex-col gap-[3px]">
+              <button
+                onClick={handleCreate}
+                className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
+                  createNew && "pointer-events-none select-none"
+                }`}
+              >
+                {createNew ? (
+                  <div className="flex items-center gap-2">
+                    <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                    <p className="line-clamp-1 ">Setting up your project... </p>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <IoIosAddCircle className="text-2xl" />
+                    <p className="line-clamp-1 ">New Project</p>
+                  </div>
+                )}
+              </button>
+              <button
+                onClick={handleShowSearch}
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              >
+                <div className="w-full flex items-center justify-between gap-2">
+                  <div className="flex items-center justify-start gap-2">
+                    <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                    <p className="line-clamp-1">Search</p>
+                  </div>
+                  {/* shortcuts */}
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
+                      Alt
+                    </span>
+                    <span className="text-[#a5a5a5] dark:text-[#afafaf]">
+                      +
+                    </span>
+                    <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
+                      S
+                    </span>
+                  </div>
                 </div>
-              ) : (
-                <div className="flex items-center gap-2">
-                  <IoIosAddCircle className="text-2xl" />
-                  <p className="line-clamp-1 ">New Project</p>
-                </div>
-              )}
-            </button>
-            <button
-              onClick={handleShowSearch}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-            >
-              <div className="w-full flex items-center justify-between gap-2">
-                <div className="flex items-center justify-start gap-2">
-                  <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-                  <p className="line-clamp-1">Search</p>
-                </div>
-                {/* shortcuts */}
-                <div className="flex items-center justify-center gap-1">
-                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
-                    Alt
-                  </span>
-                  <span className="text-[#a5a5a5] dark:text-[#afafaf]">+</span>
-                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
-                    S
-                  </span>
-                </div>
-              </div>
-            </button>
-            <Link
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-            >
-              <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1">Shared with me</p>
-            </Link>
-            <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-              Calendar
-            </p>
-            <Link
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-            >
-              <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1 w-full flex items-center justify-between">
-                <span>Dues</span>
-                <span className="px-[5px] opacity-50 text-sm font-medium">
-                  0
-                </span>
-              </p>
-            </Link>
-            <Link
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
-            >
-              <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
-                <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
-                <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
-                  {Today}
-                </div>
-              </div>
-              <p className="line-clamp-1 w-full flex items-center justify-between">
-                <span>Today</span>
-                <span className="px-[5px] opacity-50 text-sm font-medium">
-                  0
-                </span>
-              </p>
-            </Link>
-            <p className="flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-[16px] pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-fit">
-              <LuChevronDown className="p-[2px] cursor-pointer hover:bg-main-color/10 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square" />
-              <span>Workspaces</span>
-            </p>
-            {/* Workspace 1 */}
-            <form onSubmit={handleSubmit1} className="relative group mb-10 ">
+              </button>
               <Link
                 to={"/"}
-                className={`${linkStyle} ${
-                  location.pathname === "/"
-                    ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                    : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
-                }`}
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
               >
-                <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-                <p className="line-clamp-1 max-w-[70%]">{w1}</p>
+                <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                <p className="line-clamp-1">Shared with me</p>
               </Link>
-              {saveOpt1 && (
-                <>
-                  <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
-                    {authing ? (
-                      <>
-                        <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                      </>
-                    ) : (
-                      <>
-                        <IoFolderOpen className="text-xl  min-w-fit" />
-                      </>
-                    )}
-                    <input
-                      type="text"
-                      autoFocus
-                      name="workspace1"
-                      autoComplete="off"
-                      value={w1}
-                      onChange={(e) => setW1(e.target.value)}
-                      className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
-                    />
-                  </div>
-                </>
-              )}
-              <div
-                onClick={showMoreMenuw1}
-                className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
-                  moreOpt1 && "opacity-100"
-                }`}
+              <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
+                Calendar
+              </p>
+              <Link
+                to={"/"}
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
               >
-                <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
-              </div>
-              {moreOpt1 && (
-                <>
-                  <div className="absolute right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
-                    <div
-                      onClick={renameW1}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuPencilLine className="text-lg  min-w-fit" />
-                      <p className="line-clamp-1">Rename</p>
-                    </div>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg  min-w-fit text-red-500" />
-                      <p className="line-clamp-1 text-red-500">Clear</p>
-                    </Link>
+                <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                <p className="line-clamp-1 w-full flex items-center justify-between">
+                  <span>Dues</span>
+                  <span className="px-[5px] opacity-50 text-sm font-medium">
+                    0
+                  </span>
+                </p>
+              </Link>
+              <Link
+                to={"/"}
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
+              >
+                <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
+                  <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
+                  <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[15px] font-semibold leading-none z-10 tracking-wide">
+                    {Today}
                   </div>
-                </>
-              )}
-              {/* {saveOpt1 && (
+                </div>
+                <p className="line-clamp-1 w-full flex items-center justify-between">
+                  <span>Today</span>
+                  <span className="px-[5px] opacity-50 text-sm font-medium">
+                    0
+                  </span>
+                </p>
+              </Link>
+              <p className="flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-[16px] pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-fit">
+                <LuChevronDown className="p-[2px] cursor-pointer hover:bg-main-color/10 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square" />
+                <span>Workspaces</span>
+              </p>
+              {/* Workspace 1 */}
+              <form onSubmit={handleSubmit1} className="relative group mb-10 ">
+                <Link
+                  to={"/"}
+                  className={`${linkStyle} ${
+                    location.pathname === "/"
+                      ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                      : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
+                  }`}
+                >
+                  <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                  <p className="line-clamp-1 max-w-[70%]">{w1}</p>
+                </Link>
+                {saveOpt1 && (
+                  <>
+                    <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 bg-white dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
+                      {authing ? (
+                        <>
+                          <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
+                        </>
+                      ) : (
+                        <>
+                          <IoFolderOpen className="text-xl  min-w-fit" />
+                        </>
+                      )}
+                      <input
+                        type="text"
+                        autoFocus
+                        name="workspace1"
+                        autoComplete="off"
+                        value={w1}
+                        onChange={(e) => setW1(e.target.value)}
+                        className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
+                      />
+                    </div>
+                  </>
+                )}
+                <div
+                  onClick={showMoreMenuw1}
+                  className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
+                    moreOpt1 && "opacity-100"
+                  }`}
+                >
+                  <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
+                </div>
+                {moreOpt1 && (
+                  <>
+                    <div className="absolute right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
+                      <div
+                        onClick={renameW1}
+                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      >
+                        <LuPencilLine className="text-lg  min-w-fit" />
+                        <p className="line-clamp-1">Rename</p>
+                      </div>
+                      <Link
+                        to={"/"}
+                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/50 dark:hover:bg-[#383838]`}
+                      >
+                        <LuTrash2 className="text-lg  min-w-fit text-red-500" />
+                        <p className="line-clamp-1 text-red-500">Clear</p>
+                      </Link>
+                    </div>
+                  </>
+                )}
+                {/* {saveOpt1 && (
                 <>
                   <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
                     <button
@@ -444,34 +446,35 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   </div>
                 </>
               )} */}
-            </form>
-          </div>
-          {/* 3 */}
-          <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
-            <button
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
-            >
-              <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1 w-full flex items-center justify-between">
-                <span>Notifications</span>
-                <span className="px-[5px] opacity-50 text-sm font-medium">
-                  99+
-                </span>
-              </p>
-            </button>
+              </form>
+            </div>
+            {/* 3 */}
+            <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
+              <button
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
+              >
+                <LuBell className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                <p className="line-clamp-1 w-full flex items-center justify-between">
+                  <span>Notifications</span>
+                  <span className="px-[5px] opacity-50 text-sm font-medium">
+                    99+
+                  </span>
+                </p>
+              </button>
 
-            <button
-              to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
-            >
-              <HiOutlineSpeakerphone className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1 w-full flex items-center justify-between">
-                <span>Updates</span>
-                <span className="px-[5px] opacity-50 text-sm font-medium">
-                  1
-                </span>
-              </p>
-            </button>
+              <button
+                to={"/"}
+                className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 outline-none`}
+              >
+                <HiOutlineSpeakerphone className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                <p className="line-clamp-1 w-full flex items-center justify-between">
+                  <span>Updates</span>
+                  <span className="px-[5px] opacity-50 text-sm font-medium">
+                    1
+                  </span>
+                </p>
+              </button>
+            </div>
           </div>
         </div>
       </div>
