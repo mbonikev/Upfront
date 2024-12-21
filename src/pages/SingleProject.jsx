@@ -340,7 +340,7 @@ function SingleProject() {
   };
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "s" && event.ctrlKey) {
+      if (event.key.toLowerCase() === "s" && event.ctrlKey) {
         event.preventDefault();
         const currentTitle = document.getElementById("ProjectTitle");
         const currentDesc = document.getElementById("ProjectDesc");
