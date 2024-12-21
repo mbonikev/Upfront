@@ -397,7 +397,7 @@ function SingleProject() {
       if (choice === "1" || choice === "3") {
         setBoards([]);
         setTasks([]);
-        toast.success("Tasks Cleared");
+        toast.success("Boards Cleared");
       }
       if (choice === "2") {
         setTasks([]);
