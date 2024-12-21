@@ -548,6 +548,7 @@ function SingleProject() {
             fontSize: "14px",
             padding: "7px",
             borderRadius: "12px",
+            backdropFilter: "blur(5px)",
           },
           success: {
             style: {
