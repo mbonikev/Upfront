@@ -327,7 +327,7 @@ function Projects() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
+                <div className="grid grid-cols-4 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
                     onClick={handleCreate}
                     className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] 2xl:border-[3px] dark:border-[#2b2b2b] border-text-color/10 text-text-color/20 dark:text-[#303030] dark:hover:border-[#484848] hover:border-text-color/30 cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2"
@@ -374,7 +374,7 @@ function Projects() {
                       <Link
                         key={project._id}
                         to={`/project/${w1}/${project._id}`}
-                        className={`group cursor-pointer w-full h-full p-5 rounded-xl shadow-sm bg-white dark:bg-[#242424] group-hover:ring-2 group-hover:ring-main-color/60 dark:text-[#b8b8b8] ring-1 ring-border-line-color/50 dark:ring-transparent flex flex-col relative ${
+                        className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white dark:bg-[#242424] group-hover:ring-2 group-hover:ring-main-color/60 dark:text-[#b8b8b8] ring-1 ring-border-line-color/50 dark:ring-transparent flex flex-col relative ${
                           deleteMenu === project._id &&
                           "ring-2 ring-main-color/60"
                         }`}
