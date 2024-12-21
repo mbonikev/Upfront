@@ -152,9 +152,7 @@ function SingleProject() {
     } catch (error) {
       console.error("Error generating boards:", error);
       setLoading(true);
-      toast.success("Failed to generate. try again.");
-
-      alert("Failed to generate boards. Please try again.");
+      toast.error("Failed to generate. try again later.");
     } finally {
       setLoading(false);
     }
