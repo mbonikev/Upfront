@@ -310,8 +310,7 @@ function SingleProject() {
         userEmail,
       });
       setSaving(false);
-      const notify = () => toast.success("Here is your toast.");
-      notify();
+      toast.success("Here is your toast.");
       document.title = response.data.namew + " - Upfront";
     } catch (err) {
       console.error(err);
