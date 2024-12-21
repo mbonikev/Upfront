@@ -37,7 +37,6 @@ import { RiLoader5Fill, RiUserSharedLine } from "react-icons/ri";
 import axios from "axios";
 import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
-import Achievements from "./Archievements";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
@@ -56,7 +55,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const formRef = useRef(null);
   const [createNew, setCreateNew] = useState(false);
   const [myCollaborations, setMyCollatorations] = useState([]);
-  const [achievments, setAchievments] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   // workspace1
@@ -204,22 +202,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             saveOpt1 ? "fixed" : "hidden"
           }`}
         ></div>
-        {/* Achievements overlay */}
-        <div
-          onClick={() => setAchievments(false)}
-          className={` top-0 left-0 w-full h-full z-20 bg-black/50 ${
-            achievments ? "fixed" : "hidden"
-          }`}
-        ></div>
-        {/* achiements component */}
-        {achievments && (
-          <div className="w-fit h-fit bg-white rounded-xl fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30">
-            <Achievements
-              username={username}
-              handleClose={() => setAchievments(true)}
-            />
-          </div>
-        )}
         {/* search overlay */}
         {showSearchModal && (
           <div
