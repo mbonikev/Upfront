@@ -379,7 +379,7 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div className="h-[50px] w-[50px] min-h-fit min-w-fit aspect-square rounded-lg"></div>
+                        <div className="h-[50px] w-[50px] bg-main-color min-h-fit min-w-fit aspect-square rounded-full my-3"></div>
                         <h1 className="font-normal text-base leading-7 line-clamp-1">
                           {project.name === "" ? "Untitled" : project.name}
                         </h1>
