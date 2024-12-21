@@ -378,7 +378,7 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div></div>
+                        <div className="h-[80px] w-[80px] min-h-fit min-w-fit aspect-square rounded-lg"></div>
                         <h1 className="font-normal text-base leading-7 line-clamp-1">
                           {project.name === "" ? "Untitled" : project.name}
                         </h1>
