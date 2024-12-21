@@ -130,6 +130,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       console.log(error.response);
     }
   };
+
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
   const linkStyle =
@@ -150,6 +151,19 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       setShowSearchModal(false);
     }, 300);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "s" && event.altKey) {
+        event.preventDefault();
+        handleShowSearch();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="w-[256px] min-w-[256px] sticky top-0 z-20 ">
@@ -204,10 +218,14 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         {showSearchModal && (
           <div
             className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#161616ce] dark:bg-[#29292995] backdrop-blur-[20px] rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
-              ${AnimateShowSearchModal ? "opacity-100" : "opacity-0 translate-y-[10px]"}
+              ${
+                AnimateShowSearchModal
+                  ? "opacity-100"
+                  : "opacity-0 translate-y-[10px]"
+              }
               `}
           >
-            <SearchModal />
+            <SearchModal Show={handleShowSearch} Hide={handleHideSearch} />
           </div>
         )}
         {/* dropdown */}
@@ -256,8 +274,18 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               onClick={handleShowSearch}
               className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
-              <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1">Search</p>
+              <div className="w-full flex items-center justify-between gap-2">
+                <div className="flex items-center justify-start gap-2">
+                  <LuSearch className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+                  <p className="line-clamp-1">Search</p>
+                </div>
+                {/* shortcuts */}
+                <div className="flex items-center justify-center gap-1">
+                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">Alt</span>
+                  <span className="text-[#a5a5a5] dark:text-[#afafaf]">+</span>
+                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">S</span>
+                </div>
+              </div>
             </button>
             <Link
               to={"/"}
