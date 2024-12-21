@@ -119,11 +119,11 @@ function SingleProject() {
   const [generateType, setGenerateType] = useState("Boards Only");
   const [projectDescription, setProjectDescription] = useState("");
   const [Aiboards, setAiBoards] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [generating, setGenerating] = useState(false);
 
   const generateBoards = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setGenerating(true);
     try {
       const response = await axios.post(
         "http://localhost:5000/api/generateBoards",
@@ -147,13 +147,13 @@ function SingleProject() {
           })),
         ]);
       }
-      setLoading(false);
+      setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
-      setLoading(true);
+      setGenerating(true);
       toast.error(error);
     } finally {
-      setLoading(false);
+      setGenerating(false);
     }
   };
 
@@ -672,7 +672,7 @@ function SingleProject() {
               type="submit"
               className="group overflow-clip w-full h-[38px] mt-2 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-300 bg-main-color text-white active:opacity-90 shadow-lg select-none"
             >
-              {loading ? (
+              {generating ? (
                 <>
                   <LuLoader2 className="text-2xl min-w-fit transition-all duration-200 animate-spinLoader" />
                 </>
