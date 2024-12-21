@@ -249,7 +249,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
         )}
         {/* sidebar actual content */}
-        <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-x-clip">
+        <div className="w-full h-fit min-h-svh max-h-svh border-r-[1px] border-border-line-color/20 dark:border-[#313131a6] bg-sidebar-color dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm overflow-x-visible">
           {/* 1 */}
           <div className="w-full h-fit mb-4">
             <button
