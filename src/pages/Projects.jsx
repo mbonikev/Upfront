@@ -354,7 +354,7 @@ function Projects() {
                       className="group z-10 relative w-full h-fit"
                     >
                       <div
-                        className={`absolute z-30 top-0 right-1 rounded-md flex items-center justify-center gap-0 bg-white dark:bg-[#242424] p-1 ${
+                        className={`absolute z-30 top-1 right-1 rounded-md flex items-center justify-center gap-0 bg-white dark:bg-[#242424] p-1 ${
                           deleteMenu === project._id && "opacity-100"
                         }`}
                       >
@@ -370,6 +370,7 @@ function Projects() {
                           )}
                         </button>
                       </div>
+
                       <Link
                         key={project._id}
                         to={`/project/${w1}/${project._id}`}
@@ -378,7 +379,7 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div className="h-[80px] w-[80px] min-h-fit min-w-fit aspect-square rounded-lg"></div>
+                        <div className="h-[50px] w-[50px] min-h-fit min-w-fit aspect-square rounded-lg"></div>
                         <h1 className="font-normal text-base leading-7 line-clamp-1">
                           {project.name === "" ? "Untitled" : project.name}
                         </h1>
