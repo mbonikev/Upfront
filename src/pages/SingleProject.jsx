@@ -543,7 +543,7 @@ function SingleProject() {
           className: "",
           duration: 5000,
           style: {
-            background: 'red',
+            background: '#252525da',
             color: '#fff',
           },
         }}
