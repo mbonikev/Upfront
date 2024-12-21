@@ -327,7 +327,7 @@ function Projects() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-4 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
+                <div className="grid grid-cols-3 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                   <div
                     onClick={handleCreate}
                     className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] 2xl:border-[3px] dark:border-[#2b2b2b] border-text-color/10 text-text-color/20 dark:text-[#303030] dark:hover:border-[#484848] hover:border-text-color/30 cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2"
