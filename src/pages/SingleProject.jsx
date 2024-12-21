@@ -134,7 +134,6 @@ function SingleProject() {
           generateType,
         }
       );
-      console.log(response.data);
 
       // boards only
       if (generateType === "Boards Only") {
@@ -150,7 +149,6 @@ function SingleProject() {
       setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
-      console.log(error)
       setGenerating(true);
       toast.error(error.message);
     } finally {
