@@ -64,8 +64,7 @@ import { Select, Space } from "antd";
 import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { PiBroom } from "react-icons/pi";
-import toast, { Toaster } from 'react-hot-toast';
-
+import toast, { Toaster } from "react-hot-toast";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -311,7 +310,8 @@ function SingleProject() {
         userEmail,
       });
       setSaving(false);
-      toast('Here is your toast.')
+      const notify = () => toast("Here is your toast.");
+      notify();
       document.title = response.data.namew + " - Upfront";
     } catch (err) {
       console.error(err);
