@@ -923,6 +923,7 @@ function SingleProject() {
             <div className="flex-1 flex flex-col items-start max-w-[1200px] justify-start gap-2 w-full h-fit">
               <textarea
                 ref={textareaRef2}
+                id="ProjectTitle"
                 type="text"
                 rows="1"
                 value={projectTitle}
@@ -932,6 +933,7 @@ function SingleProject() {
               />
               <textarea
                 type="text"
+                id="ProjectDesc"
                 value={projectDesc}
                 ref={textareaRef}
                 onChange={handleInput2Change}
