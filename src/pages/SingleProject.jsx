@@ -537,7 +537,7 @@ function SingleProject() {
   return (
     <>
       <Toaster
-        position="top-center"
+        position="bottom-center"
         toastOptions={{
           // Define default options
           className: "",
