@@ -411,7 +411,6 @@ function SingleProject() {
         setTasks([]);
       }
       setWiping(false);
-      showToast('This is a toast from a hook!', '🔔')
     } catch (error) {}
   };
   const handleNewBoard = async (e) => {
