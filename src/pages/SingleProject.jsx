@@ -129,6 +129,7 @@ function SingleProject() {
           projectDescription,
           userEmail,
           projectId: id,
+          generateType
         }
       );
       console.log(response.data);
