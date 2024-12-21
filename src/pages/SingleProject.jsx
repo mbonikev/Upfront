@@ -549,7 +549,7 @@ function SingleProject() {
             padding: "7px",
             borderRadius: "12px",
             backdropFilter: "blur(5px)",
-            border: "1px solid #b8b8b8"
+            border: "1px solid #32323230"
           },
           success: {
             style: {
