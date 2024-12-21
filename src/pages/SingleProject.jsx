@@ -298,6 +298,7 @@ function SingleProject() {
     getProject();
   }, []);
   const saveInputs = async (newInput1, newInput2) => {
+    setSaving(true);
     try {
       // console.log(newInput1, newInput2, id, userEmail)
       const response = await axios.patch(`${apiUrl}/api/updateprojectdetails`, {
@@ -321,7 +322,6 @@ function SingleProject() {
     []
   );
   const handleInput1Change = (e) => {
-    setSaving(true);
     const newInput1 = e.target.value;
     setProjectTitle(newInput1);
     debouncedSaveInputs(newInput1, projectDesc);
@@ -329,13 +329,24 @@ function SingleProject() {
     textareaRef2.current.style.height = `${e.target.scrollHeight}px`;
   };
   const handleInput2Change = (e) => {
-    setSaving(true);
     const newInput2 = e.target.value;
     setProjectDesc(newInput2);
     debouncedSaveInputs(projectTitle, newInput2);
     textareaRef.current.style.height = "auto";
     textareaRef.current.style.height = `${e.target.scrollHeight}px`;
   };
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "s" && event.ctrlKey) {
+        event.preventDefault();
+        saveInputs(projectTitle, projectDesc);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   useEffect(() => {
     // Adjust the height of the textarea when the component mounts or the text changes
     if (textareaRef.current) {
@@ -826,11 +837,14 @@ function SingleProject() {
           </div>
           <div className="flex items-center justify-end gap-0">
             <button
-              title="File update status"
+              title={saving? "Saving Changes" : "Changes saved"}
               className=" h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:bg-[#2c2c2c] dark:hover:text-[#b8b8b8] "
             >
               {saving ? (
-                <LuRefreshCw className="text-lg animate-spinSlow" />
+                <div className="flex items-center justify-center gap-2">
+                  <LuRefreshCw className="text-lg animate-spinSlow" />
+                  <span className="font-semibold text-xs">Saving...</span>
+                </div>
               ) : (
                 <LuCheck className="text-xl" />
               )}
