@@ -371,7 +371,7 @@ function Projects() {
                     {!createNew ? (
                       <div className="flex items-center gap-1 text-main-color">
                         <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                        <p className="line-clamp-1">
+                        <p className="line-clamp-2 max-w-[200px]">
                           Setting up your project...{" "}
                         </p>
                       </div>
