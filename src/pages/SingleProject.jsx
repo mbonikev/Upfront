@@ -401,7 +401,15 @@ function SingleProject() {
       if (choice === "2") {
         setTasks([]);
       }
-      toast.success(choice === 1 ? "Boards Cleared" : choice === 2 ? "bbb" : choice === 3 ? "ss" : "cleared.");
+      toast.success(
+        choice === 1
+          ? "Boards Cleared"
+          : choice === 2
+          ? "bbb"
+          : choice === 3
+          ? "ss"
+          : "cleared."
+      );
       setWiping(false);
     } catch (error) {}
   };
@@ -542,22 +550,22 @@ function SingleProject() {
           className: "",
           duration: 2300,
           style: {
-            background: '#252525da',
-            color: '#d4d4d4',
+            background: "#252525da",
+            color: "#d4d4d4",
             fontSize: "14px",
             fontWeight: "500",
             padding: "7px",
             borderRadius: "12px",
             backdropFilter: "blur(5px)",
-            border: "1px solid #32323230"
+            border: "1px solid #32323230",
           },
           success: {
             style: {
-              padding: '7px 7px 7px 12px',
+              padding: "7px 7px 7px 12px",
             },
             iconTheme: {
-              primary: '#3b883e',
-              secondary: '#fff',
+              primary: "#3b883e",
+              secondary: "#fff",
             },
           },
         }}
