@@ -369,10 +369,10 @@ function Projects() {
                     className="h-full min-h-[180px] relative w-full rounded-2xl bg-transparent border-[2px] 2xl:border-[3px] dark:border-[#2b2b2b] border-text-color/10 text-text-color/20 dark:text-[#303030] dark:hover:border-[#484848] hover:border-text-color/30 cursor-pointer transition border-dashed flex flex-col items-center justify-center gap-2"
                   >
                     {!createNew ? (
-                      <div className="flex items-center gap-1 text-main-color">
+                      <div className="flex items-center justify-center flex-col gap-1 text-main-color">
                         <RiLoader5Fill className="text-2xl animate-spinLoader" />
                         <p className="line-clamp-2 max-w-[190px]">
-                          Setting up your project...{" "}
+                          Setting up <br /> your project...{" "}
                         </p>
                       </div>
                     ) : (
