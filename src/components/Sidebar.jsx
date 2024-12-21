@@ -265,7 +265,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <LuChevronsUpDown className="text-base mx-[5px] " />
             </button>
           </div>
-          <div className="w-full flex-1 flex flex-col items-start justify-between">
+          <div className="w-full flex-1 flex flex-col items-start justify-between overflow-y-auto relative">
             {/* 2 */}
             <div className="w-full flex flex-col gap-[3px]">
               <button
