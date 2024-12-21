@@ -473,7 +473,7 @@ function Projects() {
                           <div className="flex items-center justify-start mt-3">
                             <div
                               title={userEmail}
-                              className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color  text-white text-base font-semibold ring-[3px] ring-white dark:ring-[#242424] uppercase"
+                              className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-violet-600 text-white text-base font-semibold ring-[3px] ring-white dark:ring-[#242424] uppercase"
                             >
                               {userEmail.charAt(0)}
                             </div>
@@ -484,13 +484,13 @@ function Projects() {
                                 <div
                                   key={index}
                                   title={collab}
-                                  className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase"
+                                  className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-violet-600 text-white text-base font-semibold ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase"
                                 >
                                   {collab.charAt(0)}
                                 </div>
                               ))}
                             {project.collaborations.length > 3 && (
-                              <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-sm font-medium ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase">
+                              <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-violet-600 text-white text-sm font-medium ml-[-5px] ring-[3px] ring-white dark:ring-[#242424] uppercase">
                                 +{project.collaborations.length - 3}
                               </div>
                             )}
