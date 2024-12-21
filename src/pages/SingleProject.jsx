@@ -397,19 +397,17 @@ function SingleProject() {
       if (choice === "1" || choice === "3") {
         setBoards([]);
         setTasks([]);
+        toast.success("Tasks Cleared");
       }
       if (choice === "2") {
         setTasks([]);
+        toast.success("Tasks Cleared");
       }
-      toast.success(
-        choice === 1
-          ? "Boards Cleared"
-          : choice === 2
-          ? "bbb"
-          : choice === 3
-          ? "ss"
-          : "cleared."
-      );
+      if (choice === 3) {
+        setBoards([]);
+        setTasks([]);
+        toast.success("cleared.");
+      }
       setWiping(false);
     } catch (error) {}
   };
