@@ -64,10 +64,7 @@ import { Select, Space } from "antd";
 import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { PiBroom } from "react-icons/pi";
-import { ToastProvider, useToast } from "../components/ToastContext";
-
 function SingleProject() {
-  const { showToast } = useToast();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
@@ -403,7 +400,6 @@ function SingleProject() {
       if (choice === "2") {
         setTasks([]);
       }
-      showToast(<span>🔔</span>, "This is a toast message!", 5000);
       setWiping(false);
     } catch (error) {}
   };
