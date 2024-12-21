@@ -342,7 +342,7 @@ function SingleProject() {
         event.preventDefault();
         const currentTitle = document.getElementById("ProjectTitle")
         const currentDesc = document.getElementById("ProjectDesc")
-        console.log({title: currentTitle, Desc: currentDesc})
+        console.log({title: currentTitle.target.value, Desc: currentDesc.target.value})
         // saveInputs(currentTitle.target.value, currentDesc.target.value);
       }
     };
