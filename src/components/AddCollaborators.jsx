@@ -74,7 +74,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setAuthingDelete('')
             setSearchvalue('')
             setErrorEmail(false)
-            toast.apply("hello")
+            toast.success("Access updated.")
         } catch (error) {
             setErrorEmail(error.response.data.msg)
             setAuthingDelete('')
