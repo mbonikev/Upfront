@@ -544,7 +544,7 @@ function SingleProject() {
           duration: 5000,
           style: {
             background: '#252525da',
-            color: '#a1a1a1',
+            color: '#a4a4a4',
           },
         }}
       />
