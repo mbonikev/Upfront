@@ -12,7 +12,7 @@ import {
 } from "react-icons/lu";
 import { RiLoader5Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-function ProfileDropdownButtons({ username, setAchievments, setProfileMenu }) {
+function ProfileDropdownButtons({ username }) {
   const [logoutAnimate, setLogoutAnimate] = useState(false);
   const handleLogout = () => {
     localStorage.removeItem("upfront_user");
