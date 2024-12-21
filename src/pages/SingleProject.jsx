@@ -401,7 +401,7 @@ function SingleProject() {
       if (choice === "2") {
         setTasks([]);
       }
-      toast.success(choice === 1 ? "Boards Cleared" : choice === 2 ? "bbb" : "ss");
+      toast.success(choice === 1 ? "Boards Cleared" : choice === 2 ? "bbb" : choice === 3 ? "ss" : "cleared.");
       setWiping(false);
     } catch (error) {}
   };
