@@ -540,12 +540,8 @@ function SingleProject() {
         position="bottom-center"
         toastOptions={{
           // Define default options
-          className: "",
+          className: "bg-red-500",
           duration: 5000,
-          style: {
-            background: "#363636",
-            color: "#fff",
-          },
         }}
       />
       {/* create with AI button */}
