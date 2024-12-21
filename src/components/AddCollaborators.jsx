@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy, LuUsers2, LuWorkflow } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import toast, { Toaster } from "react-hot-toast";
+
+
 function AddCollaborators({ users, username, userEmail, collaborations, id, setCollaborations }) {
     const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
     const [logoutAnimate, setLogoutAnimate] = useState(false)
