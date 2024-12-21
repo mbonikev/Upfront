@@ -384,14 +384,14 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuPencil className="text-base opacity-50 min-w-fit" />
+                      <LuPencil className="text-base min-w-fit" />
                       <p className="line-clamp-1">Rename</p>
                     </div>
                     <Link
                       to={"/"}
                       className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuTrash2 className="text-lg opacity-50 min-w-fit" />
+                      <LuTrash2 className="text-lg min-w-fit" />
                       <p className="line-clamp-1">Clear</p>
                     </Link>
                   </div>
