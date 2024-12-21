@@ -814,7 +814,7 @@ function SingleProject() {
               >
                 {wiping === "2" ? (
                   <>
-                    <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                    <RiLoader5Fill className="text-lg animate-spinLoader" />
                     <span className="text-sm font-medium tracking-tight">
                       Boards & Tasks
                     </span>
