@@ -34,6 +34,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             setAuthing(false)
             setSearchvalue('')
             setErrorEmail(false)
+            toast.success("Access updated.")
         } catch (error) {
             setErrorEmail(error.response.data.msg)
             setAuthing(false)
