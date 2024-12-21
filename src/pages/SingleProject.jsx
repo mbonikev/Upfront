@@ -152,7 +152,7 @@ function SingleProject() {
     } catch (error) {
       console.log(error)
       setGenerating(true);
-      toast.error("");
+      toast.error(error.message);
     } finally {
       setGenerating(false);
     }
