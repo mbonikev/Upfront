@@ -12,7 +12,6 @@ import AddNotes from "../components/AddNotes";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoFolderOpen } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
-import { SiReaddotcv } from "react-icons/si";
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -480,8 +479,7 @@ function Projects() {
                               ? "Boards"
                               : "Board"}
                           </p>
-                          <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]">
-                            <SiReaddotcv className="text-base stroke-[1px] ml-[3px] mr-[1px]" />
+                          <p className="w-fit flex items-start justify-end text-xs font-medium text-text-color/70 dark:text-[#b8b8b8]">
                             {project.progress === 100
                               ? "Completed"
                               : format(
