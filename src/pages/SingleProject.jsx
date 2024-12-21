@@ -538,12 +538,9 @@ function SingleProject() {
     <>
       <Toaster
         position="bottom-center"
-        containerStyle={{
-          backgroundColor: "red",
-        }}
         toastOptions={{
           // Define default options
-          className: "dark",
+          className: "",
           duration: 5000,
         }}
       />
