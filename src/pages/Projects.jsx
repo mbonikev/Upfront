@@ -384,7 +384,7 @@ function Projects() {
                             ? "no description"
                             : project.desc}
                         </p>
-                        <div className="flex items-center justify-start mt-3">
+                        {/* <div className="flex items-center justify-start mt-3">
                           <div
                             title={userEmail}
                             className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ring-[3px] ring-white dark:ring-[#242424] uppercase"
@@ -408,7 +408,7 @@ function Projects() {
                               +{project.collaborations.length - 3}
                             </div>
                           )}
-                        </div>
+                        </div> */}
                         <div className="flex items-center gap-3 py-3">
                           <h1 className="text-sm">
                             {Math.round(
