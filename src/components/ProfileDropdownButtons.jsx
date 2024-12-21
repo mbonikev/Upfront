@@ -32,10 +32,6 @@ function ProfileDropdownButtons({ username }) {
                     <p className='line-clamp-1'>Settings</p>
                 </Link>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 '>
-                    <LuActivity className='text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit' />
-                    <p className='line-clamp-1'>Activity log</p>
-                </Link>
-                <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 '>
                     <LuTrash2 className='text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit' />
                     <p className='line-clamp-1'>Trash</p>
                 </Link>
