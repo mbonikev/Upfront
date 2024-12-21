@@ -154,7 +154,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.keytoLowerCase() === "s" && event.altKey) {
+      if (event.key.toLowerCase() === "s" && event.altKey) {
         event.preventDefault();
         handleShowSearch();
       }
