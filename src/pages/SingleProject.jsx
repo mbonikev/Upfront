@@ -403,6 +403,7 @@ function SingleProject() {
       if (choice === "2") {
         setTasks([]);
       }
+      showToast(<span>🔔</span>, "This is a toast message!", 5000);
       setWiping(false);
     } catch (error) {}
   };
