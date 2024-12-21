@@ -14,7 +14,6 @@ import { IoFolderOpen } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
-
 function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
@@ -202,6 +201,38 @@ function Projects() {
   };
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
+      <Toaster
+        position="bottom-left"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 2300,
+          style: {
+            background: "#252525da",
+            color: "#d4d4d4",
+            fontSize: "14px",
+            fontWeight: "500",
+            padding: "7px",
+            borderRadius: "12px",
+            backdropFilter: "blur(5px)",
+            border: "1px solid #32323230",
+          },
+          success: {
+            style: {
+              padding: "7px 7px 7px 12px",
+            },
+            iconTheme: {
+              primary: "#3b883e",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            style: {
+              padding: "7px 7px 7px 12px",
+            },
+          },
+        }}
+      />
       <Sidebar
         username={username}
         userEmail={userEmail}
