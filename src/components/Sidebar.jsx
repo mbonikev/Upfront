@@ -158,6 +158,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         event.preventDefault();
         handleShowSearch();
       }
+      if (event.key === "s" && event.altKey) {
+        event.preventDefault();
+        handleShowSearch();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => {
@@ -281,9 +285,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </div>
                 {/* shortcuts */}
                 <div className="flex items-center justify-center gap-1">
-                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">Alt</span>
+                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
+                    Alt
+                  </span>
                   <span className="text-[#a5a5a5] dark:text-[#afafaf]">+</span>
-                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">S</span>
+                  <span className="bg-[#ececec] dark:bg-[#383838] text-[#a5a5a5] dark:text-[#afafaf] text-[10px] font-medium px-1.5 py-0 rounded-md border-b border-[#d4d4d4] dark:border-[#555555]">
+                    S
+                  </span>
                 </div>
               </div>
             </button>
