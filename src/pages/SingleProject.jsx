@@ -151,7 +151,7 @@ function SingleProject() {
       toast.success("Generated successfully.");
     } catch (error) {
       setLoading(true);
-      toast.error("Failed to generate. try again later.");
+      toast.error(error);
     } finally {
       setLoading(false);
     }
