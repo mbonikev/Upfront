@@ -211,7 +211,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   }, []);
 
   // copy link
-  const handleLinkCopy = () => {};
+  const handleLinkCopy = () => {
+    
+  };
+
   // close on esc
   useEffect(() => {
     const handleKeyDown = (event) => {
