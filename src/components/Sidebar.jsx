@@ -128,7 +128,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       }
 
       // Set the adjusted position
-      setMenuPosition({ top: newTop, left: newLeft });
+      setMenuPosition({ top: newTop, left: newLeft + 33 });
       setMoreOpt1(true);
     }
   };
