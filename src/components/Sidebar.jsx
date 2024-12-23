@@ -484,6 +484,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         <button
           ref={buttonRef}
           style={{ padding: "10px 20px", fontSize: "16px" }}
+          className="w-full bg-blue-400"
         >
           Right-click me
         </button>
