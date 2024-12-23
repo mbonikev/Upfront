@@ -121,7 +121,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       }
 
       // Check if the menu would overflow on the bottom side
-      if (newTop + 200 > screenHeight) {
+      if (newTop + 100 > screenHeight) {
         newTop = screenHeight - 200; // Adjust the top position to stay within the screen
       }
 
