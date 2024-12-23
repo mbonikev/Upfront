@@ -412,9 +412,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               {moreOpt1 && (
                 <div
                   ref={setMenuRef}
-                  style={styles.popper}
+                  style={{
+                    ...styles.popper,
+                    zIndex: 2000, // Ensure the menu appears above other elements
+                  }}
                   {...attributes.popper}
-                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
+                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
                 >
                   <div
                     onClick={renameW1}
