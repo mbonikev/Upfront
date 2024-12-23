@@ -455,7 +455,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       <LuTrash2 className="text-lg min-w-fit" />
                       <p className="line-clamp-1">Move to Trash</p>
                     </button>
-                    <div className="w-full h-[1px] bg-stone-200 dark:bg-[#323232]"></div>
+                    <div className="w-full h-[1px] bg-[#e1e1e1] dark:bg-[#323232]"></div>
                   </Reveal>
                 </div>
               )}
