@@ -28,7 +28,7 @@ function ProfileDropdownButtons({ username, userEmail }) {
   const linkStyle = `h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative select-none active:bg-stone-100 dark:active:bg-[#323232]`;
 
   return (
-    <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#262626]">
+    <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
       <div className="p-2 w-full cursor-default">
         <div className="w-full min-h-[34px] flex items-center justify-start gap-2 px-2 py-[3px] text-sm font-normal">
           <p className="h-[35px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-lg font-bold uppercase">
