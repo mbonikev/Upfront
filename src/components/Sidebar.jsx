@@ -3,6 +3,7 @@ import { IoIosAddCircle, IoMdNotificationsOutline } from "react-icons/io";
 import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
 import {
   LuActivity,
+  LuArrowUpRight,
   LuBadgeX,
   LuBell,
   LuCheck,
@@ -459,7 +460,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     <button
                       className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuCircleArrowOutUpRight className="text-base min-w-fit" />
+                      <LuArrowUpRight className="text-base min-w-fit" />
                       <p className="line-clamp-1">Open in new tab</p>
                     </button>
                   </Reveal>
