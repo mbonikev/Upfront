@@ -104,16 +104,35 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
   // show more
   const showMoreMenuw1 = () => {
-    // setMoreOpt1(true);
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
-      setMenuPosition({
-        top: rect.bottom + window.scrollY,
-        left: rect.left + window.scrollX,
-      });
+
+      // Get the screen dimensions
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      // Initial position based on the button's position
+      let newTop = rect.bottom + window.scrollY;
+      let newLeft = rect.left + window.scrollX;
+
+      // Adjust if menu would overflow on the right side
+      const menuWidth = 160; // Set the desired width of the menu
+      if (newLeft + menuWidth > screenWidth) {
+        newLeft = screenWidth - menuWidth; // Keep the menu within the screen
+      }
+
+      // Adjust if the menu would overflow on the bottom side
+      const menuHeight = 200; // Set the desired height of the menu
+      if (newTop + menuHeight > screenHeight) {
+        newTop = screenHeight - menuHeight; // Keep the menu within the screen
+      }
+
+      // Set the adjusted position
+      setMenuPosition({ top: newTop, left: newLeft });
       setMoreOpt1(true);
     }
   };
+
   // rename workspace 1
   const renameW1 = () => {
     setMoreOpt1(false);
@@ -411,6 +430,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   </Link>
                 </div>
               )}
+
               {/* {saveOpt1 && (
                 <>
                   <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
