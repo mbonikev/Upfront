@@ -44,7 +44,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
   }
 
   to {
@@ -432,7 +432,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     keyframes={customAnimation}
                     duration={230}
                     triggerOnce
-                    damping={0.1}
+                    damping={1}
                     cascade={true}
                   >
                     <div
