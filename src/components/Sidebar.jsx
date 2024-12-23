@@ -454,7 +454,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     <button
                       className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuTrash2 className="text-lg min-w-fit" />
+                      <LuTrash2 className="text-base min-w-fit" />
                       <p className="line-clamp-1">Move to Trash</p>
                     </button>
                     <div className="w-full h-[1px] bg-[#efefef] dark:bg-[#323232] my-1"></div>
