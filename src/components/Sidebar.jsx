@@ -410,7 +410,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 className={`${linkStyle} ${
                   location.pathname === "/"
                     ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                    : "hover:bg-stone-100 group-hover:bg-stone-100"
+                    : ""
                 }`}
               >
                 <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
