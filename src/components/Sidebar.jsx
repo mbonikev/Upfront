@@ -315,7 +315,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
-                  <IoIosAddCircle className="text-2xl" />
+                  <LuPlus className="text-lg" />
                 </div>
               )}
             </button>
