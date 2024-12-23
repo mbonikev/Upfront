@@ -473,8 +473,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </p>
             </button>
           </div>
-        </div>
-      </div>
 
 
       <div
@@ -529,8 +527,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </ul>
         )}
       </div>
+        </div>
       </div>
-      );
     </div>
   );
 }
