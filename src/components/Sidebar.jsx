@@ -98,7 +98,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setOriginalW1(luw1);
   }, []);
   const handleCancel = () => {
-    setW1(originalW1 !== null ? originalW1 : w1 );
+    setW1(originalW1);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
@@ -107,7 +107,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     // setMoreOpt1(true);
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
-      setMenuPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      setMenuPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
       setMoreOpt1(true);
     }
   };
@@ -176,7 +179,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        handleCancel();
+        setMoreOpt1(false);
+        setSaveOpt1(false);
         setProfileMenu(false);
       }
     };
