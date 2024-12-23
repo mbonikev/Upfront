@@ -15,6 +15,7 @@ import {
   LuFlagTriangleRight,
   LuHash,
   LuInfo,
+  LuLink,
   LuLogOut,
   LuMoreHorizontal,
   LuPen,
@@ -438,8 +439,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     <button
                       className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuPencil className="text-base min-w-fit" />
-                      <p className="line-clamp-1">Rename</p>
+                      <LuLink className="text-base min-w-fit" />
+                      <p className="line-clamp-1">Copy link</p>
                     </button>
                     <button
                       onClick={renameW1}
