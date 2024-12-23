@@ -106,31 +106,27 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const showMoreMenuw1 = () => {
     // setMoreOpt1(true);
     if (moreButtonRef.current) {
-      const buttonRect = moreButtonRef.current.getBoundingClientRect();
-      let top = buttonRect.bottom + window.scrollY; // Bottom of the button
-      let left = buttonRect.left + window.scrollX; // Left of the button
+      const rect = moreButtonRef.current.getBoundingClientRect();
 
-      // Temporarily open the menu to calculate its size
-      setMoreOpt1(true);
+      // Get the screen dimensions
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
 
-      setTimeout(() => {
-        if (menuRef.current) {
-          const menuRect = menuRef.current.getBoundingClientRect();
+      let newTop = rect.bottom + window.scrollY;
+      let newLeft = rect.left + window.scrollX;
 
-          // Adjust for horizontal overflow (if menu goes beyond the right edge)
-          if (menuRect.right > window.innerWidth) {
-            left = buttonRect.left + window.scrollX - menuRect.width; // Shift left
-          }
+      // Check if the menu would overflow on the right side
+      if (newLeft + 170 > screenWidth) {
+        newLeft = screenWidth - 170; // Adjust the left position to stay within the screen
+      }
 
-          // Adjust for vertical overflow (if menu goes beyond the bottom edge)
-          if (menuRect.bottom > window.innerHeight) {
-            top = buttonRect.top + window.scrollY - menuRect.height; // Shift above
-          }
+      // Check if the menu would overflow on the bottom side
+      if (newTop + 200 > screenHeight) {
+        newTop = screenHeight - 200; // Adjust the top position to stay within the screen
+      }
 
-          // Update the menu position
-          setMenuPosition({ top, left });
-        }
-      }, 0); // Ensure DOM updates before calculating dimensions
+      setMenuPosition({ top: newTop, left: newLeft });
+      setMoreOpt1(!moreOpt1);
     }
   };
   // rename workspace 1
