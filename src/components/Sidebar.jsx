@@ -297,10 +297,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-sm font-semibold uppercase">
                   {username.charAt(0)}
                 </p>
-                <p className="truncate  max-w-[80px] flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
+                <p className="truncate  max-w-[90px] flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
                   {username}
                 </p>
-                <LuChevronsUpDown className="text-base mx-[5px] " />
+                <LuChevronsUpDown className="text-base ml-[5px] " />
               </button>
             </div>
             <button
