@@ -39,8 +39,6 @@ import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
-import { usePopper } from "react-popper";
-
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
@@ -100,40 +98,19 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setOriginalW1(luw1);
   }, []);
   const handleCancel = () => {
-    setW1(originalW1 !== null ? originalW1 : w1);
+    setW1(originalW1 !== null ? originalW1 : w1 );
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
   // show more
   const showMoreMenuw1 = () => {
-    setMoreOpt1(true);
+    // setMoreOpt1(true);
+    if (moreButtonRef.current) {
+      const rect = moreButtonRef.current.getBoundingClientRect();
+      setMenuPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      setMoreOpt1(true);
+    }
   };
-  const [menuRef, setMenuRef] = useState(null);
-  const { styles, attributes } = usePopper(moreButtonRef.current, menuRef, {
-    placement: "bottom-start", // Position the menu below the button
-    modifiers: [
-      {
-        name: "preventOverflow",
-        options: {
-          boundary: "viewport", // Allow the menu to overflow the sidebar
-          padding: 8, // Optional, adds padding to prevent the menu from sticking to the edges
-        },
-      },
-      {
-        name: "flip",
-        options: {
-          enabled: true, // Enable flip to change menu position if it overflows
-        },
-      },
-      {
-        name: "offset",
-        options: {
-          offset: [40, 8], // Adjust horizontal position (10px to the right) and vertical position (8px down)
-        },
-      },
-    ],
-  });
-
   // rename workspace 1
   const renameW1 = () => {
     setMoreOpt1(false);
@@ -411,13 +388,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
               {moreOpt1 && (
                 <div
-                  ref={setMenuRef}
-                  style={{
-                    ...styles.popper,
-                    zIndex: 2000, // Ensure the menu appears above other elements
-                  }}
-                  {...attributes.popper}
-                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
+                  style={{ top: menuPosition.top, left: menuPosition.left }}
+                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
                 >
                   <div
                     onClick={renameW1}
