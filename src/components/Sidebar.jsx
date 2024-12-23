@@ -213,9 +213,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   // copy link
   const handleLinkCopy = () => {
-    toast.error('Link unavailable')
+    toast.error("Link unavailable");
     setMoreOpt1(false);
-
   };
 
   // close on esc
@@ -289,18 +288,38 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         )}
         <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
           {/* 1 */}
-          <div className="w-full h-fit mb-4">
+          <div className="w-full h-fit mb-4 flex items-center justify-between">
+            <div className="w-full h-fit">
+              <button
+                onClick={showPMenu}
+                className="dark:text-[#b8b8b8] text-text-color w-full flex items-center justify-start gap-[2px] hover:bg-stone-100 dark:hover:bg-[#2c2c2c] transition px-1.5 py-1.5 rounded-lg"
+              >
+                <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-sm font-semibold uppercase">
+                  {username.charAt(0)}
+                </p>
+                <p className="truncate flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
+                  {username}
+                </p>
+                <LuChevronsUpDown className="text-base mx-[5px] " />
+              </button>
+            </div>
             <button
-              onClick={showPMenu}
-              className="dark:text-[#b8b8b8] text-text-color w-full flex items-center justify-start gap-[2px] hover:bg-stone-100 dark:hover:bg-[#2c2c2c] transition px-1.5 py-1.5 rounded-lg"
+              onClick={handleCreate}
+              className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
+                createNew && "pointer-events-none select-none"
+              }`}
             >
-              <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-sm font-semibold uppercase">
-                {username.charAt(0)}
-              </p>
-              <p className="truncate flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
-                {username}
-              </p>
-              <LuChevronsUpDown className="text-base mx-[5px] " />
+              {createNew ? (
+                <div className="flex items-center gap-2">
+                  <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                  <p className="line-clamp-1 ">Setting up your project... </p>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <IoIosAddCircle className="text-2xl" />
+                  <p className="line-clamp-1 ">New Project</p>
+                </div>
+              )}
             </button>
           </div>
           {/* 2 */}
