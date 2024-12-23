@@ -398,7 +398,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     style={{
                       position: "absolute",
                       top: `${menuPosition.top}px`,
-                      left: `${menuPosition.left}px`,
+                      left: `${menuPosition.left+200}px`,
                       zIndex: 1000,
                     }}
                     className=" bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
