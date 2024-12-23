@@ -411,7 +411,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
 
               {moreOpt1 && (
-                <Fade>
+                <Fade duration={100} triggerOnce>
                   <div
                     style={{ top: menuPosition.top, left: menuPosition.left }}
                     className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
