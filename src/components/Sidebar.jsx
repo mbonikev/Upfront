@@ -41,7 +41,6 @@ import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
 import { usePopper } from "react-popper";
 
-
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
@@ -101,7 +100,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setOriginalW1(luw1);
   }, []);
   const handleCancel = () => {
-    setW1(originalW1 !== null ? originalW1 : w1 );
+    setW1(originalW1 !== null ? originalW1 : w1);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
@@ -127,7 +126,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       },
     ],
   });
-  
+
   // rename workspace 1
   const renameW1 = () => {
     setMoreOpt1(false);
@@ -405,7 +404,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
               {moreOpt1 && (
                 <div
-                  style={{ top: menuPosition.top, left: menuPosition.left }}
+                  ref={setMenuRef}
+                  style={styles.popper}
+                  {...attributes.popper}
                   className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
                 >
                   <div
