@@ -47,7 +47,7 @@ import Reveal, { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import { PiArrowUpRightBold } from "react-icons/pi";
 import toast from "react-hot-toast";
-import { GrHomeOption } from "react-icons/gr";
+import { GoHome } from "react-icons/go";
 const customAnimation = keyframes`
   from {
     opacity: 0;
@@ -329,7 +329,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
-              <GrHomeOption className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <GoHome className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Overview</p>
             </Link>
             <button
