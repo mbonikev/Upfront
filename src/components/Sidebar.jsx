@@ -102,8 +102,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
-  // show more
-  const showMoreMenuw1 = () => {
+
+  // Function to update the menu position
+  const updateMenuPosition = () => {
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
 
@@ -122,13 +123,34 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       }
 
       // Adjust if the menu would overflow on the bottom side
-      const menuHeight = 100; // Set the desired height of the menu
+      const menuHeight = 200; // Set the desired height of the menu
       if (newTop + menuHeight > screenHeight) {
         newTop = screenHeight - menuHeight; // Keep the menu within the screen
       }
 
       // Set the adjusted position
       setMenuPosition({ top: newTop, left: newLeft });
+    }
+  };
+
+  // Trigger the menu position update when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (moreOpt1) {
+        updateMenuPosition();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [moreOpt1]);
+
+  const showMoreMenuw1 = () => {
+    if (moreButtonRef.current) {
+      updateMenuPosition();
       setMoreOpt1(true);
     }
   };
