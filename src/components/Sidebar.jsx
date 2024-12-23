@@ -106,9 +106,31 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const showMoreMenuw1 = () => {
     // setMoreOpt1(true);
     if (moreButtonRef.current) {
-      const rect = moreButtonRef.current.getBoundingClientRect();
-      setMenuPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      const buttonRect = moreButtonRef.current.getBoundingClientRect();
+      let top = buttonRect.bottom + window.scrollY;
+      let left = buttonRect.left + window.scrollX;
+
+      // Temporarily open the menu to calculate its size
       setMoreOpt1(true);
+
+      setTimeout(() => {
+        if (menuRef.current) {
+          const menuRect = menuRef.current.getBoundingClientRect();
+
+          // Adjust for horizontal overflow
+          if (menuRect.right > window.innerWidth) {
+            left = buttonRect.right - menuRect.width + window.scrollX;
+          }
+
+          // Adjust for vertical overflow
+          if (menuRect.bottom > window.innerHeight) {
+            top = buttonRect.top - menuRect.height + window.scrollY;
+          }
+
+          // Update the position
+          setMenuPosition({ top, left });
+        }
+      }, 0);
     }
   };
   // rename workspace 1
