@@ -181,7 +181,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
   const linkStyle =
-    "h-[29px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative select-none active:bg-stone-100 dark:active:bg-[#323232]";
+    "h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative select-none active:bg-stone-100 dark:active:bg-[#323232]";
 
   const getDate = new Date();
   const Today = getDate.getDate();
@@ -306,7 +306,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </div>
             <button
               onClick={handleCreate}
-              className={`h-[29px] aspect-square flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
+              className={`h-[30px] aspect-square flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
                 createNew && "pointer-events-none select-none"
               }`}
             >
