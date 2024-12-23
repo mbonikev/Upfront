@@ -128,7 +128,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       {
         name: "offset",
         options: {
-          offset: [500, 10], // Adjust horizontal position (500px to the right) and vertical position (10px down)
+          offset: [50, 10], // Adjust horizontal position (500px to the right) and vertical position (10px down)
         },
       },
     ],
