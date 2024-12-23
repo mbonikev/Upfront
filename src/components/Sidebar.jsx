@@ -415,7 +415,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   style={{ top: menuPosition.top, left: menuPosition.left }}
                   className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
                 >
-                  <Fade duration={100} triggerOnce damping={0.5} cascade={true}>
+                  <Fade duration={100} direction="right" triggerOnce damping={0.5} cascade={true} className="transition-all">
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
