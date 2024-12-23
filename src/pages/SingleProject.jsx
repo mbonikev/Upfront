@@ -151,6 +151,8 @@ function SingleProject() {
     } catch (error) {
       setGenerating(true);
       toast.error(error.message);
+    } finally {
+      setGenerating(false);
     }
   };
 
