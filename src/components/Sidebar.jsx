@@ -109,6 +109,25 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const showMoreMenuw1 = () => {
     setMoreOpt1(true);
   };
+  const [menuRef, setMenuRef] = useState(null);
+  const { styles, attributes } = usePopper(moreButtonRef.current, menuRef, {
+    placement: "bottom-start", // Position the menu below the button
+    modifiers: [
+      {
+        name: "preventOverflow",
+        options: {
+          boundary: "viewport", // Ensures the menu stays within the viewport
+        },
+      },
+      {
+        name: "offset",
+        options: {
+          offset: [0, 8], // Adjust menu's vertical position by 8px
+        },
+      },
+    ],
+  });
+  
   // rename workspace 1
   const renameW1 = () => {
     setMoreOpt1(false);
