@@ -116,13 +116,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       let newLeft = rect.left + window.scrollX;
 
       // Adjust if menu would overflow on the right side
-      const menuWidth = 230; // Set the desired width of the menu
+      const menuWidth = 160; // Set the desired width of the menu
       if (newLeft + menuWidth > screenWidth) {
         newLeft = screenWidth - menuWidth; // Keep the menu within the screen
       }
 
       // Adjust if the menu would overflow on the bottom side
-      const menuHeight = 200; // Set the desired height of the menu
+      const menuHeight = 100; // Set the desired height of the menu
       if (newTop + menuHeight > screenHeight) {
         newTop = screenHeight - menuHeight; // Keep the menu within the screen
       }
