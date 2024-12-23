@@ -197,12 +197,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           }`}
         ></div>
         {/* overlay more menu */}
-        <div
+        {/* <div
           onClick={handleCancel}
           className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
             moreOpt1 ? "fixed" : "hidden"
           }`}
-        ></div>
+        ></div> */}
         {/* overlay more menu save */}
         <div
           onClick={handleCancel}
