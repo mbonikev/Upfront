@@ -432,7 +432,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     keyframes={customAnimation}
                     duration={230}
                     triggerOnce
-                    damping={1}
+                    damping={0.1}
                     cascade={true}
                   >
                     <div
