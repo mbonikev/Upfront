@@ -110,7 +110,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
   const [menuRef, setMenuRef] = useState(null);
   const { styles, attributes } = usePopper(moreButtonRef.current, menuRef, {
-    placement: "bottom-start", // Position the menu below the button
+    placement: "bottom-end", // Position the menu below the button
     modifiers: [
       {
         name: "preventOverflow",
@@ -128,7 +128,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       {
         name: "offset",
         options: {
-          offset: [0, 8], // Adjust menu's vertical position by 8px
+          offset: [0, 10], // Adjust menu's vertical position by 8px
         },
       },
     ],
