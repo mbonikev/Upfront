@@ -110,13 +110,13 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
   const [menuRef, setMenuRef] = useState(null);
   const { styles, attributes } = usePopper(moreButtonRef.current, menuRef, {
-    placement: "bottom-start", // Position the menu below the button, start aligned
+    placement: "bottom-start", // Position the menu below the button
     modifiers: [
       {
         name: "preventOverflow",
         options: {
           boundary: "viewport", // Allow the menu to overflow the sidebar
-          padding: 8, // Optional, adds padding to the edges of the viewport
+          padding: 8, // Optional, adds padding to prevent the menu from sticking to the edges
         },
       },
       {
@@ -128,7 +128,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       {
         name: "offset",
         options: {
-          offset: [50, 10], // Adjust horizontal position (500px to the right) and vertical position (10px down)
+          offset: [10, 8], // Adjust horizontal position (10px to the right) and vertical position (8px down)
         },
       },
     ],
