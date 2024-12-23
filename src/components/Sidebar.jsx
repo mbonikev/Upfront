@@ -322,7 +322,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
           {/* 2 */}
           <div className="flex-1 flex flex-col gap-[3px]">
-            <button
+            {/* <button
               onClick={handleCreate}
               className={`min-h-[34px] flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
                 createNew && "pointer-events-none select-none"
@@ -339,7 +339,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   <p className="line-clamp-1 ">New Project</p>
                 </div>
               )}
-            </button>
+            </button> */}
             <button
               onClick={handleShowSearch}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
