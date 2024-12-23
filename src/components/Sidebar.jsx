@@ -180,7 +180,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   }, []);
 
   return (
-    <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20 ">
+    <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20 overflow-y-auto">
       <div className=" relative w-full h-full ">
         {/* overlay */}
         <div
