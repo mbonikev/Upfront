@@ -301,12 +301,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 <p className="truncate  max-w-[120px] flex-1 text-left font-medium text-sm tracking-tight pl-[6px]">
                   {username}
                 </p>
-                <LuChevronsUpDown className="text-base ml-[5px] " />
+                <LuChevronDown className="text-base ml-[5px] " />
               </button>
             </div>
             <button
               onClick={handleCreate}
-              className={`h-[32px] aspect-square flex items-center gap-2 font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
+              className={`h-[32px] aspect-square flex items-center justify-center font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
                 createNew && "pointer-events-none select-none"
               }`}
             >
