@@ -411,11 +411,11 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
 
               {moreOpt1 && (
-                <Fade duration={100} triggerOnce className="z-[1000]">
-                  <div
-                    style={{ top: menuPosition.top, left: menuPosition.left }}
-                    className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
-                  >
+                <div
+                  style={{ top: menuPosition.top, left: menuPosition.left }}
+                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
+                >
+                  <Fade duration={100} triggerOnce  damping={1} cascade={true} className="z-[1000]">
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
@@ -458,8 +458,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                       <LuTrash2 className="text-lg min-w-fit" />
                       <p className="line-clamp-1">Clear</p>
                     </Link>
-                  </div>
-                </Fade>
+                  </Fade>
+                </div>
               )}
 
               {/* {saveOpt1 && (
