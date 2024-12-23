@@ -198,7 +198,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
 
   return (
-    <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20 overflow-y-auto">
+    <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
       <div className=" relative w-full h-full ">
         {/* overlay */}
         <div
@@ -250,7 +250,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
-        <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm min-h-svh max-h-svh">
+        <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
           {/* 1 */}
           <div className="w-full h-fit mb-4">
             <button
