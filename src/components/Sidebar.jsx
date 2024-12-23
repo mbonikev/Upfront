@@ -475,6 +475,61 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
           </div>
         </div>
       </div>
+
+
+      <div
+        onClick={handleClick}
+        onContextMenu={handleContextMenu}
+        style={{ minHeight: "100vh" }}
+        className="w-full h-[300px]"
+      >
+        {/* The button */}
+        <button
+          ref={buttonRef}
+          style={{ padding: "10px 20px", fontSize: "16px" }}
+          className="w-full bg-blue-400"
+        >
+          Right-click me
+        </button>
+
+        {/* The custom menu */}
+        {showMenu && (
+          <ul
+            style={{
+              position: "absolute",
+              top: `${menuPosition.y}px`,
+              left: `${menuPosition.x}px`,
+              backgroundColor: "#fff",
+              border: "1px solid #ccc",
+              boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
+              listStyle: "none",
+              padding: "10px",
+              margin: 0,
+              zIndex: 1000,
+            }}
+          >
+            <li
+              style={{ padding: "8px 15px", cursor: "pointer" }}
+              onClick={() => alert("Option 1 clicked")}
+            >
+              Option 1
+            </li>
+            <li
+              style={{ padding: "8px 15px", cursor: "pointer" }}
+              onClick={() => alert("Option 2 clicked")}
+            >
+              Option 2
+            </li>
+            <li
+              style={{ padding: "8px 15px", cursor: "pointer" }}
+              onClick={() => alert("Option 3 clicked")}
+            >
+              Option 3
+            </li>
+          </ul>
+        )}
+      </div>
+      </div>
       );
     </div>
   );
