@@ -39,6 +39,7 @@ import ProfileDropdownButtons from "./ProfileDropdownButtons";
 import { getArray } from "../utils/hashUtils";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
+import MoreOptionsMenu from "./MoreOtions1";
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
@@ -57,6 +58,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
+  const buttonRef = useRef(null);
+
+  
   // workspace1
   const handleSubmit1 = async (e) => {
     e.preventDefault();
@@ -178,7 +182,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-  
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
@@ -379,24 +382,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
               </div>
               {moreOpt1 && (
-                <>
-                  <div className="fixed right-[10px] top-[10%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
-                    <div
-                      onClick={renameW1}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                    >
-                      <LuPencil className="text-base min-w-fit" />
-                      <p className="line-clamp-1">Rename</p>
-                    </div>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                    >
-                      <LuTrash2 className="text-lg min-w-fit" />
-                      <p className="line-clamp-1">Clear</p>
-                    </Link>
-                  </div>
-                </>
+                <MoreOptionsMenu
+                  targetRef={buttonRef}
+                  onClose={() => setMoreOpt1(false)}
+                />
               )}
               {/* {saveOpt1 && (
                 <>
