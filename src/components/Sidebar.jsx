@@ -98,7 +98,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setOriginalW1(luw1);
   }, []);
   const handleCancel = () => {
-    setW1(originalW1);
+    setW1(originalW1 !== null ? w1 );
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
