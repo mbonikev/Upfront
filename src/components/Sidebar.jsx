@@ -104,7 +104,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
   // show more
   const showMoreMenuw1 = () => {
-    setMoreOpt1(true);
+    // setMoreOpt1(true);
+    if (moreButtonRef.current) {
+      const rect = moreButtonRef.current.getBoundingClientRect();
+      setMenuPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      setMoreOpt1(true);
+    }
   };
   // rename workspace 1
   const renameW1 = () => {
