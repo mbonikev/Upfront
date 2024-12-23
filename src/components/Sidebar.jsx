@@ -107,8 +107,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     // setMoreOpt1(true);
     if (moreButtonRef.current) {
       const buttonRect = moreButtonRef.current.getBoundingClientRect();
-      let top = buttonRect.bottom + window.scrollY;
-      let left = buttonRect.left + window.scrollX;
+      let top = buttonRect.bottom + window.scrollY; // Bottom of the button
+      let left = buttonRect.left + window.scrollX; // Left of the button
 
       // Temporarily open the menu to calculate its size
       setMoreOpt1(true);
@@ -117,20 +117,20 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         if (menuRef.current) {
           const menuRect = menuRef.current.getBoundingClientRect();
 
-          // Adjust for horizontal overflow
+          // Adjust for horizontal overflow (if menu goes beyond the right edge)
           if (menuRect.right > window.innerWidth) {
-            left = buttonRect.right - menuRect.width + window.scrollX;
+            left = buttonRect.left + window.scrollX - menuRect.width; // Shift left
           }
 
-          // Adjust for vertical overflow
+          // Adjust for vertical overflow (if menu goes beyond the bottom edge)
           if (menuRect.bottom > window.innerHeight) {
-            top = buttonRect.top - menuRect.height + window.scrollY;
+            top = buttonRect.top + window.scrollY - menuRect.height; // Shift above
           }
 
-          // Update the position
+          // Update the menu position
           setMenuPosition({ top, left });
         }
-      }, 0);
+      }, 0); // Ensure DOM updates before calculating dimensions
     }
   };
   // rename workspace 1
