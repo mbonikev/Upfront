@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { TbStack } from "react-icons/tb";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
@@ -15,14 +15,13 @@ import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
 function Projects() {
+  const { workspaceId } = useParams()
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("Workspace 1");
   const inputRef = useRef(null);
   // spaces
   const [w1, setW1] = useState(null);
-  const [w2, setW2] = useState(null);
-  const [w3, setW3] = useState(null);
   const [myProjects, setMyProjects] = useState([]);
   const [projectBoards, setProjectBoards] = useState([]);
   const [allTasks, setAllTasks] = useState([]);
@@ -244,10 +243,6 @@ function Projects() {
         userEmail={userEmail}
         w1={w1}
         setW1={setW1}
-        w2={w2}
-        setW2={setW2}
-        w3={w3}
-        setW3={setW3}
       />
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
