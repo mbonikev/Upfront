@@ -41,6 +41,17 @@ import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
 import Reveal, { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(-200px, -100px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -417,7 +428,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   style={{ top: menuPosition.top, left: menuPosition.left }}
                   className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1 transition-all ease-in-out duration-300 overflow-clip"
                 >
-                  <Reveal keyframes={} triggerOnce damping={0.1} cascade={true}>
+                  <Reveal keyframes={customAnimation} triggerOnce damping={0.1} cascade={true}>
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
