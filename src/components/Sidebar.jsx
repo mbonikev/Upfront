@@ -40,6 +40,8 @@ import { getArray } from "../utils/hashUtils";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
 import Reveal, { Fade } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
 function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
