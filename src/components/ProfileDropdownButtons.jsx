@@ -29,7 +29,6 @@ function ProfileDropdownButtons({ username, userEmail }) {
 
   return (
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
-      <div className="w-full h-[1px] bg-border-line-color/70 dark:bg-[#383838]"></div>
       <div className="p-2 flex flex-col w-full">
         <Link to={"/"} className={`${linkStyle}`}>
           <LuSettings className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit" />
