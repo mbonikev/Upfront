@@ -211,8 +211,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   }, []);
 
   // copy link
-  
-
+  const handleLinkCopy = () => {};
   // close on esc
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -442,7 +441,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     cascade={true}
                   >
                     <button
-
+                      onClick={handleLinkCopy}
                       className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       <LuLink className="text-base min-w-fit" />
