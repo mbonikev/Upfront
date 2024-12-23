@@ -306,7 +306,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </div>
             <button
               onClick={handleCreate}
-              className={`h-[30px] aspect-square flex items-center gap-2 px-[5px] py-[5px] font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
+              className={`h-[32px] aspect-square flex items-center gap-2 font-medium text-main-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
                 createNew && "pointer-events-none select-none"
               }`}
             >
