@@ -110,12 +110,19 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
   const [menuRef, setMenuRef] = useState(null);
   const { styles, attributes } = usePopper(moreButtonRef.current, menuRef, {
-    placement: "-200px 40px", // Position the menu below the button
+    placement: "bottom-start", // Position the menu below the button
     modifiers: [
       {
         name: "preventOverflow",
         options: {
-          boundary: "viewport", // Ensures the menu stays within the viewport
+          boundary: moreButtonRef.current?.parentElement, // Prevent overflow relative to the parent
+          padding: 8, // Add padding to prevent the menu from sticking to the edges
+        },
+      },
+      {
+        name: "flip",
+        options: {
+          enabled: true, // Enable flip to change menu position if it overflows
         },
       },
       {
