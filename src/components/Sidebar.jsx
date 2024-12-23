@@ -179,6 +179,20 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     };
   }, []);
 
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const buttonRef = useRef(null);
+
+  const handleMoreOptionsClick = () => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setMenuPosition({
+        top: rect.bottom + window.scrollY, // Adjust for viewport offset
+        left: rect.right + window.scrollX - 100, // Adjust horizontal position
+      });
+    }
+    setMoreOpt1((prev) => !prev);
+  };
+
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
       <div className=" relative w-full h-full ">
