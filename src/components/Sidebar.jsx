@@ -435,20 +435,19 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     damping={0.1}
                     cascade={true}
                   >
-                    <div
+                    <button
                       onClick={renameW1}
-                      className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                      className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       <LuPencil className="text-base min-w-fit" />
                       <p className="line-clamp-1">Rename</p>
-                    </div>
-                    <Link
-                      to={"/"}
-                      className={`${linkStyle} hover:text-red-500 cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                    </button>
+                    <button
+                      className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
                       <LuTrash2 className="text-lg min-w-fit" />
                       <p className="line-clamp-1">Clear</p>
-                    </Link>
+                    </button>
                   </Reveal>
                 </div>
               )}
