@@ -478,7 +478,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       <div
         onClick={handleClick}
         onContextMenu={handleContextMenu}
-        style={{ minHeight: "100vh" }}
         className="w-full h-[300px]"
       >
         {/* The button */}
