@@ -213,7 +213,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   // copy link
   const handleLinkCopy = () => {
-    toast.error('Link coppied')
+    toast.error('Link unavailable')
     setMoreOpt1(false);
 
   };
