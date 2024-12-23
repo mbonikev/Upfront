@@ -178,20 +178,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
-  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
-  const buttonRef = useRef(null);
-
-  const handleMoreOptionsClick = () => {
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setMenuPosition({
-        top: rect.bottom + window.scrollY, // Adjust for viewport offset
-        left: rect.right + window.scrollX - 100, // Adjust horizontal position
-      });
-    }
-    setMoreOpt1((prev) => !prev);
-  };
+  
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
@@ -384,7 +371,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                 </>
               )}
               <div
-                ref={buttonRef}
                 onClick={showMoreMenuw1}
                 className={` cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
                   moreOpt1 && "opacity-100"
@@ -394,15 +380,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               {moreOpt1 && (
                 <>
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: `${menuPosition.top}px`,
-                      left: `${menuPosition.left+200}px`,
-                      zIndex: 1000,
-                    }}
-                    className=" bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
-                  >
+                  <div className="fixed right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
