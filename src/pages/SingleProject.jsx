@@ -125,7 +125,7 @@ function SingleProject() {
     e.preventDefault();
     setGenerating(true);
     try {
-      const response = await axios.post(
+      const response = await axios.post(`${apiUrl}`
         "http://localhost:5000/api/generateBoards",
         {
           projectDescription,
