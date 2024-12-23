@@ -15,6 +15,7 @@ import {
   LuFlag,
   LuFlagTriangleRight,
   LuHash,
+  LuHourglass,
   LuInfo,
   LuLink,
   LuLogOut,
@@ -327,7 +328,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
-              <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <LuHourglass className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Overview</p>
             </Link>
             <button
