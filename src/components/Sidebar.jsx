@@ -44,6 +44,7 @@ import SearchModal from "./SearchModal";
 import Reveal, { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import { PiArrowUpRightBold } from "react-icons/pi";
+import toast from "react-hot-toast";
 const customAnimation = keyframes`
   from {
     opacity: 0;
@@ -212,7 +213,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   // copy link
   const handleLinkCopy = () => {
-    
+    toast.success('Link coppied')
+    setMoreOpt1(false);
+
   };
 
   // close on esc
