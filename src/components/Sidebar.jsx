@@ -181,7 +181,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20 ">
-      <div className=" relative w-full h-full max-h-svh overflow-y-auto overflow-x-visible">
+      <div className=" relative w-full h-full ">
         {/* overlay */}
         <div
           onClick={() => setProfileMenu(false)}
