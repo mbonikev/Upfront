@@ -394,7 +394,15 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </div>
               {moreOpt1 && (
                 <>
-                  <div className="absolute right-[-100px] top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: `${menuPosition.top}px`,
+                      left: `${menuPosition.left}px`,
+                      zIndex: 1000,
+                    }}
+                    className=" bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
+                  >
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
