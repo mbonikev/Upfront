@@ -413,9 +413,9 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               {moreOpt1 && (
                 <div
                   style={{ top: menuPosition.top, left: menuPosition.left }}
-                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1"
+                  className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[160px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1 transition-all"
                 >
-                  <Fade duration={200} direction="right" triggerOnce damping={0.1} cascade={true} className="transition-all duration-300">
+                  <Fade duration={200} direction="right" triggerOnce damping={0.1} cascade={true}>
                     <div
                       onClick={renameW1}
                       className={`${linkStyle} cursor-pointer hover:bg-stone-100 dark:hover:bg-[#383838]`}
