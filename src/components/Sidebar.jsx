@@ -179,24 +179,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     };
   }, []);
 
-  const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
-  const [showMenu, setShowMenu] = useState(false);
-  const buttonRef = useRef(null);
-
-  const handleContextMenu = (event) => {
-    event.preventDefault();
-
-    // Check if the right-click is inside the button
-    if (buttonRef.current && buttonRef.current.contains(event.target)) {
-      setMenuPosition({ x: event.pageX, y: event.pageY });
-      setShowMenu(true);
-    }
-  };
-
-  const handleClick = () => {
-    setShowMenu(false); // Hide menu on left click
-  };
-
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
       <div className=" relative w-full h-full ">
@@ -473,59 +455,6 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               </p>
             </button>
           </div>
-
-
-      <div
-        onClick={handleClick}
-        onContextMenu={handleContextMenu}
-        className="w-full h-[300px]"
-      >
-        {/* The button */}
-        <button
-          ref={buttonRef}
-          style={{ padding: "10px 20px", fontSize: "16px" }}
-          className="w-full bg-blue-400"
-        >
-          Right-click me
-        </button>
-
-        {/* The custom menu */}
-        {showMenu && (
-          <ul
-            style={{
-              position: "absolute",
-              top: `${menuPosition.y}px`,
-              left: `${menuPosition.x}px`,
-              backgroundColor: "#fff",
-              border: "1px solid #ccc",
-              boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
-              listStyle: "none",
-              padding: "10px",
-              margin: 0,
-              zIndex: 1000,
-            }}
-          >
-            <li
-              style={{ padding: "8px 15px", cursor: "pointer" }}
-              onClick={() => alert("Option 1 clicked")}
-            >
-              Option 1
-            </li>
-            <li
-              style={{ padding: "8px 15px", cursor: "pointer" }}
-              onClick={() => alert("Option 2 clicked")}
-            >
-              Option 2
-            </li>
-            <li
-              style={{ padding: "8px 15px", cursor: "pointer" }}
-              onClick={() => alert("Option 3 clicked")}
-            >
-              Option 3
-            </li>
-          </ul>
-        )}
-      </div>
         </div>
       </div>
     </div>
