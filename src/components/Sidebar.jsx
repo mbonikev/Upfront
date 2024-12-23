@@ -43,6 +43,7 @@ import { HiOutlineSpeakerphone } from "react-icons/hi";
 import SearchModal from "./SearchModal";
 import Reveal, { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import { PiArrowUpRightBold } from "react-icons/pi";
 const customAnimation = keyframes`
   from {
     opacity: 0;
@@ -460,7 +461,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     <button
                       className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                     >
-                      <LuArrowUpRight className="text-base min-w-fit" />
+                      <PiArrowUpRightBold className="text-base min-w-fit" />
                       <p className="line-clamp-1">Open in new tab</p>
                     </button>
                   </Reveal>
