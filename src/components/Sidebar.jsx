@@ -107,26 +107,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     // setMoreOpt1(true);
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
-
-      // Get the screen dimensions
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      let newTop = rect.bottom + window.scrollY;
-      let newLeft = rect.left + window.scrollX;
-
-      // Check if the menu would overflow on the right side
-      if (newLeft + 170 > screenWidth) {
-        newLeft = screenWidth - 170; // Adjust the left position to stay within the screen
-      }
-
-      // Check if the menu would overflow on the bottom side
-      if (newTop + 90 > screenHeight) {
-        newTop = screenHeight - 90; // Adjust the top position to stay within the screen
-      }
-
-      setMenuPosition({ top: newTop, left: newLeft });
-      setMoreOpt1(!moreOpt1);
+      setMenuPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      setMoreOpt1(true);
     }
   };
   // rename workspace 1
