@@ -25,6 +25,8 @@ function ProfileDropdownButtons({ username, userEmail }) {
     }, 1000);
   };
 
+  const linkStyle = `min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 `
+
   return (
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
       <div className="p-2 w-full cursor-default">
@@ -46,14 +48,14 @@ function ProfileDropdownButtons({ username, userEmail }) {
       <div className="p-2 flex flex-col w-full">
         <Link
           to={"/"}
-          className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 "
+          className={`${linkStyle}`}
         >
           <LuSettings className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit" />
           <p className="line-clamp-1">Settings</p>
         </Link>
         <Link
           to={"/"}
-          className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 "
+          className={`${linkStyle}`}
         >
           <LuTrash2 className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit" />
           <p className="line-clamp-1">Trash</p>
@@ -63,14 +65,14 @@ function ProfileDropdownButtons({ username, userEmail }) {
       <div className="p-2 flex flex-col w-full">
         <Link
           to={"/"}
-          className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 "
+          className={`${linkStyle}`}
         >
           <LuInfo className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit" />
           <p className="line-clamp-1">About Upfront</p>
         </Link>
         <Link
           to={"/"}
-          className="min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 "
+          className={`${linkStyle}`}
         >
           <HiOutlineSpeakerphone className="text-xl text-text-color/50 dark:text-[#b8b8b8]/50  min-w-fit" />
           <p className="line-clamp-1">Updates</p>
@@ -80,7 +82,7 @@ function ProfileDropdownButtons({ username, userEmail }) {
       <div className="p-2 flex flex-col w-full">
         <button
           onClick={handleLogout}
-          className={`min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-[#b8b8b8] text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 ${
+          className={`${linkStyle}
             logoutAnimate ? "pointer-events-none" : ""
           }`}
         >
