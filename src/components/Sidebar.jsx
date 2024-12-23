@@ -25,6 +25,7 @@ import {
   LuPlus,
   LuSearch,
   LuSettings,
+  LuSparkles,
   LuStar,
   LuTimerReset,
   LuTrash2,
@@ -347,8 +348,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
-              <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
-              <p className="line-clamp-1">Shared with me</p>
+              <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
+              <p className="line-clamp-1">Upfront AI</p>
             </Link>
             <Link
               to={"/"}
