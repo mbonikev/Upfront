@@ -241,7 +241,7 @@ function Sidebar({
   };
 
   // close on esc
-  seEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         event.preventDefault();
