@@ -96,7 +96,6 @@ function Sidebar({
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
         spaceName,
-        userEmail,
       });
       const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
 
