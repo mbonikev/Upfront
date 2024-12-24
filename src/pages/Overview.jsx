@@ -17,7 +17,7 @@ function Projects() {
   const inputRef = useRef(null);
   // spaces
   const [w1, setW1] = useState(null);
-//   const [myWorkSpaces, setMyWorkSpaces] = useState([]);
+  //   const [myWorkSpaces, setMyWorkSpaces] = useState([]);
   const [myProjects, setMyProjects] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const navigate = useNavigate();
@@ -33,17 +33,6 @@ function Projects() {
   };
   // page title
   useEffect(() => {
-    const fetchAllWorkShops = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/api/workspaces`, {
-          params: { userEmail },
-        });
-        // console.log('Response data:', response);
-        // localStorage.setItem("upfront_ws", JSON.stringify(response.data.workspaces));
-      } catch (err) {
-        // console.error("Error updating data:", err);
-      }
-    };
     const getme = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getme`, {
@@ -72,7 +61,6 @@ function Projects() {
       }
     };
     getmyProjects();
-    fetchAllWorkShops();
     getme();
   }, []);
   return (
