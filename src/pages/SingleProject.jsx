@@ -936,9 +936,7 @@ function SingleProject() {
               loading="lazy"
               className="h-14 saturate-100 aspect-square"
             />
-            <p className="py-0 text-sm font-medium text-text-color/70 dark:text-[#b8b8b8]/70 cursor-default">
-              Loading Project..
-            </p>
+            <span class="loader"></span>
           </div>
         )}
         <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
