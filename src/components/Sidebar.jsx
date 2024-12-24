@@ -163,6 +163,7 @@ function Sidebar({
   const handelRenaming = (e) => {
     setSpaceName(e.target.value);
     setPageTitle(e.target.value);
+    console.log(e.target.value);
   };
   const handleCancel = () => {
     setPageTitle(originalSpaceName);
