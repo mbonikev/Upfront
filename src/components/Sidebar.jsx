@@ -150,7 +150,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   };
 
   // rename workspace 1
-  const renameW1 = () => {
+  const renameWorkspace = () => {
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
@@ -476,7 +476,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                           <p className="line-clamp-1">Copy link</p>
                         </button>
                         <button
-                          onClick={renameW1}
+                          onClick={renameWorkspace}
                           className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                         >
                           <LuPencil className="text-base min-w-fit" />
