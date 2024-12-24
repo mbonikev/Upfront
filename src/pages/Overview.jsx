@@ -78,7 +78,7 @@ function Projects() {
 
   // getting space names + naming the page
   useEffect(() => {
-    const luw1 = localStorage.getItem("upfront_user_name_w1") || "Workspace 1";
+    const luw1 = localStorage.getItem("upfront_ws") || [];
     setW1(luw1);
     document.title = luw1 + " - Upfront";
   }, []);
