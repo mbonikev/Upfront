@@ -37,22 +37,7 @@ function Projects() {
     const [createNew, setCreateNew] = useState(false);
     const [deleteMenu, setDeleteMenu] = useState("");
     const [deleting, setDeleting] = useState("");
-    useEffect(() => {
-        const input = inputRef.current;
-        if (input) {
-            // Create a temporary span to measure the text width
-            const tempSpan = document.createElement("span");
-            tempSpan.style.visibility = "hidden";
-            tempSpan.style.position = "absolute";
-            tempSpan.style.whiteSpace = "pre";
-            tempSpan.style.fontSize = getComputedStyle(input).fontSize;
-            tempSpan.textContent = pageTitle || input.placeholder;
-            document.body.appendChild(tempSpan);
-            const width = tempSpan.offsetWidth + 10; // Add extra padding
-            document.body.removeChild(tempSpan);
-            input.style.width = `${width}px`;
-        }
-    }, [pageTitle]);
+
     const handleLogout = () => {
         localStorage.removeItem("upfront_user");
         localStorage.removeItem("upfront_user_name");
@@ -126,19 +111,6 @@ function Projects() {
                 }
             }
         };
-        const getCollaborations = async () => {
-            try {
-                const response = await axios.get(`${apiUrl}/api/getcollaborations`, {
-                    params: { email: userEmail },
-                });
-                setMyCollatorations(response.data.projects);
-                setArray("mycollaborations", response.data.projects);
-                // const isArrayValid = verifyHashedArray('mycollaborations', JSON.stringify(response.data.projects));
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getCollaborations();
         getmyProjects();
         getmyBoards();
         getmyTasks();
