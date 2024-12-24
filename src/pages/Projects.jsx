@@ -296,7 +296,7 @@ function Projects() {
         <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           {fetchingProjects ? (
             <>
-              <div className="group z-10 relative w-4/6 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+              <div className="group z-10 relative w-32 h-[50px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
             </>
           ) : (
             <>
