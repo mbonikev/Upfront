@@ -128,7 +128,7 @@ function Sidebar({
   }, []);
 
   // show more
-  const showMoreMenu = () => {
+  const showMoreMenu = (space) => {
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
 
