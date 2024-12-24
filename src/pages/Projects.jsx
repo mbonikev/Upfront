@@ -85,11 +85,12 @@ function Projects() {
           userEmail,
           workspaceId,
         });
-        console.log(response.response.status);
+        console.log("Response status:", response.status);
       } catch (err) {
-        console.error(err);
+        console.error(err.response ? err.response.status : err);
       }
     };
+
     const getme = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getme`, {
