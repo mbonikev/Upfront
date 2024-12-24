@@ -438,7 +438,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                           autoFocus
                           name="workspace_name"
                           autoComplete="off"
-                          value={space.workspace_name}
+                          value={w1}
                           onChange={(e) => setW1(e.target.value)}
                           className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
                         />
