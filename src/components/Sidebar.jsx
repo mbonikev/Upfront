@@ -394,6 +394,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <span>Workspaces</span>
             </p>
             {/* Workspace */}
+            {workspaces.length > 0}
             <form onSubmit={handleUpdateWorkSpace} className="relative group mb-10 ">
               <Link
                 to={"/"}
