@@ -42,7 +42,7 @@ function SignUp() {
           localStorage.setItem("upfront_user", data.luemail);
           localStorage.setItem("upfront_user_name", data.luname);
           localStorage.setItem("upfront_ws", JSON.stringify(data.workspaces));
-          // navigate('/');
+          navigate('/');
           // console.log(data)
           const response = await axios.post(`${apiUrl}/api/createProject`, {
             name: "Welcome to Upfront 🎉",
