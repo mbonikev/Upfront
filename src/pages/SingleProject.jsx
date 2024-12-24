@@ -930,7 +930,7 @@ function SingleProject() {
         {/* Project section */}
         {/* loader on fetch */}
         {!fetching && (
-          <div className="fixed top-0 z-50 left-0 w-full h-full bg-red-300 dark:bg-dark-body flex items-center justify-center flex-col">
+          <div className="fixed top-0 z-50 left-0 w-full h-full bg-red-300 dark:bg-dark-body flex items-center justify-center flex-col gap-5">
             <img
               src={logoSvg}
               loading="lazy"
