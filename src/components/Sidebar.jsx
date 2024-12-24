@@ -154,10 +154,12 @@ function Sidebar({
   // rename workspace 1
   const renameWorkspace = (name) => {
     setSpaceName(name);
-    setOriginalSpaceName(name)
+    setOriginalSpaceName(name);
     setMoreOpt1(false);
     setSaveOpt1(true);
-    console.log({name: originalSpaceName})
+    setTimeout(() => {
+      console.log({ name: originalSpaceName });
+    }, 100);
   };
 
   // renaming
@@ -218,7 +220,6 @@ function Sidebar({
       if (event.key.toLowerCase() === "s" && event.altKey) {
         event.preventDefault();
         handleShowSearch();
-        
       }
     };
     window.addEventListener("keydown", handleKeyDown);
