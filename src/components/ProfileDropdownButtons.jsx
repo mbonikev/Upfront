@@ -25,7 +25,7 @@ function ProfileDropdownButtons({ username, userEmail }) {
     }, 1000);
   };
 
-  const linkStyle = `h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] dark:hover:bg-[#383838] text-sm text-text-color/90 tracking-tight rounded-lg line-clamp-1 relative select-none active:bg-stone-100 dark:active:bg-[#404040]`;
+  const linkStyle = `h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-[#b8b8b8] hover:bg-stone-100 dark:hover:bg-[#383838] text-sm text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none active:bg-stone-100 dark:active:bg-[#404040]`;
 
   return (
     <div className="w-full flex flex-col justify-start items-start bg-white dark:bg-[#2c2c2c]">
