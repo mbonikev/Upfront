@@ -93,15 +93,22 @@ function Sidebar({
     setAuthing(true);
     try {
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
-        spaceName,
-        userEmail,
+        workspaceId, // Send the ID of the workspace to update
+        spaceName, // New name of the workspace
       });
-      // console.log('Response data:', response.data);
-      localStorage.setItem(
-        "upfront_ws",
-        JSON.stringify(response.data.workspaces)
+
+      const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
+
+      // Update localStorage
+      const storedWorkspaces =
+        JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      const updatedWorkspaces = storedWorkspaces.map((workspace) =>
+        workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
       );
-      setWorkspaces(response.data.workspaces);
+      localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+
+      // Update state
+      setWorkspaces(updatedWorkspaces);
       setMoreOpt1(false);
       setSaveOpt1(false);
       setAuthing(false);
