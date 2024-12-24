@@ -296,7 +296,7 @@ function Projects() {
         <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           {!fetchingProjects ? (
             <>
-              <div className="group z-10 relative w-[200px] h-[20px] rounded-xl dark:bg-[#313131] bg-stone-200"></div>
+              <div className="group z-10 relative w-[200px] h-[20px] animate-smooth-pulse rounded-xl dark:bg-[#313131] bg-stone-200"></div>
             </>
           ) : (
             <>
@@ -317,7 +317,7 @@ function Projects() {
           <div className="w-full h-fit flex items-end justify-between">
             {!fetchingProjects ? (
               <>
-                <div className="group z-10 relative w-4/6 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                <div className="group z-10 relative w-4/6 h-[10px] animate-smooth-pulse rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
               </>
             ) : (
               <>
