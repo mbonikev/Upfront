@@ -38,7 +38,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/workspaces`, {
           params: { userEmail },
         });
-        console.log('Response data:', response);
+        // console.log('Response data:', response);
         localStorage.setItem("upfront_ws", JSON.stringify(response.data.workspaces));
       } catch (err) {
         console.error("Error updating data:", err);
