@@ -91,7 +91,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       });
       // console.log('Response data:', response.data);
       localStorage.setItem("upfront_ws", response.data.workspaces);
-      setOriginalW1(response.data.workspace1);
+      setWorkspaces(response.data.workspace1);
       setMoreOpt1(false);
       setSaveOpt1(false);
       setAuthing(false);
