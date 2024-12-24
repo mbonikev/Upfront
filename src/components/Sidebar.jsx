@@ -79,6 +79,7 @@ function Sidebar({
   const [saveOpt1, setSaveOpt1] = useState(false);
   const [saveOpt3, setSaveOpt3] = useState(false);
   const [workspaces, setWorkspaces] = useState([]);
+  const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
   const [spaceNumber, setSpaceNumber] = useState("");
   const formRef = useRef(null);
@@ -159,6 +160,7 @@ function Sidebar({
 
   // renaming
   const handelRenaming = (e) => {
+    setOriginalSpaceName(spaceName)
     setSpaceName(e.target.value);
     setPageTitle(e.target.value);
   };
