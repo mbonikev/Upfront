@@ -85,12 +85,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     e.preventDefault();
     setAuthing(true);
     try {
-      const response = await axios.patch(`${apiUrl}/api/updateWorkspace1`, {
+      const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         w1,
         userEmail,
       });
       // console.log('Response data:', response.data);
-      localStorage.setItem("upfront_user_name_w1", response.data.workspace1);
+      localStorage.setItem("upfront_ws", response.data.workspaces);
       setOriginalW1(response.data.workspace1);
       setMoreOpt1(false);
       setSaveOpt1(false);
