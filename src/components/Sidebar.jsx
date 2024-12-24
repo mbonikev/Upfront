@@ -157,7 +157,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
 
   // renaming
   const handelRenaming = (e) => {
-    (e) => setSpaceName(e.target.value)
+    setSpaceName(e.target.value)
   }
 
   // create new project
