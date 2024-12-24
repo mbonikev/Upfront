@@ -155,10 +155,10 @@ function Projects() {
         console.log(error);
       }
     };
-    // getCollaborations();
-    // getmyProjects();
-    // getmyBoards();
-    // getmyTasks();
+    getCollaborations();
+    getmyProjects();
+    getmyBoards();
+    getmyTasks();
     fetchWorkspace();
     getme();
   }, []);
