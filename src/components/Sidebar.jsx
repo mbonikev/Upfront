@@ -154,9 +154,9 @@ function Sidebar({
   // rename workspace 1
   const renameWorkspace = (name) => {
     setSpaceName(name);
-    // setOriginalSpaceName(name);
-    // setMoreOpt1(false);
-    // setSaveOpt1(true);
+    setOriginalSpaceName(name);
+    setMoreOpt1(false);
+    setSaveOpt1(true);
     console.log(name)
   };
 
