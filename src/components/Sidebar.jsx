@@ -81,7 +81,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   // workspace1
-  const handleSubmit1 = async (e) => {
+  const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
     try {
