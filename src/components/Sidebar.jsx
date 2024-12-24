@@ -153,6 +153,10 @@ function Sidebar({
 
   // rename workspace 1
   const renameWorkspace = (name) => {
+    if (!name) {
+      console.error('Invalid workspace name:', name);
+      return;
+    }
     setSpaceName(name);
     setOriginalSpaceName(name);
     setMoreOpt1(false);
