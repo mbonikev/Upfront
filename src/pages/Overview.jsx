@@ -17,6 +17,7 @@ function Projects() {
   const inputRef = useRef(null);
   // spaces
   const [w1, setW1] = useState(null);
+  const [myWorkSpaces, setMyWorkSpaces] = useState([]);
   const [myProjects, setMyProjects] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const navigate = useNavigate();
