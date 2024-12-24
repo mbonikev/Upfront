@@ -113,7 +113,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, pageTitle, setPageT
     setWorkspaces(workspaces);
   }, []);
   const handleCancel = () => {
-    // setW1(originalW1);
+    // setPageTitle(originalW1);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
