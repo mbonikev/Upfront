@@ -124,7 +124,7 @@ function Projects() {
         setProjectBoards(response.data);
       } catch (error) {
         if (error.response.status == 401) {
-          console.log("no project yet");
+          // console.log("no project yet");
         }
       }
     };
