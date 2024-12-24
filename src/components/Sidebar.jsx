@@ -245,7 +245,7 @@ function Sidebar({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [handleCancel]);
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
