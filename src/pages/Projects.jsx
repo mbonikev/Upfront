@@ -84,9 +84,9 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getthisworkspace`, {
           params: { userEmail, workspaceId },
         });
-        console.log("Response data:", response);        
+        console.log("Response data:", response);
       } catch (err) {
-        console.error("Error updating data:", err);
+        console.error(err);
       }
     };
     const getme = async () => {
@@ -167,9 +167,8 @@ function Projects() {
         workspaces.find((space) => space._id === workspaceId).workspace_name ||
           ""
       );
-    }
-    else{
-      setPageTitle("Workspace 1")
+    } else {
+      setPageTitle("Workspace 1");
     }
   }, []);
   // create new project
