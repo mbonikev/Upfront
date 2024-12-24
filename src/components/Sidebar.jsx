@@ -162,10 +162,7 @@ function Sidebar({
   };
 
   // rename workspace 1
-  const renameWorkspace = (space) => {
-    setSpaceName(space.workspace_name);
-    setSpaceId(space._id);
-    setOriginalSpaceName(space.workspace_name);
+  const renameWorkspace = () => {
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
@@ -503,7 +500,7 @@ function Sidebar({
                           <p className="line-clamp-1">Copy link</p>
                         </button>
                         <button
-                          onClick={() => renameWorkspace(space)}
+                          onClick={renameWorkspace}
                           className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                         >
                           <LuPencil className="text-base min-w-fit" />
