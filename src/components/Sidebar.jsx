@@ -93,10 +93,9 @@ function Sidebar({
     setAuthing(true);
     try {
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
-        workspaceId, // Send the ID of the workspace to update
-        spaceName, // New name of the workspace
+        spaceName,
+        userEmail,
       });
-
       const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
 
       // Update localStorage
