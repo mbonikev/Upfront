@@ -291,7 +291,7 @@ function Projects() {
           <div className="flex items-start justify-start gap-2 ">
             <IoFolderOpen className="text-3xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
             <h1 className="text-3xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
-              {pageTitle.workspace_name}
+              {pageTitle}
               {/* <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-[#b8b8b8] dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
                 Free
               </span> */}
