@@ -87,7 +87,7 @@ function Projects() {
         });
         console.log("Response status:", response);
       } catch (err) {
-        console.error(err);
+        console.log(err);
       }
     };
 
