@@ -436,7 +436,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                         <input
                           type="text"
                           autoFocus
-                          name="workspace1"
+                          name="workspace_name"
                           autoComplete="off"
                           value={w1}
                           onChange={(e) => setW1(e.target.value)}
