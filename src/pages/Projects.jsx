@@ -85,7 +85,7 @@ function Projects() {
           userEmail,
           workspaceId,
         });
-        console.log("Response status:", response.status);
+        console.log("Response status:", response);
       } catch (err) {
         console.error(err.response ? err.response.status : err);
       }
