@@ -38,7 +38,7 @@ function Projects() {
           params: { userEmail },
         });
         console.log('Response data:', response);
-        localStorage.setItem("ws", JSON.parse(response.data.workspaces));
+        localStorage.setItem("ws", JSON.stringify(response.data.workspaces));
       } catch (err) {
         console.error("Error updating data:", err);
       }
