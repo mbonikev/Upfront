@@ -87,7 +87,7 @@ function Projects() {
         console.log("Response status:", response);
       } catch (error) {
         if (error.response.status === 400 || error.response.status === 401) {
-          // navigate("/");
+          navigate("/");
         }
       }
     };
