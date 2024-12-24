@@ -50,6 +50,7 @@ import axios from "axios";
 import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
 import logo60 from "../assets/logo-60x60.png";
+import logoSvg from "../assets/logo.svg";
 import { GiConsoleController } from "react-icons/gi";
 import AddCollaborators from "../components/AddCollaborators";
 import debounce from "lodash/debounce";
