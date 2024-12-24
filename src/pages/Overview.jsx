@@ -10,13 +10,6 @@ import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import { LuArchive, LuHash, LuShare2, LuTrash2 } from "react-icons/lu";
 import axios from "axios";
-import { format } from "date-fns";
-import { RiLoader5Fill } from "react-icons/ri";
-import { setArray } from "../utils/hashUtils";
-import AddNotes from "../components/AddNotes";
-import { IoIosAddCircle } from "react-icons/io";
-import { IoFolderOpen } from "react-icons/io5";
-import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
 function Projects() {
