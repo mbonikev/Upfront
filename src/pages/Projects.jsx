@@ -167,7 +167,6 @@ function Projects() {
   useEffect(() => {
     const workspaces = JSON.parse(localStorage.getItem("upfront_ws") || []);
     setPageTitle(workspaces.find((space) => space._id === workspaceId) || "");
-    console.log(workspaceId)
   }, []);
   // create new project
   const handleCreate = async () => {
