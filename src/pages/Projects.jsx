@@ -79,10 +79,10 @@ function Projects() {
   };
   // page title
   useEffect(() => {
-    const fetchAllWorkShops = async () => {
+    const fetchWorkspace = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/workspaces`, {
-          params: { userEmail },
+        const response = await axios.get(`${apiUrl}/api/getthisworkspace`, {
+          params: { userEmail, workspaceId },
         });
         // console.log("Response data:", response);
         localStorage.setItem(
@@ -109,7 +109,7 @@ function Projects() {
     const getmyProjects = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, {
-          params: { email: userEmail },
+          params: { email: userEmail, workspaceId },
         });
         setMyProjects(response.data.projects);
         setFetchingProjects(false);
