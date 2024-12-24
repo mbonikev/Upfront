@@ -65,7 +65,6 @@ import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { PiBroom } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
-import LogoSvg from "../components/LogoSvg";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -126,12 +125,14 @@ function SingleProject() {
     e.preventDefault();
     setGenerating(true);
     try {
-      const response = await axios.post(`${apiUrl}/api/generateBoards`, {
-        projectDescription,
-        userEmail,
-        projectId: id,
-        generateType,
-      });
+      const response = await axios.post(`${apiUrl}/api/generateBoards`,
+        {
+          projectDescription,
+          userEmail,
+          projectId: id,
+          generateType,
+        }
+      );
 
       // boards only
       if (generateType === "Boards Only") {
@@ -929,12 +930,11 @@ function SingleProject() {
         {/* loader on fetch */}
         {fetching && (
           <div className="fixed top-0 z-10 left-0 w-full h-full bg-white dark:bg-dark-body flex items-center justify-center flex-col">
-            {/* <img
+            <img
               src={logo60}
               loading="lazy"
               className="animate-bounce h-12 saturate-100 aspect-square"
-            /> */}
-            <LogoSvg />
+            />
             <p className="py-0 text-sm font-medium text-text-color/70 dark:text-[#b8b8b8]/70 cursor-default">
               Loading Project..
             </p>
