@@ -152,8 +152,7 @@ function Sidebar({
   };
 
   // rename workspace 1
-  const renameWorkspace = (e) => {
-    e.preventDefault()
+  const renameWorkspace = (name) => {
     setSpaceName(name);
     setOriginalSpaceName(name);
     setMoreOpt1(false);
