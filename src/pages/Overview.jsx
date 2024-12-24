@@ -41,7 +41,7 @@ function Projects() {
         // console.log('Response data:', response);
         localStorage.setItem("upfront_ws", JSON.stringify(response.data.workspaces));
       } catch (err) {
-        console.error("Error updating data:", err);
+        // console.error("Error updating data:", err);
       }
     };
     const getme = async () => {
