@@ -253,7 +253,7 @@ function Projects() {
       <Sidebar
         username={username}
         userEmail={userEmail}
-        w1={w1}
+        pageTitle={pageTitle}
         setPageTitle={setPageTitle}
       />
       <div
