@@ -129,6 +129,9 @@ function Sidebar({
 
   // show more
   const showMoreMenu = (space) => {
+    setSpaceName(space.workspace_name);
+    setSpaceId(space._id);
+    setOriginalSpaceName(space.workspace_name);
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
 
