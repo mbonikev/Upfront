@@ -411,7 +411,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                     }`}
                   >
                     <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-                    <p className="line-clamp-1 max-w-[70%]">{w1}</p>
+                    <p className="line-clamp-1 max-w-[70%]">{space.workspace_name}</p>
                   </Link>
                   {saveOpt1 && (
                     <>
