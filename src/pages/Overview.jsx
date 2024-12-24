@@ -38,7 +38,7 @@ function Projects() {
           params: { userEmail },
         });
         // console.log('Response data:', response);
-        localStorage.setItem("upfront_user_name_w1", response.data.dbw1);
+        localStorage.setItem("ws", response.data.workspaces);
       } catch (err) {
         console.error("Error updating data:", err);
       }
