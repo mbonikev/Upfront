@@ -393,7 +393,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <LuChevronDown className="p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square" />
               <span>Workspaces</span>
             </p>
-            {/* Workspace 1 */}
+            {/* Workspace */}
             <form onSubmit={handleSubmit1} className="relative group mb-10 ">
               <Link
                 to={"/"}
