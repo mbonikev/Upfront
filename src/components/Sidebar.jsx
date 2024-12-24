@@ -90,7 +90,10 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
         userEmail,
       });
       // console.log('Response data:', response.data);
-      localStorage.setItem("upfront_ws", JSON.stringify(response.data.workspaces));
+      localStorage.setItem(
+        "upfront_ws",
+        JSON.stringify(response.data.workspaces)
+      );
       setWorkspaces(response.data.workspaces);
       setMoreOpt1(false);
       setSaveOpt1(false);
@@ -395,7 +398,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <span>Workspaces</span>
             </p>
             {/* Workspace */}
-            {workspaces && workspaces.length > 0 ?(
+            {workspaces && workspaces.length > 0 ? (
               workspaces.map((space, index) => (
                 <form
                   key={index}
@@ -405,13 +408,15 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   <Link
                     to={`/workspaces/${space._id}`}
                     className={`${linkStyle} ${
-                      location.pathname === {`/workspace/${space._id}`}
+                      location.pathname === `/workspace/${space._id}`
                         ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                         : ""
                     }`}
                   >
                     <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-                    <p className="line-clamp-1 max-w-[70%]">{space.workspace_name}</p>
+                    <p className="line-clamp-1 max-w-[70%]">
+                      {space.workspace_name}
+                    </p>
                   </Link>
                   {saveOpt1 && (
                     <>
