@@ -41,7 +41,7 @@ function SignUp() {
           setErrorPassword("");
           localStorage.setItem("upfront_user", data.luemail);
           localStorage.setItem("upfront_user_name", data.luname);
-          JSON.parse(localStorage.setItem("upfront_ws", data.workspaces))
+          JSON.stringify(localStorage.setItem("upfront_ws", data.workspaces))
           // navigate('/');
           // console.log(data)
           const response = await axios.post(`${apiUrl}/api/createProject`, {
