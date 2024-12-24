@@ -107,7 +107,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   // getting space names
   useEffect(() => {
     const workspaces = localStorage.getItem("upfront_ws") || [];
-    setWorkspaces(workspaces)
+    setWorkspaces(workspaces);
   }, []);
   const handleCancel = () => {
     // setW1(originalW1);
@@ -396,99 +396,100 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             </p>
             {/* Workspace */}
             {workspaces.length > 0 ? (
-              <form
-                onSubmit={handleUpdateWorkSpace}
-                className="relative group mb-10 "
-              >
-                <Link
-                  to={"/"}
-                  className={`${linkStyle} ${
-                    location.pathname === "/"
-                      ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                      : ""
-                  }`}
+              workspaces.map((space, index) => (
+                <form
+                  onSubmit={handleUpdateWorkSpace}
+                  className="relative group mb-10 "
                 >
-                  <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
-                  <p className="line-clamp-1 max-w-[70%]">{w1}</p>
-                </Link>
-                {saveOpt1 && (
-                  <>
-                    <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
-                      {authing ? (
-                        <>
-                          <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
-                        </>
-                      ) : (
-                        <>
-                          <IoFolderOpen className="text-xl  min-w-fit" />
-                        </>
-                      )}
-                      <input
-                        type="text"
-                        autoFocus
-                        name="workspace1"
-                        autoComplete="off"
-                        value={w1}
-                        onChange={(e) => setW1(e.target.value)}
-                        className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
-                      />
-                    </div>
-                  </>
-                )}
-                <div
-                  ref={moreButtonRef}
-                  onClick={showMoreMenuw1}
-                  className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
-                    moreOpt1 && "opacity-100"
-                  }`}
-                >
-                  <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
-                </div>
-
-                {moreOpt1 && (
-                  <div
-                    style={{ top: menuPosition.top, left: menuPosition.left }}
-                    className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[230px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1 transition-all ease-in-out duration-300 overflow-clip"
+                  <Link
+                    to={"/"}
+                    className={`${linkStyle} ${
+                      location.pathname === "/"
+                        ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                        : ""
+                    }`}
                   >
-                    <Reveal
-                      keyframes={customAnimation}
-                      duration={230}
-                      triggerOnce
-                      damping={0.1}
-                      cascade={true}
-                    >
-                      <button
-                        onClick={handleLinkCopy}
-                        className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                      >
-                        <LuLink className="text-base min-w-fit" />
-                        <p className="line-clamp-1">Copy link</p>
-                      </button>
-                      <button
-                        onClick={renameW1}
-                        className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                      >
-                        <LuPencil className="text-base min-w-fit" />
-                        <p className="line-clamp-1">Rename</p>
-                      </button>
-                      <button
-                        className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                      >
-                        <LuTrash2 className="text-base min-w-fit" />
-                        <p className="line-clamp-1">Move to Trash</p>
-                      </button>
-                      <div className="w-full h-[1px] bg-[#efefef] dark:bg-[#323232] my-1"></div>
-                      <button
-                        className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
-                      >
-                        <PiArrowUpRightBold className="text-base min-w-fit" />
-                        <p className="line-clamp-1">Open in new tab</p>
-                      </button>
-                    </Reveal>
+                    <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                    <p className="line-clamp-1 max-w-[70%]">{w1}</p>
+                  </Link>
+                  {saveOpt1 && (
+                    <>
+                      <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
+                        {authing ? (
+                          <>
+                            <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
+                          </>
+                        ) : (
+                          <>
+                            <IoFolderOpen className="text-xl  min-w-fit" />
+                          </>
+                        )}
+                        <input
+                          type="text"
+                          autoFocus
+                          name="workspace1"
+                          autoComplete="off"
+                          value={w1}
+                          onChange={(e) => setW1(e.target.value)}
+                          className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
+                        />
+                      </div>
+                    </>
+                  )}
+                  <div
+                    ref={moreButtonRef}
+                    onClick={showMoreMenuw1}
+                    className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
+                      moreOpt1 && "opacity-100"
+                    }`}
+                  >
+                    <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
                   </div>
-                )}
 
-                {/* {saveOpt1 && (
+                  {moreOpt1 && (
+                    <div
+                      style={{ top: menuPosition.top, left: menuPosition.left }}
+                      className="fixed bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[230px] h-fit shadow-md z-[1000] ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1 transition-all ease-in-out duration-300 overflow-clip"
+                    >
+                      <Reveal
+                        keyframes={customAnimation}
+                        duration={230}
+                        triggerOnce
+                        damping={0.1}
+                        cascade={true}
+                      >
+                        <button
+                          onClick={handleLinkCopy}
+                          className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                        >
+                          <LuLink className="text-base min-w-fit" />
+                          <p className="line-clamp-1">Copy link</p>
+                        </button>
+                        <button
+                          onClick={renameW1}
+                          className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                        >
+                          <LuPencil className="text-base min-w-fit" />
+                          <p className="line-clamp-1">Rename</p>
+                        </button>
+                        <button
+                          className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                        >
+                          <LuTrash2 className="text-base min-w-fit" />
+                          <p className="line-clamp-1">Move to Trash</p>
+                        </button>
+                        <div className="w-full h-[1px] bg-[#efefef] dark:bg-[#323232] my-1"></div>
+                        <button
+                          className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
+                        >
+                          <PiArrowUpRightBold className="text-base min-w-fit" />
+                          <p className="line-clamp-1">Open in new tab</p>
+                        </button>
+                      </Reveal>
+                    </div>
+                  )}
+
+                  {/* {saveOpt1 && (
                 <>
                   <div className="absolute right-0 top-[110%] bg-white dark:bg-[#2c2c2c] dark:shadow-custom2 rounded-xl w-fit min-w-[75%] max-w-[170px] h-fit shadow-md z-20 ring-1 ring-border-line-color/50 dark:ring-stone-600/30 p-1">
                     <button
@@ -517,7 +518,8 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   </div>
                 </>
               )} */}
-              </form>
+                </form>
+              ))
             ) : (
               <></>
             )}
