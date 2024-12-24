@@ -118,7 +118,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     const workspaces = localStorage.getItem("upfront_ws") || [];
   }, []);
   const handleCancel = () => {
-    setW1(originalW1);
+    // setW1(originalW1);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
