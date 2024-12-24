@@ -86,7 +86,7 @@ function Projects() {
         });
         console.log("Response data:", response);
       } catch (err) {
-        // console.error(err);
+        console.error(err);
       }
     };
     const getme = async () => {
