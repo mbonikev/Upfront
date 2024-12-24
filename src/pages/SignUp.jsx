@@ -39,11 +39,11 @@ function SignUp() {
         if (status === 200) {
           setErrorEmail("");
           setErrorPassword("");
-          localStorage.setItem("upfront_user", data.luemail);
-          localStorage.setItem("upfront_user_name", data.luname);
-          JSON.parse(localStorage.setItem("upfront_ws", data.luw1))
-          // navigate('/');
-          // console.log(data)
+          // localStorage.setItem("upfront_user", data.workspace);
+          // localStorage.setItem("upfront_user_name", data.workspace);
+          // JSON.parse(localStorage.setItem("upfront_ws", data.workspace.wor))
+          // // navigate('/');
+          console.log(data)
           const response = await axios.post(`${apiUrl}/api/createProject`, {
             name: "Welcome to Upfront 🎉",
             desc: "Create boards and tasks, assign them to collaborators and many more.. Happy creating ☺️",
