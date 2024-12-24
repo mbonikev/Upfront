@@ -395,7 +395,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
               <span>Workspaces</span>
             </p>
             {/* Workspace */}
-            {workspaces.length > 0 ? (
+            {workspaces && workspaces.length > 0 ?(
               workspaces.map((space, index) => (
                 <form
                   onSubmit={handleUpdateWorkSpace}
