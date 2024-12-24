@@ -87,33 +87,7 @@ function Projects() {
                 }
             }
         };
-        const getmyBoards = async () => {
-            try {
-                const response = await axios.get(`${apiUrl}/api/getnumberofboards`, {
-                    params: { email: userEmail },
-                });
-                setProjectBoards(response.data);
-            } catch (error) {
-                if (error.response.status == 401) {
-                    console.log("no project yet");
-                }
-            }
-        };
-        const getmyTasks = async () => {
-            try {
-                const response = await axios.get(`${apiUrl}/api/getalltasks`, {
-                    params: { email: userEmail },
-                });
-                setAllTasks(response.data);
-            } catch (error) {
-                if (error.response.status == 401) {
-                    console.log("no project yet");
-                }
-            }
-        };
         getmyProjects();
-        getmyBoards();
-        getmyTasks();
         fetchAllWorkShops();
         getme();
     }, []);
