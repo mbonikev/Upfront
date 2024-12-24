@@ -103,16 +103,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const showPMenu = () => {
     setProfileMenu(true);
   };
-  const handleLogout = () => {
-    localStorage.removeItem("upfront_user");
-    localStorage.removeItem("upfront_user_name");
-    localStorage.removeItem("upfront_ws");
-    localStorage.removeItem("mycollaborations");
-    setLogoutAnimate(true);
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
-  };
+
   // getting space names
   useEffect(() => {
     const workspaces = localStorage.getItem("upfront_ws") || [];
