@@ -93,7 +93,7 @@ function Sidebar({
     setAuthing(true);
     try {
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
-        w1: spaceName,
+        spaceName,
         userEmail,
       });
       // console.log('Response data:', response.data);
