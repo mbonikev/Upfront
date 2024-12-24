@@ -166,7 +166,12 @@ function Projects() {
   // getting space names
   useEffect(() => {
     const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
-    setPageTitle(workspaces.find((space) => space._id === workspaceId).workspace_name || "");
+    if (workspaces.length > 0) {
+      setPageTitle(
+        workspaces.find((space) => space._id === workspaceId).workspace_name ||
+          ""
+      );
+    }
   }, []);
   // create new project
   const handleCreate = async () => {
