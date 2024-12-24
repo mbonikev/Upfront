@@ -156,7 +156,7 @@ function Projects() {
     getmyProjects();
     getmyBoards();
     getmyTasks();
-    fetchAllWorkShops();
+    fetchWorkspace();
     getme();
   }, []);
   // getting space names
