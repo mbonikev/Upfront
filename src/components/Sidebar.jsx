@@ -118,7 +118,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setSaveOpt1(false);
   };
   // show more
-  const showMoreMenuw1 = () => {
+  const showMoreMenu = () => {
     if (moreButtonRef.current) {
       const rect = moreButtonRef.current.getBoundingClientRect();
 
@@ -448,7 +448,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   )}
                   <div
                     ref={moreButtonRef}
-                    onClick={showMoreMenuw1}
+                    onClick={showMoreMenu}
                     className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
                       moreOpt1 && "opacity-100"
                     }`}
