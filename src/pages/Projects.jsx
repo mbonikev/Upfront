@@ -163,6 +163,11 @@ function Projects() {
     fetchAllWorkShops();
     getme();
   }, []);
+  // getting space names
+  useEffect(() => {
+    const workspaces = JSON.parse(localStorage.getItem("upfront_ws") || []);
+    setPageTitle(workspaces.find((space) => space._id === workspaceId);
+  }, []);
   // create new project
   const handleCreate = async () => {
     setCreateNew(true);
