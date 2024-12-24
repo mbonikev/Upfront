@@ -153,10 +153,6 @@ function Sidebar({
 
   // rename workspace 1
   const renameWorkspace = (name) => {
-    if (!name) {
-      console.error('Invalid workspace name:', name);
-      return;
-    }
     setSpaceName(name);
     setOriginalSpaceName(name);
     setMoreOpt1(false);
@@ -169,12 +165,7 @@ function Sidebar({
     setPageTitle(e.target.value);
   };
   const handleCancel = () => {
-    if (!originalSpaceName) {
-      console.error('Original space name is missing or empty');
-      return;
-    }
     setPageTitle(originalSpaceName);
-    setSpaceName(originalSpaceName);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
@@ -243,17 +234,17 @@ function Sidebar({
   // close on esc
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         event.preventDefault();
         handleCancel();
         setProfileMenu(false);
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleCancel]);
+  }, []);
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
