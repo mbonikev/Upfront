@@ -157,9 +157,6 @@ function Sidebar({
     setOriginalSpaceName(name);
     setMoreOpt1(false);
     setSaveOpt1(true);
-    setTimeout(() => {
-      console.log({ name: originalSpaceName });
-    }, 100);
   };
 
   // renaming
