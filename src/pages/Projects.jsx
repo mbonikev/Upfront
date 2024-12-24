@@ -85,8 +85,10 @@ function Projects() {
           params: { userEmail, workspaceId },
         });
         console.log("Response status:", response);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        if (error.response.status === 400 || error.response.status === 401) {
+          navigate("/");
+        }
       }
     };
 
