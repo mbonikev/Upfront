@@ -84,7 +84,7 @@ function Projects() {
         const response = await axios.post(`${apiUrl}/api/getthisworkspace`, {
           params: { userEmail, workspaceId },
         });
-        console.log(response);
+        console.log(response.response.status);
       } catch (err) {
         console.error(err);
       }
