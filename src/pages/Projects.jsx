@@ -84,8 +84,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getthisworkspace`, {
           params: { userEmail, workspaceId },
         });
-        // console.log("Response data:", response);
-        
+        console.log("Response data:", response);        
       } catch (err) {
         console.error("Error updating data:", err);
       }
