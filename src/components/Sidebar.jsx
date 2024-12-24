@@ -60,7 +60,13 @@ const customAnimation = keyframes`
   }
 `;
 
-function Sidebar({ handleSidebarToggle, username, userEmail, pageTitle, setPageTitle }) {
+function Sidebar({
+  handleSidebarToggle,
+  username,
+  userEmail,
+  pageTitle,
+  setPageTitle,
+}) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
   const [logoutAnimate, setLogoutAnimate] = useState(false);
@@ -112,11 +118,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, pageTitle, setPageT
     const workspaces = JSON.parse(localStorage.getItem("upfront_ws") || []);
     setWorkspaces(workspaces);
   }, []);
-  const handleCancel = () => {
-    // setPageTitle(originalW1);
-    setMoreOpt1(false);
-    setSaveOpt1(false);
-  };
+
   // show more
   const showMoreMenu = () => {
     if (moreButtonRef.current) {
@@ -150,16 +152,21 @@ function Sidebar({ handleSidebarToggle, username, userEmail, pageTitle, setPageT
 
   // rename workspace 1
   const renameWorkspace = (name) => {
-    setSpaceName(name)
+    setSpaceName(name);
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
 
   // renaming
   const handelRenaming = (e) => {
-    setSpaceName(e.target.value)
-    setPageTitle(e.target.value)
-  }
+    setSpaceName(e.target.value);
+    setPageTitle(e.target.value);
+  };
+  const handleCancel = () => {
+    // setPageTitle(originalW1);
+    setMoreOpt1(false);
+    setSaveOpt1(false);
+  };
 
   // create new project
   const handleCreate = async () => {
