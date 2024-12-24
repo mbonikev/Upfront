@@ -71,9 +71,9 @@ function Projects() {
         }
       }
     };
-    getmyProjects();
+    // getmyProjects();
     fetchAllWorkShops();
-    getme();
+    // getme();
   }, []);
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
