@@ -241,19 +241,19 @@ function Sidebar({
   };
 
   // close on esc
-  useEffect(() => {
+  seEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         event.preventDefault();
         handleCancel();
         setProfileMenu(false);
       }
     };
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [handleCancel]);
 
   return (
     <div className="w-[256px] min-w-[256px] max-h-svh sticky top-0 z-20">
