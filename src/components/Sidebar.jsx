@@ -396,7 +396,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             <p className="group flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-0 pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-full">
               <LuChevronDown className="p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square" />
               <span className="flex-1">Workspaces</span>
-              <button className="px-1 text-lg cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[22px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75">
+              <button className="px-1 text-lg cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[24px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75">
                 <LuPlus />
               </button>
             </p>
