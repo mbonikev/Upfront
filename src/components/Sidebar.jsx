@@ -123,7 +123,7 @@ function Sidebar({
 
   // getting space names
   useEffect(() => {
-    const workspaces = JSON.parse(localStorage.getItem("upfront_ws") || []);
+    const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
     setWorkspaces(workspaces);
   }, []);
 
