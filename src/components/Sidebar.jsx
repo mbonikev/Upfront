@@ -217,7 +217,7 @@ function Sidebar({
       if (event.key.toLowerCase() === "s" && event.altKey) {
         event.preventDefault();
         handleShowSearch();
-        handleCancel()
+        
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -240,6 +240,7 @@ function Sidebar({
         setMoreOpt1(false);
         setSaveOpt1(false);
         setProfileMenu(false);
+        handleCancel();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
