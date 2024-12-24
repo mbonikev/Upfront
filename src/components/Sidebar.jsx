@@ -403,7 +403,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                   className="relative group mb-10 "
                 >
                   <Link
-                    to={space._id}
+                    to={`/workspaces/${space._id}`}
                     className={`${linkStyle} ${
                       location.pathname === "/"
                         ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
