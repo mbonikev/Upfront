@@ -107,6 +107,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   // getting space names
   useEffect(() => {
     const workspaces = localStorage.getItem("upfront_ws") || [];
+    setWorkspaces(workspaces)
   }, []);
   const handleCancel = () => {
     // setW1(originalW1);
