@@ -81,6 +81,7 @@ function Sidebar({
   const [workspaces, setWorkspaces] = useState([]);
   const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
+  const [spaceId, setSpaceId] = useState("");
   const [spaceNumber, setSpaceNumber] = useState("");
   const formRef = useRef(null);
   const [createNew, setCreateNew] = useState(false);
@@ -160,6 +161,7 @@ function Sidebar({
   // rename workspace 1
   const renameWorkspace = (name) => {
     setSpaceName(name);
+    setSpaceId()
     setOriginalSpaceName(name);
     setMoreOpt1(false);
     setSaveOpt1(true);
@@ -498,7 +500,7 @@ function Sidebar({
                           <p className="line-clamp-1">Copy link</p>
                         </button>
                         <button
-                          onClick={() => renameWorkspace(space.workspace_name)}
+                          onClick={() => renameWorkspace(space)}
                           className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                         >
                           <LuPencil className="text-base min-w-fit" />
