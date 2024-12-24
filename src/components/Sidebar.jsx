@@ -60,7 +60,7 @@ const customAnimation = keyframes`
   }
 `;
 
-function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
+function Sidebar({ handleSidebarToggle, username, userEmail, pageTitle, setPageTitle }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
   const [logoutAnimate, setLogoutAnimate] = useState(false);
