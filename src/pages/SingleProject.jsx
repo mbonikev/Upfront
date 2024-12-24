@@ -934,7 +934,7 @@ function SingleProject() {
             <img
               src={logoSvg}
               loading="lazy"
-              className="animate-bounce h-12 saturate-100 aspect-square"
+              className="h-14 saturate-100 aspect-square"
             />
             <p className="py-0 text-sm font-medium text-text-color/70 dark:text-[#b8b8b8]/70 cursor-default">
               Loading Project..
