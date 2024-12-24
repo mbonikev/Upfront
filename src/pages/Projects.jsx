@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useOutletContext,
+  useParams,
+} from "react-router-dom";
 import { TbStack } from "react-icons/tb";
 import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
@@ -15,7 +20,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
 function Projects() {
-  const { workspaceId } = useParams()
+  const { workspaceId } = useParams();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("Workspace 1");
@@ -79,8 +84,11 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/workspaces`, {
           params: { userEmail },
         });
-        // console.log('Response data:', response);
-        localStorage.setItem("upfront_user_name_w1", response.data.dbw1);
+        console.log("Response data:", response);
+        localStorage.setItem(
+          "upfront_ws",
+          JSON.stringify(response.data.workspaces)
+        );
       } catch (err) {
         console.error("Error updating data:", err);
       }
@@ -195,7 +203,11 @@ function Projects() {
       setDeleting("");
       toast.success(
         <>
-          "<span className="max-w-[70px] truncate">{name === "" ? "Untitled" : name}</span>" Moved to trash
+          "
+          <span className="max-w-[70px] truncate">
+            {name === "" ? "Untitled" : name}
+          </span>
+          " Moved to trash
         </>
       );
     } catch (err) {
