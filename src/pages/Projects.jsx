@@ -295,7 +295,9 @@ function Projects() {
         </div>
         <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           {fetchingProjects ? (
-            <></>
+            <>
+              <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
+            </>
           ) : (
             <>
               <div className="flex items-start justify-start gap-2 ">
@@ -314,7 +316,9 @@ function Projects() {
         <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col">
           <div className="w-full h-fit flex items-end justify-between">
             {fetchingProjects ? (
-              <></>
+              <>
+                <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
+              </>
             ) : (
               <>
                 <p className="font-normal text-[13px] text-text-color/70 dark:text-[#b8b8b8]">
