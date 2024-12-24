@@ -160,26 +160,7 @@ function Projects() {
         fetchAllWorkShops();
         getme();
     }, []);
-    // create new project
-    const handleCreate = async () => {
-        setCreateNew(true);
-        try {
-            const Imat = "w1";
-            const response = await axios.post(`${apiUrl}/api/createProject`, {
-                name: "",
-                desc: "",
-                userEmail: userEmail,
-                workspace: Imat,
-                collaborations: userEmail,
-            });
-            navigate(`/project/${w1}/${response.data.id}`, {
-                state: { workspace: response.data.workspace },
-            });
-        } catch (error) {
-            setCreateNew(false);
-            console.log(error.response);
-        }
-    };
+    
     // getting space names + naming the page
     useEffect(() => {
         const luw1 = localStorage.getItem("upfront_user_name_w1") || "Workspace 1";
