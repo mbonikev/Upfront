@@ -157,6 +157,7 @@ function Sidebar({
     setOriginalSpaceName(name)
     setMoreOpt1(false);
     setSaveOpt1(true);
+    console.log({name: originalSpaceName})
   };
 
   // renaming
