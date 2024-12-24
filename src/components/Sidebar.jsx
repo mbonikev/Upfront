@@ -217,6 +217,7 @@ function Sidebar({
       if (event.key.toLowerCase() === "s" && event.altKey) {
         event.preventDefault();
         handleShowSearch();
+        handleCancel()
       }
     };
     window.addEventListener("keydown", handleKeyDown);
