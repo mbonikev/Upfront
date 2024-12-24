@@ -932,7 +932,7 @@ function SingleProject() {
         {fetching && (
           <div className="fixed top-0 z-10 left-0 w-full h-full bg-white dark:bg-dark-body flex items-center justify-center flex-col">
             <img
-              src={logo60}
+              src={logoSvg}
               loading="lazy"
               className="animate-bounce h-12 saturate-100 aspect-square"
             />
