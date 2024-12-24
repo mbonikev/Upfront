@@ -106,7 +106,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const handleLogout = () => {
     localStorage.removeItem("upfront_user");
     localStorage.removeItem("upfront_user_name");
-    localStorage.removeItem("upfront_user_name_w1");
+    localStorage.removeItem("upfront_ws");
     localStorage.removeItem("mycollaborations");
     setLogoutAnimate(true);
     setTimeout(() => {
