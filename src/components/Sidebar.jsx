@@ -154,13 +154,13 @@ function Sidebar({
   // rename workspace 1
   const renameWorkspace = (name) => {
     setSpaceName(name);
+    setOriginalSpaceName(name)
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
 
   // renaming
   const handelRenaming = (e) => {
-    setOriginalSpaceName(spaceName)
     setSpaceName(e.target.value);
     setPageTitle(e.target.value);
   };
