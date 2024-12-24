@@ -75,14 +75,6 @@ function Projects() {
     fetchAllWorkShops();
     getme();
   }, []);
-
-  // getting space names + naming the page
-  useEffect(() => {
-    const luw1 = localStorage.getItem("upfront_ws") || [];
-    setW1(luw1);
-    document.title = luw1 + " - Upfront";
-  }, []);
-
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
       <Toaster
