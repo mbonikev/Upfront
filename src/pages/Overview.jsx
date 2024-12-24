@@ -5,10 +5,7 @@ import {
     useOutletContext,
     useParams,
 } from "react-router-dom";
-import { TbStack } from "react-icons/tb";
-import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
-import { LuArchive, LuHash, LuShare2, LuTrash2 } from "react-icons/lu";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
