@@ -145,12 +145,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
       // Set the adjusted position
       setMenuPosition({ top: newTop - 20, left: newLeft + 33 });
       setMoreOpt1(true);
-      setSpaceName()
     }
   };
 
   // rename workspace 1
   const renameWorkspace = () => {
+    setSpaceName()
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
