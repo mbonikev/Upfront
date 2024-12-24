@@ -154,6 +154,12 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
+
+  // renaming
+  const handelRenaming = () => {
+    
+  }
+
   // create new project
   const handleCreate = async () => {
     setCreateNew(true);
@@ -440,7 +446,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
                           name="workspace_name"
                           autoComplete="off"
                           value={spaceName}
-                          onChange={(e) => setSpaceName(e.target.value)}
+                          onChange={handelRenaming}
                           className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
                         />
                       </div>
