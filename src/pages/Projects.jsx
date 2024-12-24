@@ -183,12 +183,7 @@ function Projects() {
       console.log(error.response);
     }
   };
-  // getting space names + naming the page
-  useEffect(() => {
-    const luw1 = localStorage.getItem("upfront_user_name_w1") || "Workspace 1";
-    setW1(luw1);
-    document.title = luw1 + " - Upfront";
-  }, []);
+
   const handleTrashProject = async (id, name) => {
     setDeleting(id);
     try {
