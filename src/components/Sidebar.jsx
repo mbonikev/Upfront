@@ -165,6 +165,7 @@ function Sidebar({
     setPageTitle(e.target.value);
   };
   const handleCancel = () => {
+    setSpaceName(originalSpaceName);
     setPageTitle(originalSpaceName);
     setMoreOpt1(false);
     setSaveOpt1(false);
