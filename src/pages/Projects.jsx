@@ -23,7 +23,7 @@ function Projects() {
   const { workspaceId } = useParams();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
-  const [pageTitle, setPageTitle] = useState("Workspace 1");
+  const [pageTitle, setPageTitle] = useState("");
   const inputRef = useRef(null);
   // spaces
   const [w1, setW1] = useState(null);
