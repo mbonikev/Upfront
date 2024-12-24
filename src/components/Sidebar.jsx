@@ -72,7 +72,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [saveOpt1, setSaveOpt1] = useState(false);
   const [saveOpt3, setSaveOpt3] = useState(false);
-  const [originalW1, setOriginalW1] = useState(null);
+  const [originalW1, setWorkspaces] = useState([]);
   const [spaceName, setSpaceName] = useState("");
   const [spaceNumber, setSpaceNumber] = useState("");
   const formRef = useRef(null);
