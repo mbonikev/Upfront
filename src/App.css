@@ -23,7 +23,7 @@ input {
 .ant-input::placeholder {
   color: #9ca3af !important;
 }
-.ant-select-item-option-selected{
+.ant-select-item-option-selected {
   color: white !important;
 }
 
@@ -38,7 +38,7 @@ select {
 .shadow-custom {
   box-shadow: 0px 4px 15px 0px #00000028;
 }
-.shadow-custom2{
+.shadow-custom2 {
   box-shadow: 0px 4px 20px 4px #131313a8;
 }
 .gridRespo {
@@ -107,4 +107,24 @@ select {
 }
 ::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
