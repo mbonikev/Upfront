@@ -186,33 +186,7 @@ function Projects() {
         setW1(luw1);
         document.title = luw1 + " - Upfront";
     }, []);
-    const handleTrashProject = async (id, name) => {
-        setDeleting(id);
-        try {
-            const response = await axios.post(`${apiUrl}/api/movetotrash`, {
-                projectId: id,
-                userEmail,
-            });
-            // window.location.reload()
-            setMyProjects((prevProjects) =>
-                prevProjects.filter((project) => project._id !== id)
-            );
-            setDeleting("");
-            toast.success(
-                <>
-                    "
-                    <span className="max-w-[70px] truncate">
-                        {name === "" ? "Untitled" : name}
-                    </span>
-                    " Moved to trash
-                </>
-            );
-        } catch (err) {
-            console.log(err);
-            setDeleting("");
-            toast.error("Delete Failed!");
-        }
-    };
+    
     return (
         <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
             <Toaster
