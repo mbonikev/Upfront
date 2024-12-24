@@ -171,7 +171,7 @@ function Projects() {
           ""
       );
     } else {
-      setPageTitle("Workspace 1");
+      setPageTitle("");
     }
   }, []);
   // create new project
