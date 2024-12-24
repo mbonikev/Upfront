@@ -398,6 +398,7 @@ function Sidebar({ handleSidebarToggle, username, userEmail, w1, setW1 }) {
             {workspaces && workspaces.length > 0 ?(
               workspaces.map((space, index) => (
                 <form
+                  key={index}
                   onSubmit={handleUpdateWorkSpace}
                   className="relative group mb-10 "
                 >
