@@ -169,7 +169,12 @@ function Sidebar({
     setPageTitle(e.target.value);
   };
   const handleCancel = () => {
+    if (!originalSpaceName) {
+      console.error('Original space name is missing or empty');
+      return;
+    }
     setPageTitle(originalSpaceName);
+    setSpaceName(originalSpaceName);
     setMoreOpt1(false);
     setSaveOpt1(false);
   };
