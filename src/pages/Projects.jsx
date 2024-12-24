@@ -307,6 +307,7 @@ function Projects() {
         {/* Projects section */}
         <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col">
           <div className="w-full h-fit flex items-end justify-between">
+            {fetchingProjects ? <></> : <></>}
             <p className="font-normal text-[13px] text-text-color/70 dark:text-[#b8b8b8]">
               <span className="text-text-color dark:text-[#b8b8b8] font-medium">
                 {myProjects.length}
