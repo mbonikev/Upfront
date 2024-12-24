@@ -81,7 +81,7 @@ function Projects() {
   useEffect(() => {
     const fetchWorkspace = async () => {
       try {
-        const response = await axios.post(`${apiUrl}/api/getthisworkspace`, {
+        const response = await axios.get(`${apiUrl}/api/getthisworkspace`, {
           userEmail,
           workspaceId,
         });
