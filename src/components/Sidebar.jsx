@@ -236,7 +236,7 @@ function Sidebar({
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        handleCancel();
+        setPageTitle(originalSpaceName);
         setMoreOpt1(false);
         setSaveOpt1(false);
         setProfileMenu(false);
