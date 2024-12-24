@@ -159,10 +159,10 @@ function Sidebar({
   };
 
   // rename workspace 1
-  const renameWorkspace = (name) => {
-    setSpaceName(name);
-    setSpaceId()
-    setOriginalSpaceName(name);
+  const renameWorkspace = (space) => {
+    setSpaceName(space.workspace_name);
+    setSpaceId(space._id);
+    setOriginalSpaceName(space.workspace_name);
     setMoreOpt1(false);
     setSaveOpt1(true);
   };
