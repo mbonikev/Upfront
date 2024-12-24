@@ -237,7 +237,6 @@ function Sidebar({
       if (event.key === "Escape") {
         event.preventDefault();
         handleCancel();
-
         setMoreOpt1(false);
         setSaveOpt1(false);
         setProfileMenu(false);
