@@ -201,7 +201,7 @@ function Projects() {
                       </div>
                     </div>
                     <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-3 mt-[25px] line-clamp-2 text-sm">
-                      {project.name}
+                      {project.name} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat commodi corrupti distinctio quidem vel. Ipsa consectetur sed quia mollitia ab perferendis quos quae, repellat aliquam possimus in aperiam, harum ullam.
                     </h1>
                   </Link>
                 ))}
