@@ -145,7 +145,7 @@ function UpfrontAi() {
           <ol className="flex flex-col gap-3 text-sm">
             <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
               <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
-                1. Natural Language Assistance:
+                &bull; Save Time:
               </strong>{" "}
               Interact with Upfront AI like a colleague—ask questions, assign
               tasks, or request updates in plain language.
