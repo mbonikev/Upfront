@@ -145,48 +145,50 @@ function Projects() {
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
       >
-        {/* Left Button */}
-        {canScrollLeft && (
-          <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white via-white to-transparent z-20 flex items-center justify-start">
-            <button
-              onClick={scrollLeft}
-              className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
-            >
-              <LuChevronLeft className="text-xl" />
-            </button>
+        <div className="relative w-auto flex-1 bg-red-200 min-h-[50px] max-w-[2300px] mx-auto px-7 max-xl:px-0">
+          {/* Left Button */}
+          {canScrollLeft && (
+            <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white via-white to-transparent z-20 flex items-center justify-start">
+              <button
+                onClick={scrollLeft}
+                className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
+              >
+                <LuChevronLeft className="text-xl" />
+              </button>
+            </div>
+          )}
+          {/* Right Button */}
+          {canScrollRight && (
+            <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-white via-white to-transparent z-20 flex items-center justify-end">
+              <button
+                onClick={scrollRight}
+                className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
+              >
+                <LuChevronRight className="text-xl" />
+              </button>
+            </div>
+          )}
+          {/* content */}
+          <div
+            ref={contentRef}
+            onScroll={handleScroll}
+            className={` w-full max-w-full h-fit bg-red-200 flex overflow-x-auto gap-5 pt-4 pb-1 hidden_scrollbar `}
+          >
+            {[...Array(25)].map((space, index) => (
+              <button
+                key={index}
+                // onClick={() => handleChooseSpace(space.type)}
+                className={` outline-none min-w-fit w-fit h-fit relative`}
+              >
+                <div className="group w-full h-full flex flex-col justify-center items-center gap-2 relative cursor-pointer pb-2">
+                  <div className="text-xl">icon</div>
+                  <h1 className="min-w-[60px] text-center text-sm tracking-tight leading-4 max-md:text-xs font-medium mb-0 whitespace-nowrap">
+                    type
+                  </h1>
+                </div>
+              </button>
+            ))}
           </div>
-        )}
-        {/* Right Button */}
-        {canScrollRight && (
-          <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-white via-white to-transparent z-20 flex items-center justify-end">
-            <button
-              onClick={scrollRight}
-              className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
-            >
-              <LuChevronRight className="text-xl" />
-            </button>
-          </div>
-        )}
-        {/* content */}
-        <div
-          ref={contentRef}
-          onScroll={handleScroll}
-          className={`flex-1 w-auto h-fit bg-red-200 flex items-start justify-start gap-5 pt-4 pb-1 hidden_scrollbar `}
-        >
-          {[...Array(25)].map((space, index) => (
-            <button
-              key={index}
-              // onClick={() => handleChooseSpace(space.type)}
-              className={` outline-none min-w-fit w-fit h-fit relative`}
-            >
-              <div className="group w-full h-full flex flex-col justify-center items-center gap-2 relative cursor-pointer pb-2">
-                <div className="text-xl">icon</div>
-                <h1 className="min-w-[60px] text-center text-sm tracking-tight leading-4 max-md:text-xs font-medium mb-0 whitespace-nowrap">
-                  type
-                </h1>
-              </div>
-            </button>
-          ))}
         </div>
       </div>
     </div>
