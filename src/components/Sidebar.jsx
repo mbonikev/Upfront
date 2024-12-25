@@ -372,7 +372,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
             </button>
             <Link
               to={"/ai"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100${
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
                 location.pathname === `/ai`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
