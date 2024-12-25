@@ -412,9 +412,6 @@ function Projects() {
                     {createNew ? (
                       <div className="flex items-center justify-center flex-col text-center gap-1 text-text-color/70 dark:text-[#484848]">
                         <RiLoader5Fill className="text-2xl animate-spinLoader" />
-                        <p className="line-clamp-2 max-w-[190px]">
-                          Setting up <br /> your project...
-                        </p>
                       </div>
                     ) : (
                       <div className="flex items-center justify-center flex-col gap-1">
