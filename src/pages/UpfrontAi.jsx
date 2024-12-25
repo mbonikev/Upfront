@@ -96,6 +96,37 @@ function UpfrontAi() {
           <h4>Coming soon..</h4>
           <br />
           <h1 className="text-lg font-bold">🚀 Key Features</h1>
+          <br />
+          <div class="features">
+            <h2>Key Features</h2>
+            <ol>
+              <li>
+                <strong>Natural Language Assistance:</strong> Interact with
+                Upfront AI like a colleague—ask questions, assign tasks, or
+                request updates in plain language.
+              </li>
+              <li>
+                <strong>Customizable Workflows:</strong> Describe your needs,
+                and Upfront AI will design and automate your workflows.
+              </li>
+              <li>
+                <strong>Smart Task Suggestions:</strong> Get clear, actionable
+                steps for complex tasks with AI recommendations.
+              </li>
+              <li>
+                <strong>Meeting Summaries:</strong> Share notes or recordings,
+                and the AI generates concise summaries and action items.
+              </li>
+              <li>
+                <strong>Knowledge Hub:</strong> Access all project documents and
+                conversations in one place with smart search.
+              </li>
+              <li>
+                <strong>Multilingual Support:</strong> Collaborate globally with
+                support for over 20 languages.
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
