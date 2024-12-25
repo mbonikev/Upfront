@@ -147,7 +147,7 @@ function Projects() {
       >
         {/* greating */}
         <div className="w-full h-fit my-3 flex items-center justify-center">
-          <h1 className="text-[#b8b8b8]"></h1>
+          <h1 className="text-[#b8b8b8] text-2xl font-bold"></h1>
         </div>
         {/* recent visited projects */}
         <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
