@@ -147,11 +147,13 @@ function Projects() {
       >
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
-          <h1 className="text-[#b8b8b8] text-3xl font-semibold tracking-tight">Good Morning, Kevin</h1>
+          <h1 className="text-[#b8b8b8] text-3xl font-semibold tracking-tight">
+            Good Morning, Kevin
+          </h1>
         </div>
-        <h1></h1>
         {/* recent visited projects */}
         <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
+          <h1 className="">ss</h1>
           {/* Left Button */}
           {canScrollLeft && (
             <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-stone-50 dark:from-dark-body via-stone-50 dark:via-dark-body to-transparent z-20 flex items-center justify-start">
