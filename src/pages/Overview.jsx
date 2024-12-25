@@ -103,7 +103,7 @@ function Projects() {
   }, []);
 
   return (
-    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
+    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative overflow-x-hidden">
       <Toaster
         position="top-center"
         toastOptions={{
