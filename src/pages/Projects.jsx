@@ -462,7 +462,7 @@ function Projects() {
                             ? "no description"
                             : project.desc}
                         </p>
-                        <div className="flex items-end flex-col gap-3 py-3">
+                        <div className="flex items-end flex-col gap-1 py-3">
                           <div
                             className="flex w-full h-[4px] bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
                             role="progressbar"
