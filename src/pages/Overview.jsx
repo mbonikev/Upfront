@@ -196,7 +196,7 @@ function Projects() {
                   >
                     {/* banner */}
                     <div className="w-full h-[50px] bg-stone-200 dark:bg-[#282828] relative">
-                      <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white dark:bg-[#282828] aspect-square translate-y-8 translate-x-4 ring-2 ring-white dark:ring-[#202020] dark:ring"></div>
+                      <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white dark:bg-[#282828] text-text-color dark:text-[#b8b8b8] aspect-square translate-y-8 translate-x-4 ring-2 ring-white dark:ring-[#202020] dark:ring"></div>
                     </div>
                   </Link>
                 ))}
