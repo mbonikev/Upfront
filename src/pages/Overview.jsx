@@ -148,7 +148,7 @@ function Projects() {
         {/* greating */}
         <div className=""></div>
         {/* recent visited projects */}
-        <div className="relative w-full bg-stone-50 min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
+        <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
           {/* Left Button */}
           {canScrollLeft && (
             <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-stone-50 via-stone-50 to-transparent z-20 flex items-center justify-start">
@@ -175,7 +175,7 @@ function Projects() {
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className={`w-full flex-1 h-fit bg-stone-50 flex items-center justify-start overflow-auto gap-5 py-6`}
+            className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto gap-5 py-6`}
           >
             {[...Array(40)].map((space, index) => (
               <div className="w-[100px] min-w-[100px] h-[50px] bg-orange-500">{index}</div>
