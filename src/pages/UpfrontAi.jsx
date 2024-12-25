@@ -165,6 +165,9 @@ function UpfrontAi() {
               needs.
             </li>
           </ol>
+          <br />
+          <div className="w-full h-[1px]"></div>
+          <br />
         </div>
       </div>
     </div>
