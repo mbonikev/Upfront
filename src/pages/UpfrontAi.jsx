@@ -159,7 +159,8 @@ function UpfrontAi() {
               <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
                 &bull; Future-Ready:
               </strong>{" "}
-              Focus on what matters most while the AI handles the rest.
+              Always stay ahead with machine learning updates tailored to your
+              needs.
             </li>
           </ol>
         </div>
