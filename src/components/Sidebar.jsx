@@ -377,7 +377,7 @@ function Sidebar({
               </div>
             </button>
             <Link
-              to={"/"}
+              to={"/ai"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
