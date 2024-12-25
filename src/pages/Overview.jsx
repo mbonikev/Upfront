@@ -21,6 +21,10 @@ function Projects() {
   const [myProjects, setMyProjects] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const navigate = useNavigate();
+  const contentRef = (useRef < HTMLDivElement) | (null > null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("upfront_user");
