@@ -104,23 +104,23 @@ function UpfrontAi() {
                 request updates in plain language.
               </li>
               <li>
-                <strong>Customizable Workflows:</strong> Describe your needs,
+                <strong>2. Customizable Workflows:</strong> Describe your needs,
                 and Upfront AI will design and automate your workflows.
               </li>
               <li>
-                <strong>Smart Task Suggestions:</strong> Get clear, actionable
+                <strong>3. Smart Task Suggestions:</strong> Get clear, actionable
                 steps for complex tasks with AI recommendations.
               </li>
               <li>
-                <strong>Meeting Summaries:</strong> Share notes or recordings,
+                <strong>4. Meeting Summaries:</strong> Share notes or recordings,
                 and the AI generates concise summaries and action items.
               </li>
               <li>
-                <strong>Knowledge Hub:</strong> Access all project documents and
+                <strong>5. Knowledge Hub:</strong> Access all project documents and
                 conversations in one place with smart search.
               </li>
               <li>
-                <strong>Multilingual Support:</strong> Collaborate globally with
+                <strong>6. Multilingual Support:</strong> Collaborate globally with
                 support for over 20 languages.
               </li>
             </ol>
