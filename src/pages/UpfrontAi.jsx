@@ -166,7 +166,7 @@ function UpfrontAi() {
             </li>
           </ol>
           <br />
-          <div className="w-full h-[1px]"></div>
+          <div className="w-full h-[1px] bg-stone-100"></div>
           <br />
         </div>
       </div>
