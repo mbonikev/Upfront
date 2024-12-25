@@ -166,7 +166,7 @@ function Projects() {
             <div className="relative w-full bg-white dark:bg-dark-body min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
               {/* Left Button */}
               {canScrollLeft && (
-                <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from--white dark:from-dark-body via--white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
+                <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
                   <button
                     onClick={scrollLeft}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-[#b8b8b8] dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
@@ -177,7 +177,7 @@ function Projects() {
               )}
               {/* Right Button */}
               {canScrollRight && (
-                <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from--white dark:from-dark-body via--white dark:via-dark-body to-transparent z-20 flex items-center justify-end">
+                <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-end">
                   <button
                     onClick={scrollRight}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white
