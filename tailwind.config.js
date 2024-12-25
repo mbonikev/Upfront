@@ -18,6 +18,11 @@ export default {
       },
       fontFamily: {
         LeagueSpartan: ["League Spartan", "sans-serif"],
+        Custom_r: ["Custom_Sans_r", "sans-serif"],
+        Custom_m: ["Custom_Sans_m", "sans-serif"],
+        Custom_b: ["Custom_Sans_b", "sans-serif"],
+        Custom_1xb: ["Custom_Sans_1xb", "sans-serif"],
+        Custom_2xb: ["Custom_Sans_2xb", "sans-serif"],
       },
       animation: {
         spinLoader: "spin .4s linear infinite",
