@@ -189,8 +189,8 @@ function Projects() {
                 onScroll={handleScroll}
                 className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-3 py-2 px-1`}
               >
-                {myProjects.map((space, index) => (
-                  <Link to={`/workspace/`} key={index} className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 p-3">
+                {myProjects.map((project, index) => (
+                  <Link to={`${project}`} key={index} className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 p-3">
                     {index}
                   </Link>
                 ))}
