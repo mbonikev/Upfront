@@ -189,11 +189,15 @@ function Projects() {
                 className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-3 py-2 px-1`}
               >
                 {myProjects.map((project, index) => (
-                  <Link to={`/project/${project.workspace_name}/${project._id}`} key={index} className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50">
+                  <Link
+                    to={`/project/${project.workspace_name}/${project._id}`}
+                    key={index}
+                    className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
+                  >
                     {/* banner */}
                     <div className="w-full h-[50px] bg-stone-200 dark:bg-[#282828] relative">
+                      <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white aspect-square"></div>
                     </div>
-                    <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white aspect-square"></div>
                   </Link>
                 ))}
               </div>
