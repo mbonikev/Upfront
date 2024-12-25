@@ -355,7 +355,7 @@ function Projects() {
                       <div className="group z-10 relative w-5 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-end justify-end flex-col gap-2">
+                      <div className="flex items-start justify-start flex-col gap-2">
                         <div className="group z-10 relative w-4 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                         <div className="group z-10 relative w-7 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                       </div>
