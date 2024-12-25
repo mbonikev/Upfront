@@ -174,7 +174,7 @@ function Projects() {
             onScroll={handleScroll}
             className={` w-full flex-1 h-fit bg-red-200 flex overflow-x-auto gap-5 `}
           >
-            {[...Array(25)].map((space, index) => (
+            {[...Array(9)].map((space, index) => (
               <button
                 key={index}
                 // onClick={() => handleChooseSpace(space.type)}
