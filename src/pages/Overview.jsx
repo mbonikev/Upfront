@@ -26,7 +26,7 @@ function Projects() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-
+  const [loading, setLoading] = useState(true)
   const handleLogout = () => {
     localStorage.removeItem("upfront_user");
     localStorage.removeItem("upfront_user_name");
@@ -151,6 +151,7 @@ function Projects() {
             Good Morning, Kevin
           </h1>
         </div>
+
         {myProjects.length > 0 ? (
           <>
             {/* recent projects */}
