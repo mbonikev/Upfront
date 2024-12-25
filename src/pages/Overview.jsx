@@ -196,11 +196,11 @@ function Projects() {
                   >
                     {/* banner */}
                     <div className="w-full h-[40px] bg-stone-200 dark:bg-[#282828] relative">
-                      <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white dark:bg-[#303030] text-text-color dark:text-[#979797] aspect-square translate-y-6 translate-x-3 ring-2 ring-white dark:ring-[#202020] dark:ring flex items-center justify-center text-xl">
+                      <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white dark:bg-[#303030] text-text-color dark:text-[#979797] aspect-square translate-y-5 translate-x-3 ring-2 ring-white dark:ring-[#202020] dark:ring flex items-center justify-center text-xl">
                         <LuHash />
                       </div>
                     </div>
-                    <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-3 mt-[30px] line-clamp-2 text-sm">
+                    <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-3 mt-[23px] line-clamp-2 text-sm">
                       {project.name}
                     </h1>
                   </Link>
