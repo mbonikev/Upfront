@@ -515,7 +515,7 @@ function Projects() {
                           </h1>
                         </div>
                         <div className="w-full flex items-end justify-between">
-                          <div className="w-full flex items-start justify-start flex-col gap-2">
+                          <div className="w-full flex items-start justify-start flex-col gap-1">
                             <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]/70">
                               <TbStack className="text-xl" />
                               {
