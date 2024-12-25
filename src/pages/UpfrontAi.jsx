@@ -95,11 +95,11 @@ function UpfrontAi() {
           <br />
           <h4>Coming soon..</h4>
           <br />
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-2">
             <h1 className="text-lg font-bold">🚀 Key Features</h1>
             <ol>
               <li>
-                <strong>Natural Language Assistance:</strong> Interact with
+                <strong>1. Natural Language Assistance:</strong> Interact with
                 Upfront AI like a colleague—ask questions, assign tasks, or
                 request updates in plain language.
               </li>
