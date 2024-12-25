@@ -935,7 +935,7 @@ function SingleProject() {
             <img
               src={logoSvg}
               loading="lazy"
-              className="h-12 saturate-100 aspect-square"
+              className="h-12 saturate-0 aspect-square"
             />
             <Loader />
           </div>
