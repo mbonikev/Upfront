@@ -146,7 +146,7 @@ function Projects() {
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
       >
         {/* greating */}
-        <div className="w-full h-fit my-3 flex items-center justify-center">
+        <div className="w-full h-fit mt-16 flex items-center justify-center">
           <h1 className="text-[#b8b8b8] text-3xl font-semibold tracking-tight">Good Morning, Kevin</h1>
         </div>
         {/* recent visited projects */}
