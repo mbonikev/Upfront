@@ -444,10 +444,8 @@ function Projects() {
 
                       <Link
                         key={project._id}
-                        to={{
-                          pathname: `/project/${pageTitle}/${project._id}`,
-                          state: { workspace: workspaceId },
-                        }}
+                        to={`/project/${pageTitle}/${project._id}`}
+                        state={{ workspace: workspaceId }}
                         className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white dark:bg-[#242424] group-hover:ring-2 group-hover:ring-main-color/60 dark:text-[#b8b8b8] ring-1 ring-border-line-color/50 dark:ring-transparent flex flex-col relative ${
                           deleteMenu === project._id &&
                           "ring-2 ring-main-color/60"
