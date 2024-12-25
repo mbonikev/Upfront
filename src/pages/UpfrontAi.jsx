@@ -140,6 +140,52 @@ function UpfrontAi() {
             </li>
           </ol>
         </div>
+        <div class="flex flex-col gap-2 max-w-[700px] mx-auto">
+          <h1 className="text-lg font-bold mb-2">🚀 Key Features</h1>
+          <ol className="flex flex-col gap-3 text-sm">
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                1. Natural Language Assistance:
+              </strong>{" "}
+              Interact with Upfront AI like a colleague—ask questions, assign
+              tasks, or request updates in plain language.
+            </li>
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                2. Customizable Workflows:
+              </strong>{" "}
+              Describe your needs, and Upfront AI will design and automate your
+              workflows.
+            </li>
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                3. Smart Task Suggestions:
+              </strong>{" "}
+              Get clear, actionable steps for complex tasks with AI
+              recommendations.
+            </li>
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                4. Meeting Summaries:
+              </strong>{" "}
+              Share notes or recordings, and the AI generates concise summaries
+              and action items.
+            </li>
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                5. Knowledge Hub:
+              </strong>{" "}
+              Access all project documents and conversations in one place with
+              smart search.
+            </li>
+            <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
+              <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
+                6. Multilingual Support:
+              </strong>{" "}
+              Collaborate globally with support for over 20 languages.
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   );
