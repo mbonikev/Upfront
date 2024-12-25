@@ -143,8 +143,9 @@ function Projects() {
         setW1={setW1}
       />
       <div
-        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
+        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
       >
+
         <div className="relative w-full flex-1 bg-stone-50 min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
           {/* Left Button */}
           {canScrollLeft && (
