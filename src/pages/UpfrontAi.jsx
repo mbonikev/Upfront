@@ -12,7 +12,6 @@ import { LuChevronLeft, LuChevronRight, LuHash } from "react-icons/lu";
 import Loader from "../components/Loader";
 
 function UpfrontAi() {
-  const { workspaceId } = useParams();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("Workspace 1");
@@ -52,22 +51,6 @@ function UpfrontAi() {
         }
       }
     };
-    const getmyProjects = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/api/getmyrecentprojects`, {
-          params: { email: userEmail },
-        });
-        setMyProjects(response.data.projects);
-        setFetchingProjects(false);
-      } catch (error) {
-        // console.log(error)
-        if (error.response.status == 401) {
-          // handleLogout();
-        }
-        setFetchingProjects(false);
-      }
-    };
-    getmyProjects();
     getme();
   }, []);
 
