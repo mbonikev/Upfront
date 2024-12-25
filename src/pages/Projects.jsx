@@ -478,7 +478,7 @@ function Projects() {
                             %
                           </h1>
                           <div
-                            className="flex w-full h-[5px] bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
+                            className="flex w-full h-[4px] bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
                             role="progressbar"
                             aria-valuenow="25"
                             aria-valuemin="0"
