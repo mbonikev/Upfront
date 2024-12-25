@@ -61,10 +61,8 @@ const customAnimation = keyframes`
 `;
 
 function Sidebar({
-  handleSidebarToggle,
   username,
   userEmail,
-  pageTitle,
   setPageTitle,
 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
