@@ -53,7 +53,7 @@ function Projects() {
     };
     const getmyProjects = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/getmyprojects`, {
+        const response = await axios.get(`${apiUrl}/api/getmyrecentprojects`, {
           params: { email: userEmail },
         });
         console.log(response.data);
