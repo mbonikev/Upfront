@@ -18,14 +18,6 @@ function UpfrontAi() {
     const inputRef = useRef(null);
     // spaces
     const [w1, setW1] = useState(null);
-    //   const [myWorkSpaces, setMyWorkSpaces] = useState([]);
-    const [myProjects, setMyProjects] = useState([]);
-    const [fetchingProjects, setFetchingProjects] = useState(true);
-    const navigate = useNavigate();
-    const contentRef = useRef(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
-    const [scrolled, setScrolled] = useState(false);
 
     const handleLogout = () => {
         localStorage.removeItem("upfront_user");
@@ -91,8 +83,6 @@ function UpfrontAi() {
             <Sidebar
                 username={username}
                 userEmail={userEmail}
-                w1={w1}
-                setW1={setW1}
             />
             <div
                 className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
