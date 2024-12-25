@@ -14,6 +14,7 @@ import ProtectedFP from './utils/ProtectedFP'
 import SingleProject from './pages/SingleProject'
 import Testai from './pages/Testai'
 import Overview from './pages/Overview'
+import UpfrontAi from './pages/UpfrontAi'
 function App() {
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Overview />} />
             <Route path='/workspaces/:workspaceId' element={<Projects />} />
-            <Route path='/ai' element={<Projects />} />
+            <Route path='/Ai' element={<UpfrontAi />} />
             <Route path='/project/:workspacename/:id' element={<SingleProject />} />
             <Route path='/test' element={<Testai />} />
           </Route>
