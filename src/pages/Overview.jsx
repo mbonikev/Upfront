@@ -145,7 +145,7 @@ function Projects() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
       >
-        <div className="relative w-full flex-1 bg-stone-50 min-h-[50px] max-w-[900px] mt-20 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
+        <div className="relative w-full flex-1 bg-stone-50 min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
           {/* Left Button */}
           {canScrollLeft && (
             <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-stone-50 via-stone-50 to-transparent z-20 flex items-center justify-start">
