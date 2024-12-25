@@ -159,7 +159,7 @@ function Projects() {
           )}
           {/* Right Button */}
           {canScrollRight && (
-            <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-stone-100 via-stone-100 to-transparent z-20 flex items-center justify-end">
+            <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-stone-50 via-stone-50 to-transparent z-20 flex items-center justify-end">
               <button
                 onClick={scrollRight}
                 className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
