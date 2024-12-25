@@ -92,6 +92,7 @@ function UpfrontAi() {
           <h1 className="text-base mt-2 font-normal text-text-color/70 dark:text-[#e2e2e2]/70 ">
             Your Intelligent Project Assistant
           </h1>
+          <h4>Coming soon</h4>
         </div>
       </div>
     </div>
