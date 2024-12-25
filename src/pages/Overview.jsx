@@ -190,7 +190,8 @@ function Projects() {
               >
                 {myProjects.map((project, index) => (
                   <Link to={`/project/${project.workspace_name}/${project._id}`} key={index} className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 p-3 hover:ring-2 hover:ring-main-color/50">
-                    
+                    {/* banner */}
+                    <div></div>
                   </Link>
                 ))}
               </div>
