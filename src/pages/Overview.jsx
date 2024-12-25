@@ -182,7 +182,7 @@ function Projects() {
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-2 py-2`}
+            className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-3 py-2`}
           >
             {[...Array(40)].map((space, index) => (
               <div className="w-[100px] min-w-[100px] h-[100px] bg-white dark:bg-[#202020]">
