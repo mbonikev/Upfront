@@ -56,7 +56,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, {
           params: { email: userEmail },
         });
-        console.log(response.data.projects);
+        console.log(response.data);
         setMyProjects(response.data.projects);
         setFetchingProjects(false);
       } catch (error) {
