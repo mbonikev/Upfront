@@ -85,7 +85,7 @@ function UpfrontAi() {
                 userEmail={userEmail}
             />
             <div
-                className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color dark:text-[#e2e2e2] text-5xl bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
+                className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color dark:text-[#e2e2e2] text-5xl bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-center justify-center flex-col p-1`}
             >
                 {/* title */}
                 <h1 className="">Upfront <span className="font-Custom_1xb ">Ai</span></h1>
