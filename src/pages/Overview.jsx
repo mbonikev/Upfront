@@ -145,7 +145,7 @@ function Projects() {
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
       >
-        <div className="relative w-full h-full max-w-full mx-auto px-7 max-xl:px-0">
+        <div className="relative w-full h-full max-w-[2300px] mx-auto px-7 max-xl:px-0">
           {/* Left Button */}
           {canScrollLeft && (
             <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white via-white to-transparent z-20 flex items-center justify-start">
