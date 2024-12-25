@@ -8,6 +8,7 @@ import {
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 function Projects() {
   const { workspaceId } = useParams();
