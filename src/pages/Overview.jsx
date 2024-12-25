@@ -175,7 +175,7 @@ function Projects() {
             className={`w-full max-w-full flex-1 h-fit bg-red-200 flex items-center justify-start overflow-x-auto gap-5 `}
           >
             {[...Array(9)].map((space, index) => (
-              <div className="w-[100px] h-[100px] bg-orange-500"></div>
+              <div className="w-[100px] h-[50px] bg-orange-500"></div>
             ))}
           </div>
         </div>
