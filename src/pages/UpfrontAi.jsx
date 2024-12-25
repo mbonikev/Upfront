@@ -147,8 +147,7 @@ function UpfrontAi() {
               <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
                 &bull; Save Time:
               </strong>{" "}
-              Interact with Upfront AI like a colleague—ask questions, assign
-              tasks, or request updates in plain language.
+              Focus on what matters most while the AI handles the rest.
             </li>
             <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
               <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
