@@ -23,6 +23,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path='/' element={<Overview />} />
             <Route path='/workspaces/:workspaceId' element={<Projects />} />
+            <Route path='/ai' element={<Projects />} />
             <Route path='/project/:workspacename/:id' element={<SingleProject />} />
             <Route path='/test' element={<Testai />} />
           </Route>
