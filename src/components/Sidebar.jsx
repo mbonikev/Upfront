@@ -347,7 +347,7 @@ function Sidebar({
             <Link
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
-                location.pathname === `/workspaces/${space._id}`
+                location.pathname === `/`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
               }`}
