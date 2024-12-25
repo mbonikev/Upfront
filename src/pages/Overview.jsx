@@ -147,6 +147,7 @@ function Projects() {
       >
         {/* greating */}
         <div className=""></div>
+        {/* recent visited projects */}
         <div className="relative w-full flex-1 bg-stone-50 min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
           {/* Left Button */}
           {canScrollLeft && (
