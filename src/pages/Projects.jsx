@@ -411,7 +411,7 @@ function Projects() {
                   >
                     {createNew ? (
                       <div className="flex items-center justify-center flex-col text-center gap-1 text-text-color/70 dark:text-[#484848]">
-                        <RiLoader5Fill className="text-2xl animate-spinLoader" />
+                        <RiLoader5Fill className="text-4xl animate-spinLoader" />
                       </div>
                     ) : (
                       <div className="flex items-center justify-center flex-col gap-1">
