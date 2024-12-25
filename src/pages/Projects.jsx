@@ -296,6 +296,7 @@ function Projects() {
         <div className="w-full h-fit flex items-start justify-between px-5 py-5 max-w-[2000px]">
           {!fetchingProjects ? (
             <div className="flex items-center justify-start gap-2">
+              <div className="group z-10 relative w-8 h-8 min-w-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#232323]"></div>
               <div className="group z-10 relative w-[200px] h-[20px] animate-smooth-pulse rounded-xl dark:bg-[#313131] bg-stone-200"></div>
             </div>
           ) : (
