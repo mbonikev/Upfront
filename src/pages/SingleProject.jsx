@@ -66,6 +66,7 @@ import { format } from "date-fns";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { PiBroom } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
+import Loader from "../components/Loader";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -936,7 +937,7 @@ function SingleProject() {
               loading="lazy"
               className="h-16 saturate-100 aspect-square"
             />
-            <span class="loader"></span>
+            <Loader />
           </div>
         )}
         <div className="w-full h-fit pb-0 relative pl-10 pr-16 pt-10">
