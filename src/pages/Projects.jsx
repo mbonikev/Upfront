@@ -463,20 +463,6 @@ function Projects() {
                             : project.desc}
                         </p>
                         <div className="flex items-center gap-3 py-3">
-                          {/* <h1 className="text-sm">
-                            {Math.round(
-                              (allTasks.filter(
-                                (task) =>
-                                  task.projectId === project._id &&
-                                  task.curentStatus === "completed"
-                              ).length /
-                                allTasks.filter(
-                                  (task) => task.projectId === project._id
-                                ).length) *
-                                100
-                            ) || 0}
-                            %
-                          </h1> */}
                           <div
                             className="flex w-full h-[4px] bg-gray-200 dark:bg-[#414141] rounded-full overflow-hidden"
                             role="progressbar"
