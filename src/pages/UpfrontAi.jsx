@@ -168,7 +168,7 @@ function UpfrontAi() {
           <br />
           <div className="w-full h-[1px] bg-stone-200 dark:bg-[#e2e2e231] mb-1"></div>
           <h1 className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70 text-xs">
-            Minimize human errors and optimize team performance.
+            Last updated
           </h1>
         </div>
       </div>
