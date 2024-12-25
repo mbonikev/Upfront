@@ -341,7 +341,7 @@ function Projects() {
                 {[...Array(3)].map((_, index) => (
                   <div
                     key={index}
-                    className="group z-10 relative w-full h-fit rounded-2xl animate-smooth-pulse bg-stone-100 dark:bg-[#242424] flex flex-col gap-3 p-4"
+                    className="group z-10 relative w-full h-fit rounded-2xl animate-smooth-pulse bg-stone-100 dark:bg-[#202020] flex flex-col gap-3 p-4"
                   >
                     {/* icon */}
                     <div className="group z-10 relative w-8 h-8 min-w-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
