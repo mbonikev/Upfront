@@ -89,7 +89,7 @@ function UpfrontAi() {
             >
                 {/* title */}
                 <h1 className="text-5xl">Upfront <span className="font-Custom_1xb ">AI</span>: </h1>
-                <h1 className="text-3xl">Revolutionizing Project Management</h1>
+                <h1 className="text-lg">Revolutionizing Project Management</h1>
             </div>
         </div>
     );
