@@ -346,7 +346,11 @@ function Sidebar({
           <div className="flex-1 flex flex-col gap-[3px]">
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
+                location.pathname === `/workspaces/${space._id}`
+                  ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                  : ""
+              }`}
             >
               <GoHome className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Overview</p>
