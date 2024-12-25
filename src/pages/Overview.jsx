@@ -211,8 +211,8 @@ function Projects() {
                       {project.name !== "" ? project.name : "Untitled"}
                     </h1>
                     <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start gap-1">
-                      {project.collaborations.length > 1 ? (
-                        project.collaborations[0].map((collab, index) => (
+                      {project.collaborations.length === 1 ? (
+                        project.collaborations.map((collab, index) => (
                           <h1
                             key={index}
                             className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
