@@ -95,6 +95,7 @@ function UpfrontAi() {
           <br />
           <h4>Coming soon</h4>
           <br />
+          <h1 className="text-lg font-bold">Coming soon</h1>
         </div>
       </div>
     </div>
