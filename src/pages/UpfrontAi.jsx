@@ -99,28 +99,28 @@ function UpfrontAi() {
             <h1 className="text-lg font-bold">🚀 Key Features</h1>
             <ol>
               <li>
-                <strong className="font-Custom_xb">1. Natural Language Assistance:</strong> Interact with
+                <strong className="font-Custom_b ">1. Natural Language Assistance:</strong> Interact with
                 Upfront AI like a colleague—ask questions, assign tasks, or
                 request updates in plain language.
               </li>
               <li>
-                <strong className="font-Custom_xb">2. Customizable Workflows:</strong> Describe your needs,
+                <strong className="font-Custom_b ">2. Customizable Workflows:</strong> Describe your needs,
                 and Upfront AI will design and automate your workflows.
               </li>
               <li>
-                <strong className="font-Custom_xb">3. Smart Task Suggestions:</strong> Get clear, actionable
+                <strong className="font-Custom_b ">3. Smart Task Suggestions:</strong> Get clear, actionable
                 steps for complex tasks with AI recommendations.
               </li>
               <li>
-                <strong className="font-Custom_xb">4. Meeting Summaries:</strong> Share notes or recordings,
+                <strong className="font-Custom_b ">4. Meeting Summaries:</strong> Share notes or recordings,
                 and the AI generates concise summaries and action items.
               </li>
               <li>
-                <strong className="font-Custom_xb">5. Knowledge Hub:</strong> Access all project documents and
+                <strong className="font-Custom_b ">5. Knowledge Hub:</strong> Access all project documents and
                 conversations in one place with smart search.
               </li>
               <li>
-                <strong className="font-Custom_xb">6. Multilingual Support:</strong> Collaborate globally with
+                <strong className="font-Custom_b ">6. Multilingual Support:</strong> Collaborate globally with
                 support for over 20 languages.
               </li>
             </ol>
