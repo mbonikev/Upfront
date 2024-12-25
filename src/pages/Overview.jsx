@@ -211,17 +211,21 @@ function Projects() {
                       {project.name !== "" ? project.name : "Untitled"}
                     </h1>
                     <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start gap-1">
-                      {project.collaborations.map((collab, index) => (
-                        <h1
-                          key={index}
-                          className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
-                        >
-                          <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
-                            {collab.charAt(0)}
-                          </span>
-                          <span className="text-xs opacity-85">2d ago</span>
-                        </h1>
-                      ))}
+                      {project.collaborations.length > 1 ? (
+                        project.collaborations.map((collab, index) => (
+                          <h1
+                            key={index}
+                            className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
+                          >
+                            <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
+                              {collab.charAt(0)}
+                            </span>
+                            <span className="text-xs opacity-85">2d ago</span>
+                          </h1>
+                        ))
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </Link>
                 ))}
