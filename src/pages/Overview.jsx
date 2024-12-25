@@ -152,7 +152,7 @@ function Projects() {
           </h1>
         </div>
         {/* recent visited projects */}
-        <h1 className="text-dark-body/70 dark:text-[#b8b8b8] font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
+        <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
           Recently visited
         </h1>
         <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
