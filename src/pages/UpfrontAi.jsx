@@ -97,7 +97,7 @@ function UpfrontAi() {
           <br />
           <div class="flex flex-col gap-2">
             <h1 className="text-lg font-bold">🚀 Key Features</h1>
-            <ol>
+            <ol className="flex flex-col gap-2">
               <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
                 <strong className="font-medium text-text-color dark:text-[#e2e2e2]">1. Natural Language Assistance:</strong> Interact with
                 Upfront AI like a colleague—ask questions, assign tasks, or
