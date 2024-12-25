@@ -141,7 +141,7 @@ function UpfrontAi() {
           </ol>
         </div>
         <div class="flex flex-col gap-2 max-w-[700px] mx-auto">
-          <h1 className="text-lg font-bold mb-2">🚀 Key Features</h1>
+          <h1 className="text-lg font-bold mb-2">🌟 Why Upfront AI?</h1>
           <ol className="flex flex-col gap-3 text-sm">
             <li className="font-normal text-text-color/70 dark:text-[#e2e2e2]/70">
               <strong className="font-medium text-text-color dark:text-[#e2e2e2]">
