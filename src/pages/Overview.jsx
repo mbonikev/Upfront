@@ -148,7 +148,7 @@ function Projects() {
         <div className="relative w-full flex-1 bg-green-200 min-h-[50px] max-w-full mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
           {/* Left Button */}
           {canScrollLeft && (
-            <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white via-white to-transparent z-20 flex items-center justify-start">
+            <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-stone-100 via-white to-transparent z-20 flex items-center justify-start">
               <button
                 onClick={scrollLeft}
                 className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 flex items-center justify-center rounded-full"
