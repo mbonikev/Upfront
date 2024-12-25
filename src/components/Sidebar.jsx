@@ -60,11 +60,7 @@ const customAnimation = keyframes`
   }
 `;
 
-function Sidebar({
-  username,
-  userEmail,
-  setPageTitle,
-}) {
+function Sidebar({ username, userEmail, setPageTitle }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
   const [logoutAnimate, setLogoutAnimate] = useState(false);
@@ -376,7 +372,11 @@ function Sidebar({
             </button>
             <Link
               to={"/ai"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100${
+                location.pathname === `/ai`
+                  ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                  : ""
+              }`}
             >
               <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Upfront AI</p>
