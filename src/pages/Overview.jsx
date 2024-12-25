@@ -211,7 +211,7 @@ function Projects() {
                       {project.name !== "" ? project.name : "Untitled"}
                     </h1>
                     <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start gap-1">
-                      {project.collaborations.length > 1 ? (
+                      {project.collaborations.length === 1 ? (
                         project.collaborations.map((collab, index) => (
                           <h1
                             key={index}
