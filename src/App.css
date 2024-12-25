@@ -4,6 +4,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: Custom_Sans_r;
+  src: url("/fonts/regular.otf");
+}
+@font-face {
+  font-family: Custom_Sans_m;
+  src: url("/fonts/medium.otf");
+}
+@font-face {
+  font-family: Custom_Sans_b;
+  src: url("/fonts/bold.otf");
+}
+@font-face {
+  font-family: Custom_Sans_1xb;
+  src: url("/fonts/1xb.otf");
+}
+@font-face {
+  font-family: Custom_Sans_2xb;
+  src: url("/fonts/2xb.otf");
+}
 * {
   /* font-family: 'SF Pro Display' ,'Inter' ,sans-serif; */
   font-family: "Inter", sans-serif;
