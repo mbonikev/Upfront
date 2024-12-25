@@ -105,7 +105,9 @@ function Projects() {
       />
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
-      ></div>
+      >
+        
+      </div>
     </div>
   );
 }
