@@ -499,7 +499,7 @@ function Projects() {
                               }}
                             ></div>
                           </div>
-                          <h1 className="text-xs">
+                          <h1 className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70">
                             {Math.round(
                               (allTasks.filter(
                                 (task) =>
