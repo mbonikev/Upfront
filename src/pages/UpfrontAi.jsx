@@ -92,7 +92,9 @@ function UpfrontAi() {
           Your Intelligent Project Assistant
         </h1>
         <br />
+        <br />
         <h4>Coming soon..</h4>
+        <br />
         <br />
         <div class="flex flex-col gap-2 w-full max-w-[700px] mx-auto">
           <h1 className="text-lg font-bold mb-2">🚀 Key Features</h1>
