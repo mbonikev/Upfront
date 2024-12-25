@@ -54,39 +54,6 @@ function UpfrontAi() {
     getme();
   }, []);
 
-  const handleScroll = () => {
-    const content = contentRef.current;
-    if (content) {
-      setCanScrollLeft(content.scrollLeft > 0);
-
-      // Adjust the calculation to ensure precision
-      const isAtEnd =
-        Math.ceil(content.scrollLeft + content.clientWidth) >=
-        content.scrollWidth;
-
-      setCanScrollRight(!isAtEnd);
-    }
-  };
-
-  const scrollLeft = () => {
-    contentRef.current?.scrollBy({
-      left: -200, // Adjust scroll distance as needed
-      behavior: "smooth",
-    });
-  };
-
-  const scrollRight = () => {
-    contentRef.current?.scrollBy({
-      left: 200, // Adjust scroll distance as needed
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    // Initial check for scrollable buttons
-    handleScroll();
-  }, []);
-
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative overflow-x-hidden">
       <Toaster
