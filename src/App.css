@@ -112,8 +112,8 @@ select {
 .loader {
   width: 25px;
   height: 25px;
-  border: 2px solid #89aee548;
-  border-bottom-color: #488ef7;
+  border: 2px solid #60606050;
+  border-bottom-color: #757575;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
