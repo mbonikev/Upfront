@@ -99,28 +99,28 @@ function UpfrontAi() {
             <h1 className="text-lg font-bold">🚀 Key Features</h1>
             <ol>
               <li>
-                <strong >1. Natural Language Assistance:</strong> Interact with
+                <strong className="font-extralight">1. Natural Language Assistance:</strong> Interact with
                 Upfront AI like a colleague—ask questions, assign tasks, or
                 request updates in plain language.
               </li>
               <li>
-                <strong >2. Customizable Workflows:</strong> Describe your needs,
+                <strong className="font-extralight">2. Customizable Workflows:</strong> Describe your needs,
                 and Upfront AI will design and automate your workflows.
               </li>
               <li>
-                <strong >3. Smart Task Suggestions:</strong> Get clear, actionable
+                <strong className="font-extralight">3. Smart Task Suggestions:</strong> Get clear, actionable
                 steps for complex tasks with AI recommendations.
               </li>
               <li>
-                <strong >4. Meeting Summaries:</strong> Share notes or recordings,
+                <strong className="font-extralight">4. Meeting Summaries:</strong> Share notes or recordings,
                 and the AI generates concise summaries and action items.
               </li>
               <li>
-                <strong >5. Knowledge Hub:</strong> Access all project documents and
+                <strong className="font-extralight">5. Knowledge Hub:</strong> Access all project documents and
                 conversations in one place with smart search.
               </li>
               <li>
-                <strong >6. Multilingual Support:</strong> Collaborate globally with
+                <strong className="font-extralight">6. Multilingual Support:</strong> Collaborate globally with
                 support for over 20 languages.
               </li>
             </ol>
