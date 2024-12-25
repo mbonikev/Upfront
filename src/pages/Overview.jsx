@@ -153,7 +153,8 @@ function Projects() {
           </h1>
         </div>
         {fetchingProjects ? (
-          <></>
+          <>
+          </>
         ) : myProjects.length > 0 ? (
           <>
             {/* recent projects */}
