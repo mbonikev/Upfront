@@ -499,7 +499,20 @@ function Projects() {
                               }}
                             ></div>
                           </div>
-                          <h1 className="text-sm">100%</h1>
+                          <h1 className="text-sm">
+                            {Math.round(
+                              (allTasks.filter(
+                                (task) =>
+                                  task.projectId === project._id &&
+                                  task.curentStatus === "completed"
+                              ).length /
+                                allTasks.filter(
+                                  (task) => task.projectId === project._id
+                                ).length) *
+                                100
+                            ) || 0}
+                            %
+                          </h1>
                         </div>
                         <div className="w-full flex items-end justify-between">
                           <div className="w-full flex items-start justify-start flex-col gap-2">
