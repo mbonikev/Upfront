@@ -152,7 +152,7 @@ function Projects() {
           </h1>
         </div>
         {/* recent visited projects */}
-        <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto">
+        <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-5 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto">
           <h1 className="text-dark-body dark:text-[#b8b8b8] font-light bg-red-300 w-full text-sm">Recently visited</h1>
           {/* Left Button */}
           {canScrollLeft && (
