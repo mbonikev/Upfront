@@ -195,7 +195,7 @@ function Projects() {
                     className="w-[150px] min-w-[150px] h-[140px] rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
                   >
                     {/* banner */}
-                    <div className="w-full h-[50px] bg-stone-200 dark:bg-[#282828] relative">
+                    <div className="w-full h-[40px] bg-stone-200 dark:bg-[#282828] relative">
                       <div className="h-[40px] w-[40px] min-w-[40px] rounded-full bg-white dark:bg-[#303030] text-text-color dark:text-[#979797] aspect-square translate-y-8 translate-x-3 ring-2 ring-white dark:ring-[#202020] dark:ring flex items-center justify-center text-xl">
                         <LuHash />
                       </div>
