@@ -145,7 +145,7 @@ function Projects() {
       <div
         className={`w-auto h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
       >
-        <div className="relative w-full flex-1 bg-red-200 min-h-[50px] max-w-[800px] mx-auto px-7 max-xl:px-0 flex items-start justify-start overflow-x-auto hidden_scrollbar">
+        <div className="relative w-full flex-1 bg-red-200 min-h-[50px] max-w-[800px] mx-auto px-7 max-xl:px-0 flex items-start justify-start hidden_scrollbar">
           {/* Left Button */}
           {canScrollLeft && (
             <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white via-white to-transparent z-20 flex items-center justify-start">
@@ -172,7 +172,7 @@ function Projects() {
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className={` w-full flex-1 h-fit bg-red-200 flex gap-5 `}
+            className={` w-full flex-1 h-fit bg-red-200 flex overflow-x-auto gap-5 `}
           >
             {[...Array(25)].map((space, index) => (
               <button
