@@ -136,12 +136,12 @@ function Projects() {
           },
         }}
       />
-      {/* <Sidebar
+      <Sidebar
         username={username}
         userEmail={userEmail}
         w1={w1}
         setW1={setW1}
-      /> */}
+      />
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
       >
@@ -172,7 +172,7 @@ function Projects() {
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className={`w-full flex-1 h-fit bg-red-200 flex items-center justify-start overflow-auto gap-5 py-6`}
+            className={`w-full flex-1 h-fit bg-stone-50 flex items-center justify-start overflow-auto gap-5 py-6`}
           >
             {[...Array(40)].map((space, index) => (
               <div className="w-[100px] min-w-[100px] h-[50px] bg-orange-500">{index}</div>
