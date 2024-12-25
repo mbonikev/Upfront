@@ -200,7 +200,7 @@ function Projects() {
                         <LuHash />
                       </div>
                     </div>
-                    <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full min-h-fit bg-red-200 px-3 pt-[28px] line-clamp-2 text-sm">
+                    <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full min-h-fit bg-red-200 px-3 pt-[29px] line-clamp-2 text-sm">
                       {project.name}
                     </h1>
                     <div className="flex-1 bg-red-700 w-full flex items-end justify-start gap-1">
