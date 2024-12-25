@@ -82,7 +82,7 @@ function UpfrontAi() {
       />
       <Sidebar username={username} userEmail={userEmail} />
       <div
-        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color dark:text-[#e2e2e2] bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-center justify-start flex-col px-8 py-20 max-lg:py-8`}
+        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color dark:text-[#e2e2e2] bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 flex items-center justify-start flex-col px-8 py-20 max-lg:py-8`}
       >
         <div className="w-full max-w-[900px] mx-auto h-full">
           {/* title */}
