@@ -174,7 +174,7 @@ function Projects() {
             onScroll={handleScroll}
             className={`w-full max-w-[400px] flex-1 h-fit bg-red-200 flex items-center justify-start overflow-auto gap-5 `}
           >
-            {[...Array(9)].map((space, index) => (
+            {[...Array(29)].map((space, index) => (
               <div className="w-[100px] h-[50px] bg-orange-500">{index}</div>
             ))}
           </div>
