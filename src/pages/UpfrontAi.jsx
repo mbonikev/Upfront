@@ -93,7 +93,7 @@ function UpfrontAi() {
         </h1>
         <br />
         <br />
-        <h4>Coming soon..</h4>
+        <h4 className="w-full text-sm bg-[#2c2c2c] py-4">Coming soon..</h4>
         <br />
         <br />
         <div class="flex flex-col gap-2 w-full max-w-[700px] mx-auto">
