@@ -356,8 +356,8 @@ function Projects() {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-end justify-end flex-col gap-2">
-                        <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
-                        <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                        <div className="group z-10 relative w-4 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                        <div className="group z-10 relative w-7 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                       </div>
                       <div className="flex items-center">
                         <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
