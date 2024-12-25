@@ -346,7 +346,7 @@ function Projects() {
                     {/* icon */}
                     <div className="group z-10 relative w-8 h-8 min-w-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
                     {/* title */}
-                    <div className="group z-10 relative w-full h-[15px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                    <div className="group z-10 relative w-full h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     {/* desc */}
                     <div className="group z-10 relative w-1/3 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     {/* progress */}
