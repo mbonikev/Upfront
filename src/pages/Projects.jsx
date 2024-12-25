@@ -315,8 +315,8 @@ function Projects() {
         {/* Projects section */}
         <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col">
           <div className="w-full h-fit flex items-end justify-between">
-            {!fetchingProjects ? (
-              <div className="flex items-center justify-start gap-1">
+            {fetchingProjects ? (
+              <div className="flex items-center justify-start gap-2">
                 <div className="group z-10 relative w-16 h-[10px] animate-smooth-pulse rounded-2xl dark:bg-[#313131] bg-stone-200 my-1"></div>
                 <div className="group z-10 relative w-16 h-[10px] animate-smooth-pulse rounded-2xl dark:bg-[#313131] bg-stone-200 my-1"></div>
               </div>
