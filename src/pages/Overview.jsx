@@ -63,6 +63,7 @@ function Projects() {
         if (error.response.status == 401) {
           // handleLogout();
         }
+        setFetchingProjects(false);
       }
     };
     getmyProjects();
