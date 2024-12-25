@@ -9,6 +9,7 @@ import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { LuChevronLeft, LuChevronRight, LuHash } from "react-icons/lu";
+import Loader from "../components/Loader";
 
 function Projects() {
   const { workspaceId } = useParams();
@@ -153,8 +154,7 @@ function Projects() {
           </h1>
         </div>
         {fetchingProjects ? (
-          <>
-          </>
+          <Loader />
         ) : myProjects.length > 0 ? (
           <>
             {/* recent projects */}
