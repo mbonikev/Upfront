@@ -200,7 +200,7 @@ function Projects() {
         ) : (
           <>
             <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
-              No recent activity
+              You have no recent activity
             </h1>
           </>
         )}
