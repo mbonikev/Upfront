@@ -154,7 +154,7 @@ function Projects() {
           </h1>
         </div>
         {fetchingProjects ? (
-          <div className="w-full h-fit max-w-[900px] mx-auto p-12">
+          <div className="w-full h-fit max-w-[900px] mx-auto p-12 flex items-center justify-center">
             <Loader />
           </div>
         ) : myProjects.length > 0 ? (
