@@ -207,7 +207,7 @@ function Projects() {
                       {project.collaborations.map((collab, index) => (
                         <h1 key={index} className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs">
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full dark:bg-[#424242] text-[#b8b8b8] capitalize font-semibold">{collab.charAt(0)}</span>
-                          <span></span>
+                          <span className="text-sm"></span>
                         </h1>
                       ))}
                     </div>
