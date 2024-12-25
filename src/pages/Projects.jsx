@@ -335,7 +335,7 @@ function Projects() {
             )}
           </div>
           {/* <span className='w-full h-[1px] bg-border-line-color/50 flex mt-2 '></span> */}
-          {!fetchingProjects ? (
+          {fetchingProjects ? (
             <>
               <div className="grid grid-cols-4 2xl:grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-3 pt-4 relative">
                 {[...Array(3)].map((_, index) => (
@@ -360,9 +360,9 @@ function Projects() {
                         <div className="group z-10 relative w-7 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                       </div>
                       <div className="flex items-center">
-                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
-                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
-                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#232323]"></div>
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#232323] ml-[-5px]"></div>
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#232323] ml-[-5px]"></div>
                       </div>
                     </div>
                   </div>
