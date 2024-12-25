@@ -178,7 +178,7 @@ function Projects() {
               <button
                 key={index}
                 // onClick={() => handleChooseSpace(space.type)}
-                className={` outline-none min-w-fit w-fit h-fit relative`}
+                className={` outline-none w-full h-fit relative`}
               >
                 <div className="group w-full h-full flex flex-col justify-center items-center gap-2 relative cursor-pointer pb-2">
                   <div className="text-xl">icon</div>
