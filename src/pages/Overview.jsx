@@ -136,12 +136,12 @@ function Projects() {
           },
         }}
       />
-      <Sidebar
+      {/* <Sidebar
         username={username}
         userEmail={userEmail}
         w1={w1}
         setW1={setW1}
-      />
+      /> */}
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start p-1`}
       >
