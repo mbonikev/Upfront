@@ -226,7 +226,7 @@ function Projects() {
                       ) : (
                         <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
-                            {project.collaborations.length}
+                            9{project.collaborations.length}
                           </span>
                           <span className="text-xs opacity-85">2d ago</span>
                         </h1>
