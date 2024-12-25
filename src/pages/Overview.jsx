@@ -206,7 +206,7 @@ function Projects() {
                     <div className="flex-1 w-full flex items-end justify-start gap-1">
                       {project.collaborations.map((collab, index) => (
                         <h1 key={index} className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-3 mt-[28px] line-clamp-2 text-sm">
-                          <span></span>
+                          <span>{collab.charAt(0)}</span>
                         </h1>
                       ))}
                     </div>
