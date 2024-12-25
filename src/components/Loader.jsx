@@ -1,4 +1,5 @@
 import React from "react";
+import logoSvg from "../assets/logo.svg";
 
 function Loader() {
   return (
