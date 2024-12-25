@@ -145,7 +145,7 @@ function Projects() {
         setW1={setW1}
       />
       <div
-        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-stone-50 dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
+        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
       >
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
@@ -154,17 +154,19 @@ function Projects() {
           </h1>
         </div>
         {fetchingProjects ? (
-          <Loader />
+          <div className="w-full h-fit max-w-[900px] mx-auto p-12">
+            <Loader />
+          </div>
         ) : myProjects.length > 0 ? (
           <>
             {/* recent projects */}
             <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
               Recently Created
             </h1>
-            <div className="relative w-full bg-stone-50 dark:bg-dark-body min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
+            <div className="relative w-full bg-white dark:bg-dark-body min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
               {/* Left Button */}
               {canScrollLeft && (
-                <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-stone-50 dark:from-dark-body via-stone-50 dark:via-dark-body to-transparent z-20 flex items-center justify-start">
+                <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from--white dark:from-dark-body via--white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
                   <button
                     onClick={scrollLeft}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-[#b8b8b8] dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
@@ -175,7 +177,7 @@ function Projects() {
               )}
               {/* Right Button */}
               {canScrollRight && (
-                <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-stone-50 dark:from-dark-body via-stone-50 dark:via-dark-body to-transparent z-20 flex items-center justify-end">
+                <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from--white dark:from-dark-body via--white dark:via-dark-body to-transparent z-20 flex items-center justify-end">
                   <button
                     onClick={scrollRight}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white
@@ -190,11 +192,12 @@ function Projects() {
               <div
                 ref={contentRef}
                 onScroll={handleScroll}
-                className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-3 py-2 px-1`}
+                className={`w-full flex-1 h-fit bg-white dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-3 py-2 px-1`}
               >
                 {myProjects.map((project, index) => (
                   <Link
                     to={`/project/${project.workspace_name}/${project._id}`}
+                    state={{ workspace: project.workspace }}
                     key={index}
                     className="w-[150px] min-w-[150px] h-[140px] flex items-start justify-start flex-col rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
                   >
