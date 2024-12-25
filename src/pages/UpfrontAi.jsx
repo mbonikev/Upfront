@@ -47,7 +47,7 @@ function UpfrontAi() {
   }, []);
 
   return (
-    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative overflow-hidden">
+    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
       <Toaster
         position="top-center"
         toastOptions={{
