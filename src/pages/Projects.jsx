@@ -354,15 +354,16 @@ function Projects() {
                       <div className="group z-10 relative w-full h-[6px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                       <div className="group z-10 relative w-5 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     </div>
-                    <div className="flex items-center justify-between "></div>
-                    <div className="flex items-center">
-                      <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
-                      <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
-                      <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
-                    </div>
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
-                      <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424]"></div>
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
+                        <div className="group z-10 relative w-auto h-8 aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200 ring-4 ring-stone-100 dark:ring-[#242424] ml-[-5px]"></div>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                        <div className="group z-10 relative w-[20px] h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                      </div>
                     </div>
                   </div>
                 ))}
