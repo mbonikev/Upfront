@@ -95,7 +95,7 @@ function UpfrontAi() {
           <br />
           <h4>Coming soon..</h4>
           <br />
-          <div class="features">
+          <div class="flex flex-col gap-3">
             <h1 className="text-lg font-bold">🚀 Key Features</h1>
             <ol>
               <li>
