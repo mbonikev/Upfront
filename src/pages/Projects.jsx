@@ -451,7 +451,7 @@ function Projects() {
                           "ring-2 ring-main-color/60"
                         }`}
                       >
-                        <div className="h-[50px] text-2xl w-[50px] bg-stone-100 dark:bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full mb-2 flex items-center justify-center">
+                        <div className="h-[30px] text-2xl w-[30px] bg-stone-100 dark:bg-[#303030] text-[#979797] min-h-fit min-w-fit aspect-square rounded-full mb-2 flex items-center justify-center">
                           <LuHash />
                         </div>
                         <h1 className="font-medium text-sm leading-7 line-clamp-1">
