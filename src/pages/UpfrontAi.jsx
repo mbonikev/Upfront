@@ -88,7 +88,7 @@ function UpfrontAi() {
         <h1 className="text-5xl">
           Upfront <span className="font-Custom_1xb ">AI</span>
         </h1>
-        <h1 className="text-base mt-2 font-normal text-text-color/70     dark:text-[#e2e2e2]/70 ">
+        <h1 className="text-base mt-2 font-normal text-text-color/70 dark:text-[#e2e2e2]/70 ">
           Your Intelligent Project Assistant
         </h1>
       </div>
