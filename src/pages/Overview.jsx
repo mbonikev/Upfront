@@ -172,7 +172,7 @@ function Projects() {
           <div
             ref={contentRef}
             onScroll={handleScroll}
-            className={`w-full max-w-full flex-1 h-fit bg-red-200 flex gap-5 `}
+            className={`w-full max-w-full flex-1 h-fit bg-red-200 flex items-center justify-start overflow-x-auto gap-5 `}
           >
             {[...Array(9)].map((space, index) => (
               <button
