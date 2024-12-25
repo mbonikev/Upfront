@@ -351,7 +351,7 @@ function Projects() {
                     <div className="group z-10 relative w-1/3 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     {/* progress */}
                     <div className="flex items-end justify-end flex-col gap-2">
-                      <div className="group z-10 relative w-full h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
+                      <div className="group z-10 relative w-full h-[6px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                       <div className="group z-10 relative w-5 h-[10px] rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
                     </div>
                     <div className="flex items-center">
