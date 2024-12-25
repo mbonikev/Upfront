@@ -185,7 +185,7 @@ function Projects() {
             className={`w-full flex-1 h-fit bg-stone-50 dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar gap-5 py-2`}
           >
             {[...Array(40)].map((space, index) => (
-              <div className="w-[100px] min-w-[100px] h-[100px] bg-white">
+              <div className="w-[100px] min-w-[100px] h-[100px] bg-white dark:bg-[#2c2c2c]">
                 {index}
               </div>
             ))}
