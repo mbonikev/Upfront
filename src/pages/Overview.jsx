@@ -165,7 +165,7 @@ function Projects() {
             <div className="prevSpace w-[80px] h-full absolute top-0 right-5 max-xl:right-0 bg-gradient-to-l max-xl:pr-2 from-stone-50 dark:from-dark-body via-stone-50 dark:via-dark-body to-transparent z-20 flex items-center justify-end">
               <button
                 onClick={scrollRight}
-                className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 dark:bg-[#383838] dark:text-[#b8b8b8] dark:ring-[#202020] dark:hover:ring-[#232323] flex items-center justify-center rounded-full"
+                className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 dark:bg-[#383838] dark:text-[#b8b8b8] dark:ring-[#202020] dark:hover:ring-[#525252] flex items-center justify-center rounded-full"
               >
                 <LuChevronRight className="text-xl" />
               </button>
