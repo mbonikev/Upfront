@@ -117,7 +117,7 @@ select {
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
-  animation: rotation .7s linear infinite;
+  animation: rotation 0.7s linear infinite;
 }
 
 @keyframes rotation {
@@ -127,4 +127,9 @@ select {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.hidden_scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
