@@ -192,7 +192,7 @@ function Projects() {
                   <Link
                     to={`/project/${project.workspace_name}/${project._id}`}
                     key={index}
-                    className="w-[150px] min-w-[150px] h-[160px] flex items-start justify-start flex-col rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
+                    className="w-[150px] min-w-[150px] h-[155px] flex items-start justify-start flex-col rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
                   >
                     {/* banner */}
                     <div className="w-full h-[45px] bg-stone-200 dark:bg-[#282828] relative">
@@ -207,6 +207,7 @@ function Projects() {
                       {project.collaborations.map((collab, index) => (
                         <h1 key={index} className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs">
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full dark:bg-[#424242] text-[#b8b8b8] capitalize font-semibold">{collab.charAt(0)}</span>
+                          <span></span>
                         </h1>
                       ))}
                     </div>
