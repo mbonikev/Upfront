@@ -183,7 +183,7 @@ function Projects() {
         name: "",
         desc: "",
         userEmail: userEmail,
-        workspace: workspaceId,
+        workspaceId: workspaceId,
         collaborations: userEmail,
       });
       navigate(`/project/${pageTitle}/${response.data.id}`, {
