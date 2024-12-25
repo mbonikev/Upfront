@@ -175,18 +175,7 @@ function Projects() {
             className={`w-full max-w-full flex-1 h-fit bg-red-200 flex items-center justify-start overflow-x-auto gap-5 `}
           >
             {[...Array(9)].map((space, index) => (
-              <button
-                key={index}
-                // onClick={() => handleChooseSpace(space.type)}
-                className={` outline-none w-fit h-fit relative`}
-              >
-                <div className="group w-fit h-full flex flex-col justify-center items-center gap-2 relative cursor-pointer pb-2">
-                  <div className="text-xl">icon</div>
-                  <h1 className="min-w-[60px] text-center text-sm tracking-tight leading-4 max-md:text-xs font-medium mb-0 whitespace-nowrap">
-                    type
-                  </h1>
-                </div>
-              </button>
+              <div className="w-[100px] h-[100px] bg-orange-500"></div>
             ))}
           </div>
         </div>
