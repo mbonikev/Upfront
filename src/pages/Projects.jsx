@@ -186,7 +186,7 @@ function Projects() {
         workspace: Imat,
         collaborations: userEmail,
       });
-      navigate(`/project/${w1}/${response.data.id}`, {
+      navigate(`/project/${pageTitle}/${response.data.id}`, {
         state: { workspace: response.data.workspace },
       });
     } catch (error) {
