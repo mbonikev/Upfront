@@ -240,12 +240,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     try {
       const response = await axios.post(`${apiUrl}/api/createProject`, {
         name: newWorkspaceName,
-        desc: "",
         userEmail: userEmail,
-        workspace: Imat,
-        collaborations: userEmail,
       });
-    } catch (error) {}
+    } catch (error) {
+      
+    }
   };
 
   // ctrl + s
