@@ -289,7 +289,7 @@ function Sidebar({
     navigator.clipboard
       .writeText(`https://upfront.onrender.com/#/workspaces/${id}`)
       .then(() => toast.success("Link copied"));
-    setMoreOpt1(false);
+    setMoreOpt1("");
   };
 
   // close on esc
