@@ -303,7 +303,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         {/* create workspace overlay */}
         {createWpsModal && (
           <div
-            onClick={handleHideSearch}
+            onClick={handleshowCreateWorkspaceModal}
             className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
               AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
             }`}
