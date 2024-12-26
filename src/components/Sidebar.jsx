@@ -71,7 +71,6 @@ function Sidebar({
 }) {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const [profileMenu, setProfileMenu] = useState(false);
-  const [logoutAnimate, setLogoutAnimate] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const [authing, setAuthing] = useState(false);
