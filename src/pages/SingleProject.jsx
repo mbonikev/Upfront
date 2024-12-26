@@ -139,7 +139,7 @@ function SingleProject() {
           setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board, index) => ({
-            id: prevBoards._id,
+            id: board._id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
