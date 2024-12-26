@@ -525,7 +525,7 @@ function Sidebar({
                 <form
                   key={index}
                   onSubmit={handleUpdateWorkSpace}
-                  className="relative group mb-10 "
+                  className="relative group "
                 >
                   <Link
                     to={`/workspaces/${space._id}`}
