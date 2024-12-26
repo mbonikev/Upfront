@@ -134,39 +134,46 @@ function SingleProject() {
       });
 
       // boards only
-      if (generateType === "Boards Only") {
-        setAiBoards(response.data.boards);
-        setBoards((prevBoards) => [
-          ...prevBoards,
-          ...response.data.boards.map((board, index) => ({
-            id: board._id,
-            name: board.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
-      }
-      else if(generateType === "Boards & Tasks") {
-        // setAiBoards(response.data.boards);
-        setBoards((prevBoards) => [
-          ...prevBoards,
-          ...response.data.boards.map((board) => ({
-            id: board.id,
-            name: board.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
+      switch (generateType) {
+        case "Boards Only":
+          setAiBoards(response.data.boards);
+          setBoards((prevBoards) => [
+            ...prevBoards,
+            ...response.data.boards.map((board) => ({
+              id: board._id,
+              name: board.name.replace(/\*\*/g, "").trim(),
+            })),
+          ]);
+          break;
 
-        setTasks((prevTasks) => [
-          ...(prevTasks || []),
-          ...(response.data.tasks || []).map((task) => ({
-            id: task.id,
-            name: task.name.trim(),
-            priority: task.priority,
-            assignedTo: task.assignedTo || [],
-            startingOn: task.startingOn,
-            due: task.due,
-            boardId: task.boardId,
-          })),
-        ]);
+        case "Boards & Tasks":
+          // setAiBoards(response.data.boards); // Uncomment if needed for both cases
+          setBoards((prevBoards) => [
+            ...prevBoards,
+            ...response.data.boards.map((board) => ({
+              id: board.id,
+              name: board.name.replace(/\*\*/g, "").trim(),
+            })),
+          ]);
+
+          setTasks((prevTasks) => [
+            ...(prevTasks || []),
+            ...(response.data.tasks || []).map((task) => ({
+              id: task.id,
+              name: task.name.trim(),
+              priority: task.priority,
+              assignedTo: task.assignedTo || [],
+              startingOn: task.startingOn,
+              due: task.due,
+              boardId: task.boardId,
+            })),
+          ]);
+          break;
+
+        default:
+          console.error(`Unknown generateType: ${generateType}`);
       }
+
       setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
