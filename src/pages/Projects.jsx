@@ -84,7 +84,7 @@ function Projects() {
         const response = await axios.get(`${apiUrl}/api/getthisworkspace`, {
           params: { userEmail, workspaceId },
         });
-        console.log(response.data);
+        setCurrentWorkspace(response.data);
       } catch (error) {
         if (error.response.status === 400 || error.response.status === 401) {
           navigate("/");
@@ -269,7 +269,11 @@ function Projects() {
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-[#b8b8b8]">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-              <BreadCrumb name={pageTitle} status={"on"} link={`/workspaces/${workspaceId}`} />
+              <BreadCrumb
+                name={pageTitle}
+                status={"on"}
+                link={`/workspaces/${workspaceId}`}
+              />
             </div>
           </div>
           <div className="flex items-center justify-end gap-0">
