@@ -36,7 +36,7 @@ import {
   LuWorkflow,
   LuX,
 } from "react-icons/lu";
-import { BsFolder, BsFolder2Open, BsLayoutSidebar } from "react-icons/bs";
+import { BsFolder, BsFolder2Open, BsFolderFill, BsLayoutSidebar } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RiLoader5Fill, RiUserSharedLine } from "react-icons/ri";
 import axios from "axios";
@@ -538,7 +538,7 @@ function Sidebar({
                       `}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
-                        <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585]" />
+                        <BsFolderFill className="text-xl text-text-color/50 dark:text-[#858585]" />
                       ) : (
                         <BsFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
                       )}
