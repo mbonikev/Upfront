@@ -393,7 +393,7 @@ function Sidebar({
         )}
         <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
           {/* 1 */}
-          <div className="w-full h-fit flex items-center p-2 sticky top-0 bg-white dark:bg-[#202020] z-10 justify-between">
+          <div className="w-full h-fit flex items-center p-2 sticky top-0 bg-white dark:bg-[#202020] z-20 justify-between">
             <div className="w-full h-fit">
               <button
                 onClick={showPMenu}
@@ -653,7 +653,7 @@ function Sidebar({
             )}
           </div>
           {/* 3 */}
-          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 bg-white dark:bg-[#202020] z-10">
+          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 z-20 bg-white dark:bg-[#202020]">
             {/* shadow */}
             <div className="w-full h-[40px] absolute top-[-37px] left-0 bg-gradient-to-t from-white via-white dark:via-[#202020] dark:from-[#202020] to-transparent"></div>
             <button
