@@ -263,6 +263,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
           handleCancel();
         }
         setProfileMenu(false);
+        handleHideCreateWps()
       }
     };
     window.addEventListener("keydown", handleKeyDown);
