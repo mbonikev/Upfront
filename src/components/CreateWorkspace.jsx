@@ -35,7 +35,7 @@ function CreateWorkspace({hide}) {
               <RiLoader5Fill className="text-xl animate-spinLoader" />
             ) : (
               <>
-                <span className="text-sm tracking-tight">Add</span>
+                <span className="text-sm tracking-tight">Create</span>
               </>
             )}
           </button>
