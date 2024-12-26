@@ -270,7 +270,7 @@ function Projects() {
         <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-[#b8b8b8]">
-              <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
+              <BreadCrumb name={"Workspaces"} status={"on"} link={"/"} /> /
               <BreadCrumb name={pageTitle} status={"on"} link={`/workspaces/${workspaceId}`} />
             </div>
           </div>
