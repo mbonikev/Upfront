@@ -1241,7 +1241,7 @@ function SingleProject() {
                       </div>
                       {/* Due */}
                       <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
-                        {task.startingOn === task.due ? (
+                        {/* {task.startingOn === task.due ? (
                           <>
                             <span>{format(new Date(task.due), "MMM dd")}</span>
                           </>
@@ -1255,7 +1255,7 @@ function SingleProject() {
                             </span>
                             <span>{format(new Date(task.due), "MMM dd")}</span>
                           </>
-                        )}
+                        )} */}
                       </p>
                     </button>
                   ))}
