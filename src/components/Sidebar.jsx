@@ -252,12 +252,10 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   useEffect(() => {
     // update workspaces array
-    const getAllWps = async (e) => {
+    const getAllWps = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/workspaces`, {
-          userEmail: userEmail,
-        });
-        console.log(response);
+        const response = await axios.get(`${apiUrl}/api/workspaces?userEmail=${userEmail}`); 
+        setWorkspaces(response.data.workspaces); 
       } catch (error) {
         console.error(error);
       }
