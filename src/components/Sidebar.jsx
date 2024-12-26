@@ -200,7 +200,9 @@ function Sidebar({
   };
 
   // collapse
-  
+  const handleCollapseWps = () => {
+    
+  }
 
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
