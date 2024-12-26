@@ -27,13 +27,10 @@ function Projects() {
   const { username, userEmail } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("");
   const inputRef = useRef(null);
-  // spaces
-  const [w1, setW1] = useState(null);
   const [myProjects, setMyProjects] = useState([]);
   const [projectBoards, setProjectBoards] = useState([]);
   const [allTasks, setAllTasks] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
-  const dummyProjectNumber = ["", "", ""];
   const [myCollaborations, setMyCollatorations] = useState([]);
   const navigate = useNavigate();
   const [createNew, setCreateNew] = useState(false);
