@@ -426,7 +426,7 @@ function Sidebar({
             </button>
           </div>
           {/* 2 */}
-          <div className="flex-1 flex flex-col gap-[3px] px-2 pb-4">
+          <div className="flex-1 flex flex-col gap-[3px] px-2 pb-8">
             <Link
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
