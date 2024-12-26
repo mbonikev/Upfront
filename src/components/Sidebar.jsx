@@ -538,9 +538,9 @@ function Sidebar({
                       }`}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
-                        <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585] p-[1px]" />
+                        <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585] p-[1px] stroke-[1px]" />
                       ) : (
-                        <BsFolder className="text-xl text-text-color/50 dark:text-[#858585] p-[1px]" />
+                        <BsFolder className="text-xl text-text-color/50 dark:text-[#858585] p-[1px] stroke-[1px]" />
                       )}
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
