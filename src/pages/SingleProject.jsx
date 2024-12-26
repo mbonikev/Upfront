@@ -136,7 +136,7 @@ function SingleProject() {
       // boards only
       if (generateType === "Boards Only") {
         setAiBoards(response.data.boards);
-          setBoards((prevBoards) => [
+        setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board, index) => ({
             id: board._id,
@@ -146,17 +146,27 @@ function SingleProject() {
       }
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        console.log(response.data.boards);
-        console.log(response.data.tasks);
-        setAiBoards(response.data.boards);
+        // setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
-          ...response.data.boards.map((board, index) => ({
-            id: prevBoards.length + index,
+          ...response.data.boards.map((board) => ({
+            id: board.id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
-        setTasks((prevTasks) => [...prevTasks, ...response.data.tasks]);
+
+        setTasks((prevTasks) => [
+          ...prevTasks,
+          ...response.data.tasks.map((task) => ({
+            id: task.id,
+            name: task.name.trim(),
+            priority: task.priority,
+            assignedTo: task.assignedTo || [],
+            startingOn: task.startingOn,
+            due: task.due,
+            boardId: task.boardId,
+          })),
+        ]);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
