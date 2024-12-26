@@ -666,6 +666,7 @@ function SingleProject() {
               </label>
             </div>
             <button
+              disabled
               type="submit"
               className="group overflow-clip w-full h-[38px] mt-2 flex items-center justify-center gap-1 text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-300 bg-main-color text-white active:opacity-90 shadow-lg select-none"
             >
