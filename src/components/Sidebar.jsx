@@ -234,6 +234,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   const HandleSaveWps = (e) => {
     e.preventDefault()
+    console.log("working")
   }
 
   // ctrl + s
