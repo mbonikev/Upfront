@@ -147,6 +147,7 @@ function SingleProject() {
       // Boards & Tasks
       if(generateType === "Boards & Tasks") {
         console.log(response.data)
+        setAiBoards(response.data.boards);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
