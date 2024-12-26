@@ -1,5 +1,6 @@
 import React from "react";
 import { LuX } from "react-icons/lu";
+import { RiLoader5Fill } from "react-icons/ri";
 
 function CreateWorkspace({
   hide,
