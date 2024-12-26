@@ -115,7 +115,7 @@ function Sidebar({
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
-      setSaveOpt1(false);
+      setSaveOpt1("");
       setAuthing(false);
     } catch (err) {
       // console.error("Error updating data:", err);
