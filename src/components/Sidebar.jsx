@@ -105,7 +105,7 @@ function Sidebar({
       const updatedWorkspaces = storedWorkspaces.map((workspace) =>
         workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
       );
-      if (location.pathname === `/workspace/${spaceId}`) {
+      if (location.pathname === `/workspaces/${spaceId}`) {
         setPageTitle(spaceName);
       }
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
