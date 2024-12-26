@@ -92,8 +92,8 @@ function Sidebar({
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
-      try {
-        const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
+    try {
+      const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
         spaceName,
       });
@@ -105,10 +105,9 @@ function Sidebar({
       const updatedWorkspaces = storedWorkspaces.map((workspace) =>
         workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
       );
-      if(location.pathname === `/workspace/${spaceId}`){
-        
+      if (location.pathname === `/workspace/${spaceId}`) {
+        setPageTitle(spaceName);
       }
-      // setPageTitle(spaceName);
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
       // Update state
       setWorkspaces(updatedWorkspaces);
@@ -547,10 +546,7 @@ function Sidebar({
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
-                  <div
-                    key={index}
-                    className="relative group"
-                  >
+                  <div key={index} className="relative group">
                     <div
                       onClick={(event) => showMoreMenu(space, event)}
                       className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 z-10 peer ${
@@ -583,7 +579,10 @@ function Sidebar({
                     </Link>
                     {saveOpt1 === space._id && (
                       <>
-                        <form onSubmit={handleUpdateWorkSpace} className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
+                        <form
+                          onSubmit={handleUpdateWorkSpace}
+                          className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]"
+                        >
                           {authing ? (
                             <>
                               <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
