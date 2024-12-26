@@ -242,6 +242,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         name: newWorkspaceName,
         userEmail: userEmail,
       });
+      console.log(response.data)
     } catch (error) {
       console.error(error)
     }
