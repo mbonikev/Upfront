@@ -122,6 +122,10 @@ function SingleProject() {
   const [Aiboards, setAiBoards] = useState([]);
   const [generating, setGenerating] = useState(false);
 
+  useEffect(() => {
+    console.log(tasks);
+  }, [tasks]);
+
   const generateBoards = async (e) => {
     e.preventDefault();
     setGenerating(true);
@@ -167,8 +171,6 @@ function SingleProject() {
             boardId: task.boardId,
           })),
         ]);
-
-        console.log(tasks)
       }
       setGenerating(false);
       toast.success("Generated successfully.");
