@@ -224,6 +224,38 @@ function Projects() {
   };
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 2300,
+          style: {
+            background: "#252525da",
+            color: "#d4d4d4",
+            fontSize: "14px",
+            fontWeight: "500",
+            padding: "7px",
+            borderRadius: "12px",
+            backdropFilter: "blur(5px)",
+            border: "1px solid #32323230",
+          },
+          success: {
+            style: {
+              padding: "7px 7px 7px 12px",
+            },
+            iconTheme: {
+              primary: "#3b883e",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            style: {
+              padding: "7px 7px 7px 12px",
+            },
+          },
+        }}
+      />
       <Sidebar
         username={username}
         userEmail={userEmail}
@@ -231,40 +263,8 @@ function Projects() {
         setPageTitle={setPageTitle}
       />
       <div
-        className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 relative `}
+        className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
       >
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            // Define default options
-            className: "",
-            duration: 2300,
-            style: {
-              background: "#252525da",
-              color: "#d4d4d4",
-              fontSize: "14px",
-              fontWeight: "500",
-              padding: "7px",
-              borderRadius: "12px",
-              backdropFilter: "blur(5px)",
-              border: "1px solid #32323230",
-            },
-            success: {
-              style: {
-                padding: "7px 7px 7px 12px",
-              },
-              iconTheme: {
-                primary: "#3b883e",
-                secondary: "#fff",
-              },
-            },
-            error: {
-              style: {
-                padding: "7px 7px 7px 12px",
-              },
-            },
-          }}
-        />
         <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-[#b8b8b8]">
