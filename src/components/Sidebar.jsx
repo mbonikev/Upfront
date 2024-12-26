@@ -505,7 +505,7 @@ function Sidebar({
               <span className="flex-1">Workspaces</span>
               <button
                 onClick={handleCreateWps}
-                className="flex items-center justify-center text-lg cursor-pointer hover:text-text-color dark:hover:text-[#b8b8b8] rounded-md h-[22px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75"
+                className="flex items-center justify-center text-lg cursor-pointer hover:text-text-color dark:hover:text-[#b8b8b8] rounded-md h-[22px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75 px-1"
               >
                 <LuPlus />
               </button>
