@@ -560,7 +560,7 @@ function SingleProject() {
   };
 
   const PromptTypes = ["Boards Only", "Boards & Tasks"];
-  if (tasks.length === 0) return <div></div>;
+
   return (
     <>
       <Toaster
