@@ -954,7 +954,7 @@ function SingleProject() {
                 value={projectTitle}
                 onChange={handleInput1Change}
                 placeholder="Project Name "
-                className="text-3xl font-extrabold w-full max-w-[700px] bg-red-300 placeholder:text-text-color/70 resize-none bg-white dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
+                className="text-3xl font-extrabold w-full max-w-[700px] placeholder:text-text-color/70 resize-none bg-white dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
               />
               <textarea
                 type="text"
