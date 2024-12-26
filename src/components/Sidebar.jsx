@@ -634,11 +634,11 @@ function Sidebar({
                             className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             {deletingWps ? (
+                              <></>
+                            ) : (
                               <>
                                 <LuTrash2 className="text-base min-w-fit" />
                               </>
-                            ) : (
-                              <></>
                             )}
                             <p className="line-clamp-1">Move to Trash</p>
                           </button>
