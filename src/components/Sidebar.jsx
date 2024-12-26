@@ -210,8 +210,11 @@ function Sidebar({
       if (location.pathname === `/workspaces/${id}`) {
         navigate("/", { replace: true });
       }
+      setDeletingWps(false);
+      setMoreOpt1("");
     } catch (error) {
       console.log(error);
+      setDeletingWps(true);
     }
   };
 
