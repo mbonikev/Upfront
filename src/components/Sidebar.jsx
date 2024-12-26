@@ -109,7 +109,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
       setSaveOpt1(false);
       setAuthing(false);
     } catch (err) {
-      console.error("Error updating data:", err);
+      // console.error("Error updating data:", err);
       setAuthing(false);
     }
   };
