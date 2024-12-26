@@ -345,7 +345,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
               }
               `}
           >
-            <CreateWorkspace hide={handleHideCreateWps} create={HandleSaveWps} setNewWorkspaceName={setNewWorkspaceName} />
+            <CreateWorkspace hide={handleHideCreateWps} create={HandleSaveWps} newWorkspaceName={newWorkspaceName} setNewWorkspaceName={setNewWorkspaceName} />
           </div>
         )}
         {/* dropdown */}
