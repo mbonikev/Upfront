@@ -600,6 +600,7 @@ function Sidebar({
                             <p className="line-clamp-1">Rename</p>
                           </button>
                           <button
+                          onClick={() => handleDeleteWorkspace(space._id)}
                             className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <LuTrash2 className="text-base min-w-fit" />
