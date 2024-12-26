@@ -14,6 +14,7 @@ import {
   LuCrown,
   LuFlag,
   LuFlagTriangleRight,
+  LuFolder,
   LuHash,
   LuHourglass,
   LuInfo,
@@ -536,7 +537,7 @@ function Sidebar({
                           : ""
                       }`}
                     >
-                      <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
+                      <LuFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
                       </p>
