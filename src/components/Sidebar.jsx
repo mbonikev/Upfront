@@ -75,7 +75,7 @@ function Sidebar({
   const location = useLocation();
   const navigate = useNavigate();
   const [authing, setAuthing] = useState(false);
-  const [moreOpt1, setMoreOpt1] = useState(false);
+  const [moreOpt1, setMoreOpt1] = useState("");
   const moreButtonRef = useRef(null);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [saveOpt1, setSaveOpt1] = useState(false);
