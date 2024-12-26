@@ -147,33 +147,30 @@ function SingleProject() {
         ]);
       }
 
-      console.log(response.data)
-      setBoards(boards)
-      setTasks(tasks)
 
       // Boards & Tasks
-      // if (generateType === "Boards & Tasks") {
-      //   setBoards((prevBoards) => [
-      //     ...prevBoards,
-      //     ...response.data.boards.map((board) => ({
-      //       id: board.id,
-      //       name: board.name.replace(/\*\*/g, "").trim(),
-      //     })),
-      //   ]);
+      if (generateType === "Boards & Tasks") {
+        setBoards((prevBoards) => [
+          ...prevBoards,
+          ...response.data.boards.map((board) => ({
+            id: board.id,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
 
-      //   setTasks((prevTasks) => [
-      //     ...prevTasks,
-      //     ...response.data.tasks.map((task) => ({
-      //       id: task.id,
-      //       name: task.name.trim(),
-      //       priority: task.priority,
-      //       assignedTo: task.assignedTo || [],
-      //       startingOn: task.startingOn,
-      //       due: task.due,
-      //       boardId: task.boardId,
-      //     })),
-      //   ]);
-      // }
+        setTasks((prevTasks) => [
+          ...prevTasks,
+          ...response.data.tasks.map((task) => ({
+            id: task.id,
+            name: task.name.trim(),
+            priority: task.priority,
+            assignedTo: task.assignedTo || [],
+            startingOn: task.startingOn,
+            due: task.due,
+            boardId: task.boardId,
+          })),
+        ]);
+      }
 
       setGenerating(false);
       toast.success("Generated successfully.");
