@@ -145,9 +145,15 @@ function SingleProject() {
         ]);
       }
       // Boards & Tasks
-      if(generateType === "Boards & Tasks") {
-        console.log(response.data)
+      if (generateType === "Boards & Tasks") {
         setAiBoards(response.data.boards);
+        setBoards((prevBoards) => [
+          ...prevBoards,
+          ...response.data.boards.map((board, index) => ({
+            id: prevBoards.length + index,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
