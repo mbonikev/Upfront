@@ -193,8 +193,12 @@ function Sidebar({
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
-    try {}
-    catch (error) {}
+    try {
+      const response = await axios.post(`${apiUrl}/api/createProject`, {
+        id,
+        userEmail: userEmail,
+      });
+    } catch (error) {}
   };
 
   // get collabs
