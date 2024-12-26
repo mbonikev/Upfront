@@ -495,7 +495,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
                         cascade={true}
                       >
                         <button
-                          onClick={handleLinkCopy}
+                          onClick={() => handleLinkCopy(space._id)}
                           className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                         >
                           <LuLink className="text-base min-w-fit" />
