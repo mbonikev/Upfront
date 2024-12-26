@@ -73,7 +73,6 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [saveOpt1, setSaveOpt1] = useState(false);
   const [saveOpt3, setSaveOpt3] = useState(false);
-  const [workspaces, setWorkspaces] = useState([]);
   const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
   const [spaceId, setSpaceId] = useState("");
