@@ -147,6 +147,7 @@ function SingleProject() {
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
         console.log(response.data.boards);
+        console.log(response.data.tasks);
         // setAiBoards(response.data.boards);
         // setBoards((prevBoards) => [
         //   ...prevBoards,
