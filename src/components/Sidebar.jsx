@@ -217,8 +217,8 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
-  const handlecreateWps = () => {
-
+  const handleCreateWps = () => {
+    
   } 
 
   // ctrl + s
