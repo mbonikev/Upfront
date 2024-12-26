@@ -146,21 +146,22 @@ function SingleProject() {
       }
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setAiBoards(response.data.boards);
-        setBoards((prevBoards) => [
-          ...prevBoards,
-          ...response.data.boards.map((board, index) => ({
-            id: prevBoards.length + index,
-            name: board.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
-        setTasks((prevTasks) => [
-          ...prevTasks,
-          ...response.data.tasks.map((task, index) => ({
-            id: prevTasks.length + index,
-            name: task.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
+        console.log(response.data.boards);
+        // setAiBoards(response.data.boards);
+        // setBoards((prevBoards) => [
+        //   ...prevBoards,
+        //   ...response.data.boards.map((board, index) => ({
+        //     id: prevBoards.length + index,
+        //     name: board.name.replace(/\*\*/g, "").trim(),
+        //   })),
+        // ]);
+        // setTasks((prevTasks) => [
+        //   ...prevTasks,
+        //   ...response.data.tasks.map((task, index) => ({
+        //     id: prevTasks.length + index,
+        //     name: task.name.replace(/\*\*/g, "").trim(),
+        //   })),
+        // ]);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
