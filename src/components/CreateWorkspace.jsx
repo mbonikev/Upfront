@@ -2,7 +2,7 @@ import React from 'react'
 
 function CreateWorkspace() {
   return (
-    <div>CreateWorkspace</div>
+    <div className='w-[300px]'></div>
   )
 }
 
