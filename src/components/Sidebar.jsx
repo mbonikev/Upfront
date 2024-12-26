@@ -297,7 +297,7 @@ function Sidebar({
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        if (moreOpt1 === true || saveOpt1 === true) {
+        if (moreOpt1 !== "" || saveOpt1 === true) {
           handleCancel();
         }
         setProfileMenu(false);
