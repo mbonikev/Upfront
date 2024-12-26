@@ -653,7 +653,7 @@ function Sidebar({
             )}
           </div>
           {/* 3 */}
-          <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px]">
+          <div className="w-full h-fit flex flex-col items-center justify-between gap-[3px] sticky bottom-0">
             <button
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 outline-none`}
             >
