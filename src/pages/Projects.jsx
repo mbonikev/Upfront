@@ -231,7 +231,7 @@ function Projects() {
         setPageTitle={setPageTitle}
       />
       <div
-        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 relative `}
+        className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 relative `}
       >
         <Toaster
           position="top-center"
