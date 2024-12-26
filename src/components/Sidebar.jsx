@@ -544,7 +544,7 @@ function Sidebar({
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
-                  <div
+                  <form
                     key={index}
                     onSubmit={handleUpdateWorkSpace}
                     className="relative group"
@@ -657,7 +657,7 @@ function Sidebar({
                         </Reveal>
                       </div>
                     )}
-                  </div>
+                  </form>
                 ))
               ) : (
                 <></>
