@@ -540,7 +540,7 @@ function Sidebar({
                       {location.pathname === `/workspaces/${space._id}` ? (
                         <LuFolder className="text-xl text-text-color/50 dark:text-[#858585] p-[1px]" />
                       ) : (
-                        <></>
+                        <LuFolder className="text-xl text-text-color/50 dark:text-[#858585] p-[1px]" />
                       )}
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
