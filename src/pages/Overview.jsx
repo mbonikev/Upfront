@@ -162,7 +162,7 @@ function Projects() {
             <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
               Recently Created
             </h1>
-            <div className="relative w-full bg-white dark:bg-dark-body min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
+            <div className="relative w-full min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
               {/* Left Button */}
               {canScrollLeft && (
                 <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
@@ -191,7 +191,7 @@ function Projects() {
               <div
                 ref={contentRef}
                 onScroll={handleScroll}
-                className={`w-full flex-1 h-fit bg-white dark:bg-dark-body flex items-center justify-start overflow-auto hidden_scrollbar overscroll-contain gap-3 py-2 px-1 transition`}
+                className={`w-full flex-1 h-fit flex items-center justify-start overflow-auto hidden_scrollbar overscroll-contain gap-3 py-2 px-1 transition`}
               >
                 {myProjects.map((project, index) => (
                   <Link
@@ -227,7 +227,7 @@ function Projects() {
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
                             {project.collaborations.length}
                           </span>
-                          <span className="text-xs opacity-85">{project.createdAt}</span>
+                          <span className="text-xs opacity-85"><TimeAgo date={project.createdAt}/></span>
                         </h1>
                       )}
                     </div>
