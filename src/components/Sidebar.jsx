@@ -120,12 +120,6 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     setProfileMenu(true);
   };
 
-  // getting space names
-  useEffect(() => {
-    const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
-    setWorkspaces(workspaces);
-  }, []);
-
   // show more
   const showMoreMenu = (space) => {
     setSpaceName(space.workspace_name);
