@@ -122,10 +122,6 @@ function SingleProject() {
   const [Aiboards, setAiBoards] = useState([]);
   const [generating, setGenerating] = useState(false);
 
-  useEffect(() => {
-    console.log(tasks);
-  }, [tasks]);
-
   const generateBoards = async (e) => {
     e.preventDefault();
     setGenerating(true);
