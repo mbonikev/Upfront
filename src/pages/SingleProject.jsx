@@ -150,7 +150,7 @@ function SingleProject() {
 
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setBoards((prevBoards) => [
+        setBoardsAi((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board) => ({
             id: board.id,
@@ -158,7 +158,7 @@ function SingleProject() {
           })),
         ]);
 
-        setTasks((prevTasks) => [
+        setTasksAi((prevTasks) => [
           ...prevTasks,
           ...response.data.tasks.map((task) => ({
             id: task.id,
