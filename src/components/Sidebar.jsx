@@ -170,6 +170,10 @@ function Sidebar({
     setSpaceName(pageTitle);
   };
 
+  const handleOpenInNewTab = () => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   // create new project
   const handleCreate = async () => {
     setCreateNew(true);
@@ -650,6 +654,7 @@ function Sidebar({
                           </button>
                           <div className="w-full h-[1px] bg-[#efefef] dark:bg-[#323232] my-1"></div>
                           <button
+                          onClick={() => handleOpenInNewTab(space._id)}
                             className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <PiArrowUpRightBold className="text-base min-w-fit" />
