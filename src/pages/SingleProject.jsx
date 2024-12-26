@@ -175,8 +175,6 @@ function SingleProject() {
       }
 
       // Log updated values after state update
-      console.log("Boards updated:", boardsAi);
-      console.log("Tasks updated:", tasksAi);
 
       setGenerating(false);
       toast.success("Generated successfully.");
@@ -185,6 +183,8 @@ function SingleProject() {
       toast.error(error.message);
     } finally {
       setGenerating(false);
+      console.log("Boards updated:", boardsAi);
+      console.log("Tasks updated:", tasksAi);
     }
   };
 
