@@ -4,6 +4,8 @@ const ProtectedRoutes = () => {
   const [user, setUser] = useState(null);
   const [username, setUserName] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
+  const [workspaces, setWorkspaces] = useState([]);
+
   useEffect(() => {
     const email = localStorage.getItem("upfront_user");
     const name = localStorage.getItem("upfront_user_name");
