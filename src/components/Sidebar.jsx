@@ -189,6 +189,11 @@ function Sidebar({
     }
   };
 
+  // delete workspace
+  const handleDeleteWorkspace = () => {
+
+  }
+
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
   const linkStyle =
