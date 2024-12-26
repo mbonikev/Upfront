@@ -183,7 +183,13 @@ function SingleProject() {
   };
 
   useEffect(() => {
-    
+    setBoards((prevBoards) => [
+      ...prevBoards,
+      ...response.data.boards.map((board) => ({
+        id: board.id,
+        name: board.name.replace(/\*\*/g, "").trim(),
+      })),
+    ]);
   },[])
 
   useEffect(() => {
