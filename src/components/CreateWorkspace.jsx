@@ -1,7 +1,7 @@
 import React from "react";
 import { LuX } from "react-icons/lu";
 
-function CreateWorkspace() {
+function CreateWorkspace({hide}) {
   return (
     <div className="w-[330px] flex flex-col gap-2">
       <div className="w-full flex items-center justify-between gap-1 py-2 px-3 border-b border-stone-200 dark:border-[#474747] text-sm">
