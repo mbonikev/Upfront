@@ -856,6 +856,7 @@ function SingleProject() {
             <div className="flex items-center justify-start gap-[2px] max-md:hidden text-sm text-text-color/70 dark:text-[#b8b8b8]">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
               <BreadCrumb
+                key={workspace}
                 name={workspacename}
                 status={"on"}
                 link={`/workspaces/${workspace}`}
