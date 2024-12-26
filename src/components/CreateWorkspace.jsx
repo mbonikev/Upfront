@@ -15,6 +15,7 @@ function CreateWorkspace() {
           <h1 className="font-normal text-sm">Workspace Name</h1>
           <input
             type="text"
+            autoFocus={true}
             className="w-full h-[30px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 transition bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
