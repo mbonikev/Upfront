@@ -555,7 +555,7 @@ function Sidebar({
                             </>
                           ) : (
                             <>
-                              <IoFolderOpen className="text-xl  min-w-fit" />
+                              <BsFolder2Open className="text-xl  min-w-fit" />
                             </>
                           )}
                           <input
