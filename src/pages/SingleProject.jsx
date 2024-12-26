@@ -139,22 +139,34 @@ function SingleProject() {
         setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board, index) => ({
-            id: prevBoards.length + index,
+            id: board._id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
       }
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setAiBoards(response.data.boards);
+        // setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
-          ...response.data.boards.map((board, index) => ({
-            id: prevBoards.length + index,
+          ...response.data.boards.map((board) => ({
+            id: board.id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
-        
+
+        setTasks((prevTasks) => [
+          ...prevTasks,
+          ...response.data.tasks.map((task) => ({
+            id: task.id,
+            name: task.name.trim(),
+            priority: task.priority,
+            assignedTo: task.assignedTo || [],
+            startingOn: task.startingOn,
+            due: task.due,
+            boardId: task.boardId,
+          })),
+        ]);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
@@ -1244,8 +1256,8 @@ function SingleProject() {
                       <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
                         {task.startingOn === task.due ? (
                           <>
-                            {/* <span>{format(new Date(task.due), "MMM dd")}</span> */}
-                            <span>{task.due}</span>
+                            <span>{format(new Date(task.due), "MMM dd")}</span>
+                            {/* <span>{task.due}</span> */}
                           </>
                         ) : (
                           <>
