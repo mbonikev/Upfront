@@ -257,6 +257,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         const response = await axios.get(`${apiUrl}/api/workspaces`, {
           params: { userEmail },
         });
+        localStorage.setItem(
+          "upfront_ws",
+          JSON.stringify(response.data.workspaces)
+        );
+        setWorkspaces(response.data.workspaces);
       } catch (error) {
         console.error(error);
       }
