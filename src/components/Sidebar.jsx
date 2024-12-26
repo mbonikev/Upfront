@@ -232,7 +232,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
-  const HandleSaveWps = () => {
+  const HandleSaveWps = (e) => {
     
   }
 
