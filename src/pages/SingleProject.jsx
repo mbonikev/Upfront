@@ -167,6 +167,8 @@ function SingleProject() {
             boardId: task.boardId,
           })),
         ]);
+
+        console.log(tasks)
       }
       setGenerating(false);
       toast.success("Generated successfully.");
