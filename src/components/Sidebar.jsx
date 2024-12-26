@@ -257,7 +257,6 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         const response = await axios.get(`${apiUrl}/api/workspaces`, {
           params: { userEmail },
         });
-        setWorkspaces(response.data.workspaces);
       } catch (error) {
         console.error(error);
       }
