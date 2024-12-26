@@ -85,6 +85,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   const [createWpsModal, setCreateWpsModal] = useState(false);
   const [AnimatecreateWpsModal, setAnimatecreateWpsModal] = useState(false);
+  const [newWorkspaceName, setNewWorkspaceName] = useState("")
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
