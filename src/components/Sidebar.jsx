@@ -580,7 +580,7 @@ function Sidebar({
                       <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
                     </div>
 
-                    {moreOpt1 && (
+                    {moreOpt1 === space._id && (
                       <div
                         style={{
                           top: menuPosition.top,
