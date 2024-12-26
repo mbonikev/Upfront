@@ -10,7 +10,7 @@ function CreateWorkspace() {
           <LuX />
         </button>
       </div>
-      <form className="flex-1 flex flex-col gap-3 p-2 ">
+      <form className="flex-1 flex flex-col gap-3 p-1 pb-3 ">
         <div className="flex flex-col gap-2 px-2">
           <h1 className="font-normal text-sm">Workspace Name</h1>
           <input
