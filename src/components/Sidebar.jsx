@@ -267,7 +267,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
       }
     };
 
-    getAllWps();
+    // getAllWps();
   }, []);
 
   // ctrl + s
