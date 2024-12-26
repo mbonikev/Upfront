@@ -257,7 +257,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         {/* overlay */}
         <div
           onClick={() => setProfileMenu(false)}
-          className={` top-0 left-0 w-full h-full z-20 bg-red-300 ${
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent backdrop-blur-[3px] ${
             profileMenu ? "fixed" : "hidden"
           }`}
         ></div>
