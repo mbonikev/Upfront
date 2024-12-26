@@ -580,7 +580,7 @@ function Sidebar({
                     </Link>
                     {saveOpt1 === space._id && (
                       <>
-                        <form className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
+                        <form onSubmit={handleUpdateWorkSpace} className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
                           {authing ? (
                             <>
                               <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
