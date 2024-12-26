@@ -133,20 +133,20 @@ function SingleProject() {
         generateType,
       });
 
-      // boards only
+      // Boards only
       if (generateType === "Boards Only") {
         setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
-          ...response.data.boards.map((board, index) => ({
+          ...response.data.boards.map((board) => ({
             id: board._id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
       }
+
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        // setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board) => ({
@@ -168,13 +168,12 @@ function SingleProject() {
           })),
         ]);
       }
-      setGenerating(false);
+
       toast.success("Generated successfully.");
     } catch (error) {
-      setGenerating(true);
       toast.error(error.message);
     } finally {
-      setGenerating(false);
+      setGenerating(false); // Ensure this is always executed when done
     }
   };
 
