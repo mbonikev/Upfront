@@ -106,6 +106,7 @@ function Projects() {
       }
     };
     const getmyProjects = async () => {
+      setFetchingProjects(true);
       try {
         const response = await axios.get(`${apiUrl}/api/getmyprojects`, {
           params: { email: userEmail, workspaceId },
@@ -114,6 +115,7 @@ function Projects() {
         setFetchingProjects(false);
       } catch (error) {
         // console.log(error)
+        setFetchingProjects(false);
         if (error.response.status == 401) {
           handleLogout();
         }
@@ -161,7 +163,7 @@ function Projects() {
     getmyTasks();
     fetchWorkspace();
     getme();
-  }, []);
+  }, [workspaceId]);
   // getting space names
   useEffect(() => {
     const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
