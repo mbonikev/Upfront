@@ -1,7 +1,12 @@
 import React from "react";
 import { LuX } from "react-icons/lu";
 
-function CreateWorkspace({ hide, create, newWorkspaceName, setNewWorkspaceName }) {
+function CreateWorkspace({
+  hide,
+  create,
+  newWorkspaceName,
+  setNewWorkspaceName,
+}) {
   return (
     <div className="w-[330px] flex flex-col gap-2">
       <div className="w-full flex items-center justify-between gap-1 py-2 px-3 border-b border-stone-200 dark:border-[#474747] text-sm">
@@ -24,6 +29,7 @@ function CreateWorkspace({ hide, create, newWorkspaceName, setNewWorkspaceName }
             autoFocus={true}
             required
             value={newWorkspaceName}
+            onChange={() => setNewWorkspaceName(e)}
             className="w-full h-[35px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
