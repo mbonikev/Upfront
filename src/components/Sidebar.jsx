@@ -78,7 +78,7 @@ function Sidebar({
   const [moreOpt1, setMoreOpt1] = useState("");
   const moreButtonRef = useRef(null);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
-  const [saveOpt1, setSaveOpt1] = useState(false);
+  const [saveOpt1, setSaveOpt1] = useState("");
   const [saveOpt3, setSaveOpt3] = useState(false);
   const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
