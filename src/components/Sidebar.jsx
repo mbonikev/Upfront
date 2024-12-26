@@ -162,7 +162,7 @@ function Sidebar({
 
   // rename workspace
   const renameWorkspace = () => {
-    setMoreOpt1(false);
+    setMoreOpt1("");
     setSaveOpt1(true);
   };
 
@@ -172,7 +172,7 @@ function Sidebar({
     setPageTitle(e.target.value);
   };
   const handleCancel = () => {
-    setMoreOpt1(false);
+    setMoreOpt1("");
     setSaveOpt1(false);
     setSpaceName(originalSpaceName);
     setPageTitle(originalSpaceName);
