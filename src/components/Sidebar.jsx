@@ -217,6 +217,10 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
+  const handlecreateWps = () => {
+    
+  } 
+
   // ctrl + s
   useEffect(() => {
     const handleKeyDown = (event) => {
