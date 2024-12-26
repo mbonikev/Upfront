@@ -362,6 +362,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
               create={HandleSaveWps}
               newWorkspaceName={newWorkspaceName}
               setNewWorkspaceName={setNewWorkspaceName}
+              creatinf={creatingWps}
             />
           </div>
         )}
