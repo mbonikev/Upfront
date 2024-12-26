@@ -324,7 +324,7 @@ function Sidebar({
         <div
           onClick={handleCancel}
           className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
-            moreOpt1 ? "fixed" : "hidden"
+            moreOpt1 !== "" ? "fixed" : "hidden"
           }`}
         ></div>
         {/* overlay more menu save */}
