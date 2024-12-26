@@ -262,6 +262,8 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         console.error(error);
       }
     };
+
+    getAllWps()
   }, []);
 
   // ctrl + s
