@@ -254,7 +254,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     // update workspaces array
     const getAllWps = async (e) => {
       try {
-        const response = await axios.post(`${apiUrl}/api/workspaces`, {
+        const response = await axios.get(`${apiUrl}/api/workspaces`, {
           userEmail: userEmail,
         });
         console.log(response.data);
