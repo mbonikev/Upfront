@@ -183,6 +183,10 @@ function SingleProject() {
   };
 
   useEffect(() => {
+    
+  },[])
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (event) => {
       setIsDarkMode(event.matches);
