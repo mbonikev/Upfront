@@ -125,7 +125,7 @@ function SingleProject() {
   useEffect(() => {
     console.log(boards)
     console.log(tasks)
-  },[])
+  },[boards, tasks])
 
   const generateBoards = async (e) => {
     e.preventDefault();
