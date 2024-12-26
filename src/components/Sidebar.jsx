@@ -88,7 +88,7 @@ function Sidebar({
   const [newWorkspaceName, setNewWorkspaceName] = useState("");
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
-  const [collapseWorkspaces, setCollapseWokspaces] = useState(false)
+  const [collapseWorkspaces, setCollapseWorkspaces] = useState(false)
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
