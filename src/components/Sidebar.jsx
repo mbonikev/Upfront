@@ -217,6 +217,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
+  // ctrl + s
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key.toLowerCase() === "s" && event.altKey) {
