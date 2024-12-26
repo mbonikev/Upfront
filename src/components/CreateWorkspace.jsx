@@ -23,7 +23,7 @@ function CreateWorkspace({
         </button>
       </div>
       <form onSubmit={create} className="flex-1 flex flex-col gap-3 p-1 pb-3 ">
-        <div className="flex flex-col gap-2 px-2">
+        <div className="flex flex-col gap-1 px-2">
           <h1 className="font-normal text-sm">Workspace Name</h1>
           <input
             type="text"
@@ -32,18 +32,18 @@ function CreateWorkspace({
             required
             value={newWorkspaceName}
             onChange={(e) => setNewWorkspaceName(e.target.value)}
-            className="w-full h-[35px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
+            className="w-full h-[33px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
         <div className="flex justify-end items-center gap-2 px-2">
           <div
+            onClick={hide}
             title="Cancel"
             className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#424242] dark:text-body-color/90 font-semibold px-3 rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
           >
             <span className="text-sm tracking-tight">Cancel</span>
           </div>
           <button
-          onClick={hide}
             type="submit"
             title="Create a new Task"
             className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
