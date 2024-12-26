@@ -533,7 +533,7 @@ function Sidebar({
                         {space.workspace_name}
                       </p>
                     </Link>
-                    {saveOpt1 && (
+                    {saveOpt1 === space._id && (
                       <>
                         <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
                           {authing ? (
