@@ -82,7 +82,6 @@ function Sidebar({
   const [spaceName, setSpaceName] = useState("");
   const [spaceId, setSpaceId] = useState("");
   const [createNew, setCreateNew] = useState(false);
-  const [myCollaborations, setMyCollatorations] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   const [createWpsModal, setCreateWpsModal] = useState(false);
