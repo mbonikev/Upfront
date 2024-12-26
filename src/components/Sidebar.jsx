@@ -89,7 +89,8 @@ function Sidebar({
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false)
-  // workspace1
+  
+  // update workspace
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
@@ -197,6 +198,8 @@ function Sidebar({
       // console.log(error.response);
     }
   };
+
+  
 
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
