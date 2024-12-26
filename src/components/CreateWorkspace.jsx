@@ -5,6 +5,7 @@ import { RiLoader5Fill } from "react-icons/ri";
 function CreateWorkspace({
   hide,
   create,
+  creating,
   newWorkspaceName,
   setNewWorkspaceName,
 }) {
