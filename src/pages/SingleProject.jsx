@@ -150,26 +150,8 @@ function SingleProject() {
 
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setBoardsAi((prevBoards) => [
-          ...prevBoards,
-          ...response.data.boards.map((board) => ({
-            id: board.id,
-            name: board.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
-
-        setTasksAi((prevTasks) => [
-          ...prevTasks,
-          ...response.data.tasks.map((task) => ({
-            id: task.id,
-            name: task.name.trim(),
-            priority: task.priority,
-            assignedTo: task.assignedTo || [],
-            startingOn: task.startingOn,
-            due: task.due,
-            boardId: task.boardId,
-          })),
-        ]);
+        setBoardsAi(response.data.boards);
+        setTasksAi(response.data.tasks);
       }
 
       setGenerating(false);
@@ -188,6 +170,18 @@ function SingleProject() {
       ...response.data.boards.map((board) => ({
         id: board.id,
         name: board.name.replace(/\*\*/g, "").trim(),
+      })),
+    ]);
+    setTasksAi((prevTasks) => [
+      ...prevTasks,
+      ...response.data.tasks.map((task) => ({
+        id: task.id,
+        name: task.name.trim(),
+        priority: task.priority,
+        assignedTo: task.assignedTo || [],
+        startingOn: task.startingOn,
+        due: task.due,
+        boardId: task.boardId,
       })),
     ]);
   },[])
