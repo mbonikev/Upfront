@@ -281,13 +281,13 @@ function Projects() {
             </div>
           </div>
           <div className="flex items-center justify-end gap-0">
-            <button
+            {/* <button
               title="Trash"
               className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-3 gap-1 text-text-color/70 dark:text-[#b8b8b8]/70 hover:text-text-color dark:hover:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] rounded-lg inline-flex items-center"
             >
               <LuTrash2 className="text-lg" />
               <span className="text-sm font-medium tracking-tight">Trash</span>
-            </button>
+            </button> */}
             {/* <button title='create a new project' className="bg-gradient-to-tr from-main-color/60 to-main-color-hover hover:bg-main-color-hover transition text-white text-xs font-semibold py-2 px-4 gap-1 rounded-lg inline-flex items-center">
               <FaPlus />
               <span className='text-xs font-medium'>New project</span>
