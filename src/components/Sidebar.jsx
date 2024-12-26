@@ -86,7 +86,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const [createWpsModal, setCreateWpsModal] = useState(false);
   const [AnimatecreateWpsModal, setAnimatecreateWpsModal] = useState(false);
   const [newWorkspaceName, setNewWorkspaceName] = useState("")
-  const [creatingWps, setCreatingWps] = useState("")
+  const [creatingWps, setCreatingWps] = useState(true)
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
@@ -236,7 +236,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   const HandleSaveWps = (e) => {
     e.preventDefault()
-    setCreatingWps(ture)
+    setCreatingWps(true)
   }
 
   // ctrl + s
