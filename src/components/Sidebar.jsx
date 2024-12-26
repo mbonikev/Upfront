@@ -65,6 +65,7 @@ const customAnimation = keyframes`
 function Sidebar({
   username,
   userEmail,
+  pageTitle,
   setPageTitle,
   workspaces,
   setWorkspaces,
@@ -77,7 +78,6 @@ function Sidebar({
   const [moreOpt1, setMoreOpt1] = useState("");
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [saveOpt1, setSaveOpt1] = useState("");
-  const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
   const [spaceId, setSpaceId] = useState("");
   const [createNew, setCreateNew] = useState(false);
@@ -104,6 +104,7 @@ function Sidebar({
       const updatedWorkspaces = storedWorkspaces.map((workspace) =>
         workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
       );
+      setPageTitle(spaceName);
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
 
       // Update state
@@ -124,7 +125,6 @@ function Sidebar({
   const showMoreMenu = (space, event) => {
     setSpaceName(space.workspace_name);
     setSpaceId(space._id);
-    setOriginalSpaceName(space.workspace_name);
     const rect = event.currentTarget.getBoundingClientRect();
 
     // Get the screen dimensions
@@ -161,13 +161,11 @@ function Sidebar({
   // renaming
   const handelRenaming = (e) => {
     setSpaceName(e.target.value);
-    setPageTitle(e.target.value);
   };
   const handleCancel = () => {
     setMoreOpt1("");
     setSaveOpt1("");
-    setSpaceName(originalSpaceName);
-    setPageTitle(originalSpaceName);
+    setSpaceName(pageTitle);
   };
 
   // create new project
@@ -308,36 +306,41 @@ function Sidebar({
         {/* overlay */}
         <div
           onClick={() => setProfileMenu(false)}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? "fixed" : "hidden"
-            }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
+            profileMenu ? "fixed" : "hidden"
+          }`}
         ></div>
         {/* overlay more menu */}
         <div
           onClick={handleCancel}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 !== "" ? "fixed" : "hidden"
-            }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
+            moreOpt1 !== "" ? "fixed" : "hidden"
+          }`}
         ></div>
         {/* overlay more menu save */}
         <div
           onClick={handleCancel}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 !== "" ? "fixed" : "hidden"
-            }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
+            saveOpt1 !== "" ? "fixed" : "hidden"
+          }`}
         ></div>
         {/* search overlay */}
         {showSearchModal && (
           <div
             onClick={handleHideSearch}
-            className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
-              }`}
+            className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
+              AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
+            }`}
           ></div>
         )}
         {/* search modal */}
         {showSearchModal && (
           <div
             className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#202020] dark:bg-[#252525] rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
-              ${AnimateShowSearchModal
-                ? "opacity-100"
-                : "opacity-0 translate-y-[10px]"
+              ${
+                AnimateShowSearchModal
+                  ? "opacity-100"
+                  : "opacity-0 translate-y-[10px]"
               }
               `}
           >
@@ -348,17 +351,19 @@ function Sidebar({
         {createWpsModal && (
           <div
             onClick={handleHideCreateWps}
-            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
-              }`}
+            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
+              AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
+            }`}
           ></div>
         )}
         {/* create workspace modal */}
         {createWpsModal && (
           <div
             className={`w-fit h-fit max-h-[63%] max-w-[90%] 2xl:max-h-[500px] bg-white dark:bg-[#2c2c2c] overflow-clip rounded-[12px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
-              ${AnimatecreateWpsModal
-                ? "opacity-100"
-                : "opacity-0 translate-y-[10px]"
+              ${
+                AnimatecreateWpsModal
+                  ? "opacity-100"
+                  : "opacity-0 translate-y-[10px]"
               }
               `}
           >
@@ -379,7 +384,7 @@ function Sidebar({
         )}
         <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
           {/* 1 */}
-          <div className="w-full h-fit flex items-center p-2 sticky top-0 bg-white dark:bg-[#202020] z-20 justify-between">
+          <div className="w-full h-fit flex items-center p-2 sticky top-0 bg-white dark:bg-[#202020] z-10 justify-between">
             <div className="w-full h-fit">
               <button
                 onClick={showPMenu}
@@ -396,8 +401,9 @@ function Sidebar({
             </div>
             <button
               onClick={handleCreate}
-              className={`h-[32px] aspect-square flex items-center justify-center font-medium text-text-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${createNew && "pointer-events-none select-none"
-                }`}
+              className={`h-[32px] aspect-square flex items-center justify-center font-medium text-text-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
+                createNew && "pointer-events-none select-none"
+              }`}
             >
               {createNew ? (
                 <div className="flex items-center gap-2">
@@ -414,10 +420,11 @@ function Sidebar({
           <div className="flex-1 flex flex-col gap-[3px] px-2 pb-8">
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${location.pathname === `/`
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
+                location.pathname === `/`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
-                }`}
+              }`}
             >
               <GoHome className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Overview</p>
@@ -445,10 +452,11 @@ function Sidebar({
             </button>
             <Link
               to={"/ai"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${location.pathname === `/ai`
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
+                location.pathname === `/ai`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
-                }`}
+              }`}
             >
               <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Upfront AI</p>
@@ -461,7 +469,7 @@ function Sidebar({
               <p className="line-clamp-1">Shared with me</p>
             </Link>
             <p className="flex items-center justify-between gap-2 pt-[13px] pb-[7px] px-[10px] font-medium dark:text-[#f1f1f1]/70 text-text-color/70 tracking-tight">
-              Calendar
+              Dates
             </p>
             <Link
               to={"/"}
@@ -480,8 +488,8 @@ function Sidebar({
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
-                <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] z-10 relative"></div>
-                <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[14px] font-semibold leading-none z-10 tracking-tight">
+                <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] relative"></div>
+                <div className="w-fit h-fit text-text-color/50 dark:text-[#858585] text-[14px] font-semibold leading-none tracking-tight">
                   {Today}
                 </div>
               </div>
@@ -509,14 +517,25 @@ function Sidebar({
                   <form
                     key={index}
                     onSubmit={handleUpdateWorkSpace}
-                    className="relative group "
+                    className="relative group"
                   >
+                    <div
+                      onClick={(event) => showMoreMenu(space, event)}
+                      className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 z-10 peer ${
+                        moreOpt1 === space._id && "opacity-100"
+                      }`}
+                    >
+                      <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
+                    </div>
                     <Link
                       to={`/workspaces/${space._id}`}
-                      className={`${linkStyle} ${location.pathname === `/workspaces/${space._id}`
+                      className={`${linkStyle} ${
+                        location.pathname === `/workspaces/${space._id}`
                           ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                          : ""
-                        }`}
+                          : "peer-hover:bg-stone-200 dark:peer-hover:bg-[#2c2c2c]"
+                      }
+                      ${moreOpt1 === space._id && "bg-stone-200 dark:bg-[#2c2c2c]"}
+                      `}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
                         <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585]" />
@@ -551,14 +570,6 @@ function Sidebar({
                         </div>
                       </>
                     )}
-                    <div
-                      onClick={(event) => showMoreMenu(space, event)}
-                      className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${moreOpt1 === space._id && "opacity-100"
-                        }`}
-                    >
-                      <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
-                    </div>
-
                     {moreOpt1 === space._id && (
                       <div
                         style={{
@@ -582,7 +593,7 @@ function Sidebar({
                             <p className="line-clamp-1">Copy link</p>
                           </button>
                           <button
-                            onClick={() => renameWorkspace(space._id) }
+                            onClick={() => renameWorkspace(space._id)}
                             className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <LuPencil className="text-base min-w-fit" />
@@ -612,7 +623,7 @@ function Sidebar({
             </div>
           </div>
           {/* 3 */}
-          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 z-20 bg-white dark:bg-[#202020]">
+          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 z-10 bg-white dark:bg-[#202020]">
             {/* shadow */}
             <div className="w-full h-[20px] absolute top-[-17px] left-0 bg-gradient-to-t from-white via-white/90 dark:via-[#202020c5] dark:from-[#202020] to-transparent"></div>
             <button
