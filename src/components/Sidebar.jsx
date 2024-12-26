@@ -132,7 +132,7 @@ function Sidebar({
     setSpaceId(space._id);
     setOriginalSpaceName(space.workspace_name);
     if (moreButtonRef.current) {
-      const rect = moreButtonRef.current.getBoundingClientRect();
+      const rect = event.currentTarget.getBoundingClientRect();
 
       // Get the screen dimensions
       const screenWidth = window.innerWidth;
