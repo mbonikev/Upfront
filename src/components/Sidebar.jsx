@@ -131,7 +131,6 @@ function Sidebar({
     setSpaceName(space.workspace_name);
     setSpaceId(space._id);
     setOriginalSpaceName(space.workspace_name);
-    if (moreButtonRef.current) {
       const rect = event.currentTarget.getBoundingClientRect();
 
       // Get the screen dimensions
@@ -157,7 +156,6 @@ function Sidebar({
       // Set the adjusted position
       setMenuPosition({ top: newTop - 20, left: newLeft + 33 });
       setMoreOpt1(space._id);
-    }
   };
 
   // rename workspace
