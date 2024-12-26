@@ -175,7 +175,7 @@ function Projects() {
     } else {
       setPageTitle("Workspace 1");
     }
-  }, []);
+  }, [workspaceId]);
   // create new project
   const handleCreate = async () => {
     setCreateNew(true);
