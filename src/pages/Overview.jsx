@@ -145,7 +145,7 @@ function Projects() {
       >
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
-          <h1 className="text-text-color dark:text-[#b8b8b8] text-3xl font-semibold tracking-tight">
+          <h1 className="text-text-color dark:text-[#dfdfdf] text-3xl font-semibold tracking-tight">
             Good Morning, Kevin
           </h1>
         </div>
