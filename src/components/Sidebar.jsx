@@ -250,22 +250,19 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }
   };
 
-  // update workspaces array
-  const getAllWps = async (e) => {
-    e.preventDefault();
-    setCreatingWps(true);
-    try {
-      const response = await axios.post(`${apiUrl}/api/workspaces`, {
-        name: newWorkspaceName,
-        userEmail: userEmail,
-      });
-      setCreatingWps(false);
-      console.log(response.data);
-    } catch (error) {
-      setCreatingWps(false);
-      console.error(error);
-    }
-  };
+  useEffect(() => {
+    // update workspaces array
+    const getAllWps = async (e) => {
+      try {
+        const response = await axios.post(`${apiUrl}/api/workspaces`, {
+          userEmail: userEmail,
+        });
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  }, []);
 
   // ctrl + s
   useEffect(() => {
