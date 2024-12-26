@@ -559,7 +559,7 @@ function Sidebar({
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
-                  <div key={index} className={`relative group`}>
+                  <div key={index} className={`relative group ${collapseWorkspaces ? 'h-0' : 'h-fit'}`}>
                     <div
                       onClick={(event) => showMoreMenu(space, event)}
                       className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 z-10 peer ${
