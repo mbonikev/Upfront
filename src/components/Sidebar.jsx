@@ -391,7 +391,7 @@ function Sidebar({
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
-        <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] p-2 text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
+        <div className="w-full h-full border-r-[2px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain">
           {/* 1 */}
           <div className="w-full h-fit mb-4 flex items-center justify-between">
             <div className="w-full h-fit">
