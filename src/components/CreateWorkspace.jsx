@@ -6,7 +6,7 @@ function CreateWorkspace() {
     <div className='w-[300px]'>
       <div className='w-full flex items-center justify-between gap-1 p-2 border-b border-stone-200 dark:border-[#474747] text-sm'>
         <h1 className='font-semibold'>Create Workspace</h1>
-        <button className='h-[25px] w-[25px] rounded-lg bg-red-100 aspect-square flex items-center justify-center'>
+        <button className='h-[25px] w-[25px] rounded-lg hover:bg-stone-100 aspect-square flex items-center justify-center'>
           <LuX />
         </button>
       </div>
