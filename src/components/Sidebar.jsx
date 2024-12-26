@@ -233,7 +233,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   };
 
   const HandleSaveWps = (e) => {
-    
+    e.preventDefault()
   }
 
   // ctrl + s
