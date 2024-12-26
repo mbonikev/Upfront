@@ -266,7 +266,7 @@ function Sidebar({
       }
     };
 
-    // getAllWps();
+    getAllWps();
   }, []);
 
   // ctrl + s
