@@ -634,7 +634,9 @@ function Sidebar({
                             className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             {deletingWps ? (
-                              <></>
+                              <>
+                                <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
+                              </>
                             ) : (
                               <>
                                 <LuTrash2 className="text-base min-w-fit" />
