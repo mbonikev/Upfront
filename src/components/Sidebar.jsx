@@ -254,14 +254,16 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     // update workspaces array
     const getAllWps = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/workspaces?userEmail=${userEmail}`); 
-        setWorkspaces(response.data.workspaces); 
+        const response = await axios.get(`${apiUrl}/api/workspaces`, {
+          params: { userEmail },
+        });
+        setWorkspaces(response.data.workspaces);
       } catch (error) {
         console.error(error);
       }
     };
 
-    getAllWps()
+    getAllWps();
   }, []);
 
   // ctrl + s
