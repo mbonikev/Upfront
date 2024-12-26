@@ -3,7 +3,9 @@ import React from 'react'
 function CreateWorkspace() {
   return (
     <div className='w-[300px]'>
-      <div className='w-full flex items-center justify-between gap-1 p-2 border-b border-stone-200 dark:border-[#474747]'></div>
+      <div className='w-full flex items-center justify-between gap-1 p-2 border-b border-stone-200 dark:border-[#474747] text-sm'>
+        <h1 className=''></h1>
+      </div>
     </div>
   )
 }
