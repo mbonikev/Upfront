@@ -301,11 +301,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
           </div>
         )}
         {/* create workspace overlay */}
-        {showSearchModal && (
+        {createWpsModal && (
           <div
             onClick={handleHideSearch}
             className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
-              AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
+              AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
             }`}
           ></div>
         )}
