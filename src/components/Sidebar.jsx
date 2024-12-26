@@ -190,7 +190,9 @@ function Sidebar({
   };
 
   // delete workspace
-  const handleDeleteWorkspace = async () => {};
+  const handleDeleteWorkspace = async () => {
+    
+  };
 
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
