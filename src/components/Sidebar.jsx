@@ -159,9 +159,9 @@ function Sidebar({
   };
 
   // rename workspace
-  const renameWorkspace = () => {
+  const renameWorkspace = (id) => {
     setMoreOpt1("");
-    setSaveOpt1(true);
+    setSaveOpt1(id);
   };
 
   // renaming
