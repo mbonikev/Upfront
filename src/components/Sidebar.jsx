@@ -226,8 +226,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   };
 
   const handleHideCreateWps = () => {
-    
-  }
+    setAnimatecreateWpsModal(false);
+    setTimeout(() => {
+      setCreateWpsModal(false);
+    }, 300);
+  };
 
   // ctrl + s
   useEffect(() => {
