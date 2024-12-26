@@ -22,14 +22,14 @@ function CreateWorkspace() {
         <div className="flex justify-end items-center gap-2 px-0">
           <div
             title="Cancel"
-            className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md inline-flex items-center justify-center py-1 w-fit h-fit"
+            className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
           >
             <span className="text-sm tracking-tight">Cancel</span>
           </div>
           <button
             type="submit"
             title="Create a new Task"
-            className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md inline-flex items-center justify-center py-1 w-fit h-fit"
+            className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
           >
             {false ? (
               <RiLoader5Fill className="text-xl animate-spinLoader" />
