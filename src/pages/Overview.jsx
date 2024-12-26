@@ -139,7 +139,7 @@ function Projects() {
           },
         }}
       />
-      <Sidebar username={username} userEmail={userEmail} />
+      <Sidebar username={username} userEmail={userEmail} workspaces={workspaces} setWorkspaces={setWorkspaces} />
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
       >
