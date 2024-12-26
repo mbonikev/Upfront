@@ -964,7 +964,7 @@ function SingleProject() {
                 onChange={handleInput2Change}
                 rows="1"
                 placeholder="a short description"
-                className="text-base font-normal tracking-tight w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
+                className="text-base font-normal w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-dark-body dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
               ></textarea>
               {/* <div className="w-full h-[1px] bg-stone-200"></div> */}
             </div>
