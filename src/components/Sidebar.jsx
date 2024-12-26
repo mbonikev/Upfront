@@ -192,7 +192,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
       });
     } catch (error) {
       setCreateNew(false);
-      console.log(error.response);
+      // console.log(error.response);
     }
   };
 
