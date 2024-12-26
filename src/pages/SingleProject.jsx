@@ -1005,7 +1005,8 @@ function SingleProject() {
           className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 py-10"
           ref={containerRef}
         >
-          {boards.map((board, index) => (
+          {/* {boards.length > 0 && */}
+            {boards.map((board, index) => (
               <div
                 key={index}
                 className=" w-[280px] min-w-[280px] bg-stone-200/40 dark:bg-[#202020] select-none flex flex-col px-2 pb-2 rounded-xl text-text-color dark:text-[#b8b8b8] relative "
