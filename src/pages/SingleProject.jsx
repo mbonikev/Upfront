@@ -122,10 +122,10 @@ function SingleProject() {
   const [Aiboards, setAiBoards] = useState([]);
   const [generating, setGenerating] = useState(false);
 
-  useEffect(() => {
+  setTimeout(() => {
     console.log("Boards on load:", boards);
     console.log("Tasks on load:", tasks);
-  }, []);
+  }, 4000);
 
   const generateBoards = async (e) => {
     e.preventDefault();
