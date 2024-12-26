@@ -70,7 +70,7 @@ import Loader from "../components/Loader";
 
 function SingleProject() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
-  const { username, userEmail } = useOutletContext();
+  const { username, userEmail, workspaces, setWorkspaces } = useOutletContext();
   const [profileMenu, setProfileMenu] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
   const [deleteMenu, setDeleteMenu] = useState(false);
@@ -127,14 +127,12 @@ function SingleProject() {
     e.preventDefault();
     setGenerating(true);
     try {
-      const response = await axios.post(`${apiUrl}/api/generateBoards`,
-        {
-          projectDescription,
-          userEmail,
-          projectId: id,
-          generateType,
-        }
-      );
+      const response = await axios.post(`${apiUrl}/api/generateBoards`, {
+        projectDescription,
+        userEmail,
+        projectId: id,
+        generateType,
+      });
 
       // boards only
       if (generateType === "Boards Only") {
@@ -857,7 +855,12 @@ function SingleProject() {
             </div>
             <div className="flex items-center justify-start gap-[2px] max-md:hidden text-sm text-text-color/70 dark:text-[#b8b8b8]">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
-              <BreadCrumb name={workspacename} status={"on"} link={`/workspaces/${workspace}`} /> /
+              <BreadCrumb
+                name={workspacename}
+                status={"on"}
+                link={`/workspaces/${workspace}`}
+              />{" "}
+              /
               <BreadCrumb name={projectTitle} status={"off"} link={"/"} />
             </div>
           </div>
