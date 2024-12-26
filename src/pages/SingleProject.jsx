@@ -154,6 +154,13 @@ function SingleProject() {
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
+        setTasks((prevTasks) => [
+          ...prevTasks,
+          ...response.data.boards.map((board, index) => ({
+            id: prevTasks.length + index,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
       }
       setGenerating(false);
       toast.success("Generated successfully.");
