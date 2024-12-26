@@ -218,8 +218,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   };
 
   const handleCreateWps = () => {
-    setAnimatecreateWpsModal(false)
-  } 
+    setCreateWpsModal(true);
+    setTimeout(() => {
+      setAnimatecreateWpsModal(true);
+    }, 50);
+  };
 
   // ctrl + s
   useEffect(() => {
