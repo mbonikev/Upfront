@@ -124,8 +124,8 @@ function SingleProject() {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log({ info: boards });
-      console.log({ info: tasks });
+      console.log(boards );
+      console.log(tasks );
     }, 400);
   }, []);
 
