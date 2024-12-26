@@ -198,11 +198,15 @@ function Sidebar({
         projectId: id,
         userEmail: userEmail,
       });
-      const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
-      const updatedWorkspaces = workspaces.filter(
+      const getWorkspaces =
+        JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      const updatedWorkspacesDeletedOne = getWorkspaces.filter(
         (workspace) => workspace._id !== id
       );
-      localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      localStorage.setItem(
+        "upfront_ws",
+        JSON.stringify(updatedWorkspacesDeletedOne)
+      );
       toast.success(response.data.message);
     } catch (error) {
       console.log(error);
