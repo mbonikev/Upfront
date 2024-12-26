@@ -126,7 +126,7 @@ function SingleProject() {
     setTimeout(() => {
       console.log(boards);
       console.log(tasks);
-    }, 400);
+    }, 3000);
   }, []);
 
   const generateBoards = async (e) => {
