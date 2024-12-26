@@ -92,8 +92,8 @@ function Sidebar({
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
-    try {
-      const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
+      try {
+        const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
         spaceName,
       });
@@ -105,7 +105,7 @@ function Sidebar({
       const updatedWorkspaces = storedWorkspaces.map((workspace) =>
         workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
       );
-      setPageTitle(spaceName);
+      // setPageTitle(spaceName);
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
       // Update state
       setWorkspaces(updatedWorkspaces);
