@@ -48,6 +48,7 @@ import { keyframes } from "@emotion/react";
 import { PiArrowUpRightBold } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { GoHome } from "react-icons/go";
+import CreateWorkspace from "./CreateWorkspace";
 const customAnimation = keyframes`
   from {
     opacity: 0;
