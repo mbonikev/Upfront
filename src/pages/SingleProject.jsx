@@ -1004,6 +1004,7 @@ function SingleProject() {
           className="w-full cursor-grab active:cursor-grabbing flex-1 h-fit flex items-start justify-start overflow-x-auto gap-2 relative pl-12 pr-5 py-10"
           ref={containerRef}
         >
+          if (tasks.length === 0) return <div></div>;
           {boards.length > 0 &&
             boards.map((board, index) => (
               <div
