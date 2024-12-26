@@ -103,8 +103,6 @@ function SingleProject() {
   const [newBoardValue, setNewBoardValue] = useState("");
   const [boards, setBoards] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [boardsAi, setBoardsAi] = useState([]);
-  const [tasksAi, setTasksAi] = useState([]);
   const [placement, SetPlacement] = useState("bottomLeft");
   const [createNewTask, setCreateNewTask] = useState("");
   // Scolling horizonaly
@@ -141,18 +139,23 @@ function SingleProject() {
         setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board, index) => ({
-            id: board._id,
+            id: prevBoards.length + index,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
       }
-
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setBoardsAi(response.data.boards);
-        setTasksAi(response.data.tasks);
+        setAiBoards(response.data.boards);
+        setBoards((prevBoards) => [
+          ...prevBoards,
+          ...response.data.boards.map((board, index) => ({
+            id: prevBoards.length + index,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
+        
       }
-
       setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
@@ -162,28 +165,6 @@ function SingleProject() {
       setGenerating(false);
     }
   };
-
-  useEffect(() => {
-    setBoards((prevBoards) => [
-      ...prevBoards,
-      boards.map((board) => ({
-        id: board.id,
-        name: board.name.replace(/\*\*/g, "").trim(),
-      })),
-    ]);
-    setTasks((prevTasks) => [
-      ...prevTasks,
-      tasks.map((task) => ({
-        id: task.id,
-        name: task.name.trim(),
-        priority: task.priority,
-        assignedTo: task.assignedTo || [],
-        startingOn: task.startingOn,
-        due: task.due,
-        boardId: task.boardId,
-      })),
-    ]);
-  }, [boardsAi, tasksAi]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -1332,7 +1313,6 @@ function SingleProject() {
             </button>
           )}
         </div>
-
         {/* </div> */}
       </div>
     </>
