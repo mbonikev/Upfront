@@ -300,7 +300,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         )}
         {/* dropdown */}
         {profileMenu && (
-          <div className="min-w-[280px] h-fit max-h-[80vh] absolute top-[50px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
+          <div className="min-w-[280px] h-fit max-h-[80vh] absolute backdrop-blur-md top-[50px] left-3 rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-30">
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
