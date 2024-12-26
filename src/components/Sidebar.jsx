@@ -581,7 +581,7 @@ function Sidebar({
                     </Link>
                     {saveOpt1 === space._id && (
                       <>
-                        <div className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
+                        <form className="w-[100%] h-[100%] absolute top-0 left-0 z-30 text-text-color/50 dark:text-[#858585] bg-sidebar-color dark:bg-[#202020] flex items-center justify-center gap-3 py-1 pl-[8px]">
                           {authing ? (
                             <>
                               <RiLoader5Fill className="text-xl animate-spinLoader  min-w-fit" />
@@ -600,7 +600,7 @@ function Sidebar({
                             onChange={handelRenaming}
                             className=" h-full w-full bg-white dark:text-[#f1f1f1] dark:bg-[#2c2c2c] text-text-color ring-2 ring-main-color/50 rounded-md px-2 overflow-hidden"
                           />
-                        </div>
+                        </form>
                       </>
                     )}
                     {moreOpt1 === space._id && (
