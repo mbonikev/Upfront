@@ -655,7 +655,7 @@ function Sidebar({
           {/* 3 */}
           <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 bg-white dark:bg-[#202020]">
             {/* shadow */}
-            <div className="w-full h-[20px] absolute top-[-20px] left-0 bg-gradient-to-b from-white dark:from-[#202020] to-transparent z-10"></div>
+            <div className="w-full h-[20px] absolute top-[-20px] left-0 bg-gradient-to-t from-white dark:from-[#202020] to-transparent z-10"></div>
             <button
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 outline-none`}
             >
