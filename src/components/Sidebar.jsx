@@ -156,7 +156,7 @@ function Sidebar({
 
       // Set the adjusted position
       setMenuPosition({ top: newTop - 20, left: newLeft + 33 });
-      setMoreOpt1(true);
+      setMoreOpt1(space._id);
     }
   };
 
