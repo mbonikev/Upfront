@@ -22,7 +22,7 @@ function CreateWorkspace({ hide }) {
             type="text"
             placeholder={`e.g "Company Name"`}
             autoFocus={true}
-            className="w-full h-[30px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
+            className="w-full h-[30px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
         <div className="flex justify-end items-center gap-2 px-2">
