@@ -148,14 +148,6 @@ function SingleProject() {
 
         case "Boards & Tasks":
           // setAiBoards(response.data.boards); // Uncomment if needed for both cases
-          setBoards((prevBoards) => [
-            ...prevBoards,
-            ...response.data.boards.map((board) => ({
-              id: board.id,
-              name: board.name.replace(/\*\*/g, "").trim(),
-            })),
-          ]);
-
           setTasks((prevTasks) => [
             ...(prevTasks || []),
             ...(response.data.tasks || []).map((task) => ({
@@ -166,6 +158,13 @@ function SingleProject() {
               startingOn: task.startingOn,
               due: task.due,
               boardId: task.boardId,
+            })),
+          ]);
+          setBoards((prevBoards) => [
+            ...prevBoards,
+            ...response.data.boards.map((board) => ({
+              id: board.id,
+              name: board.name.replace(/\*\*/g, "").trim(),
             })),
           ]);
           break;
