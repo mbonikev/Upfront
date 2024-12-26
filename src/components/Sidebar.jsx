@@ -260,6 +260,7 @@ function Sidebar({
         userEmail: userEmail,
       });
       setCreatingWps(false);
+      handleHideCreateWps()
       console.log(response.data);
     } catch (error) {
       setCreatingWps(false);
