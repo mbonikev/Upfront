@@ -323,7 +323,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         {/* create workspace modal */}
         {createWpsModal && (
           <div
-            className={`w-fit h-fit max-h-[63%] max-w-[90%] 2xl:max-h-[500px] bg-white dark:bg-[#2c2c2c] p-1 rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
+            className={`w-fit h-fit max-h-[63%] max-w-[90%] 2xl:max-h-[500px] bg-white dark:bg-[#2c2c2c] p-1 rounded-[12px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
               ${
                 AnimatecreateWpsModal
                   ? "opacity-100"
