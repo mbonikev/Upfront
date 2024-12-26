@@ -156,20 +156,22 @@ function SingleProject() {
         //     name: board.name.replace(/\*\*/g, "").trim(),
         //   })),
         // ]);
-        setBoardsAi(response.data.boards)
 
-        setTasks((prevTasks) => [
-          ...prevTasks,
-          ...response.data.tasks.map((task) => ({
-            id: task.id,
-            name: task.name.trim(),
-            priority: task.priority,
-            assignedTo: task.assignedTo || [],
-            startingOn: task.startingOn,
-            due: task.due,
-            boardId: task.boardId,
-          })),
-        ]);
+        // setTasks((prevTasks) => [
+        //   ...prevTasks,
+        //   ...response.data.tasks.map((task) => ({
+        //     id: task.id,
+        //     name: task.name.trim(),
+        //     priority: task.priority,
+        //     assignedTo: task.assignedTo || [],
+        //     startingOn: task.startingOn,
+        //     due: task.due,
+        //     boardId: task.boardId,
+        //   })),
+        // ]);
+
+        setBoardsAi(response.data.boards);
+        setBoardsAi(response.data.boards);
       }
 
       // Log updated values after state update
@@ -1009,280 +1011,280 @@ function SingleProject() {
           ref={containerRef}
         >
           {/* {boards.length > 0 && */}
-            {boards.map((board, index) => (
-              <div
-                key={index}
-                className=" w-[280px] min-w-[280px] bg-stone-200/40 dark:bg-[#202020] select-none flex flex-col px-2 pb-2 rounded-xl text-text-color dark:text-[#b8b8b8] relative "
-              >
-                {/* ------------------------------ */}
-                <form onSubmit={handleDeleteBoard} className=" group ">
-                  <div
-                    onClick={() => showMoreMenuw1(board.id)}
-                    className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
-                  >
-                    <LuMoreHorizontal
-                      className={`text-xl  ${
-                        moreOpt1 === board.id
-                          ? "text-text-color/100 dark:text-[#b8b8b8]"
-                          : "text-text-color/30 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8]"
-                      }`}
-                    />
-                  </div>
-                  {moreOpt1 === board.id && (
-                    <>
-                      <div className="absolute right-2 top-8 bg-white dark:bg-[#2c2c2c] rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 dark:ring-transparent dark:shadow-custom2 p-2">
-                        <div
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#383838]`}
-                        >
-                          <LuPencilLine className="text-base  min-w-fit" />
-                          <p className="line-clamp-1 text-sm">Rename</p>
-                        </div>
-                        <div
-                          className={`${linkStyle} ${
-                            tasks.filter((task) => task.boardId === board.id)
-                              .length < 1
-                              ? "pointer-events-none opacity-40"
-                              : "hover:bg-stone-200/70 dark:hover:bg-[#484848] cursor-pointer"
-                          }`}
-                        >
-                          <LuRecycle className="text-base  min-w-fit" />
-                          <p className="line-clamp-1 text-sm">Clear Board</p>
-                        </div>
-                        <Link
-                          to={"/"}
-                          className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#484848]`}
-                        >
-                          <LuTrash2 className="text-base  min-w-fit text-red-500 dark:text-red-400" />
-                          <p className="line-clamp-1 text-sm text-red-500 dark:text-red-400">
-                            Delete Board
-                          </p>
-                        </Link>
-                      </div>
-                    </>
-                  )}
-                </form>
-                <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
-                  <span>{board.name}</span>
-                  <span className="pl-2 opacity-40">
-                    {tasks.filter((task) => task.boardId === board.id).length}
-                  </span>
-                </h1>
-                {/* add new task */}
-                {createNewTask === board.id ? (
-                  <form
-                    onSubmit={handleCreateTask}
-                    className="w-full p-3 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent "
-                  >
-                    <textarea
-                      placeholder="Task name"
-                      onChange={handleNameChange}
-                      rows="1"
-                      ref={textareaRef3}
-                      required
-                      autoFocus
-                      name="task name"
-                      className="text-sm font-normal tracking-tight w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-[#2c2c2c] dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
-                    />
-                    <div className="flex mt-1 w-full gap-2">
-                      <div className="flex flex-col">
-                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
-                          Due
-                        </p>
-                        <ConfigProvider
-                          theme={{
-                            algorithm: isDarkMode
-                              ? darkAlgorithm
-                              : defaultAlgorithm,
-                            token: {
-                              colorPrimary: "#404040", // Makes the input shadow transparent
-                              colorErrorOutline: "transparent",
-                              colorBgContainer: "transparent",
-                            },
-                          }}
-                        >
-                          <DatePicker
-                            size="medium"
-                            // style={{
-                            //   color: "#2e394a",
-                            //   width: "100%",
-                            // }}
-                            required
-                            onChange={onRangeChange}
-                            placeholder={"Due Date"}
-                            placement={placement}
-                            className="w-full text-sm border text-text-color dark:text-white"
-                          />
-                        </ConfigProvider>
-                      </div>
-                      <div className="flex flex-col min-w-[100px]">
-                        <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
-                          Priority
-                        </p>
-                        <ConfigProvider
-                          theme={{
-                            algorithm: isDarkMode
-                              ? darkAlgorithm
-                              : defaultAlgorithm,
-                            token: {
-                              colorPrimary: "#404040", // Makes the input shadow transparent
-                              colorErrorOutline: "transparent",
-                              colorBgContainer: "transparent",
-                            },
-                            components: {
-                              Select: {
-                                controlItemBgActive: "#343434", // Background color for selected item
-                                controlItemBgHover: "#40404040", // Optional: Background color on hover
-                              },
-                            },
-                          }}
-                        >
-                          <Select
-                            defaultValue="Medium"
-                            placeholder="Set priority"
-                            placement={placement}
-                            style={{
-                              width: "100%",
-                              color: "#2e394a",
-                            }}
-                            required
-                            onChange={handlePriorityChange}
-                            options={[
-                              {
-                                value: "High",
-                                label: "High",
-                              },
-                              {
-                                value: "Medium",
-                                label: "Medium",
-                              },
-                              {
-                                value: "Low",
-                                label: "Low",
-                              },
-                            ]}
-                          />
-                        </ConfigProvider>
-                      </div>
-                    </div>
-                    <div className="select-none flex items-center justify-end gap-1 ">
+          {boards.map((board, index) => (
+            <div
+              key={index}
+              className=" w-[280px] min-w-[280px] bg-stone-200/40 dark:bg-[#202020] select-none flex flex-col px-2 pb-2 rounded-xl text-text-color dark:text-[#b8b8b8] relative "
+            >
+              {/* ------------------------------ */}
+              <form onSubmit={handleDeleteBoard} className=" group ">
+                <div
+                  onClick={() => showMoreMenuw1(board.id)}
+                  className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
+                >
+                  <LuMoreHorizontal
+                    className={`text-xl  ${
+                      moreOpt1 === board.id
+                        ? "text-text-color/100 dark:text-[#b8b8b8]"
+                        : "text-text-color/30 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8]"
+                    }`}
+                  />
+                </div>
+                {moreOpt1 === board.id && (
+                  <>
+                    <div className="absolute right-2 top-8 bg-white dark:bg-[#2c2c2c] rounded-xl w-fit min-w-[150px] max-w-[170px] h-fit shadow-xl z-20 ring-1 ring-border-line-color/50 dark:ring-transparent dark:shadow-custom2 p-2">
                       <div
-                        onClick={() => setCreateNewTask(false)}
-                        title="Cancel"
-                        className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#383838]`}
                       >
-                        <span className="text-sm tracking-tight">Cancel</span>
+                        <LuPencilLine className="text-base  min-w-fit" />
+                        <p className="line-clamp-1 text-sm">Rename</p>
                       </div>
-                      <button
-                        type="submit"
-                        title="Create a new Task"
-                        className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                      <div
+                        className={`${linkStyle} ${
+                          tasks.filter((task) => task.boardId === board.id)
+                            .length < 1
+                            ? "pointer-events-none opacity-40"
+                            : "hover:bg-stone-200/70 dark:hover:bg-[#484848] cursor-pointer"
+                        }`}
                       >
-                        {addingTask ? (
-                          <RiLoader5Fill className="text-xl animate-spinLoader" />
-                        ) : (
-                          <>
-                            <span className="text-sm tracking-tight">Add</span>
-                          </>
-                        )}
-                      </button>
+                        <LuRecycle className="text-base  min-w-fit" />
+                        <p className="line-clamp-1 text-sm">Clear Board</p>
+                      </div>
+                      <Link
+                        to={"/"}
+                        className={`${linkStyle} cursor-pointer hover:bg-stone-200/70 dark:hover:bg-[#484848]`}
+                      >
+                        <LuTrash2 className="text-base  min-w-fit text-red-500 dark:text-red-400" />
+                        <p className="line-clamp-1 text-sm text-red-500 dark:text-red-400">
+                          Delete Board
+                        </p>
+                      </Link>
                     </div>
-                  </form>
-                ) : (
-                  <button
-                    onClick={() => setCreateNewTask(board.id)}
-                    title="Create a new board"
-                    className="select-none font-normal gap-1 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8] px-2 py-[5px] flex items-center bg-transparent hover:bg-stone-200/80 dark:hover:bg-[#2c2c2c] rounded-lg w-full"
-                  >
-                    <LuPlus className="text-lg" />
-                    <span className="text-sm tracking-tight font-medium">
-                      New
-                    </span>
-                  </button>
+                  </>
                 )}
-                {/* task */}
-                {tasks
-                  .filter((task) => task.boardId === board.id)
-                  .map((task) => (
-                    <button
-                      key={task.id}
-                      className="w-full py-3 mt-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
-                    >
-                      {/* priority */}
-                      <p
-                        className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
-                      >
-                        {task.priority === "High" && (
-                          <>
-                            <LuChevronsUp className="text-xl text-[#ff5630]" />
-                            <span className="text-xs font-semibold text-[#ff5630]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
-                        {task.priority === "Medium" && (
-                          <>
-                            <LuChevronsUpDown className="text-xl text-[#2684ff]" />
-                            <span className="text-xs font-semibold text-[#2684ff]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
-                        {task.priority === "Low" && (
-                          <>
-                            <LuChevronsDown className="text-xl text-[#12c97d]" />
-                            <span className="text-xs font-semibold text-[#12c97d]">
-                              {task.priority}
-                            </span>
-                          </>
-                        )}
+              </form>
+              <h1 className="text-xs py-3 font-semibold line-clamp-1 uppercase ">
+                <span>{board.name}</span>
+                <span className="pl-2 opacity-40">
+                  {tasks.filter((task) => task.boardId === board.id).length}
+                </span>
+              </h1>
+              {/* add new task */}
+              {createNewTask === board.id ? (
+                <form
+                  onSubmit={handleCreateTask}
+                  className="w-full p-3 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent "
+                >
+                  <textarea
+                    placeholder="Task name"
+                    onChange={handleNameChange}
+                    rows="1"
+                    ref={textareaRef3}
+                    required
+                    autoFocus
+                    name="task name"
+                    className="text-sm font-normal tracking-tight w-full placeholder:text-text-color/70 text-text-color resize-none overflow-hidden dark:bg-[#2c2c2c] dark:placeholder:text-[#b8b8b8]/70 dark:text-[#d4d4d4]"
+                  />
+                  <div className="flex mt-1 w-full gap-2">
+                    <div className="flex flex-col">
+                      <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
+                        Due
                       </p>
-                      {/* text */}
-                      <p className="text-sm px-3 text-start">{task.name}</p>
-                      {/* Comments & collaborations */}
-                      <div className="px-3 flex items-center justify-between pt-2">
-                        <div>
-                          <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
-                            <LuMessageCircle className="text-lg" />
-                            <span className="font-medium text-sm">0</span>
-                          </div>
+                      <ConfigProvider
+                        theme={{
+                          algorithm: isDarkMode
+                            ? darkAlgorithm
+                            : defaultAlgorithm,
+                          token: {
+                            colorPrimary: "#404040", // Makes the input shadow transparent
+                            colorErrorOutline: "transparent",
+                            colorBgContainer: "transparent",
+                          },
+                        }}
+                      >
+                        <DatePicker
+                          size="medium"
+                          // style={{
+                          //   color: "#2e394a",
+                          //   width: "100%",
+                          // }}
+                          required
+                          onChange={onRangeChange}
+                          placeholder={"Due Date"}
+                          placement={placement}
+                          className="w-full text-sm border text-text-color dark:text-white"
+                        />
+                      </ConfigProvider>
+                    </div>
+                    <div className="flex flex-col min-w-[100px]">
+                      <p className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70 pb-1">
+                        Priority
+                      </p>
+                      <ConfigProvider
+                        theme={{
+                          algorithm: isDarkMode
+                            ? darkAlgorithm
+                            : defaultAlgorithm,
+                          token: {
+                            colorPrimary: "#404040", // Makes the input shadow transparent
+                            colorErrorOutline: "transparent",
+                            colorBgContainer: "transparent",
+                          },
+                          components: {
+                            Select: {
+                              controlItemBgActive: "#343434", // Background color for selected item
+                              controlItemBgHover: "#40404040", // Optional: Background color on hover
+                            },
+                          },
+                        }}
+                      >
+                        <Select
+                          defaultValue="Medium"
+                          placeholder="Set priority"
+                          placement={placement}
+                          style={{
+                            width: "100%",
+                            color: "#2e394a",
+                          }}
+                          required
+                          onChange={handlePriorityChange}
+                          options={[
+                            {
+                              value: "High",
+                              label: "High",
+                            },
+                            {
+                              value: "Medium",
+                              label: "Medium",
+                            },
+                            {
+                              value: "Low",
+                              label: "Low",
+                            },
+                          ]}
+                        />
+                      </ConfigProvider>
+                    </div>
+                  </div>
+                  <div className="select-none flex items-center justify-end gap-1 ">
+                    <div
+                      onClick={() => setCreateNewTask(false)}
+                      title="Cancel"
+                      className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      <span className="text-sm tracking-tight">Cancel</span>
+                    </div>
+                    <button
+                      type="submit"
+                      title="Create a new Task"
+                      className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
+                    >
+                      {addingTask ? (
+                        <RiLoader5Fill className="text-xl animate-spinLoader" />
+                      ) : (
+                        <>
+                          <span className="text-sm tracking-tight">Add</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              ) : (
+                <button
+                  onClick={() => setCreateNewTask(board.id)}
+                  title="Create a new board"
+                  className="select-none font-normal gap-1 text-text-color/70 hover:text-text-color dark:text-[#b8b8b8]/70 dark:hover:text-[#b8b8b8] px-2 py-[5px] flex items-center bg-transparent hover:bg-stone-200/80 dark:hover:bg-[#2c2c2c] rounded-lg w-full"
+                >
+                  <LuPlus className="text-lg" />
+                  <span className="text-sm tracking-tight font-medium">
+                    New
+                  </span>
+                </button>
+              )}
+              {/* task */}
+              {tasks
+                .filter((task) => task.boardId === board.id)
+                .map((task) => (
+                  <button
+                    key={task.id}
+                    className="w-full py-3 mt-2 h-fit bg-white dark:bg-[#2c2c2c] rounded-xl ring-1 ring-border-line-color/20 dark:ring-transparent hover:ring-2 hover:ring-main-color/60 "
+                  >
+                    {/* priority */}
+                    <p
+                      className={`ml-2 mb-2 w-full rounded-md flex items-center justify-start`}
+                    >
+                      {task.priority === "High" && (
+                        <>
+                          <LuChevronsUp className="text-xl text-[#ff5630]" />
+                          <span className="text-xs font-semibold text-[#ff5630]">
+                            {task.priority}
+                          </span>
+                        </>
+                      )}
+                      {task.priority === "Medium" && (
+                        <>
+                          <LuChevronsUpDown className="text-xl text-[#2684ff]" />
+                          <span className="text-xs font-semibold text-[#2684ff]">
+                            {task.priority}
+                          </span>
+                        </>
+                      )}
+                      {task.priority === "Low" && (
+                        <>
+                          <LuChevronsDown className="text-xl text-[#12c97d]" />
+                          <span className="text-xs font-semibold text-[#12c97d]">
+                            {task.priority}
+                          </span>
+                        </>
+                      )}
+                    </p>
+                    {/* text */}
+                    <p className="text-sm px-3 text-start">{task.name}</p>
+                    {/* Comments & collaborations */}
+                    <div className="px-3 flex items-center justify-between pt-2">
+                      <div>
+                        <div className="flex items-center gap-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
+                          <LuMessageCircle className="text-lg" />
+                          <span className="font-medium text-sm">0</span>
                         </div>
-                        <div className="flex items-center justify-end gap-1">
-                          <div className="flex items-center justify-center">
-                            <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase">
-                              {userEmail.charAt(0)}
-                            </div>
-                            {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
+                      </div>
+                      <div className="flex items-center justify-end gap-1">
+                        <div className="flex items-center justify-center">
+                          <div className="h-7 w-auto aspect-square rounded-full flex items-center justify-center bg-main-color text-white text-base font-semibold ml-[-5px] ring-4 ring-white dark:ring-[#2c2c2c] uppercase">
+                            {userEmail.charAt(0)}
+                          </div>
+                          {/* <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p>
                         <p className="h-[22px] w-auto aspect-square rounded-full ml-[-4px] bg-purple-600 ring-2 ring-white transition flex items-center justify-center text-xs font-medium text-white uppercase">
                           {userEmail.charAt(0)}
                         </p> */}
-                          </div>
                         </div>
                       </div>
-                      {/* Due */}
-                      <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
-                        {task.startingOn === task.due ? (
-                          <>
-                            <span>{format(new Date(task.due), "MMM dd")}</span>
-                            {/* <span>{task.due}</span> */}
-                          </>
-                        ) : (
-                          <>
-                            <span>
-                              {format(new Date(task.startingOn), "MMM dd")}
-                            </span>
-                            <span>
-                              <LuArrowRight />
-                            </span>
-                            <span>{format(new Date(task.due), "MMM dd")}</span>
-                          </>
-                        )}
-                      </p>
-                    </button>
-                  ))}
-              </div>
-            ))}
+                    </div>
+                    {/* Due */}
+                    <p className="text-xs px-3 text-text-color/70 dark:text-[#b8b8b8]/70 flex items-center gap-1 pt-2 font-medium">
+                      {task.startingOn === task.due ? (
+                        <>
+                          <span>{format(new Date(task.due), "MMM dd")}</span>
+                          {/* <span>{task.due}</span> */}
+                        </>
+                      ) : (
+                        <>
+                          <span>
+                            {format(new Date(task.startingOn), "MMM dd")}
+                          </span>
+                          <span>
+                            <LuArrowRight />
+                          </span>
+                          <span>{format(new Date(task.due), "MMM dd")}</span>
+                        </>
+                      )}
+                    </p>
+                  </button>
+                ))}
+            </div>
+          ))}
           {addBoard ? (
             <div className="w-[280px] min-w-[280px] h-fit rounded-xl bg-white dark:bg-[#2c2c2c94] border-[2px] border-dashed border-border-line-color/50 dark:border-[#2c2b2b] flex items-start justify-start p-2">
               <form
