@@ -230,7 +230,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   // copy link
   const handleLinkCopy = (id) => {
-    
+    navigator.clipboard.writeText(`https://upfront.onrender.com/#/workspaces/${id}`)
     toast.error("Link unavailable");
     setMoreOpt1(false);
   };
