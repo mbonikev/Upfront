@@ -8,7 +8,7 @@ function BreadCrumb({ name, link, status }) {
   const handleClick = (e) => {
     if (location.pathname === link) {
       e.preventDefault();
-      navigate(link, { replace: true }); // Force navigation to the same path
+      navigate(link, { replace: true });
     }
   };
 
