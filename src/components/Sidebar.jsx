@@ -653,7 +653,7 @@ function Sidebar({
             )}
           </div>
           {/* 3 */}
-          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 bg-white dark:bg-[#202020]">
+          <div className="w-full h-fit flex flex-col items-center justify-between p-2 gap-[3px] sticky bottom-0 bg-white dark:bg-[#202020] z-10">
             {/* shadow */}
             <div className="w-full h-[20px] absolute top-[-20px] left-0 bg-gradient-to-t from-white via-white dark:via-[#202020] dark:from-[#202020] to-transparent"></div>
             <button
