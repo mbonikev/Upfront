@@ -417,7 +417,7 @@ function Projects() {
                       </div>
                     ) : (
                       <div className="flex items-center justify-center flex-col gap-1">
-                        <IoIosAddCircle className="text-5xl max-2xl:text-3xl text-text-color/70 dark:text-[#484848]" />
+                        <IoIosAddCircle className="text-3xl max-2xl:text-3xl text-text-color/70 dark:text-[#484848]" />
                         <p className="text-text-color/70 dark:text-[#b2b2b2] text-sm">
                           Create new project
                         </p>
