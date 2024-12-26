@@ -201,7 +201,7 @@ function Sidebar({
 
   // collapse
   const handleCollapseWps = () => {
-
+    setCollapseWorkspaces(!collapseWorkspaces)
   }
 
   // delete workspace
