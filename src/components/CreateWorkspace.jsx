@@ -11,8 +11,8 @@ function CreateWorkspace() {
         </button>
       </div>
       <form className="flex-1 flex flex-col gap-2">
-        <div className="flex flex-col gap-2 p-2">
-          <h1 className="font-normal">Workspace Name</h1>
+        <div className="flex flex-col gap-2 p-0">
+          <h1 className="font-normal text-sm">Workspace Name</h1>
         </div>
       </form>
     </div>
