@@ -190,9 +190,9 @@ function Sidebar({
   };
 
   // delete workspace
-  const handleDeleteWorkspace = () => {
+  const handleDeleteWorkspace = async (
 
-  }
+  ) => {};
 
   // get collabs
   const retrieveArray = getArray("mycollaborations") ?? [];
@@ -539,7 +539,10 @@ function Sidebar({
                           ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                           : "peer-hover:bg-stone-200/50 dark:peer-hover:bg-[#2c2c2c] hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c]"
                       }
-                      ${moreOpt1 === space._id && "bg-stone-200/50 dark:bg-[#2c2c2c]"}
+                      ${
+                        moreOpt1 === space._id &&
+                        "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                      }
                       `}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
@@ -605,7 +608,7 @@ function Sidebar({
                             <p className="line-clamp-1">Rename</p>
                           </button>
                           <button
-                          onClick={() => handleDeleteWorkspace(space._id)}
+                            onClick={() => handleDeleteWorkspace(space._id)}
                             className={`${linkStyle} hover:text-red-500 hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <LuTrash2 className="text-base min-w-fit" />
