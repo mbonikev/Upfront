@@ -41,7 +41,7 @@ function CreateWorkspace({
             <span className="text-sm tracking-tight">Cancel</span>
           </div>
           <button
-          onClick={create}
+          onClick={hide}
             type="submit"
             title="Create a new Task"
             className=" active:scale-95 transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
