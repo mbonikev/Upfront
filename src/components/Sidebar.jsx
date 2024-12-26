@@ -82,6 +82,8 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
+  const [createWpsModal, setCreateWpsModal] = useState(false);
+  const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
