@@ -136,16 +136,16 @@ function SingleProject() {
       });
 
       // boards only
-      // if (generateType === "Boards Only") {
-      //   setAiBoards(response.data.boards);
-      //   setBoards((prevBoards) => [
-      //     ...prevBoards,
-      //     ...response.data.boards.map((board, index) => ({
-      //       id: board._id,
-      //       name: board.name.replace(/\*\*/g, "").trim(),
-      //     })),
-      //   ]);
-      // }
+      if (generateType === "Boards Only") {
+        setAiBoards(response.data.boards);
+        setBoards((prevBoards) => [
+          ...prevBoards,
+          ...response.data.boards.map((board, index) => ({
+            id: board._id,
+            name: board.name.replace(/\*\*/g, "").trim(),
+          })),
+        ]);
+      }
 
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
