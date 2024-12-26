@@ -138,12 +138,12 @@ function SingleProject() {
         generateType,
       });
 
-      // Boards only
+      // boards only
       if (generateType === "Boards Only") {
         setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
-          ...response.data.boards.map((board) => ({
+          ...response.data.boards.map((board, index) => ({
             id: board._id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
@@ -174,11 +174,17 @@ function SingleProject() {
         ]);
       }
 
+      // Log updated values after state update
+      console.log("Boards updated:", boards);
+      console.log("Tasks updated:", tasks);
+
+      setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
+      setGenerating(true);
       toast.error(error.message);
     } finally {
-      setGenerating(false); // Ensure this is always executed when done
+      setGenerating(false);
     }
   };
 
