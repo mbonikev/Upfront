@@ -172,7 +172,7 @@ function SingleProject() {
         name: board.name.replace(/\*\*/g, "").trim(),
       })),
     ]);
-    setTasksAi((prevTasks) => [
+    setTasks((prevTasks) => [
       ...prevTasks,
       ...response.data.tasks.map((task) => ({
         id: task.id,
@@ -184,7 +184,7 @@ function SingleProject() {
         boardId: task.boardId,
       })),
     ]);
-  },[])
+  },[boardsAi, tasksAi])
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
