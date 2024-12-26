@@ -107,7 +107,9 @@ function Sidebar({
       );
       setPageTitle(spaceName);
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
-      
+      if (location.pathname === `/workspaces/${id}`) {
+        navigate("/", { replace: true });
+      }
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
