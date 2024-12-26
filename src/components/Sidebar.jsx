@@ -238,7 +238,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     e.preventDefault();
     setCreatingWps(true);
     try {
-      const response = await axios.post(`${apiUrl}/api/createProject`, {
+      const response = await axios.post(`${apiUrl}/api/createWorkspace`, {
         name: newWorkspaceName,
         userEmail: userEmail,
       });
