@@ -76,14 +76,11 @@ function Sidebar({
   const navigate = useNavigate();
   const [authing, setAuthing] = useState(false);
   const [moreOpt1, setMoreOpt1] = useState("");
-  const moreButtonRef = useRef(null);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [saveOpt1, setSaveOpt1] = useState("");
   const [originalSpaceName, setOriginalSpaceName] = useState("");
   const [spaceName, setSpaceName] = useState("");
   const [spaceId, setSpaceId] = useState("");
-  const [spaceNumber, setSpaceNumber] = useState("");
-  const formRef = useRef(null);
   const [createNew, setCreateNew] = useState(false);
   const [myCollaborations, setMyCollatorations] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
