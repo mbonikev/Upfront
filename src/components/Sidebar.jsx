@@ -235,7 +235,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   const HandleSaveWps = (e) => {
     e.preventDefault()
-    console.log("working")
+    console.log(newWorkspaceName)
   }
 
   // ctrl + s
