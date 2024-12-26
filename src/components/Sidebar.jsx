@@ -194,7 +194,7 @@ function Sidebar({
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
     try {
-      const response = await axios.post(`${apiUrl}/api/DeleteWps`, {
+      const response = await axios.post(`${apiUrl}/api/moveWorkspaceToTrash`, {
         id,
         userEmail: userEmail,
       });
