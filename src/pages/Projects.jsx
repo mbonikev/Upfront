@@ -26,6 +26,7 @@ function Projects() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("");
+  const [currentWorkspace, setCurrentWorkspace] = useState("");
   const inputRef = useRef(null);
   const [myProjects, setMyProjects] = useState([]);
   const [projectBoards, setProjectBoards] = useState([]);
