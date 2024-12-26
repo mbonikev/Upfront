@@ -198,6 +198,7 @@ function Sidebar({
         projectId: id,
         userEmail: userEmail,
       });
+      toast.success(response.data.message)
     } catch (error) {
       console.log(error);
     }
