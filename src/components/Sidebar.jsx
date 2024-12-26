@@ -229,7 +229,8 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   }, []);
 
   // copy link
-  const handleLinkCopy = () => {
+  const handleLinkCopy = (id) => {
+    
     toast.error("Link unavailable");
     setMoreOpt1(false);
   };
