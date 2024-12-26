@@ -156,7 +156,7 @@ function SingleProject() {
         //     name: board.name.replace(/\*\*/g, "").trim(),
         //   })),
         // ]);
-        setBoards(response.data.boards)
+        setBoardsAi(response.data.boards)
 
         setTasks((prevTasks) => [
           ...prevTasks,
