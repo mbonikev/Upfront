@@ -236,7 +236,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
 
   const HandleSaveWps = (e) => {
     e.preventDefault()
-    setCreateWpsModal()
+    setCreatingWps(ture)
   }
 
   // ctrl + s
