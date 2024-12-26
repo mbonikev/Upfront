@@ -199,6 +199,7 @@ function Sidebar({
     }
   };
 
+  // collapse
   
 
   // delete workspace
