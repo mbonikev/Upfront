@@ -19,7 +19,7 @@ function CreateWorkspace() {
             className="w-full h-[30px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 transition bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
-        <div className="flex justify-end items-center gap-2 px-2">
+        <div className="flex justify-end items-center gap-2 px-0">
           <div
             title="Cancel"
             className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#383838] dark:text-body-color/90 font-semibold px-3 rounded-md mt-4 inline-flex items-center justify-center py-1 w-fit h-fit"
