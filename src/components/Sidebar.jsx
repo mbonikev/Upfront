@@ -88,7 +88,7 @@ function Sidebar({
   const [newWorkspaceName, setNewWorkspaceName] = useState("");
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
-  const [collapseWorkspaces, setCollapseWorkspaces] = useState(true);
+  const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
 
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
@@ -210,7 +210,7 @@ function Sidebar({
   // Handle collapse and update localStorage
   const handleCollapseWps = () => {
     const newState = !collapseWorkspaces;
-  };
+    };
 
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
