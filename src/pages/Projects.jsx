@@ -19,6 +19,7 @@ import { IoFolderOpen } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
+import TimeAgo from "react-timeago";
 
 function Projects() {
   const { workspaceId } = useParams();
@@ -539,12 +540,7 @@ function Projects() {
                                 : "Board"}
                             </p>
                             <p className="w-fit flex items-start justify-end text-xs font-medium px-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
-                              {project.progress === 100
-                                ? "Completed"
-                                : format(
-                                    new Date(project.createdAt),
-                                    "MMM dd, y"
-                                  )}
+                              <TimeAgo date={project.createdAt} />
                             </p>
                           </div>
                           <div className="flex items-center justify-start">
