@@ -232,6 +232,10 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
+  const HandleSaveWps = () => {
+    
+  }
+
   // ctrl + s
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -339,7 +343,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
               }
               `}
           >
-            <CreateWorkspace hide={handleHideCreateWps} create={handleCreate} />
+            <CreateWorkspace hide={handleHideCreateWps} create={handleCreateWps} />
           </div>
         )}
         {/* dropdown */}
