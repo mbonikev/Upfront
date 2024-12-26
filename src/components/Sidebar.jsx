@@ -588,7 +588,7 @@ function Sidebar({
                             <p className="line-clamp-1">Copy link</p>
                           </button>
                           <button
-                            onClick={() => renameWorkspace() }
+                            onClick={() => renameWorkspace(space._id) }
                             className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <LuPencil className="text-base min-w-fit" />
