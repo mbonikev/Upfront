@@ -574,7 +574,7 @@ function Sidebar({
                       ref={moreButtonRef}
                       onClick={() => showMoreMenu(space)}
                       className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
-                        moreOpt1 && "opacity-100"
+                        moreOpt1 === space._id && "opacity-100"
                       }`}
                     >
                       <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
