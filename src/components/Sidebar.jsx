@@ -198,7 +198,7 @@ function Sidebar({
         projectId: id,
         userEmail: userEmail,
       });
-      
+      console.log(response)
     } catch (error) {}
   };
 
