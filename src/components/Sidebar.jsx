@@ -330,7 +330,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
               }
               `}
           >
-            {/* modal here */}
+            <CreateWorkspace />
           </div>
         )}
         {/* dropdown */}
