@@ -14,7 +14,6 @@ import {
   useParams,
 } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
-import Sidebar from "../components/Sidebar";
 import {
   LuArchive,
   LuArrowLeft,
