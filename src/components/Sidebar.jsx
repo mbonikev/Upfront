@@ -206,8 +206,10 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(updatedWorkspacesDeletedOne)
       );
-
       toast.success(response.data.message);
+      if (location.pathname === `/workspaces/${id}`) {
+        navigate("/", { replace: true });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -257,7 +259,7 @@ function Sidebar({
         userEmail: userEmail,
       });
       setCreatingWps(false);
-      handleHideCreateWps()
+      handleHideCreateWps();
       console.log(response.data);
     } catch (error) {
       setCreatingWps(false);
