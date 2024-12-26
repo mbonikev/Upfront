@@ -122,11 +122,6 @@ function SingleProject() {
   const [Aiboards, setAiBoards] = useState([]);
   const [generating, setGenerating] = useState(false);
 
-  useEffect(() => {
-    console.log("Boards updated:", boards);
-    console.log("Tasks updated:", tasks);
-  }, [boards, tasks]);
-  
   const generateBoards = async (e) => {
     e.preventDefault();
     setGenerating(true);
