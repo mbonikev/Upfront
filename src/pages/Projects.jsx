@@ -261,7 +261,6 @@ function Projects() {
         userEmail={userEmail}
         pageTitle={pageTitle}
         setPageTitle={setPageTitle}
-        originalName={currentWorkspace.workspace_name}
       />
       <div
         className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
