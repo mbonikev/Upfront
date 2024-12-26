@@ -242,11 +242,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         name: newWorkspaceName,
         userEmail: userEmail,
       });
-      setCreatingWps(false)
-      console.log(response.data)
+      setCreatingWps(false);
+      console.log(response.data);
     } catch (error) {
-      setCreatingWps(false)
-      console.error(error)
+      setCreatingWps(false);
+      console.error(error);
     }
   };
 
