@@ -193,23 +193,23 @@ function Sidebar({
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
     try {
-      const response = await axios.post(`${apiUrl}/api/moveWorkspaceToTrash`, {
-        projectId: id,
-        userEmail: userEmail,
-      });
-      const getWorkspaces =
-        JSON.parse(localStorage.getItem("upfront_ws")) || [];
-      const updatedWorkspacesDeletedOne = getWorkspaces.filter(
-        (workspace) => workspace._id !== id
-      );
-      localStorage.setItem(
-        "upfront_ws",
-        JSON.stringify(updatedWorkspacesDeletedOne)
-      );
-      toast.success(response.data.message);
-      if (location.pathname === `/workspaces/${id}`) {
-        navigate("/", { replace: true });
-      }
+      // const response = await axios.post(`${apiUrl}/api/moveWorkspaceToTrash`, {
+      //   projectId: id,
+      //   userEmail: userEmail,
+      // });
+      // const getWorkspaces =
+      //   JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      // const updatedWorkspacesDeletedOne = getWorkspaces.filter(
+      //   (workspace) => workspace._id !== id
+      // );
+      // localStorage.setItem(
+      //   "upfront_ws",
+      //   JSON.stringify(updatedWorkspacesDeletedOne)
+      // );
+      // toast.success(response.data.message);
+      // if (location.pathname === `/workspaces/${id}`) {
+      //   navigate("/", { replace: true });
+      // }
     } catch (error) {
       console.log(error);
     }
