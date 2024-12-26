@@ -171,7 +171,7 @@ function Sidebar({
   };
 
   const handleOpenInNewTab = (id) => {
-    const url = `/workspaces/${id}`
+    const url = `#/workspaces/${id}`
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
