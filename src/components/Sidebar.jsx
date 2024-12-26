@@ -85,8 +85,8 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const [AnimateShowSearchModal, setAnimateShowSearchModal] = useState(false);
   const [createWpsModal, setCreateWpsModal] = useState(false);
   const [AnimatecreateWpsModal, setAnimatecreateWpsModal] = useState(false);
-  const [newWorkspaceName, setNewWorkspaceName] = useState("")
-  const [creatingWps, setCreatingWps] = useState(true)
+  const [newWorkspaceName, setNewWorkspaceName] = useState("");
+  const [creatingWps, setCreatingWps] = useState(true);
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
@@ -235,11 +235,18 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   };
 
   const HandleSaveWps = async (e) => {
-    e.preventDefault()
-    setCreatingWps(true)
-    try{}
-    catch(error){}
-  }
+    e.preventDefault();
+    setCreatingWps(true);
+    try {
+      const response = await axios.post(`${apiUrl}/api/createProject`, {
+        name: newWorkspaceName,
+        desc: "",
+        userEmail: userEmail,
+        workspace: Imat,
+        collaborations: userEmail,
+      });
+    } catch (error) {}
+  };
 
   // ctrl + s
   useEffect(() => {
@@ -272,7 +279,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
           handleCancel();
         }
         setProfileMenu(false);
-        handleHideCreateWps()
+        handleHideCreateWps();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -348,7 +355,12 @@ function Sidebar({ username, userEmail, setPageTitle }) {
               }
               `}
           >
-            <CreateWorkspace hide={handleHideCreateWps} create={HandleSaveWps} newWorkspaceName={newWorkspaceName} setNewWorkspaceName={setNewWorkspaceName} />
+            <CreateWorkspace
+              hide={handleHideCreateWps}
+              create={HandleSaveWps}
+              newWorkspaceName={newWorkspaceName}
+              setNewWorkspaceName={setNewWorkspaceName}
+            />
           </div>
         )}
         {/* dropdown */}
