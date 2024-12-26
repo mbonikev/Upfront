@@ -10,7 +10,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { LuChevronLeft, LuChevronRight, LuHash } from "react-icons/lu";
 import Loader from "../components/Loader";
-import TimeAgo from "react-timeago";
+import TimeAgo from 'react-timeago'
 
 function Projects() {
   const { workspaceId } = useParams();
@@ -139,7 +139,10 @@ function Projects() {
           },
         }}
       />
-      <Sidebar username={username} userEmail={userEmail} />
+      <Sidebar
+        username={username}
+        userEmail={userEmail}
+      />
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-1`}
       >
@@ -208,32 +211,23 @@ function Projects() {
                     </h1>
                     <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start gap-1">
                       {project.collaborations.length === 1 ? (
-                        project.collaborations
-                          .sort(
-                            (a, b) =>
-                              new Date(a.createdAt) - new Date(b.createdAt)
-                          )
-                          .map((collab, index) => (
-                            <h1
-                              key={index}
-                              className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
-                            >
-                              <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
-                                {collab.charAt(0)}
-                              </span>
-                              <span className="text-xs opacity-85">
-                                <TimeAgo date={project.createdAt} />
-                              </span>
-                            </h1>
-                          ))
+                        project.collaborations.map((collab, index) => (
+                          <h1
+                            key={index}
+                            className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
+                          >
+                            <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
+                              {collab.charAt(0)}
+                            </span>
+                            <span className="text-xs opacity-85"><TimeAgo date={project.createdAt}/></span>
+                          </h1>
+                        ))
                       ) : (
                         <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
                             {project.collaborations.length}
                           </span>
-                          <span className="text-xs opacity-85">
-                            {project.createdAt}
-                          </span>
+                          <span className="text-xs opacity-85">{project.createdAt}</span>
                         </h1>
                       )}
                     </div>
