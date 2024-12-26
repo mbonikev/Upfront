@@ -270,6 +270,7 @@ function Sidebar({
   };
 
   const handleHideCreateWps = () => {
+    setNewWorkspaceName("")
     setAnimatecreateWpsModal(false);
     setTimeout(() => {
       setCreateWpsModal(false);
