@@ -546,7 +546,7 @@ function Sidebar({
               </p>
             </Link>
             <p className="group flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-1 pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-full">
-              <LuChevronDown onClick={handleCollapseWps} className={`p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square ${!collapseWorkspaces && 'rotate-[-90deg]'}`} />
+              <LuChevronDown onClick={handleCollapseWps} className={`p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square ${collapseWorkspaces && 'rotate-[-90deg]'}`} />
               <span className="flex-1">Workspaces</span>
               <button
                 onClick={handleCreateWps}
