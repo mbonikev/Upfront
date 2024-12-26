@@ -149,6 +149,7 @@ function SingleProject() {
 
       console.log(response.data)
       setBoards(boards)
+      setTasks(tasks)
 
       // Boards & Tasks
       // if (generateType === "Boards & Tasks") {
