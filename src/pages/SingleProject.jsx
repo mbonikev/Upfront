@@ -1247,7 +1247,7 @@ function SingleProject() {
                         {task.startingOn === task.due ? (
                           <>
                             <span>{format(new Date(task.due), "MMM dd")}</span>
-                            <span>{task.due}</span>
+                            {/* <span>{task.due}</span> */}
                           </>
                         ) : (
                           <>
