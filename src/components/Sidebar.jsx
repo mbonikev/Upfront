@@ -301,17 +301,17 @@ function Sidebar({ username, userEmail, setPageTitle }) {
           </div>
         )}
         {/* create workspace modal */}
-        {showSearchModal && (
+        {createWpsModal && (
           <div
             className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#202020] dark:bg-[#252525] rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
               ${
-                AnimateShowSearchModal
+                AnimatecreateWpsModal
                   ? "opacity-100"
                   : "opacity-0 translate-y-[10px]"
               }
               `}
           >
-            <SearchModal Show={handleShowSearch} Hide={handleHideSearch} />
+            {/* modal */}
           </div>
         )}
         {/* dropdown */}
