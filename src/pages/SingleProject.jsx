@@ -144,7 +144,7 @@ function SingleProject() {
           })),
         ]);
       }
-      if(generateType === "Boards & Tasks") {
+      else if(generateType === "Boards & Tasks") {
         // setAiBoards(response.data.boards);
         setBoards((prevBoards) => [
           ...prevBoards,
