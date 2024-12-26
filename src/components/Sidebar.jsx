@@ -234,9 +234,11 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 300);
   };
 
-  const HandleSaveWps = (e) => {
+  const HandleSaveWps = async (e) => {
     e.preventDefault()
     setCreatingWps(true)
+    try{}
+    catch(error){}
   }
 
   // ctrl + s
