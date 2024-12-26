@@ -147,6 +147,8 @@ function SingleProject() {
         ]);
       }
 
+      console.log(response.data)
+
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
         setBoards((prevBoards) => [
