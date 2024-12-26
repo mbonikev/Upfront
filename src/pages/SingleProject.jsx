@@ -171,7 +171,7 @@ function SingleProject() {
         // ]);
 
         setBoardsAi(response.data.boards);
-        setBoardsAi(response.data.boards);
+        setTasksAi(response.data.tasks);
       }
 
       // Log updated values after state update
