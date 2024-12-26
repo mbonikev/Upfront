@@ -198,7 +198,12 @@ function Sidebar({
         projectId: id,
         userEmail: userEmail,
       });
-      toast.success(response.data.message)
+      const workspaces = JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      const updatedWorkspaces = workspaces.filter(
+        (workspace) => workspace._id !== id
+      );
+      localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      toast.success(response.data.message);
     } catch (error) {
       console.log(error);
     }
