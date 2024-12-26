@@ -147,7 +147,6 @@ function SingleProject() {
           break;
 
         case "Boards & Tasks":
-          // setAiBoards(response.data.boards); // Uncomment if needed for both cases
           setTasks((prevTasks) => [
             ...(prevTasks || []),
             ...(response.data.tasks || []).map((task) => ({
@@ -170,7 +169,7 @@ function SingleProject() {
           break;
 
         default:
-          console.error(`Unknown generateType: ${generateType}`);
+          console.error(`unknown generateType: ${generateType}`);
       }
 
       setGenerating(false);
