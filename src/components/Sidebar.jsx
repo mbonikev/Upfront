@@ -232,7 +232,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   const handleLinkCopy = (id) => {
     navigator.clipboard
       .writeText(`https://upfront.onrender.com/#/workspaces/${id}`)
-      .then(() => toast.error("Link unavailable"));
+      .then(() => toast.success("Link copied"));
     setMoreOpt1(false);
   };
 
