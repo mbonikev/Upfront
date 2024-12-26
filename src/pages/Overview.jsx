@@ -218,7 +218,7 @@ function Projects() {
                             <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
                               {collab.charAt(0)}
                             </span>
-                            <span className="text-xs opacity-85">2d ago</span>
+                            <span className="text-xs opacity-85">{project.createdAt}</span>
                           </h1>
                         ))
                       ) : (
@@ -226,7 +226,7 @@ function Projects() {
                           <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
                             {project.collaborations.length}
                           </span>
-                          <span className="text-xs opacity-85">2d ago</span>
+                          <span className="text-xs opacity-85">{project.createdAt}</span>
                         </h1>
                       )}
                     </div>
