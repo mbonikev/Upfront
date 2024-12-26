@@ -171,7 +171,7 @@ function Sidebar({
   };
   const handleCancel = () => {
     setMoreOpt1("");
-    setSaveOpt1(false);
+    setSaveOpt1("");
     setSpaceName(originalSpaceName);
     setPageTitle(originalSpaceName);
   };
