@@ -243,7 +243,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         userEmail: userEmail,
       });
     } catch (error) {
-      
+      // console.log(error)
     }
   };
 
