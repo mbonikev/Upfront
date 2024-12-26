@@ -156,8 +156,8 @@ function SingleProject() {
         ]);
 
         setTasks((prevTasks) => [
-          ...prevTasks,
-          ...response.data.tasks.map((task) => ({
+          ...(prevTasks || []),
+          ...(response.data.tasks || []).map((task) => ({
             id: task.id,
             name: task.name.trim(),
             priority: task.priority,
