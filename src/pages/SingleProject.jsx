@@ -156,9 +156,9 @@ function SingleProject() {
         ]);
         setTasks((prevTasks) => [
           ...prevTasks,
-          ...response.data.boards.map((board, index) => ({
+          ...response.data.tasks.map((task, index) => ({
             id: prevTasks.length + index,
-            name: board.name.replace(/\*\*/g, "").trim(),
+            name: task.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
       }
