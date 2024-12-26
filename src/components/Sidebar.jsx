@@ -533,7 +533,7 @@ function Sidebar({
                       className={`${linkStyle} ${
                         location.pathname === `/workspaces/${space._id}`
                           ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                          : "opacity-90"
+                          : ""
                       }`}
                     >
                       <IoFolderOpen className="text-xl text-text-color/50 dark:text-[#858585]" />
