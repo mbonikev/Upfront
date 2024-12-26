@@ -519,7 +519,7 @@ function Sidebar({
                 <LuPlus />
               </button>
             </p>
-            <div className="w-full h-fit flex flex-col flex-1 overflow-y-auto max-h-[240px]">
+            <div className="w-full h-fit flex flex-col flex-1">
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
