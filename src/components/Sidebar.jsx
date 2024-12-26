@@ -199,7 +199,9 @@ function Sidebar({
         userEmail: userEmail,
       });
       console.log(response)
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   // get collabs
