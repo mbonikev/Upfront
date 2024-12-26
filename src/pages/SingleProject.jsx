@@ -123,10 +123,8 @@ function SingleProject() {
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log(boards);
-      console.log(tasks);
-    }, 3000);
+    console.log("Boards on load:", boards);
+    console.log("Tasks on load:", tasks);
   }, []);
 
   const generateBoards = async (e) => {
