@@ -107,7 +107,7 @@ function Sidebar({
       );
       setPageTitle(spaceName);
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
-
+      
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
@@ -207,7 +207,7 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(updatedWorkspacesDeletedOne)
       );
-      
+
       toast.success(response.data.message);
     } catch (error) {
       console.log(error);
