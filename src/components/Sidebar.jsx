@@ -210,8 +210,6 @@ function Sidebar({
   // Handle collapse and update localStorage
   const handleCollapseWps = () => {
     const newState = !collapseWorkspaces;
-    setCollapseWorkspaces(newState);
-    localStorage.setItem("collapseWorkspaces", JSON.stringify(newState));
   };
 
   // delete workspace
