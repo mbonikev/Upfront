@@ -225,6 +225,10 @@ function Sidebar({ username, userEmail, setPageTitle }) {
     }, 50);
   };
 
+  const handleHideCreateWps = () => {
+    
+  }
+
   // ctrl + s
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -314,7 +318,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
         {/* create workspace overlay */}
         {createWpsModal && (
           <div
-            onClick={handleCreateWps}
+            onClick={handleHideCreateWps}
             className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
               AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
             }`}
