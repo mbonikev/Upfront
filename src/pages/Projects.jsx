@@ -24,7 +24,7 @@ import TimeAgo from "react-timeago";
 function Projects() {
   const { workspaceId } = useParams();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
-  const { username, userEmail } = useOutletContext();
+  const { username, userEmail, workspaces, setWorkspaces } = useOutletContext();
   const [pageTitle, setPageTitle] = useState("");
   const [currentWorkspace, setCurrentWorkspace] = useState("");
   const inputRef = useRef(null);
