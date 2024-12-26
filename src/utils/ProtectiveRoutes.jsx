@@ -25,7 +25,7 @@ const ProtectedRoutes = () => {
     return <></>;
   }
   return user ? (
-    <Outlet context={{ username, userEmail, workspaces }} />
+    <Outlet context={{ username, userEmail, workspaces, setWorkspaces }} />
   ) : (
     <Navigate to={"/auth/login"} />
   );
