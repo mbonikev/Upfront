@@ -218,7 +218,7 @@ function Sidebar({ username, userEmail, setPageTitle }) {
   };
 
   const handleCreateWps = () => {
-    
+    setAnimatecreateWpsModal(false)
   } 
 
   // ctrl + s
