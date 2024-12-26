@@ -146,7 +146,7 @@ function SingleProject() {
       }
       // Boards & Tasks
       if(generateType === "Boards & Tasks") {
-        console.log(response)
+        console.log(response.data)
       }
       setGenerating(false);
       toast.success("Generated successfully.");
