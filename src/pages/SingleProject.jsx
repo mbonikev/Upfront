@@ -144,6 +144,10 @@ function SingleProject() {
           })),
         ]);
       }
+      // Boards & Tasks
+      if(generateType === "Boards & Tasks") {
+        console.log(response)
+      }
       setGenerating(false);
       toast.success("Generated successfully.");
     } catch (error) {
