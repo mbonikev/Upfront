@@ -193,8 +193,8 @@ function Sidebar({
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
-    try {
-    } catch (error) {}
+    try {}
+    catch (error) {}
   };
 
   // get collabs
