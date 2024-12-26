@@ -136,10 +136,10 @@ function SingleProject() {
       // boards only
       if (generateType === "Boards Only") {
         setAiBoards(response.data.boards);
-        setBoards((prevBoards) => [
+          setBoards((prevBoards) => [
           ...prevBoards,
           ...response.data.boards.map((board, index) => ({
-            id: prevBoards.length + index,
+            id: prevBoards._id,
             name: board.name.replace(/\*\*/g, "").trim(),
           })),
         ]);
