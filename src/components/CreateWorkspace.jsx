@@ -29,7 +29,7 @@ function CreateWorkspace({
             autoFocus={true}
             required
             value={newWorkspaceName}
-            onChange={() => setNewWorkspaceName(e)}
+            onChange={(e) => setNewWorkspaceName(e.taget.value)}
             className="w-full h-[35px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
