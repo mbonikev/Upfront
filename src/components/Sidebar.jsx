@@ -87,7 +87,7 @@ function Sidebar({
   const [AnimatecreateWpsModal, setAnimatecreateWpsModal] = useState(false);
   const [newWorkspaceName, setNewWorkspaceName] = useState("");
   const [creatingWps, setCreatingWps] = useState(false);
-  const [deletingWps, setDeletingWps] = useState(false)
+  const [deletingWps, setDeletingWps] = useState(false);
   // workspace1
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
@@ -191,8 +191,8 @@ function Sidebar({
   };
 
   // delete workspace
-  const handleDeleteWorkspace = async () => {
-
+  const handleDeleteWorkspace = async (id) => {
+    setDeletingWps(true);
   };
 
   // get collabs
