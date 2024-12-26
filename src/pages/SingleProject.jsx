@@ -149,13 +149,14 @@ function SingleProject() {
 
       // Boards & Tasks
       if (generateType === "Boards & Tasks") {
-        setBoards((prevBoards) => [
-          ...prevBoards,
-          ...response.data.boards.map((board) => ({
-            id: board.id,
-            name: board.name.replace(/\*\*/g, "").trim(),
-          })),
-        ]);
+        // setBoards((prevBoards) => [
+        //   ...prevBoards,
+        //   ...response.data.boards.map((board) => ({
+        //     id: board.id,
+        //     name: board.name.replace(/\*\*/g, "").trim(),
+        //   })),
+        // ]);
+        setBoards(response.data.boards)
 
         setTasks((prevTasks) => [
           ...prevTasks,
