@@ -131,31 +131,31 @@ function Sidebar({
     setSpaceName(space.workspace_name);
     setSpaceId(space._id);
     setOriginalSpaceName(space.workspace_name);
-      const rect = event.currentTarget.getBoundingClientRect();
+    const rect = event.currentTarget.getBoundingClientRect();
 
-      // Get the screen dimensions
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
+    // Get the screen dimensions
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-      // Initial position based on the button's position
-      let newTop = rect.bottom + window.scrollY;
-      let newLeft = rect.left + window.scrollX;
+    // Initial position based on the button's position
+    let newTop = rect.bottom + window.scrollY;
+    let newLeft = rect.left + window.scrollX;
 
-      // Adjust if menu would overflow on the right side
-      const menuWidth = 155; // Set the desired width of the menu
-      if (newLeft + menuWidth > screenWidth) {
-        newLeft = screenWidth - menuWidth; // Keep the menu within the screen
-      }
+    // Adjust if menu would overflow on the right side
+    const menuWidth = 155; // Set the desired width of the menu
+    if (newLeft + menuWidth > screenWidth) {
+      newLeft = screenWidth - menuWidth; // Keep the menu within the screen
+    }
 
-      // Adjust if the menu would overflow on the bottom side
-      const menuHeight = 210; // Set the desired height of the menu
-      if (newTop + menuHeight > screenHeight) {
-        newTop = screenHeight - menuHeight; // Keep the menu within the screen
-      }
+    // Adjust if the menu would overflow on the bottom side
+    const menuHeight = 210; // Set the desired height of the menu
+    if (newTop + menuHeight > screenHeight) {
+      newTop = screenHeight - menuHeight; // Keep the menu within the screen
+    }
 
-      // Set the adjusted position
-      setMenuPosition({ top: newTop - 20, left: newLeft + 33 });
-      setMoreOpt1(space._id);
+    // Set the adjusted position
+    setMenuPosition({ top: newTop - 20, left: newLeft + 33 });
+    setMoreOpt1(space._id);
   };
 
   // rename workspace
@@ -314,41 +314,36 @@ function Sidebar({
         {/* overlay */}
         <div
           onClick={() => setProfileMenu(false)}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
-            profileMenu ? "fixed" : "hidden"
-          }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${profileMenu ? "fixed" : "hidden"
+            }`}
         ></div>
         {/* overlay more menu */}
         <div
           onClick={handleCancel}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
-            moreOpt1 !== "" ? "fixed" : "hidden"
-          }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${moreOpt1 !== "" ? "fixed" : "hidden"
+            }`}
         ></div>
         {/* overlay more menu save */}
         <div
           onClick={handleCancel}
-          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${
-            saveOpt1 ? "fixed" : "hidden"
-          }`}
+          className={` top-0 left-0 w-full h-full z-20 bg-transparent ${saveOpt1 ? "fixed" : "hidden"
+            }`}
         ></div>
         {/* search overlay */}
         {showSearchModal && (
           <div
             onClick={handleHideSearch}
-            className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
-              AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
-            }`}
+            className={` top-0 left-0 w-full h-full z-20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${AnimateShowSearchModal ? "opacity-100 " : "opacity-0"
+              }`}
           ></div>
         )}
         {/* search modal */}
         {showSearchModal && (
           <div
             className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#202020] dark:bg-[#252525] rounded-[25px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
-              ${
-                AnimateShowSearchModal
-                  ? "opacity-100"
-                  : "opacity-0 translate-y-[10px]"
+              ${AnimateShowSearchModal
+                ? "opacity-100"
+                : "opacity-0 translate-y-[10px]"
               }
               `}
           >
@@ -359,19 +354,17 @@ function Sidebar({
         {createWpsModal && (
           <div
             onClick={handleHideCreateWps}
-            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${
-              AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
-            }`}
+            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/40 backdrop-blur-[3px] fixed transition-all duration-300 ${AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
+              }`}
           ></div>
         )}
         {/* create workspace modal */}
         {createWpsModal && (
           <div
             className={`w-fit h-fit max-h-[63%] max-w-[90%] 2xl:max-h-[500px] bg-white dark:bg-[#2c2c2c] overflow-clip rounded-[12px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
-              ${
-                AnimatecreateWpsModal
-                  ? "opacity-100"
-                  : "opacity-0 translate-y-[10px]"
+              ${AnimatecreateWpsModal
+                ? "opacity-100"
+                : "opacity-0 translate-y-[10px]"
               }
               `}
           >
@@ -409,9 +402,8 @@ function Sidebar({
             </div>
             <button
               onClick={handleCreate}
-              className={`h-[32px] aspect-square flex items-center justify-center font-medium text-text-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${
-                createNew && "pointer-events-none select-none"
-              }`}
+              className={`h-[32px] aspect-square flex items-center justify-center font-medium text-text-color dark:text-stone-300 tracking-tight rounded-md hover:bg-stone-100 dark:hover:bg-[#2c2c2c] ${createNew && "pointer-events-none select-none"
+                }`}
             >
               {createNew ? (
                 <div className="flex items-center gap-2">
@@ -428,11 +420,10 @@ function Sidebar({
           <div className="flex-1 flex flex-col gap-[3px] px-2 pb-8">
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
-                location.pathname === `/`
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${location.pathname === `/`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
-              }`}
+                }`}
             >
               <GoHome className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Overview</p>
@@ -460,11 +451,10 @@ function Sidebar({
             </button>
             <Link
               to={"/ai"}
-              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
-                location.pathname === `/ai`
+              className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${location.pathname === `/ai`
                   ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                   : ""
-              }`}
+                }`}
             >
               <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Upfront AI</p>
@@ -529,11 +519,10 @@ function Sidebar({
                   >
                     <Link
                       to={`/workspaces/${space._id}`}
-                      className={`${linkStyle} ${
-                        location.pathname === `/workspaces/${space._id}`
+                      className={`${linkStyle} ${location.pathname === `/workspaces/${space._id}`
                           ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
                           : ""
-                      }`}
+                        }`}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
                         <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585]" />
@@ -570,9 +559,8 @@ function Sidebar({
                     )}
                     <div
                       onClick={(event) => showMoreMenu(space, event)}
-                      className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${
-                        moreOpt1 === space._id && "opacity-100"
-                      }`}
+                      className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 ${moreOpt1 === space._id && "opacity-100"
+                        }`}
                     >
                       <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
                     </div>
