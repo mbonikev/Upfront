@@ -123,9 +123,11 @@ function SingleProject() {
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
-    console.log({info: boards})
-    console.log({info: tasks})
-  },[])
+    setTimeout(() => {
+      console.log({ info: boards });
+      console.log({ info: tasks });
+    }, 400);
+  }, []);
 
   const generateBoards = async (e) => {
     e.preventDefault();
