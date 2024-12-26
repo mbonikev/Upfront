@@ -295,7 +295,7 @@ function Projects() {
             {/* <button title={username} className='h-[35px] w-auto aspect-square rounded-full bg-main-color hover:bg-main-color-hover transition flex items-center justify-center text-lg font-semibold text-white'>{username.charAt(0)}</button> */}
           </div>
         </div>
-        <div className="w-full h-fit flex items-start justify-between px-5 pt-5 pb-2 max-w-[2000px]">
+        <div className="w-full h-fit flex items-start justify-between px-5 pt-2 pb-2 max-w-[2000px]">
           {fetchingProjects ? (
             <div className="flex items-center justify-start gap-2 pt-2">
               <div className="group z-10 relative w-7 h-7 min-w-7 animate-smooth-pulse aspect-square rounded-2xl dark:bg-[#313131] bg-stone-200"></div>
