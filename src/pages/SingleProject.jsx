@@ -123,9 +123,9 @@ function SingleProject() {
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
-    console.log(boards)
-    console.log(tasks)
-  },[boards, tasks])
+    console.log({info: boards})
+    console.log({info: tasks})
+  },[])
 
   const generateBoards = async (e) => {
     e.preventDefault();
