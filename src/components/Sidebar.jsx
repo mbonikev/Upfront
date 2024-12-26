@@ -88,8 +88,8 @@ function Sidebar({
   const [newWorkspaceName, setNewWorkspaceName] = useState("");
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
-  const [collapseWorkspaces, setCollapseWorkspaces] = useState(false)
-  
+  const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
+
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
@@ -173,9 +173,9 @@ function Sidebar({
   };
 
   const handleOpenInNewTab = (id) => {
-    const url = `#/workspaces/${id}`
+    const url = `#/workspaces/${id}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    setMoreOpt1("")
+    setMoreOpt1("");
   };
 
   // create new project
@@ -199,10 +199,20 @@ function Sidebar({
     }
   };
 
-  // collapse
+  // Load the collapse state from localStorage on component mount
+  useEffect(() => {
+    const savedState = localStorage.getItem("collapseWorkspaces");
+    if (savedState !== null) {
+      setCollapseWorkspaces(JSON.parse(savedState));
+    }
+  }, []);
+
+  // Handle collapse and update localStorage
   const handleCollapseWps = () => {
-    setCollapseWorkspaces(!collapseWorkspaces)
-  }
+    const newState = !collapseWorkspaces;
+    setCollapseWorkspaces(newState);
+    localStorage.setItem("collapseWorkspaces", JSON.stringify(newState));
+  };
 
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
@@ -546,7 +556,12 @@ function Sidebar({
               </p>
             </Link>
             <p className="group flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-1 pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-full">
-              <LuChevronDown onClick={handleCollapseWps} className={`p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square transition ${collapseWorkspaces && 'rotate-[-90deg]'}`} />
+              <LuChevronDown
+                onClick={handleCollapseWps}
+                className={`p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square transition ${
+                  collapseWorkspaces && "rotate-[-90deg]"
+                }`}
+              />
               <span className="flex-1">Workspaces</span>
               <button
                 onClick={handleCreateWps}
@@ -559,7 +574,12 @@ function Sidebar({
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
-                  <div key={index} className={`relative group overflow-hidden ${collapseWorkspaces ? 'h-0' : 'h-fit'}`}>
+                  <div
+                    key={index}
+                    className={`relative group overflow-hidden ${
+                      collapseWorkspaces ? "h-0" : "h-fit"
+                    }`}
+                  >
                     <div
                       onClick={(event) => showMoreMenu(space, event)}
                       className={`cursor-pointer absolute right-1 bottom-0 top-0 my-auto h-fit w-fit flex items-center justify-center opacity-0 group-hover:opacity-100 px-2 z-10 peer ${
@@ -663,7 +683,7 @@ function Sidebar({
                           </button>
                           <div className="w-full h-[1px] bg-[#efefef] dark:bg-[#323232] my-1"></div>
                           <button
-                          onClick={() => handleOpenInNewTab(space._id)}
+                            onClick={() => handleOpenInNewTab(space._id)}
                             className={`${linkStyle} hover:bg-stone-100 dark:hover:bg-[#383838]`}
                           >
                             <PiArrowUpRightBold className="text-base min-w-fit" />
