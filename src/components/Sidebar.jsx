@@ -90,6 +90,26 @@ function Sidebar({
   const [deletingWps, setDeletingWps] = useState(false);
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
 
+  // useEffect(() => {
+  //   // update workspaces array
+  //   const getAllWps = async () => {
+  //     try {
+  //       const response = await axios.get(`${apiUrl}/api/workspaces`, {
+  //         params: { userEmail },
+  //       });
+  //       localStorage.setItem(
+  //         "upfront_ws",
+  //         JSON.stringify(response.data.workspaces)
+  //       );
+  //       setWorkspaces(response.data.workspaces);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   getAllWps();
+  // }, []);
+
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
@@ -98,23 +118,21 @@ function Sidebar({
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
         spaceName,
-        userEmail,
       });
       const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
-      console.log(updatedWorkspace);
-      // // Update localStorage
-      // const storedWorkspaces =
-      //   JSON.parse(localStorage.getItem("upfront_ws")) || [];
-      // const updatedWorkspaces = storedWorkspaces.map((workspace) =>
-      //   workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
-      // );
-      // if (location.pathname === `/workspaces/${spaceId}`) {
-      //   setPageTitle(spaceName);
-      // }
-      // localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
-      // setWorkspaces(updatedWorkspaces);
-      // // Update state
-      // setWorkspaces(updatedWorkspaces);
+
+      // Update localStorage
+      const storedWorkspaces =
+        JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      const updatedWorkspaces = storedWorkspaces.map((workspace) =>
+        workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
+      );
+      if (location.pathname === `/workspaces/${spaceId}`) {
+        setPageTitle(spaceName);
+      }
+      localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      // Update state
+      setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
       setSaveOpt1("");
       setAuthing(false);
@@ -123,23 +141,6 @@ function Sidebar({
       setAuthing(false);
     }
   };
-
-  // update workspaces array
-  // const getAllWps = async () => {
-  //   try {
-  //     const response = await axios.get(`${apiUrl}/api/workspaces`, {
-  //       params: { userEmail },
-  //     });
-  //     localStorage.setItem(
-  //       "upfront_ws",
-  //       JSON.stringify(response.data.workspaces)
-  //     );
-  //     setWorkspaces(response.data.workspaces);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const showPMenu = () => {
     setProfileMenu(true);
   };
@@ -289,7 +290,7 @@ function Sidebar({
   };
 
   const handleHideCreateWps = () => {
-    setNewWorkspaceName("");
+    setNewWorkspaceName("")
     setAnimatecreateWpsModal(false);
     setTimeout(() => {
       setCreateWpsModal(false);
