@@ -11,7 +11,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { LuChevronLeft, LuChevronRight, LuHash } from "react-icons/lu";
 import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
-import { format, getHours } from 'date-fns';
+import { format, getHours } from "date-fns";
 
 function Projects() {
   const { workspaceId } = useParams();
@@ -106,6 +106,13 @@ function Projects() {
     // Initial check for scrollable buttons
     handleScroll();
   }, []);
+
+  const hour = getHours(new Date());
+  const getGreeting = () => {
+    if (hour < 12) return "Good Morning";
+    if (hour < 18) return "Good Afternoon";
+    return "Good Evening";
+  };
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative overflow-x-hidden">
