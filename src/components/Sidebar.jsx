@@ -115,6 +115,7 @@ function Sidebar({
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
+    setWorkspaceUpdated(false)
     try {
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
