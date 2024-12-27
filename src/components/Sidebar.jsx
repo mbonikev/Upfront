@@ -100,7 +100,7 @@ function Sidebar({
         spaceName,
         userEmail
       });
-      console.log(userEmail)
+      console.log(response.data)
       // const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
 
       // // Update localStorage
