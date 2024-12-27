@@ -312,7 +312,7 @@ function Sidebar({
     };
 
     getAllWps();
-  }, [workspaces]);
+  }, []);
 
   // ctrl + s
   useEffect(() => {
