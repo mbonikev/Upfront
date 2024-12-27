@@ -111,6 +111,7 @@ function Sidebar({
         setPageTitle(spaceName);
       }
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      setWorkspaces(updatedWorkspaces);
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
@@ -122,25 +123,21 @@ function Sidebar({
     }
   };
 
-  useEffect(() => {
-    // update workspaces array
-    const getAllWps = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/api/workspaces`, {
-          params: { userEmail },
-        });
-        localStorage.setItem(
-          "upfront_ws",
-          JSON.stringify(response.data.workspaces)
-        );
-        setWorkspaces(response.data.workspaces);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    getAllWps();
-  }, []);
+  // update workspaces array
+  // const getAllWps = async () => {
+  //   try {
+  //     const response = await axios.get(`${apiUrl}/api/workspaces`, {
+  //       params: { userEmail },
+  //     });
+  //     localStorage.setItem(
+  //       "upfront_ws",
+  //       JSON.stringify(response.data.workspaces)
+  //     );
+  //     setWorkspaces(response.data.workspaces);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const showPMenu = () => {
     setProfileMenu(true);
