@@ -237,6 +237,7 @@ function Sidebar({
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
+    setWorkspaceUpdated(false)
     try {
       const response = await axios.post(`${apiUrl}/api/moveWorkspaceToTrash`, {
         projectId: id,
