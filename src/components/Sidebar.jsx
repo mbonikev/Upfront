@@ -89,7 +89,7 @@ function Sidebar({
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
-  const [workspaceUpdated, setWorkspaceUpdated] = useState(false)
+  const [workspaceUpdated, setWorkspaceUpdated] = useState(false);
 
   useEffect(() => {
     // update workspaces array
@@ -115,7 +115,7 @@ function Sidebar({
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
     setAuthing(true);
-    setWorkspaceUpdated(false)
+    setWorkspaceUpdated(false);
     try {
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
@@ -133,7 +133,7 @@ function Sidebar({
         setPageTitle(spaceName);
       }
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
-      setWorkspaceUpdated(true)
+      setWorkspaceUpdated(true);
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
@@ -238,7 +238,7 @@ function Sidebar({
   // delete workspace
   const handleDeleteWorkspace = async (id) => {
     setDeletingWps(true);
-    setWorkspaceUpdated(false)
+    setWorkspaceUpdated(false);
     try {
       const response = await axios.post(`${apiUrl}/api/moveWorkspaceToTrash`, {
         projectId: id,
@@ -253,7 +253,7 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(updatedWorkspacesDeletedOne)
       );
-      setWorkspaceUpdated(true)
+      setWorkspaceUpdated(true);
       toast.success(response.data.message);
       if (location.pathname === `/workspaces/${id}`) {
         navigate("/", { replace: true });
@@ -305,7 +305,7 @@ function Sidebar({
   const HandleSaveWps = async (e) => {
     e.preventDefault();
     setCreatingWps(true);
-    setWorkspaceUpdated(false)
+    setWorkspaceUpdated(false);
     try {
       const response = await axios.post(`${apiUrl}/api/createWorkspace`, {
         name: newWorkspaceName,
@@ -317,7 +317,7 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(response.data.newWorkspaces)
       );
-      setWorkspaceUpdated(true)
+      setWorkspaceUpdated(true);
     } catch (error) {
       setCreatingWps(false);
       console.error(error);
@@ -631,7 +631,12 @@ function Sidebar({
                             </>
                           ) : (
                             <>
-                              <BsFolder2Open className="text-xl  min-w-fit" />
+                              {location.pathname ===
+                              `/workspaces/${space._id}` ? (
+                                <BsFolder2Open className="text-xl  min-w-fit" />
+                              ) : (
+                                <BsFolder className="text-xl  min-w-fit" />
+                              )}
                             </>
                           )}
                           <input
