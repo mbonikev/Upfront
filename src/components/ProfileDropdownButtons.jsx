@@ -19,6 +19,7 @@ function ProfileDropdownButtons({ username, userEmail }) {
     localStorage.removeItem("upfront_user_name");
     localStorage.removeItem("upfront_ws");
     localStorage.removeItem("mycollaborations");
+    localStorage.removeItem("collapseWorkspaces");
     setLogoutAnimate(true);
     setTimeout(() => {
       window.location.reload();
