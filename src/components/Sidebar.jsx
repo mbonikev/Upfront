@@ -602,7 +602,7 @@ function Sidebar({
                       className={`${linkStyle} ${
                         location.pathname === `/workspaces/${space._id}`
                           ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
-                          : "peer-hover:bg-stone-200/50 dark:peer-hover:bg-[#2c2c2c] hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] transition-all duration-500"
+                          : "peer-hover:bg-stone-200/50 dark:peer-hover:bg-[#2c2c2c] hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] transition-all duration-300"
                       }
                       ${
                         moreOpt1 === space._id &&
