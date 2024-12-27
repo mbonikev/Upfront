@@ -140,7 +140,7 @@ function Sidebar({
     };
 
     getAllWps();
-  }, [authing]);
+  }, []);
 
   const showPMenu = () => {
     setProfileMenu(true);
