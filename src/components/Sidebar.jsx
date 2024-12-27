@@ -290,7 +290,7 @@ function Sidebar({
   };
 
   const handleHideCreateWps = () => {
-    setNewWorkspaceName("")
+    setNewWorkspaceName("");
     setAnimatecreateWpsModal(false);
     setTimeout(() => {
       setCreateWpsModal(false);
@@ -307,7 +307,10 @@ function Sidebar({
       });
       setCreatingWps(false);
       handleHideCreateWps();
-      console.log(response.data);
+      localStorage.setItem(
+        "upfront_ws",
+        JSON.stringify(response.data.workspaces)
+      );
     } catch (error) {
       setCreatingWps(false);
       console.error(error);
