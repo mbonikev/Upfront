@@ -313,6 +313,7 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(response.data.newWorkspaces)
       );
+      setWorkspaceUpdated(true)
     } catch (error) {
       setCreatingWps(false);
       console.error(error);
