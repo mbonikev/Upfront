@@ -152,7 +152,7 @@ function Projects() {
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
           <h1 className="text-text-color dark:text-[#dfdfdf] text-3xl font-semibold tracking-tight px-10">
-            Good Morning, {username} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, quas rerum laudantium ipsa, error recusandae et ratione sint sunt numquam beatae accusamus impedit in odio ab? Quisquam error repellat magni?
+            Good Morning, {username}.
           </h1>
         </div>
         {fetchingProjects ? (
