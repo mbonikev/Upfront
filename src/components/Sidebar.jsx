@@ -132,6 +132,7 @@ function Sidebar({
         setPageTitle(spaceName);
       }
       localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      setWorkspaceUpdated(true)
       // Update state
       setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
