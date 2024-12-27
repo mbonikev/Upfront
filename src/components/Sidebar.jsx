@@ -91,25 +91,25 @@ function Sidebar({
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
   const [workspaceUpdated, setWorkspaceUpdated] = useState(false)
 
-  // useEffect(() => {
-  //   // update workspaces array
-  //   const getAllWps = async () => {
-  //     try {
-  //       const response = await axios.get(`${apiUrl}/api/workspaces`, {
-  //         params: { userEmail },
-  //       });
-  //       localStorage.setItem(
-  //         "upfront_ws",
-  //         JSON.stringify(response.data.workspaces)
-  //       );
-  //       setWorkspaces(response.data.workspaces);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  useEffect(() => {
+    // update workspaces array
+    const getAllWps = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/workspaces`, {
+          params: { userEmail },
+        });
+        localStorage.setItem(
+          "upfront_ws",
+          JSON.stringify(response.data.workspaces)
+        );
+        setWorkspaces(response.data.workspaces);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  //   getAllWps();
-  // }, []);
+    getAllWps();
+  }, [workspaceUpdated]);
 
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
