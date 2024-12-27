@@ -251,6 +251,7 @@ function Sidebar({
         "upfront_ws",
         JSON.stringify(updatedWorkspacesDeletedOne)
       );
+      setWorkspaceUpdated(true)
       toast.success(response.data.message);
       if (location.pathname === `/workspaces/${id}`) {
         navigate("/", { replace: true });
