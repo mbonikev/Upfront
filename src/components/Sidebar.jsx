@@ -309,7 +309,7 @@ function Sidebar({
       handleHideCreateWps();
       localStorage.setItem(
         "upfront_ws",
-        JSON.stringify(response.data.workspaces)
+        JSON.stringify(response.data.newWorkspaces)
       );
     } catch (error) {
       setCreatingWps(false);
