@@ -304,6 +304,7 @@ function Sidebar({
   const HandleSaveWps = async (e) => {
     e.preventDefault();
     setCreatingWps(true);
+    setWorkspaceUpdated(false)
     try {
       const response = await axios.post(`${apiUrl}/api/createWorkspace`, {
         name: newWorkspaceName,
