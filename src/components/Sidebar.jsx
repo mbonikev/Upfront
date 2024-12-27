@@ -98,22 +98,24 @@ function Sidebar({
       const response = await axios.patch(`${apiUrl}/api/updateWorkspace`, {
         spaceId,
         spaceName,
+        userEmail
       });
-      const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
+      console.log(userEmail)
+      // const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
 
-      // Update localStorage
-      const storedWorkspaces =
-        JSON.parse(localStorage.getItem("upfront_ws")) || [];
-      const updatedWorkspaces = storedWorkspaces.map((workspace) =>
-        workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
-      );
-      if (location.pathname === `/workspaces/${spaceId}`) {
-        setPageTitle(spaceName);
-      }
-      localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
-      setWorkspaces(updatedWorkspaces);
-      // Update state
-      setWorkspaces(updatedWorkspaces);
+      // // Update localStorage
+      // const storedWorkspaces =
+      //   JSON.parse(localStorage.getItem("upfront_ws")) || [];
+      // const updatedWorkspaces = storedWorkspaces.map((workspace) =>
+      //   workspace._id === updatedWorkspace._id ? updatedWorkspace : workspace
+      // );
+      // if (location.pathname === `/workspaces/${spaceId}`) {
+      //   setPageTitle(spaceName);
+      // }
+      // localStorage.setItem("upfront_ws", JSON.stringify(updatedWorkspaces));
+      // setWorkspaces(updatedWorkspaces);
+      // // Update state
+      // setWorkspaces(updatedWorkspaces);
       setMoreOpt1("");
       setSaveOpt1("");
       setAuthing(false);
