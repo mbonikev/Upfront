@@ -89,7 +89,7 @@ function Sidebar({
   const [creatingWps, setCreatingWps] = useState(false);
   const [deletingWps, setDeletingWps] = useState(false);
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
-  const [workspaceUpdated, setWorkspaces] = useState(false)
+  const [workspaceUpdated, setWorkspaceUpdated] = useState(false)
 
   // useEffect(() => {
   //   // update workspaces array
