@@ -108,7 +108,7 @@ function Sidebar({
     };
 
     getAllWps();
-  }, []);
+  }, [authing]);
 
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
