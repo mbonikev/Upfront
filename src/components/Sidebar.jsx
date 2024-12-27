@@ -100,9 +100,8 @@ function Sidebar({
         spaceName,
         userEmail,
       });
-      console.log(response)
-      // const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
-
+      const updatedWorkspace = response.data.workspace; // Updated workspace returned from the API
+      console.log(updatedWorkspace);
       // // Update localStorage
       // const storedWorkspaces =
       //   JSON.parse(localStorage.getItem("upfront_ws")) || [];
