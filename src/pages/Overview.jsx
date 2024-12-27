@@ -152,7 +152,7 @@ function Projects() {
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
           <h1 className="text-text-color dark:text-[#dfdfdf] text-3xl font-semibold tracking-tight">
-            Good Morning, {username.trim(" ")}
+            Good Morning, {username}
           </h1>
         </div>
         {fetchingProjects ? (
