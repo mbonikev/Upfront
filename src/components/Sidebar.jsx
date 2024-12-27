@@ -90,6 +90,26 @@ function Sidebar({
   const [deletingWps, setDeletingWps] = useState(false);
   const [collapseWorkspaces, setCollapseWorkspaces] = useState(false);
 
+  useEffect(() => {
+    // update workspaces array
+    const getAllWps = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/api/workspaces`, {
+          params: { userEmail },
+        });
+        localStorage.setItem(
+          "upfront_ws",
+          JSON.stringify(response.data.workspaces)
+        );
+        setWorkspaces(response.data.workspaces);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getAllWps();
+  }, []);
+
   // update workspace
   const handleUpdateWorkSpace = async (e) => {
     e.preventDefault();
