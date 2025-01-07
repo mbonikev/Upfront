@@ -11,7 +11,7 @@ function CreateWorkspace({
 }) {
   return (
     <div className="w-[330px] flex flex-col gap-2">
-      <div className="w-full flex items-center justify-between gap-1 py-2 px-3 border-b border-stone-200 dark:border-[#474747] text-sm">
+      <div className="w-full flex items-center justify-between gap-1 py-4 px-3 border-b border-stone-200 dark:border-[#474747] text-sm">
         <h1 className="font-semibold text-text-color dark:text-white">
           Create Workspace
         </h1>
