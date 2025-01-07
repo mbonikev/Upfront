@@ -130,7 +130,7 @@ function Due() {
             </div>
             <div className="w-fit flex items-center justify-start gap-1">
               <button
-                className={`${linkStyle} text-text-color dark:text-light-text-color hover:bg-stone-100/50 dark:hover:bg-[#2c2c2c]/50`}
+                className={`${linkStyle} text-text-color dark:text-light-text-color hover:bg-stone-100 dark:hover:bg-[#2c2c2c]`}
               >
                 <RiArrowUpDownLine className="text-lg opacity-30" />
                 Sort
