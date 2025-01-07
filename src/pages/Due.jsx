@@ -159,11 +159,11 @@ function Due() {
                   <div className="w-full flex-1 flex pr-3">
                     <div className="w-full flex min-h-full gap-2 items-start justify-start">
                       {/* line */}
-                      <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 flex"></div>
+                      <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#383838] flex"></div>
                       {/* task content */}
                       <div className="w-full flex items-center justify-between py-1">
                         <span>Define Curriculum</span>
-                        <span className="text-xs opacity-75">2 days ago</span>
+                        <span className="text-xs opacity-70 dark:opacity-65">2 days ago</span>
                       </div>
                     </div>
                   </div>
