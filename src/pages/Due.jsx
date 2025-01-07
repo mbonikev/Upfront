@@ -155,8 +155,10 @@ function Due() {
                     </h1>
                   </div>
                 </div>
-                <div className="flex-1 w-full ">
-                  
+                <div className="flex-1 w-full h-full ">
+                  <div className="">
+                    <div></div>
+                  </div>
                 </div>
               </div>
             </div>
