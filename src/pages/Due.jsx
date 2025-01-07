@@ -157,7 +157,7 @@ function Due() {
                 </div>
                 <div className="flex flex-col gap-4 w-full h-full px-1 py-2 text-text-color dark:text-light-text-color">
                   {[...Array(4)].map((_, index) => (
-                    <div key={index} className="w-full flex-1 flex pr-3">
+                    <div key={index} className="w-full flex-1 flex pr-3 bg-red-300">
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         {/* line */}
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#282828] flex"></div>
@@ -174,7 +174,7 @@ function Due() {
                             <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-[#303030] h-[24px] w-[24px] rounded-full font-bold text-xs flex items-center justify-center">
                               K
                             </h1>
-                            <h1>2 days ago</h1>
+                            <h1 className="pt-1">2 days ago</h1>
                           </div>
                         </div>
                       </div>
