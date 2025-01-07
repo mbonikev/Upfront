@@ -141,7 +141,7 @@ function Due() {
           {/* main */}
           <div className="w-full h-fit px-6">
             {/* task */}
-            <div className="w-full flex items-start justify-start">
+            <div className="w-full flex items-start justify-start ring-1 ring-stone-100 dark:ring-[#282828]">
                 <div className="w-[180px] h-auto min-h-[180px]"></div>
                 <div className="flex-1 w-full h-fit"></div>
             </div>
