@@ -15,6 +15,7 @@ import SingleProject from "./pages/SingleProject";
 import Testai from "./pages/Testai";
 import Overview from "./pages/Overview";
 import UpfrontAi from "./pages/UpfrontAi";
+import Due from "./pages/Due";
 function App() {
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path="/" element={<Overview />} />
             <Route path="/workspaces/:workspaceId" element={<Projects />} />
-            {/* <Route path="/ai" element={<UpfrontAi />} /> */}
+            <Route path="/due" element={<Due />} />
             <Route
               path="/project/:workspacename/:id"
               element={<SingleProject />}
