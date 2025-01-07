@@ -773,7 +773,7 @@ function SingleProject() {
         )}
         {/* Delete Dropdown */}
         {deleteMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[210px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
+          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[165px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
             <p className="text-sm text-text-color/70 dark:text-light-text-color px-2 pt-2 pb-4">
               <span className="font-medium text-text-color dark:text-white">
                 Warning!{" "}
@@ -812,7 +812,7 @@ function SingleProject() {
         )}
         {/* Wiper Dropdown */}
         {wipeMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[240px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
+          <div className="w-[290px] h-fit max-h-[80vh] p-2 absolute top-[52px] right-[195px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50 bg-white dark:bg-[#242424] ">
             <p className="text-sm text-text-color/70 dark:text-light-text-color px-2 pt-2 pb-2">
               <span className="font-medium text-text-color dark:text-white">
                 Wipe Out
