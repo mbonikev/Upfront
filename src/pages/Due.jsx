@@ -101,8 +101,7 @@ function Due() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col px-10`}
       >
-        <div className="flex items-start justify-start gap-2 ">
-          <IoFolderOpen className="text-2xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
+        <div className="flex items-start justify-start gap-2 pt-10">
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
             Dues
           </h1>
