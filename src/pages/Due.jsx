@@ -169,7 +169,7 @@ function Due() {
                               Default one
                             </span>
                           </h1>
-                          <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-[#303030] h-[25px] w-[25px] rounded-full flex items-center justify-center font-normal text-xs flex items-center justify-between gap-1.5">
+                          <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-[#303030] h-[25px] w-[25px] rounded-full font-bold text-xs flex items-center justify-center">
                             K
                           </h1>
                           <div className="text-xs opacity-70 dark:opacity-65">
