@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
 import { format, getHours } from "date-fns";
-import { LuLayoutGrid } from "react-icons/lu";
+import { LuChevronsUp, LuLayoutGrid } from "react-icons/lu";
 import { TbTimelineEvent } from "react-icons/tb";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoGrid } from "react-icons/io5";
@@ -167,6 +167,7 @@ function Due() {
                         {/* task content */}
                         <div className="w-full text-sm font-medium flex items-start justify-between py-1">
                           <h1 className="flex flex-col gap-[3px]">
+                            <LuChevronsUp className="text-xl text-[#ff5630]" />
                             <span>Define Curriculum</span>
                             <span className="opacity-70 font-normal">
                               Default one
