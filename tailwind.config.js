@@ -7,7 +7,7 @@ export default {
         "main-color": "#488ef7",
         // "main-color": "#757575",
         "main-color-hover": "#0662d1",
-        "text-color": "#2e394a",
+        "text-color": "#111111",
         "body-color": "#fcfdff",
         "container-color": "#f0f2f7",
         "border-line-color": "#d1d6e3",
@@ -15,6 +15,7 @@ export default {
 
         // dark
         "dark-body": "#191919",
+        "light-text-color": "#111111",
       },
       fontFamily: {
         LeagueSpartan: ["League Spartan", "sans-serif"],
