@@ -225,7 +225,7 @@ function Projects() {
     }
   };
   return (
-    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative">
+    <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative">
       <Toaster
         position="top-center"
         toastOptions={{
@@ -271,7 +271,7 @@ function Projects() {
       >
         <div className="w-full h-fit flex items-start justify-between px-5 pt-3">
           <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
-            <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-[#b8b8b8]">
+            <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-light-text-color">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
               <BreadCrumb
                 name={pageTitle}
@@ -283,7 +283,7 @@ function Projects() {
           <div className="flex items-center justify-end gap-0">
             {/* <button
               title="Trash"
-              className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-3 gap-1 text-text-color/70 dark:text-[#b8b8b8]/70 hover:text-text-color dark:hover:text-[#b8b8b8] dark:hover:bg-[#2c2c2c] rounded-lg inline-flex items-center"
+              className="hover:bg-stone-100 transition text-xs font-semibold py-2 px-3 gap-1 text-text-color/70 dark:text-light-text-color/70 hover:text-text-color dark:hover:text-light-text-color dark:hover:bg-[#2c2c2c] rounded-lg inline-flex items-center"
             >
               <LuTrash2 className="text-lg" />
               <span className="text-sm font-medium tracking-tight">Trash</span>
@@ -313,7 +313,7 @@ function Projects() {
                 <IoFolderOpen className="text-2xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
                 <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
                   {pageTitle}
-                  {/* <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-[#b8b8b8] dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
+                  {/* <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-light-text-color dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
                 Free
               </span> */}
                 </h1>
@@ -331,12 +331,12 @@ function Projects() {
               </div>
             ) : (
               <>
-                <p className="font-normal text-[13px] text-text-color/70 dark:text-[#b8b8b8]">
-                  <span className="text-text-color dark:text-[#b8b8b8] font-medium">
+                <p className="font-normal text-[13px] text-text-color/70 dark:text-light-text-color">
+                  <span className="text-text-color dark:text-light-text-color font-medium">
                     {myProjects.length}
                   </span>{" "}
                   in Progress |{" "}
-                  <span className="text-text-color dark:text-[#b8b8b8] font-medium">
+                  <span className="text-text-color dark:text-light-text-color font-medium">
                     0
                   </span>{" "}
                   Completed
@@ -387,12 +387,12 @@ function Projects() {
                   <div className="w-[160px] aspect-square flex items-center justify-center p-2">
                     <AddNotes width={"w-[130px]"} />
                   </div>
-                  <p className="font-normal text-sm text-text-color/70 dark:text-[#b8b8b8]/70">
+                  <p className="font-normal text-sm text-text-color/70 dark:text-light-text-color/70">
                     Let's create your first project
                   </p>
                   <button
                     onClick={handleCreate}
-                    className={`min-h-[34px] flex mt-2 items-center gap-2 px-3 py-[5px] font-medium text-main-color dark:text-[#b8b8b8] tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
+                    className={`min-h-[34px] flex mt-2 items-center gap-2 px-3 py-[5px] font-medium text-main-color dark:text-light-text-color tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#2c2c2c] ${
                       createNew && "pointer-events-none select-none"
                     }`}
                   >
@@ -459,7 +459,7 @@ function Projects() {
                         key={project._id}
                         to={`/project/${pageTitle}/${project._id}`}
                         state={{ workspace: workspaceId }}
-                        className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white dark:bg-[#242424] group-hover:ring-2 group-hover:ring-main-color/60 dark:text-[#b8b8b8] ring-1 ring-border-line-color/50 dark:ring-transparent flex flex-col relative ${
+                        className={`group cursor-pointer w-full h-full p-4 rounded-xl shadow-sm bg-white dark:bg-[#242424] group-hover:ring-2 group-hover:ring-main-color/60 dark:text-light-text-color ring-1 ring-border-line-color/50 dark:ring-transparent flex flex-col relative ${
                           deleteMenu === project._id &&
                           "ring-2 ring-main-color/60"
                         }`}
@@ -470,7 +470,7 @@ function Projects() {
                         <h1 className="font-medium text-sm leading-7 line-clamp-1">
                           {project.name === "" ? "Untitled" : project.name}
                         </h1>
-                        <p className="line-clamp-1 leading-4 text-sm font-normal text-text-color/70 dark:text-[#b8b8b8]/70 min-h-[15px]">
+                        <p className="line-clamp-1 leading-4 text-sm font-normal text-text-color/70 dark:text-light-text-color/70 min-h-[15px]">
                           {project.desc === ""
                             ? "no description"
                             : project.desc}
@@ -512,7 +512,7 @@ function Projects() {
                               }}
                             ></div>
                           </div>
-                          <h1 className="text-xs text-text-color/70 dark:text-[#b8b8b8]/70">
+                          <h1 className="text-xs text-text-color/70 dark:text-light-text-color/70">
                             {Math.round(
                               (allTasks.filter(
                                 (task) =>
@@ -529,7 +529,7 @@ function Projects() {
                         </div>
                         <div className="w-full flex items-end justify-between">
                           <div className="w-full flex items-start justify-start flex-col gap-1">
-                            <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-[#b8b8b8]/70">
+                            <p className="w-fit flex items-center justify-start text-xs gap-1 font-medium text-text-color/70 dark:text-light-text-color/70">
                               <TbStack className="text-xl" />
                               {
                                 projectBoards.filter(
@@ -545,7 +545,7 @@ function Projects() {
                                 ? "Boards"
                                 : "Board"}
                             </p>
-                            <p className="w-fit flex items-start justify-end text-xs font-medium px-[2px] text-text-color/70 dark:text-[#b8b8b8]/70">
+                            <p className="w-fit flex items-start justify-end text-xs font-medium px-[2px] text-text-color/70 dark:text-light-text-color/70">
                               <TimeAgo date={project.createdAt} />
                             </p>
                           </div>
