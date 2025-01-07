@@ -23,7 +23,7 @@ function CreateWorkspace({
         </button>
       </div>
       <form onSubmit={create} className="flex-1 flex flex-col gap-3 pt-1 pb-3 ">
-        <div className="flex flex-col gap-1 px-4">
+        <div className="flex flex-col gap-2 px-4">
           <h1 className="font-normal text-sm">Workspace Name</h1>
           <input
             type="text"
