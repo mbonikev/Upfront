@@ -140,6 +140,9 @@ function Due() {
           </div>
           {/* main */}
           <div className="w-full h-fit px-6">
+            {/* task */}
+            <div className=""></div>
+            <div></div>
             {/* no due */}
             <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words text-sm">
               You have nothing Due!
