@@ -10,6 +10,7 @@ import { LuLayoutGrid } from "react-icons/lu";
 import { TbTimelineEvent } from "react-icons/tb";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoGrid } from "react-icons/io5";
+import { HiViewGrid } from "react-icons/hi";
 
 function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -122,7 +123,7 @@ function Due() {
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color`}
               >
-                <IoGrid className="text-lg opacity-30" />
+                <HiViewGrid className="text-lg opacity-30" />
                 Grid View
               </button>
             </div>
