@@ -39,14 +39,14 @@ function CreateWorkspace({
           <div
             onClick={hide}
             title="Cancel"
-            className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#424242] dark:text-body-color/90 font-semibold px-3 rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
+            className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#424242] dark:text-body-color/90 font-semibold rounded-md inline-flex items-center justify-center text-sm"
           >
             <span className="text-sm tracking-tight">Cancel</span>
           </div>
           <button
             type="submit"
             title="Create a new Task"
-            className=" active:scale-95h-[300px] transition bg-main-color text-white font-semibold px-3 min-w-[60px] rounded-md inline-flex items-center justify-center text-sm py-1 w-fit h-fit"
+            className=" active:scale-95 h-[300px] transition bg-main-color text-white font-semibold min-w-[60px] rounded-md inline-flex items-center justify-center text-sm"
           >
             {creating ? (
               <RiLoader5Fill className="text-xl animate-spinLoader" />
