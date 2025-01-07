@@ -163,9 +163,9 @@ function Due() {
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#282828] flex"></div>
                         {/* task content */}
                         <div className="w-full text-sm font-medium flex items-center justify-between py-1">
-                          <h1>
+                          <h1 className="flex flex-col gap-[3px]">
                             <span>Define Curriculum</span>
-                            <span></span>
+                            <span className="opacity-70 font-normal">Default one</span>
                           </h1>
                           <span className="text-xs opacity-70 dark:opacity-65">
                             2 days ago
