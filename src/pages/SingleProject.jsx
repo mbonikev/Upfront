@@ -935,12 +935,6 @@ function SingleProject() {
             >
               <LuUsers2 />
             </button>
-            <button
-              title="Dues"
-              className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-light-text-color/70 dark:hover:bg-[#2c2c2c] dark:hover:text-light-text-color "
-            >
-              <LuTimerReset />
-            </button>
             <span className="w-[2px]"></span>
             <button
               onClick={showPMenu}
