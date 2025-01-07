@@ -167,7 +167,12 @@ function Due() {
                         {/* task content */}
                         <div className="w-full text-sm font-medium flex items-start justify-between py-1">
                           <h1 className="flex flex-col gap-[3px]">
-                            <LuChevronsUp className="text-xl text-[#ff5630]" />
+                            <>
+                              <LuChevronsUp className="text-xl text-[#ff5630]" />
+                              <span className="text-xs font-semibold text-[#ff5630]">
+                                High
+                              </span>
+                            </>
                             <span>Define Curriculum</span>
                             <span className="opacity-70 font-normal">
                               Default one
