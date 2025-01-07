@@ -115,7 +115,7 @@ function Projects() {
   };
 
   return (
-    <div className="w-full dark:bg-dark-body dark:text-[#b8b8b8] flex items-start justify-start relative overflow-x-hidden">
+    <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
       <Toaster
         position="top-center"
         toastOptions={{
@@ -170,7 +170,7 @@ function Projects() {
         ) : myProjects.length > 0 ? (
           <>
             {/* recent projects */}
-            <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
+            <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
               Recently Created
             </h1>
             <div className="relative w-full min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
@@ -179,7 +179,7 @@ function Projects() {
                 <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
                   <button
                     onClick={scrollLeft}
-                    className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-[#b8b8b8] dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
+                    className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
                   >
                     <LuChevronLeft className="text-xl" />
                   </button>
@@ -192,7 +192,7 @@ function Projects() {
                     onClick={scrollRight}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white
                 .
-                 dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-[#b8b8b8] dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
+                 dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent flex items-center justify-center rounded-full"
                   >
                     <LuChevronRight className="text-xl" />
                   </button>
@@ -209,7 +209,7 @@ function Projects() {
                     to={`/project/${project.workspace_name}/${project._id}`}
                     state={{ workspace: project.workspace }}
                     key={index}
-                    className="w-[150px] min-w-[150px] h-[140px] flex items-start justify-start flex-col rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-[#b8b8b8] ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
+                    className="w-[150px] min-w-[150px] h-[140px] flex items-start justify-start flex-col rounded-xl bg-white dark:bg-[#202020] text-dark-body dark:text-light-text-color ring-1 ring-stone-200/70 dark:ring-dark-body transition active:scale-95 overflow-hidden hover:ring-2 hover:ring-main-color/50"
                   >
                     {/* banner */}
                     <div className="w-full h-[45px] bg-stone-100 dark:bg-[#282828] relative">
@@ -225,9 +225,9 @@ function Projects() {
                         project.collaborations.map((collab, index) => (
                           <h1
                             key={index}
-                            className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
+                            className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full text-xs flex items-center justify-start gap-1.5"
                           >
-                            <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
+                            <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-light-text-color capitalize font-semibold">
                               {collab.charAt(0)}
                             </span>
                             <span className="text-xs opacity-85">
@@ -236,8 +236,8 @@ function Projects() {
                           </h1>
                         ))
                       ) : (
-                        <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
-                          <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-[#b8b8b8] capitalize font-semibold">
+                        <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
+                          <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-light-text-color capitalize font-semibold">
                             {project.collaborations.length}
                           </span>
                           <span className="text-xs opacity-85">
@@ -253,7 +253,7 @@ function Projects() {
           </>
         ) : (
           <>
-            <h1 className="text-dark-body/50 dark:text-[#b8b8b8]/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
+            <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
               You have no recent activity!
             </h1>
           </>
