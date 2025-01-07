@@ -174,9 +174,11 @@ function Due() {
                           </h1>
 
                           <div className="text-xs opacity-70 dark:opacity-65 flex items-start justify-end gap-2">
-                            <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-[#303030] h-[24px] w-[24px] rounded-full font-bold text-xs flex items-center justify-center">
-                              K
-                            </h1>
+                            <div className="w-fit flex items-center justify-end">
+                              <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-main-color h-[24px] w-[24px] rounded-full font-bold text-xs flex items-center justify-center">
+                                K
+                              </h1>
+                            </div>
                             <h1 className="pt-1">2 days ago</h1>
                           </div>
                         </div>
