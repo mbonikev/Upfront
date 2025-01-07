@@ -11,7 +11,7 @@ import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
 import { format, getHours } from "date-fns";
 
-function Projects() {
+function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail, workspaces, setWorkspaces } = useOutletContext();
   const [myProjects, setMyProjects] = useState([]);
@@ -111,4 +111,4 @@ function Projects() {
     </div>
   );
 }
-export default Projects;
+export default Due;
