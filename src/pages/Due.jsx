@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Link,
-  useNavigate,
-  useOutletContext,
-} from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -62,7 +58,6 @@ function Due() {
     getme();
   }, []);
 
-
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
       <Toaster
@@ -106,7 +101,12 @@ function Due() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col px-10`}
       >
-        
+        <div className="flex items-start justify-start gap-2 ">
+          <IoFolderOpen className="text-2xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
+          <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
+            Dues
+          </h1>
+        </div>
       </div>
     </div>
   );
