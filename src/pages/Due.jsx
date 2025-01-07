@@ -165,12 +165,16 @@ function Due() {
                         <div className="w-full text-sm font-medium flex items-start justify-between py-1">
                           <h1 className="flex flex-col gap-[3px]">
                             <span>Define Curriculum</span>
-                            <span className="opacity-70 font-normal">Default one</span>
+                            <span className="opacity-70 font-normal">
+                              Default one
+                            </span>
                           </h1>
-                          <div className=""></div>
-                          <span className="text-xs opacity-70 dark:opacity-65">
+                          <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal text-xs flex items-center justify-between gap-1.5">
+                            <span className="text-xs opacity-85"></span>
+                          </h1>
+                          <div className="text-xs opacity-70 dark:opacity-65">
                             2 days ago
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </div>
