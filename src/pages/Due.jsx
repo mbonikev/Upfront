@@ -141,7 +141,7 @@ function Due() {
           {/* main */}
           <div className="w-full h-fit px-6">
             {/* task */}
-            <div className="w-full flex items-start justify-start flex-col ring-1 ring-stone-200/60 dark:ring-[#282828] rounded-2xl p-1">
+            <div className="w-full max-w-[1200px] flex items-start justify-start flex-col ring-1 ring-stone-200/60 dark:ring-[#282828] rounded-2xl p-1">
               <div className="w-full h-full min-h-[140px] flex gap-3">
                 <div className="w-[140px] bg-stone-100 dark:bg-[#282828] text-text-color/95 rounded-xl p-2 flex">
                   <div className="w-full h-fit bg-white dark:bg-dark-body shadow-lg dark:text-light-text-color rounded-lg flex items-center justify-center flex-col gap-0 p-3 relative">
@@ -161,7 +161,7 @@ function Due() {
                       {/* line */}
                       <div className="w-[4px] h-full rounded-xl bg-stone-200/90 flex"></div>
                       {/* task content */}
-                      <div className="">
+                      <div className="w-full">
                         S
                       </div>
                     </div>
