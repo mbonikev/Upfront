@@ -156,7 +156,7 @@ function Due() {
                   </div>
                 </div>
                 <div className="bg-yellow-200 flex flex-col w-full h-full ">
-                  <div className="w-full h-full flex-1 flex">
+                  <div className="w-fit flex-1 flex bg-red-300">
                     {/* line */}
                     <div className="w-[3px] h-full bg-stone-400 flex"></div>
                     {/* task content */}
