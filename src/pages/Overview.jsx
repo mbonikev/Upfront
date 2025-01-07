@@ -221,7 +221,7 @@ function Projects() {
                       {project.name !== "" ? project.name : "Untitled"}
                     </h1>
                     <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start  gap-1">
-                      <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
+                      <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full text-xs flex items-center justify-between gap-1.5">
                         <span className="text-xs opacity-85">
                           <TimeAgo date={project.createdAt} />
                         </span>
