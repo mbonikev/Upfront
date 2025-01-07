@@ -202,7 +202,7 @@ function Projects() {
               <div
                 ref={contentRef}
                 onScroll={handleScroll}
-                className={`w-full flex-1 h-fit flex items-center justify-start overflow-auto hidden_scrollbar overscroll-contain gap-3 py-2 px-1 transition`}
+                className={`w-full flex-1 h-fit flex items-center justify-start overflow-auto hidden_scrollbar overscroll-contain gap-3 pt-2 pb-10 px-3 transition`}
               >
                 {myProjects.map((project, index) => (
                   <Link
