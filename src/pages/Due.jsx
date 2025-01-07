@@ -118,6 +118,12 @@ function Due() {
                 <HiMiniRectangleGroup className="text-lg opacity-30" />
                 Pipeline View
               </button>
+              <button
+                className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
+              >
+                <HiMiniRectangleGroup className="text-lg opacity-30" />
+                Pipeline View
+              </button>
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
           </div>
