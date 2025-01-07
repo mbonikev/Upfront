@@ -11,6 +11,7 @@ import { TbTimelineEvent } from "react-icons/tb";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoGrid } from "react-icons/io5";
 import { HiViewGrid } from "react-icons/hi";
+import { RiArrowUpDownLine } from "react-icons/ri";
 
 function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -127,7 +128,14 @@ function Due() {
                 Grid View
               </button>
             </div>
-            <div className="w-fit flex items-center justify-start gap-1"></div>
+            <div className="w-fit flex items-center justify-start gap-1">
+              <button
+                className={`${linkStyle} text-text-color dark:text-light-text-color hover:bg-stone-100/50 dark:hover:bg-[#2c2c2c]/50`}
+              >
+                <RiArrowUpDownLine className="text-lg opacity-30" />
+                Sort
+              </button>
+            </div>
           </div>
           {/* main */}
           <div className="w-full h-fit px-6">
