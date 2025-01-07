@@ -225,7 +225,7 @@ function Projects() {
                         <span className="text-xs opacity-85">
                           <TimeAgo date={project.createdAt} />
                         </span>
-                        <span title={`${project.collaborations.length} has access`} className="h-[24px] w-[24px] min-w-[24px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-light-text-color capitalize font-semibold">
+                        <span title={`${project.collaborations.length} has access`} className="h-[24px] w-[24px] min-w-[24px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white capitalize font-semibold">
                           {project.collaborations.length}
                         </span>
                       </h1>
