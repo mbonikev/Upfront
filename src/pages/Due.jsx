@@ -159,7 +159,7 @@ function Due() {
                   {[...Array(4)].map((_, index) => (
                     <div
                       key={index}
-                      className="w-full flex-1 flex pr-3 bg-[#202020]/80 rounded-xl p-2"
+                      className="w-full flex-1 flex pr-3 bg-[#1f1f1f] rounded-xl p-2"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         {/* line */}
@@ -175,13 +175,13 @@ function Due() {
 
                           <div className="text-xs flex items-start justify-end gap-2">
                             <div className="w-fit flex items-center justify-end">
-                              <h1 className="text-white bg-main-color h-[26px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-dark-body flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[26px] ml-[-8px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-dark-body flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[30px] ml-[30px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[26px] ml-[-8px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-dark-body flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[30px] ml-[30px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
                             </div>
