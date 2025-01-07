@@ -760,7 +760,7 @@ function SingleProject() {
         )}
         {/* Collab dropdown */}
         {userMenu && (
-          <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[180px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
+          <div className="w-[290px] h-fit max-h-[80vh] absolute top-[52px] right-[135px] rounded-xl shadow-custom ring-1 ring-border-line-color/0 overflow-y-auto z-50">
             <AddCollaborators
               users={users}
               username={username}
