@@ -29,7 +29,7 @@ function App() {
               path="/project/:workspacename/:id"
               element={<SingleProject />}
             />
-            <Route path="/test" element={<Testai />} />
+            {/* <Route path="/test" element={<Testai />} /> */}
           </Route>
           {/* Auth */}
           <Route element={<ProtectedAuthRoutes />}>
