@@ -143,6 +143,7 @@ function Due() {
             {/* task */}
             <div className="w-full flex items-start justify-start">
                 <div className="w-[180px] h-auto min-h-[180px]"></div>
+                <div className="flex-1 w-full h-fit"></div>
             </div>
             <div></div>
             {/* no due */}
