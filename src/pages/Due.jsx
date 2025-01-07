@@ -143,9 +143,9 @@ function Due() {
             {/* task */}
             <div className="w-full flex items-start justify-start ring-1 ring-stone-200 dark:ring-[#282828] rounded-2xl p-2">
                 <div className="w-[140px] h-auto min-h-[160px] bg-[#fb923c60] rounded-xl p-2">
-                    <div className="w-full h-fit bg-white rounded-lg flex items-center justify-center flex-col">
+                    <div className="w-full h-fit bg-white rounded-lg flex items-center justify-center flex-col gap-1">
                         <h1>Dec</h1>
-                        <h1>23</h1>
+                        <h1 className="text-4xl font-medium">23</h1>
                     </div>
                 </div>
                 <div className="flex-1 w-full h-fit"></div>
