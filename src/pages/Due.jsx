@@ -173,9 +173,9 @@ function Due() {
                             </span>
                           </h1>
 
-                          <div className="text-xs opacity-70 dark:opacity-65 flex items-start justify-end gap-2">
+                          <div className="text-xs flex items-start justify-end gap-2">
                             <div className="w-fit flex items-center justify-end">
-                              <h1 className="text-dark-body/50 dark:text-light-text-color/80 dark:bg-main-color h-[24px] w-[24px] rounded-full font-bold text-xs flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[24px] w-[24px] rounded-full font-bold text-xs flex items-center justify-center">
                                 K
                               </h1>
                             </div>
