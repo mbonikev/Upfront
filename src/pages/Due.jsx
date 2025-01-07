@@ -166,18 +166,18 @@ function Due() {
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#282828] flex"></div>
                         {/* task content */}
                         <div className="w-full text-sm font-medium flex items-start justify-between py-1">
-                          <h1 className="flex flex-col gap-[3px]">
-                            <>
+                          <div className="flex flex-col gap-[3px]">
+                            <div>
                               <LuChevronsUp className="text-xl text-[#ff5630]" />
                               <span className="text-xs font-semibold text-[#ff5630]">
                                 High
                               </span>
-                            </>
-                            <span>Define Curriculum</span>
-                            <span className="opacity-70 font-normal">
+                            </div>
+                            <div>Define Curriculum</div>
+                            <div className="opacity-70 font-normal">
                               Default one
-                            </span>
-                          </h1>
+                            </div>
+                          </div>
 
                           <div className="text-xs flex items-end justify-start flex-col gap-2">
                             <div className="w-fit flex items-center justify-end">
