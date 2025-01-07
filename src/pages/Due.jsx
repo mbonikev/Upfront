@@ -148,7 +148,7 @@ function Due() {
                         <h1 className="text-4xl font-semibold tracking-tight">23</h1>
                     </div>
                 </div>
-                <div className="flex-1 w-full h-fit bg-red-300">ee
+                <div className="flex-1 w-full h-fit bg-red-300">ee <br />ee <br />ee <br />ee <br />ee <br />ee <br />ee <br />
                 </div>
             </div>
             <div></div>
