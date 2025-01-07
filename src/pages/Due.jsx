@@ -145,7 +145,7 @@ function Due() {
               <div className="w-full h-full min-h-[140px] flex gap-2">
                 <div className="w-[140px] bg-[#fb923c60] dark:bg-[#fb923c40] text-text-color/95 rounded-xl p-2 flex">
                   <div className="w-full h-fit bg-white dark:bg-dark-body shadow-xl dark:text-light-text-color rounded-lg flex items-center justify-center flex-col gap-0 p-3 relative">
-                    <div className="w-full h-fit absolute top-[-10px]">
+                    <div className="w-full h-fit absolute top-[-4px] px-3">
                         <div className="w-[2px] h-[12px] bg-[#fb923c60]"></div>
                     </div>
                     <h1 className="font-semibold">Dec</h1>
