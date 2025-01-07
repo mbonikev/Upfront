@@ -12,6 +12,7 @@ import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoGrid } from "react-icons/io5";
 import { HiViewGrid } from "react-icons/hi";
 import { RiArrowUpDownLine } from "react-icons/ri";
+import { MdViewStream } from "react-icons/md";
 
 function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -118,7 +119,7 @@ function Due() {
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
               >
-                <HiMiniRectangleGroup className="text-lg opacity-30" />
+                <MdViewStream className="text-lg opacity-30" />
                 Pipeline View
               </button>
               <button
