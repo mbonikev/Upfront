@@ -179,7 +179,7 @@ function Projects() {
                 <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
                   <button
                     onClick={scrollLeft}
-                    className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent transition duration-100 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full"
+                    className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent transition duration-75 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full"
                   >
                     <LuChevronLeft className="text-xl" />
                   </button>
@@ -192,7 +192,7 @@ function Projects() {
                     onClick={scrollRight}
                     className="h-[30px] w-auto aspect-square ring-1 ring-stone-200 hover:ring-stone-400 bg-white
                 .
-                 dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent transition duration-100 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full"
+                 dark:bg-[#2c2c2c] dark:text-[#727272] dark:hover:text-light-text-color dark:ring-transparent dark:hover:ring-transparent transition duration-75 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full"
                   >
                     <LuChevronRight className="text-xl" />
                   </button>
