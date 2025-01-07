@@ -74,45 +74,6 @@ function Projects() {
     getme();
   }, []);
 
-  const handleScroll = () => {
-    const content = contentRef.current;
-    if (content) {
-      setCanScrollLeft(content.scrollLeft > 0);
-
-      // Adjust the calculation to ensure precision
-      const isAtEnd =
-        Math.ceil(content.scrollLeft + content.clientWidth) >=
-        content.scrollWidth;
-
-      setCanScrollRight(!isAtEnd);
-    }
-  };
-
-  const scrollLeft = () => {
-    contentRef.current?.scrollBy({
-      left: -200, // Adjust scroll distance as needed
-      behavior: "smooth",
-    });
-  };
-
-  const scrollRight = () => {
-    contentRef.current?.scrollBy({
-      left: 200, // Adjust scroll distance as needed
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    // Initial check for scrollable buttons
-    handleScroll();
-  }, []);
-
-  const hour = getHours(new Date());
-  const getGreeting = () => {
-    if (hour < 12) return "Good Morning";
-    if (hour < 18) return "Good Afternoon";
-    return "Good Evening";
-  };
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
