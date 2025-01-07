@@ -175,13 +175,13 @@ function Due() {
 
                           <div className="text-xs flex items-start justify-end gap-2">
                             <div className="w-fit flex items-center justify-end">
-                              <h1 className="text-white bg-main-color h-[24px] w-[24px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[26px] w-[26px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[24px] w-[24px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[26px] ml-[-8px] w-[26px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[24px] w-[24px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[26px] ml-[-8px] w-[26px] rounded-full font-bold text-sm border-[3px] flex items-center justify-center">
                                 K
                               </h1>
                             </div>
