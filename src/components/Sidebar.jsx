@@ -482,7 +482,7 @@ function Sidebar({
             </button>
           </div>
           {/* 2 */}
-          <div className="flex-1 flex flex-col gap-[3px] px-2 pb-8">
+          <div className="flex-1 flex flex-col gap-[2px] px-2 pb-8">
             <Link
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
@@ -580,7 +580,7 @@ function Sidebar({
                 <LuPlus />
               </button>
             </p>
-            <div className="w-full h-fit flex flex-col flex-1 gap-0">
+            <div className="w-full h-fit flex flex-col flex-1 gap-[2px]">
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
