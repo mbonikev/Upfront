@@ -3,32 +3,20 @@ import {
   Link,
   useNavigate,
   useOutletContext,
-  useParams,
 } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { LuChevronLeft, LuChevronRight, LuHash } from "react-icons/lu";
 import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
 import { format, getHours } from "date-fns";
 
 function Projects() {
-  const { workspaceId } = useParams();
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
   const { username, userEmail, workspaces, setWorkspaces } = useOutletContext();
-  const [pageTitle, setPageTitle] = useState("Workspace 1");
-  const inputRef = useRef(null);
-  // spaces
-  const [w1, setW1] = useState(null);
-  //   const [myWorkSpaces, setMyWorkSpaces] = useState([]);
   const [myProjects, setMyProjects] = useState([]);
   const [fetchingProjects, setFetchingProjects] = useState(true);
   const navigate = useNavigate();
-  const contentRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("upfront_user");
