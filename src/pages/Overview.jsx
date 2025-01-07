@@ -173,7 +173,7 @@ function Projects() {
             <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
               Recently Created
             </h1>
-            <div className="relative w-full min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
+            <div className="group relative w-full min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
               {/* Left Button */}
               {canScrollLeft && (
                 <div className="nextSpace w-[80px] h-full absolute top-0 left-5 max-xl:left-0 bg-gradient-to-r max-xl:pl-2 from-white dark:from-dark-body via-white dark:via-dark-body to-transparent z-20 flex items-center justify-start">
