@@ -173,7 +173,7 @@ function Due() {
                             </span>
                           </h1>
 
-                          <div className="text-xs flex items-start justify-end gap-2">
+                          <div className="text-xs flex items-start justify-start flex-col">
                             <div className="w-fit flex items-center justify-end">
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
