@@ -101,12 +101,12 @@ function Due() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col px-6`}
       >
-        <div className="flex items-start justify-start gap-2 pt-7">
+        <div className="flex items-start justify-start flex-col gap-2 pt-7">
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
             Dues
           </h1>
           {/* no due */}
-          <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words bg-red-300 mt-10 text-sm">
+          <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words bg-red-300 text-sm">
             You have nothing Due!
           </h1>
         </div>
