@@ -85,16 +85,16 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
         <div className='w-full flex flex-col justify-start items-start bg-white dark:bg-[#242424]'>
             <div className='pt-2 px-2 w-full'>
                 <div className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight line-clamp-1 '>
-                    <LuUsers2 className='text-xl text-text-color/50 dark:text-[#b8b8b8] min-w-fit' />
+                    <LuUsers2 className='text-xl text-text-color/50 dark:text-light-text-color min-w-fit' />
                     <div className='w-full h-fit flex-col'>
                         <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white  '>Add Collaborators</p>
-                        <p className='line-clamp-1 text-text-color/70 dark:text-[#b8b8b8] text-xs'>{collaborations.length} has access</p>
+                        <p className='line-clamp-1 text-text-color/70 dark:text-light-text-color text-xs'>{collaborations.length} has access</p>
                     </div>
                 </div>
             </div>
             <div className='p-2 w-full'>
                 <div className='flex items-center justify-start gap-2 relative'>
-                    <div className='text-text-color/50 dark:text-[#b8b8b8] pl-2'>
+                    <div className='text-text-color/50 dark:text-light-text-color pl-2'>
                         {authing ? (<RiLoader5Fill className='text-xl animate-spinLoader' />) : (<LuAtSign className='text-xl' />)}
                     </div>
                     <div className='relative'>
@@ -128,9 +128,9 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
                             <p className='truncate max-w-[160px]'>{collab}</p>
                         </div>
                         {collab === userEmail ?
-                            <span className='bg-stone-100 dark:bg-[#383838] text-text-color/70 dark:text-[#b8b8b8] text-xs py-1 px-2 rounded-md'>Owner</span>
+                            <span className='bg-stone-100 dark:bg-[#383838] text-text-color/70 dark:text-light-text-color text-xs py-1 px-2 rounded-md'>Owner</span>
                             :
-                            <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 dark:text-[#b8b8b8] hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
+                            <button onClick={() => handleRemoveCollaborator(collab)} title="Remove Collaborator" className={`text-base p-1 flex items-center justify-center transition text-text-color/70 dark:text-light-text-color hover:text-red-500 ${authingDelete !== '' && 'pointer-events-none'}`}>
                                 {authingDelete === collab ?
                                     <RiLoader5Fill className='animate-spinLoader text-lg text-red-500' />
                                     :
@@ -143,7 +143,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
             <div className='w-full h-[1px] bg-border-line-color/70 dark:bg-[#404040]'></div>
             <div className='p-2 flex flex-col w-full'>
                 <Link to={'/'} className='min-h-[34px] flex items-center gap-2 px-2 py-[7px] font-normal text-text-color dark:text-white text-sm tracking-tight rounded-md hover:bg-stone-200/50 dark:hover:bg-[#383838] line-clamp-1 '>
-                    <LuInfo className='text-xl text-text-color/50 dark:text-[#b8b8b8]  min-w-fit' />
+                    <LuInfo className='text-xl text-text-color/50 dark:text-light-text-color  min-w-fit' />
                     <p className='line-clamp-1'>Access Permissions</p>
                 </Link>
             </div>
