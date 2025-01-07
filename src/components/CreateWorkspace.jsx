@@ -12,7 +12,7 @@ function CreateWorkspace({
   return (
     <div className="w-[330px] flex flex-col gap-2">
       <div className="w-full flex items-center justify-between gap-1 py-3 px-4 border-b border-stone-200 dark:border-[#474747] text-sm">
-        <h1 className="font-medium tracking-tight text-lg text-text-color dark:text-white">
+        <h1 className="font-medium tracking-tight text-base text-text-color dark:text-white">
           Create Workspace
         </h1>
         <button
@@ -23,7 +23,7 @@ function CreateWorkspace({
         </button>
       </div>
       <form onSubmit={create} className="flex-1 flex flex-col gap-3 p-1 pb-3 ">
-        <div className="flex flex-col gap-1 px-2">
+        <div className="flex flex-col gap-1 px-0">
           <h1 className="font-normal text-sm">Workspace Name</h1>
           <input
             type="text"
