@@ -220,13 +220,13 @@ function Projects() {
                     <h1 className="text-text-color/75 dark:text-[#dfdfdf] font-normal w-full min-h-fit h-fit px-3 pt-[29px] whitespace-nowrap truncate text-sm">
                       {project.name !== "" ? project.name : "Untitled"}
                     </h1>
-                    <div className="flex-1 pb-2 px-3 w-full flex items-end justify-start gap-1">
+                    <div className="flex-1 pb-2 px-3 w-full flex items-end justify-between gap-1">
                       <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full text-xs flex items-center justify-start gap-1.5">
-                        <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-light-text-color capitalize font-semibold">
-                          {project.collaborations.length}
-                        </span>
                         <span className="text-xs opacity-85">
                           <TimeAgo date={project.createdAt} />
+                        </span>
+                        <span className="h-[20px] w-[20px] min-w-[20px] aspect-square flex items-center justify-center rounded-full bg-main-color text-white dark:bg-[#424242] dark:text-light-text-color capitalize font-semibold">
+                          {project.collaborations.length}
                         </span>
                       </h1>
                     </div>
