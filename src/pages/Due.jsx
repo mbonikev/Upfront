@@ -107,7 +107,7 @@ function Due() {
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4] px-6">
             Dues
           </h1>
-          <div className="w-full h-fit my-2 flex items-center justify-between border-b-[2px] border-stone-100 dark:border-[#282828] pb-1">
+          <div className="w-full h-fit my-2 flex items-center justify-between border-b-[2px] border-stone-100 dark:border-[#282828] pb-1 px-6">
             <div className="w-fit flex items-center justify-start gap-1">
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
@@ -117,6 +117,8 @@ function Due() {
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
           </div>
+          {/* main */}
+          <div className="w-full h-fit px-6"></div>
           {/* no due */}
           <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words text-sm">
             You have nothing Due!
