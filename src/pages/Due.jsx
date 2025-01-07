@@ -178,14 +178,16 @@ function Due() {
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[30px] ml-[30px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[30px] w-[30px] ml-[-8px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
-                              <h1 className="text-white bg-main-color h-[30px] ml-[30px] w-[26px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
+                              <h1 className="text-white bg-main-color h-[30px] w-[30px] ml-[-8px] rounded-full font-bold text-sm border-[3px] border-white dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
                               </h1>
                             </div>
-                            <h1 className="pt-1 text-text-color/60 dark:text-light-text-color/50">2 days ago</h1>
+                            <h1 className=" text-text-color/60 dark:text-light-text-color/50">
+                              2 days ago
+                            </h1>
                           </div>
                         </div>
                       </div>
