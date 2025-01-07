@@ -159,7 +159,7 @@ function Projects() {
       >
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
-          <h1 className="text-text-color dark:text-[#dfdfdf] text-3xl font-bold tracking-tight px-10">
+          <h1 className="text-text-color dark:text-[#dfdfdf] text-2xl font-bold tracking-tight px-10">
             {`${getGreeting()}, ${username}.`}
           </h1>
         </div>
