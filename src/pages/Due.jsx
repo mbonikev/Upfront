@@ -142,7 +142,7 @@ function Due() {
           <div className="w-full h-fit px-6">
             {/* task */}
             <div className="w-full max-w-[1200px] flex items-start justify-start flex-col ring-1 ring-stone-200/60 dark:ring-[#282828] rounded-2xl p-1">
-              <div className="w-full h-full min-h-[140px] flex gap-3">
+              <div className="w-full h-full min-h-[140px] flex gap-1">
                 <div className="w-[140px] bg-stone-100 dark:bg-[#282828] text-text-color/95 rounded-xl p-2 flex">
                   <div className="w-full h-fit bg-white dark:bg-dark-body shadow-lg dark:text-light-text-color rounded-lg flex items-center justify-center flex-col gap-0 p-3 relative">
                     <div className="w-full h-fit absolute top-[-5px] px-3 flex items-center justify-between">
@@ -157,7 +157,7 @@ function Due() {
                 </div>
                 <div className="flex flex-col gap-2 w-full h-full px-1 py-2 text-text-color dark:text-light-text-color">
                   {[...Array(4)].map((_, index) => (
-                    <div key={index} className="w-full flex-1 flex pr-3 bg-[#202020] rounded-xl p-2">
+                    <div key={index} className="w-full flex-1 flex pr-3 bg-[#202020]/80 rounded-xl p-2">
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         {/* line */}
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#282828] flex"></div>
