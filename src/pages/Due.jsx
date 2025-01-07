@@ -61,7 +61,7 @@ function Due() {
     getme();
   }, []);
 
-  const linkStyle = `h-[32px] w-full text-sm flex items-center gap-[5px] px-2 py-[7px] font-medium text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none`;
+  const linkStyle = `h-[32px] w-full text-sm flex items-center gap-[5px] px-2 py-[7px] font-medium text-text-color rounded-lg line-clamp-1 relative select-none`;
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
