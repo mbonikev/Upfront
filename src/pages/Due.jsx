@@ -163,7 +163,7 @@ function Due() {
                       {/* task content */}
                       <div className="w-full flex items-center justify-between py-1">
                         <span>Define Curriculum</span>
-                        <span></span>
+                        <span className="text-sm">2 days ago</span>
                       </div>
                     </div>
                   </div>
