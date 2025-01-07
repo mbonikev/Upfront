@@ -8,6 +8,7 @@ import TimeAgo from "react-timeago";
 import { format, getHours } from "date-fns";
 import { LuLayoutGrid } from "react-icons/lu";
 import { TbTimelineEvent } from "react-icons/tb";
+import { HiMiniRectangleGroup } from "react-icons/hi2";
 
 function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -114,8 +115,8 @@ function Due() {
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
               >
-                <TbTimelineEvent className="text-lg opacity-30" />
-                Timeline View
+                <HiMiniRectangleGroup className="text-lg opacity-30" />
+                Grid View
               </button>
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
