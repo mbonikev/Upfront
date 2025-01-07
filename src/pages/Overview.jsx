@@ -155,7 +155,7 @@ function Projects() {
         setWorkspaces={setWorkspaces}
       />
       <div
-        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col px-20`}
+        className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col px-16`}
       >
         {/* greating */}
         <div className="w-full h-fit mt-16 flex items-center justify-center">
@@ -170,7 +170,7 @@ function Projects() {
         ) : myProjects.length > 0 ? (
           <>
             {/* recent projects */}
-            <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full max-w-[900px] mx-auto px-5 mt-10 text-sm">
+            <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal w-full max-w-[900px] mx-auto px-10 mt-10 text-sm">
               Recently Created
             </h1>
             <div className="group relative w-full min-h-[50px] max-w-[900px] mt-2 mx-auto px-7 max-xl:px-0 flex items-start justify-start flex-col overflow-x-auto hidden_scrollbar">
