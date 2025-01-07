@@ -106,7 +106,7 @@ function Due() {
             Dues
           </h1>
           {/* no due */}
-          <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal mt-10 text-sm">
+          <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words bg-red-300 mt-10 text-sm">
             You have nothing Due!
           </h1>
         </div>
