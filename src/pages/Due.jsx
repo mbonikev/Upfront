@@ -143,11 +143,11 @@ function Due() {
             {/* task */}
             <div className="w-full flex items-start justify-start flex-col gap-2 ring-1 ring-stone-200/60 dark:ring-[#282828] rounded-2xl p-1">
               <div className="w-full h-full min-h-[140px] flex gap-2">
-                <div className="w-[140px] bg-stone-100 dark:bg-[#fb923c40] text-text-color/95 rounded-xl p-2 flex">
+                <div className="w-[140px] bg-stone-100 dark:bg-[#282828] text-text-color/95 rounded-xl p-2 flex">
                   <div className="w-full h-fit bg-white dark:bg-dark-body shadow-lg dark:text-light-text-color rounded-lg flex items-center justify-center flex-col gap-0 p-3 relative">
                     <div className="w-full h-fit absolute top-[-5px] px-3 flex items-center justify-between">
-                        <div className="w-[4px] h-[12px] bg-stone-200/70 dark:bg-[#fb923c]/30 rounded-lg"></div>
-                        <div className="w-[4px] h-[12px] bg-stone-200/70 dark:bg-[#fb923c]/30 rounded-lg"></div>
+                        <div className="w-[4px] h-[12px] bg-stone-200/70 dark:bg-[#383838] rounded-lg"></div>
+                        <div className="w-[4px] h-[12px] bg-stone-200/70 dark:bg-[#383838] rounded-lg"></div>
                     </div>
                     <h1 className="font-semibold">Dec</h1>
                     <h1 className="text-4xl font-semibold tracking-tight">
