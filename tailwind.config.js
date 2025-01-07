@@ -15,7 +15,7 @@ export default {
 
         // dark
         "dark-body": "#191919",
-        "light-text-color": "#111111",
+        "light-text-color": "#f1f1f1",
       },
       fontFamily: {
         LeagueSpartan: ["League Spartan", "sans-serif"],
