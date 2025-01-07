@@ -58,7 +58,7 @@ function Due() {
     getme();
   }, []);
 
-  const linkStyle = `h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal dark:text-light-text-color dark:hover:bg-[#2c2c2c] text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none`
+  const linkStyle = `h-[32px] w-full flex items-center gap-2 px-2 py-[7px] font-normal text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none`;
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
@@ -109,7 +109,11 @@ function Due() {
           </h1>
           <div className="w-full h-fit flex items-center justify-between">
             <div className="w-fit flex items-center justify-start gap-1">
-                <button className={linkStyle}>My ss</button>
+              <button
+                className={`${linkStyle}dark:text-light-text-color dark:hover:bg-[#2c2c2c]`}
+              >
+                My ss
+              </button>
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
           </div>
