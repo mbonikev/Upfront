@@ -580,7 +580,7 @@ function Sidebar({
                 <LuPlus />
               </button>
             </p>
-            <div className="w-full h-fit flex flex-col flex-1 gap-1">
+            <div className="w-full h-fit flex flex-col flex-1 gap-0">
               {/* Workspace */}
               {workspaces && workspaces.length > 0 ? (
                 workspaces.map((space, index) => (
@@ -612,9 +612,9 @@ function Sidebar({
                       `}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
-                        <FcOpenedFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-40" />
+                        <FcOpenedFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-90" />
                       ) : (
-                        <FcFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-40" />
+                        <FcFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-90" />
                       )}
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
