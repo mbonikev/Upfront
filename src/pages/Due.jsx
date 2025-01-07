@@ -103,11 +103,11 @@ function Due() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-clip flex items-start justify-start flex-col p-6`}
       >
-        <div className="flex items-start justify-start flex-col gap-2">
+        <div className="w-full flex items-start justify-start flex-col gap-2">
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
             Dues
           </h1>
-          <div className="w-full h-fit flex items-center justify-between border-b ">
+          <div className="w-full h-fit flex items-center justify-between border-b border-stone-100 dark:border-[#303030] pb-1">
             <div className="w-fit flex items-center justify-start gap-1">
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
