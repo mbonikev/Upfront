@@ -142,7 +142,9 @@ function Due() {
           <div className="w-full h-fit px-6">
             {/* task */}
             <div className="w-full flex items-start justify-start ring-1 ring-stone-200 dark:ring-[#282828] rounded-2xl p-2">
-                <div className="w-[140px] h-auto min-h-[160px] bg-[#fb923c60] rounded-xl"></div>
+                <div className="w-[140px] h-auto min-h-[160px] bg-[#fb923c60] rounded-xl p-2">
+                    <div className="w-full h-fit bg-white"></div>
+                </div>
                 <div className="flex-1 w-full h-fit"></div>
             </div>
             <div></div>
