@@ -174,7 +174,7 @@ function Due() {
                               </span>
                             </div>
                             <div>Define Curriculum</div>
-                            <div className="opacity-70 font-normal">
+                            <div className="opacity-70 font-normal text-xs">
                               Default one
                             </div>
                           </div>
