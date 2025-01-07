@@ -105,6 +105,7 @@ function Due() {
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
             Dues
           </h1>
+          <div className="w-full h-fit"></div>
           {/* no due */}
           <h1 className="text-dark-body/50 dark:text-light-text-color/80 font-normal max-w-[500px] break-words text-sm">
             You have nothing Due!
