@@ -443,7 +443,7 @@ function Sidebar({
         )}
         {/* dropdown */}
         {profileMenu && (
-          <div className="min-w-[260px] h-fit max-h-[80vh] absolute top-[48px] left-2 rounded-xl shadow-custom ring-1 ring-stone-300 overflow-y-auto z-30">
+          <div className="min-w-[260px] h-fit max-h-[80vh] absolute top-[48px] left-2 rounded-xl shadow-custom ring-1 ring-stone-800 overflow-y-auto z-30">
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
