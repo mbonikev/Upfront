@@ -537,7 +537,7 @@ function Sidebar({
               Dates
             </p>
             <Link
-              to={"/"}
+              to={"/due"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
             >
               <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
