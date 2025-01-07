@@ -35,7 +35,7 @@ function CreateWorkspace({
             className="w-full h-[33px] rounded-lg px-3 ring-1 ring-stone-200 focus:ring-2 focus:ring-main-color/60 dark:placeholder:text-stone-300/50 transition text-text-color dark:text-white bg-stone-100 dark:bg-[#404040] dark:ring-transparent "
           />
         </div>
-        <div className="flex justify-end items-center gap-2 px-2">
+        <div className="flex justify-end items-center gap-2 px-4 pb-1">
           <div
             onClick={hide}
             title="Cancel"
@@ -46,7 +46,7 @@ function CreateWorkspace({
           <button
             type="submit"
             title="Create a new Task"
-            className=" active:scale-95 h-[40px] px-6 transition bg-main-color text-white font-semibold min-w-[60pxCancel] rounded-md inline-flex items-center justify-center text-sm"
+            className=" active:scale-95 h-[35px] px-4 transition bg-main-color text-white font-semibold min-w-[60pxCancel] rounded-md inline-flex items-center justify-center text-sm"
           >
             {creating ? (
               <RiLoader5Fill className="text-xl animate-spinLoader" />
