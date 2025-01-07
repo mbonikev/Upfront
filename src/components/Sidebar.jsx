@@ -446,13 +446,13 @@ function Sidebar({
             <ProfileDropdownButtons username={username} userEmail={userEmail} />
           </div>
         )}
-        <div className="w-full h-full border-r-[1px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-[#b8b8b8] flex flex-col gap-[2px] text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain sb_onhover">
+        <div className="w-full h-full border-r-[1px] border-stone-200/70 dark:border-[#313131a6] bg-white dark:bg-[#202020] dark:text-light-text-color flex flex-col gap-[2px] text-sm min-h-svh max-h-svh overflow-y-auto overscroll-contain sb_onhover">
           {/* 1 */}
           <div className="w-full h-fit flex items-center p-2 sticky top-0 bg-white dark:bg-[#202020] z-10 justify-between">
             <div className="w-full h-fit">
               <button
                 onClick={showPMenu}
-                className="dark:text-[#b8b8b8] text-text-color w-fit flex items-center justify-start gap-[2px] hover:bg-stone-100 dark:hover:bg-[#2c2c2c] transition px-1.5 py-1.5 rounded-lg"
+                className="dark:text-light-text-color text-text-color w-fit flex items-center justify-start gap-[2px] hover:bg-stone-100 dark:hover:bg-[#2c2c2c] transition px-1.5 py-1.5 rounded-lg"
               >
                 <p className="h-[25px] w-auto aspect-square rounded-full bg-main-color dark:bg-[#424242] text-white transition flex items-center justify-center text-sm font-semibold uppercase">
                   {username.charAt(0)}
@@ -564,7 +564,7 @@ function Sidebar({
                 </span>
               </p>
             </Link>
-            <p className="group flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-1 pl-[8px] font-medium dark:text-[#b8b8b8]/70 text-text-color/70 tracking-tight select-none  w-full">
+            <p className="group flex items-center justify-start gap-2 mt-[6px] rounded-lg py-[7px] pr-1 pl-[8px] font-medium dark:text-light-text-color/70 text-text-color/70 tracking-tight select-none  w-full">
               <LuChevronDown
                 onClick={handleCollapseWps}
                 className={`p-[2px] cursor-pointer hover:bg-stone-100 dark:hover:bg-[#2c2c2c] dark:active:brightness-125 rounded-md h-[20px] w-auto aspect-square transition ${
@@ -574,7 +574,7 @@ function Sidebar({
               <span className="flex-1">Workspaces</span>
               <button
                 onClick={handleCreateWps}
-                className="flex items-center justify-center text-lg cursor-pointer hover:text-text-color dark:hover:text-[#b8b8b8] rounded-md h-[22px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75 px-1"
+                className="flex items-center justify-center text-lg cursor-pointer hover:text-text-color dark:hover:text-light-text-color rounded-md h-[22px] w-auto aspect-square opacity-0 group-hover:opacity-100 transition duration-75 px-1"
               >
                 <LuPlus />
               </button>
