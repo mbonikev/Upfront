@@ -514,7 +514,7 @@ function Sidebar({
                 </div>
               </div>
             </button>
-            <Link
+            {/* <Link
               to={"/ai"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100 ${
                 location.pathname === `/ai`
@@ -524,7 +524,7 @@ function Sidebar({
             >
               <LuSparkles className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Upfront AI</p>
-            </Link>
+            </Link> */}
             <Link
               to={"/"}
               className={`${linkStyle} hover:bg-stone-100 group-hover:bg-stone-100`}
