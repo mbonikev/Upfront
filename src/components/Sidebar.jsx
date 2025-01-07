@@ -50,6 +50,7 @@ import { PiArrowUpRightBold } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { GoHome } from "react-icons/go";
 import CreateWorkspace from "./CreateWorkspace";
+import { FcFolder } from "react-icons/fc";
 const customAnimation = keyframes`
   from {
     opacity: 0;
@@ -613,7 +614,7 @@ function Sidebar({
                       {location.pathname === `/workspaces/${space._id}` ? (
                         <BsFolder2Open className="text-xl text-text-color/50 dark:text-[#858585]" />
                       ) : (
-                        <BsFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
+                        <FcFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
                       )}
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
