@@ -46,7 +46,7 @@ function CreateWorkspace({
           <button
             type="submit"
             title="Create a new Task"
-            className=" active:scale-95 h-[300px] transition bg-main-color text-white font-semibold min-w-[60px] rounded-md inline-flex items-center justify-center text-sm"
+            className=" active:scale-95 h-[40px] px-6 transition bg-main-color text-white font-semibold min-w-[60pxCancel] rounded-md inline-flex items-center justify-center text-sm"
           >
             {creating ? (
               <RiLoader5Fill className="text-xl animate-spinLoader" />
