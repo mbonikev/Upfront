@@ -162,7 +162,7 @@ function Due() {
                       <div className="w-[4px] h-full rounded-xl bg-stone-200/90 flex"></div>
                       {/* task content */}
                       <div className="">
-                        s <br /> rr
+                        S
                       </div>
                     </div>
                   </div>
