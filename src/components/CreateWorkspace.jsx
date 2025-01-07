@@ -39,7 +39,7 @@ function CreateWorkspace({
           <div
             onClick={hide}
             title="Cancel"
-            className=" cursor-pointer active:scale-95 transition bg-stone-200 text-text-color dark:bg-[#424242] dark:text-body-color/90 font-semibold rounded-md inline-flex items-center justify-center text-sm"
+            className=" cursor-pointer active:scale-95 h-[35px] px-4 transition bg-stone-200 text-text-color dark:bg-[#424242] dark:text-body-color/90 font-semibold rounded-md inline-flex items-center justify-center text-sm"
           >
             <span className="text-sm tracking-tight">Cancel</span>
           </div>
