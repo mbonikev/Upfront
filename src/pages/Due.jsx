@@ -9,6 +9,7 @@ import { format, getHours } from "date-fns";
 import { LuLayoutGrid } from "react-icons/lu";
 import { TbTimelineEvent } from "react-icons/tb";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
+import { IoGrid } from "react-icons/io5";
 
 function Due() {
   const apiUrl = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -61,7 +62,7 @@ function Due() {
     getme();
   }, []);
 
-  const linkStyle = `h-[32px] w-full text-sm flex items-center gap-[5px] px-2 py-[7px] font-medium text-text-color rounded-lg line-clamp-1 relative select-none`;
+  const linkStyle = `h-[32px] w-fit text-sm flex items-center gap-[5px] px-2 py-[7px] font-medium text-text-color rounded-lg line-clamp-1 relative select-none`;
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
@@ -119,10 +120,10 @@ function Due() {
                 Pipeline View
               </button>
               <button
-                className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
+                className={`${linkStyle} text-text-color dark:text-light-text-color`}
               >
-                <HiMiniRectangleGroup className="text-lg opacity-30" />
-                Pipeline View
+                <IoGrid className="text-lg opacity-30" />
+                Grid View
               </button>
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
