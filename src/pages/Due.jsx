@@ -110,7 +110,7 @@ function Due() {
           <div className="w-full h-fit flex items-center justify-between">
             <div className="w-fit flex items-center justify-start gap-1">
               <button
-                className={`${linkStyle}dark:text-light-text-color dark:hover:bg-[#2c2c2c]`}
+                className={`${linkStyle} dark:text-light-text-color dark:bg-[#2c2c2c]`}
               >
                 My ss
               </button>
