@@ -159,9 +159,9 @@ function Due() {
                   <div className="w-fit flex-1 flex">
                     <div className="flex min-h-full gap-2 items-start justify-start">
                       {/* line */}
-                      <div className="w-[4px] h-full rounded-xl bg-stone-200/90 flex"></div>
+                      <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 flex"></div>
                       {/* task content */}
-                      <div className="w-full">
+                      <div className="w-full flex items-center justify-between">
                         S
                       </div>
                     </div>
