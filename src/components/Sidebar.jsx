@@ -612,9 +612,9 @@ function Sidebar({
                       `}
                     >
                       {location.pathname === `/workspaces/${space._id}` ? (
-                        <FcOpenedFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
+                        <FcOpenedFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-40" />
                       ) : (
-                        <FcFolder className="text-xl text-text-color/50 dark:text-[#858585]" />
+                        <FcFolder className="text-xl text-text-color/50 dark:text-[#858585] dark:opacity-40" />
                       )}
                       <p className="line-clamp-1 max-w-[70%]">
                         {space.workspace_name}
