@@ -121,7 +121,7 @@ function Due() {
                 Pipeline View
               </button>
               <button
-                className={`${linkStyle} text-text-color dark:text-light-text-color`}
+                className={`${linkStyle} text-text-color dark:text-light-text-color hover:bg-stone-100/50 dark:hover:bg-[#2c2c2c]/50`}
               >
                 <HiViewGrid className="text-lg opacity-30" />
                 Grid View
