@@ -58,7 +58,7 @@ function Due() {
     getme();
   }, []);
 
-  const linkStyle = `h-[32px] w-full text-sm flex items-center gap-2 px-2 py-[7px] font-normal text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none`;
+  const linkStyle = `h-[32px] w-full text-sm flex items-center gap-2 px-2 py-[7px] font-medium text-text-color tracking-tight rounded-lg line-clamp-1 relative select-none`;
 
   return (
     <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
@@ -107,12 +107,12 @@ function Due() {
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4] px-6">
             Dues
           </h1>
-          <div className="w-full h-fit mb-3 flex items-center justify-between border-b-[2px] border-stone-100 dark:border-[#282828] pb-1 px-6">
+          <div className="w-full h-fit my-2 flex items-center justify-between border-b-[2px] border-stone-100 dark:border-[#282828] pb-1 px-6">
             <div className="w-fit flex items-center justify-start gap-1">
               <button
                 className={`${linkStyle} text-text-color dark:text-light-text-color bg-stone-100 dark:bg-[#2c2c2c]`}
               >
-                My ss
+                Pipe View
               </button>
             </div>
             <div className="w-fit flex items-center justify-start gap-1"></div>
