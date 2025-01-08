@@ -159,7 +159,7 @@ function Due() {
                   {[...Array(14)].map((_, index) => (
                     <div
                       key={index}
-                      className="w-fit flex-1 flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] rounded-xl p-2"
+                      className="w-fit flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] rounded-xl p-2"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         {/* line */}
