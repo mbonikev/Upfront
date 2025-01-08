@@ -165,7 +165,7 @@ function Due() {
                         {/* line */}
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#323232] flex"></div>
                         {/* task content */}
-                        <div className="w-full text-sm font-medium flex items-start justify-between gap-5 py-1">
+                        <div className="w-full text-sm font-medium flex items-end justify-between gap-5 py-1">
                           <div className="flex flex-col gap-[3px]">
                             <div className="flex items-center justify-start gap-0 ml-[-4px]">
                               <LuChevronsUp className="text-xl text-[#ff5630]" />
