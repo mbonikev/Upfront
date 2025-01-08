@@ -110,7 +110,7 @@ function Due() {
       <div
         className={`w-[calc(100%-256px)] h-full min-h-svh flex-1 text-text-color bg-white dark:bg-dark-body transition-all duration-500 ease-in-out z-10 overflow-hidden flex items-start justify-start flex-col py-6`}
       >
-        <div className="w-full flex items-start justify-start flex-col gap-2 overflow-auto">
+        <div className="w-full flex items-start justify-start flex-col gap-2">
           <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4] px-6">
             Dues
           </h1>
