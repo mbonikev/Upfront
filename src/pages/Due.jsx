@@ -191,9 +191,9 @@ function Due() {
                                 K
                               </h1>
                             </div>
-                            <h1 className=" text-text-color/60 dark:text-light-text-color/50">
+                            {/* <h1 className=" text-text-color/60 dark:text-light-text-color/50">
                               2 days ago
-                            </h1>
+                            </h1> */}
                           </div>
                         </div>
                       </div>
