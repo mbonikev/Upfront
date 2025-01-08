@@ -163,7 +163,7 @@ function Due() {
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         {/* line */}
-                        <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#282828] flex"></div>
+                        <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#323232] flex"></div>
                         {/* task content */}
                         <div className="w-full text-sm font-medium flex items-start justify-between gap-5 py-1">
                           <div className="flex flex-col gap-[3px]">
