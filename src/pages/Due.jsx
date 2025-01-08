@@ -165,7 +165,7 @@ function Due() {
                         {/* line */}
                         <div className="w-[4px] min-w-[4px] h-full rounded-xl bg-stone-200/90 dark:bg-[#323232] flex"></div>
                         {/* task content */}
-                        <div className="w-full h-full text-sm font-medium flex items-start bg-red-200 justify-between gap-5 py-1">
+                        <div className="w-full h-full text-sm font-medium flex items-start justify-between gap-5 py-1">
                           <div className="flex flex-col gap-[3px]">
                             <div className="flex items-center justify-start gap-0 ml-[-4px]">
                               <LuChevronsUp className="text-xl text-[#ff5630]" />
@@ -179,7 +179,7 @@ function Due() {
                             </div>
                           </div>
 
-                          <div className="h-full bg-orange-300 text-xs flex items-end justify-start flex-col gap-2">
+                          <div className="h-full text-xs flex items-end justify-end flex-col gap-2">
                             <div className="w-fit flex items-center justify-end">
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-[#1f1f1f] flex items-center justify-center">
                                 K
