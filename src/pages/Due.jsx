@@ -68,7 +68,7 @@ function Due() {
   const linkStyle = `h-[32px] w-fit text-sm flex items-center gap-[5px] px-2 py-[7px] font-medium text-text-color rounded-lg line-clamp-1 relative select-none`;
 
   return (
-    <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative overflow-x-hidden">
+    <div className="w-full dark:bg-dark-body dark:text-light-text-color flex items-start justify-start relative">
       <Toaster
         position="top-center"
         toastOptions={{
