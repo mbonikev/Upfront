@@ -177,9 +177,6 @@ function Due() {
                             <div className="opacity-70 font-normal text-xs">
                               Default one
                             </div>
-                            <h1 className="text-xs text-text-color/60 dark:text-light-text-color/50">
-                              2 days ago
-                            </h1>
                           </div>
 
                           <div className="text-xs flex items-end justify-start flex-col gap-2">
