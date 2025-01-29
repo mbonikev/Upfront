@@ -11,7 +11,7 @@ function SearchModal({ Hide }) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [Hide]);
   return (
-    <div className="w-[750px] h-full py-3 flex flex-col">
+    <div className="w-[700px] h-full py-3 flex flex-col">
       <div className="flex items-center justify-start gap-3 h-[45px] px-3 rounded-2xl mx-3 text-[#a1a1a1] bg-[#2f2f2f]">
         <div>
           <LuSearch className="text-xl text-[#f0f0f0]" />
@@ -20,7 +20,7 @@ function SearchModal({ Hide }) {
           type="text"
           autoFocus={true}
           className="tracking-tight bg-transparent w-full text-base text-[#f0f0f0] placeholder:text-[#a1a1a1]"
-          placeholder="Project name, Task name, Template name or Keywords..."
+          placeholder="Search..."
         />
       </div>
       <div className="w-full h-[1px] bg-[#353535] my-3"></div>
