@@ -12,7 +12,7 @@ function SearchModal({ Hide }) {
   }, [Hide]);
   return (
     <div className="w-[810px] h-full pl-5 pr-1 py-[15px] flex flex-col">
-      <div className="flex items-center justify-start gap-3 h-[35px] px-1 text-[#a1a1a1] bg-[#303030]">
+      <div className="flex items-center justify-start gap-3 h-[35px] px-1 text-[#a1a1a1] bg-[#383838]">
         <div>
           <LuSearch className="text-xl text-[#f0f0f0]" />
         </div>
