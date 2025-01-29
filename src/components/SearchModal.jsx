@@ -11,7 +11,7 @@ function SearchModal({ Hide }) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [Hide]);
   return (
-    <div className="w-[810px] h-full pl-5 pr-1 py-[15px] flex flex-col">
+    <div className="w-[810px] h-full pl-5 pr-1 py-3 flex flex-col">
       <div className="flex items-center justify-start gap-3 h-[45px] px-3 rounded-2xl mr-4 text-[#a1a1a1] bg-[#2f2f2f]">
         <div>
           <LuSearch className="text-xl text-[#f0f0f0]" />
