@@ -23,7 +23,7 @@ function SearchModal({ Hide }) {
           placeholder="Project name, Task name, Template name or Keywords..."
         />
       </div>
-      <div className="w-full h-[1px] bg-stone-700"></div>
+      <div className="w-full h-[1px] bg-stone-600"></div>
       <div className="w-full flex-1 mt-2 flex items-start justify-start gap-5">
         <div className="w-1/3 h-full flex items-start justify-start flex-col gap-0.5">
           <button className="outline-none flex items-center justify-start bg-[#505050] dark:bg-[#2f2f2f] w-full h-[42px] px-3 rounded-xl gap-2 text-[#a1a1a1] text-[16px] font-medium ">
