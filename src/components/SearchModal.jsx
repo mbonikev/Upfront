@@ -40,13 +40,13 @@ function SearchModal({ Hide }) {
           </button>
         </div>
         <div className="w-2/3 h-full flex flex-col pr-4">
-          <div className="text-[#f0f0f0] flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
+          <div className="text-[#f0f0f0]/60 flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
             <span className=" font-normal text-sm">The Green Project</span>
-            <span className="opacity-55 text-base">21</span>
+            <span className="text-base">21</span>
           </div>
-          <div className="text-[#f0f0f0] flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
+          <div className="text-[#f0f0f0]/60 flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
             <span className=" font-normal text-sm">The Green Project</span>
-            <span className="opacity-55 text-base">21</span>
+            <span className="text-base">21</span>
           </div>
         </div>
       </div>
