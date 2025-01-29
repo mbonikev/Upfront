@@ -40,7 +40,7 @@ function SearchModal({ Hide }) {
           </button>
         </div>
         <div className="w-2/3 h-full flex flex-col pr-4">
-          <span className=" font-medium text-sm px-3 text-[#989898] mb-2">
+          <span className="font-medium text-sm px-3 text-[#989898] mb-2">
             Project Names
           </span>
           <div className="text-[#f0f0f0] flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
