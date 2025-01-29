@@ -39,7 +39,7 @@ function SearchModal({ Hide }) {
             <span className="text-[#f0f0f0] tracking-tight">Templates</span>
           </button>
         </div>
-        <div className="w-full h-full bg-[#353535] my-3"></div>
+        <div className="w-[1px] h-full bg-[#353535] my-3"></div>
         <div className="w-2/3 h-full flex flex-col">
           <div className="text-[#f0f0f0]/60 flex items-center text-base justify-between cursor-pointer pl-[12px] pr-3 h-[40px] rounded-xl hover:bg-[#505050] dark:hover:bg-[#2f2f2f]">
             <span className=" font-normal text-sm">The Green Project</span>
