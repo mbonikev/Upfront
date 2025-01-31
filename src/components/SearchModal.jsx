@@ -28,15 +28,15 @@ function SearchModal({ Hide }) {
         <div className="w-1/3 h-full flex items-start justify-start flex-col gap-1">
           <button className="outline-none flex items-center justify-start bg-[#505050] dark:bg-[#2f2f2f] w-full h-10 px-3 rounded-xl gap-2 text-[#a1a1a1] text-sm font-medium ">
             <LuHash className="text-lg" />
-            <span className="text-[#f0f0f0] tracking-tight">Projects</span>
+            <span className="text-white tracking-tight">Projects</span>
           </button>
           <button className="outline-none flex items-center justify-start hover:bg-[#505050] dark:hover:bg-[#2f2f2f] w-full h-10 px-3 rounded-xl gap-2 text-[#a1a1a1] text-sm font-medium ">
             <FiCheckCircle className="text-lg" />
-            <span className="text-[#f0f0f0] tracking-tight">Tasks</span>
+            <span className="text-white tracking-tight">Tasks</span>
           </button>
           <button className="outline-none flex items-center justify-start hover:bg-[#505050] dark:hover:bg-[#2f2f2f] w-full h-10 px-3 rounded-xl gap-2 text-[#a1a1a1] text-sm font-medium ">
             <PiPersonSimpleRunBold className="text-lg" />
-            <span className="text-[#f0f0f0] tracking-tight">Templates</span>
+            <span className="text-white tracking-tight">Templates</span>
           </button>
         </div>
         <div className="w-2/3 h-full flex flex-col">
