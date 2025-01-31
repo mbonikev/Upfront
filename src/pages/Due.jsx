@@ -171,6 +171,7 @@ function Due() {
                           </div>
                           {/* assigned to */}
                           <div className="h-full text-xs flex items-end justify-end flex-col gap-2">
+                            <div className="ring-1 ring-stone-200/60 dark:ring-[#282828]"></div>
                             <div className="w-fit flex items-center justify-end">
                               <h1 className="text-white bg-main-color h-7 w-7 mr-[-8px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
                                 K
