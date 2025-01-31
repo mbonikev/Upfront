@@ -496,7 +496,7 @@ function Sidebar({
             </Link>
             <button
               onClick={handleShowSearch}
-              className={`${linkStyle} hover:bg-stone-200 group-hover:bg-stone-200`}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <div className="w-full flex items-center justify-between gap-2">
                 <div className="flex items-center justify-start gap-2">
