@@ -634,9 +634,9 @@ function Sidebar({
                             <>
                               {location.pathname ===
                               `/workspaces/${space._id}` ? (
-                                <BsFolder2Open className="text-xl  min-w-fit" />
+                                <FcOpenedFolder className="text-xl  min-w-fit" />
                               ) : (
-                                <BsFolder className="text-xl  min-w-fit" />
+                                <FcFolder className="text-xl  min-w-fit" />
                               )}
                             </>
                           )}
