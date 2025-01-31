@@ -19,7 +19,7 @@ function SearchModal({ Hide }) {
         <input
           type="text"
           autoFocus={true}
-          className="bg-transparent w-full text-base text-[#f0f0f0] placeholder:text-[#a1a1a1]"
+          className="bg-transparent w-full text-base text-white placeholder:text-[#a1a1a1]"
           placeholder="Search..."
         />
       </div>
