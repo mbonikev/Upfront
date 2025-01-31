@@ -9,6 +9,7 @@ export default {
         "main-color-hover": "#0662d1",
         "text-color": "#111111",
         "body-color": "#fcfdff",
+        "body-light-color": "#f6f4fc",
         "container-color": "#f0f2f7",
         "border-line-color": "#d1d6e3",
         "sidebar-color": "#f9fafc",
