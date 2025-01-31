@@ -172,13 +172,13 @@ function Due() {
                           {/* assigned to */}
                           <div className="h-full text-xs flex items-end justify-end flex-col gap-2">
                             <div className="w-fit flex items-center justify-end">
+                              <h1 className="text-white bg-main-color h-[30px] w-[30px] mr-[-8px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
+                                K
+                              </h1>
+                              <h1 className="text-white bg-main-color h-[30px] w-[30px] mr-[-8px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
+                                K
+                              </h1>
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
-                                K
-                              </h1>
-                              <h1 className="text-white bg-main-color h-[30px] w-[30px] ml-[-8px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
-                                K
-                              </h1>
-                              <h1 className="text-white bg-main-color h-[30px] w-[30px] ml-[-8px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-dark-body flex items-center justify-center">
                                 K
                               </h1>
                             </div>
