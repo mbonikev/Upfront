@@ -155,7 +155,7 @@ function Due() {
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-col gap-1 w-full h-full text-text-color dark:text-light-text-color">
+                <div className="flex flex-col w-full h-full text-text-color dark:text-light-text-color">
                   {[...Array(10)].map((_, index) => (
                     <div
                       key={index}
