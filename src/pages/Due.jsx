@@ -159,12 +159,12 @@ function Due() {
                   {[...Array(2)].map((_, index) => (
                     <button
                       key={index}
-                      className="w-full h-fit flex-1 flex pr-3 hover:bg-stone-100 dark:hover:bg-[#1f1f1f] p-2 border-b border-stone-200/60 dark:border-[#282828]"
+                      className="w-full h-fit flex-1 flex pr-3 group hover:bg-stone-100 dark:hover:bg-[#1f1f1f] p-2 border-b border-stone-200/60 dark:border-[#282828]"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         <div className="w-full h-full text-sm font-medium flex items-center justify-between gap-5">
                           <div className="w-fit flex items-center justify-start gap-2.5">
-                            <div className="text-xl text-[#5e5e5e] hover:text-green-600">
+                            <div className="text-xl text-[#5e5e5e] group-hover:text-green-600">
                               <LuCircleDashed />
                             </div>
                             <h1>Define Curriculum</h1>
