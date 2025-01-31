@@ -416,7 +416,7 @@ function Sidebar({
         {createWpsModal && (
           <div
             onClick={handleHideCreateWps}
-            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/60 backdrop-blur-md fixed transition-all duration-300 ${
+            className={` top-0 left-0 w-full h-full z-20 bg-black/20 dark:bg-black/60 fixed transition-all duration-300 ${
               AnimatecreateWpsModal ? "opacity-100 " : "opacity-0"
             }`}
           ></div>
