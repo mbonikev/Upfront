@@ -172,7 +172,7 @@ function Due() {
                           {/* assigned to */}
                           <div className="h-full text-xs flex items-center justify-end gap-2">
                             <div className="ring-1 ring-stone-200/60 dark:ring-[#282828] py-1 px-2.5 text-xs text-light-text-color/60 rounded-full flex items-center gap-1 ">
-                              <LuChevronsUp className=" text-lg text-[#ff5630]" />
+                              <LuChevronsUp className="text-base text-[#ff5630]" />
                               High
                             </div>
                             <div className="ring-1 ring-stone-200/60 dark:ring-[#282828] py-1 px-2.5 text-xs text-light-text-color/60 rounded-full ">
