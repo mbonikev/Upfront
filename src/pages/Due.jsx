@@ -150,7 +150,7 @@ function Due() {
                       <div className="w-[4px] h-[12px] bg-stone-200/90 dark:bg-[#383838] rounded-lg"></div>
                     </div>
                     <h1 className="font-semibold">Dec</h1>
-                    <h1 className="text-4xl font-semibold tracking-tight">
+                    <h1 className="text-4xl font-semibold tracking-wide">
                       23
                     </h1>
                   </div>
