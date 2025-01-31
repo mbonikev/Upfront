@@ -485,10 +485,10 @@ function Sidebar({
           <div className="flex-1 flex flex-col gap-[2px] px-2 pb-8">
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50 ${
+              className={`${linkStyle} ${
                 location.pathname === `/`
                   ? "bg-stone-200 dark:bg-[#2c2c2c]"
-                  : ""
+                  : "hover:bg-stone-200/50 group-hover:bg-stone-200/50"
               }`}
             >
               <GoHome className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
