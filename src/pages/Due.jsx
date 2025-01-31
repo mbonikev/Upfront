@@ -166,19 +166,7 @@ function Due() {
                           <LuCircleDashed />
                         </button>
                         <div className="w-full h-full text-sm font-medium flex items-start justify-between gap-5 py-1">
-                          <div className="flex flex-col gap-[3px]">
-                            <div className="flex items-center justify-start gap-0 ml-[-4px]">
-                              <LuChevronsUp className="text-xl text-[#ff5630]" />
-                              <span className="text-xs font-semibold text-[#ff5630] pt-[2px]">
-                                High
-                              </span>
-                            </div>
-                            <div>Define Curriculum</div>
-                            <div className="opacity-70 font-normal text-xs">
-                              Default one
-                            </div>
-                          </div>
-
+                          <h1>Define Curriculum</h1>
                           <div className="h-full text-xs flex items-end justify-end flex-col gap-2">
                             <div className="w-fit flex items-center justify-end">
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-[#1f1f1f] flex items-center justify-center">
