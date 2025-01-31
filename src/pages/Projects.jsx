@@ -20,6 +20,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
+import { FcFolder } from "react-icons/fc";
 
 function Projects() {
   const { workspaceId } = useParams();
@@ -310,8 +311,7 @@ function Projects() {
           ) : (
             <>
               <div className="flex items-start justify-start gap-2 ">
-                <FcFolder
-                 className="text-2xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
+                <FcFolder className="text-2xl mt-[3px] text-text-color/50 dark:text-[#858585]" />
                 <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
                   {pageTitle}
                   {/* <span className=" self-end text-xs font-medium bg-teal-600/10 dark:text-light-text-color dark:bg-[#2c2c2c] mb-[4px] ml-2 py-[3px] px-2 tracking-tight rounded-md">
