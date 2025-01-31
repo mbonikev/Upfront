@@ -322,7 +322,7 @@ function Projects() {
           )}
         </div>
         {/* Projects section */}
-        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col gap-10">
+        <div className="w-full h-full flex-1 px-6 pb-10 max-w-[2000px] flex flex-col gap-2">
           <div className="w-full h-fit flex items-end justify-between">
             {fetchingProjects ? (
               <div className="flex items-center justify-start gap-2">
