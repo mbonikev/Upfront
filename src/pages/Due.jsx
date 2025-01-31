@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
 import TimeAgo from "react-timeago";
 import { format, getHours } from "date-fns";
-import { LuChevronsUp, LuLayoutGrid } from "react-icons/lu";
+import { LuChevronsUp, LuCircleDashed, LuLayoutGrid } from "react-icons/lu";
 import { TbTimelineEvent } from "react-icons/tb";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { IoGrid } from "react-icons/io5";
@@ -162,7 +162,9 @@ function Due() {
                       className="w-full flex-1 min-h-[104px] flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] rounded-xl p-2"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
-                        {/* task content */}
+                        <button className="">
+                          <LuCircleDashed />
+                        </button>
                         <div className="w-full h-full text-sm font-medium flex items-start justify-between gap-5 py-1">
                           <div className="flex flex-col gap-[3px]">
                             <div className="flex items-center justify-start gap-0 ml-[-4px]">
