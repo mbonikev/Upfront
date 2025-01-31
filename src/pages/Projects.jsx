@@ -310,7 +310,7 @@ function Projects() {
             </div>
           ) : (
             <>
-              <div className="flex items-start justify-start gap-2 ">
+              <div className="flex items-center justify-start gap-2 ">
                 <FcFolder className="text-3xl bg-red-200 mt-[3px] text-text-color/50 dark:text-[#858585]" />
                 <h1 className="text-2xl font-extrabold tracking-normal max-w-[500px] break-words dark:text-[#d4d4d4]">
                   {pageTitle}
