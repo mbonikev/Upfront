@@ -162,7 +162,7 @@ function Due() {
                       className="w-full h-fit flex-1 flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] rounded-xl p-2"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
-                        <div className="w-full h-full text-sm font-medium flex items-start justify-between gap-5">
+                        <div className="w-full h-full text-sm font-medium flex items-center justify-between gap-5">
                           <div className="w-fit flex items-center justify-start gap-2">
                             <button className="text-xl text-[#5e5e5e]">
                               <LuCircleDashed />
