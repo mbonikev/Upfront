@@ -172,6 +172,10 @@ function Due() {
                           {/* assigned to */}
                           <div className="h-full text-xs flex items-center justify-end gap-2">
                             <div className="ring-1 ring-stone-200/60 dark:ring-[#282828] py-1 px-2.5 text-xs text-light-text-color/60 rounded-full ">
+                              <span className="text-red-600">•</span>
+                              Movie Production
+                            </div>
+                            <div className="ring-1 ring-stone-200/60 dark:ring-[#282828] py-1 px-2.5 text-xs text-light-text-color/60 rounded-full ">
                               Movie Production
                             </div>
                             <div className="w-fit flex items-center justify-end">
