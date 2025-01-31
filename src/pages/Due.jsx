@@ -164,7 +164,7 @@ function Due() {
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         <div className="w-full h-full text-sm font-medium flex items-center justify-between gap-5">
                           <div className="w-fit flex items-center justify-start gap-2.5">
-                            <div className="text-xl text-[#5e5e5e] transition group-hover:text-green-600">
+                            <div className="text-xl text-[#5e5e5e] transition duration-150 group-hover:text-green-600">
                               <LuCircleDashed />
                             </div>
                             <h1>Define Curriculum</h1>
