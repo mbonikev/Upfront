@@ -487,7 +487,7 @@ function Sidebar({
               to={"/"}
               className={`${linkStyle} hover:bg-stone-200 group-hover:bg-stone-200 ${
                 location.pathname === `/`
-                  ? "bg-stone-200/50 dark:bg-[#2c2c2c]"
+                  ? "bg-stone-200 dark:bg-[#2c2c2c]"
                   : ""
               }`}
             >
