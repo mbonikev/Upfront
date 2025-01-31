@@ -528,7 +528,7 @@ function Sidebar({
             </Link> */}
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200 group-hover:bg-stone-200`}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <RiUserSharedLine className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1">Shared with me</p>
@@ -538,7 +538,7 @@ function Sidebar({
             </p>
             <Link
               to={"/due"}
-              className={`${linkStyle} hover:bg-stone-200 group-hover:bg-stone-200`}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <LuTimerReset className="text-text-color/50 dark:text-[#858585] text-xl  min-w-fit" />
               <p className="line-clamp-1 w-full flex items-center justify-between">
@@ -550,7 +550,7 @@ function Sidebar({
             </Link>
             <Link
               to={"/"}
-              className={`${linkStyle} hover:bg-stone-200 group-hover:bg-stone-200`}
+              className={`${linkStyle} hover:bg-stone-200/50 group-hover:bg-stone-200/50`}
             >
               <div className="text-text-color/50 dark:text-[#858585] text-xl bg-red-200/0 w-[20px] min-w-[20px] h-[20px] relative pt-[1px] flex flex-col items-center justify-center gap-[2px]">
                 <div className="w-[17px] h-[2px] min-h-[2px] rounded-[5px] bg-text-color/50 dark:bg-[#858585] relative"></div>
