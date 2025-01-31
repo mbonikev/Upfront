@@ -159,7 +159,7 @@ function Due() {
                   {[...Array(10)].map((_, index) => (
                     <div
                       key={index}
-                      className="w-full h-fit flex-1 flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] rounded-xl p-2 border-b border-stone-200/60 dark:border-[#282828]"
+                      className="w-full h-fit flex-1 flex pr-3 bg-stone-50 dark:bg-[#1f1f1f] p-2 border-b border-stone-200/60 dark:border-[#282828]"
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         <div className="w-full h-full text-sm font-medium flex items-center justify-between gap-5">
