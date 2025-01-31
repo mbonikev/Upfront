@@ -163,10 +163,12 @@ function Due() {
                     >
                       <div className="w-full flex min-h-full gap-2 items-start justify-start">
                         <div className="w-full h-full text-sm font-medium flex items-start justify-between gap-5 py-1">
-                          <button className="">
-                            <LuCircleDashed />
-                          </button>
-                          <h1>Define Curriculum</h1>
+                          <div className="w-fit">
+                            <button className="">
+                              <LuCircleDashed />
+                            </button>
+                            <h1>Define Curriculum</h1>
+                          </div>
                           <div className="h-full text-xs flex items-end justify-end flex-col gap-2">
                             <div className="w-fit flex items-center justify-end">
                               <h1 className="text-white bg-main-color h-[30px] w-[30px] rounded-full font-bold text-sm border-[3px] border-stone-50 dark:border-[#1f1f1f] flex items-center justify-center">
