@@ -270,7 +270,7 @@ function Projects() {
         className={`w-full h-full min-h-svh flex-1 text-text-color flex flex-col bg-[#fdfdfd] dark:bg-dark-body transition-all duration-500 ease-in-out z-10 `}
       >
         <div className="w-full h-fit flex items-start justify-between px-[18px] pt-3">
-          <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
+          {/* <div className=" min-h-[35px] flex items-center justify-start gap-0 ">
             <div className="flex items-center justify-start gap-[2px] text-sm text-text-color/70 dark:text-light-text-color">
               <BreadCrumb name={"Workspaces"} status={"off"} link={"/"} /> /
               <BreadCrumb
@@ -279,7 +279,7 @@ function Projects() {
                 link={`/workspaces/${workspaceId}`}
               />
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center justify-end gap-0">
             {/* <button
               title="Trash"
