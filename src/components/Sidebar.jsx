@@ -401,7 +401,7 @@ function Sidebar({
         {/* search modal */}
         {showSearchModal && (
           <div
-            className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#202020] dark:bg-[#252525] rounded-[21px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
+            className={`w-fit h-full max-h-[63%] 2xl:max-h-[500px] bg-[#202020] dark:bg-[#252525] rounded-[20px] fixed top-0 left-0 right-0 bottom-0 m-auto shadow-custom ring-1 ring-border-line-color/0 z-30 transition-all duration-150 
               ${
                 AnimateShowSearchModal
                   ? "opacity-100"
