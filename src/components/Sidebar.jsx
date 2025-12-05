@@ -1,42 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { IoIosAddCircle, IoMdNotificationsOutline } from "react-icons/io";
-import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
+import { useEffect, useState } from "react";
 import {
-  LuActivity,
-  LuArrowUpRight,
-  LuBadgeX,
-  LuBell,
-  LuCheck,
-  LuCheckCircle,
   LuChevronDown,
-  LuChevronsUpDown,
-  LuCog,
-  LuCrown,
-  LuFlag,
-  LuFlagTriangleRight,
-  LuFolder,
-  LuHash,
-  LuHourglass,
-  LuInfo,
   LuLink,
-  LuLogOut,
-  LuMoreHorizontal,
-  LuPen,
   LuPencil,
-  LuPencilLine,
   LuPlus,
   LuSearch,
-  LuSettings,
-  LuSparkles,
-  LuStar,
   LuTimerReset,
   LuTrash2,
-  LuTrophy,
-  LuUser2,
-  LuWorkflow,
-  LuX,
 } from "react-icons/lu";
-import { BsFolder, BsFolder2Open, BsLayoutSidebar } from "react-icons/bs";
+import { FiMoreHorizontal } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RiLoader5Fill, RiUserSharedLine } from "react-icons/ri";
 import axios from "axios";
@@ -600,7 +572,7 @@ function Sidebar({
                         moreOpt1 === space._id && "opacity-100"
                       }`}
                     >
-                      <LuMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
+                      <FiMoreHorizontal className="text-xl dark:text-[#f1f1f1]/70 text-text-color/70 dark:hover:text-white text-text-color" />
                     </div>
                     <Link
                       to={`/workspaces/${space._id}`}

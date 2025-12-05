@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy, LuUsers2, LuWorkflow } from 'react-icons/lu'
+import { LuActivity, LuArchive, LuAtSign, LuInfo, LuLogOut, LuSettings, LuTrash2, LuTrophy, LuUsersRound, LuWorkflow } from 'react-icons/lu'
 import { RiLoader5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import toast, { Toaster } from "react-hot-toast";
@@ -85,7 +85,7 @@ function AddCollaborators({ users, username, userEmail, collaborations, id, setC
         <div className='w-full flex flex-col justify-start items-start bg-white dark:bg-[#242424]'>
             <div className='pt-2 px-2 w-full'>
                 <div className='min-h-[34px] flex items-center gap-2 px-2 py-[3px] text-sm font-normal tracking-tight line-clamp-1 '>
-                    <LuUsers2 className='text-xl text-text-color/50 dark:text-light-text-color min-w-fit' />
+                    <LuUsersRound className='text-xl text-text-color/50 dark:text-light-text-color min-w-fit' />
                     <div className='w-full h-fit flex-col'>
                         <p className='line-clamp-1 text-sm font-medium text-text-color dark:text-white  '>Add Collaborators</p>
                         <p className='line-clamp-1 text-text-color/70 dark:text-light-text-color text-xs'>{collaborations.length} has access</p>

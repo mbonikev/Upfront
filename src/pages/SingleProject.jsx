@@ -14,12 +14,12 @@ import {
   useParams,
 } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
+import { FiMoreHorizontal } from "react-icons/fi";
 import {
   LuArchive,
   LuArrowLeft,
   LuArrowRight,
   LuCheck,
-  LuCheckCircle,
   LuChevronsDown,
   LuChevronsRight,
   LuChevronsUp,
@@ -27,9 +27,7 @@ import {
   LuClipboard,
   LuFlag,
   LuHash,
-  LuLoader2,
   LuMessageCircle,
-  LuMoreHorizontal,
   LuPencilLine,
   LuPlus,
   LuPrinter,
@@ -42,13 +40,13 @@ import {
   LuStar,
   LuTimerReset,
   LuTrash2,
-  LuUsers2,
+  LuUsersRound,
   LuX,
 } from "react-icons/lu";
+import { TbLoader2 } from "react-icons/tb";
 import axios from "axios";
 import { IoChevronDown, IoFolderOpen } from "react-icons/io5";
 import ProfileDropdownButtons from "../components/ProfileDropdownButtons";
-import logo60 from "../assets/logo-60x60.png";
 import logoSvg from "../assets/logo.svg";
 import { GiConsoleController } from "react-icons/gi";
 import AddCollaborators from "../components/AddCollaborators";
@@ -700,7 +698,7 @@ function SingleProject() {
             >
               {generating ? (
                 <>
-                  <LuLoader2 className="text-2xl min-w-fit transition-all duration-200 animate-spinLoader" />
+                  <TbLoader2 className="text-2xl min-w-fit transition-all duration-200 animate-spinLoader" />
                 </>
               ) : (
                 <>
@@ -933,7 +931,7 @@ function SingleProject() {
               title="Manage Collaborators"
               className="text-xl h-[34px] p-1 w-auto aspect-square flex items-center justify-center rounded-full transition hover:bg-stone-100 text-text-color/70 hover:text-text-color dark:text-light-text-color/70 dark:hover:bg-[#2c2c2c] dark:hover:text-light-text-color "
             >
-              <LuUsers2 />
+              <LuUsersRound />
             </button>
             <span className="w-[2px]"></span>
             <button
@@ -1010,7 +1008,7 @@ function SingleProject() {
                     onClick={() => showMoreMenuw1(board.id)}
                     className={` cursor-pointer absolute right-2 top-2 my-auto h-fit w-fit flex items-center justify-center opacity-100`}
                   >
-                    <LuMoreHorizontal
+                    <FiMoreHorizontal
                       className={`text-xl  ${
                         moreOpt1 === board.id
                           ? "text-text-color/100 dark:text-light-text-color"
